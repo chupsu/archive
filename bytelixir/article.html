@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>ByteLixir – Article</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo logo_header" href="./index.html" aria-label="Main page">
+              <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" aria-label="Open menu">
+                <i class="menu__icon" aria-hidden="true">
+                  <span></span>
+                </i>
+              </button>
+              <div class="menu__body">
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link" href="./blog.html">Blog</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./faq.html">FAQ</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./monetize.html">
+                      For Service Providers [ISPs]
+                    </a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./profit.html">For Developers</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./about.html">About Us</a>
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      class="menu__link"
+                      href="#contact-form"
+                      data-popup="#contact-form"
+                    >
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <!-- <div class="auth-action" data-da=".menu__body,991,first">
+              <a class="auth-action__btn btn btn_contour-black" href="./sign-in.html">
+                <span>Sign in</span>
+              </a>
+              <a class="auth-action__btn btn btn_black" href="./sign-up.html">
+                <span>Sign up</span>
+              </a>
+            </div> -->
+            <div
+              class="auth-action auth-action_account"
+              data-da=".menu__body,991,first"
+            >
+              <a
+                class="auth-action__btn auth-action__btn_account btn btn_contour-black"
+                href="#"
+              >
+                <span>coinboxdez@gmail.com</span>
+              </a>
+              <a
+                class="auth-action__btn auth-action__btn_logout btn btn_black"
+                href="#"
+              >
+                <span>Logout</span>
+              </a>
+              <ul class="auth-action__list">
+                <li class="auth-action__item">
+                  <a class="auth-action__link" href="#">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.83405 3.048C4.86078 2.12828 6.06673 1.43099 7.37605 1C7.75043 1.46902 8.22571 1.84763 8.76657 2.10767C9.30742 2.36771 9.89993 2.50249 10.5 2.502C11.1002 2.50249 11.6927 2.36771 12.2335 2.10767C12.7744 1.84763 13.2497 1.46902 13.624 1C14.9334 1.43099 16.1393 2.12828 17.166 3.048C16.9476 3.60645 16.8577 4.20694 16.903 4.80489C16.9484 5.40284 17.1278 5.9829 17.428 6.502C17.7276 7.02209 18.1406 7.46795 18.6363 7.80642C19.132 8.14489 19.6976 8.36726 20.291 8.457C20.5716 9.8059 20.5716 11.1981 20.291 12.547C19.131 12.725 18.061 13.407 17.428 14.502C17.1277 15.0212 16.9481 15.6015 16.9028 16.1996C16.8574 16.7977 16.9474 17.3984 17.166 17.957C16.1392 18.8764 14.9333 19.5733 13.624 20.004C13.2496 19.5352 12.7742 19.1567 12.2334 18.8969C11.6925 18.637 11.1001 18.5024 10.5 18.503C9.89993 18.5025 9.30742 18.6373 8.76657 18.8973C8.22571 19.1574 7.75043 19.536 7.37605 20.005C6.06682 19.5743 4.86087 18.8774 3.83405 17.958C4.0527 17.3994 4.14269 16.7987 4.09733 16.2006C4.05197 15.6025 3.87243 15.0222 3.57205 14.503C3.27234 13.9831 2.8593 13.5374 2.36363 13.1991C1.86797 12.8608 1.30242 12.6386 0.709049 12.549C0.428364 11.1998 0.428364 9.80722 0.709049 8.458C1.30251 8.36826 1.86811 8.14589 2.36379 7.80742C2.85946 7.46895 3.27245 7.02309 3.57205 6.503C3.87228 5.9839 4.05173 5.40384 4.09709 4.80589C4.14245 4.20794 4.05254 3.60745 3.83405 3.049V3.048ZM12 13.1C12.344 12.9045 12.6458 12.6428 12.8883 12.3301C13.1307 12.0174 13.3088 11.6599 13.4125 11.2781C13.5161 10.8963 13.5433 10.4977 13.4923 10.1054C13.4413 9.71303 13.3132 9.33465 13.1153 8.99202C12.9175 8.64938 12.6539 8.34927 12.3396 8.10894C12.0253 7.86862 11.6666 7.69283 11.2841 7.5917C10.9016 7.49058 10.5029 7.46611 10.1109 7.51971C9.71888 7.5733 9.34136 7.70391 9.00005 7.904C8.31663 8.30465 7.81942 8.95936 7.61694 9.72525C7.41445 10.4911 7.52312 11.306 7.91923 11.9921C8.31534 12.6781 8.96673 13.1797 9.73126 13.3872C10.4958 13.5948 11.3114 13.4916 12 13.1V13.1Z" fill="currentColor"/>
+                    </svg>
+                    <span>Edit profile</span>
+                  </a>
+                </li>
+                <li class="auth-action__item">
+                  <a class="auth-action__link" href="#">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 20.5C3.23478 20.5 2.98043 20.3946 2.79289 20.2071C2.60536 20.0196 2.5 19.7652 2.5 19.5V1.5C2.5 1.23478 2.60536 0.98043 2.79289 0.792893C2.98043 0.605357 3.23478 0.5 3.5 0.5H17.5C17.7652 0.5 18.0196 0.605357 18.2071 0.792893C18.3946 0.98043 18.5 1.23478 18.5 1.5V19.5C18.5 19.7652 18.3946 20.0196 18.2071 20.2071C18.0196 20.3946 17.7652 20.5 17.5 20.5H3.5ZM13.5 14.5L18.5 10.5L13.5 6.5V9.5H7.5V11.5H13.5V14.5Z" fill="currentColor"/>
+                    </svg>
+                    <span>Logout</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="header__lang" data-da=".menu__body,991,last">
+              <select class="lang" data-speed="0">
+                <option
+                  data-class="btn"
+                  data-href="#"
+                  data-asset="./img/content/country/en.svg"
+                  value="En"
+                  selected
+                >
+                  En
+                </option>
+                <option
+                  data-class="btn"
+                  data-href="#"
+                  data-asset="./img/content/country/pt.svg"
+                  value="Pt"
+                >
+                  Pt
+                </option>
+                <option
+                  data-class="btn"
+                  data-href="#"
+                  data-asset="./img/content/country/es.svg"
+                  value="Es"
+                >
+                  Es
+                </option>
+                <option
+                  data-class="btn"
+                  data-href="#"
+                  data-asset="./img/content/country/de.svg"
+                  value="De"
+                >
+                  De
+                </option>
+                <option
+                  data-class="btn"
+                  data-href="#"
+                  data-asset="./img/content/country/ja.svg"
+                  value="Ja"
+                >
+                  Ja
+                </option>
+                <option
+                  data-class="btn"
+                  data-href="#"
+                  data-asset="./img/content/country/ru.svg"
+                  value="Ru"
+                >
+                  Ru
+                </option>
+                <option
+                  data-class="btn"
+                  data-href="#"
+                  data-asset="./img/content/country/fr.svg"
+                  value="Fr"
+                >
+                  Fr
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <div class="container">
+          <article class="article">
+            <div class="article-head">
+              <div class="article-head__content">
+                <a class="article-head__back-link" href="./blog.html">
+                  Back to blog
+                </a>
+                <h1 class="article-head__title title">
+                  Making money on blogging in 2023: is it worth it?
+                </h1>
+                <p class="article-head__desc">
+                  There are many ways to
+                  <a href="#">
+                    make money both with high speed Internet and offline
+                  </a>
+                  in 2023. And it has nothing to do with age or skills. Blogging
+                  is one of the most popular ways to supplement a household
+                  budget. There are more than 600 million blogs only in the US,
+                  and over 7 million posts are made in blogs worldwide daily
+                  according to InternetLiveStats.
+                </p>
+                <time class="article-head__date" datetime="2022-10-23 19:00">
+                  23 oct 2022
+                </time>
+              </div>
+              <div class="article-head__img-box">
+                <picture><source srcset="./img/content/blog/article-11.webp" type="image/webp"><img class="article-head__img" src="./img/content/blog/article-11.jpg" alt="Making money on blogging in 2023: is it worth it?"></picture>
+              </div>
+            </div>
+            <div class="article__body">
+              <h2>Today we will look at:</h2>
+              <ul>
+                <li>
+                  <a href="/" data-goto="#anchor-1" data-goto-header>
+                    How to monetize blog traffic?
+                  </a>
+                </li>
+                <li>
+                  <a href="/" data-goto="#anchor-2" data-goto-header>
+                    How difficult is it to run?
+                  </a>
+                </li>
+                <li>
+                  <a href="/" data-goto="#anchor-3" data-goto-header>
+                    What are the alternatives to monetizing Internet traffic?
+                  </a>
+                </li>
+              </ul>
+              <h2 id="anchor-1">How to start blogging?</h2>
+              <p>
+                The main thing you need is a passion for any topic, and a desire
+                to share it with others. It’s enough to start a blog. But to
+                become a successful blogger and get paid for it (like anyone can
+                be paid for bandwidth) you'll need to put effort. A lot of
+                effort. So what’s necessary to start profitable blogging?
+              </p>
+              <ul>
+                <li>
+                  <b>A nice niche.</b> It’s a theme you’re interested in, and
+                  something you can write about not to give it up after a couple
+                  of posts. E.g. the ways to make money sharing your Internet or
+                  other side hustles.
+                </li>
+                <li>
+                  <b>A place to be.</b> It’s a webpage that will become a source
+                  of income generation. Or will serve for self-actualization. It
+                  includes technical details such as: registering a domain name,
+                  signing up for web hosting, choosing a web platform (WordPress
+                  or others). Or place your blog on Blogspot, Tumblr, Medium,
+                  Squarespace,etc. In 2023 there are a lot of ready-made
+                  solutions for the newbies.
+                </li>
+                <li>
+                  <b>A place to be.</b> It’s a webpage that will become a source
+                  of income generation. Or will serve for self-actualization. It
+                  includes technical details such as: registering a domain name,
+                  signing up for web hosting, choosing a web platform (WordPress
+                  or others). Or place your blog on Blogspot, Tumblr, Medium,
+                  Squarespace,etc. In 2023 there are a lot of ready-made
+                  solutions for the newbies.
+                </li>
+              </ul>
+              <div class="recommended">
+                <div class="recommended__img-box">
+                  <picture><source srcset="./img/content/blog/article-8.webp" type="image/webp"><img class="recommended__img" src="./img/content/blog/article-8.jpg" alt="6 ways students can make money in 2023"></picture>
+                </div>
+                <p class="recommended__text">
+                  Read also:
+                  <a class="recommended__link" href="./article.html">
+                    6 ways students can make money in 2023
+                  </a>
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <b>A nice niche.</b> It’s a theme you’re interested in, and
+                  something you can write about not to give it up after a couple
+                  of posts. E.g. the ways to make money sharing your Internet or
+                  other side hustles.
+                </li>
+                <li>
+                  <b>A place to be.</b> It’s a webpage that will become a source
+                  of income generation. Or will serve for self-actualization. It
+                  includes technical details such as: registering a domain name,
+                  signing up for web hosting, choosing a web platform (WordPress
+                  or others). Or place your blog on Blogspot, Tumblr, Medium,
+                  Squarespace,etc. In 2023 there are a lot of ready-made
+                  solutions for the newbies.
+                </li>
+                <li>
+                  <b>A place to be.</b> It’s a webpage that will become a source
+                  of income generation. Or will serve for self-actualization. It
+                  includes technical details such as: registering a domain name,
+                  signing up for web hosting, choosing a web platform (WordPress
+                  or others). Or place your blog on Blogspot, Tumblr, Medium,
+                  Squarespace,etc. In 2023 there are a lot of ready-made
+                  solutions for the newbies.
+                </li>
+              </ul>
+              <div class="article__image">
+                <picture><source srcset="./img/content/blog/article-12.webp" type="image/webp"><img class="article__img" src="./img/content/blog/article-12.jpg" alt="How to make money blogging?"></picture>
+              </div>
+              <h2 id="anchor-2">How to make money blogging?</h2>
+              <p>
+                There are numerous ways to turn blogging as a hobby to a form of
+                money-making with high speed Internet. These are:
+              </p>
+              <ol>
+                <li>
+                  <b>Place advertisements on your blog.</b> Banner ads, video
+                  ads, and product listings could bring you some money. E.g.
+                  businesses pay for impression ads only to be shown to
+                  visitors, and click ads bring money after someone interacts
+                  with it. <a href="#">Clicking ads</a> is a procedure to get
+                  paid for alone, using your bandwidth and time.
+                </li>
+                <li>
+                  <b>Sell posts.</b> It suits if you’re not into making money
+                  sharing your internet or placing ads on your blog. Attract
+                  advertisers writing about them. Make a partner article
+                  promoting things on the theme of your webpage, or create a
+                  native-advertising text with hidden ads.
+                </li>
+                <li>
+                  <b>Write paid reviews.</b> Services and manufacturers pay
+                  those who describe their product with a twinkle in their eye,
+                  and can attract new customers. But usually this method is
+                  available to well-known influencers unlike
+                  <a href="#">getting paid for your bandwidth</a>.
+                </li>
+                <li>
+                  <b>Promote yourself.</b> Share your experience and offer your
+                  service as a freelancer. You can also use the blog to offer
+                  advice or act as a coach on the themes you’re good at. Tell
+                  subscribers how to cope with everyday issues, how to sell
+                  Internet bandwidth or how to fix things. Showing aspects of
+                  your job can also be helpful, and handicraft blogs are popular
+                  nowadays.
+                </li>
+                <li>
+                  <b>Turn a blog into online-store.</b> You can devote only one
+                  site section to selling physical or digital products. In the
+                  first case, you can promote hand-made mugs, T-shirts,
+                  furniture, paintings, etc, or become a reseller. If you want
+                  to sell digital products via a blog, organize an Internet
+                  market. There’ll be
+                  <a href="#">
+                    a place for freelancers, designers, assistants, and creators
+                  </a>
+                  of any kind. You’ll make money as a mediator with high speed
+                  internet.
+                </li>
+                <li>
+                  <b>Start a paid membership.</b> Organize a community to share
+                  ideas protected by a pay-wall. Follow a Patreon business model
+                  and post special articles, or start a forum for professionals
+                  united by common interests. There’s also a way to make special
+                  offers, if you’re a real estate agent, or SEO-professional.
+                </li>
+                <li>
+                  <b>Ask to donate.</b> You can simply add a button to get
+                  Paypal donations from visitors, who want to thank you for work
+                  and research placed in the public domain. It’s not as the most
+                  effective way to have a regular income as to get paid for your
+                  bandwidth.
+                </li>
+                <li>
+                  <b>Join an affiliate program.</b> You can recommend products
+                  to the audience of your blog. For every successful deal you’ll
+                  get a commision. That’s the same way
+                  <a href="#">the Bytelixir Referral program</a>
+                  works. You can share the personal link in the blog, and get
+                  amounts equal to 50% of money made with high speed internet by
+                  people who follow the link.
+                </li>
+              </ol>
+              <div class="article__card" id="anchor-3">
+                <h2>Is it easy to be a blogger?</h2>
+                <p>
+                  No way. Blogging demands to work hard everyday, spending from
+                  3 to 6 hours to make an interesting post. You need to find
+                  your own style and themes on the market with the fierce
+                  competition. You need to make a plan of posts and stick to it.
+                  A successful blogger has a good understanding of WordPress, or
+                  other platforms the blog works on. And it’s necessary to pay
+                  for webpage hosting and to keep a site in working order all
+                  the time. Sum up all pros and cons before considering blogging
+                  as a main source of income. In the meantime you can take a
+                  closer look at passive income, and make money sharing your
+                  Internet. That’s what ByteLixir is about.
+                </p>
+              </div>
+              <div class="article__card article__card_color">
+                <h2>How to earn via ByteLixir?</h2>
+                <p>
+                  As well as blogging, getting paid for your bandwidth is not
+                  one of these schemes promising you to get rich quick. You
+                  install our free app, keep it online, and sell unused
+                  bandwidth. It brings you from $2 to $10 with each device. Then
+                  you start sharing the personal link, and expand a referral
+                  network of affiliates. It raises the amount of money you make
+                  sharing your Internet.
+                </p>
+                <ul>
+                  <li>
+                    We guarantee the security of your personal data and your
+                    devices, and make withdrawals on your personal accounts on
+                    demand.
+                  </li>
+                  <li>
+                    Now you know how to sell internet bandwidth easily. Join now
+                    and have recurring passive income!
+                  </li>
+                </ul>
+              </div>
+              <div class="article__action">
+                <a class="article__back-link btn btn_light" href="./blog.html">
+                  Back
+                </a>
+                <div class="share">
+                  <button class="share__btn btn btn_sky" type="button">
+                    Share
+                  </button>
+                  <ul class="share__list share__list_col2">
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/instagram.svg" alt="Instagram">
+                      </div>
+                      <a class="share__link" href="#">Instagram</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/discord.svg" alt="Discord">
+                      </div>
+                      <a class="share__link" href="#">Discord</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/facebook.svg" alt="Facebook">
+                      </div>
+                      <a class="share__link" href="#">Facebook</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/vkontakte.svg" alt="Vkontakte">
+                      </div>
+                      <a class="share__link" href="#">Vkontakte</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/twitter.svg" alt="Twitter">
+                      </div>
+                      <a class="share__link" href="#">Twitter</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/tiktok.svg" alt="Tiktok">
+                      </div>
+                      <a class="share__link" href="#">Tiktok</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/reddit.svg" alt="Reddit">
+                      </div>
+                      <a class="share__link" href="#">Reddit</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/linkedin.svg" alt="Linkedin">
+                      </div>
+                      <a class="share__link" href="#">Linkedin</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/youtube.svg" alt="Youtube">
+                      </div>
+                      <a class="share__link" href="#">Youtube</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/link.svg" alt="Link">
+                      </div>
+                      <a class="share__link" href="#">Link</a>
+                    </li>
+                    <li class="share__item">
+                      <div class="share__icon-box">
+                        <img class="share__icon" src="./img/icons/social/telegram.svg" alt="Telegram">
+                      </div>
+                      <a class="share__link" href="#">Telegram</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <section class="relevant-articles relevant-articles_bg">
+          <div class="container">
+            <div class="relevant-articles__body">
+              <h2 class="relevant-articles__title title h2">
+                Popular articles
+              </h2>
+              <div class="relevant-articles__slider">
+                <ul class="relevant-articles__items">
+                  <li class="relevant-articles__item">
+                    <article class="article-card">
+                      <div class="article-card__img-box">
+                        <picture><source srcset="./img/content/blog/article-1.webp" type="image/webp"><img class="article-card__img" src="./img/content/blog/article-1.jpg" alt="Make money sharing your Internet and help ad industry!"></picture>
+                      </div>
+                      <div class="article-card__content">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">Types of income</li>
+                        </ul>
+                        <h4 class="article-card__title title h4">
+                          Make money sharing your Internet and help ad industry!
+                        </h4>
+                        <time
+                          class="article-card__date"
+                          datetime="2023-03-23 19:00"
+                        >
+                          27 oct 2021
+                        </time>
+                        <a class="article-card__link" href="./article.html">
+                          Read article
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="relevant-articles__item">
+                    <article class="article-card">
+                      <div class="article-card__img-box">
+                        <picture><source srcset="./img/content/blog/article-2.webp" type="image/webp"><img class="article-card__img" src="./img/content/blog/article-2.jpg" alt="Sell bandwidth for money. A few words about security"></picture>
+                      </div>
+                      <div class="article-card__content">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">Types of income</li>
+                          <li class="article-tags__item">Traffic</li>
+                        </ul>
+                        <h4 class="article-card__title title h4">
+                          Sell bandwidth for money. A few words about security
+                        </h4>
+                        <time
+                          class="article-card__date"
+                          datetime="2023-03-23 19:00"
+                        >
+                          27 oct 2021
+                        </time>
+                        <a class="article-card__link" href="./article.html">
+                          Read article
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="relevant-articles__item">
+                    <article class="article-card">
+                      <div class="article-card__img-box">
+                        <picture><source srcset="./img/content/blog/article-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/blog/article-3.jpg" alt="Get paid for your bandwidth and earn extra cash"></picture>
+                      </div>
+                      <div class="article-card__content">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">🔥 Info</li>
+                        </ul>
+                        <h4 class="article-card__title title h4">
+                          Get paid for your bandwidth and earn extra cash
+                        </h4>
+                        <time
+                          class="article-card__date"
+                          datetime="2023-03-23 19:00"
+                        >
+                          27 oct 2021
+                        </time>
+                        <a class="article-card__link" href="./article.html">
+                          Read article
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="relevant-articles__item">
+                    <article class="article-card article-card_color">
+                      <div class="article-card__img-box">
+                        <picture><source srcset="./img/content/blog/article-5.webp" type="image/webp"><img class="article-card__img" src="./img/content/blog/article-5.jpg" alt="Make money sharing your Internet and help ad industry!"></picture>
+                      </div>
+                      <div class="article-card__content">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">News</li>
+                        </ul>
+                        <h4 class="article-card__title title h4">
+                          Make money sharing your Internet and help ad industry!
+                        </h4>
+                        <time
+                          class="article-card__date"
+                          datetime="2023-03-23 19:00"
+                        >
+                          27 oct 2021
+                        </time>
+                        <a class="article-card__link" href="./article.html">
+                          Read article
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="relevant-articles__item">
+                    <article class="article-card">
+                      <div class="article-card__img-box">
+                        <picture><source srcset="./img/content/blog/article-1.webp" type="image/webp"><img class="article-card__img" src="./img/content/blog/article-1.jpg" alt="Make money sharing your Internet and help ad industry!"></picture>
+                      </div>
+                      <div class="article-card__content">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">Types of income</li>
+                        </ul>
+                        <h4 class="article-card__title title h4">
+                          Make money sharing your Internet and help ad industry!
+                        </h4>
+                        <time
+                          class="article-card__date"
+                          datetime="2023-03-23 19:00"
+                        >
+                          27 oct 2021
+                        </time>
+                        <a class="article-card__link" href="./article.html">
+                          Read article
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="relevant-articles__item">
+                    <article class="article-card">
+                      <div class="article-card__img-box">
+                        <picture><source srcset="./img/content/blog/article-2.webp" type="image/webp"><img class="article-card__img" src="./img/content/blog/article-2.jpg" alt="Sell bandwidth for money. A few words about security"></picture>
+                      </div>
+                      <div class="article-card__content">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">Types of income</li>
+                          <li class="article-tags__item">Traffic</li>
+                        </ul>
+                        <h4 class="article-card__title title h4">
+                          Sell bandwidth for money. A few words about security
+                        </h4>
+                        <time
+                          class="article-card__date"
+                          datetime="2023-03-23 19:00"
+                        >
+                          27 oct 2021
+                        </time>
+                        <a class="article-card__link" href="./article.html">
+                          Read article
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="relevant-articles__item">
+                    <article class="article-card">
+                      <div class="article-card__img-box">
+                        <picture><source srcset="./img/content/blog/article-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/blog/article-3.jpg" alt="Get paid for your bandwidth and earn extra cash"></picture>
+                      </div>
+                      <div class="article-card__content">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">🔥 Info</li>
+                        </ul>
+                        <h4 class="article-card__title title h4">
+                          Get paid for your bandwidth and earn extra cash
+                        </h4>
+                        <time
+                          class="article-card__date"
+                          datetime="2023-03-23 19:00"
+                        >
+                          27 oct 2021
+                        </time>
+                        <a class="article-card__link" href="./article.html">
+                          Read article
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                  <li class="relevant-articles__item">
+                    <article class="article-card">
+                      <div class="article-card__img-box">
+                        <picture><source srcset="./img/content/blog/article-4.webp" type="image/webp"><img class="article-card__img" src="./img/content/blog/article-4.jpg" alt="Make money sharing your Internet and help ad industry!"></picture>
+                      </div>
+                      <div class="article-card__content">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">Types of income</li>
+                          <li class="article-tags__item">Traffic</li>
+                        </ul>
+                        <h4 class="article-card__title title h4">
+                          Make money sharing your Internet and help ad industry!
+                        </h4>
+                        <time
+                          class="article-card__date"
+                          datetime="2023-03-23 19:00"
+                        >
+                          27 oct 2021
+                        </time>
+                        <a class="article-card__link" href="./article.html">
+                          Read article
+                        </a>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
+                <div class="relevant-articles__controls">
+                  <div class="relevant-articles__scrollbar"></div>
+                  <div class="relevant-articles__buttons">
+                    <button
+                      class="relevant-articles__button relevant-articles__button_prev"
+                      type="button"
+                      aria-label="Previous slide"
+                    ></button>
+                    <button
+                      class="relevant-articles__button relevant-articles__button_next"
+                      type="button"
+                      aria-label="Next slide"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__box">
+              <a class="logo logo_footer" href="./index.html" aria-label="Main page">
+                <img class="logo__img" src="./img/content/logo2.svg" alt="logo">
+              </a>
+            </div>
+            <div class="footer__box">
+              <h5 class="footer__title">Company</h5>
+              <ul class="footer-menu">
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./blog.html">Blog</a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./faq.html">FAQ</a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./monetize.html">
+                    For Service Providers [ISPs]
+                  </a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./profit.html">
+                    For Developers
+                  </a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./about.html">About Us</a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="#contact-form">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__box">
+              <h5 class="footer__title">DocumentS</h5>
+              <ul class="footer-menu">
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./report-vulnerability.html">
+                    Report Vulnerability
+                  </a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./faq.html#uninstall">
+                    Uninstall & Delete Account
+                  </a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./report-abuse.html">
+                    Report Abuse
+                  </a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./kyc-and-aml.html">KYC & AML</a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./privacy-policy.html">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-menu__item">
+                  <a class="footer-menu__link" href="./terms-of-use.html">EULA</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__box">
+              <h5 class="footer__title">Connect with Us</h5>
+              <ul class="social">
+                <li class="social__item">
+                  <a
+                    class="social__link"
+                    href="#"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    aria-label="Facebook"
+                  >
+                    <img class="social__img" src="./img/icons/social/facebook.svg" alt="Facebook">
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="social__link"
+                    href="#"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    aria-label="Twitter"
+                  >
+                    <img class="social__img" src="./img/icons/social/twitter.svg" alt="Twitter">
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="social__link"
+                    href="#"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    aria-label="Instagram"
+                  >
+                    <img class="social__img" src="./img/icons/social/instagram.svg" alt="Instagram">
+                  </a>
+                </li>
+              </ul>
+              <ul class="social">
+                <li class="social__item">
+                  <a
+                    class="social__link"
+                    href="mailto:example@gmail.com"
+                    aria-label="Email"
+                  >
+                    <img class="social__img" src="./img/icons/social/email.svg" alt="Email">
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="social__link"
+                    href="#"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    aria-label="WhatsApp"
+                  >
+                    <img class="social__img" src="./img/icons/social/whatsapp.svg" alt="WhatsApp">
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="social__link"
+                    href="#"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    aria-label="Telegram"
+                  >
+                    <img class="social__img" src="./img/icons/social/telegram.svg" alt="Telegram">
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="social__link"
+                    href="#"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    aria-label="Discord"
+                  >
+                    <img class="social__img" src="./img/icons/social/discord.svg" alt="Discord">
+                  </a>
+                </li>
+              </ul>
+              <a class="link-up" href="#" data-goto=".wrapper">
+                <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M34.4393 41.9603L43.9853 32.4143C44.5711 31.8286 45.5208 31.8286 46.1066 32.4143L55.6525 41.9603C56.2383 42.5461 56.2383 43.4958 55.6525 44.0816C55.0668 44.6674 54.117 44.6674 53.5312 44.0816L46.5459 37.0963L46.5459 58L43.5459 58L43.5459 37.0963L36.5607 44.0816C35.9749 44.6674 35.0251 44.6674 34.4393 44.0816C33.8536 43.4958 33.8536 42.5461 34.4393 41.9603Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <p class="footer__copy">Copyright ©2023 ByteLixir</p>
+        </div>
+      </footer>
+    </div>
+
+    <div class="cookies">
+      <p class="cookies__text">
+        The site uses Cookies. We ask your permission to place Cookies in your
+        browser. For more information, please
+        <a href="./cookies-policy.html">read our Cookies Policy</a>. This tool uses
+        Cookies and will remember your choice. If you agree with the Policy, click
+        "I agree". If you do not agree with the Policy, press "I do not agree"
+        (however in this case some features of the site may be unavailable).
+      </p>
+      <div class="cookies__action">
+        <button class="cookies__btn btn btn_accent" type="button">I agree</button>
+        <a class="cookies__link" href="#">I do not agree</a>
+      </div>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          aria-label="Close popup"
+          type="button"
+          data-close
+        ></button>
+        <div class="popup__inner">
+          <h4 class="popup__title title">Sign up with ByteLixir</h4>
+          <p class="popup__text">Fill in this from in detail, please.</p>
+          <form class="contact-form" action="#">
+            <div class="contact-form__inputs contact-form__inputs_col2">
+              <label class="input medium">
+                <input class="input__body" type="text" name="name" placeholder=" ">
+                <span class="input__placeholder">Your name</span>
+              </label>
+              <label class="input medium">
+                <input class="input__body" type="email" name="email" placeholder=" ">
+                <span class="input__placeholder">E-mail</span>
+              </label>
+              <label class="input">
+                <input class="input__body" type="text" placeholder=" ">
+                <span class="input__placeholder">Your company name</span>
+              </label>
+              <label class="input input_textarea">
+                <textarea class="input__body" placeholder=" "></textarea>
+                <span class="input__placeholder">Include detailed information</span>
+              </label>
+            </div>
+            <button class="contact-form__btn btn btn_cta" type="submit">
+              <span>Send</span>
+            </button>
+          </form>
+        </div>
+        <!-- <div class="popup__inner popup__inner_center">
+          <div class="popup__img-box"> -->
+        <!-- <picture><source srcset="./img/content/arts/registered.webp" type="image/webp"><img class="popup__img" src="./img/content/arts/registered.png" alt="Message sent"></picture>
+          </div>
+          <h4 class="popup__title title h4">Message sent</h4>
+          <p class="popup__text">
+            A response will be sent to your e&#8209;mail shortly.
+          </p>
+        </div> -->
+      </div>
+    </div>
+  </body>
+</html>

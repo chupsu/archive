@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#30453a">
+    <link rel="preload" as="fetch" crossorigin href="./files/env.hdr">
+    <link rel="preload" as="fetch" crossorigin href="./files/banka.bin">
+    <link rel="preload" as="image" href="./files/texture.png">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#30453a">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>CBD TEA</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="preloader">
+      <span class="preloader__text container">1%</span>
+      <script>
+        (() => {
+          "use strict";
+          const e = document.querySelector(".preloader__text"),
+            t = (o) => {
+              (e.innerText = `${Math.round(o / 4)}%`),
+                (o < 396) & ("complete" !== document.readyState) && setTimeout(t, o, o + 2);
+            };
+          t(10);
+        })();
+      </script>
+    </div>
+    <div class="wrapper load" id="smooth-wrapper">
+      <div class="page" id="smooth-content">
+        <header class="header">
+          <div class="container">
+            <div class="header__body">
+              <button
+                class="logo icon-logo"
+                type="button"
+                data-to="#welcome"
+                aria-label="К началу страницы"
+                title="К началу страницы"
+              ></button>
+              <ul class="menu">
+                <li class="menu__item">
+                  <button class="menu__link" data-to="#props" type="button">О пользе СBD-чая</button>
+                </li>
+                <li class="menu__item">
+                  <button class="menu__link" data-to="#gallery" type="button">О компании</button>
+                </li>
+              </ul>
+              <button class="header__btn" data-to="#order" type="button">Выбери свой вкус</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="model"></div>
+        <section class="welcome-head" id="welcome">
+          <div class="container">
+            <div class="welcome-head__body">
+              <h1 class="welcome-head__title title">
+                <span class="title__line">
+                  <span class="title__text">cbd tea</span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text">айва</span>
+                </span>
+              </h1>
+              <p class="welcome-head__text text">
+                Конопляный чай из <br>
+                Оренбурга от Steppe & Wind
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="welcome-main">
+          <div class="container">
+            <div class="welcome-main__body">
+              <h2 class="welcome-main__title title">
+                <span class="title__line">
+                  <span class="title__text"><span>Всё</span></span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text"><span>дело</span> в</span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text">составе</span>
+                </span>
+              </h2>
+              <div class="welcome-main__content">
+                <h3 class="welcome-main__subtitle">
+                  Основа чая&nbsp;&mdash; <br>
+                  соцветия конопли
+                </h3>
+                <p class="welcome-main__text text">
+                  В&nbsp;них содержится CBD, также известный как каннабидиол. CBD &mdash; полностью
+                  легально, а&nbsp;ещё является мощным антиоксидантом, снижает стресс и&nbsp;улучшает сон.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="welcome-footer">
+          <div class="container">
+            <div class="welcome-footer__body">
+              <h2 class="welcome-footer__title title">
+                <span class="title__line">
+                  <span class="title__text">на 100%</span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text">Органический</span>
+                </span>
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <div class="container">
+            <div class="about__body">
+              <h2 class="about__title title">
+                <span class="title__line">
+                  <span class="title__text">Полностью состоит</span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text">из растительного</span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text">сырья</span>
+                </span>
+              </h2>
+              <ul class="about__list">
+                <li class="about__item about__item_pick">
+                  <span>
+                    Травяной сбор <br>
+                    конопли
+                  </span>
+                </li>
+                <li class="about__item about__item_water">
+                  <span>
+                    Минеральная <br>
+                    вода
+                  </span>
+                </li>
+                <li class="about__item about__item_juice">
+                  <span>
+                    Сок айвы <br>
+                    или шиповник
+                  </span>
+                </li>
+                <li class="about__item about__item_tea">
+                  <span>
+                    Зеленый <br>
+                    чай
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="where-head">
+          <div class="container">
+            <div class="where-head__body">
+              <h2 class="where-head__title title">
+                <span class="title__line">
+                  <span class="title__text">Выращен и собран</span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text">в оренбургских</span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text">степях</span>
+                </span>
+              </h2>
+              <p class="where-head__text text">
+                В составе чая — натуральные ингредиенты, которые мы выращиваем и собираем сами.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="where-main">
+          <div class="water">
+            <div class="water__mask">
+              <div class="water__main"></div>
+              <div class="water__foam water__foam_right"></div>
+              <div class="water__foam water__foam_left"></div>
+              <div class="water__bubbles water__bubbles_right"></div>
+              <div class="water__bubbles water__bubbles_left"></div>
+              <div class="water__frame water__frame_right"></div>
+              <div class="water__frame water__frame_bottom"></div>
+              <div class="water__frame water__frame_left"></div>
+              <p class="water__text text">
+                Даже минеральную воду добываем из собственной скважины, чтобы чай был вкуснее и освежал
+                лучше любой газировки.
+              </p>
+            </div>
+          </div>
+          <div class="where-main__wrapper">
+            <div class="container">
+              <div class="where-main__body">
+                <h2 class="where-main__title title">
+                  <span class="title__line">
+                    <span class="title__text">Полезные свойства CBD сегодня</span>
+                  </span>
+                  <span class="title__line">
+                    <span class="title__text">изучают во всём мире</span>
+                  </span>
+                </h2>
+                <p class="where-main__text">Вот главные из них:</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="props" id="props">
+          <div class="container">
+            <div class="props__body">
+              <ul class="props__list">
+                <li class="props__item props__item_1">
+                  <div class="props__art">
+                    <div class="props__img-box">
+                      <picture>
+                        <source srcset="./img/content/decor/props_1_2.svg" media="(max-width: 479px)">
+                        <img class="props__img" src="./img/content/decor/props_1_1.svg" alt="image">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="props__content">
+                    <h3 class="props__title">
+                      CBD в сочетании с зелёным чаем — <br>
+                      натуральный антиоксидант
+                    </h3>
+                    <p class="props__text text">
+                      Он снижает уровень холестерина в крови и риск сердечно-сосудистых заболеваний,
+                      а айва богата витаминов С и A, полезными для иммунной системы и здоровья кожи.
+                    </p>
+                  </div>
+                </li>
+                <li class="props__item props__item_2">
+                  <div class="props__art">
+                    <div class="props__img-box">
+                      <picture>
+                        <source srcset="./img/content/decor/props_2_2.svg" media="(max-width: 479px)">
+                        <img class="props__img" src="./img/content/decor/props_2_1.svg" alt="image">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="props__content">
+                    <h3 class="props__title">
+                      Укрепит <br>
+                      пищеварительную <br>
+                      систему
+                    </h3>
+                    <p class="props__text text">
+                      Чай содержит пищевые волокна, которые улучшают пищеварение, а СBD может бороться с
+                      воспалениями и поддерживает кишечную микрофлору.
+                    </p>
+                  </div>
+                </li>
+                <li class="props__item props__item_3">
+                  <div class="props__art">
+                    <div class="props__img-box">
+                      <picture>
+                        <source srcset="./img/content/decor/props_3_2.svg" media="(max-width: 479px)">
+                        <img class="props__img" src="./img/content/decor/props_3_1.svg" alt="image">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="props__content">
+                    <h3 class="props__title">
+                      СBD-чай обладает <br>
+                      успокаивающим <br>
+                      эффектом
+                    </h3>
+                    <p class="props__text text">
+                      Он уменьшает уровень тревоги <br>
+                      и может улучшать качество сна.
+                    </p>
+                  </div>
+                </li>
+                <li class="props__item props__item_4">
+                  <div class="props__art">
+                    <div class="props__img-box">
+                      <picture>
+                        <source srcset="./img/content/decor/props_4_2.png" media="(max-width: 479px)">
+                        <img class="props__img" src="./img/content/decor/props_4_1.png" alt="image">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="props__content">
+                    <h3 class="props__title">
+                      CBD — естественное <br>
+                      обезболивающее
+                    </h3>
+                    <p class="props__text text">
+                      Оно влияет на сигнальные пути, связанные с болевыми рецепторами. Это снижает болевой
+                      порог и помогает при хронических болях, например, мигрени.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <p class="props__desc">
+                *CBD — не является лекарственным средством. Если вы чувствуете недомогание или другие
+                симптомы болезни, не стоит заниматься самолечением, лучше обратиться к врачу. 
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="gallery-head" id="gallery">
+          <div class="gallery-head__img-box" data-speed="auto">
+            <picture><source srcset="./img/content/gallery/steppe.webp" type="image/webp"><img class="gallery-head__img" src="./img/content/gallery/steppe.jpg" alt="image"></picture>
+          </div>
+          <div class="container">
+            <div class="gallery-head__body">
+              <h2 class="gallery-head__title title">
+                <span class="title__line">
+                  <span class="title__text">Steppe</span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text"><span>&</span></span>
+                </span>
+                <span class="title__line">
+                  <span class="title__text">Wind</span>
+                </span>
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="gallery-main">
+          <div class="gallery-main__noise"></div>
+          <div class="gallery-main__logo icon-logo"></div>
+          <div class="container">
+            <div class="gallery-main__body">
+              <div class="gallery-main__items">
+                <div
+                  class="gallery-main__img-box gallery-main__img-box_1"
+                  data-da=".gallery-main__mi-1,575,first"
+                >
+                  <picture><source srcset="./img/content/gallery/1.webp" type="image/webp"><img class="gallery-main__img" src="./img/content/gallery/1.jpg" alt="image"></picture>
+                </div>
+                <div
+                  class="gallery-main__img-box gallery-main__img-box_2"
+                  data-da=".gallery-main__mi-2,575,first"
+                >
+                  <picture><source srcset="./img/content/gallery/2.webp" type="image/webp"><img class="gallery-main__img" src="./img/content/gallery/2.jpg" alt="image"></picture>
+                </div>
+                <div
+                  class="gallery-main__img-box gallery-main__img-box_3"
+                  data-da=".gallery-main__mi-2,575,last"
+                >
+                  <picture><source srcset="./img/content/gallery/3.webp" type="image/webp"><img class="gallery-main__img" src="./img/content/gallery/3.jpg" alt="image"></picture>
+                </div>
+              </div>
+              <p class="gallery-main__text text">
+                Наша компания &laquo;Степь и&nbsp;ветер&raquo; появилась в&nbsp;2014&nbsp;году. Этот год
+                выдался особенно урожайным на&nbsp;семейной пасеке. Тогда&nbsp;же у&nbsp;нас зародилась
+                идея красивого и&nbsp;ароматного натурального напитка на основе мёда.
+                <br>
+                <br>
+                Наша миссия&nbsp;&mdash; производить топовые напитки из&nbsp;местного сырья, вызывающие
+                самые теплые эмоции у&nbsp;людей во&nbsp;всем мире.
+              </p>
+              <div class="gallery-main__mi-1"></div>
+              <p class="gallery-main__suptitle">Между Европой и Азией</p>
+              <h2 class="gallery-main__title">
+                В 2017 была <br>
+                зарегистрирована <br>
+                торговая марка <br>
+                «Степь и ветер»
+              </h2>
+              <p class="gallery-main__text text">
+                Звучное название возникло из-за месторасположения. Оренбург находится на границе Европы и
+                Азии, где дуют сильные степные ветра.
+              </p>
+              <div class="gallery-main__mi-2"></div>
+              <div class="gallery-main__bonus">
+                <p>Ознакомиться с продукцией «Степь и ветер» можно на официальном сайте</p>
+                <a class="link" href="https://stepiveter.ru" target="_blank">stepiveter.ru</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="order" id="order">
+          <div class="container">
+            <div class="slider">
+              <div class="slider__head">
+                <h2 class="slider__title title">
+                  <span class="title__line">
+                    <span class="title__text">Выбери свой вкус</span>
+                  </span>
+                </h2>
+                <div class="slider__controls">
+                  <button
+                    class="slider__button slider__button_prev"
+                    type="button"
+                    aria-label="Предыдущий слайд"
+                  ></button>
+                  <button
+                    class="slider__button slider__button_next"
+                    type="button"
+                    aria-label="Следующий слайд"
+                  ></button>
+                </div>
+              </div>
+              <div class="slider__items">
+                <div class="slider__item">
+                  <div class="product" data-popup="#type1">
+                    <div class="product__content">
+                      <h3 class="product__name">Айва</h3>
+                      <div class="product__img-box">
+                        <picture><source srcset="./img/content/product1-bg.webp" type="image/webp"><img class="product__img-bg" src="./img/content/product1-bg.png" alt="image" aria-hidden="true"></picture>
+                        <picture><source srcset="./img/content/product1.webp" type="image/webp"><img class="product__img" src="./img/content/product1.png" alt="image"></picture>
+                      </div>
+                      <div class="product__info">
+                        <div class="product__price">от<span>1250</span> ₽/уп.</div>
+                        <button class="product__btn" type="button" data-popup="#type1">Заказать</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="product" data-popup="#type2">
+                    <div class="product__content">
+                      <h3 class="product__name">Шиповник</h3>
+                      <div class="product__img-box">
+                        <picture><source srcset="./img/content/product2-bg.webp" type="image/webp"><img class="product__img-bg" src="./img/content/product2-bg.png" alt="image" aria-hidden="true"></picture>
+                        <picture><source srcset="./img/content/product2.webp" type="image/webp"><img class="product__img" src="./img/content/product2.png" alt="image"></picture>
+                      </div>
+                      <div class="product__info">
+                        <div class="product__price">от<span>1250</span> ₽/уп.</div>
+                        <button class="product__btn" type="button" data-popup="#type2">Заказать</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="product" data-popup="#type1">
+                    <div class="product__content">
+                      <h3 class="product__name">Айва</h3>
+                      <div class="product__img-box">
+                        <picture><source srcset="./img/content/product1-bg.webp" type="image/webp"><img class="product__img-bg" src="./img/content/product1-bg.png" alt="image" aria-hidden="true"></picture>
+                        <picture><source srcset="./img/content/product1.webp" type="image/webp"><img class="product__img" src="./img/content/product1.png" alt="image"></picture>
+                      </div>
+                      <div class="product__info">
+                        <div class="product__price">от<span>1250</span> ₽/уп.</div>
+                        <button class="product__btn" type="button" data-popup="#type1">Заказать</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="product" data-popup="#type2">
+                    <div class="product__content">
+                      <h3 class="product__name">Шиповник</h3>
+                      <div class="product__img-box">
+                        <picture><source srcset="./img/content/product2-bg.webp" type="image/webp"><img class="product__img-bg" src="./img/content/product2-bg.png" alt="image" aria-hidden="true"></picture>
+                        <picture><source srcset="./img/content/product2.webp" type="image/webp"><img class="product__img" src="./img/content/product2.png" alt="image"></picture>
+                      </div>
+                      <div class="product__info">
+                        <div class="product__price">от<span>1250</span> ₽/уп.</div>
+                        <button class="product__btn" type="button" data-popup="#type2">Заказать</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order__body">
+              <div class="order__content">
+                <p class="order__desc">Ещё больше CBD TEA</p>
+                <h2 class="order__title title">
+                  <span class="title__line">
+                    <span class="title__text">Вы можете</span>
+                  </span>
+                  <span class="title__line">
+                    <span class="title__text">заказать напитки</span>
+                  </span>
+                  <span class="title__line">
+                    <span class="title__text">Steppe & Wind</span>
+                  </span>
+                </h2>
+                <p class="order__text">
+                  Cвяжитесь с нами по телефону, <br>
+                  электронной почте или в Тelegram
+                </p>
+                <ul class="order__contacts contacts">
+                  <li class="contacts__item">
+                    <a class="contacts__link link" href="https://t.me/stepiveter1" target="_blank">
+                      @stepiveter1
+                    </a>
+                  </li>
+                  <li class="contacts__item">
+                    <a class="contacts__link link" href="mailto:sales@stepiveter.ru">sales@stepiveter.ru</a>
+                  </li>
+                  <li class="contacts__item">
+                    <a class="contacts__link link" href="tel:+79033980243">+7 (903) 398-02-43</a>
+                  </li>
+                  <li class="contacts__item">
+                    <a class="contacts__link link" href="https://stepiveter.ru" target="_blank">
+                      stepiveter.ru
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="order__action">
+                <div class="order__img-box">
+                  <picture><source srcset="./img/content/product.webp" type="image/webp"><img class="order__img" src="./img/content/product.png" alt="image"></picture>
+                </div>
+                <!-- <ul class="markets markets_list"> -->
+                <ul class="markets markets_cards">
+                  <li class="markets__item">
+                    <a
+                      class="markets__link markets__link_yandex"
+                      href="https://market.yandex.ru/product--cbd-tea-konoplianyi-chai-c-aivoi/1878005855?cpa=1&sku=102055517606"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <span class="markets__text">
+                        заказать <br>
+                        на я.маркете
+                      </span>
+                      <span class="markets__price"><span>1450</span>  <span>₽/уп.</span></span>
+                    </a>
+                  </li>
+                  <li class="markets__item">
+                    <a
+                      class="markets__link markets__link_wb"
+                      href="https://www.wildberries.ru"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <span class="markets__text">
+                        заказать <br>
+                        на wildberries
+                      </span>
+                      <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+                    </a>
+                  </li>
+                  <li class="markets__item">
+                    <a
+                      class="markets__link markets__link_ozon"
+                      href="https://www.ozon.ru"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <span class="markets__text">
+                        заказать <br>
+                        на Озон
+                      </span>
+                      <span class="markets__price"><span>1250</span>  <span>₽/уп.</span></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <aside class="popup" id="type1">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+        <div class="popup__inner">
+          <h5 class="popup__title">Выбери доступный маркетплейс</h5>
+          <ul class="markets markets_cards">
+            <li class="markets__item">
+              <a
+                class="markets__link markets__link_yandex"
+                href="https://market.yandex.ru/product--cbd-tea-konoplianyi-chai-c-aivoi/1878005855?cpa=1&sku=102055517606"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                <span class="markets__text">
+                  заказать <br>
+                  на я.маркете
+                </span>
+                <span class="markets__price"><span>1450</span>  <span>₽/уп.</span></span>
+              </a>
+            </li>
+            <li class="markets__item">
+              <a
+                class="markets__link markets__link_wb"
+                href="https://www.wildberries.ru"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                <span class="markets__text">
+                  заказать <br>
+                  на wildberries
+                </span>
+                <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+              </a>
+            </li>
+            <li class="markets__item">
+              <a
+                class="markets__link markets__link_ozon"
+                href="https://www.ozon.ru"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                <span class="markets__text">
+                  заказать <br>
+                  на Озон
+                </span>
+                <span class="markets__price"><span>1250</span>  <span>₽/уп.</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="popup" id="type2">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+        <div class="popup__inner">
+          <h5 class="popup__title">Выбери доступный маркетплейс</h5>
+          <ul class="markets markets_cards">
+            <li class="markets__item">
+              <a
+                class="markets__link markets__link_wb"
+                href="https://www.wildberries.ru"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                <span class="markets__text">
+                  заказать <br>
+                  на wildberries
+                </span>
+                <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </body>
+</html>

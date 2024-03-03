@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Article</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo logo_header" href="./index.html">
+              <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" aria-label="Open menu">
+                <i class="menu__icon" aria-hidden="true">
+                  <span></span>
+                </i>
+              </button>
+              <div class="menu__body">
+                <ul class="menu__list">
+                  <li class="menu__item" data-spollers>
+                    <button
+                      class="menu__link icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      Services and solution
+                    </button>
+                    <ul class="sub-menu" hidden>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./mobile-proxies.html">
+                          Mobile Proxies
+                        </a>
+                      </li>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./residential-proxies.html">
+                          Residential Proxies
+                        </a>
+                      </li>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./datacenter-proxies.html">
+                          Datacenter Proxies
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./use-cases.html">Why use it?</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./pricing.html">Pricing</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./faq.html">FAQ</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./blog.html">Blog</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./we-are-astro.html">About</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div class="action" data-da=".menu__body,767,first">
+              <div class="action__auth">
+                <!-- <a class="action__btn btn btn_light" href="./sign-up.html">Sign up</a>
+                <a class="action__btn btn btn_dark" href="./sign-in.html">Sign in</a> -->
+                <a class="action__btn action__btn_user btn btn_violet" href="#">
+                  <span>longest_address_name@gmail.com</span>
+                </a>
+                <a
+                  class="action__btn btn btn_light icon-log-out"
+                  href="./sign-in.html"
+                  aria-label="Log-out"
+                ></a>
+              </div>
+              <div class="lang" data-da=".menu__body,1365,last">
+                <select class="lang" data-speed="0">
+                  <option data-class="btn" data-href="#" value="En" selected>
+                    En
+                  </option>
+                  <option data-class="btn" data-href="#" value="Uk">Uk</option>
+                  <option data-class="btn" data-href="#" value="Arm">Arm</option>
+                  <option data-class="btn" data-href="#" value="Chi">Chi</option>
+                  <option data-class="btn" data-href="#" value="Ru">Ru</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="article">
+          <div class="article__container">
+            <div class="nav-pc">
+              <div
+                class="article-nav"
+                data-spollers
+                data-da=".nav-mobile,1366,first"
+              >
+                <button
+                  class="article-nav__btn icon-menu"
+                  type="button"
+                  data-spoller
+                >
+                  Page content
+                </button>
+                <ul class="article-nav__list">
+                  <li class="article-nav__item">
+                    <a class="article-nav__link" href="#" data-goto="#one" data-goto-header>
+                      SMM
+                    </a>
+                  </li>
+                  <li class="article-nav__item">
+                    <a class="article-nav__link" href="#" data-goto="#two" data-goto-header>
+                      Data harvesting for market research
+                    </a>
+                  </li>
+                  <li class="article-nav__item">
+                    <a class="article-nav__link" href="#" data-goto="#three" data-goto-header>
+                      A/B Tests
+                    </a>
+                  </li>
+                  <li class="article-nav__item">
+                    <a class="article-nav__link" href="#" data-goto="#four" data-goto-header>
+                      Social media automation
+                    </a>
+                  </li>
+                  <li class="article-nav__item">
+                    <a class="article-nav__link" href="#" data-goto="#five" data-goto-header>
+                      Wrapping up
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="./index.html">Home</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="./blog.html">Blog</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <span class="breadcrumbs__link">
+                    Mobile network proxies for social media efforts
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="article__body">
+              <h1>Mobile network proxies for social media efforts</h1>
+              <ul class="article-tags">
+                <li class="article-tags__item">tag 1</li>
+                <li class="article-tags__item">tag very large 2</li>
+                <li class="article-tags__item">tag large 3</li>
+                <li class="article-tags__item">tag 4</li>
+              </ul>
+              <picture><source srcset="./img/content/article/1.webp" type="image/webp"><img src="./img/content/article/1.jpg" alt="image"></picture>
+              <div class="nav-mobile"></div>
+              <p>
+                Typically, a
+                <a href="./mobile-proxies.html">mobile network proxy</a> is just
+                an intermediate link processing your Internet traffic and query
+                via someone’s cell phone. This simplicity notwithstanding, the
+                scope of tasks it can resolve is enormous. If you collaborate
+                with a trusted proxy website and use tools of this class, you
+                will be provided with needed privacy. The latter will enable you
+                to:
+              </p>
+              <ul>
+                <li>Run several accounts of social media;</li>
+                <li>Bypass spam-related safeguards;</li>
+                <li>Boost likes and followers;</li>
+                <li>Run several accounts of social media;</li>
+                <li>Bypass spam-related safeguards;</li>
+                <li>Boost likes and followers;</li>
+              </ul>
+              <h2 id="one">Mobile network proxies and social platforms</h2>
+              <p>
+                SMM specialists normally need to use multiple accounts, to say
+                the least, a personal and a professional one. Also, active
+                social media marketers, as a rule, are responsible for several
+                products and brands. What makes matters even more complicated,
+                companies routinely operate with multiple platforms at once. All
+                these issues have an important thing in common. It is the danger
+                of being blacklisted with your IP for multi-accounting.
+              </p>
+              <h3><mark>SMM</mark></h3>
+              <p>
+                Social networks are getting stricter all the time. Many do not
+                allow using a single IP for more than 5 accounts. Exceeding this
+                limit puts you at risk. Mobile network proxies are a remedy for
+                this danger. With a trusted proxy website dozens of accounts can
+                be used via dynamic and rotating proxy solutions. Collaborating
+                with AstroProxy will greatly facilitate your SMM efforts, with
+                all addresses available via an intuitive and easily accessible
+                dashboard.
+              </p>
+              <h3 id="two">
+                <mark>Data harvesting for market research</mark>
+              </h3>
+              <p>
+                Social media platforms are an invaluable
+                <a href="#">source of reliable data</a>
+                concerning preferences, inclinations, human behavior patterns,
+                and social trends. Collecting this information is a must for
+                wall-planned and data-driven marketing campaigns. Both
+                individual and entire target group profiles are within your
+                reach.
+                <br>
+                At the same time, all major social media platforms are
+                increasingly concerned about user privacy and sensitive data
+                protection. Partly, it is their own intention. Partly, they have
+                to do so, as they face strict legislation by their governments.
+                To meet this requirement, they apply various protection
+                mechanisms.
+                <br>
+                These safeguards are capable of recognizing automated
+                data-harvesting activities. First, they detect suspicious
+                requests. Second, they simply blacklist their source, i.e. your
+                IP.
+              </p>
+              <p>
+                <b>
+                  Social networks are getting stricter all the time. Many do not
+                  allow using a single IP for more than 5 accounts. Exceeding
+                  this limit puts you at risk. Mobile network proxies are a
+                  remedy for this danger. With a trusted proxy website dozens of
+                  accounts can be used via dynamic and rotating proxy solutions.
+                  Collaborating with AstroProxy will greatly facilitate your SMM
+                  efforts, with all addresses available via an intuitive and
+                  easily accessible dashboard.
+                </b>
+              </p>
+              <picture><source srcset="./img/content/article/2.webp" type="image/webp"><img src="./img/content/article/2.jpg" alt="image"></picture>
+              <h2 id="three">Mobile network proxies and social platforms</h2>
+              <p>
+                Social networks are getting stricter all the time. Many do not
+                allow using a single IP for more than 5 accounts. Exceeding this
+                limit puts you at risk. Mobile network proxies are a remedy for
+                this danger. With a trusted proxy website dozens of accounts can
+                be used via dynamic and rotating proxy solutions. Collaborating
+                with AstroProxy will greatly facilitate your SMM efforts, with
+                all addresses available via an intuitive and easily accessible
+                dashboard.
+              </p>
+              <h3><span>01.</span> Data harvesting for market research</h3>
+              <p>
+                SMM specialists normally need to use multiple accounts, to say
+                the least, a personal and a professional one. Also, active
+                social media marketers, as a rule, are responsible for several
+                products and brands. What makes matters even more complicated,
+                companies routinely operate with multiple platforms at once. All
+                these issues have an important thing in common. It is the danger
+                of being blacklisted with your IP for multi-accounting.
+              </p>
+              <h3><span>02.</span> Data harvesting for market research</h3>
+              <p>
+                Social media platforms are an invaluable
+                <a href="#">source of reliable data</a>
+                concerning preferences, inclinations, human behavior patterns,
+                and social trends. Collecting this information is a must for
+                wall-planned and data-driven marketing campaigns. Both
+                individual and entire target group profiles are within your
+                reach.
+                <br>
+                At the same time, all major social media platforms are
+                increasingly concerned about user privacy and sensitive data
+                protection. Partly, it is their own intention. Partly, they have
+                to do so, as they face strict legislation by their governments.
+                To meet this requirement, they apply various protection
+                mechanisms.
+                <br>
+                These safeguards are capable of recognizing automated
+                data-harvesting activities. First, they detect suspicious
+                requests. Second, they simply blacklist their source, i.e. your
+                IP.
+              </p>
+              <div class="article-accent article-accent_violet" id="four">
+                <h3>Data harvesting for market research</h3>
+                <p>
+                  At the same time, all major social media platforms are
+                  increasingly concerned about user privacy and sensitive data
+                  protection. Partly, it is their own intention. Partly, they
+                  have to do so, as they face strict legislation by their
+                  governments. To meet this requirement, they apply various
+                  protection mechanisms.
+                  <br>
+                  These safeguards are capable of recognizing automated
+                  data-harvesting activities. First, they detect suspicious
+                  requests. Second, they simply blacklist their source, i.e.
+                  your IP.
+                </p>
+                <div class="article-accent__marker" aria-hidden="true">
+                  <span class="icon-bullet"></span>
+                  <span class="icon-bullet"></span>
+                  <span class="icon-bullet"></span>
+                </div>
+                <p>
+                  At the same time, all major social media platforms are
+                  increasingly concerned about user privacy and sensitive data
+                  protection. Partly, it is their own intention. Partly, they
+                  have to do so, as they face strict legislation by their
+                  governments. To meet this requirement, they apply various
+                  protection mechanisms.
+                  <br>
+                  These safeguards are capable of recognizing automated
+                  data-harvesting activities. First, they detect suspicious
+                  requests. Second, they simply blacklist their source, i.e.
+                  your IP.
+                </p>
+              </div>
+              <div class="article-accent article-accent_blue">
+                <p>
+                  At the same time, all major social media platforms are
+                  increasingly concerned about user privacy and sensitive data
+                  protection. Partly, it is their own intention. Partly, they
+                  have to do so, as they face strict legislation by their
+                  governments. To meet this requirement, they apply various
+                  protection mechanisms.
+                  <br>
+                  These safeguards are capable of recognizing automated
+                  data-harvesting activities. First, they detect suspicious
+                  requests. Second, they simply blacklist their source, i.e.
+                  your IP.
+                </p>
+              </div>
+              <div class="article-accent article-accent_white">
+                <div class="article-accent__marker" aria-hidden="true">
+                  <span class="icon-bullet"></span>
+                  <span class="icon-bullet"></span>
+                  <span class="icon-bullet"></span>
+                </div>
+                <p>
+                  At the same time, all major social media platforms are
+                  increasingly concerned about user privacy and sensitive data
+                  protection. Partly, it is their own intention. Partly, they
+                  have to do so, as they face strict legislation by their
+                  governments. To meet this requirement, they apply various
+                  protection mechanisms.
+                  <br>
+                  These safeguards are capable of recognizing automated
+                  data-harvesting activities. First, they detect suspicious
+                  requests. Second, they simply blacklist their source, i.e.
+                  your IP.
+                </p>
+              </div>
+              <h2 id="five">
+                2022 achievements AstroProxy takes particular pride in
+              </h2>
+              <p>
+                What are our achievements of the year 2022 that we take
+                particular pride in? To name a few:
+              </p>
+              <ul>
+                <li>
+                  We are a 100% legit trusted proxy website applying all needed
+                  AML and KYC standards;
+                </li>
+                <li>
+                  Our settings and filters enable users to build an ideal mix
+                  even for the most challenging scenarios, such as buying
+                  sneakers for reselling. Judge for yourself, with us, you can
+                  group addresses not only by cities and countries, but also AS
+                  and ISPs. As for IP rotation options, they are available both
+                  at certain moments, on the basis of intervals, and upon your
+                  direct specific request;
+                </li>
+                <li>
+                  Uptime of our trusted proxy website and ecosystem is a high as
+                  99%;
+                </li>
+                <li>
+                  Universal compatibility with all needed protocols and popular
+                  tools to automate your work on the web;
+                </li>
+                <li>
+                  Finally, our referral program is known as one of the most
+                  lucrative on the Net!
+                </li>
+              </ul>
+              <p>
+                Further, all the high global inflations rates notwithstanding,
+                our business efficiency enables us to keep our prices low:
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Название столбца</th>
+                    <th>Название столбца</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="./mobile-proxies.html">
+                        Mobile network proxies
+                      </a>
+                    </td>
+                    <td>start at $13.14 per one Gb and $0.3 per port</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="./residential-proxies.html">
+                        Residential proxies
+                      </a>
+                    </td>
+                    <td>start at $7.3 per one Gb and $0.3 per port</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="./datacenter-proxies.html">
+                        Datacenter proxies
+                      </a>
+                    </td>
+                    <td>start at $3.65 per one Gb and $0.3 per port</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                <br>
+                At the same time, all major social media platforms are
+                increasingly concerned about user privacy and sensitive data
+                protection. Partly, it is their own intention. Partly, they have
+                to do so, as they face strict legislation by their governments.
+                To meet this requirement, they apply various protection
+                mechanisms.
+                <br>
+                These safeguards are capable of recognizing automated
+                data-harvesting activities. First, they detect suspicious
+                requests. Second, they simply blacklist their source, i.e. your
+                IP.
+              </p>
+              <div class="article__action">
+                <a class="article__btn" href="./blog.html">Back</a>
+                <a class="article__btn" href="./index.html">Back to home</a>
+              </div>
+            </div>
+          </div>
+          <div class="articles">
+            <div class="container">
+              <div class="articles__body">
+                <h2 class="articles__title title2">More of the important</h2>
+                <div class="articles__slider">
+                  <div class="articles__items">
+                    <div class="articles__item">
+                      <a class="article-card" href="./article.html">
+                        <div class="article-card__img-box">
+                          <picture><source srcset="./img/content/article/thumb-4.webp" type="image/webp"><img class="article-card__img" src="./img/content/article/thumb-4.jpg" alt="image"></picture>
+                        </div>
+                        <div class="article-card__tags">
+                          <ul class="article-tags">
+                            <li class="article-tags__item">tag 1</li>
+                            <li class="article-tags__item">tag very large 2</li>
+                            <li class="article-tags__item">tag large 3</li>
+                            <li class="article-tags__item">tag 4</li>
+                          </ul>
+                        </div>
+                        <h3 class="article-card__title title5">
+                          Understanding structured and unstructured data with
+                          Astro
+                        </h3>
+                        <p class="article-card__text">
+                          Electronic commerce is an important part of the global
+                          trade covering 21% of the whole retail segment.
+                        </p>
+                        <span class="article-card__link">Read more</span>
+                      </a>
+                    </div>
+                    <div class="articles__item">
+                      <a class="article-card" href="./article.html">
+                        <div class="article-card__img-box">
+                          <picture><source srcset="./img/content/article/thumb-1.webp" type="image/webp"><img class="article-card__img" src="./img/content/article/thumb-1.jpg" alt="image"></picture>
+                        </div>
+                        <div class="article-card__tags">
+                          <ul class="article-tags">
+                            <li class="article-tags__item">tag 1</li>
+                            <li class="article-tags__item">tag very large 2</li>
+                            <li class="article-tags__item">tag large 3</li>
+                            <li class="article-tags__item">tag 4</li>
+                            <li class="article-tags__item">tag very large 5</li>
+                            <li class="article-tags__item">tag large 6</li>
+                          </ul>
+                        </div>
+                        <h3 class="article-card__title title5">
+                          Cost-effective data harvesting
+                        </h3>
+                        <p class="article-card__text">
+                          Typically, a mobile network proxy
+                        </p>
+                        <span class="article-card__link">Read more</span>
+                      </a>
+                    </div>
+                    <div class="articles__item">
+                      <a class="article-card" href="./article.html">
+                        <div class="article-card__img-box">
+                          <picture><source srcset="./img/content/article/thumb-2.webp" type="image/webp"><img class="article-card__img" src="./img/content/article/thumb-2.jpg" alt="image"></picture>
+                        </div>
+                        <div class="article-card__tags">
+                          <ul class="article-tags">
+                            <li class="article-tags__item">tag very large 1</li>
+                            <li class="article-tags__item">tag 2</li>
+                            <li class="article-tags__item">tag 4</li>
+                          </ul>
+                        </div>
+                        <h3 class="article-card__title title5">
+                          Mobile network proxies for social media efforts
+                        </h3>
+                        <p class="article-card__text">
+                          Typically, a mobile network proxy is just an
+                          intermediate link processing your Internet traffic and
+                          query via someone’s cell phone.
+                        </p>
+                        <span class="article-card__link">Read more</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__top">
+              <a class="logo logo_footer" href="./index.html">
+                <img class="logo__img" src="./img/content/logo-dark.svg" alt="logo">
+              </a>
+              <ul class="partners">
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/1.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/1.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/2.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/2.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/3.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/3.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__main">
+              <div class="footer__box footer__box_rate">
+                <div class="rating">
+                  <p class="rating__text title7">Our rating at Reviews.io</p>
+                  <div class="rating__main">
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__index">4.76</span>
+                  </div>
+                  <a
+                    class="rating__link"
+                    href="https://www.reviews.io/"
+                    target="_blank"
+                  >
+                    See all reviews
+                  </a>
+                </div>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Company</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./use-cases.html">
+                      Why use it?
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./faq.html">FAQ</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./blog.html">Blog</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./we-are-astro.html">About</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./referral-program.html">
+                      Referral program
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Products</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./residential-proxies.html">
+                      Residential proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./mobile-proxies.html">
+                      Mobile proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./datacenter-proxies.html">
+                      Datacenter proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./pricing.html">Pricing</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="#"> Instant free test </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Documents</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./confidentiality.html">
+                      Confidentiality policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./cookie.html">
+                      Cookie Policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./refund.html">
+                      Refund Policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./license.html">
+                      License Agreement
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="#">Acceptable Use Policy</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_social">
+                <h5 class="footer__title title7">Support</h5>
+                <div class="social social_footer">
+                  <ul class="social__list">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Email">
+                        <img class="social__img" src="./img/icons/social/email.svg" alt="Email">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Telegram">
+                        <img class="social__img" src="./img/icons/social/tg.svg" alt="Telegram">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="WhatsApp">
+                        <img class="social__img" src="./img/icons/social/wa.svg" alt="WhatsApp">
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="social__list">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Instagram">
+                        <img class="social__img" src="./img/icons/social/ig.svg" alt="Instagram">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Twitter">
+                        <img class="social__img" src="./img/icons/social/tw.svg" alt="Twitter">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Facebook">
+                        <img class="social__img" src="./img/icons/social/fb.svg" alt="Facebook">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Discord">
+                        <img class="social__img" src="./img/icons/social/dc.svg" alt="Discord">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer__info info">
+              <ul class="info__list">
+                <li class="info__item">Copyright © 2023</li>
+                <li class="info__item">Cyberzilla LLC Registration No.: 53111969</li>
+                <li class="info__item">Republic of Armenia, Yerevan cityGrigor Lusavorich street 9</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="cookies">
+      <p class="cookies__text">
+        The site uses Cookies. We ask your permission to place Cookies in your
+        browser. For more information, please
+        <a href="./cookie.html">read our Cookies Policy</a>. This tool uses Cookies
+        and will remember your choice. If you agree with the Policy, click
+        "I agree". If you do not agree with the Policy, press "I do not agree"
+        (however in this case some features of the site may be unavailable).
+      </p>
+      <div class="cookies__action">
+        <button class="cookies__btn btn btn_cta" type="button">
+          <span>I agree</span>
+        </button>
+        <a class="cookies__link" href="#">I do not agree</a>
+      </div>
+    </div>
+
+    <div class="contacts contacts_fixed" data-da=".header__body,991,1">
+      <button class="contacts__btn contacts__btn_dark icon-close">
+        <span></span>
+      </button>
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/whatsapp.svg" alt="whatsapp">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/telegram.svg" alt="telegram">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/mail.svg" alt="email">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/line.svg" alt="line">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/instagram.svg" alt="instagram">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/facebook.svg" alt="facebook">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/viber.svg" alt="viber">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

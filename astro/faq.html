@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Faq</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo logo_header" href="./index.html">
+              <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" aria-label="Open menu">
+                <i class="menu__icon" aria-hidden="true">
+                  <span></span>
+                </i>
+              </button>
+              <div class="menu__body">
+                <ul class="menu__list">
+                  <li class="menu__item" data-spollers>
+                    <button
+                      class="menu__link icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      Services and solution
+                    </button>
+                    <ul class="sub-menu" hidden>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./mobile-proxies.html">
+                          Mobile Proxies
+                        </a>
+                      </li>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./residential-proxies.html">
+                          Residential Proxies
+                        </a>
+                      </li>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./datacenter-proxies.html">
+                          Datacenter Proxies
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./use-cases.html">Why use it?</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./pricing.html">Pricing</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./faq.html">FAQ</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./blog.html">Blog</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./we-are-astro.html">About</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div class="action" data-da=".menu__body,767,first">
+              <div class="action__auth">
+                <!-- <a class="action__btn btn btn_light" href="./sign-up.html">Sign up</a>
+                <a class="action__btn btn btn_dark" href="./sign-in.html">Sign in</a> -->
+                <a class="action__btn action__btn_user btn btn_violet" href="#">
+                  <span>longest_address_name@gmail.com</span>
+                </a>
+                <a
+                  class="action__btn btn btn_light icon-log-out"
+                  href="./sign-in.html"
+                  aria-label="Log-out"
+                ></a>
+              </div>
+              <div class="lang" data-da=".menu__body,1365,last">
+                <select class="lang" data-speed="0">
+                  <option data-class="btn" data-href="#" value="En" selected>
+                    En
+                  </option>
+                  <option data-class="btn" data-href="#" value="Uk">Uk</option>
+                  <option data-class="btn" data-href="#" value="Arm">Arm</option>
+                  <option data-class="btn" data-href="#" value="Chi">Chi</option>
+                  <option data-class="btn" data-href="#" value="Ru">Ru</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="faq">
+          <div class="faq__container">
+            <div class="faq__body">
+              <div class="faq__head">
+                <div class="breadcrumbs">
+                  <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                      <a class="breadcrumbs__link" href="./index.html">Home</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                      <span class="breadcrumbs__link">Astro FAQ</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <h1 class="faq__title title1">Astro FAQ</h1>
+              </div>
+              <div class="faq__filters">
+                <div class="faq__search">
+                  <form class="search" action="#">
+                    <input class="search__input" type="search" placeholder="Start your search">
+                    <button
+                      class="search__btn btn btn_dark"
+                      type="submit"
+                      aria-label="Search"
+                    >
+                      <span>Search</span>
+                    </button>
+                  </form>
+                </div>
+                <div class="faq__tags tags" data-mobile="false">
+                  <ul class="tags__list">
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox" checked>
+                        <span class="tags__btn">
+                          <span class="tags__name">All categories</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Proxy types</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">IP addresses</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Proxy port</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Proxy features</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">IP rotation</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Proxy usage</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Data access</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">KYC and AML</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Traffic usage</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Geo Targeting</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Trial Period</span>
+                        </span>
+                      </label>
+                    </li>
+                    <li class="tags__box">
+                      <label class="tags__item">
+                        <input class="tags__input" type="checkbox">
+                        <span class="tags__btn">
+                          <span class="tags__name">Support Service</span>
+                        </span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="faq__answers">
+                  <ul class="spollers" data-spollers>
+                    <li class="spollers__item">
+                      <button
+                        class="spollers__btn icon-arr-down"
+                        type="button"
+                        data-spoller
+                      >
+                        What is Astro?
+                      </button>
+                      <div class="spollers__body">
+                        <p class="spollers__text">
+                          Astro is a reliable, ethical, and accurate data
+                          obtaining and processing infrastructure for corporate
+                          (enterprise) needs.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="faq__box">
+                <h2 class="faq__name title2">Proxy types</h2>
+                <ul class="spollers" data-spollers>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      What proxy types does Astro have?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      What are residential proxies?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      What are mobile proxies?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      There are companies offering to buy residential IPs
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      What are datacenter proxies?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="faq__box">
+                <h2 class="faq__name title2">IP addresses</h2>
+                <ul class="spollers" data-spollers>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      Do you provide real-peer proxy IP addresses?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      How long does a proxy remain operational?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      Do you provide static IPs?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      There are companies offering to buy residential IPs,
+                      mobile and the best datacenter proxies at a lower price.
+                      Why are Astro prices higher?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      There are companies offering to buy residential IPs
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      Is it possible to pay for a proxy where each thread is a
+                      new IP address?
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        We have a number of competitors among enterprise-grade
+                        proxy ecosystems for web data collection and analysis.
+                        Astro offers competitive pricing plans with lower costs
+                        and instant access to all proxy pools without additional
+                        fees. Please be noted that you buy residential IPs or
+                        mobile from real-peer users and the best datacenter
+                        proxies available on the market.
+                      </p>
+                      <p class="spollers__text">
+                        Other companies may offer low proxy rates for the
+                        following reasons:
+                      </p>
+                      <ol class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ol>
+                      <ul class="spollers__list">
+                        <li class="spollers__list-item">
+                          Residential and mobile proxies may be presented with
+                          datacenter ones. Check the type on the specialized web
+                          pages to ensure.
+                        </li>
+                        <li class="spollers__list-item">
+                          Third-party proxies may be shared, not individual.
+                          Shared intermediate IP addresses are slower and may be
+                          unavailable or carry potential cybersecurity risks.
+                          Astro operates as a trusted proxy website with private
+                          proxy ports.
+                        </li>
+                        <li class="spollers__list-item">
+                          Low prices of third-party services may be the result
+                          of unethically acquired or obtained IP addresses.
+                          These proxies may have issues with accessing targeted
+                          web pages or passing IP checks due to their blacklist
+                          character. All Astro proxies are credible,
+                          whitelisted, and they operate in strict compliance
+                          with ethical KYC and AML principles.
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__top">
+              <a class="logo logo_footer" href="./index.html">
+                <img class="logo__img" src="./img/content/logo-dark.svg" alt="logo">
+              </a>
+              <ul class="partners">
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/1.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/1.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/2.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/2.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/3.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/3.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__main">
+              <div class="footer__box footer__box_rate">
+                <div class="rating">
+                  <p class="rating__text title7">Our rating at Reviews.io</p>
+                  <div class="rating__main">
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__index">4.76</span>
+                  </div>
+                  <a
+                    class="rating__link"
+                    href="https://www.reviews.io/"
+                    target="_blank"
+                  >
+                    See all reviews
+                  </a>
+                </div>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Company</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./use-cases.html">
+                      Why use it?
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./faq.html">FAQ</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./blog.html">Blog</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./we-are-astro.html">About</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./referral-program.html">
+                      Referral program
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Products</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./residential-proxies.html">
+                      Residential proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./mobile-proxies.html">
+                      Mobile proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./datacenter-proxies.html">
+                      Datacenter proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./pricing.html">Pricing</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="#"> Instant free test </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Documents</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./confidentiality.html">
+                      Confidentiality policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./cookie.html">
+                      Cookie Policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./refund.html">
+                      Refund Policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./license.html">
+                      License Agreement
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="#">Acceptable Use Policy</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_social">
+                <h5 class="footer__title title7">Support</h5>
+                <div class="social social_footer">
+                  <ul class="social__list">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Email">
+                        <img class="social__img" src="./img/icons/social/email.svg" alt="Email">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Telegram">
+                        <img class="social__img" src="./img/icons/social/tg.svg" alt="Telegram">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="WhatsApp">
+                        <img class="social__img" src="./img/icons/social/wa.svg" alt="WhatsApp">
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="social__list">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Instagram">
+                        <img class="social__img" src="./img/icons/social/ig.svg" alt="Instagram">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Twitter">
+                        <img class="social__img" src="./img/icons/social/tw.svg" alt="Twitter">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Facebook">
+                        <img class="social__img" src="./img/icons/social/fb.svg" alt="Facebook">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Discord">
+                        <img class="social__img" src="./img/icons/social/dc.svg" alt="Discord">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer__info info">
+              <ul class="info__list">
+                <li class="info__item">Copyright © 2023</li>
+                <li class="info__item">Cyberzilla LLC Registration No.: 53111969</li>
+                <li class="info__item">Republic of Armenia, Yerevan cityGrigor Lusavorich street 9</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="cookies">
+      <p class="cookies__text">
+        The site uses Cookies. We ask your permission to place Cookies in your
+        browser. For more information, please
+        <a href="./cookie.html">read our Cookies Policy</a>. This tool uses Cookies
+        and will remember your choice. If you agree with the Policy, click
+        "I agree". If you do not agree with the Policy, press "I do not agree"
+        (however in this case some features of the site may be unavailable).
+      </p>
+      <div class="cookies__action">
+        <button class="cookies__btn btn btn_cta" type="button">
+          <span>I agree</span>
+        </button>
+        <a class="cookies__link" href="#">I do not agree</a>
+      </div>
+    </div>
+
+    <div class="contacts contacts_fixed" data-da=".header__body,991,1">
+      <button class="contacts__btn contacts__btn_dark icon-close">
+        <span></span>
+      </button>
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/whatsapp.svg" alt="whatsapp">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/telegram.svg" alt="telegram">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/mail.svg" alt="email">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/line.svg" alt="line">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/instagram.svg" alt="instagram">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/facebook.svg" alt="facebook">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/viber.svg" alt="viber">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

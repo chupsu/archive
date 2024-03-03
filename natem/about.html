@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>О компании</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__top">
+          <div class="container">
+            <div class="header__body header__body_top">
+              <ul class="sup-menu">
+                <li class="sup-menu__item">
+                  <a class="sup-menu__link" href="./about.html">О компании</a>
+                </li>
+                <li class="sup-menu__item">
+                  <a class="sup-menu__link" href="./services.html">Сервис</a>
+                </li>
+                <li class="sup-menu__item">
+                  <a class="sup-menu__link" href="./b2b.html">B2B</a>
+                </li>
+                <li class="sup-menu__item">
+                  <a class="sup-menu__link" href="./contacts.html">Контакты</a>
+                </li>
+              </ul>
+              <!-- <div class="auth-action">
+                <div class="auth-action__item">
+                  <a class="auth-action__link" href="./login.html">Войти в ЛК</a>
+                </div>
+              </div> -->
+              <div class="auth-action auth-action_active">
+                <div class="auth-action__item">
+                  <a class="auth-action__link" href="./lc-1.html">
+                    <span>Имя пользователя</span>
+                  </a>
+                </div>
+                <div class="auth-action__item">
+                  <a class="auth-action__link" href="./registration.html">Выйти</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__fixed" data-lp>
+          <div class="container">
+            <div class="header__body header__body_fixed">
+              <div class="header__main">
+                <a class="logo logo_header" href="./index.html">
+                  <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+                </a>
+                <nav class="menu menu_sub">
+                  <button class="menu__btn" data-menu>
+                    <svg class="menu__icon">
+                      <use xlink:href="./img/icons/icons.svg#menu"></use>
+                      <use xlink:href="./img/icons/icons.svg#close"></use>
+                    </svg>
+                    Меню
+                  </button>
+                  <div class="menu__body">
+                    <ul class="menu__list">
+                      <li class="menu__item">
+                        <a class="menu__link" href="./about.html">О компании</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./services.html">Сервис</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./b2b.html">B2B</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./contacts.html">Контакты</a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+                <nav class="menu menu_catalog">
+                  <button class="menu__btn" data-menu>
+                    <svg class="menu__icon">
+                      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+                      <use xlink:href="./img/icons/icons.svg#close"></use>
+                    </svg>
+                    Каталог
+                  </button>
+                  <div class="menu__body">
+                    <ul class="menu__list">
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Кофе</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Чай</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Системы для воды</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Кофемашины</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Аксессуары</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link menu__link_accent" href="./catalog-promos.html">
+                          Спецпредложения
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+                <ul class="user-action">
+                  <li class="user-action__item">
+                    <a
+                      class="user-action__link user-action__link_favorite"
+                      href="./favorite.html"
+                      aria-label="Избранное"
+                      title="Избранное"
+                    >
+                      <svg class="user-action__icon">
+                        <use xlink:href="./img/icons/icons.svg#heart"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="user-action__item">
+                    <a
+                      class="user-action__link user-action__link_cart"
+                      href="./cart.html"
+                      aria-label="Корзина"
+                      title="Корзина"
+                    >
+                      <svg class="user-action__icon">
+                        <use xlink:href="./img/icons/icons.svg#cart"></use>
+                      </svg>
+                    </a>
+                    <span class="user-action__count">999</span>
+                  </li>
+                  <li class="user-action__item user-action__item_search">
+                    <form class="search" action="#">
+                      <div class="search__wrapper">
+                        <div class="search__body">
+                          <select data-modifier="search" data-speed="0">
+                            <option value="Все категории" selected>Все категории</option>
+                            <option value="Кофе">Кофе</option>
+                            <option value="Кофемашины">Кофемашины</option>
+                            <option value="Чай">Чай</option>
+                            <option value="Аксессуары">Аксессуары</option>
+                            <option value="Системы воды">Системы воды</option>
+                          </select>
+                          <input class="search__input" type="search" placeholder="Поиск..">
+                          <button
+                            class="search__btn search__btn_open"
+                            data-da=".search,767,last"
+                            type="button"
+                            aria-label="Поиск"
+                            title="Поиск"
+                          >
+                            <svg class="search__icon search__icon">
+                              <use xlink:href="./img/icons/icons.svg#search"></use>
+                              <use xlink:href="./img/icons/icons.svg#close"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <button
+                        class="search__btn search__btn_submit"
+                        type="submit"
+                        aria-label="Искать"
+                        title="Искать"
+                      >
+                        <svg class="search__icon">
+                          <use xlink:href="./img/icons/icons.svg#search"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </li>
+                  <li class="user-action__item">
+                    <a
+                      class="user-action__link user-action__link_lc"
+                      href="./lc-1.html"
+                      aria-label="Личный кабинет"
+                      title="Личный кабинет"
+                    >
+                      <svg class="user-action__icon">
+                        <use xlink:href="./img/icons/icons.svg#user"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-action">
+                <div class="header-action__item">
+                  <a class="header-action__link" href="./favorite.html">
+                    <svg class="header-action__icon">
+                      <use xlink:href="./img/icons/icons.svg#heart"></use>
+                    </svg>
+                    Избранное
+                  </a>
+                </div>
+                <div class="header-action__item">
+                  <a class="header-action__link" href="./cart.html">
+                    <svg class="header-action__icon">
+                      <use xlink:href="./img/icons/icons.svg#cart"></use>
+                    </svg>
+                    Корзина
+                  </a>
+                  <span class="header-action__count">999</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="welcome">
+          <div class="container">
+            <div class="welcome__body">
+              <div class="welcome__main">
+                <div class="welcome__img-box">
+                  <picture>
+                    <source srcset="./img/content/img/welcome-3-mobile.webp" media="(max-width: 767px)" type="image/webp">
+                    <source srcset="./img/content/img/welcome-3-mobile.jpg" media="(max-width: 767px)">
+                    <source srcset="./img/content/img/welcome-3.webp" type="image/webp">
+                    <img class="welcome__img" src="./img/content/img/welcome-3.jpg" alt="О компании">
+                  </picture>
+                </div>
+                <div class="welcome__content welcome__content_large">
+                  <ul class="breadcrumbs">
+                    <li class="breadcrumbs__item">
+                      <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                      <span class="breadcrumbs__link">О компании</span>
+                    </li>
+                  </ul>
+                  <h1 class="welcome__title h1">Мы&nbsp;рады, что вы&nbsp;здесь!</h1>
+                  <p class="welcome__text welcome__text_small">
+                    Приветствуем вас в мире вкусных и ароматных напитков фирменного магазина NATEM! - Мы с
+                    удовольствием познакомим вас с многообразием вкусов и сортов кофе, предложим лучшие
+                    кофемашины мировых брендов и сервисное обслуживание для наших корпоративных постоянных
+                    клиентов.
+                  </p>
+                  <!-- если нужно часть текста вынести под карточку на адаптиве: -->
+                  <!-- <p class="welcome__text" data-da=".welcome__body,1365,last"></p> -->
+                </div>
+                <div class="welcome__action" data-da=".welcome__body,991,1">
+                  <div class="welcome__btns">
+                    <a class="welcome__btn btn btn_green" href="#" download>Скачать каталог</a>
+                    <a class="welcome__btn btn btn_white" href="./catalog-tea.html">Каталог</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <div class="container">
+            <div class="about__body">
+              <h2 class="about__title h3">
+                Никакой магии — <br>
+                <span>сила природы</span>
+              </h2>
+              <div class="about__content">
+                <p class="about__text">
+                  <b>
+                    Мультибрендовый бутик натуральных напитков NATEM.natural emotions&nbsp;&mdash;
+                    не&nbsp;про чудо, а&nbsp;про впечатления и&nbsp;ощущения от&nbsp;кофебрейка
+                    и&nbsp;чаепития; про момент, в&nbsp;котором время будто&nbsp;бы останавливается после
+                    вашей встречи с&nbsp;тем самым вкусом, сохранившим в&nbsp;себе все богатства природы,
+                    вкусом насыщенным и&nbsp;желанным.
+                  </b>
+                </p>
+                <p class="about__text">
+                  Мы&nbsp;привозим лучший капсульный кофе, тот к&nbsp;которому вы&nbsp;привыкли, несмотря
+                  на импортозамещение. Мы&nbsp;доверяем признанным во&nbsp;всем мире бариста
+                  и&nbsp;их&nbsp;брендам кофе с европейскими традициями, а&nbsp;титестерам чая
+                  из&nbsp;Цейлона и&nbsp;Китая. Вы&nbsp;сможете наслаждаться любимым вкусом натурального
+                  напитка каждое утро каждой чашкой. А&nbsp;наш магазин будет надежным поставщиком
+                  любимого продукта в&nbsp;нужное время и&nbsp;на&nbsp;нужный кошелек.
+                </p>
+              </div>
+              <div class="about__img-box">
+                <img class="about__img" src="./img/content/img/about.svg" alt="image">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="team">
+          <div class="container">
+            <div class="team__body">
+              <h2 class="team__title h3">
+                <span>В нашей команде</span>
+                работают лучшие эксперты
+              </h2>
+              <div class="team__slider">
+                <div class="team__items">
+                  <div class="team__item">
+                    <div class="team__img-box">
+                      <picture><source srcset="./img/content/team/1.webp" type="image/webp"><img class="team__img" src="./img/content/team/1.jpg" alt="image"></picture>
+                    </div>
+                    <h4 class="team__name">Петров Иван</h4>
+                    <p class="team__desc">Главный исполнительный директор</p>
+                  </div>
+                  <div class="team__item">
+                    <div class="team__img-box">
+                      <picture><source srcset="./img/content/team/2.webp" type="image/webp"><img class="team__img" src="./img/content/team/2.jpg" alt="image"></picture>
+                    </div>
+                    <h4 class="team__name">Теплякова Анастасия</h4>
+                    <p class="team__desc">Финансовый директор</p>
+                  </div>
+                  <div class="team__item">
+                    <div class="team__img-box">
+                      <picture><source srcset="./img/content/team/3.webp" type="image/webp"><img class="team__img" src="./img/content/team/3.jpg" alt="image"></picture>
+                    </div>
+                    <h4 class="team__name">Теплякова Анастасия Андреевна</h4>
+                    <p class="team__desc">Административный помощник</p>
+                  </div>
+                  <div class="team__item">
+                    <div class="team__img-box">
+                      <picture><source srcset="./img/content/team/4.webp" type="image/webp"><img class="team__img" src="./img/content/team/4.jpg" alt="image"></picture>
+                    </div>
+                    <h4 class="team__name">Петров Иван Петрович</h4>
+                    <p class="team__desc">Координатор по контролю качества</p>
+                  </div>
+                  <div class="team__item">
+                    <div class="team__img-box">
+                      <picture><source srcset="./img/content/team/5.webp" type="image/webp"><img class="team__img" src="./img/content/team/5.jpg" alt="image"></picture>
+                    </div>
+                    <h4 class="team__name">Петров Иван Петрович</h4>
+                    <p class="team__desc">Главный операционный директор</p>
+                  </div>
+                </div>
+              </div>
+              <div class="video">
+                <!-- меняем только ссылку на видео и data-id на свои -->
+                <a class="video__link" href="https://youtu.be/VLkHH9w1Ufc" data-id="VLkHH9w1Ufc">
+                  <picture>
+                    <source srcset="./img/content/img/video.webp" type="image/webp"> 
+                    <img class="video__media" src="./img/content/img/video.jpg" alt="">
+                  </picture>
+                  <!-- Если хотим превью от видео - меняем картинку подставляя ID видео вместо "VLkHH9w1Ufc" -->
+                  <!-- <picture>
+                    <source srcset="https://i.ytimg.com/vi_webp/VLkHH9w1Ufc/maxresdefault.webp" type="image/webp">
+                    <img class="video__media" src="https://i.ytimg.com/vi/VLkHH9w1Ufc/maxresdefault.jpg" alt="">
+                  </picture> -->
+                </a>
+                <button class="video__button btn btn_white" type="button">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 12.2687C26.3333 13.0385 26.3333 14.963 25 15.7328L7 26.1251C5.66666 26.8949 4 25.9327 4 24.3931L4 3.60845C4 2.06885 5.66667 1.1066 7 1.8764L25 12.2687Z" fill="#E25740"/>
+                  </svg>
+                  Смотреть <br>
+                  видео про нас
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="geo">
+          <div class="container">
+            <div class="geo__body">
+              <div class="geo__content">
+                <h2 class="geo__title h3">География доставок</h2>
+                <p class="geo__text">
+                  Благодаря регулярным поставкам из Европы вы всегда найдете популярные вкусы в наличии.
+                  Мы осуществляем доставку по всей территории России курьерской службой СДЭК. Оказываем
+                  высокий сервис корпоративным клиентам, подготовили гибкую систему лояльности, исходя из
+                  потребляемого объема капсул. Команда компании NATEM. natural emotions всегда c радостью
+                  проведет консультацию, поможет вам с выбором напитков и сделает ваше утро бодрым,
+                  наполненным самыми приятными “натуральным“ эмоциями.
+                </p>
+                <a class="geo__btn btn btn_brown" href="./catalog-tea.html">В каталог</a>
+              </div>
+              <div class="geo__map" id="map"></div>
+              <script src="https://api-maps.yandex.ru/v3/?apikey=473d36b2-1627-4fbb-adfe-0a1bd78ac4a9&lang=ru_RU"></script>
+              <script>
+                let coords = [
+                  [30.314997, 59.938784],
+                  [32.045287, 54.782635],
+                  [37.617698, 55.755864],
+                  [44.006516, 56.326797],
+                  [49.106414, 55.796127],
+                  [50.100202, 53.195878],
+                  [44.516975, 48.707067],
+                  [39.720358, 47.222078],
+                  [56.229443, 58.010455],
+                  [55.958736, 54.735152],
+                  [60.597474, 56.838011],
+                  [61.402554, 55.159902],
+                  [73.368221, 54.989347],
+                  [82.92043, 55.030204],
+                  [92.852572, 56.010569],
+                ];
+              </script>
+            </div>
+          </div>
+        </section>
+        <div class="b2b">
+          <div class="container">
+            <div class="b2b__body">
+              <div class="b2b__item b2b__item_large">
+                <div class="b2b__content">
+                  <h4 class="b2b__title h5">
+                    Широкий <br>
+                    ассортимент
+                  </h4>
+                  <p class="b2b__text">
+                    В&nbsp;нашем каталоге каждый найдет напиток по&nbsp;душе и&nbsp;в&nbsp;своем сегменте.
+                    Широко представлен бренд Nespresso и&nbsp;его многочисленные аналоги,
+                    не&nbsp;уступающие оригиналу в&nbsp;качестве и глубине линейки вкусов. Некоторые
+                    из&nbsp;них в&nbsp;мире даже более популярны последнего, мы точно знаем, чем хотим вас
+                    угостить, удивить и&nbsp;разнообразить ваши вкусовые впечатления. С&nbsp;нами
+                    вы&nbsp;можете не&nbsp;останавливаться на&nbsp;привычном!
+                  </p>
+                  <div class="b2b__img-box">
+                    <picture>
+                      <source srcset="./img/content/img/card-1-mobile.webp" media="(max-width: 479px)" type="image/webp">
+                      <source srcset="./img/content/img/card-1-mobile.jpg" media="(max-width: 479px)">
+                      <source srcset="./img/content/img/card-1.webp" type="image/webp">
+                      <img class="b2b__img" src="./img/content/img/card-1.jpg" alt="image">
+                    </picture>
+                  </div>
+                  <a class="b2b__btn btn btn_accent" href="./catalog-promos.html"> Спецпредложения </a>
+                </div>
+              </div>
+              <div class="b2b__item b2b__item_large">
+                <div class="b2b__content">
+                  <h4 class="b2b__title h5">
+                    Высокое <br>
+                    качество
+                  </h4>
+                  <p class="b2b__text">
+                    Мы&nbsp;сотрудничаем с&nbsp;самыми надежными и&nbsp;проверенными поставщиками
+                    из&nbsp;Италии и&nbsp;Швейцарии, выбираем для вас только лучшую продукцию.
+                    В&nbsp;нашей команде работают лучшие эксперты бренда Nespresso, недавно ушедшедшего
+                    с&nbsp;российского рынка. Специалисты прекрасно разбираются в&nbsp;сортах
+                    и&nbsp;других характеристиках продукта, умеют подобрать и&nbsp;посоветовать клиенту
+                    именно&nbsp;то, что ему необходимо.
+                  </p>
+                  <div class="b2b__img-box">
+                    <picture>
+                      <source srcset="./img/content/img/card-3-mobile.webp" media="(max-width: 479px)" type="image/webp">
+                      <source srcset="./img/content/img/card-3-mobile.jpg" media="(max-width: 479px)">
+                      <source srcset="./img/content/img/card-3.webp" type="image/webp">
+                      <img class="b2b__img" src="./img/content/img/card-3.jpg" alt="image">
+                    </picture>
+                  </div>
+                  <a class="b2b__btn btn btn_brown" href="./services.html">Сервис</a>
+                </div>
+              </div>
+              <div class="b2b__item b2b__item_large">
+                <div class="b2b__content">
+                  <h4 class="b2b__title h5">
+                    Удобство <br>
+                    доставки
+                  </h4>
+                  <p class="b2b__text">
+                    Отгрузка осуществляется на&nbsp;следующий день после заказа, который сопровождает
+                    менеджер в&nbsp;режиме онлайн. Мы&nbsp;верим, что качественный сервис
+                    и&nbsp;своевременная логистика удовлетворят самого требовательного клиента
+                    и&nbsp;сделают его постоянным.
+                  </p>
+                  <div class="b2b__img-box">
+                    <picture>
+                      <source srcset="./img/content/img/card-4-mobile.webp" media="(max-width: 479px)" type="image/webp">
+                      <source srcset="./img/content/img/card-4-mobile.jpg" media="(max-width: 479px)">
+                      <source srcset="./img/content/img/card-4.webp" type="image/webp">
+                      <img class="b2b__img" src="./img/content/img/card-4.jpg" alt="image">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div class="b2b__item b2b__item_large">
+                <div class="b2b__content">
+                  <h4 class="b2b__title h5">
+                    Кофейная <br>
+                    экспертиза
+                  </h4>
+                  <p class="b2b__text">
+                    Кофе-брейк&nbsp;&mdash; это целый ритуал и&nbsp;настоящее искусство. Мы&nbsp;поможем
+                    вам его постичь. Наши эксперты с&nbsp;радостью подскажут, какой кофе стоит выбрать
+                    именно вам, на&nbsp;какие свойства обратить внимание, какие бренды ассортимента стоит
+                    попробовать, чтобы расширить представления о&nbsp;палитре кофейных и&nbsp;чайных
+                    вкусов, доступных в интернет-магазине Natem.natural emotions.
+                  </p>
+                  <div class="b2b__img-box">
+                    <picture>
+                      <source srcset="./img/content/img/card-5-mobile.webp" media="(max-width: 479px)" type="image/webp">
+                      <source srcset="./img/content/img/card-5-mobile.jpg" media="(max-width: 479px)">
+                      <source srcset="./img/content/img/card-5.webp" type="image/webp">
+                      <img class="b2b__img" src="./img/content/img/card-5.jpg" alt="image">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="place">
+          <div class="container">
+            <div class="place__body">
+              <h2 class="place__title h3">Кофепоинты</h2>
+              <div class="place__main">
+                <ul class="place__list">
+                  <li class="place__item">
+                    <figure class="place__img-box">
+                      <picture><source srcset="./img/content/img/place-1.webp" type="image/webp"><img class="place__img" src="./img/content/img/place-1.jpg" alt="Price coffee"></picture>
+                    </figure>
+                    <div class="place__content">
+                      <h3 class="place__name h5">Price coffee</h3>
+                      <p class="place__text">
+                        Мы уделяем особое внимание каждому клиенту и готовы сделать всё возможное, чтобы
+                        ваш кофе-брейк заиграл новыми красками.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="place__item">
+                    <figure class="place__img-box">
+                      <picture><source srcset="./img/content/img/place-2.webp" type="image/webp"><img class="place__img" src="./img/content/img/place-2.jpg" alt="Price coffee"></picture>
+                    </figure>
+                    <div class="place__content">
+                      <h3 class="place__name h5">Price coffee</h3>
+                      <p class="place__text">
+                        Мы уделяем особое внимание каждому клиенту и готовы сделать всё возможное, чтобы
+                        ваш кофе-брейк заиграл новыми красками.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="place__item">
+                    <figure class="place__img-box">
+                      <picture><source srcset="./img/content/img/place-3.webp" type="image/webp"><img class="place__img" src="./img/content/img/place-3.jpg" alt="Price coffee"></picture>
+                    </figure>
+                    <div class="place__content">
+                      <h3 class="place__name h5">Price coffee</h3>
+                      <p class="place__text">
+                        Мы уделяем особое внимание каждому клиенту и готовы сделать всё возможное, чтобы
+                        ваш кофе-брейк заиграл новыми красками.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="place__item">
+                    <figure class="place__img-box">
+                      <picture><source srcset="./img/content/img/place-4.webp" type="image/webp"><img class="place__img" src="./img/content/img/place-4.jpg" alt="Price coffee"></picture>
+                    </figure>
+                    <div class="place__content">
+                      <h3 class="place__name h5">Price coffee</h3>
+                      <p class="place__text">
+                        Мы уделяем особое внимание каждому клиенту и готовы сделать всё возможное, чтобы
+                        ваш кофе-брейк заиграл новыми красками.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="place__item">
+                    <figure class="place__img-box">
+                      <picture><source srcset="./img/content/img/place-1.webp" type="image/webp"><img class="place__img" src="./img/content/img/place-1.jpg" alt="Price coffee"></picture>
+                    </figure>
+                    <div class="place__content">
+                      <h3 class="place__name h5">Price coffee</h3>
+                      <p class="place__text">
+                        Мы уделяем особое внимание каждому клиенту и готовы сделать всё возможное, чтобы
+                        ваш кофе-брейк заиграл новыми красками.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="place__item">
+                    <figure class="place__img-box">
+                      <picture><source srcset="./img/content/img/place-2.webp" type="image/webp"><img class="place__img" src="./img/content/img/place-2.jpg" alt="Price coffee"></picture>
+                    </figure>
+                    <div class="place__content">
+                      <h3 class="place__name h5">Price coffee</h3>
+                      <p class="place__text">
+                        Мы уделяем особое внимание каждому клиенту и готовы сделать всё возможное, чтобы
+                        ваш кофе-брейк заиграл новыми красками.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+                <button class="place__more btn btn_white" type="button">Показать еще</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="reviews">
+          <div class="container">
+            <div class="reviews__body">
+              <div class="reviews__title-box">
+                <h2 class="reviews__title h3">Отзывы</h2>
+                <div class="reviews__controls">
+                  <button
+                    class="reviews__button reviews__button_prev btn btn_green"
+                    type="button"
+                    aria-label="Листать назад"
+                  ></button>
+                  <button
+                    class="reviews__button reviews__button_next btn btn_green"
+                    type="button"
+                    aria-label="Листать вперёд"
+                  ></button>
+                </div>
+              </div>
+              <div class="reviews__slider">
+                <div class="reviews__items">
+                  <div class="reviews__item review">
+                    <div class="review__head">
+                      <div class="review__img-box">
+                        <picture><source srcset="./img/content/team/1.webp" type="image/webp"><img class="review__img" src="./img/content/team/1.jpg" alt="image"></picture>
+                      </div>
+                      <div class="review__info">
+                        <span class="review__name h7">Анастасия</span>
+                        <div class="review__rate" data-rate="3">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="review__text">
+                      Если вам не хочется покупать дорогостоящее оборудование, но хочется кофе,
+                      завариваемого под давлением, то мока (или гейзерная кофеварка) — это то, что нужно.
+                      Магия моки — в 3-х ступенчатом процессе приготовления.
+                    </p>
+                  </div>
+                  <div class="reviews__item review">
+                    <div class="review__head">
+                      <div class="review__img-box">
+                        <picture><source srcset="./img/content/team/2.webp" type="image/webp"><img class="review__img" src="./img/content/team/2.jpg" alt="image"></picture>
+                      </div>
+                      <div class="review__info">
+                        <span class="review__name h7">Название компании</span>
+                        <div class="review__rate" data-rate="5">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="review__text">
+                      Если вам не хочется покупать дорогостоящее оборудование, но хочется кофе,
+                      завариваемого под давлением, то мока (или гейзерная кофеварка) — это то, что нужно.
+                      Магия моки — в 3-х ступенчатом процессе приготовления. Принцип работы гейзерной
+                      кофеварки следующий: вода внизу закипает, пар вызывает давление, которое
+                      проталкивает воду вверх сквозь молотый кофе. Будет ли получившийся кофе похож на шот
+                      из эспрессо-машины? Если вы сделаете все правильно (особых навыков не требуется), то
+                      у вас получится сладко-горький и терпкий вкус. Чем лучше мока, тем выше качество.
+                    </p>
+                  </div>
+                  <div class="reviews__item review">
+                    <div class="review__head">
+                      <div class="review__img-box">
+                        <picture><source srcset="./img/content/team/4.webp" type="image/webp"><img class="review__img" src="./img/content/team/4.jpg" alt="image"></picture>
+                      </div>
+                      <div class="review__info">
+                        <span class="review__name h7">Имя неизвестного</span>
+                        <div class="review__rate" data-rate="4">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="review__text">
+                      Если вам не хочется покупать дорогостоящее оборудование, но хочется кофе,
+                      завариваемого под давлением, то мока (или гейзерная кофеварка) — это то, что нужно.
+                      Магия моки — в 3-х ступенчатом процессе приготовления. Принцип работы гейзерной
+                      кофеварки следующий: вода внизу закипает, пар вызывает давление, которое
+                      проталкивает воду вверх сквозь молотый кофе.
+                    </p>
+                  </div>
+                  <div class="reviews__item review">
+                    <div class="review__head">
+                      <div class="review__img-box">
+                        <picture><source srcset="./img/content/team/1.webp" type="image/webp"><img class="review__img" src="./img/content/team/1.jpg" alt="image"></picture>
+                      </div>
+                      <div class="review__info">
+                        <span class="review__name h7">Анастасия</span>
+                        <div class="review__rate" data-rate="3">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="review__text">
+                      Если вам не хочется покупать дорогостоящее оборудование, но хочется кофе,
+                      завариваемого под давлением, то мока (или гейзерная кофеварка) — это то, что нужно.
+                      Магия моки — в 3-х ступенчатом процессе приготовления.
+                    </p>
+                  </div>
+                  <div class="reviews__item review">
+                    <div class="review__head">
+                      <div class="review__img-box">
+                        <picture><source srcset="./img/content/team/2.webp" type="image/webp"><img class="review__img" src="./img/content/team/2.jpg" alt="image"></picture>
+                      </div>
+                      <div class="review__info">
+                        <span class="review__name h7">Название компании</span>
+                        <div class="review__rate" data-rate="5">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="review__text">
+                      Если вам не хочется покупать дорогостоящее оборудование, но хочется кофе,
+                      завариваемого под давлением, то мока (или гейзерная кофеварка) — это то, что нужно.
+                      Магия моки — в 3-х ступенчатом процессе приготовления. Принцип работы гейзерной
+                      кофеварки следующий: вода внизу закипает, пар вызывает давление, которое
+                      проталкивает воду вверх сквозь молотый кофе. Будет ли получившийся кофе похож на шот
+                      из эспрессо-машины? Если вы сделаете все правильно (особых навыков не требуется), то
+                      у вас получится сладко-горький и терпкий вкус. Чем лучше мока, тем выше качество.
+                    </p>
+                  </div>
+                  <div class="reviews__item review">
+                    <div class="review__head">
+                      <div class="review__img-box">
+                        <picture><source srcset="./img/content/team/4.webp" type="image/webp"><img class="review__img" src="./img/content/team/4.jpg" alt="image"></picture>
+                      </div>
+                      <div class="review__info">
+                        <span class="review__name h7">Имя неизвестного</span>
+                        <div class="review__rate" data-rate="4">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="review__text">
+                      Если вам не хочется покупать дорогостоящее оборудование, но хочется кофе,
+                      завариваемого под давлением, то мока (или гейзерная кофеварка) — это то, что нужно.
+                      Магия моки — в 3-х ступенчатом процессе приготовления. Принцип работы гейзерной
+                      кофеварки следующий: вода внизу закипает, пар вызывает давление, которое
+                      проталкивает воду вверх сквозь молотый кофе.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="faq">
+          <div class="container">
+            <div class="faq__body">
+              <div class="faq__main">
+                <div class="faq__sidebar">
+                  <h2 class="faq__title h3">FAQ</h2>
+                  <ul class="faq-tags">
+                    <li class="faq-tags__item">
+                      <button class="faq-tags__btn" type="button">Доставка</button>
+                    </li>
+                    <li class="faq-tags__item">
+                      <button class="faq-tags__btn" type="button">Оформление</button>
+                    </li>
+                    <li class="faq-tags__item">
+                      <button class="faq-tags__btn" type="button">Акции</button>
+                    </li>
+                    <li class="faq-tags__item">
+                      <button class="faq-tags__btn" type="button">Спецпредложение</button>
+                    </li>
+                    <li class="faq-tags__item">
+                      <button class="faq-tags__btn" type="button">О нас</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="faq__list">
+                  <ul class="spollers" data-spollers>
+                    <li class="spollers__item">
+                      <button class="spollers__btn h7" type="button" data-spoller>
+                        <span>Никакой магии - сила природы</span>
+                        <span class="spollers__icon-box">
+                          <svg class="spollers__icon">
+                            <use xlink:href="./img/icons/icons.svg#plus"></use>
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="spollers__body">
+                        <p class="spollers__text">
+                          Благодаря регулярным поставкам из Европы вы всегда найдете популярные вкусы в
+                          наличии. Мы осуществляем доставку по всей территории России курьерской службой
+                          СДЭК. Оказываем высокий сервис корпоративным клиентам, предоставляем и
+                          рассчитываем для каждого индивидуальный спец. офер на заказ большого объема
+                          кофе. Команда компании NATEM. natural emotions всегда c радостью проведет
+                          консультацию, поможет вам с выбором напитков и сделает ваше утро бодрым,
+                          наполненным самыми приятными «натуральными» эмоциями.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="spollers__item">
+                      <button class="spollers__btn h7" type="button" data-spoller>
+                        <span>
+                          Заголовок вопроса, он слишком длинный, поэтому занимает несколько строк,
+                          возможно даже три строки, а на мобилке и все четыре!
+                        </span>
+                        <span class="spollers__icon-box">
+                          <svg class="spollers__icon">
+                            <use xlink:href="./img/icons/icons.svg#plus"></use>
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="spollers__body">
+                        <p class="spollers__text">
+                          Благодаря регулярным поставкам из Европы вы всегда найдете популярные вкусы в
+                          наличии. Мы осуществляем доставку по всей территории России курьерской службой
+                          СДЭК. Оказываем высокий сервис корпоративным клиентам, предоставляем и
+                          рассчитываем для каждого индивидуальный спец. офер на заказ большого объема
+                          кофе. Команда компании NATEM. natural emotions всегда c радостью проведет
+                          консультацию, поможет вам с выбором напитков и сделает ваше утро бодрым,
+                          наполненным самыми приятными «натуральными» эмоциями.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="spollers__item">
+                      <button class="spollers__btn h7" type="button" data-spoller>
+                        <span>Никакой магии - сила природы</span>
+                        <span class="spollers__icon-box">
+                          <svg class="spollers__icon">
+                            <use xlink:href="./img/icons/icons.svg#plus"></use>
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="spollers__body">
+                        <p class="spollers__text">
+                          Благодаря регулярным поставкам из Европы вы всегда найдете популярные вкусы в
+                          наличии. Мы осуществляем доставку по всей территории России курьерской службой
+                          СДЭК. Оказываем высокий сервис корпоративным клиентам, предоставляем и
+                          рассчитываем для каждого индивидуальный спец. офер на заказ большого объема
+                          кофе. Команда компании NATEM. natural emotions всегда c радостью проведет
+                          консультацию, поможет вам с выбором напитков и сделает ваше утро бодрым,
+                          наполненным самыми приятными «натуральными» эмоциями.
+                        </p>
+                      </div>
+                    </li>
+                    <li class="spollers__item">
+                      <button class="spollers__btn h7" type="button" data-spoller>
+                        <span>Никакой магии - сила природы</span>
+                        <span class="spollers__icon-box">
+                          <svg class="spollers__icon">
+                            <use xlink:href="./img/icons/icons.svg#plus"></use>
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="spollers__body">
+                        <p class="spollers__text">
+                          Благодаря регулярным поставкам из Европы вы всегда найдете популярные вкусы в
+                          наличии. Мы осуществляем доставку по всей территории России курьерской службой
+                          СДЭК. Оказываем высокий сервис корпоративным клиентам, предоставляем и
+                          рассчитываем для каждого индивидуальный спец. офер на заказ большого объема
+                          кофе. Команда компании NATEM. natural emotions всегда c радостью проведет
+                          консультацию, поможет вам с выбором напитков и сделает ваше утро бодрым,
+                          наполненным самыми приятными «натуральными» эмоциями.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <button class="faq__more btn btn_white" type="button">Показать все вопросы</button>
+                </div>
+              </div>
+              <div class="subscribe">
+                <div class="subscribe__content">
+                  <h3 class="subscribe__title h4">Оформи подписку</h3>
+                  <p class="subscribe__text">Подписывайся на рассылку и будь в курсе скидок и акций</p>
+                </div>
+                <form class="subscribe__form" action="#">
+                  <input class="subscribe__input" type="email" placeholder="Ваш e-mail" required>
+                  <div class="subscribe__action">
+                    <label class="subscribe__agree agree agree_light">
+                      <input class="agree__checkbox" type="checkbox">
+                      <span class="agree__icon"></span>
+                      <span class="agree__text">
+                        Я соглашаюсь получать рекламные и иные маркетинговые сообщения от «Natem» на условиях
+                        <a href="./policy.html" target="_blank">Политики конфиденциальности</a>
+                        и <a href="./agree.html" target="_blank">Пользовательского соглашения</a>.
+                      </span>
+                    </label>
+                    <button class="subscribe__btn btn btn_white" type="submit">Подписаться</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__first">
+              <a class="logo logo_footer" href="./index.html">
+                <img class="logo__img" src="./img/content/logo.svg" alt="Natem">
+              </a>
+              <div class="footer__social social">
+                <p class="social__title">Мы в соцсетях</p>
+                <ul class="social__list">
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://vk.com"
+                      target="_blank"
+                      aria-label="Вконтакте"
+                      title="Вконтакте"
+                    >
+                      <img class="social__img" src="./img/icons/social/vk.svg" alt="Вконтакте">
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://ok.ru"
+                      target="_blank"
+                      aria-label="Одноклассники"
+                      title="Одноклассники"
+                    >
+                      <img class="social__img" src="./img/icons/social/ok.svg" alt="Одноклассники">
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://dzen.ru"
+                      target="_blank"
+                      aria-label="Дзен"
+                      title="Дзен"
+                    >
+                      <img class="social__img" src="./img/icons/social/dz.svg" alt="Дзен">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__main">
+              <nav class="footer-menu">
+                <div class="footer-menu__box">
+                  <h5 class="footer-menu__title h7">Каталог</h5>
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Кофе</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Чай</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Системы для воды</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Кофемашины</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Аксессуары</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-menu__box">
+                  <h5 class="footer-menu__title h7">Важное</h5>
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./about.html">О компании</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./services.html">Сервис</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./b2b.html">B2B</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./contacts.html">Контакты</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-promos.html">Спецпредложения</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-menu__box">
+                  <h5 class="footer-menu__title h7">Документы</h5>
+                  <ul class="footer-menu__list footer-menu__list_custom">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./policy.html">
+                        Политика обработки персональных данных
+                      </a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./agree.html">
+                        Согласие на обработку персональных данных
+                      </a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./offer.html">Публичная оферта</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./cookie.html">Политика Cookie</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div class="footer__last">
+              <div class="footer-contacts">
+                <div class="footer-contacts__main">
+                  <a class="footer-contacts__phone" href="tel:88003333887">8 800 33 33 887</a>
+                  <a class="footer-contacts__mail" href="mailto:support@natem.ru" target="_blank">
+                    support@natem.ru
+                  </a>
+                </div>
+                <div class="footer-contacts__action">
+                  <a class="footer-contacts__btn btn btn_green" href="#" data-popup="#contact-form">
+                    Обратный звонок
+                  </a>
+                  <a class="footer-contacts__btn btn btn_light" href="#" data-goto=".wrapper">Наверх</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="footer__copy">© 2023 Natem</div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Закрыть окно" title="Закрыть окно" type="button" data-close>
+          <svg class="popup__icon">
+            <use xlink:href="./img/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <form class="callback" action="#">
+            <h4 class="callback__title h5">Форма обратной связи</h4>
+            <div class="callback__inputs">
+              <div class="callback__input">
+                <div class="input">
+                  <input class="input__body" type="text" name="name" placeholder=" " required>
+                  <span class="input__placeholder">Ваше имя</span>
+                </div>
+              </div>
+              <div class="callback__input">
+                <div class="input">
+                  <input class="input__body" type="tel" name="tel" placeholder=" " required>
+                  <span class="input__placeholder">Телефон</span>
+                </div>
+              </div>
+            </div>
+            <button class="callback__btn btn btn_green" type="submit">Отправить</button>
+            <label class="callback__agree agree agree_dark">
+              <input class="agree__checkbox" type="checkbox">
+              <span class="agree__icon"></span>
+              <span class="agree__text">
+                Я соглашаюсь получать рекламные и иные маркетинговые сообщения от «Natem» на условиях
+                <a href="./policy.html" target="_blank">Политики конфиденциальности</a>
+                и <a href="./agree.html" target="_blank">Пользовательского соглашения</a>.
+              </span>
+            </label>
+          </form>
+          <!-- <div class="callback">
+            <h4 class="callback__title h5">Произошла ошибка, попробуйте еще</h4>
+            <p class="callback__text">💔</p>
+            <button class="callback__btn btn btn_green" type="button">Обновить</button>
+          </div> -->
+          <!-- <div class="callback">
+            <h4 class="callback__title h5">Ваша заявка отправлена!</h4>
+            <p class="callback__text">👌</p>
+            <button class="callback__btn btn btn_green" type="button">Обновить</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <nav class="mobile-menu">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__btn" href="./favorite.html" aria-label="Избранное" title="Избранное">
+            <svg class="mobile-menu__icon">
+              <use xlink:href="./img/icons/icons.svg#heart"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__btn" href="./cart.html" aria-label="Корзина" title="Корзина">
+            <svg class="mobile-menu__icon">
+              <use xlink:href="./img/icons/icons.svg#cart"></use>
+            </svg>
+          </a>
+          <span class="mobile-menu__count">999</span>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__btn" href="./lc.html" aria-label="Личный кабинет" title="Личный кабинет">
+            <svg class="mobile-menu__icon">
+              <use xlink:href="./img/icons/icons.svg#user"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__item">
+          <button class="mobile-menu__btn" data-menu type="button" aria-label="Меню" title="Меню">
+            <svg class="mobile-menu__icon">
+              <use xlink:href="./img/icons/icons.svg#menu"></use>
+              <use xlink:href="./img/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="mobile-sub-menu">
+            <ul class="mobile-sub-menu__list">
+              <li class="mobile-sub-menu__item">
+                <a class="mobile-sub-menu__link" href="./about.html">О компании</a>
+              </li>
+              <li class="mobile-sub-menu__item">
+                <a class="mobile-sub-menu__link" href="./services.html">Сервис</a>
+              </li>
+              <li class="mobile-sub-menu__item">
+                <a class="mobile-sub-menu__link" href="./b2b.html">B2B</a>
+              </li>
+              <li class="mobile-sub-menu__item">
+                <a class="mobile-sub-menu__link" href="./contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="cookie">
+      <p class="cookie__text">
+        Продолжая использовать сайт, Вы&nbsp;соглашаетесь на&nbsp;использование
+        <a href="#" target="_blank">файлов cookie</a>
+      </p>
+      <button class="cookie__btn btn btn_brown" type="button">Хорошо</button>
+    </div>
+  </body>
+</html>

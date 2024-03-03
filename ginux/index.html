@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Ginux</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="preloader">
+        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M125.694 30.7193C125.694 30.7193 130.294 45.6223 114.393 61.1253C110.713 64.7246 106.32 68.9236 101.833 73.5539C101.833 73.5539 82.9279 87.2385 81.501 118.788C81.501 118.788 71.964 123.999 57.7897 125.836C57.7897 125.836 73.3907 128.367 96.1821 115.976C96.1821 115.976 115.519 105.985 122.015 87.7821L112.421 90.594L130.482 68.6049L135.156 83.8267L128.661 85.945C128.661 85.945 117.922 133.991 65.7123 134.722C65.7123 134.722 29.5542 136.822 6.83789 109.715C19.942 128.292 44.3103 139.502 65.7123 139.502C106.489 139.502 139.531 106.716 139.531 69.1674C139.512 59.2507 136.301 43.4666 125.694 30.7193Z" fill="url(#paint0_linear_99_3)"/>
+          <path d="M40.3875 98.1843C40.0684 93.7602 39.7117 88.5301 39.1485 82.9813C39.1485 82.9813 40.6316 62.9043 20.5438 44.402C20.5438 44.402 22.4023 35.2165 29.0858 24.8499C29.0858 24.8499 18.7226 33.7168 14.2357 55.6496C14.2357 55.6496 10.3683 74.6767 18.7602 89.0737L23.9229 79.7757L26.42 104.352L14.3671 97.8093L16.1695 94.4726C16.1695 94.4726 -9.77585 59.9424 18.8354 25.1311C18.8354 25.1311 37.5903 0.123887 68.1351 0.236354C48.573 -1.46953 27.5839 8.35338 15.6814 22.4691C-7.01612 49.3321 -3.74949 89.3549 21.0881 110.257C27.6777 115.806 39.8806 122.46 54.2238 122.573C54.205 122.573 41.7956 117.286 40.3875 98.1843Z" fill="url(#paint1_linear_99_3)"/>
+          <path d="M54.8232 19.206C54.8232 19.206 76.244 3.74059 102.246 21.3993C102.246 21.3993 109.567 25.6735 117.903 36.3399C117.152 35.1776 113.397 26.6482 104.48 19.5623C84.4293 3.04699 56.4941 7.41481 42.151 21.8118C37.6265 26.1983 31.6564 35.1588 30.7178 45.4692C30.7178 45.4692 35.674 36.8835 50.0546 37.0334C53.9596 37.071 56.6818 36.8647 61.5066 37.0897C61.5066 37.0897 76.5819 39.6766 92.1641 25.5047C92.1641 25.5047 98.2092 27.398 105.587 32.8531C105.587 32.8531 99.561 24.8486 83.4157 20.2558C83.4157 20.2558 70.0111 16.0567 58.2775 21.4369L64.548 26.0296L46.2248 26.3108L51.7068 17.6689L54.8232 19.206Z" fill="url(#paint2_linear_99_3)"/>
+          <path d="M31.1842 57.1137C30.4895 54.7705 29.1002 49.5778 28.4808 43.5979C27.7111 36.2308 27.9551 26.1266 33.4745 19.6217C33.6435 19.5655 34.0378 19.453 34.6949 19.453C37.3419 19.453 43.4622 21.1589 54.9517 32.444L31.1842 57.1137Z" fill="#35B975"/>
+          <path d="M34.6776 20.2946C36.6676 20.2946 42.4312 21.5131 53.733 32.4608L31.5988 55.4622C29.7214 48.5636 25.8164 30.2489 33.9455 20.3509C34.0957 20.3322 34.3396 20.2946 34.6776 20.2946ZM34.6776 18.6075C33.476 18.6075 32.9317 18.945 32.9317 18.945C21.6487 31.9734 30.7914 58.724 30.7914 58.724L56.0985 32.4421C44.0458 20.4071 37.5124 18.6075 34.6776 18.6075Z" fill="#083629"/>
+          <path d="M31.2593 57.3944C30.6023 55.2011 29.1192 49.8397 28.4621 43.5972C27.6923 36.3238 27.9364 26.3885 33.2493 19.8836C34.1505 20.146 36.4221 20.9708 39.3695 23.314C42.899 26.1073 48.1369 31.6935 53.2622 42.4538L31.2593 57.3944Z" fill="#C4FF8B"/>
+          <path d="M33.5512 20.8559C34.6026 21.2308 36.555 22.1119 38.9956 24.0801C42.3374 26.7796 47.2935 32.0847 52.1935 42.1513L31.7677 56.0235C31.0355 53.4365 29.8715 48.7687 29.3271 43.4635C28.839 38.7958 28.9141 34.5592 29.5336 30.885C30.1907 26.8546 31.5612 23.4803 33.5512 20.8559ZM32.9317 18.9438C21.6487 31.9722 30.7914 58.7229 30.7914 58.7229L54.3149 42.7325C43.9894 20.5935 32.9317 18.9438 32.9317 18.9438Z" fill="#083629"/>
+          <path opacity="0.15" fill-rule="evenodd" clip-rule="evenodd" d="M33.1748 20.5568C33.1748 20.5568 43.5004 26.6492 46.523 39.1902L50.7846 36.8845C50.7846 36.8845 40.3465 19.3757 33.1748 20.5568Z" fill="black"/>
+          <path d="M33.4198 20.4248C34.4336 20.7622 36.5174 21.6245 39.1646 23.7427C42.5813 26.4797 47.6691 31.916 52.6628 42.3014L31.5236 56.6608C30.8102 54.2051 29.5336 49.2748 28.9329 43.5948C28.4447 38.8896 28.501 34.6154 29.1205 30.885C29.8528 26.6296 31.2796 23.1242 33.4198 20.4248ZM32.9317 18.9438C21.6487 31.9722 30.7914 58.7229 30.7914 58.7229L54.3149 42.7325C43.9894 20.5935 32.9317 18.9438 32.9317 18.9438Z" fill="#083629"/>
+          <path d="M85.0459 32.4408C96.5167 21.1371 102.637 19.4312 105.284 19.4312C105.941 19.4312 106.335 19.5437 106.504 19.5999C112.024 26.1047 112.268 36.2088 111.498 43.576C110.879 49.556 109.489 54.7487 108.795 57.0919L85.0459 32.4408Z" fill="#35B975"/>
+          <path d="M105.284 20.2946C105.622 20.2946 105.866 20.3322 106.016 20.3697C108.231 23.0691 109.714 26.5933 110.446 30.905C111.066 34.5791 111.141 38.8157 110.653 43.4834C110.146 48.4137 109.095 52.8002 108.363 55.4808L86.2283 32.4608C97.5301 21.4943 103.294 20.2946 105.284 20.2946ZM105.284 18.6075C102.449 18.6075 95.9155 20.4071 83.8628 32.4421L109.17 58.7427C109.17 58.7427 118.313 31.9734 107.03 18.945C107.03 18.9262 106.504 18.6075 105.284 18.6075Z" fill="#083629"/>
+          <path d="M107.031 18.925C107.031 18.925 95.9731 20.5746 85.6475 42.7324L109.171 58.7228C109.171 58.7228 118.314 31.9535 107.031 18.925Z" fill="#C4FF8B"/>
+          <path opacity="0.15" fill-rule="evenodd" clip-rule="evenodd" d="M106.805 20.5568C106.805 20.5568 96.498 26.6492 93.4754 39.1902L89.2139 36.8845C89.1951 36.8845 99.6333 19.3757 106.805 20.5568Z" fill="black"/>
+          <path d="M106.411 20.8558C108.401 23.4802 109.772 26.8545 110.448 30.885C111.067 34.5591 111.142 38.7957 110.654 43.4636C110.11 48.7686 108.946 53.4365 108.214 56.0234L87.7876 42.1326C92.6876 32.0472 97.6439 26.7421 100.986 24.0426C103.426 22.1118 105.36 21.2307 106.411 20.8558ZM107.031 18.925C107.031 18.925 95.9731 20.5746 85.6475 42.7324L109.171 58.7228C109.171 58.7228 118.314 31.9535 107.031 18.925Z" fill="#083629"/>
+          <path d="M107.613 46.3872C95.936 29.4783 74.1773 29.6284 69.9908 29.8158C65.8043 29.6284 44.0454 29.4783 32.3682 46.3872C32.3682 46.3872 17.1802 68.4325 18.9074 89.2594C18.9074 89.2594 19.2453 96.4954 30.303 104.762C30.303 104.762 51.4986 122.384 69.9908 121.334C88.4828 122.384 109.678 104.762 109.678 104.762C120.736 96.4954 121.074 89.2594 121.074 89.2594C122.801 68.4325 107.613 46.3872 107.613 46.3872Z" fill="#35B975"/>
+          <path d="M120.153 80.5612C120.153 80.5612 120.116 77.6744 119.346 75.3499C116.905 74.3001 113.413 73.4941 108.457 73.4565C108.457 73.4565 95.9915 74.1688 85.1214 79.4177C85.1214 79.4177 84.5019 71.5444 69.8959 71.6757C55.3087 71.5256 54.6892 79.3989 54.6892 79.3989C43.8381 74.1688 31.3911 73.4565 31.3911 73.4565C26.5287 73.4941 23.093 74.2626 20.6525 75.2936C20.4835 76.9807 19.8265 80.3925 19.8265 80.3925C18.7751 87.3285 18.7751 93.5522 27.824 101.875C27.824 101.875 47.987 120.584 69.8021 120.696V120.79C88.9513 121.952 111.592 102.419 111.592 102.419C120.679 94.5833 121.298 89.5405 120.153 80.5612Z" fill="#C4FF8B"/>
+          <path opacity="0.15" fill-rule="evenodd" clip-rule="evenodd" d="M120.154 89.6142C118.915 98.7622 104.685 107.723 104.685 107.723C82.1936 122.813 70.3474 120.676 70.3474 120.676C44.3834 121.126 23.0376 96.3627 23.0376 96.3627C46.9553 118.539 70.1596 117.471 70.1596 117.471C84.0334 117.733 103.239 104.517 103.239 104.517C103.239 104.517 115.78 95.9878 116.23 89.2579C116.23 89.2579 118.446 66.8003 108.946 50.21C108.946 50.1914 121.844 68.0376 120.154 89.6142Z" fill="black"/>
+          <path d="M71.8307 31.468C74.9472 31.468 81.1614 31.8054 87.7884 33.9987C95.711 36.6419 101.906 41.1222 106.206 47.3459C106.243 47.4021 109.96 52.8196 113.433 60.6929C115.48 65.3046 117.019 69.841 118.052 74.1526C119.309 79.514 119.76 84.5378 119.385 89.1119V89.1307V89.1681C119.366 89.2994 119.197 90.9116 117.902 93.3673C116.625 95.748 113.997 99.4222 108.665 103.396L108.627 103.415L108.59 103.434C108.533 103.471 103.577 107.577 96.5182 111.607C90.0789 115.281 80.5419 119.668 71.5867 119.668C71.0798 119.668 70.573 119.649 70.0848 119.63H69.9909H69.8971C69.409 119.649 68.9021 119.668 68.3952 119.668C59.4401 119.668 49.903 115.281 43.4637 111.607C36.4048 107.577 31.4485 103.471 31.3922 103.434L31.3547 103.415L31.3171 103.396C25.9854 99.4222 23.357 95.748 22.0804 93.3673C20.7851 90.9302 20.5973 89.3368 20.5973 89.1681V89.1119C20.2218 84.5566 20.6723 79.5327 21.9302 74.1901C22.944 69.8786 24.4835 65.3608 26.5299 60.7492C30.0029 52.8571 33.739 47.4021 33.7764 47.3459C38.0757 41.1222 44.2522 36.6419 52.1935 33.9987C58.8206 31.7866 65.0347 31.468 68.1511 31.468C68.9397 31.468 69.5404 31.4866 69.9159 31.5054H69.9909H70.0661C70.4416 31.4866 71.0423 31.468 71.8307 31.468ZM71.8307 29.7808C71.0423 29.7808 70.4228 29.7996 69.9909 29.8184C69.5592 29.7996 68.9209 29.7808 68.1511 29.7808C61.3926 29.7808 42.8441 31.243 32.3872 46.3898C32.3872 46.3898 17.1992 68.4351 18.9264 89.262C18.9264 89.262 19.2644 96.4978 30.3221 104.765C30.3221 104.765 50.3161 121.392 68.414 121.392C68.9585 121.392 69.484 121.374 70.0097 121.355C70.5354 121.392 71.0798 121.392 71.6055 121.392C89.6846 121.392 109.697 104.765 109.697 104.765C120.755 96.4978 121.093 89.262 121.093 89.262C122.82 68.4351 107.632 46.3898 107.632 46.3898C97.1565 31.243 78.5893 29.7808 71.8307 29.7808Z" fill="#083629"/>
+          <path d="M70.5901 85.98H69.1445V95.0156H70.5901V85.98Z" fill="#073629"/>
+          <path d="M82.6427 94.1529C82.4363 93.0657 81.6102 93.4406 81.6102 93.4406C79.395 94.0592 75.8279 94.2654 75.8279 94.2654C71.8479 94.2654 70.2333 90.9287 69.8392 89.9351V89.6539C69.8392 89.6539 69.8204 89.7102 69.7828 89.8039C69.7452 89.7102 69.7264 89.6539 69.7264 89.6539V89.9351C69.3323 90.9473 67.7364 94.2654 63.7564 94.2654C63.7564 94.2654 60.2082 94.0592 57.9928 93.4406C57.9928 93.4406 57.1668 93.0845 56.9603 94.1529C56.9603 94.1529 55.1017 103.151 63.7564 106.075H75.8091C84.5013 103.151 82.6427 94.1529 82.6427 94.1529Z" fill="black"/>
+          <path d="M69.6326 92.1474L69.8016 92.6159L69.9705 92.1474C71.0031 93.5907 72.8241 95.2217 75.8279 95.2217H75.8467H75.8655C76.0157 95.2217 79.3948 95.0155 81.6853 94.4157C81.7415 94.7718 82.042 96.7026 81.5164 98.8771C80.7841 101.914 78.7941 104.032 75.659 105.138H69.839H69.7452H63.9442C60.8089 104.032 58.8377 101.933 58.1054 98.8771C57.5799 96.7214 57.8615 94.7718 57.9365 94.4157C60.227 95.0155 63.5875 95.2217 63.7376 95.2217H63.7564H63.7752C66.779 95.2217 68.6 93.5907 69.6326 92.1474ZM69.839 89.6353C69.839 89.6353 69.8204 89.6916 69.7828 89.7854C69.7452 89.6916 69.7264 89.6353 69.7264 89.6353V89.9165C69.3323 90.9289 67.7364 94.2469 63.7564 94.2469C63.7564 94.2469 60.2082 94.0406 57.9928 93.4221C57.9928 93.4221 57.8615 93.3659 57.6925 93.3659C57.4296 93.3659 57.0916 93.497 56.9603 94.1345C56.9603 94.1345 55.1017 103.132 63.7564 106.057H69.7264H69.8204H75.8091C84.4826 103.132 82.624 94.1345 82.624 94.1345C82.4926 93.4784 82.1546 93.3659 81.8919 93.3659C81.7229 93.3659 81.5914 93.4221 81.5914 93.4221C79.3762 94.0406 75.8091 94.2469 75.8091 94.2469C71.8292 94.2469 70.2145 90.9101 69.8204 89.9165V89.6353H69.839Z" fill="#073629"/>
+          <path d="M69.8026 91.8291L69.3521 92.6351H70.2343L69.8026 91.8291Z" fill="black"/>
+          <path d="M69.6523 113.797C63.626 113.797 61.8987 109.616 61.8237 109.429L61.8049 109.391C60.8662 107.329 61.7486 104.555 62.0113 103.805C63.3818 102.905 64.696 102.455 65.8975 102.455C67.9815 102.455 69.1266 103.824 69.3332 104.105L69.8963 104.855L70.4784 104.105C70.6849 103.843 71.8489 102.493 73.8952 102.493C75.0966 102.493 76.3921 102.943 77.7813 103.843C78.063 104.592 78.9452 107.348 77.9878 109.41V109.429V109.448C77.9128 109.616 76.2607 113.591 70.5722 113.797C70.5722 113.797 69.7273 113.797 69.6523 113.797Z" fill="#E46767"/>
+          <path d="M65.8975 103.188C67.6811 103.188 68.6573 104.407 68.7511 104.557L69.8774 106.057L71.0416 104.576C71.2105 104.351 72.1867 103.226 73.895 103.226C74.8902 103.226 75.9978 103.601 77.1805 104.332C77.556 105.419 78.0253 107.613 77.3307 109.131L77.3119 109.15L77.2931 109.206C77.1993 109.431 75.7162 112.786 70.8162 113.086L69.8024 113.105C69.7461 113.105 69.6898 113.105 69.6335 113.105C64.2078 113.105 62.5745 109.45 62.4807 109.206V109.187L62.4619 109.131C61.7673 107.594 62.2554 105.4 62.6121 104.313C63.8137 103.563 64.9025 103.188 65.8975 103.188ZM65.8975 101.745C64.6771 101.745 63.194 102.157 61.4294 103.339C61.4294 103.339 59.9087 106.975 61.1477 109.693C61.1477 109.693 63.0063 114.511 69.6523 114.511C69.7085 114.511 69.7837 114.511 69.8588 114.511C69.9526 114.511 70.0464 114.511 70.1592 114.511C76.805 114.511 78.6824 109.693 78.6824 109.693C79.9215 106.975 78.4008 103.357 78.4008 103.357C76.636 102.176 75.1341 101.764 73.9138 101.764C71.5483 101.764 70.2154 103.301 69.915 103.657C69.6898 103.376 68.3381 101.745 65.8975 101.745Z" fill="#8B2D30"/>
+          <path d="M70.6848 104.241H69.2393V111.739H70.6848V104.241Z" fill="#8B2D30"/>
+          <path d="M74.6266 105.589C72.4676 104.671 71.1535 107.52 71.1535 107.52C70.4026 108.907 69.9895 109.245 69.9895 109.245C69.9895 109.245 69.5764 108.907 68.8444 107.52C68.8444 107.52 67.549 104.671 65.3899 105.589C65.3899 105.589 63.5127 106.245 64.7141 109.338C64.7141 109.338 65.8594 112.713 69.9895 112.713C74.1385 112.713 75.2837 109.357 75.2837 109.357C76.504 106.245 74.6266 105.589 74.6266 105.589Z" fill="#FFAAAE"/>
+          <path d="M70.1969 75.69C65.3533 75.69 61.4297 77.3021 61.4297 79.2891C61.4297 82.8134 67.625 86.9376 69.8966 86.9376C72.1119 86.9376 78.9455 82.8322 78.9455 79.2891C78.9643 77.3021 75.0405 75.69 70.1969 75.69Z" fill="#000709"/>
+          <path d="M70.1021 80.8051C73.8244 80.8051 76.8419 79.7895 76.8419 78.5368C76.8419 77.2841 73.8244 76.2685 70.1021 76.2685C66.3798 76.2685 63.3623 77.2841 63.3623 78.5368C63.3623 79.7895 66.3798 80.8051 70.1021 80.8051Z" fill="#808080"/>
+          <path d="M46.6172 43.3874C46.6172 43.3874 52.3994 41.7565 56.4358 45.0182C56.4358 45.0182 52.8313 39.207 46.6172 43.3874Z" fill="#003323"/>
+          <path d="M83.2988 45.0199C87.3352 41.7206 93.1176 43.3702 93.1176 43.3702C86.9035 39.1711 83.2988 45.0199 83.2988 45.0199Z" fill="#003323"/>
+          <path d="M56.4721 63.8603C56.0779 55.6119 50.5959 53.3812 50.5959 53.3812C43.9125 51.2254 39.7259 57.5804 39.7259 57.5804C35.4644 63.2416 37.9425 69.2591 37.9425 69.2591C49.0378 68.6217 54.8012 71.1712 54.8012 71.1712C56.8664 68.9217 56.4721 63.8603 56.4721 63.8603Z" fill="#23A662"/>
+          <path d="M54.6131 63.4828C53.6369 56.1531 48.9059 55.4033 48.9059 55.4033C43.3676 54.4284 40.683 60.0148 40.683 60.0148C38.5804 64.2513 40.4954 68.0005 40.4954 68.0005C49.2626 67.3819 53.9185 69.9314 53.9185 69.9314C55.2702 68.1881 54.6131 63.4828 54.6131 63.4828Z" fill="black"/>
+          <path d="M42.6249 62.9688C43.1503 62.6174 43.3892 62.0535 43.1583 61.7095C42.9276 61.3655 42.3145 61.3714 41.789 61.7229C41.2636 62.0744 41.0247 62.6381 41.2554 62.9823C41.4863 63.3263 42.0993 63.3203 42.6249 62.9688Z" fill="white"/>
+          <path d="M49.3578 58.8755C49.0387 57.9381 48.0625 58.2942 48.0625 58.2942C47.4618 58.5006 46.9173 58.4818 46.9173 58.4818C48.0625 58.0694 47.4994 57.1321 47.4994 57.1321C46.8422 56.2135 45.6594 56.9446 45.6594 56.9446C43.9511 57.9944 44.1763 60.3001 44.1763 60.3001C45.7158 60.8437 47.6683 60.5813 47.6683 60.5813C49.7334 60.2439 49.3578 58.8755 49.3578 58.8755Z" fill="white"/>
+          <path d="M100.14 57.5615C100.14 57.5615 95.9532 51.2065 89.2886 53.3624C89.2886 53.3624 83.8066 55.5931 83.4124 63.8601C83.4124 63.8601 83.0181 68.9215 85.0833 71.1898C85.0833 71.1898 90.8279 68.6403 101.923 69.2777C101.923 69.2589 104.401 63.2228 100.14 57.5615Z" fill="#23A662"/>
+          <path d="M99.1836 59.9986C99.1836 59.9986 96.499 54.3936 90.9607 55.3683C90.9607 55.3683 86.2485 56.0994 85.2723 63.4666C85.2723 63.4666 84.6152 68.1907 85.9482 69.9152C85.9482 69.9152 90.604 67.3659 99.3526 67.9844C99.3712 68.0032 101.286 64.2352 99.1836 59.9986Z" fill="black"/>
+          <path d="M88.4634 61.6476C88.1817 61.3288 87.5622 61.385 87.0553 61.7601C86.5484 62.135 86.3794 62.6974 86.6424 63.016C86.9239 63.3347 87.5434 63.2784 88.0503 62.9036C88.5572 62.5287 88.745 61.9663 88.4634 61.6476Z" fill="white"/>
+          <path d="M94.7163 58.8755C94.3971 57.9381 93.4209 58.2942 93.4209 58.2942C92.8202 58.5006 92.2757 58.4818 92.2757 58.4818C93.4209 58.0694 92.8576 57.1321 92.8576 57.1321C92.2006 56.2135 91.0178 56.9446 91.0178 56.9446C89.3094 57.9944 89.5347 60.3001 89.5347 60.3001C91.0742 60.8437 93.0266 60.5813 93.0266 60.5813C95.073 60.2439 94.7163 58.8755 94.7163 58.8755Z" fill="white"/>
+          <defs>
+          <linearGradient id="paint0_linear_99_3" x1="65.5216" y1="140.279" x2="83.894" y2="24.1085" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#32B875"/>
+          <stop offset="1" stop-color="#78C940"/>
+          </linearGradient>
+          <linearGradient id="paint1_linear_99_3" x1="22.9831" y1="118.17" x2="42.2811" y2="-3.85248" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#39B971"/>
+          <stop offset="1" stop-color="#78C940"/>
+          </linearGradient>
+          <linearGradient id="paint2_linear_99_3" x1="72.5025" y1="52.0776" x2="79.3019" y2="9.08365" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#69C54B"/>
+          <stop offset="1" stop-color="#7DCA2D"/>
+          </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a
+              class="logo logo_header"
+              href="#"
+              data-goto=".wrapper"
+              aria-label="scroll up"
+            >
+              <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" aria-label="Open menu">
+                <span class="menu__btn-inner" aria-hidden="true">
+                  <i class="menu__icon">
+                    <span></span>
+                  </i>
+                  <span class="menu__btn-hover">
+                    <i class="menu__icon">
+                      <span></span>
+                    </i>
+                  </span>
+                </span>
+              </button>
+              <div class="menu__body">
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a
+                      class="menu__link"
+                      href="#"
+                      data-goto-header
+                      data-goto=".about"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      class="menu__link"
+                      href="#"
+                      data-goto-header
+                      data-goto=".stats"
+                    >
+                      Tokenomics
+                    </a>
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      class="menu__link"
+                      href="#"
+                      data-goto-header
+                      data-goto=".class"
+                    >
+                      Donate
+                    </a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#" data-goto-header data-goto=".faq">
+                      FAQ
+                    </a>
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      class="menu__link"
+                      href="#"
+                      data-goto-header
+                      data-goto=".class"
+                    >
+                      Blog
+                    </a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#" data-goto-header data-goto=".how">
+                      How to buy
+                    </a>
+                  </li>
+                  <li class="menu__item">
+                    <a
+                      class="menu__link"
+                      href="https://farm.greenshiba.org/"
+                      target="_blank"
+                    >
+                      Farm
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <a
+              class="header__btn btn btn_main"
+              href="https://pancakeswap.finance/swap?outputCurrency=0xc9ad37e9baf41377540df5a77831db98c1915128"
+              data-da=".menu__body,767,last"
+              target="_blank"
+              rel="nofollow noopener"
+            >
+              <span class="btn__inner">
+                <span class="btn__text icon-arr-right">Buy GINUX</span>
+                <span class="btn__hover-wrapper" aria-hidden="true">
+                  <i class="btn__hover-inner icon-arr-right">Buy GINUX</i>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="welcome">
+          <div class="container">
+            <div class="welcome__header">
+              <span class="welcome__suptitle stars">Ginux</span>
+              <p class="welcome__desc">
+                The only green you need in your wallet, since 2021
+              </p>
+            </div>
+            <div class="welcome__body">
+              <div class="welcome__content">
+                <h1 class="welcome__title">
+                  Making the World Greener with Memes!
+                </h1>
+                <p class="welcome__text">
+                  Green Shiba Inu is an innovative fully decentralized,
+                  zero-emission and fairly distributed community-driven token
+                  disrupting the meme economy aiming at protecting
+                  the environment. <br>
+                  Shibas will reignite the meme scene again!
+                </p>
+                <div class="welcome__action">
+                  <a
+                    class="btn btn_main"
+                    href="https://pancakeswap.finance/swap?outputCurrency=0xc9ad37e9baf41377540df5a77831db98c1915128"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <span class="btn__inner">
+                      <span class="btn__text icon-arr-right">Buy GINUX</span>
+                      <span class="btn__hover-wrapper" aria-hidden="true">
+                        <i class="btn__hover-inner icon-arr-right">
+                          Buy GINUX
+                        </i>
+                      </span>
+                    </span>
+                  </a>
+                  <a
+                    class="btn btn_link icon-arr-right"
+                    href="#"
+                    data-popup="#video"
+                    data-popup-youtube="e9RyPhSN-k8"
+                  >
+                    How to buy
+                  </a>
+                </div>
+              </div>
+              <div class="welcome__img-box">
+                <picture>
+                  <source srcset="./img/content/welcome_img_2.webp" media="(max-width: 479px)" type="image/webp">
+                  <source srcset="./img/content/welcome_img_2.png" media="(max-width: 479px)">
+                  <source srcset="./img/content/welcome_img.webp" type="image/webp">
+                  <img class="welcome__img" src="./img/content/welcome_img.png" alt="image">
+                </picture>
+                <div class="welcome__hero"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <div class="container">
+            <div class="about__body">
+              <div class="about__img-box">
+                <img class="about__img" src="./img/content/about_img.svg" alt="image">
+                <div class="about__hero"></div>
+              </div>
+              <div class="about__content card">
+                <h2 class="about__title title">About Green Shiba Inu</h2>
+                <p class="about__text">
+                  Many dog meme coins were born after Dogecoin and Shiba Inu,
+                  but none of them have had the power to be eco-friendly and to
+                  protect the environment by supporting the main activists in
+                  this field, as well as the good causes that matter the most to
+                  us all, through its strong green community.
+                  <br><br>
+                  A wise man by the name of Elon once said, 'Who controls memes,
+                  controls the Universe'. We are happy to make the world greener
+                  with the power of memes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="stats">
+          <div class="container">
+            <div class="stats__body">
+              <h2 class="stats__title title stars">
+                <span>Tokenomics & Stats</span>
+              </h2>
+              <div class="stats__main">
+                <ul class="stats__list">
+                  <li class="stats__item">
+                    <span class="stats__rate" style="color: #c4ff8a">46%</span>
+                    <span class="stats__text">burned on launch</span>
+                  </li>
+                  <li class="stats__item">
+                    <span class="stats__rate" style="color: #23a662">39%</span>
+                    <span class="stats__text">on Pancakeswap to buy</span>
+                  </li>
+                  <li class="stats__item">
+                    <span class="stats__rate" style="color: #117d45">8%</span>
+                    <span class="stats__text">
+                      for listings, airdrops and famous environmental activists
+                    </span>
+                  </li>
+                  <li class="stats__item">
+                    <span class="stats__rate" style="color: #699ff0">5%</span>
+                    <span class="stats__text">for farming</span>
+                  </li>
+                  <li class="stats__item">
+                    <span class="stats__rate" style="color: #4d7abb">2%</span>
+                    <span class="stats__text">for marketing</span>
+                  </li>
+                </ul>
+                <div class="stats__img-box">
+                  <img class="stats__img" src="./img/content/stats.svg" alt="image">
+                </div>
+              </div>
+              <ul class="nums">
+                <li class="nums__item">
+                  <div class="nums__img-box">
+                    <img class="nums__img" src="./img/content/nums-1.svg" alt="Currency supply">
+                  </div>
+                  <span class="nums__stats">5,270,812,045,910</span>
+                  <span class="nums__desc">Currency supply</span>
+                </li>
+                <li class="nums__item">
+                  <div class="nums__img-box">
+                    <img class="nums__img" src="./img/content/nums-2.svg" alt="Tokens burned">
+                  </div>
+                  <span class="nums__stats">4,729,515,715,086</span>
+                  <span class="nums__desc">Tokens burned</span>
+                </li>
+                <li class="nums__item">
+                  <div class="nums__img-box">
+                    <img class="nums__img" src="./img/content/nums-3.svg" alt="Market cap">
+                  </div>
+                  <span class="nums__stats">$ 62,332,686</span>
+                  <span class="nums__desc">Market cap</span>
+                </li>
+                <li class="nums__item">
+                  <div class="nums__img-box">
+                    <img class="nums__img" src="./img/content/nums-4.svg" alt="Price">
+                  </div>
+                  <span class="nums__stats">$ 0,06</span>
+                  <span class="nums__desc">Price</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="especial">
+          <div class="container">
+            <div class="especial__body">
+              <div class="especial__hero"></div>
+              <div class="especial__content card">
+                <h2 class="especial__title title">
+                  What makes Green Shiba InuSpecial?
+                </h2>
+                <ul
+                  class="especial__list spollers"
+                  data-spollers
+                  data-one-spoller
+                >
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      BSC Ecosystem
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        The Green Shiba Inu is a token on the Binance Smart
+                        Chain which aimsat setting up a Carbon Neutral Economy,
+                        with a sustainable cryptodevelopment, thus reducing the
+                        emissions and the subsequent carbonfootprint that stems
+                        from mining.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      Community-driven token & Incentives
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        The Green Shiba Inu is a non-profit organization fully
+                        governed by its community. The power of the Green Shiba
+                        Inu is to gather together friends with its shill wow
+                        power and it will inevitably become famous by
+                        word-of-mouth, inviting the community to share memes and
+                        a good laugh to protect the environment.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      Green Shiba Inu Offering
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        The Green Shiba Inu community allocated 8% of its
+                        reserves for supporting celebrities who champion
+                        environmental causes in 2021.
+                        <br><br>
+                        Although GINUX remains committed to distributing these
+                        reserves, the community remains at the core of the Green
+                        Shiba Inu mission, and expanding our reach to a wider
+                        audience requires us to list our token on more
+                        exchanges. Therefore, any unredeemed tokens from the
+                        offering will be reinvested for future listings when the
+                        opportunity arises.
+                      </p>
+                    </div>
+                  </li>
+                  <li class="spollers__item">
+                    <button
+                      class="spollers__btn icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      GINUX Protocol
+                    </button>
+                    <div class="spollers__body">
+                      <p class="spollers__text">
+                        The contract has been renounced, and the protocol is now
+                        immutable. There are no team tokens, and the fair launch
+                        took place in 2021.
+                        <br><br>
+                        What sets this protocol apart? It offers a frictionless
+                        yield generation system with an automatic token burnings
+                        protocol. Every transaction incurs a 4% fee, which is
+                        then distributed as follows:
+                      </p>
+                      <br>
+                      <ul>
+                        <li>
+                          Up to 4% of the fee is redistributed to existing
+                          holders, providing a rewarding experience for those
+                          who hold on to their tokens.
+                        </li>
+                        <li>
+                          Up to 4% of the fee is burned, reducing the total
+                          supply of tokens and increasing the value for holders.
+                        </li>
+                      </ul>
+                      <br>
+                      <p class="spollers__text">
+                        Both A and B are variable, but A+B always adds up to 4%.
+                        With this innovative protocol, hodlers generate yield
+                        effortlessly while also benefiting from deflationary
+                        pressure that increases GINUX token's value over time.
+                        <br><br>
+                        Start earning GINUX just by holding!
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="facts">
+          <div class="container">
+            <div class="facts__body">
+              <h2 class="facts__title title stars">Facts</h2>
+              <ul class="facts__list">
+                <li class="facts__item">
+                  <h3 class="facts__name">Fair launch</h3>
+                  <p class="facts__desc">
+                    50% supply burned, remaining LP allocation locked for
+                    environmental activists. No team tokens
+                  </p>
+                  <div class="facts__img-box">
+                    <img class="facts__img" src="./img/content/facts-1.svg" alt="Fair launch">
+                  </div>
+                </li>
+                <li class="facts__item">
+                  <h3 class="facts__name">Transparency</h3>
+                  <p class="facts__desc">
+                    Ownership renounced, liquidity locked
+                  </p>
+                  <div class="facts__img-box">
+                    <img class="facts__img" src="./img/content/facts-2.svg" alt="Transparency">
+                  </div>
+                </li>
+                <li class="facts__item">
+                  <h3 class="facts__name">Decentralization and adoption</h3>
+                  <p class="facts__desc">
+                    Community-driven by volunteers, decentralized
+                  </p>
+                  <div class="facts__img-box">
+                    <img class="facts__img" src="./img/content/facts-3.svg" alt="Decentralization and adoption">
+                  </div>
+                </li>
+                <li class="facts__item">
+                  <h3 class="facts__name">GINUX-Fi</h3>
+                  <p class="facts__desc">
+                    Farm GINUX on Pancakeswap or stake at
+                    <a href="https://farm.greenshiba.org" target="_blank">
+                      https://farm.greenshiba.org
+                    </a>
+                    to earn
+                  </p>
+                  <div class="facts__img-box">
+                    <img class="facts__img" src="./img/content/facts-4.svg" alt="GINUX-Fi">
+                  </div>
+                </li>
+                <li class="facts__item">
+                  <h3 class="facts__name">Token Burn & Buybacks</h3>
+                  <p class="facts__desc">
+                    Buybacks and token burns executed to enhance value and
+                    scarcity
+                  </p>
+                  <div class="facts__img-box">
+                    <img class="facts__img" src="./img/content/facts-5.svg" alt="Token Burn & Buybacks">
+                  </div>
+                </li>
+                <li class="facts__item">
+                  <h3 class="facts__name">Deflationary</h3>
+                  <p class="facts__desc">
+                    Fees generated from transactions are redistributed to
+                    hodlers, leading to passive earnings over time thanks to the
+                    unique GINUX protocol
+                  </p>
+                  <div class="facts__img-box">
+                    <img class="facts__img" src="./img/content/facts-6.svg" alt="Deflationary">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="how">
+          <div class="container">
+            <div class="how__body card">
+              <h2 class="how__title title">How To Buy</h2>
+              <ul class="how__list">
+                <li class="how__item">
+                  <div class="how__img-box">
+                    <img class="how__img" src="./img/content/how-1.svg" alt="Create a Wallet">
+                  </div>
+                  <div class="how__content">
+                    <h3 class="how__name">Create a Wallet</h3>
+                    <p class="how__text">
+                      Download Metamask or any preferred wallet for free. If
+                      using a desktop browser, download the Metamask extension
+                      on Firefox or Google Chrome at
+                      <a href="https://metamask.io/" target="_blank">
+                        metamask.io
+                      </a>
+                    </p>
+                  </div>
+                </li>
+                <li class="how__item">
+                  <div class="how__img-box">
+                    <img class="how__img" src="./img/content/how-2.svg" alt="Get some BNB">
+                  </div>
+                  <div class="how__content">
+                    <h3 class="how__name">Get some BNB</h3>
+                    <p class="how__text">
+                      Buy BNB from Binance or any preferred exchange. You can
+                      also buy it directly on Metamask or transfer from any
+                      wallet to yours
+                    </p>
+                  </div>
+                </li>
+                <li class="how__item">
+                  <div class="how__img-box">
+                    <img class="how__img" src="./img/content/how-3.svg" alt="Go to Pancakeswap">
+                  </div>
+                  <div class="how__content">
+                    <h3 class="how__name">Go to Pancakeswap</h3>
+                    <p class="how__text">
+                      On your mobile or desktop browser, connect to
+                      <a
+                        href="https://pancakeswap.finance/swap?outputCurrency=0xc9ad37e9baf41377540df5a77831db98c1915128"
+                        target="_blank"
+                      >
+                        Pancakeswap
+                      </a>
+                      and connect your wallet. Paste the $GINUX contract address
+                      (<span class="token"
+                        >0xc9ad37e9baf41377540df5a77831db98c1915128</span
+                      >) and confirm the selection. Confirm the wallet signature
+                    </p>
+                  </div>
+                </li>
+                <li class="how__item">
+                  <div class="how__img-box">
+                    <img class="how__img" src="./img/content/how-4.svg" alt="Switch BNB for $GINUX">
+                  </div>
+                  <div class="how__content">
+                    <h3 class="how__name">Switch BNB for $GINUX</h3>
+                    <p class="how__text">
+                      Input the amount of GINUX you wish to purchase. Enable
+                      GINUX and sign it. Click SWAP and approve the transaction
+                      in the Metamask window. Your wallet will now have GINUX,
+                      and you've now taken the first step towards generational
+                      wealth.
+                      <a
+                        href="#"
+                        data-popup="#video"
+                        data-popup-youtube="e9RyPhSN-k8"
+                      >
+                        Video tutorial
+                      </a>
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="buy">
+          <div class="container">
+            <div class="buy__body">
+              <div class="buy__card">
+                <h2 class="buy__title title">
+                  <span>Buy GINUX</span>
+                </h2>
+                <div class="buy__icon-box" aria-hidden="true">
+                  <img class="buy__icon" src="./img/content/how-4.svg" alt="icon">
+                </div>
+              </div>
+              <div class="buy__frame">
+                <iframe
+                  data-src="https://pancakeswap.finance/swap?outputCurrency=0xc9ad37e9baf41377540df5a77831db98c1915128"
+                ></iframe>
+              </div>
+              <div class="buy__img-box">
+                <img class="buy__img" src="./img/content/buy_hero.svg" alt="image">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="roadmap">
+          <div class="container">
+            <div class="roadmap__body">
+              <div class="roadmap__content">
+                <h2 class="roadmap__title title stars">
+                  <span>GINUX Rebirth Roadmap</span>
+                </h2>
+                <div class="roadmap__items">
+                  <div class="roadmap__box">
+                    <div class="roadmap__item">
+                      <h3 class="roadmap__stage">phase 1</h3>
+                      <ul class="roadmap__list">
+                        <li class="roadmap__point roadmap__point_done">
+                          >50k holders
+                        </li>
+                        <li class="roadmap__point roadmap__point_done">
+                          >60k followers on Twitter
+                        </li>
+                        <li class="roadmap__point roadmap__point_done">
+                          Farming resumes
+                        </li>
+                        <li class="roadmap__point roadmap__point_done">
+                          Become the talk of the town on Twitter
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="roadmap__item">
+                      <h3 class="roadmap__stage">phase 2</h3>
+                      <ul class="roadmap__list">
+                        <li class="roadmap__point">> 60k holders</li>
+                        <li class="roadmap__point">
+                          > 100k followers on Twitter
+                        </li>
+                        <li class="roadmap__point">Partnerships</li>
+                        <li class="roadmap__point">New Listing on CEXs</li>
+                        <li class="roadmap__point">Kingdown of memes</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="roadmap__box">
+                    <div class="roadmap__item">
+                      <h3 class="roadmap__stage">phase 3</h3>
+                      <ul class="roadmap__list">
+                        <li class="roadmap__point">> 80k holders</li>
+                        <li class="roadmap__point">
+                          > 150k followers on Twitter
+                        </li>
+                        <li class="roadmap__point">GINUX Merchandise</li>
+                        <li class="roadmap__point">GINUX-Fi v2</li>
+                        <li class="roadmap__point">GINUX Tools</li>
+                        <li class="roadmap__point">Ultramemetic power</li>
+                      </ul>
+                    </div>
+                    <div class="roadmap__item">
+                      <h3 class="roadmap__stage">phase 4</h3>
+                      <ul class="roadmap__list">
+                        <li class="roadmap__point">>500k holders</li>
+                        <li class="roadmap__point">>1M followers on Twitter</li>
+                        <li class="roadmap__point">
+                          Launch of GINUX Moon Mission
+                        </li>
+                        <li class="roadmap__point">
+                          Doge who? Shib who? GINUX to the moon!
+                        </li>
+                        <li class="roadmap__point">Lambos for everyone</li>
+                        <li class="roadmap__point">
+                          Replace all fiat currency with GINUX
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap__img-box">
+                <img class="roadmap__img" src="./img/content/roadmap_img.svg" alt="image">
+                <div class="roadmap__hero"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="faq">
+          <div class="container">
+            <div class="faq__body card">
+              <h2 class="faq__title title">FAQ</h2>
+              <ul class="faq__list spollers" data-spollers data-one-spoller>
+                <li class="spollers__item">
+                  <button
+                    class="spollers__btn icon-arr-down"
+                    type="button"
+                    data-spoller
+                  >
+                    Is it normal to get an error when buying orselling on
+                    PancakeSwap?
+                  </button>
+                  <div class="spollers__body">
+                    <p class="spollers__text">
+                      Slide the Slippage Tolerance above 12%. Buy and sell whole
+                      numbers to avoid errors: replace the last digits of the
+                      GINUX amount to 0s. Example: don't input 16923456 but
+                      17000000 instead.Finally, errors may also come from high
+                      trade volume. Simply retry your transaction, increase the
+                      fee, and you will be good to go!
+                    </p>
+                  </div>
+                </li>
+                <li class="spollers__item">
+                  <button
+                    class="spollers__btn icon-arr-down"
+                    type="button"
+                    data-spoller
+                  >
+                    How can I join the GINUX community?
+                  </button>
+                  <div class="spollers__body">
+                    <p class="spollers__text">
+                      We are live in Twitter and Telegram!
+                      <br><br>
+                      Twitter:
+                      <a
+                        href="https://twitter.com/GreenShibaCoin"
+                        target="_blank"
+                      >
+                        https://twitter.com/GreenShibaCoin
+                      </a>
+                      <br><br>
+                      Telegram Announcements Channel:
+                      <a href="https://t.me/GINU_Announcements" target="_blank">
+                        https://t.me/GINU_Announcements
+                      </a>
+                      <br><br>
+                      Telegram Discussion Group:
+                      <a href="https://t.me/GINU_Chat" target="_blank">
+                        https://t.me/GINU_Chat
+                      </a>
+                    </p>
+                  </div>
+                </li>
+                <li class="spollers__item">
+                  <button
+                    class="spollers__btn icon-arr-down"
+                    type="button"
+                    data-spoller
+                  >
+                    What else should I know about GINUX?
+                  </button>
+                  <div class="spollers__body">
+                    <p class="spollers__text">
+                      Although $GINUX is a meme coin with no intrinsic value or
+                      expectation of financial return, it offers its hodlers a
+                      range of DeFi features and features that set it apart from
+                      other shibas and pepes. $GINUX is the only coin
+                      prioritizing environmental sustainability, and aims to
+                      become the reigning king of meme coins.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <div class="partners">
+          <div class="container">
+            <div class="partners__body">
+              <ul class="partners__list">
+                <li class="partners__item">
+                  <a
+                    class="partners__link"
+                    href="https://bscscan.com/token/0xc9Ad37E9Baf41377540Df5a77831Db98c1915128"
+                    target="_blank"
+                    aria-label="bscscan.com"
+                  >
+                    <img class="partners__img" src="./img/content/partners/1.svg" alt="bscscan.com">
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a
+                    class="partners__link"
+                    href="https://trade.dexlab.space/#/market/Esx3MphVgVnbZb2JyAN8K4Z6K9zp374CHvG1nkXmaEDB"
+                    target="_blank"
+                    aria-label="dexlab.space"
+                  >
+                    <img class="partners__img" src="./img/content/partners/2.svg" alt="dexlab.space">
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a
+                    class="partners__link"
+                    href="https://coinmarketcap.com/currencies/green-shiba-inu-new/"
+                    target="_blank"
+                    aria-label="coinmarketcap.com"
+                  >
+                    <img class="partners__img" src="./img/content/partners/3.svg" alt="coinmarketcap.com">
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a
+                    class="partners__link"
+                    href="https://www.coingecko.com/en/coins/green-shiba-inu"
+                    target="_blank"
+                    aria-label="coingecko.com"
+                  >
+                    <img class="partners__img" src="./img/content/partners/4.svg" alt="coingecko.com">
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a
+                    class="partners__link"
+                    href="https://www.lbank.com/trade/ginux_usdt/"
+                    target="_blank"
+                    aria-label="lbank.com"
+                  >
+                    <img class="partners__img" src="./img/content/partners/5.svg" alt="lbank.com">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__item footer__item_logo">
+              <a
+                class="logo logo_footer"
+                href="#"
+                data-goto=".wrapper"
+                aria-label="scroll up"
+              >
+                <img class="logo__img" src="./img/content/logo_light.svg" alt="logo">
+              </a>
+            </div>
+            <div class="footer__item footer__item_action">
+              <a
+                class="btn btn_main"
+                href="https://pancakeswap.finance/swap?outputCurrency=0xc9ad37e9baf41377540df5a77831db98c1915128"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                <span class="btn__inner">
+                  <span class="btn__text icon-arr-right">Buy GINUX</span>
+                  <span class="btn__hover-wrapper" aria-hidden="true">
+                    <i class="btn__hover-inner icon-arr-right">Buy GINUX</i>
+                  </span>
+                </span>
+              </a>
+              <a
+                class="btn btn_link icon-arr-right"
+                href="#"
+                data-popup="#video"
+                data-popup-youtube="e9RyPhSN-k8"
+              >
+                How to buy
+              </a>
+            </div>
+            <div class="footer__item footer__item_social">
+              <ul class="social">
+                <li class="social__item">
+                  <a
+                    class="btn btn_main"
+                    href="https://twitter.com/GreenShibaCoin"
+                    aria-label="Twitter"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <span class="btn__inner">
+                      <span class="btn__text icon-tw"></span>
+                      <span class="btn__hover-wrapper" aria-hidden="true">
+                        <i class="btn__hover-inner icon-tw"></i>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="btn btn_main"
+                    href="https://greenshibacoin.medium.com/"
+                    aria-label="Medium"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <span class="btn__inner">
+                      <span class="btn__text icon-m"></span>
+                      <span class="btn__hover-wrapper" aria-hidden="true">
+                        <i class="btn__hover-inner icon-m"></i>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="btn btn_main"
+                    href="http://t.me/GINU_Announcements"
+                    aria-label="Telegram Announcements"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <span class="btn__inner">
+                      <span class="btn__text icon-tg"></span>
+                      <span class="btn__hover-wrapper" aria-hidden="true">
+                        <i class="btn__hover-inner icon-tg"></i>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="btn btn_main"
+                    href="http://t.me/GINU_Chat"
+                    aria-label="Telegram chat"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    <span class="btn__inner">
+                      <span class="btn__text icon-bsc"></span>
+                      <span class="btn__hover-wrapper" aria-hidden="true">
+                        <i class="btn__hover-inner icon-bsc"></i>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__item footer__item_text footer__item_copy">
+              <p class="footer__text">
+                <span>© GINUX, 2023. All rights reserved</span>
+                <span>
+                  Contact:
+                  <a href="mailto:info@greenshiba.org">info@greenshiba.org</a>
+                </span>
+              </p>
+            </div>
+            <div class="footer__item footer__item_text footer__item_token">
+              <p class="footer__text">
+                <span>Contract Address:</span>
+                <span class="token">0xc9ad37e9baf41377540df5a77831db98c1915128</span>
+              </p>
+              <p class="footer__text">
+                <span>Donation address:</span>
+                <span class="token">0xECb1F3554fb647eA56f88076520dFe7b23D7BA6a</span>
+              </p>
+            </div>
+            <div class="footer__item footer__item_img">
+              <div class="footer__img-box" aria-hidden="true">
+                <img class="footer__img" src="./img/content/footer_img.svg" alt="image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="popup" id="video">
+      <div class="popup__body">
+        <button
+          class="popup__close btn btn_main"
+          aria-label="Close popup"
+          type="button"
+          data-close
+        >
+          <span class="btn__inner">
+            <span class="btn__text icon-close"></span>
+            <span class="btn__hover-wrapper" aria-hidden="true">
+              <i class="btn__hover-inner icon-close"></i>
+            </span>
+          </span>
+        </button>
+        <div class="popup__inner" data-popup-youtube-place></div>
+      </div>
+    </div>
+  </body>
+</html>

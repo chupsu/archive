@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>T&M — Возьмем и сделаем</title>
+    <meta name="description" content="Создаем цифровые сервисы и мобильные приложения на основе данных и здравого смысла.">
+    <meta property="og:site_name" content="Digital-агентство Take&Make">
+    <meta property="og:title" content="Дизайн и разработка">
+    <meta property="og:description" content="Создаем цифровые сервисы и мобильные приложения на основе данных и здравого смысла.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://take-make.ru">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- data-mobile у шапки на главной странице и 404-->
+      <header class="header" data-mobile>
+        <div class="container">
+          <div class="header__body">
+            <nav class="menu" data-da=".mobile-menu,767,last">
+              <button class="menu__btn" aria-label="Навигация сайта" title="Навигация сайта">
+                <i class="menu__icon" aria-hidden="true">
+                  <span></span>
+                </i>
+              </button>
+              <div class="menu__body">
+                <h2 class="seo">Навигация:</h2>
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link" href="#" data-goto=".welcome">кто мы</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./cases.html">кейсы</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#" data-goto=".footer">контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <a class="logo" href="#" data-goto=".wrapper" aria-label="К началу страницы" title="К началу страницы">
+              <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <h1 class="seo">Студия разработки T&M</h1>
+        <section class="welcome" id="welcome">
+          <div class="container">
+            <div class="welcome__body">
+              <div class="welcome__main">
+                <h2 class="seo">Разработаем для вас:</h2>
+                <div class="welcome__img-box" aria-hidden="true">
+                  <img class="welcome__img" src="./img/content/welcome.svg" alt="image">
+                </div>
+                <ul class="tags">
+                  <li
+                    class="tags__item tags__item_main"
+                    id="1"
+                    style="color: #101010; background-color: #e3e9f1"
+                  >
+                    CRM-систему
+                  </li>
+                  <li
+                    class="tags__item tags__item_main"
+                    id="2"
+                    style="color: #ffffff; background-color: #2c0bf7"
+                  >
+                    Приложение
+                  </li>
+                  <li
+                    class="tags__item tags__item_main"
+                    id="3"
+                    style="color: #101010; background-color: #cdff00"
+                  >
+                    Корпоративный сайт
+                  </li>
+                  <li
+                    class="tags__item tags__item_main"
+                    id="4"
+                    style="color: #cdff00; background-color: #101010"
+                  >
+                    Посадочную страницу
+                  </li>
+                  <li
+                    class="tags__item tags__item_main"
+                    id="5"
+                    style="color: #ffffff; background-color: #5f32de"
+                  >
+                    Автоматизацию бизнеса
+                  </li>
+                  <li
+                    class="tags__item tags__item_main"
+                    id="6"
+                    style="color: #ffffff; background-color: #de325b"
+                  >
+                    Сайт продукта
+                  </li>
+                  <li
+                    class="tags__item tags__item_main"
+                    id="7"
+                    style="color: #cdff00; background-color: #101010"
+                  >
+                    IOT-автоматизацию
+                  </li>
+                  <li
+                    class="tags__item tags__item_main"
+                    id="8"
+                    style="color: #ffffff; background-color: #0866fb"
+                  >
+                    Машинное обучение
+                  </li>
+                  <li
+                    class="tags__item tags__item_main"
+                    id="9"
+                    style="color: #101010; background-color: #cdff00"
+                  >
+                    Интернет магазин
+                  </li>
+                  <!-- <li class="tags__item tags__item_disturber" id="10"></li>
+                  <li class="tags__item tags__item_disturber" id="11"></li>
+                  <li class="tags__item tags__item_disturber" id="12"></li> -->
+                </ul>
+                <div class="welcome__matter" aria-hidden="true"></div>
+              </div>
+              <p class="welcome__text">
+                Мы<span>/tm/</span>создаём программные продукты для бизнеса для решения задач маркетинга,
+                продаж и автоматизации бизнес-процессов.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="cases" id="cases">
+          <div class="container">
+            <div class="cases__body">
+              <h2 class="seo">Наши реализованные проекты:</h2>
+              <ul class="cases__list">
+                <li class="cases__item">
+                  <article class="case">
+                    <figure class="case__preview">
+                      <video
+                        class="case__media"
+                        playsinline
+                        muted
+                        autoplay
+                        loop
+                        preload="auto"
+                        src="./files/video_4.mp4"
+                      ></video>
+                    </figure>
+                    <div class="case__body">
+                      <div class="case__main">
+                        <h3 class="case__name">CBD tea</h3>
+                        <ul class="case-info">
+                          <li class="case-info__item">продукт</li>
+                          <li class="case-info__item">лендинг</li>
+                          <li class="case-info__item">2023</li>
+                        </ul>
+                      </div>
+                      <p class="case__desc">Конопляный чай из Оренбурга от Steppe & Wind</p>
+                      <a
+                        class="case__link"
+                        href="./case.html"
+                        aria-label="Открыть проект"
+                        title="Открыть проект"
+                      ></a>
+                    </div>
+                  </article>
+                </li>
+                <li class="cases__item">
+                  <article class="case">
+                    <figure class="case__preview">
+                      <picture><source srcset="./img/content/cases/3.webp" type="image/webp"><img class="case__img" src="./img/content/cases/3.jpg" alt="FlatOutlet"></picture>
+                    </figure>
+                    <div class="case__body">
+                      <div class="case__main">
+                        <h3 class="case__name">FlatOutlet</h3>
+                        <ul class="case-info">
+                          <li class="case-info__item">чат-бот</li>
+                          <li class="case-info__item">приложение</li>
+                          <li class="case-info__item">2023</li>
+                        </ul>
+                      </div>
+                      <p class="case__desc">Аутлет квартир в Москве и Московской области</p>
+                      <a
+                        class="case__link"
+                        href="./case.html"
+                        aria-label="Открыть проект"
+                        title="Открыть проект"
+                      ></a>
+                    </div>
+                  </article>
+                </li>
+                <li class="cases__item">
+                  <article class="case">
+                    <figure class="case__preview">
+                      <picture><source srcset="./img/content/cases/2.webp" type="image/webp"><img class="case__img" src="./img/content/cases/2.jpg" alt="Дневник сна"></picture>
+                    </figure>
+                    <div class="case__body">
+                      <div class="case__main">
+                        <h3 class="case__name">Дневник сна</h3>
+                        <ul class="case-info">
+                          <li class="case-info__item">сервис</li>
+                          <li class="case-info__item">приложение</li>
+                          <li class="case-info__item">2023</li>
+                        </ul>
+                      </div>
+                      <p class="case__desc">Приложение для людей, имеющих проблемы со сном</p>
+                      <a
+                        class="case__link"
+                        href="./case.html"
+                        aria-label="Открыть проект"
+                        title="Открыть проект"
+                      ></a>
+                    </div>
+                  </article>
+                </li>
+                <li class="cases__item">
+                  <article class="case">
+                    <figure class="case__preview">
+                      <video
+                        class="case__media"
+                        playsinline
+                        muted
+                        autoplay
+                        loop
+                        preload="auto"
+                        src="./files/video_1.mp4"
+                      ></video>
+                    </figure>
+                    <div class="case__body">
+                      <div class="case__main">
+                        <h3 class="case__name">Ladyfer</h3>
+                        <ul class="case-info">
+                          <li class="case-info__item">фарма</li>
+                          <li class="case-info__item">лендинг</li>
+                          <li class="case-info__item">2020</li>
+                        </ul>
+                      </div>
+                      <p class="case__desc">Сайт препарата микрокапсулярного железа для женщин</p>
+                      <a
+                        class="case__link"
+                        href="./case.html"
+                        aria-label="Открыть проект"
+                        title="Открыть проект"
+                      ></a>
+                    </div>
+                  </article>
+                </li>
+                <li class="cases__item">
+                  <article class="case">
+                    <figure class="case__preview">
+                      <picture><source srcset="./img/content/cases/4.webp" type="image/webp"><img class="case__img" src="./img/content/cases/4.jpg" alt="Картилокс"></picture>
+                    </figure>
+                    <div class="case__body">
+                      <div class="case__main">
+                        <h3 class="case__name">Картилокс</h3>
+                        <ul class="case-info">
+                          <li class="case-info__item">продукт</li>
+                          <li class="case-info__item">фарма</li>
+                          <li class="case-info__item">2020</li>
+                        </ul>
+                      </div>
+                      <p class="case__desc">Корпоративный сайт компании-производителя БАД</p>
+                      <a
+                        class="case__link"
+                        href="./case.html"
+                        aria-label="Открыть проект"
+                        title="Открыть проект"
+                      ></a>
+                    </div>
+                  </article>
+                </li>
+                <li class="cases__item">
+                  <article class="case">
+                    <figure class="case__preview">
+                      <picture><source srcset="./img/content/cases/1.webp" type="image/webp"><img class="case__img" src="./img/content/cases/1.jpg" alt="Витажиналь"></picture>
+                    </figure>
+                    <div class="case__body">
+                      <div class="case__main">
+                        <h3 class="case__name">Витажиналь</h3>
+                        <ul class="case-info">
+                          <li class="case-info__item">продукт</li>
+                          <li class="case-info__item">сайт</li>
+                          <li class="case-info__item">2020</li>
+                        </ul>
+                      </div>
+                      <p class="case__desc">Базовый комплекс микронутриентов</p>
+                      <a
+                        class="case__link"
+                        href="./case.html"
+                        aria-label="Открыть проект"
+                        title="Открыть проект"
+                      ></a>
+                    </div>
+                  </article>
+                </li>
+                <li class="cases__item">
+                  <article class="case">
+                    <figure class="case__preview">
+                      <video
+                        class="case__media"
+                        playsinline
+                        muted
+                        autoplay
+                        loop
+                        preload="auto"
+                        src="./files/video_5.mp4"
+                      ></video>
+                    </figure>
+                    <div class="case__body">
+                      <div class="case__main">
+                        <h3 class="case__name">Академия</h3>
+                        <ul class="case-info">
+                          <li class="case-info__item">продукт</li>
+                          <li class="case-info__item">лендинг</li>
+                          <li class="case-info__item">2023</li>
+                        </ul>
+                      </div>
+                      <p class="case__desc">Проведение частных и корпоративных мероприятий</p>
+                      <a
+                        class="case__link"
+                        href="./case.html"
+                        aria-label="Открыть проект"
+                        title="Открыть проект"
+                      ></a>
+                    </div>
+                  </article>
+                </li>
+                <li class="cases__item">
+                  <article class="case">
+                    <figure class="case__preview">
+                      <picture><source srcset="./img/content/cases/5.webp" type="image/webp"><img class="case__img" src="./img/content/cases/5.jpg" alt="ВТБ арена"></picture>
+                    </figure>
+                    <div class="case__body">
+                      <div class="case__main">
+                        <h3 class="case__name">ВТБ арена</h3>
+                        <ul class="case-info">
+                          <li class="case-info__item">сервис</li>
+                          <li class="case-info__item">сайт</li>
+                          <li class="case-info__item">2023</li>
+                        </ul>
+                      </div>
+                      <p class="case__desc">
+                        Корпоративный сайт спортивного и концертно-развлекательного комплекса
+                      </p>
+                      <a
+                        class="case__link"
+                        href="./case.html"
+                        aria-label="Открыть проект"
+                        title="Открыть проект"
+                      ></a>
+                    </div>
+                  </article>
+                </li>
+              </ul>
+              <p class="cases__text">
+                Мы<span>/tm/</span>предложим решение на основе анализа рынка и вашего бизнеса, а потом
+                возьмем и сделаем!
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <section class="footer__main">
+              <h4 class="seo">Наши контакты:</h4>
+              <ul class="footer__list">
+                <li class="footer__item footer__item_link" data-link="5">
+                  <a
+                    class="footer__link"
+                    href="https://ruward.ru/catalog/take-make-ru/"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    ruward
+                  </a>
+                </li>
+                <li class="footer__item footer__item_link" data-link="3">
+                  <a
+                    class="footer__link"
+                    href="https://workspace.ru/contractors/takemake/"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    workspace
+                  </a>
+                </li>
+                <li class="footer__item footer__item_link" data-link="1">
+                  <a
+                    class="footer__link"
+                    href="https://cmsmagazine.ru/agencies/take-make/portfolio/"
+                    target="_blank"
+                    rel="nofollow noopener"
+                  >
+                    cmsmagazine
+                  </a>
+                </li>
+                <li class="footer__item footer__item_btn">
+                  <a
+                    class="footer__btn"
+                    href="./pre.pdf"
+                    download
+                    style="color: #ffffff; background-color: #0866fb"
+                  >
+                    Скачать презентацию
+                  </a>
+                </li>
+                <li class="footer__item footer__item_svgs" aria-hidden="true">
+                  <svg width="520" height="179" viewBox="0 0 520 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M519.262 0.799805V175H488.062V48.1198L434.242 175H411.362L357.802 48.1198V175H326.602V0.799805L369.762 0.799805L423.322 127.94L476.882 0.799805L519.262 0.799805Z" fill="#CDFF00"/>
+                    <path d="M263.041 175.2H302.041L174.901 40.52C172.647 38.0933 172.041 35.6667 173.081 33.24C174.294 30.8133 176.461 29.6 179.581 29.6H244.321V1H179.581C171.261 1 163.981 2.99333 157.741 6.98C151.501 10.7933 146.994 15.56 144.221 21.28C141.621 27 140.927 33.4133 142.141 40.52C143.527 47.6267 147.081 54.2133 152.801 60.28L169.181 77.44L142.661 95.9C132.261 103.007 125.934 113.06 123.681 126.06C121.601 138.887 124.287 150.413 131.741 160.64C139.367 170.867 149.767 176.76 162.941 178.32C176.287 180.053 188.594 176.933 199.861 168.96L304.302 94.5699V60.28L182.701 145.82C178.021 148.94 173.254 150.153 168.401 149.46C163.547 148.593 159.734 146.167 156.961 142.18C153.841 138.02 152.714 133.427 153.581 128.4C154.621 123.373 157.307 119.387 161.641 116.44L188.681 97.72L263.041 175.2Z" fill="#CDFF00"/>
+                    <path d="M107.137 45.7798V74.8998H51.2371L51.2371 134.7C51.2371 142.153 55.1371 145.88 62.9371 145.88H107.137V175H56.9571C45.6904 175 36.9371 171.966 30.6971 165.9C24.4571 159.66 21.3371 150.993 21.3371 139.9V74.8998H0.537109L0.537109 45.7798H21.3371V0.799805L51.2371 0.799805V45.7798H107.137Z" fill="#CDFF00"/>
+                  </svg>
+                </li>
+                <li class="footer__item footer__item_btn pc" data-url="#contact-form">
+                  <a
+                    class="footer__btn"
+                    href="#contact-form"
+                    data-popup="#contact-form"
+                    style="color: #101010; background-color: #cdff00"
+                  >
+                    Обсудить проект
+                  </a>
+                </li>
+                <li class="footer__item footer__item_svg" aria-hidden="true">
+                  <svg width="574" height="163" viewBox="0 0 574 163" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M551.332.173 24.816.18c-.528 50.336-.88 77-1.056 79.992-.352 5.28-1.232 9.592-2.64 12.936-1.232 3.168-3.08 5.368-5.544 6.6-2.288 1.232-4.224 2.024-5.808 2.376-1.584.176-3.784.264-6.6.264H0v60.456h29.304v-31.416h515.161v31.416h29.304v-60.456H48.576c2.288-7.04 3.696-15.312 4.224-24.816.352-7.216.704-23.232 1.056-48.048h468.476v72.864h29V.173Z" fill="#ffffff"/>
+                  </svg>
+                </li>
+                <li class="footer__item footer__item_svg" aria-hidden="true">
+                  <svg width="396" height="171" viewBox="0 0 396 171" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.25 170.25L395.25 170.25L395.25 61.75C395.25 28.7299 369.014 1.83755 336.25 0.782151C335.586 0.760758 140.919 0.749994 140.25 0.749994C122.949 0.749995 107.331 7.95236 96.2292 19.5223C86.0391 10.3395 72.5473 4.75 57.75 4.75C25.9936 4.75 0.249994 30.4936 0.249995 62.25L0.249999 139.75L36.25 139.75L36.25 62.25C36.25 50.3759 45.8759 40.75 57.75 40.75C69.6241 40.75 79.25 50.3759 79.25 62.25L79.25 139.75L115.25 139.75L115.25 61.75C115.25 47.9429 126.443 36.75 140.25 36.75C140.923 36.75 335.59 36.7766 336.25 36.8288C349.122 37.8477 359.25 48.6161 359.25 61.75L359.25 134.25L0.249998 134.25L0.25 170.25Z" fill="#32DE8B"/>
+                  </svg>
+                </li>
+                <li class="footer__item footer__item_svg" aria-hidden="true">
+                  <svg width="124" height="126" viewBox="0 0 124 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M86.8178 62.9795L123.994 81.3834L108.902 106.781L74.3031 84.328L76.8797 125.553H47.4334L50.01 84.328L15.4106 107.149L0.6875 81.3834L37.4953 62.9795L0.6875 44.5756L15.7787 19.1782L50.01 41.631L47.4334 0.40625H76.8797L74.3031 41.631L108.902 18.8102L123.626 44.5756L86.8178 62.9795Z" fill="#CDFF00"/>
+                  </svg>
+                </li>
+                <li class="footer__item footer__item_svg" aria-hidden="true">
+                  <svg width="336" height="143" viewBox="0 0 336 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 335.5 0V142.142H302.611V31.746L58.0557 31.7464C58.0557 51.0038 57.6743 69.4031 56.9117 86.9444C56.5304 95.9058 55.3864 103.818 53.4798 110.682C51.7639 117.356 49.3807 122.694 46.3301 126.698C43.2796 130.512 40.3244 133.658 37.4645 136.136C34.6046 138.424 30.8868 140.045 26.3109 140.998C21.9258 141.952 18.4939 142.524 16.0154 142.714C13.5368 142.905 10.2003 143 6.00576 143H0V110.396H3.14587C6.19642 110.396 8.57965 110.301 10.2956 110.11C12.0115 109.729 14.1088 108.871 16.5873 107.536C19.0659 106.202 20.9725 103.723 22.3071 100.1C23.8324 96.4778 24.7857 91.8064 25.167 86.0864C25.9296 77.1251 26.3109 48.4298 26.3109 0.000442505L335.5 0Z" fill="#5F32DE"/>
+                  </svg>
+                </li>
+                <li class="footer__item footer__item_svg" data-id="1" aria-hidden="true">
+                  <svg width="242" height="150" viewBox="0 0 242 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M242 0V149.1H149.4V38.7L105 149.1H79.2L34.5 38.1V149.1H0V0H53.4L92.4 99L131.4 0L242 0Z" fill="#5F32DE"/>
+                  </svg>
+                </li>
+                <li class="footer__item footer__item_svg" aria-hidden="true">
+                  <svg width="338" height="201" viewBox="0 0 338 201" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.61114e-06 0L0 201H277C310.689 201 338 173.689 338 140C338 122.699 330.798 107.081 319.228 95.9792C328.411 85.7891 334 72.2973 334 57.5C334 25.7436 308.256 0 276.5 0L30.5 0V36H276.5C288.374 36 298 45.6259 298 57.5C298 69.3741 288.374 79 276.5 79H30.5V115H277C290.807 115 302 126.193 302 140C302 153.807 290.807 165 277 165H36L36 0H8.61114e-06Z" fill="#cdff00"/>
+                  </svg>
+                </li>
+              </ul>
+              <div class="footer__matter" aria-hidden="true"></div>
+            </section>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <div class="popup__inner">
+          <div class="popup__head">
+            <h4 class="popup__title">Обсудить проект</h4>
+            <button class="popup__close" aria-label="Закрыть окно" type="button" data-close></button>
+          </div>
+          <form class="form" action="#">
+            <div class="form__main">
+              <div class="form__inputs">
+                <label class="input" aria-label="Введите ваше имя" title="Введите ваше имя">
+                  <input class="input__body" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
+                </label>
+                <label
+                  class="input input_error"
+                  aria-label="Введите наименование компании"
+                  title="Введите наименование компании"
+                >
+                  <input class="input__body" type="text" name="org" placeholder="Наименование компании" autocomplete="organization">
+                  <span class="wpcf7-not-valid-tip" aria-hidden="true">Важно заполнить это поле.</span>
+                </label>
+                <label class="input" aria-label="Введите номер телефона" title="Введите номер телефона">
+                  <input class="input__body" type="tel" name="tel" placeholder="+7 000 000 00 00" autocomplete="tel">
+                </label>
+                <label class="input input_textarea" aria-label="Введите сообщение" title="Введите сообщение">
+                  <textarea class="input__body" name="text" placeholder="Сообщение"></textarea>
+                </label>
+              </div>
+              <ul class="form__upload uploads">
+                <li class="uploads__item">
+                  <div class="file">
+                    <dl class="file__info">
+                      <dt class="file__name">Название файла djn nfrjtydgzdf.PDF</dt>
+                      <dd class="file__desc">1 gb</dd>
+                    </dl>
+                    <button
+                      class="file__btn"
+                      type="button"
+                      aria-label="Удалить файл"
+                      title="Удалить файл"
+                    ></button>
+                  </div>
+                </li>
+                <li class="uploads__item">
+                  <div class="file">
+                    <dl class="file__info">
+                      <dt class="file__name">Название файла djn nfrjtydgzdf.PDF</dt>
+                      <dd class="file__desc">1 gb</dd>
+                    </dl>
+                    <button
+                      class="file__btn"
+                      type="button"
+                      aria-label="Удалить файл"
+                      title="Удалить файл"
+                    ></button>
+                  </div>
+                </li>
+                <li class="uploads__item uploads__item_main">
+                  <label class="uploads__file">
+                    <input class="uploads__input" accept=".jpg, .png, .gif" type="file" name="image">
+                    <span class="uploads__icon">Выбрать файл</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="form__submit">
+              <label class="form__agree agree">
+                <input class="agree__checkbox" type="checkbox" name="agree">
+                <span class="agree__icon"></span>
+                <span class="agree__text">
+                  Я даю свое согласие на
+                  <a href="./policy.html" target="_blank">обработку персональных данных</a>
+                </span>
+              </label>
+              <button class="form__btn" type="submit">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <aside class="mobile-menu">
+      <a class="mobile-menu__link mobile-menu__link_logo" href="#" data-goto=".wrapper" aria-label="К началу страницы" title="К началу страницы">
+        <span aria-hidden="true">T&M</span>
+      </a>
+      <a class="mobile-menu__link mobile-menu__link_cta" href="#contact-form" data-popup="#contact-form">
+        Обсудить проект
+      </a>
+    </aside>
+  </body>
+</html>

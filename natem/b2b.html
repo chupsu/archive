@@ -1,0 +1,2344 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>B2B</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__top">
+          <div class="container">
+            <div class="header__body header__body_top">
+              <ul class="sup-menu">
+                <li class="sup-menu__item">
+                  <a class="sup-menu__link" href="./about.html">О компании</a>
+                </li>
+                <li class="sup-menu__item">
+                  <a class="sup-menu__link" href="./services.html">Сервис</a>
+                </li>
+                <li class="sup-menu__item">
+                  <a class="sup-menu__link" href="./b2b.html">B2B</a>
+                </li>
+                <li class="sup-menu__item">
+                  <a class="sup-menu__link" href="./contacts.html">Контакты</a>
+                </li>
+              </ul>
+              <!-- <div class="auth-action">
+                <div class="auth-action__item">
+                  <a class="auth-action__link" href="./login.html">Войти в ЛК</a>
+                </div>
+              </div> -->
+              <div class="auth-action auth-action_active">
+                <div class="auth-action__item">
+                  <a class="auth-action__link" href="./lc-1.html">
+                    <span>Имя пользователя</span>
+                  </a>
+                </div>
+                <div class="auth-action__item">
+                  <a class="auth-action__link" href="./registration.html">Выйти</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__fixed" data-lp>
+          <div class="container">
+            <div class="header__body header__body_fixed">
+              <div class="header__main">
+                <a class="logo logo_header" href="./index.html">
+                  <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+                </a>
+                <nav class="menu menu_sub">
+                  <button class="menu__btn" data-menu>
+                    <svg class="menu__icon">
+                      <use xlink:href="./img/icons/icons.svg#menu"></use>
+                      <use xlink:href="./img/icons/icons.svg#close"></use>
+                    </svg>
+                    Меню
+                  </button>
+                  <div class="menu__body">
+                    <ul class="menu__list">
+                      <li class="menu__item">
+                        <a class="menu__link" href="./about.html">О компании</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./services.html">Сервис</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./b2b.html">B2B</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./contacts.html">Контакты</a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+                <nav class="menu menu_catalog">
+                  <button class="menu__btn" data-menu>
+                    <svg class="menu__icon">
+                      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+                      <use xlink:href="./img/icons/icons.svg#close"></use>
+                    </svg>
+                    Каталог
+                  </button>
+                  <div class="menu__body">
+                    <ul class="menu__list">
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Кофе</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Чай</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Системы для воды</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Кофемашины</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link" href="./catalog-tea.html">Аксессуары</a>
+                      </li>
+                      <li class="menu__item">
+                        <a class="menu__link menu__link_accent" href="./catalog-promos.html">
+                          Спецпредложения
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+                <ul class="user-action">
+                  <li class="user-action__item">
+                    <a
+                      class="user-action__link user-action__link_favorite"
+                      href="./favorite.html"
+                      aria-label="Избранное"
+                      title="Избранное"
+                    >
+                      <svg class="user-action__icon">
+                        <use xlink:href="./img/icons/icons.svg#heart"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="user-action__item">
+                    <a
+                      class="user-action__link user-action__link_cart"
+                      href="./cart.html"
+                      aria-label="Корзина"
+                      title="Корзина"
+                    >
+                      <svg class="user-action__icon">
+                        <use xlink:href="./img/icons/icons.svg#cart"></use>
+                      </svg>
+                    </a>
+                    <span class="user-action__count">999</span>
+                  </li>
+                  <li class="user-action__item user-action__item_search">
+                    <form class="search" action="#">
+                      <div class="search__wrapper">
+                        <div class="search__body">
+                          <select data-modifier="search" data-speed="0">
+                            <option value="Все категории" selected>Все категории</option>
+                            <option value="Кофе">Кофе</option>
+                            <option value="Кофемашины">Кофемашины</option>
+                            <option value="Чай">Чай</option>
+                            <option value="Аксессуары">Аксессуары</option>
+                            <option value="Системы воды">Системы воды</option>
+                          </select>
+                          <input class="search__input" type="search" placeholder="Поиск..">
+                          <button
+                            class="search__btn search__btn_open"
+                            data-da=".search,767,last"
+                            type="button"
+                            aria-label="Поиск"
+                            title="Поиск"
+                          >
+                            <svg class="search__icon search__icon">
+                              <use xlink:href="./img/icons/icons.svg#search"></use>
+                              <use xlink:href="./img/icons/icons.svg#close"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <button
+                        class="search__btn search__btn_submit"
+                        type="submit"
+                        aria-label="Искать"
+                        title="Искать"
+                      >
+                        <svg class="search__icon">
+                          <use xlink:href="./img/icons/icons.svg#search"></use>
+                        </svg>
+                      </button>
+                    </form>
+                  </li>
+                  <li class="user-action__item">
+                    <a
+                      class="user-action__link user-action__link_lc"
+                      href="./lc-1.html"
+                      aria-label="Личный кабинет"
+                      title="Личный кабинет"
+                    >
+                      <svg class="user-action__icon">
+                        <use xlink:href="./img/icons/icons.svg#user"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-action">
+                <div class="header-action__item">
+                  <a class="header-action__link" href="./favorite.html">
+                    <svg class="header-action__icon">
+                      <use xlink:href="./img/icons/icons.svg#heart"></use>
+                    </svg>
+                    Избранное
+                  </a>
+                </div>
+                <div class="header-action__item">
+                  <a class="header-action__link" href="./cart.html">
+                    <svg class="header-action__icon">
+                      <use xlink:href="./img/icons/icons.svg#cart"></use>
+                    </svg>
+                    Корзина
+                  </a>
+                  <span class="header-action__count">999</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="sliders">
+          <div class="container">
+            <div class="sliders__body">
+              <ul class="breadcrumbs">
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <span class="breadcrumbs__link">B2B</span>
+                </li>
+              </ul>
+              <div class="sliders__main">
+                <div class="main-slider">
+                  <div class="main-slider__items">
+                    <div class="main-slider__item">
+                      <div class="main-slider__img-box">
+                        <picture>
+                          <source srcset="./img/content/img/welcome-2-mobile.webp" media="(max-width: 767px)" type="image/webp">
+                          <source srcset="./img/content/img/welcome-2-mobile.jpg" media="(max-width: 767px)">
+                          <source srcset="./img/content/img/welcome-2.webp" type="image/webp">
+                          <img class="main-slider__img" src="./img/content/img/welcome-2.jpg" alt="B2B"> 
+                        </picture>
+                      </div>
+                      <div class="main-slider__body">
+                        <h2 class="main-slider__title h1">Кофе для вашего бизнеса</h2>
+                        <div class="main-slider__info">
+                          <p class="main-slider__text main-slider__text_large">
+                            Экспертная команда с многолетним опытом в сфере кофейных решений. Лучшие
+                            эксперты рынка с опытом ведения ключевых клиентов Неспрессо
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-slider__item">
+                      <div class="main-slider__img-box">
+                        <picture>
+                          <source srcset="./img/content/img/welcome-2-mobile.webp" media="(max-width: 767px)" type="image/webp">
+                          <source srcset="./img/content/img/welcome-2-mobile.jpg" media="(max-width: 767px)">
+                          <source srcset="./img/content/img/welcome-2.webp" type="image/webp">
+                          <img class="main-slider__img" src="./img/content/img/welcome-2.jpg" alt="B2B"> 
+                        </picture>
+                      </div>
+                      <div class="main-slider__body">
+                        <h2 class="main-slider__title h1">Кофе для вашего бизнеса</h2>
+                        <div class="main-slider__info">
+                          <p class="main-slider__text main-slider__text_large">
+                            Экспертная команда с многолетним опытом в сфере кофейных решений. Лучшие
+                            эксперты рынка с опытом ведения ключевых клиентов Неспрессо
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-slider__item">
+                      <div class="main-slider__img-box">
+                        <picture>
+                          <source srcset="./img/content/img/welcome-2-mobile.webp" media="(max-width: 767px)" type="image/webp">
+                          <source srcset="./img/content/img/welcome-2-mobile.jpg" media="(max-width: 767px)">
+                          <source srcset="./img/content/img/welcome-2.webp" type="image/webp">
+                          <img class="main-slider__img" src="./img/content/img/welcome-2.jpg" alt="B2B"> 
+                        </picture>
+                      </div>
+                      <div class="main-slider__body">
+                        <h2 class="main-slider__title h1">Кофе для вашего бизнеса</h2>
+                        <div class="main-slider__info">
+                          <p class="main-slider__text main-slider__text_large">
+                            Экспертная команда с многолетним опытом в сфере кофейных решений. Лучшие
+                            эксперты рынка с опытом ведения ключевых клиентов Неспрессо
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-slider__item">
+                      <div class="main-slider__img-box">
+                        <picture>
+                          <source srcset="./img/content/img/welcome-2-mobile.webp" media="(max-width: 767px)" type="image/webp">
+                          <source srcset="./img/content/img/welcome-2-mobile.jpg" media="(max-width: 767px)">
+                          <source srcset="./img/content/img/welcome-2.webp" type="image/webp">
+                          <img class="main-slider__img" src="./img/content/img/welcome-2.jpg" alt="B2B"> 
+                        </picture>
+                      </div>
+                      <div class="main-slider__body">
+                        <h2 class="main-slider__title h1">Кофе для вашего бизнеса</h2>
+                        <div class="main-slider__info">
+                          <p class="main-slider__text main-slider__text_large">
+                            Экспертная команда с многолетним опытом в сфере кофейных решений. Лучшие
+                            эксперты рынка с опытом ведения ключевых клиентов Неспрессо
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="thumb-slider">
+                    <div class="thumb-slider__body">
+                      <div class="thumb-slider__items">
+                      <div class="thumb-slider__item">
+                        <picture><source srcset="./img/content/img/welcome-2-mobile.webp" type="image/webp"><img class="thumb-slider__img" src="./img/content/img/welcome-2-mobile.jpg" alt="image"></picture>
+                        <svg class="thumb-slider__progress" xmlns="http://www.w3.org/2000/svg">
+                          <circle class="thumb-slider__progress-track" cx="50%" cy="50%" r="50%" stroke-linecap="round" />
+                          <circle class="thumb-slider__progress-bar" cx="50%" cy="50%" r="50%" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div class="thumb-slider__item">
+                        <picture><source srcset="./img/content/img/welcome-2-mobile.webp" type="image/webp"><img class="thumb-slider__img" src="./img/content/img/welcome-2-mobile.jpg" alt="image"></picture>
+                        <svg class="thumb-slider__progress" xmlns="http://www.w3.org/2000/svg">
+                          <circle class="thumb-slider__progress-track" cx="50%" cy="50%" r="50%" stroke-linecap="round" />
+                          <circle class="thumb-slider__progress-bar" cx="50%" cy="50%" r="50%" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div class="thumb-slider__item">
+                        <picture><source srcset="./img/content/img/welcome-2-mobile.webp" type="image/webp"><img class="thumb-slider__img" src="./img/content/img/welcome-2-mobile.jpg" alt="image"></picture>
+                        <svg class="thumb-slider__progress" xmlns="http://www.w3.org/2000/svg">
+                          <circle class="thumb-slider__progress-track" cx="50%" cy="50%" r="50%" stroke-linecap="round" />
+                          <circle class="thumb-slider__progress-bar" cx="50%" cy="50%" r="50%" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div class="thumb-slider__item"> 
+                        <picture><source srcset="./img/content/img/welcome-2-mobile.webp" type="image/webp"><img class="thumb-slider__img" src="./img/content/img/welcome-2-mobile.jpg" alt="image"></picture>
+                        <svg class="thumb-slider__progress" xmlns="http://www.w3.org/2000/svg">
+                          <circle class="thumb-slider__progress-track" cx="50%" cy="50%" r="50%" stroke-linecap="round" />
+                          <circle class="thumb-slider__progress-bar" cx="50%" cy="50%" r="50%" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="main-slider__pagination"></div>
+                </div>
+                <div class="sliders__actions">
+                  <a class="sliders__action btn btn_green" href="#" download="">Скачать каталог</a>
+                  <a class="sliders__action btn btn_white" href="./catalog-tea.html">Каталог</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="b2b">
+          <div class="container">
+            <div class="b2b__body">
+              <div class="b2b__item b2b__item_large">
+                <div class="b2b__content">
+                  <h4 class="b2b__title h5">
+                    Широкий <br>
+                    ассортимент
+                  </h4>
+                  <p class="b2b__text">
+                    Широкий асссортимент Неспрессо и&nbsp;аналоги достойного качества с&nbsp;глубокой
+                    линейкой вкусов. Самые популярные вкусы всегда в&nbsp;наличие.
+                  </p>
+                  <div class="b2b__img-box">
+                    <picture>
+                      <source srcset="./img/content/img/card-1-mobile.webp" media="(max-width: 479px)" type="image/webp">
+                      <source srcset="./img/content/img/card-1-mobile.jpg" media="(max-width: 479px)">
+                      <source srcset="./img/content/img/card-1.webp" type="image/webp">
+                      <img class="b2b__img" src="./img/content/img/card-1.jpg" alt="image">
+                    </picture>
+                  </div>
+                  <button class="b2b__btn btn btn_green" type="button" data-popup="#b2b-1">
+                    Подробнее
+                  </button>
+                </div>
+              </div>
+              <div class="b2b__item b2b__item_large">
+                <div class="b2b__content">
+                  <h4 class="b2b__title h5">
+                    Лучшие <br>
+                    условия
+                  </h4>
+                  <p class="b2b__text">
+                    Выгодные условия на&nbsp;аренду, приобретение и&nbsp;сервис кофейного оборудования
+                    клиентам компании
+                  </p>
+                  <div class="b2b__img-box">
+                    <picture>
+                      <source srcset="./img/content/img/card-2-mobile.webp" media="(max-width: 479px)" type="image/webp">
+                      <source srcset="./img/content/img/card-2-mobile.jpg" media="(max-width: 479px)">
+                      <source srcset="./img/content/img/card-2.webp" type="image/webp">
+                      <img class="b2b__img" src="./img/content/img/card-2.jpg" alt="image">
+                    </picture>
+                  </div>
+                  <button class="b2b__btn btn btn_green" type="button" data-popup="#b2b-2">
+                    Подробнее
+                  </button>
+                </div>
+              </div>
+              <div class="b2b__item">
+                <div class="b2b__content">
+                  <div class="b2b__icon-box">
+                    <svg class="b2b__icon">
+                      <use xlink:href="./img/icons/icons.svg#user"></use>
+                    </svg>
+                  </div>
+                  <p class="b2b__text">Гибкий клиентский сервис</p>
+                  <button
+                    class="b2b__link"
+                    type="button"
+                    aria-label="Подробнее"
+                    title="Подробнее"
+                    data-popup="#b2b-3"
+                  >
+                    <svg class="b2b__link-icon">
+                      <use xlink:href="./img/icons/icons.svg#link"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="b2b__item">
+                <div class="b2b__content">
+                  <div class="b2b__icon-box">
+                    <svg class="b2b__icon">
+                      <use xlink:href="./img/icons/icons.svg#star"></use>
+                    </svg>
+                  </div>
+                  <p class="b2b__text">Наличие программы лояльности для клиентов</p>
+                  <button
+                    class="b2b__link"
+                    type="button"
+                    aria-label="Подробнее"
+                    title="Подробнее"
+                    data-popup="#b2b-4"
+                  >
+                    <svg class="b2b__link-icon">
+                      <use xlink:href="./img/icons/icons.svg#link"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="b2b__item">
+                <div class="b2b__content">
+                  <div class="b2b__icon-box">
+                    <svg class="b2b__icon">
+                      <use xlink:href="./img/icons/icons.svg#money"></use>
+                    </svg>
+                  </div>
+                  <p class="b2b__text">Конкурентное ценообразование</p>
+                  <button
+                    class="b2b__link"
+                    type="button"
+                    aria-label="Подробнее"
+                    title="Подробнее"
+                    data-popup="#b2b-5"
+                  >
+                    <svg class="b2b__link-icon">
+                      <use xlink:href="./img/icons/icons.svg#link"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="b2b__item">
+                <div class="b2b__content">
+                  <div class="b2b__icon-box">
+                    <svg class="b2b__icon">
+                      <use xlink:href="./img/icons/icons.svg#box"></use>
+                    </svg>
+                  </div>
+                  <p class="b2b__text">
+                    Отгрузка на&nbsp;следующий день, удобный сервис и&nbsp;логистика
+                  </p>
+                  <button
+                    class="b2b__link"
+                    type="button"
+                    aria-label="Подробнее"
+                    title="Подробнее"
+                    data-popup="#b2b-6"
+                  >
+                    <svg class="b2b__link-icon">
+                      <use xlink:href="./img/icons/icons.svg#link"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-head">
+          <div class="container">
+            <div class="catalog-head__body">
+              <div class="catalog-head__content">
+                <h2 class="catalog-head__title h3">Каталог</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="catalog">
+          <div class="container">
+            <div
+              class="catalog__body"
+              style="
+                --color-category: var(--color-brown);
+                --color-category-hover: var(--color-brown-light);
+              "
+            >
+              <div class="catalog__box">
+                <aside class="catalog__sidebar">
+                  <div class="filters">
+                    <button
+                      class="filters__menu btn"
+                      type="button"
+                      data-menu
+                      aria-label="Открыть фильтр"
+                      title="Открыть фильтр"
+                    >
+                      <svg>
+                        <use xlink:href="./img/icons/icons.svg#filter"></use>
+                      </svg>
+                      Фильтр
+                    </button>
+                    <div class="filters__wrapper">
+                      <form class="filters__body" action="#" data-spollers data-spollers-speed="0">
+                        <div class="filters__inner">
+                          <div class="filters__head">
+                            <h3 class="filters__title h3">Фильтр</h3>
+                            <button
+                              class="filters__close"
+                              type="button"
+                              data-menu
+                              aria-label="Закрыть фильтр"
+                              title="Закрыть фильтр"
+                            >
+                              <svg>
+                                <use xlink:href="./img/icons/icons.svg#close"></use>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="filters__main">
+                            <div class="filters__box">
+                              <!-- класс _spoller-active если фильтры раскрыты сразу -->
+                              <!-- data-spoller убираем если блок не раскрывающийся -->
+                              <button
+                                class="filters__subtitle _spoller-active h7"
+                                type="button"
+                                data-spoller
+                              >
+                                <span class="filters__name">Категории</span>
+                              </button>
+                              <div class="filters__content">
+                                <!-- data-enabled - раскрыт ли список сразу (true/false) -->
+                                <!-- data-max - сколько чекбоксов показывать в свернутом списке -->
+                                <div class="filters__slider" data-enabled="true">
+                                  <ul class="filters__items" data-max="5">
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="radio" name="category">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">Чай</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="radio" name="category">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">Кофе</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="radio" name="category">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">Кофемашины</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="radio" name="category">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">Аксессуары</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="radio" name="category">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">Системы для воды</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filters__box">
+                              <button
+                                class="filters__subtitle _spoller-active h7"
+                                type="button"
+                                data-spoller
+                              >
+                                <span class="filters__name">Насыщенность кофе</span>
+                                <span
+                                  data-tippy-content="Для приготовления напитков можно использовать как молотый кофе, так и кофе в зёрнах."
+                                  aria-label="Для приготовления напитков можно использовать как молотый кофе, так и кофе в зёрнах."
+                                  tabindex="0"
+                                >
+                                </span>
+                              </button>
+                              <div class="filters__content">
+                                <div class="filters__slider" data-enabled="false">
+                                  <ul class="filters__items" data-max="4">
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filters__box">
+                              <button class="filters__subtitle h7" type="button">Цена, ₽</button>
+                              <div class="smart-filter-input-group-number">
+                                <div
+                                  class="d-flex justify-content-between"
+                                  style="display: flex; justify-content: space-between"
+                                >
+                                  <div class="form-group" style="width: calc(50% - 10px)">
+                                    <div class="smart-filter-input-container">
+                                      <input
+                                        class="min-price form-control form-control-sm"
+                                        style="width: 100%"
+                                        type="number"
+                                        name="arrFilter_P1_MIN"
+                                        id="arrFilter_P1_MIN"
+                                        value=""
+                                        size="5"
+                                        placeholder="От"
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group" style="width: calc(50% - 10px)">
+                                    <div class="smart-filter-input-container">
+                                      <input
+                                        class="max-price form-control form-control-sm"
+                                        style="width: 100%"
+                                        type="number"
+                                        name="arrFilter_P1_MAX"
+                                        id="arrFilter_P1_MAX"
+                                        value=""
+                                        size="5"
+                                        placeholder="До"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="smart-filter-slider-track-container">
+                                  <div
+                                    class="smart-filter-slider-track"
+                                    id="drag_track_c4ca4238a0b923820dcc509a6f75849b"
+                                  >
+                                    <div class="smart-filter-slider-ruler p1">
+                                      <span>1&nbsp;700</span>
+                                    </div>
+                                    <div class="smart-filter-slider-ruler p2">
+                                      <span>2&nbsp;325</span>
+                                    </div>
+                                    <div class="smart-filter-slider-ruler p3">
+                                      <span>2&nbsp;950</span>
+                                    </div>
+                                    <div class="smart-filter-slider-ruler p4">
+                                      <span>3&nbsp;575</span>
+                                    </div>
+                                    <div class="smart-filter-slider-ruler p5">
+                                      <span>4&nbsp;200</span>
+                                    </div>
+                                    <div
+                                      class="smart-filter-slider-price-bar-vd"
+                                      style="left: 0; right: 0"
+                                      id="colorUnavailableActive_c4ca4238a0b923820dcc509a6f75849b"
+                                    ></div>
+                                    <div
+                                      class="smart-filter-slider-price-bar-vn"
+                                      style="left: 0%; right: 0%"
+                                      id="colorAvailableInactive_c4ca4238a0b923820dcc509a6f75849b"
+                                    ></div>
+                                    <div
+                                      class="smart-filter-slider-price-bar-v"
+                                      style="left: 30%; right: 0"
+                                      id="colorAvailableActive_c4ca4238a0b923820dcc509a6f75849b"
+                                    ></div>
+                                    <div
+                                      class="smart-filter-slider-range"
+                                      id="drag_tracker_c4ca4238a0b923820dcc509a6f75849b"
+                                      style="left: 0; right: 0"
+                                    >
+                                      <a
+                                        class="smart-filter-slider-handle left"
+                                        style="left: 30%"
+                                        href="javascript:void(0)"
+                                        id="left_slider_c4ca4238a0b923820dcc509a6f75849b"
+                                      ></a>
+                                      <a
+                                        class="smart-filter-slider-handle right"
+                                        style="right: 0"
+                                        href="javascript:void(0)"
+                                        id="right_slider_c4ca4238a0b923820dcc509a6f75849b"
+                                      ></a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filters__box">
+                              <button
+                                class="filters__subtitle _spoller-active h7"
+                                type="button"
+                                data-spoller
+                              >
+                                <span class="filters__name">Название фильтра</span>
+                              </button>
+                              <div class="filters__content">
+                                <div class="filters__slider" data-enabled="false">
+                                  <ul class="filters__items" data-max="4">
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">мягкий</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">мягкий</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">мягкий</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">мягкий</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="filters__search">
+                                  <div class="input">
+                                    <input class="input__body" type="search" placeholder=" " value="cdu">
+                                    <span class="input__placeholder">Поиск</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filters__box">
+                              <button
+                                class="filters__subtitle _spoller-active h7"
+                                type="button"
+                                data-spoller
+                              >
+                                <span class="filters__name">
+                                  Длинное название фильтра в несколько строк
+                                </span>
+                              </button>
+                              <div class="filters__content">
+                                <div class="filters__slider" data-enabled="true">
+                                  <ul class="filters__items" data-max="4">
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">мягкий</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">мягкий</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">мягкий</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">средний</span>
+                                        <span class="filter__nums">10</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">крепкий</span>
+                                        <span class="filter__nums">23</span>
+                                      </label>
+                                    </li>
+                                    <li class="filters__item">
+                                      <label class="filter">
+                                        <input class="filter__input" type="checkbox">
+                                        <span class="filter__icon"></span>
+                                        <span class="filter__name">мягкий</span>
+                                        <span class="filter__nums">6</span>
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filters__box">
+                              <button
+                                class="filters__subtitle _spoller-active h7"
+                                type="button"
+                                data-spoller
+                              >
+                                <span class="filters__name">Насыщенность кофе</span>
+                              </button>
+                              <div class="filters__content">
+                                <div class="filters__slider" data-enabled="true">
+                                  <ul class="filters__items" data-max="4">
+                                    <li class="filters__item">
+                                      <span class="filters__empty">Нет результатов поиска</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="filters__search">
+                                  <div class="input">
+                                    <input class="input__body" type="search" placeholder=" " value="cdu">
+                                    <span class="input__placeholder">Поиск</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filters__action">
+                          <button class="filters__btn btn btn_green" type="submit">Показать</button>
+                          <button class="filters__btn btn btn_white" type="reset">Сбросить</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </aside>
+                <div class="catalog__main">
+                  <div class="catalog__sorting sorting" data-da=".catalog__sidebar,767,last">
+                    <span class="sorting__placeholder">Сортировать по</span>
+                    <select data-modifier="sorting" data-speed="0" data-show-selected>
+                      <option value="По умолчанию" selected>По умолчанию</option>
+                      <option value="По скидке">По скидке</option>
+                      <option value="По популярности">По популярности</option>
+                      <option value="Цена по убыванию">Цена по убыванию</option>
+                      <option value="Цена по возрастанию">Цена по возрастанию</option>
+                    </select>
+                  </div>
+                  <div class="catalog__filtered filtered">
+                    <ul class="filtered__list">
+                      <li class="filtered__item">
+                        <a class="filtered__tag" href="#">Средний</a>
+                      </li>
+                      <li class="filtered__item">
+                        <a class="filtered__tag" href="#">С кислинкой</a>
+                      </li>
+                      <li class="filtered__item">
+                        <a class="filtered__tag" href="#">С горчинкой</a>
+                      </li>
+                      <li class="filtered__item">
+                        <a class="filtered__tag" href="#">Смесь арабика/робуста</a>
+                      </li>
+                      <li class="filtered__item">
+                        <a class="filtered__tag" href="#">Италия</a>
+                      </li>
+                      <li class="filtered__item">
+                        <a class="filtered__tag filtered__tag_reset" href="#">Сбросить фильтры (5)</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <ul class="catalog__items">
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-1.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-1.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">QT Iced Tea Pouches - Garden of Eden Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 222 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-2.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-2.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">QT Iced Tea Pouches - Summer Peach Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 222 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-3.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-3.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">White Coconut Crème Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-4.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-4.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">Garden of Eden Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-5.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-5.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">QT Iced Tea Pouches - Garden of Eden Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-6.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-6.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">QT Iced Tea Pouches - Garden of Eden Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-7.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-7.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">White Coconut Crème Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-8.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-8.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">
+                            Капсульная кофемашина Nespresso C30 Essenza Mini
+                          </h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-9.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-9.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">Tali's Masala Chai Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-5.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-5.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">QT Iced Tea Pouches - Summer Peach Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-1.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-1.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">Garden of Eden Tea</h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog__item">
+                      <div class="product-card">
+                        <ul class="promos promos_card">
+                          <li class="promos__item promos__item_green">Черная пятница 🔥</li>
+                          <li class="promos__item promos__item_accent">Акция 2+1 ✌</li>
+                          <li class="promos__item promos__item_light">Нейтральная акция ✌</li>
+                        </ul>
+                        <button
+                          class="favorite-btn favorite-btn_card"
+                          type="button"
+                          aria-label="Добавить в избранное"
+                          title="Добавить в избранное"
+                        >
+                          <svg class="favorite-btn__icon">
+                            <use xlink:href="./img/icons/icons.svg#favorite"></use>
+                          </svg>
+                        </button>
+                        <a class="product-card__link" href="./product.html">
+                          <div class="product-card__img-box">
+                            <picture><source srcset="./img/content/catalog/tea-3.webp" type="image/webp"><img class="product-card__img" src="./img/content/catalog/tea-3.jpg" alt="image"></picture>
+                          </div>
+                          <h3 class="product-card__name">
+                            Капсульная кофемашина Nespresso C30 Essenza Mini
+                          </h3>
+                        </a>
+                        <div class="product-card__footer">
+                          <div class="prices">
+                            <div class="prices__sale">800 ₽</div>
+                            <div class="prices__info">
+                              <div class="prices__main">498 ₽</div>
+                            </div>
+                          </div>
+                          <div class="buy buy_card">
+                            <button class="buy__btn" type="button" aria-label="Добавить в корзину" title="Добавить в корзину">
+                              <svg class="buy__icon">
+                                <use xlink:href="./img/icons/icons.svg#cart"></use>
+                                <use xlink:href="./img/icons/icons.svg#plus"></use>
+                              </svg>
+                            </button>
+                            <div class="buy__quantity quantity" hidden>
+                              <button
+                                class="quantity__button quantity__button_minus"
+                                type="button"
+                                aria-label="Уменьшить"
+                                title="Уменьшить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#minus"></use>
+                                </svg>
+                              </button>
+                              <div class="quantity__input-box">
+                                <input class="quantity__input" type="text" value="1">
+                              </div>
+                              <button
+                                class="quantity__button quantity__button_plus"
+                                type="button"
+                                aria-label="Увеличить"
+                                title="Увеличить"
+                              >
+                                <svg class="quantity__icon">
+                                  <use xlink:href="./img/icons/icons.svg#plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <nav class="blog__pagination pagination">
+                    <ul class="pagination__list">
+                      <li class="pagination__item pagination__item_prev pagination__item_disabled">
+                        <span></span>
+                      </li>
+                      <li class="pagination__item pagination__item_active">
+                        <span>1</span>
+                      </li>
+                      <li class="pagination__item">
+                        <a href="#">2</a>
+                      </li>
+                      <li class="pagination__item">
+                        <span>...</span>
+                      </li>
+                      <li class="pagination__item">
+                        <a href="#">10</a>
+                      </li>
+                      <li class="pagination__item pagination__item_next">
+                        <a href="#" aria-label="next page"></a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="subscribe">
+                <div class="subscribe__content">
+                  <h3 class="subscribe__title h4">Оформи подписку</h3>
+                  <p class="subscribe__text">Подписывайся на рассылку и будь в курсе скидок и акций</p>
+                </div>
+                <form class="subscribe__form" action="#">
+                  <input class="subscribe__input" type="email" placeholder="Ваш e-mail" required>
+                  <div class="subscribe__action">
+                    <label class="subscribe__agree agree agree_light">
+                      <input class="agree__checkbox" type="checkbox">
+                      <span class="agree__icon"></span>
+                      <span class="agree__text">
+                        Я соглашаюсь получать рекламные и иные маркетинговые сообщения от «Natem» на условиях
+                        <a href="./policy.html" target="_blank">Политики конфиденциальности</a>
+                        и <a href="./agree.html" target="_blank">Пользовательского соглашения</a>.
+                      </span>
+                    </label>
+                    <button class="subscribe__btn btn btn_white" type="submit">Подписаться</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__first">
+              <a class="logo logo_footer" href="./index.html">
+                <img class="logo__img" src="./img/content/logo.svg" alt="Natem">
+              </a>
+              <div class="footer__social social">
+                <p class="social__title">Мы в соцсетях</p>
+                <ul class="social__list">
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://vk.com"
+                      target="_blank"
+                      aria-label="Вконтакте"
+                      title="Вконтакте"
+                    >
+                      <img class="social__img" src="./img/icons/social/vk.svg" alt="Вконтакте">
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://ok.ru"
+                      target="_blank"
+                      aria-label="Одноклассники"
+                      title="Одноклассники"
+                    >
+                      <img class="social__img" src="./img/icons/social/ok.svg" alt="Одноклассники">
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://dzen.ru"
+                      target="_blank"
+                      aria-label="Дзен"
+                      title="Дзен"
+                    >
+                      <img class="social__img" src="./img/icons/social/dz.svg" alt="Дзен">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__main">
+              <nav class="footer-menu">
+                <div class="footer-menu__box">
+                  <h5 class="footer-menu__title h7">Каталог</h5>
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Кофе</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Чай</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Системы для воды</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Кофемашины</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-tea.html">Аксессуары</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-menu__box">
+                  <h5 class="footer-menu__title h7">Важное</h5>
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./about.html">О компании</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./services.html">Сервис</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./b2b.html">B2B</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./contacts.html">Контакты</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./catalog-promos.html">Спецпредложения</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-menu__box">
+                  <h5 class="footer-menu__title h7">Документы</h5>
+                  <ul class="footer-menu__list footer-menu__list_custom">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./policy.html">
+                        Политика обработки персональных данных
+                      </a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./agree.html">
+                        Согласие на обработку персональных данных
+                      </a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./offer.html">Публичная оферта</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./cookie.html">Политика Cookie</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div class="footer__last">
+              <div class="footer-contacts">
+                <div class="footer-contacts__main">
+                  <a class="footer-contacts__phone" href="tel:88003333887">8 800 33 33 887</a>
+                  <a class="footer-contacts__mail" href="mailto:support@natem.ru" target="_blank">
+                    support@natem.ru
+                  </a>
+                </div>
+                <div class="footer-contacts__action">
+                  <a class="footer-contacts__btn btn btn_green" href="#" data-popup="#contact-form">
+                    Обратный звонок
+                  </a>
+                  <a class="footer-contacts__btn btn btn_light" href="#" data-goto=".wrapper">Наверх</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="footer__copy">© 2023 Natem</div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="popup" id="b2b-1">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Закрыть окно" title="Закрыть окно" type="button" data-close>
+          <svg class="popup__icon">
+            <use xlink:href="./img/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <div class="b2b-info">
+            <figure class="b2b-info__img-box">
+              <picture><source srcset="./img/content/img/card-1-mobile.webp" type="image/webp"><img class="b2b-info__img" src="./img/content/img/card-1-mobile.jpg" alt="image"></picture>
+            </figure>
+            <h4 class="b2b-info__title h5">Широкий ассортимент</h4>
+            <p class="b2b-info__text">
+              Мы привозим лучший капсульный кофе, тот к которому вы привыкли, несмотря на импортозамещение. Мы
+              доверяем признанным во всем мире бариста и их брендам кофе с европейскими традициями, а
+              титестерам чая из Цейлона и Китая. Вы сможете наслаждаться любимым вкусом натурального напитка
+              каждое утро каждой чашкой. А наш магазин будет надежным поставщиком любимого продукта в нужное
+              время и на нужный кошелек.
+            </p>
+            <div class="b2b-info__file file">
+              <div class="file__main">
+                <svg class="file__icon">
+                  <use xlink:href="./img/icons/icons.svg#file"></use>
+                </svg>
+                <dl class="file__info">
+                  <dt class="file__name">Название файла в котором содержится инструкция.pdf</dt>
+                  <dd class="file__desc">1 gb</dd>
+                </dl>
+              </div>
+              <a class="file__btn btn btn_green" href="./manual.pdf" download>Скачать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="b2b-2">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Закрыть окно" title="Закрыть окно" type="button" data-close>
+          <svg class="popup__icon">
+            <use xlink:href="./img/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <div class="b2b-info">
+            <figure class="b2b-info__img-box">
+              <picture><source srcset="./img/content/img/card-1-mobile.webp" type="image/webp"><img class="b2b-info__img" src="./img/content/img/card-1-mobile.jpg" alt="image"></picture>
+            </figure>
+            <h4 class="b2b-info__title h5">Широкий ассортимент 2</h4>
+            <p class="b2b-info__text">
+              Мы привозим лучший капсульный кофе, тот к которому вы привыкли, несмотря на импортозамещение. Мы
+              доверяем признанным во всем мире бариста и их брендам кофе с европейскими традициями, а
+              титестерам чая из Цейлона и Китая. Вы сможете наслаждаться любимым вкусом натурального напитка
+              каждое утро каждой чашкой. А наш магазин будет надежным поставщиком любимого продукта в нужное
+              время и на нужный кошелек.
+            </p>
+            <div class="b2b-info__file file">
+              <div class="file__main">
+                <svg class="file__icon">
+                  <use xlink:href="./img/icons/icons.svg#file"></use>
+                </svg>
+                <dl class="file__info">
+                  <dt class="file__name">Название файла в котором содержится инструкция.pdf</dt>
+                  <dd class="file__desc">1 gb</dd>
+                </dl>
+              </div>
+              <a class="file__btn btn btn_green" href="./manual.pdf" download>Скачать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="b2b-3">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Закрыть окно" title="Закрыть окно" type="button" data-close>
+          <svg class="popup__icon">
+            <use xlink:href="./img/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <div class="b2b-info">
+            <figure class="b2b-info__img-box">
+              <picture><source srcset="./img/content/img/card-1-mobile.webp" type="image/webp"><img class="b2b-info__img" src="./img/content/img/card-1-mobile.jpg" alt="image"></picture>
+            </figure>
+            <h4 class="b2b-info__title h5">Широкий ассортимент 3</h4>
+            <p class="b2b-info__text">
+              Мы привозим лучший капсульный кофе, тот к которому вы привыкли, несмотря на импортозамещение. Мы
+              доверяем признанным во всем мире бариста и их брендам кофе с европейскими традициями, а
+              титестерам чая из Цейлона и Китая. Вы сможете наслаждаться любимым вкусом натурального напитка
+              каждое утро каждой чашкой. А наш магазин будет надежным поставщиком любимого продукта в нужное
+              время и на нужный кошелек.
+            </p>
+            <div class="b2b-info__file file">
+              <div class="file__main">
+                <svg class="file__icon">
+                  <use xlink:href="./img/icons/icons.svg#file"></use>
+                </svg>
+                <dl class="file__info">
+                  <dt class="file__name">Название файла в котором содержится инструкция.pdf</dt>
+                  <dd class="file__desc">1 gb</dd>
+                </dl>
+              </div>
+              <a class="file__btn btn btn_green" href="./manual.pdf" download>Скачать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="b2b-4">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Закрыть окно" title="Закрыть окно" type="button" data-close>
+          <svg class="popup__icon">
+            <use xlink:href="./img/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <div class="b2b-info">
+            <figure class="b2b-info__img-box">
+              <picture><source srcset="./img/content/img/card-1-mobile.webp" type="image/webp"><img class="b2b-info__img" src="./img/content/img/card-1-mobile.jpg" alt="image"></picture>
+            </figure>
+            <h4 class="b2b-info__title h5">Широкий ассортимент 4</h4>
+            <p class="b2b-info__text">
+              Мы привозим лучший капсульный кофе, тот к которому вы привыкли, несмотря на импортозамещение. Мы
+              доверяем признанным во всем мире бариста и их брендам кофе с европейскими традициями, а
+              титестерам чая из Цейлона и Китая. Вы сможете наслаждаться любимым вкусом натурального напитка
+              каждое утро каждой чашкой. А наш магазин будет надежным поставщиком любимого продукта в нужное
+              время и на нужный кошелек.
+            </p>
+            <div class="b2b-info__file file">
+              <div class="file__main">
+                <svg class="file__icon">
+                  <use xlink:href="./img/icons/icons.svg#file"></use>
+                </svg>
+                <dl class="file__info">
+                  <dt class="file__name">Название файла в котором содержится инструкция.pdf</dt>
+                  <dd class="file__desc">1 gb</dd>
+                </dl>
+              </div>
+              <a class="file__btn btn btn_green" href="./manual.pdf" download>Скачать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="b2b-5">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Закрыть окно" title="Закрыть окно" type="button" data-close>
+          <svg class="popup__icon">
+            <use xlink:href="./img/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <div class="b2b-info">
+            <figure class="b2b-info__img-box">
+              <picture><source srcset="./img/content/img/card-1-mobile.webp" type="image/webp"><img class="b2b-info__img" src="./img/content/img/card-1-mobile.jpg" alt="image"></picture>
+            </figure>
+            <h4 class="b2b-info__title h5">Широкий ассортимент 5</h4>
+            <p class="b2b-info__text">
+              Мы привозим лучший капсульный кофе, тот к которому вы привыкли, несмотря на импортозамещение. Мы
+              доверяем признанным во всем мире бариста и их брендам кофе с европейскими традициями, а
+              титестерам чая из Цейлона и Китая. Вы сможете наслаждаться любимым вкусом натурального напитка
+              каждое утро каждой чашкой. А наш магазин будет надежным поставщиком любимого продукта в нужное
+              время и на нужный кошелек.
+            </p>
+            <div class="b2b-info__file file">
+              <div class="file__main">
+                <svg class="file__icon">
+                  <use xlink:href="./img/icons/icons.svg#file"></use>
+                </svg>
+                <dl class="file__info">
+                  <dt class="file__name">Название файла в котором содержится инструкция.pdf</dt>
+                  <dd class="file__desc">1 gb</dd>
+                </dl>
+              </div>
+              <a class="file__btn btn btn_green" href="./manual.pdf" download>Скачать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="b2b-6">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Закрыть окно" title="Закрыть окно" type="button" data-close>
+          <svg class="popup__icon">
+            <use xlink:href="./img/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <div class="b2b-info">
+            <figure class="b2b-info__img-box">
+              <picture><source srcset="./img/content/img/card-1-mobile.webp" type="image/webp"><img class="b2b-info__img" src="./img/content/img/card-1-mobile.jpg" alt="image"></picture>
+            </figure>
+            <h4 class="b2b-info__title h5">Широкий ассортимент 6</h4>
+            <p class="b2b-info__text">
+              Мы привозим лучший капсульный кофе, тот к которому вы привыкли, несмотря на импортозамещение. Мы
+              доверяем признанным во всем мире бариста и их брендам кофе с европейскими традициями, а
+              титестерам чая из Цейлона и Китая. Вы сможете наслаждаться любимым вкусом натурального напитка
+              каждое утро каждой чашкой. А наш магазин будет надежным поставщиком любимого продукта в нужное
+              время и на нужный кошелек.
+            </p>
+            <div class="b2b-info__file file">
+              <div class="file__main">
+                <svg class="file__icon">
+                  <use xlink:href="./img/icons/icons.svg#file"></use>
+                </svg>
+                <dl class="file__info">
+                  <dt class="file__name">Название файла в котором содержится инструкция.pdf</dt>
+                  <dd class="file__desc">1 gb</dd>
+                </dl>
+              </div>
+              <a class="file__btn btn btn_green" href="./manual.pdf" download>Скачать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Закрыть окно" title="Закрыть окно" type="button" data-close>
+          <svg class="popup__icon">
+            <use xlink:href="./img/icons/icons.svg#close"></use>
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <form class="callback" action="#">
+            <h4 class="callback__title h5">Форма обратной связи</h4>
+            <div class="callback__inputs">
+              <div class="callback__input">
+                <div class="input">
+                  <input class="input__body" type="text" name="name" placeholder=" " required>
+                  <span class="input__placeholder">Ваше имя</span>
+                </div>
+              </div>
+              <div class="callback__input">
+                <div class="input">
+                  <input class="input__body" type="tel" name="tel" placeholder=" " required>
+                  <span class="input__placeholder">Телефон</span>
+                </div>
+              </div>
+            </div>
+            <button class="callback__btn btn btn_green" type="submit">Отправить</button>
+            <label class="callback__agree agree agree_dark">
+              <input class="agree__checkbox" type="checkbox">
+              <span class="agree__icon"></span>
+              <span class="agree__text">
+                Я соглашаюсь получать рекламные и иные маркетинговые сообщения от «Natem» на условиях
+                <a href="./policy.html" target="_blank">Политики конфиденциальности</a>
+                и <a href="./agree.html" target="_blank">Пользовательского соглашения</a>.
+              </span>
+            </label>
+          </form>
+          <!-- <div class="callback">
+            <h4 class="callback__title h5">Произошла ошибка, попробуйте еще</h4>
+            <p class="callback__text">💔</p>
+            <button class="callback__btn btn btn_green" type="button">Обновить</button>
+          </div> -->
+          <!-- <div class="callback">
+            <h4 class="callback__title h5">Ваша заявка отправлена!</h4>
+            <p class="callback__text">👌</p>
+            <button class="callback__btn btn btn_green" type="button">Обновить</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <nav class="mobile-menu">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__btn" href="./favorite.html" aria-label="Избранное" title="Избранное">
+            <svg class="mobile-menu__icon">
+              <use xlink:href="./img/icons/icons.svg#heart"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__btn" href="./cart.html" aria-label="Корзина" title="Корзина">
+            <svg class="mobile-menu__icon">
+              <use xlink:href="./img/icons/icons.svg#cart"></use>
+            </svg>
+          </a>
+          <span class="mobile-menu__count">999</span>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__btn" href="./lc.html" aria-label="Личный кабинет" title="Личный кабинет">
+            <svg class="mobile-menu__icon">
+              <use xlink:href="./img/icons/icons.svg#user"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-menu__item">
+          <button class="mobile-menu__btn" data-menu type="button" aria-label="Меню" title="Меню">
+            <svg class="mobile-menu__icon">
+              <use xlink:href="./img/icons/icons.svg#menu"></use>
+              <use xlink:href="./img/icons/icons.svg#close"></use>
+            </svg>
+          </button>
+          <div class="mobile-sub-menu">
+            <ul class="mobile-sub-menu__list">
+              <li class="mobile-sub-menu__item">
+                <a class="mobile-sub-menu__link" href="./about.html">О компании</a>
+              </li>
+              <li class="mobile-sub-menu__item">
+                <a class="mobile-sub-menu__link" href="./services.html">Сервис</a>
+              </li>
+              <li class="mobile-sub-menu__item">
+                <a class="mobile-sub-menu__link" href="./b2b.html">B2B</a>
+              </li>
+              <li class="mobile-sub-menu__item">
+                <a class="mobile-sub-menu__link" href="./contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="cookie">
+      <p class="cookie__text">
+        Продолжая использовать сайт, Вы&nbsp;соглашаетесь на&nbsp;использование
+        <a href="#" target="_blank">файлов cookie</a>
+      </p>
+      <button class="cookie__btn btn btn_brown" type="button">Хорошо</button>
+    </div>
+  </body>
+</html>

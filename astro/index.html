@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Main page</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo logo_header" href="./index.html">
+              <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" aria-label="Open menu">
+                <i class="menu__icon" aria-hidden="true">
+                  <span></span>
+                </i>
+              </button>
+              <div class="menu__body">
+                <ul class="menu__list">
+                  <li class="menu__item" data-spollers>
+                    <button
+                      class="menu__link icon-arr-down"
+                      type="button"
+                      data-spoller
+                    >
+                      Services and solution
+                    </button>
+                    <ul class="sub-menu" hidden>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./mobile-proxies.html">
+                          Mobile Proxies
+                        </a>
+                      </li>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./residential-proxies.html">
+                          Residential Proxies
+                        </a>
+                      </li>
+                      <li class="sub-menu__item">
+                        <a class="sub-menu__link" href="./datacenter-proxies.html">
+                          Datacenter Proxies
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./use-cases.html">Why use it?</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./pricing.html">Pricing</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./faq.html">FAQ</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./blog.html">Blog</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="./we-are-astro.html">About</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div class="action" data-da=".menu__body,767,first">
+              <div class="action__auth">
+                <!-- <a class="action__btn btn btn_light" href="./sign-up.html">Sign up</a>
+                <a class="action__btn btn btn_dark" href="./sign-in.html">Sign in</a> -->
+                <a class="action__btn action__btn_user btn btn_violet" href="#">
+                  <span>longest_address_name@gmail.com</span>
+                </a>
+                <a
+                  class="action__btn btn btn_light icon-log-out"
+                  href="./sign-in.html"
+                  aria-label="Log-out"
+                ></a>
+              </div>
+              <div class="lang" data-da=".menu__body,1365,last">
+                <select class="lang" data-speed="0">
+                  <option data-class="btn" data-href="#" value="En" selected>
+                    En
+                  </option>
+                  <option data-class="btn" data-href="#" value="Uk">Uk</option>
+                  <option data-class="btn" data-href="#" value="Arm">Arm</option>
+                  <option data-class="btn" data-href="#" value="Chi">Chi</option>
+                  <option data-class="btn" data-href="#" value="Ru">Ru</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="welcome welcome_home">
+          <div class="container">
+            <div class="welcome__body welcome__body_cards">
+              <div class="welcome__content">
+                <h1 class="welcome__title welcome__title_large title1">
+                  Enterprise Data Gathering Infrastructure
+                </h1>
+                <p class="welcome__text welcome__text_small">
+                  Collect open web data via ethically sourced proxies
+                </p>
+                <div class="welcome__action">
+                  <a class="welcome__btn btn btn_cta" href="#">
+                    <span>Instant free test</span>
+                  </a>
+                  <a
+                    class="welcome__btn btn btn_rate"
+                    href="https://www.reviews.io/"
+                    target="_blank"
+                  >
+                    <span class="icon-rate">4.76</span>
+                    Our reviews on <span>Reviews.io</span>
+                  </a>
+                </div>
+                <div class="welcome__img-box welcome__img-box_home">
+                  <picture>
+                    <img class="welcome__img" src="./img/content/arts/home.jpg" alt="Enterprise Data Gathering Infrastructure">
+                  </picture>
+                </div>
+                <div class="contacts contacts_welcome">
+                  <button class="contacts__btn contacts__btn_more icon-close">
+                    <span></span>
+                  </button>
+                  <ul class="contacts__list">
+                    <li class="contacts__item">
+                      <a class="contacts__link" href="#" target="_blank">
+                        <img class="contacts__icon" src="./img/icons/social/whatsapp.svg" alt="whatsapp">
+                      </a>
+                    </li>
+                    <li class="contacts__item">
+                      <a class="contacts__link" href="#" target="_blank">
+                        <img class="contacts__icon" src="./img/icons/social/telegram.svg" alt="telegram">
+                      </a>
+                    </li>
+                    <li class="contacts__item">
+                      <a class="contacts__link" href="#" target="_blank">
+                        <img class="contacts__icon" src="./img/icons/social/mail.svg" alt="email">
+                      </a>
+                    </li>
+                    <li class="contacts__item">
+                      <a class="contacts__link" href="#" target="_blank">
+                        <img class="contacts__icon" src="./img/icons/social/line.svg" alt="line">
+                      </a>
+                    </li>
+                    <li class="contacts__item">
+                      <a class="contacts__link" href="#" target="_blank">
+                        <img class="contacts__icon" src="./img/icons/social/instagram.svg" alt="instagram">
+                      </a>
+                    </li>
+                    <li class="contacts__item">
+                      <a class="contacts__link" href="#" target="_blank">
+                        <img class="contacts__icon" src="./img/icons/social/facebook.svg" alt="facebook">
+                      </a>
+                    </li>
+                    <li class="contacts__item">
+                      <a class="contacts__link" href="#" target="_blank">
+                        <img class="contacts__icon" src="./img/icons/social/viber.svg" alt="viber">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="welcome-cards">
+                <div class="welcome-cards__items" data-animated>
+                  <div class="welcome-cards__item">
+                    <a class="welcome-cards__link" href="./mobile-proxies.html">
+                      <div class="icon icon_large">
+                        <img class="icon__img" src="./img/icons/mobile.svg" alt="Dynamic mobile proxies">
+                      </div>
+                      <h3 class="welcome-cards__title title4">
+                        Dynamic mobile proxies
+                      </h3>
+                      <ul class="welcome-cards__list">
+                        <li class="welcome-cards__list-item">
+                          Ethically-based real end-user IPs
+                        </li>
+                        <li class="welcome-cards__list-item">
+                          4G/5G proxies distributed by states and carriers
+                        </li>
+                        <li class="welcome-cards__list-item">
+                          Automatic or manual IP rotation
+                        </li>
+                      </ul>
+                      <p class="welcome-cards__text">
+                        View websites as if you are using an IP address of a
+                        mobile device from a selected location — any city,
+                        region, or country
+                      </p>
+                    </a>
+                  </div>
+                  <div class="welcome-cards__item">
+                    <a
+                      class="welcome-cards__link"
+                      href="./residential-proxies.html"
+                    >
+                      <div class="icon icon_large">
+                        <img class="icon__img" src="./img/icons/mouse.svg" alt="Rotating residential proxies">
+                      </div>
+                      <h3 class="welcome-cards__title title4">
+                        Rotating residential proxies
+                      </h3>
+                      <ul class="welcome-cards__list">
+                        <li class="welcome-cards__list-item">
+                          2M+ whitelisted geo targeted proxies
+                        </li>
+                        <li class="welcome-cards__list-item">
+                          Standard IP-PORT protocol, SOCK(S) and HTTP(S)
+                        </li>
+                        <li class="welcome-cards__list-item">
+                          VPN out of proxies
+                        </li>
+                      </ul>
+                      <p class="welcome-cards__text">
+                        Ensure yourself safe browsing and data collection from a
+                        wide range of geo locations — IP rotation by timer,
+                        link, or on demand
+                      </p>
+                    </a>
+                  </div>
+                  <div class="welcome-cards__item">
+                    <a
+                      class="welcome-cards__link"
+                      href="./datacenter-proxies.html"
+                    >
+                      <div class="icon icon_large">
+                        <img class="icon__img" src="./img/icons/driver-2.svg" alt="Versatile datacenter proxies">
+                      </div>
+                      <h3 class="welcome-cards__title title4">
+                        Versatile datacenter proxies
+                      </h3>
+                      <ul class="welcome-cards__list">
+                        <li class="welcome-cards__list-item">
+                          Dynamic proxies from VDS/VPS providers
+                        </li>
+                        <li class="welcome-cards__list-item">
+                          Fast and stable sessions with adjustable duration
+                        </li>
+                        <li class="welcome-cards__list-item">
+                          External IP address setting by API, time, on demand
+                        </li>
+                      </ul>
+                      <p class="welcome-cards__text">
+                        Go for data scraping with zero website restrictions with
+                        the help of the best whitelisted IP addresses — target
+                        by state, city, or ASN
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="information">
+          <div class="container">
+            <div class="information__box">
+              <h2 class="information__title title2">Our Advantages</h2>
+              <ul class="information__cards cards cards_contour" data-animated>
+                <li class="cards__item">
+                  <div class="icon icon_large">
+                    <img class="icon__img" src="./img/icons/folder-connection.svg" alt="icon">
+                  </div>
+                  <p class="cards__text">Whitelisted, pre-selected IPs only</p>
+                </li>
+                <li class="cards__item">
+                  <div class="icon icon_large">
+                    <img class="icon__img" src="./img/icons/global-search.svg" alt="icon">
+                  </div>
+                  <p class="cards__text">
+                    Geo targeted proxies, over 100 countries covered
+                  </p>
+                </li>
+                <li class="cards__item">
+                  <div class="icon icon_large">
+                    <img class="icon__img" src="./img/icons/location-tick.svg" alt="icon">
+                  </div>
+                  <p class="cards__text">IP range by country, city, ISP</p>
+                </li>
+                <li class="cards__item">
+                  <div class="icon icon_large">
+                    <img class="icon__img" src="./img/icons/driver-refresh.svg" alt="icon">
+                  </div>
+                  <p class="cards__text">All proxies are dynamic (rotating)</p>
+                </li>
+                <li class="cards__item">
+                  <div class="icon icon_large">
+                    <img class="icon__img" src="./img/icons/wifi-square.svg" alt="icon">
+                  </div>
+                  <p class="cards__text">VPN-ready proxies</p>
+                </li>
+                <li class="cards__item">
+                  <div class="icon icon_large">
+                    <img class="icon__img" src="./img/icons/magic-star.svg" alt="icon">
+                  </div>
+                  <p class="cards__text">Lifetime RevShare referral program</p>
+                </li>
+                <li class="cards__item">
+                  <div class="icon icon_large">
+                    <img class="icon__img" src="./img/icons/messages.svg" alt="icon">
+                  </div>
+                  <p class="cards__text">Live support in popular messengers</p>
+                </li>
+                <li class="cards__item">
+                  <div class="icon icon_large">
+                    <img class="icon__img" src="./img/icons/calendar-tick.svg" alt="icon">
+                  </div>
+                  <p class="cards__text">Free proxy test</p>
+                </li>
+              </ul>
+            </div>
+            <div class="information__box security">
+              <h2 class="security__title title2">KYC and AML</h2>
+              <p class="security__text">
+                As a trusted proxy website and a dependable market participant,
+                Astro treats KYC and AML issues as priorities. Our goal is
+                keeping the community safe for all participating sides. By this
+                we mean logging all traffic according to strict KYC and AML
+                policies and fighting against abuse of any kind.
+                <br><br>
+                To do so, we resort to these practices:
+              </p>
+              <ul class="security__list" data-animated>
+                <li class="security__item security__item_dark">
+                  <div class="security__img-box">
+                    <picture><source srcset="./img/content/security/1.webp" type="image/webp"><img class="security__img" src="./img/content/security/1.jpg" alt="image"></picture>
+                  </div>
+                  <p class="security__desc">
+                    User validation through contact and company details,
+                    intended use cases and scenarios
+                  </p>
+                </li>
+                <li class="security__item">
+                  <div class="security__img-box">
+                    <picture><source srcset="./img/content/security/2.webp" type="image/webp"><img class="security__img" src="./img/content/security/2.jpg" alt="image"></picture>
+                  </div>
+                  <p class="security__desc">
+                    Network monitoring in real-time based on AI and ML
+                    technology to identify and prevent suspicious activities
+                  </p>
+                </li>
+                <li class="security__item">
+                  <div class="security__img-box">
+                    <picture><source srcset="./img/content/security/3.webp" type="image/webp"><img class="security__img" src="./img/content/security/3.jpg" alt="image"></picture>
+                  </div>
+                  <p class="security__desc">
+                    Regular random client checks within financial flows'
+                    monitoring system
+                  </p>
+                </li>
+                <li class="security__item">
+                  <div class="security__img-box">
+                    <picture><source srcset="./img/content/security/4.webp" type="image/webp"><img class="security__img" src="./img/content/security/4.jpg" alt="image"></picture>
+                  </div>
+                  <p class="security__desc">
+                    Examination of all abuse reports and complaints received
+                    from the third parties
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="ai ai_home">
+          <div class="container">
+            <div class="ai__body">
+              <div class="ai__img-box">
+                <picture>
+                  <img class="ai__img" src="./img/content/arts/ai.jpg" alt="image">
+                </picture>
+              </div>
+              <div class="ai__content">
+                <h2 class="ai__title title2">AI-based monitoring</h2>
+                <p class="ai__text ai__text_small">
+                  As an advanced ecosystem of proxies, we take an entire range
+                  of measures to provide for compliance and safety within our
+                  platform. We can identify instances of unethical usage
+                  through:
+                </p>
+              </div>
+              <ul class="stickers stickers_col3" data-animated>
+                <li class="stickers__item">
+                  <div class="icon icon_medium">
+                    <img class="icon__img" src="./img/icons/user-octagon.svg" alt="icon">
+                  </div>
+                  <p class="stickers__text">Regular manual checks</p>
+                </li>
+                <li class="stickers__item">
+                  <div class="icon icon_medium">
+                    <img class="icon__img" src="./img/icons/cpu-setting.svg" alt="icon">
+                  </div>
+                  <p class="stickers__text">ML-based technologies</p>
+                </li>
+                <li class="stickers__item">
+                  <div class="icon icon_medium">
+                    <img class="icon__img" src="./img/icons/cpu.svg" alt="icon">
+                  </div>
+                  <p class="stickers__text">AI-fueled software</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="cases">
+          <div class="container">
+            <div class="cases__body">
+              <h2 class="cases__title title2">Use Cases</h2>
+              <div class="cases__slider" data-mobile="false">
+                <div class="cases__items" data-animated>
+                  <a class="cases__item" href="./use-cases.html#market">
+                    <div class="cases__img-box">
+                      <picture><source srcset="./img/content/cases/1-small.webp" type="image/webp"><img class="cases__img" src="./img/content/cases/1-small.jpg" alt="Market Study"></picture>
+                    </div>
+                    <div class="cases__content">
+                      <h3 class="cases__name title5">Market Study</h3>
+                      <p class="cases__text">
+                        Find your target audience, watch and learn from
+                        competitors, track information about customers and
+                        products
+                      </p>
+                      <span class="cases__link">Learn more</span>
+                    </div>
+                  </a>
+                  <a class="cases__item" href="./use-cases.html#social">
+                    <div class="cases__img-box">
+                      <picture><source srcset="./img/content/cases/2-small.webp" type="image/webp"><img class="cases__img" src="./img/content/cases/2-small.jpg" alt="Social Networks"></picture>
+                    </div>
+                    <div class="cases__content">
+                      <h3 class="cases__name title5">Social Networks</h3>
+                      <p class="cases__text">
+                        Work with multiple accounts, lead ad campaigns, discover
+                        trends, collect data for SMM automatically
+                      </p>
+                      <span class="cases__link">Learn more</span>
+                    </div>
+                  </a>
+                  <a class="cases__item" href="./use-cases.html#seo">
+                    <div class="cases__img-box">
+                      <picture><source srcset="./img/content/cases/3-small.webp" type="image/webp"><img class="cases__img" src="./img/content/cases/3-small.jpg" alt="SEO"></picture>
+                    </div>
+                    <div class="cases__content">
+                      <h3 class="cases__name title5">SEO</h3>
+                      <p class="cases__text">
+                        Grow your website’s visibility, gain a better brand
+                        recognition in SERP, obtain public data from search
+                        engines
+                      </p>
+                      <span class="cases__link">Learn more</span>
+                    </div>
+                  </a>
+                  <a class="cases__item" href="./use-cases.html#brand">
+                    <div class="cases__img-box">
+                      <picture><source srcset="./img/content/cases/4-small.webp" type="image/webp"><img class="cases__img" src="./img/content/cases/4-small.jpg" alt="Brand Protection"></picture>
+                    </div>
+                    <div class="cases__content">
+                      <h3 class="cases__name title5">Brand Protection</h3>
+                      <p class="cases__text">
+                        Monitor your website’s performance watching for
+                        copyright infringement, misuse of content, brand
+                        mentions
+                      </p>
+                      <span class="cases__link">Learn more</span>
+                    </div>
+                  </a>
+                  <a class="cases__item" href="./use-cases.html#finance">
+                    <div class="cases__img-box">
+                      <picture><source srcset="./img/content/cases/5-small.webp" type="image/webp"><img class="cases__img" src="./img/content/cases/5-small.jpg" alt="Finance"></picture>
+                    </div>
+                    <div class="cases__content">
+                      <h3 class="cases__name title5">Finance</h3>
+                      <p class="cases__text">
+                        Make precise financial decisions with zero risk in
+                        investing to reach an advanced place among market
+                        leaders
+                      </p>
+                      <span class="cases__link">Learn more</span>
+                    </div>
+                  </a>
+                  <a class="cases__item" href="./use-cases.html#ecommerce">
+                    <div class="cases__img-box">
+                      <picture><source srcset="./img/content/cases/6-small.webp" type="image/webp"><img class="cases__img" src="./img/content/cases/6-small.jpg" alt="eCommerce"></picture>
+                    </div>
+                    <div class="cases__content">
+                      <h3 class="cases__name title5">eCommerce</h3>
+                      <p class="cases__text">
+                        Keep an eye on fresh discounts, new promotions and price
+                        changing to reshape your sales strategy accordingly
+                      </p>
+                      <span class="cases__link">Learn more</span>
+                    </div>
+                  </a>
+                  <a class="cases__item" href="./use-cases.html#property">
+                    <div class="cases__img-box">
+                      <picture><source srcset="./img/content/cases/7-small.webp" type="image/webp"><img class="cases__img" src="./img/content/cases/7-small.jpg" alt="Property"></picture>
+                    </div>
+                    <div class="cases__content">
+                      <h3 class="cases__name title5">Property</h3>
+                      <p class="cases__text">
+                        Discover top competitors, streamline investments,
+                        foresee trends, align price strategies or purchase goals
+                      </p>
+                      <span class="cases__link">Learn more</span>
+                    </div>
+                  </a>
+                  <a class="cases__item" href="./use-cases.html#tourism">
+                    <div class="cases__img-box">
+                      <picture><source srcset="./img/content/cases/8-small.webp" type="image/webp"><img class="cases__img" src="./img/content/cases/8-small.jpg" alt="Tourism"></picture>
+                    </div>
+                    <div class="cases__content">
+                      <h3 class="cases__name title5">Tourism</h3>
+                      <p class="cases__text">
+                        Obtain travel data including fare prices, ticket costs,
+                        compare competitors’ rates, follow tourist reviews
+                      </p>
+                      <span class="cases__link">Learn more</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pricing pricing_home">
+          <div class="container">
+            <div class="pricing__body">
+              <h2 class="pricing__title title2">Pricing</h2>
+              <div class="price-cards" data-animated>
+                <div class="price-cards__item">
+                  <div class="price-cards__main">
+                    <h3 class="price-cards__title title4">Mobile proxies</h3>
+                    <p class="price-cards__text">
+                      Dynamic mobile proxies are real mobile users’ IP
+                      addresses. Highly trusted by websites, social media, and
+                      search engines
+                    </p>
+                    <div class="price-cards__nums title3">
+                      <span>From $13.14 per 1 Gb</span>
+                    </div>
+                    <div class="price-cards__cost">$0.3 per port</div>
+                  </div>
+                  <div class="price-cards__bottom">
+                    <h4 class="price-cards__subtitle title6">
+                      Included in the tariff:
+                    </h4>
+                    <ul class="price-cards__list">
+                      <li class="price-cards__list-item">
+                        Minimum order 100MB from $1.02
+                      </li>
+                      <li class="price-cards__list-item">
+                        Grouping by provider is possible
+                      </li>
+                      <li class="price-cards__list-item">
+                        Place an instant order on the panel
+                      </li>
+                      <li class="price-cards__list-item">
+                        Change an external IP address by API, time settings, or
+                        change it every time you connect.
+                      </li>
+                    </ul>
+                    <div class="price-cards__actions">
+                      <a class="price-cards__btn btn btn_price" href="#">
+                        <span>Instant free test</span>
+                      </a>
+                      <a
+                        class="price-cards__btn btn btn_white"
+                        href="./mobile-proxies.html"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="price-cards__item active popular">
+                  <div class="price-cards__label">Popular rate</div>
+                  <div class="price-cards__main">
+                    <h3 class="price-cards__title title4">
+                      Residential proxies
+                    </h3>
+                    <p class="price-cards__text">
+                      Rotating residential proxies are homeowners’ and public
+                      Wi-Fi IP addresses. Help to avoid IP restrictions
+                    </p>
+                    <div class="price-cards__nums title3">
+                      <span>From $7.3 per 1 Gb</span>
+                    </div>
+                    <div class="price-cards__cost">$0.3 per port</div>
+                  </div>
+                  <div class="price-cards__bottom">
+                    <h4 class="price-cards__subtitle title6">
+                      Included in the tariff:
+                    </h4>
+                    <ul class="price-cards__list">
+                      <li class="price-cards__list-item">
+                        Minimum order 100Mb from $0.57
+                      </li>
+                      <li class="price-cards__list-item">
+                        Maximal disguise as a real user and an opportunity to
+                        avoid bans and restrictions
+                      </li>
+                      <li class="price-cards__list-item">
+                        Grouping by country, city, or provider
+                      </li>
+                      <li class="price-cards__list-item">
+                        Place an instant order on the panel
+                      </li>
+                      <li class="price-cards__list-item">
+                        Change an external IP address by API, time settings, or
+                        change it every time you connect.
+                      </li>
+                    </ul>
+                    <div class="price-cards__actions">
+                      <a class="price-cards__btn btn btn_price" href="#">
+                        <span>Instant free test</span>
+                      </a>
+                      <a
+                        class="price-cards__btn btn btn_white"
+                        href="./residential-proxies.html"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="price-cards__item">
+                  <div class="price-cards__main">
+                    <h3 class="price-cards__title title4">
+                      Datacenter proxies
+                    </h3>
+                    <p class="price-cards__text">
+                      Versatile proxies from VDS/VPS providers and legal
+                      entities’ IP addresses. High scores and high level of
+                      trust
+                    </p>
+                    <div class="price-cards__nums title3">
+                      <span>From $3.65 per 1 Gb</span>
+                    </div>
+                    <div class="price-cards__cost">$0.3 per port</div>
+                  </div>
+                  <div class="price-cards__bottom">
+                    <h4 class="price-cards__subtitle title6">
+                      Included in the tariff:
+                    </h4>
+                    <ul class="price-cards__list">
+                      <li class="price-cards__list-item">
+                        Minimum order 100Mb from $0.28
+                      </li>
+                      <li class="price-cards__list-item">
+                        Intended for specific missions that require disguising
+                        as servers
+                      </li>
+                      <li class="price-cards__list-item">
+                        Place an instant order on the panel
+                      </li>
+                      <li class="price-cards__list-item">
+                        Change an external IP address by API, time settings, or
+                        change it every time you connect.
+                      </li>
+                    </ul>
+                    <div class="price-cards__actions">
+                      <a class="price-cards__btn btn btn_price" href="#">
+                        <span>Instant free test</span>
+                      </a>
+                      <a
+                        class="price-cards__btn btn btn_white"
+                        href="./datacenter-proxies.html"
+                      >
+                        Learn more
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__top">
+              <a class="logo logo_footer" href="./index.html">
+                <img class="logo__img" src="./img/content/logo-dark.svg" alt="logo">
+              </a>
+              <ul class="partners">
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/1.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/1.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/2.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/2.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+                <li class="partners__item">
+                  <a class="partners__link" href="#" target="_blank">
+                    <picture><source srcset="./img/content/partners/3.webp" type="image/webp"><img class="partners__img" src="./img/content/partners/3.jpg" alt="partner logo"></picture>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__main">
+              <div class="footer__box footer__box_rate">
+                <div class="rating">
+                  <p class="rating__text title7">Our rating at Reviews.io</p>
+                  <div class="rating__main">
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__star icon-rate"></span>
+                    <span class="rating__index">4.76</span>
+                  </div>
+                  <a
+                    class="rating__link"
+                    href="https://www.reviews.io/"
+                    target="_blank"
+                  >
+                    See all reviews
+                  </a>
+                </div>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Company</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./use-cases.html">
+                      Why use it?
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./faq.html">FAQ</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./blog.html">Blog</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./we-are-astro.html">About</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./referral-program.html">
+                      Referral program
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Products</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./residential-proxies.html">
+                      Residential proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./mobile-proxies.html">
+                      Mobile proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./datacenter-proxies.html">
+                      Datacenter proxies
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./pricing.html">Pricing</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="#"> Instant free test </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <h5 class="footer__title title7">Documents</h5>
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./confidentiality.html">
+                      Confidentiality policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./cookie.html">
+                      Cookie Policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./refund.html">
+                      Refund Policy
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./license.html">
+                      License Agreement
+                    </a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="#">Acceptable Use Policy</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_social">
+                <h5 class="footer__title title7">Support</h5>
+                <div class="social social_footer">
+                  <ul class="social__list">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Email">
+                        <img class="social__img" src="./img/icons/social/email.svg" alt="Email">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Telegram">
+                        <img class="social__img" src="./img/icons/social/tg.svg" alt="Telegram">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="WhatsApp">
+                        <img class="social__img" src="./img/icons/social/wa.svg" alt="WhatsApp">
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="social__list">
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Instagram">
+                        <img class="social__img" src="./img/icons/social/ig.svg" alt="Instagram">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Twitter">
+                        <img class="social__img" src="./img/icons/social/tw.svg" alt="Twitter">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Facebook">
+                        <img class="social__img" src="./img/icons/social/fb.svg" alt="Facebook">
+                      </a>
+                    </li>
+                    <li class="social__item">
+                      <a class="social__link" href="#" target="_blank" aria-label="Discord">
+                        <img class="social__img" src="./img/icons/social/dc.svg" alt="Discord">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer__info info">
+              <ul class="info__list">
+                <li class="info__item">Copyright © 2023</li>
+                <li class="info__item">Cyberzilla LLC Registration No.: 53111969</li>
+                <li class="info__item">Republic of Armenia, Yerevan cityGrigor Lusavorich street 9</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="cookies">
+      <p class="cookies__text">
+        The site uses Cookies. We ask your permission to place Cookies in your
+        browser. For more information, please
+        <a href="./cookie.html">read our Cookies Policy</a>. This tool uses Cookies
+        and will remember your choice. If you agree with the Policy, click
+        "I agree". If you do not agree with the Policy, press "I do not agree"
+        (however in this case some features of the site may be unavailable).
+      </p>
+      <div class="cookies__action">
+        <button class="cookies__btn btn btn_cta" type="button">
+          <span>I agree</span>
+        </button>
+        <a class="cookies__link" href="#">I do not agree</a>
+      </div>
+    </div>
+
+    <div class="contacts contacts_fixed" data-da=".header__body,991,1">
+      <button class="contacts__btn contacts__btn_dark icon-close">
+        <span></span>
+      </button>
+      <ul class="contacts__list">
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/whatsapp.svg" alt="whatsapp">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/telegram.svg" alt="telegram">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/mail.svg" alt="email">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/line.svg" alt="line">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/instagram.svg" alt="instagram">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/facebook.svg" alt="facebook">
+          </a>
+        </li>
+        <li class="contacts__item">
+          <a class="contacts__link" href="#" target="_blank">
+            <img class="contacts__icon" src="./img/icons/social/viber.svg" alt="viber">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
