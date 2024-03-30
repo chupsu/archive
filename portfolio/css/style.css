@@ -716,11 +716,14 @@ body {
   flex-direction: row-reverse;
   -moz-column-gap: 7px;
        column-gap: 7px;
-  padding-top: 19px;
-  padding-right: 30px;
-  padding-bottom: 19px;
-  padding-left: 30px;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  font-size: 20px;
   line-height: 1;
+  color: #253139;
+  background-color: #253139;
   border-top-left-radius: 20px;
   border: none;
 }
@@ -737,7 +740,7 @@ body {
 .info-project__btn::before {
   color: inherit;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .info-project__btn::before {
@@ -745,29 +748,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  width: 32px;
   padding-top: 2px;
-  font-size: 12px;
-}
-
-.info-project__btn--service {
-  color: #4b827e;
-  background-color: #4b827e;
-}
-
-.info-project__btn--lending {
-  color: #4b8261;
-  background-color: #4b8261;
-}
-
-.info-project__btn--shop {
-  color: #4b5782;
-  background-color: #4b5782;
-}
-
-.info-project__btn--corp {
-  color: #824b4b;
-  background-color: #824b4b;
+  font-size: 8px;
 }
 
 .info-project__title {
@@ -1053,19 +1036,23 @@ body {
   }
 
   .info-project__btn {
-    padding-top: calc(8px + 11 * ((100vw - 360px) / 1360));
+    padding-top: calc(8px + 7 * ((100vw - 360px) / 1360));
   }
 
   .info-project__btn {
-    padding-right: calc(12px + 18 * ((100vw - 360px) / 1360));
+    padding-right: calc(12px + 8 * ((100vw - 360px) / 1360));
   }
 
   .info-project__btn {
-    padding-bottom: calc(8px + 11 * ((100vw - 360px) / 1360));
+    padding-bottom: calc(8px + 7 * ((100vw - 360px) / 1360));
   }
 
   .info-project__btn {
-    padding-left: calc(12px + 18 * ((100vw - 360px) / 1360));
+    padding-left: calc(12px + 8 * ((100vw - 360px) / 1360));
+  }
+
+  .info-project__btn {
+    font-size: calc(16px + 4 * ((100vw - 360px) / 1360));
   }
 
   .info-project__btn {
@@ -1090,15 +1077,15 @@ body {
 
   .info-project__btn span,
   .info-project__btn::before {
-    border-radius: calc(6px + 4 * ((100vw - 360px) / 1360));
+    border-radius: calc(6px + 2 * ((100vw - 360px) / 1360));
   }
 
   .info-project__btn::before {
-    width: calc(22px + 18 * ((100vw - 360px) / 1360));
+    width: calc(22px + 10 * ((100vw - 360px) / 1360));
   }
 
   .info-project__btn::before {
-    font-size: calc(6px + 6 * ((100vw - 360px) / 1360));
+    font-size: calc(6px + 2 * ((100vw - 360px) / 1360));
   }
 
   .info-project__title {
