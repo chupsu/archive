@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__body">
+            <a class="logo logo_header" href="./index.html" aria-label="AVA Group" title="AVA Group">
+              <svg class="logo__icon" aria-hidden="true">
+                <use xlink:href="./img/icons/icons.svg#logo"></use>
+              </svg>
+            </a>
+            <nav class="menu">
+              <div class="menu__body">
+                <!-- <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link" href="#" data-goto-header data-goto=".class">Menu</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#contact-form" data-popup="#contact-form">Contacts</a>
+                  </li>
+                </ul> -->
+              </div>
+              <button
+                class="menu__btn btn btn_accent btn_round-icon icon-menu"
+                aria-label="Меню сайта"
+                title="Меню сайта"
+              ></button>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="welcome">
+          <figure class="welcome__img-box">
+            <picture>
+              <source srcset="./img/content/pic/welcome-mob.webp" media="(max-width: 767px)" type="image/webp">
+              <source srcset="./img/content/pic/welcome-mob.jpg" media="(max-width: 767px)">
+              <source srcset="./img/content/pic/welcome-pc.webp" type="image/webp">
+              <img class="welcome__img" src="./img/content/pic/welcome-pc.jpg" alt="Многопрофильный холдинг">
+            </picture>
+          </figure>
+          <div class="container">
+            <div class="welcome__body">
+              <h1 class="welcome__title _h1">
+                Каждый проект&nbsp;&mdash; это&nbsp;вклад нашего видения и&nbsp;энергии, превращающийся
+                в&nbsp;<span>истинное наследие</span>
+              </h1>
+              <div class="welcome__info">
+                <p class="welcome__text">Многопрофильный холдинг</p>
+                <a class="welcome__btn btn btn_outline-accent btn_round-icon icon-arrow-right" href="./about.html" aria-label="Больше информации" title="Больше информации"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about">
+          <div class="container">
+            <div class="about__body">
+              <div class="about__head">
+                <h2 class="about__title _h2">Направления деятельности</h2>
+                <div class="about__info">
+                  <p class="about__text">
+                    AVA Group&nbsp;&mdash; многопрофильный холдинг, доминирующий в&nbsp;различных сферах
+                    бизнеса, включая девелопмент и&nbsp;строительство, инвестиции, управление коммерческой
+                    недвижимостью, IT-решения, гостеприимство, cанаторно&nbsp;&mdash; курортное
+                    направление, сельское хозяйство
+                  </p>
+                  <a class="about__btn btn btn_outline-light icon-arrow-right" href="./categories.html" >Подробнее</a>
+                </div>
+              </div>
+              <div class="about-slider" data-mobile="false">
+                <ul class="about-slider__items">
+                  <li class="about-slider__item">
+                    <a class="category-card" href="./category.html">
+                      <figure class="category-card__bg-box" aria-hidden="true">
+                        <picture><source srcset="./img/content/category/category-1.webp" type="image/webp"><img class="category-card__bg" src="./img/content/category/category-1.jpg" alt="Девелопмент и строительство"></picture>
+                      </figure>
+                      <div class="category-card__inner">
+                        <div class="category-card__icon-box" aria-hidden="true">
+                          <svg class="category-card__icon">
+                            <use xlink:href="./img/icons/icons.svg#hammer"></use>
+                          </svg>
+                        </div>
+                        <div class="category-card__name _h4">Девелопмент и строительство</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="about-slider__item">
+                    <a class="category-card" href="./category.html">
+                      <figure class="category-card__bg-box" aria-hidden="true">
+                        <picture><source srcset="./img/content/category/category-2.webp" type="image/webp"><img class="category-card__bg" src="./img/content/category/category-2.jpg" alt="IT направление"></picture>
+                      </figure>
+                      <div class="category-card__inner">
+                        <div class="category-card__icon-box" aria-hidden="true">
+                          <svg class="category-card__icon">
+                            <use xlink:href="./img/icons/icons.svg#code"></use>
+                          </svg>
+                        </div>
+                        <div class="category-card__name _h4">IT направление</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="about-slider__item">
+                    <a class="category-card" href="./category.html">
+                      <figure class="category-card__bg-box" aria-hidden="true">
+                        <picture><source srcset="./img/content/category/category-3.webp" type="image/webp"><img class="category-card__bg" src="./img/content/category/category-3.jpg" alt="Инвестиции"></picture>
+                      </figure>
+                      <div class="category-card__inner">
+                        <div class="category-card__icon-box" aria-hidden="true">
+                          <svg class="category-card__icon">
+                            <use xlink:href="./img/icons/icons.svg#chart-up"></use>
+                          </svg>
+                        </div>
+                        <div class="category-card__name _h4">Инвестиции</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="about-slider__item">
+                    <a class="category-card" href="./category.html">
+                      <figure class="category-card__bg-box" aria-hidden="true">
+                        <picture><source srcset="./img/content/category/category-4.webp" type="image/webp"><img class="category-card__bg" src="./img/content/category/category-4.jpg" alt="Управление коммерческой недвижимостью"></picture>
+                      </figure>
+                      <div class="category-card__inner">
+                        <div class="category-card__icon-box" aria-hidden="true">
+                          <svg class="category-card__icon">
+                            <use xlink:href="./img/icons/icons.svg#briefcase"></use>
+                          </svg>
+                        </div>
+                        <div class="category-card__name _h4">Управление коммерческой недвижимостью</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="about-slider__item">
+                    <a class="category-card" href="./category.html">
+                      <figure class="category-card__bg-box" aria-hidden="true">
+                        <picture><source srcset="./img/content/category/category-5.webp" type="image/webp"><img class="category-card__bg" src="./img/content/category/category-5.jpg" alt="Санитарно-курортное лечение и Гостеприимство"></picture>
+                      </figure>
+                      <div class="category-card__inner">
+                        <div class="category-card__icon-box" aria-hidden="true">
+                          <svg class="category-card__icon">
+                            <use xlink:href="./img/icons/icons.svg#umbrella"></use>
+                          </svg>
+                        </div>
+                        <div class="category-card__name _h4">
+                          Санитарно-курортное лечение и Гостеприимство
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="about-slider__item">
+                    <a class="category-card" href="./category.html">
+                      <figure class="category-card__bg-box" aria-hidden="true">
+                        <picture><source srcset="./img/content/category/category-6.webp" type="image/webp"><img class="category-card__bg" src="./img/content/category/category-6.jpg" alt="Сельское хозяйство и животноводство"></picture>
+                      </figure>
+                      <div class="category-card__inner">
+                        <div class="category-card__icon-box" aria-hidden="true">
+                          <svg class="category-card__icon">
+                            <use xlink:href="./img/icons/icons.svg#sprout"></use>
+                          </svg>
+                        </div>
+                        <div class="category-card__name _h4">Сельское хозяйство и животноводство</div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="projects">
+          <div class="container">
+            <div class="projects__body">
+              <div class="projects__main">
+                <div class="projects__head">
+                  <h2 class="projects__title _h2">
+                    Мы&nbsp;умеем находить равновесие между
+                    <span>уважением к&nbsp;традициям</span>
+                    и&nbsp;<span>стремлением к&nbsp;инновациям</span>
+                  </h2>
+                  <div class="projects__info">
+                    <p class="projects__text">
+                      Наши проекты&nbsp;&mdash; воплощение этой философии: они не&nbsp;только выделяются
+                      своей уникальностью, но&nbsp;и&nbsp;носят наш неповторимый почерк. Мы&nbsp;постоянно
+                      исследуем новые рынки и&nbsp;открываем неизведанные горизонты, привнося
+                      в&nbsp;каждый проект наш энтузиазм, заботу и&nbsp;эталонное качество
+                    </p>
+                    <a class="projects__btn btn btn_outline-dark icon-arrow-right" href="./projects.html" >Посмотреть все проекты</a>
+                  </div>
+                </div>
+                <div class="projects-slider">
+                  <div class="projects-slider__body">
+                    <!-- Минимум 9 слайдов -->
+                    <ul class="projects-slider__items">
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-1.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-1.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">Аврора</dt>
+                          <dd class="projects-slider__desc _p2">Жилой комплекс, Краснодар</dd>
+                        </dl>
+                      </li>
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-2.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-2.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">Второй длинный заголовок</dt>
+                          <dd class="projects-slider__desc _p2">Описание второго слайда</dd>
+                        </dl>
+                      </li>
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-3.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-3.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">3-я карточка</dt>
+                          <dd class="projects-slider__desc _p2">
+                            третье описание третьего слайда, в две-три строчки
+                          </dd>
+                        </dl>
+                      </li>
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-1.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-1.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">Аврора</dt>
+                          <dd class="projects-slider__desc _p2">Жилой комплекс, Краснодар</dd>
+                        </dl>
+                      </li>
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-2.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-2.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">Второй длинный заголовок</dt>
+                          <dd class="projects-slider__desc _p2">Описание второго слайда</dd>
+                        </dl>
+                      </li>
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-3.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-3.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">3-я карточка</dt>
+                          <dd class="projects-slider__desc _p2">
+                            третье описание третьего слайда, в две-три строчки
+                          </dd>
+                        </dl>
+                      </li>
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-1.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-1.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">Аврора</dt>
+                          <dd class="projects-slider__desc _p2">Жилой комплекс, Краснодар</dd>
+                        </dl>
+                      </li>
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-2.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-2.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">Второй длинный заголовок</dt>
+                          <dd class="projects-slider__desc _p2">Описание второго слайда</dd>
+                        </dl>
+                      </li>
+                      <li class="projects-slider__item">
+                        <figure class="projects-slider__img-box">
+                          <picture><source srcset="./img/content/projects/project-3.webp" type="image/webp"><img class="projects-slider__img" src="./img/content/projects/project-3.jpg" alt="Название проекта"></picture>
+                        </figure>
+                        <dl class="projects-slider__content">
+                          <dt class="projects-slider__name _h3">3-я карточка</dt>
+                          <dd class="projects-slider__desc _p2">
+                            третье описание третьего слайда, в две-три строчки
+                          </dd>
+                        </dl>
+                      </li>
+                    </ul>
+                    <div class="projects-slider__action">
+                      <button
+                        class="projects-slider__button projects-slider__button_prev btn btn_outline-dark btn_round-icon icon-arrow-left"
+                        type="button"
+                        aria-label="Предыдущий слайд"
+                        title="Предыдущий слайд"
+                      ></button>
+                      <button
+                        class="projects-slider__button projects-slider__button_next btn btn_outline-dark btn_round-icon icon-arrow-right"
+                        type="button"
+                        aria-label="Следующий слайд"
+                        title="Следующий слайд"
+                      >
+                        <svg class="projects-slider__progress" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <circle cx="50%" cy="50%" r="50%" stroke-linecap="round"/>
+                          <circle cx="50%" cy="50%" r="50%" stroke-linecap="round"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="projects-stats">
+                <div class="projects-stats__item">
+                  <div class="projects-stats__body">
+                    <svg class="projects-stats__icon" aria-hidden="true">
+                      <use xlink:href="./img/icons/icons.svg#icon-1"></use>
+                    </svg>
+                    <dl class="projects-stats__info">
+                      <dt class="projects-stats__name _h1">17</dt>
+                      <dd class="projects-stats__desc">лет на рынке</dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="projects-stats__item">
+                  <div class="projects-stats__body">
+                    <svg class="projects-stats__icon" aria-hidden="true">
+                      <use xlink:href="./img/icons/icons.svg#icon-2"></use>
+                    </svg>
+                    <dl class="projects-stats__info">
+                      <dt class="projects-stats__name _h1">2 000+</dt>
+                      <dd class="projects-stats__desc">человек в команде</dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="projects-stats__item">
+                  <div class="projects-stats__body">
+                    <svg class="projects-stats__icon" aria-hidden="true">
+                      <use xlink:href="./img/icons/icons.svg#icon-3"></use>
+                    </svg>
+                    <dl class="projects-stats__info">
+                      <dt class="projects-stats__name _h1">40</dt>
+                      <dd class="projects-stats__desc">завершённых проектов</dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="projects-stats__item">
+                  <div class="projects-stats__body">
+                    <svg class="projects-stats__icon" aria-hidden="true">
+                      <use xlink:href="./img/icons/icons.svg#icon-4"></use>
+                    </svg>
+                    <dl class="projects-stats__info">
+                      <dt class="projects-stats__name _h1">2 189 000</dt>
+                      <dd class="projects-stats__desc">введено в&nbsp;эксплуатацию, м<sup>2</sup></dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="geo">
+          <div class="container">
+            <div class="geo__body">
+              <h2 class="geo__title _h2">География присутствия</h2>
+            </div>
+          </div>
+        </section>
+        <section class="team">
+          <div class="container">
+            <div class="team__body">
+              <h2 class="team__title _h2">Менеджмент</h2>
+              <div class="team-slider">
+                <div class="team-slider__body">
+                  <!-- Минимум 9 слайдов -->
+                  <ul class="team-slider__items">
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Константин_Сигачев.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Константин_Сигачев.jpg" alt="Константин Сигачев"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Константин Сигачев</dt>
+                        <dd class="team-slider__desc _p2">Советник Президента по правовым вопросам</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Дмитрий_Коноваленко.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Дмитрий_Коноваленко.jpg" alt="Дмитрий Коноваленко"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Дмитрий Коноваленко</dt>
+                        <dd class="team-slider__desc _p2">Советник президента</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Сергей_Ли.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Сергей_Ли.jpg" alt="Сергей Ли"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Сергей Ли</dt>
+                        <dd class="team-slider__desc _p2">
+                          Управляющий партнер по гостиничному, санаторно-курортному и медицинскому
+                          направлению
+                        </dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Гевонд_Егиазарян.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Гевонд_Егиазарян.jpg" alt="Гевонд Егиазарян"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Гевонд Егиазарян</dt>
+                        <dd class="team-slider__desc _p2">Вице-президент по девелопменту</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Артем_Шишкин.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Артем_Шишкин.jpg" alt="Артем Шишкин"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Артем Шишкин</dt>
+                        <dd class="team-slider__desc _p2">Вице-президент по финансам</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Виталий_Ушнов.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Виталий_Ушнов.jpg" alt="Виталий Ушнов"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Виталий Ушнов</dt>
+                        <dd class="team-slider__desc _p2">Вице-президент по стратегическому развитию</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Елена_Сошникова.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Елена_Сошникова.jpg" alt="Елена Сошникова"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Елена Сошникова</dt>
+                        <dd class="team-slider__desc _p2">Вице-президент</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Сергей_Быков.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Сергей_Быков.jpg" alt="Сергей Быков"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Сергей Быков</dt>
+                        <dd class="team-slider__desc _p2">
+                          Вице-президент по снабжению и торговым операциям
+                        </dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Алексей_Самович.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Алексей_Самович.jpg" alt="Алексей Самович"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Алексей Самович</dt>
+                        <dd class="team-slider__desc _p2">
+                          Директор по строительно-производственному блоку
+                        </dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Алексей_Кравченко.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Алексей_Кравченко.jpg" alt="Алексей Кравченко"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Алексей Кравченко</dt>
+                        <dd class="team-slider__desc _p2">Директор по правовым вопросам</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Наталья_Симонтенко.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Наталья_Симонтенко.jpg" alt="Наталья Симонтенко"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Наталья Симонтенко</dt>
+                        <dd class="team-slider__desc _p2">Директор по связям с общественностью</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Дмитрий_Жильченко.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Дмитрий_Жильченко.jpg" alt="Дмитрий Жильченко"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Дмитрий Жильченко</dt>
+                        <dd class="team-slider__desc _p2">Директор по инженерному направлению</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Михаил_Хрусталев.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Михаил_Хрусталев.jpg" alt="Михаил Хрусталев"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Михаил Хрусталев</dt>
+                        <dd class="team-slider__desc _p2">Генеральный директор ООО «АВА Инвест»</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Тамара_Коломийцева.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Тамара_Коломийцева.jpg" alt="Тамара Коломийцева"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Тамара Коломийцева</dt>
+                        <dd class="team-slider__desc _p2">Коммерческий директор</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Даниил_Карбивник.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Даниил_Карбивник.jpg" alt="Даниил Карбивник"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Даниил Карбивник</dt>
+                        <dd class="team-slider__desc _p2">Генеральный директор ООО «АВА Инвест Сочи»</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Евгений_Шиянов.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Евгений_Шиянов.jpg" alt="Евгений Шиянов"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Евгений Шиянов</dt>
+                        <dd class="team-slider__desc _p2">Руководитель службы безопасности</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Адель_Вафин.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Адель_Вафин.jpg" alt="Адель Вафин"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Адель Вафин</dt>
+                        <dd class="team-slider__desc _p2">Руководитель медицинского направления</dd>
+                      </dl>
+                    </li>
+                    <li class="team-slider__item">
+                      <figure class="team-slider__img-box">
+                        <picture><source srcset="./img/content/team/Анастасия_Тиндентникова.webp" type="image/webp"><img class="team-slider__img" src="./img/content/team/Анастасия_Тиндентникова.jpg" alt="Анастасия Тиндентникова"></picture>
+                      </figure>
+                      <dl class="team-slider__content">
+                        <dt class="team-slider__name _h3">Анастасия Тиндентникова</dt>
+                        <dd class="team-slider__desc _p2">Советник президента по контроллингу</dd>
+                      </dl>
+                    </li>
+                  </ul>
+                  <div class="team-slider__action">
+                    <button
+                      class="team-slider__button team-slider__button_prev btn btn_outline-light btn_round-icon icon-arrow-left"
+                      type="button"
+                      aria-label="Предыдущий слайд"
+                      title="Предыдущий слайд"
+                    ></button>
+                    <button
+                      class="team-slider__button team-slider__button_next btn btn_outline-light btn_round-icon icon-arrow-right"
+                      type="button"
+                      aria-label="Следующий слайд"
+                      title="Следующий слайд"
+                    >
+                      <svg class="team-slider__progress" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <circle cx="50%" cy="50%" r="50%" stroke-linecap="round"/>
+                          <circle cx="50%" cy="50%" r="50%" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="news">
+          <div class="container">
+            <div class="news__body">
+              <h2 class="news__title _h2">Пресс-центр</h2>
+              <div class="news__filters filters">
+                <div class="filters__items">
+                  <label class="filters__item">
+                    <input class="filters__input" type="radio" name="news" checked>
+                    <span class="filters__btn">Все</span>
+                  </label>
+                  <label class="filters__item">
+                    <input class="filters__input" type="radio" name="news">
+                    <span class="filters__btn">Новости</span>
+                  </label>
+                  <label class="filters__item">
+                    <input class="filters__input" type="radio" name="news">
+                    <span class="filters__btn">Блог</span>
+                  </label>
+                  <label class="filters__item">
+                    <input class="filters__input" type="radio" name="news">
+                    <span class="filters__btn">Рубрики</span>
+                  </label>
+                </div>
+              </div>
+              <div class="news__main">
+                <div class="news-slider" data-mobile="false">
+                  <ul class="news-slider__items">
+                    <li class="news-slider__item">
+                      <article class="new-card">
+                        <a
+                          class="new-card__link"
+                          href="#article-1"
+                          data-popup="#article-1"
+                          aria-label="Читать новость"
+                          title="Читать новость"
+                        ></a>
+                        <div class="new-card__content">
+                          <span class="new-card__type _p2">Блог</span>
+                          <h3 class="new-card__name _h4">Коммерческая недвижимость в Сочи</h3>
+                          <div class="new-card__info">
+                            <span class="new-card__day">23</span>
+                            <time class="new-card__date _p2" datetime="2024-02-22 19:00">
+                              янв <br>
+                              2024
+                            </time>
+                          </div>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="news-slider__item">
+                      <article class="new-card">
+                        <a
+                          class="new-card__link"
+                          href="#article-1"
+                          data-popup="#article-1"
+                          aria-label="Читать новость"
+                          title="Читать новость"
+                        ></a>
+                        <div class="new-card__content">
+                          <span class="new-card__type _p2">Рубрики</span>
+                          <h3 class="new-card__name _h4">
+                            Как сделать правильный выбор радиатора отопления
+                          </h3>
+                          <div class="new-card__info">
+                            <span class="new-card__day">4</span>
+                            <time class="new-card__date _p2" datetime="2024-02-22 19:00">
+                              янв <br>
+                              2024
+                            </time>
+                          </div>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="news-slider__item">
+                      <article class="new-card">
+                        <a
+                          class="new-card__link"
+                          href="#article-1"
+                          data-popup="#article-1"
+                          aria-label="Читать новость"
+                          title="Читать новость"
+                        ></a>
+                        <div class="new-card__content">
+                          <span class="new-card__type _p2">Новости</span>
+                          <h3 class="new-card__name _h4">
+                            Служба клиентского сервиса AVA Group переходит на круглосуточную работу
+                          </h3>
+                          <div class="new-card__info">
+                            <span class="new-card__day">30</span>
+                            <time class="new-card__date _p2" datetime="2024-02-22 19:00">
+                              окт <br>
+                              2023
+                            </time>
+                          </div>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="news-slider__item">
+                      <article class="new-card">
+                        <a
+                          class="new-card__link"
+                          href="#article-1"
+                          data-popup="#article-1"
+                          aria-label="Читать новость"
+                          title="Читать новость"
+                        ></a>
+                        <div class="new-card__content">
+                          <span class="new-card__type _p2">Рубрики</span>
+                          <h3 class="new-card__name _h4">Старт продаж ЖК Аврора. Особенности проекта</h3>
+                          <div class="new-card__info">
+                            <span class="new-card__day">12</span>
+                            <time class="new-card__date _p2" datetime="2024-02-22 19:00">
+                              авг <br>
+                              2023
+                            </time>
+                          </div>
+                        </div>
+                      </article>
+                    </li>
+                  </ul>
+                  <div class="news-slider__actions">
+                    <button
+                      class="news-slider__button news-slider__button_prev btn btn_outline-dark btn_round-icon icon-arrow-left"
+                      type="button"
+                      aria-label="Предыдущий слайд"
+                      title="Предыдущий слайд"
+                    ></button>
+                    <button
+                      class="news-slider__button news-slider__button_next btn btn_outline-dark btn_round-icon icon-arrow-right"
+                      type="button"
+                      aria-label="Следующий слайд"
+                      title="Следующий слайд"
+                    ></button>
+                  </div>
+                </div>
+                <a class="news__btn btn btn_outline-dark icon-arrow-right" href="./news.html" >Все новости</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__head">
+              <a class="logo logo_footer" href="./index.html" aria-label="AVA Group" title="AVA Group">
+                <svg class="logo__icon" aria-hidden="true">
+                  <use xlink:href="./img/icons/icons.svg#logo"></use>
+                </svg>
+              </a>
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <address class="footer__address _p2">г. Краснодар, ул. Бородинская, 14</address>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__link _h3" href="tel:88002220010">8 800 222 00 10</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__main">
+              <nav class="footer__menu footer-nav" data-spollers="575">
+                <div class="footer-nav__box">
+                  <h4 class="footer-nav__title icon-chevron-down _h4" data-spoller>Компания</h4>
+                  <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">О компании</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Социальная ответственность</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Карьера</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-nav__box">
+                  <h4 class="footer-nav__title icon-chevron-down _h4" data-spoller>Бизнес</h4>
+                  <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Девелопмент</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Здоровье</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Строительство</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-nav__box">
+                  <h4 class="footer-nav__title icon-chevron-down _h4" data-spoller>Контакты</h4>
+                  <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Пресс-центр</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Тендеры</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Контакты</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="social">
+                <ul class="social__list social__list_footer">
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://vk.com/public211242038"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      aria-label="Вконтакте"
+                      title="Вконтакте"
+                    >
+                      <svg class="social__icon" aria-hidden="true">
+                        <use xlink:href="./img/icons/icons.svg#vk"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://t.me/avagroup_life"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      aria-label="Телеграм"
+                      title="Телеграм"
+                    >
+                      <svg class="social__icon" aria-hidden="true">
+                        <use xlink:href="./img/icons/icons.svg#tg"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a
+                      class="social__link"
+                      href="https://ok.ru/group/61605875286097"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      aria-label="Одноклассники"
+                      title="Одноклассники"
+                    >
+                      <svg class="social__icon" aria-hidden="true">
+                        <use xlink:href="./img/icons/icons.svg#ok"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button class="footer__btn btn btn_outline-light btn_round-icon icon-arrow-up" type="button" data-goto=".wrapper" aria-label="К началу страницы" title="К началу страницы"></button>
+          </div>
+          <div class="footer-info">
+            <ul class="footer-info__list">
+              <li class="footer-info__item">
+                <a class="footer-info__link" href="#policy" data-popup="#policy">
+                  Политика конфиденциальности
+                </a>
+              </li>
+              <li class="footer-info__item">
+                <p class="footer-info__text _p2">© 2000–2023 AVA Group</p>
+              </li>
+              <li class="footer-info__item">
+                <a
+                  class="footer-info__link"
+                  href="https://take-make.ru"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  Take&Make
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          aria-label="Close popup"
+          type="button"
+          data-close
+        ></button>
+        <div class="popup__inner"></div>
+      </div>
+    </div>
+  </body>
+</html>
