@@ -25,25 +25,189 @@
                 <use xlink:href="./img/icons/icons.svg#logo"></use>
               </svg>
             </a>
-            <nav class="menu">
-              <div class="menu__body">
-                <!-- <ul class="menu__list">
-                  <li class="menu__item">
-                    <a class="menu__link" href="#" data-goto-header data-goto=".class">Menu</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="#contact-form" data-popup="#contact-form">Contacts</a>
-                  </li>
-                </ul> -->
-              </div>
-              <button
-                class="menu__btn btn btn_accent btn_round-icon icon-menu"
-                aria-label="Меню сайта"
-                title="Меню сайта"
-              ></button>
-            </nav>
+            <button
+              class="header__menu btn btn_accent btn_round-icon icon-menu"
+              data-menu
+              aria-label="Меню сайта"
+              title="Меню сайта"
+            ></button>
           </div>
         </div>
+        <nav class="menu" data-tabs="767">
+          <div class="menu__head">
+            <div class="container">
+              <div class="menu__body">
+                <div class="menu__tabs" data-tabs-titles>
+                  <button class="menu__link _h4 icon-chevron-down" type="button">Бизнесы</button>
+                  <button class="menu__link _h4 icon-chevron-down" type="button">Компания</button>
+                </div>
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link _h4" href="./">Пресс-центр</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link _h4" href="./">Тендеры</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link _h4" href="./">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="menu__dropdown">
+            <div class="container">
+              <div class="menu__tab-content" data-tabs-body>
+                <div class="menu__tab-body">
+                  <div class="sub-menu" data-tabs>
+                    <div class="sub-menu__navigation" data-tabs-titles>
+                      <button class="sub-menu__link _h4 icon-chevron-right" type="button">Девелопмент</button>
+                      <button class="sub-menu__link _h4 icon-chevron-right" type="button">Строительство</button>
+                      <button class="sub-menu__link _h4 icon-chevron-right" type="button">Здоровье</button>
+                    </div>
+                    <div class="sub-menu__content" data-tabs-body>
+                      <div class="sub-menu__body">
+                        <button class="sub-menu__back icon-chevron-right" type="button" data-tabs-close>
+                          Девелопмент
+                        </button>
+                        <ul class="sub-menu__items">
+                          <li class="sub-menu__item">
+                            <a class="menu-cards" href="./category.html">
+                              <figure class="menu-cards__bg-box" aria-hidden="true">
+                                <picture><source srcset="./img/content/category/category-7.webp" type="image/webp"><img class="menu-cards__bg" src="./img/content/category/category-7.jpg" alt="Жилая недвижимость"></picture>
+                              </figure>
+                              <div class="menu-cards__inner">
+                                <div class="menu-cards__icon-box" aria-hidden="true">
+                                  <svg class="menu-cards__icon">
+                                    <use xlink:href="./img/icons/icons.svg#home"></use>
+                                  </svg>
+                                </div>
+                                <div class="menu-cards__name _h4">Жилая недвижимость</div>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="sub-menu__item">
+                            <a class="menu-cards" href="./category.html">
+                              <figure class="menu-cards__bg-box" aria-hidden="true">
+                                <picture><source srcset="./img/content/category/category-8.webp" type="image/webp"><img class="menu-cards__bg" src="./img/content/category/category-8.jpg" alt="Коммерческая недвижимость"></picture>
+                              </figure>
+                              <div class="menu-cards__inner">
+                                <div class="menu-cards__icon-box" aria-hidden="true">
+                                  <svg class="menu-cards__icon">
+                                    <use xlink:href="./img/icons/icons.svg#briefcase"></use>
+                                  </svg>
+                                </div>
+                                <div class="menu-cards__name _h4">Коммерческая недвижимость</div>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="sub-menu__item">
+                            <a class="menu-cards" href="./category.html">
+                              <figure class="menu-cards__bg-box" aria-hidden="true">
+                                <picture><source srcset="./img/content/category/category-9.webp" type="image/webp"><img class="menu-cards__bg" src="./img/content/category/category-9.jpg" alt="Инвестиции"></picture>
+                              </figure>
+                              <div class="menu-cards__inner">
+                                <div class="menu-cards__icon-box" aria-hidden="true">
+                                  <svg class="menu-cards__icon">
+                                    <use xlink:href="./img/icons/icons.svg#chart-up"></use>
+                                  </svg>
+                                </div>
+                                <div class="menu-cards__name _h4">Инвестиции</div>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="sub-menu__body">
+                        <button class="sub-menu__back icon-chevron-right" type="button" data-tabs-close>
+                          Строительство
+                        </button>
+                        <ul class="sub-menu__items">
+                          <li class="sub-menu__item">
+                            <a class="menu-cards" href="./category.html">
+                              <figure class="menu-cards__bg-box" aria-hidden="true">
+                                <picture><source srcset="./img/content/category/category-10.webp" type="image/webp"><img class="menu-cards__bg" src="./img/content/category/category-10.jpg" alt="Строительство"></picture>
+                              </figure>
+                              <div class="menu-cards__inner">
+                                <div class="menu-cards__icon-box" aria-hidden="true">
+                                  <svg class="menu-cards__icon">
+                                    <use xlink:href="./img/icons/icons.svg#hammer"></use>
+                                  </svg>
+                                </div>
+                                <div class="menu-cards__name _h4">Строительство</div>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="sub-menu__item">
+                            <a class="menu-cards" href="./category.html">
+                              <figure class="menu-cards__bg-box" aria-hidden="true">
+                                <picture><source srcset="./img/content/category/category-11.webp" type="image/webp"><img class="menu-cards__bg" src="./img/content/category/category-11.jpg" alt="Инженерные сети"></picture>
+                              </figure>
+                              <div class="menu-cards__inner">
+                                <div class="menu-cards__icon-box" aria-hidden="true">
+                                  <svg class="menu-cards__icon">
+                                    <use xlink:href="./img/icons/icons.svg#branch"></use>
+                                  </svg>
+                                </div>
+                                <div class="menu-cards__name _h4">Инженерные сети</div>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="sub-menu__body">
+                        <button class="sub-menu__back icon-chevron-right" type="button" data-tabs-close>
+                          Здоровье
+                        </button>
+                        <ul class="sub-menu__items">
+                          <li class="sub-menu__item">
+                            <a class="menu-cards" href="./category.html">
+                              <figure class="menu-cards__bg-box" aria-hidden="true">
+                                <picture><source srcset="./img/content/category/category-12.webp" type="image/webp"><img class="menu-cards__bg" src="./img/content/category/category-12.jpg" alt="Медицина"></picture>
+                              </figure>
+                              <div class="menu-cards__inner">
+                                <div class="menu-cards__icon-box" aria-hidden="true">
+                                  <svg class="menu-cards__icon">
+                                    <use xlink:href="./img/icons/icons.svg#beaker"></use>
+                                  </svg>
+                                </div>
+                                <div class="menu-cards__name _h4">Медицина</div>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="sub-menu__item">
+                            <a class="menu-cards" href="./category.html">
+                              <figure class="menu-cards__bg-box" aria-hidden="true">
+                                <picture><source srcset="./img/content/category/category-13.webp" type="image/webp"><img class="menu-cards__bg" src="./img/content/category/category-13.jpg" alt="Красота"></picture>
+                              </figure>
+                              <div class="menu-cards__inner">
+                                <div class="menu-cards__icon-box" aria-hidden="true">
+                                  <svg class="menu-cards__icon">
+                                    <use xlink:href="./img/icons/icons.svg#star2"></use>
+                                  </svg>
+                                </div>
+                                <div class="menu-cards__name _h4">Красота</div>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__tab-body">
+                  <div class="sub-menu" data-tabs>
+                    <div class="sub-menu__navigation" data-tabs-titles>
+                      <a class="sub-menu__link _h4" href="./">О компании</a>
+                      <a class="sub-menu__link _h4" href="./">Социальная ответственность</a>
+                      <a class="sub-menu__link _h4" href="./">Карьера</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       </header>
 
       <main class="page">
