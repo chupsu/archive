@@ -1762,7 +1762,7 @@ body {
 }
 
 .partners__body {
-  padding: 60px;
+  padding: 60px 120px;
   background-color: var(--color-bg);
   border: var(--border-size) solid var(--color-bg-light);
   border-radius: var(--radius-large);
@@ -2402,7 +2402,7 @@ body {
   }
 
   .partners__body {
-    padding: 28px;
+    padding: 28px 80px;
   }
 
   .partners__link {
@@ -3154,6 +3154,10 @@ body {
   .faq__list {
     margin-right: 0;
     margin-left: -80px;
+  }
+
+  .partners__body {
+    padding: 28px;
   }
 
   .footer::before {
