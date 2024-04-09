@@ -552,7 +552,7 @@ body {
   --color-accent-10: rgba(0, 169, 242, 0.1);
   --color-border: var(--color-dark-10);
   --gradient: linear-gradient(135deg, #273f69 0%, #14273b 100%);
-  --transition-duration: 0.5s;
+  --transition-duration: 0.3s;
 }
 
 html.is-lock {
@@ -792,6 +792,8 @@ body {
 .logo {
   flex-shrink: 0;
   color: inherit;
+  transition-duration: var(--transition-duration);
+  transition-property: color;
 }
 
 .logo_header {
@@ -821,6 +823,8 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition-duration: var(--transition-duration);
+  transition-property: opacity;
 }
 
 .is-menu-open .menu {
@@ -2481,10 +2485,16 @@ body {
   .projects-slider__item {
     width: 100%;
     transition: aspect-ratio 0s 0.001s;
+    visibility: hidden;
   }
 
   .projects-slider__item_active {
     aspect-ratio: 580/704;
+    visibility: visible;
+  }
+
+  .projects-slider__item_active ~ .projects-slider__item {
+    visibility: visible;
   }
 
   .projects-slider__item:not(.projects-slider__item_active) .projects-slider__content {
@@ -2631,10 +2641,16 @@ body {
   .team-slider__item {
     width: 100%;
     transition: aspect-ratio 0s 0.001s;
+    visibility: hidden;
   }
 
   .team-slider__item_active {
     aspect-ratio: 43/80;
+    visibility: visible;
+  }
+
+  .team-slider__item_active ~ .team-slider__item {
+    visibility: visible;
   }
 
   .team-slider__item:not(.team-slider__item_active) .projects-slider__content {
@@ -2796,11 +2812,11 @@ body {
   }
 
   .menu__tabs:not(:last-child) {
-    margin-right: 40px;
+    margin-right: 24px;
   }
 
   .menu__link + .menu__link {
-    margin-left: 40px;
+    margin-left: 24px;
   }
 
   .menu__list {
@@ -2808,7 +2824,7 @@ body {
   }
 
   .menu__item + .menu__item {
-    margin-left: 40px;
+    margin-left: 24px;
   }
 
   .sub-menu {
@@ -3036,6 +3052,18 @@ body {
 
   .logo_footer {
     width: 198px;
+  }
+
+  .menu__tabs:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .menu__link + .menu__link {
+    margin-left: 40px;
+  }
+
+  .menu__item + .menu__item {
+    margin-left: 40px;
   }
 
   .sub-menu__navigation {
@@ -3634,6 +3662,16 @@ body {
 
   :root {
     --text-normal: clamp( 14px , 11.7143452381px + 0.2976190476vw , 16px );
+  }
+}
+
+@media (max-width: 1439.98px) and (min-width: 1023.98px) {
+  .menu__link {
+    font-size: var(--text-normal);
+  }
+
+  .sub-menu__link {
+    font-size: var(--text-normal);
   }
 }
 
