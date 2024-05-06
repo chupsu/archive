@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Main page</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container container_large">
+          <div class="header__body">
+            <a
+              class="logo icon-logo"
+              href="#"
+              data-goto=".welcome"
+              aria-label="К началу страницы"
+              title="К началу страницы"
+            ></a>
+            <nav class="menu">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a class="menu__link" href="#" data-goto-header data-goto=".class">В магазин</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#" data-goto-header data-goto=".class">О компании</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#" data-goto-header data-goto=".class">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <button class="header__btn" type="button">Выбери свой вкус</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <div class="track">
+          <figure class="track__img-box track__img-box_2">
+            <picture><source srcset="./img/content/product/2.webp" type="image/webp"><img class="track__img" src="./img/content/product/2.png" alt="image"></picture>
+          </figure>
+          <figure class="track__img-box track__img-box_1">
+            <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="track__img" src="./img/content/product/1.png" alt="image"></picture>
+          </figure>
+          <section class="welcome">
+            <div class="container container_large">
+              <div class="welcome__body">
+                <h1 class="seo">Заголовок для сео</h1>
+                <div class="welcome__title">
+                  <span>пить</span>
+                  <span>Чай</span>
+                  <span class="welcome__target" aria-hidden="true"></span>
+                </div>
+                <div class="welcome__footer">
+                  <a class="welcome__btn btn btn_light" href="#" target="_blank" rel="nofollow noopener">
+                    Заказать в тапруме
+                  </a>
+                  <p class="welcome__text text">
+                    Конопляный чай из <br>
+                    Оренбурга от Steppe & Wind
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="about">
+            <div class="about__bg"></div>
+            <div class="container">
+              <div class="about__body">
+                <h2 class="about__title">Полностью состоит из растительного сырья</h2>
+                <ul class="about__list">
+                  <li class="about__item">
+                    <span class="about__text">
+                      Классический <br>
+                      пуэр
+                    </span>
+                  </li>
+                  <li class="about__item">
+                    <span class="about__text">
+                      Минеральная <br>
+                      вода
+                    </span>
+                  </li>
+                  <li class="about__item">
+                    <span class="about__text">
+                      Сок малины, <br>
+                      апельсина <br>
+                      или груши
+                    </span>
+                  </li>
+                  <li class="about__item">
+                    <span class="about__text">
+                      Зеленый <br>
+                      чай
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div
+          class=""
+          style="height: 1600px; position: relative; z-index: 1; background-color: #edcc94"
+        ></div>
+      </main>
+
+          <footer class="footer">
+            <div class="container">
+              <div class="footer__body">
+
+              </div>
+            </div>
+          </footer>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          aria-label="Close popup"
+          type="button"
+          data-close
+        ></button>
+        <div class="popup__inner"></div>
+      </div>
+    </div>
+  </body>
+</html>
