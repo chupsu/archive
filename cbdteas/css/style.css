@@ -529,7 +529,7 @@ html.is-lock {
 body {
   position: relative;
   text-transform: uppercase;
-  font-size: var(--text-medium);
+  line-height: 1.24;
   color: var(--color-accent);
   background-color: var(--color-green);
 }
@@ -564,7 +564,7 @@ body {
 }
 
 .container {
-  max-width: 1469.98px;
+  max-width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -601,7 +601,6 @@ body {
 .h5 {
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.24;
 }
 
 .title__line {
@@ -665,7 +664,6 @@ body {
   white-space: nowrap;
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.24;
   color: var(--color-accent-dark);
   transition-duration: var(--transition-duration);
   transition-property: color;
@@ -827,7 +825,7 @@ body {
   margin-bottom: 18px;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 280px;
+  font-size: 276px;
   line-height: 1;
   letter-spacing: -0.01em;
   color: var(--color-accent-dark);
@@ -1122,7 +1120,6 @@ body {
 
 .friends__teas-box {
   position: relative;
-  z-index: 1;
   margin: -3px 0;
 }
 
@@ -1142,7 +1139,19 @@ body {
 
 .friends__body {
   position: relative;
+  z-index: 1;
   background-color: #a65c39;
+}
+
+.friends__body::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  width: 100vw;
+  height: 38px;
+  background: url("./../img/content/decor/cross-5.svg") center/auto 100% repeat-x;
+  pointer-events: none;
 }
 
 .friends__bg {
@@ -1250,21 +1259,33 @@ body {
 
 .gallery-main {
   position: relative;
-  z-index: 2;
   background-color: var(--color-green);
 }
 
+.gallery-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  width: 100vw;
+  height: 20px;
+  background: url("./../img/content/decor/cross-6.svg") center/auto 100% repeat-x;
+  pointer-events: none;
+}
+
+.no-webp .gallery-main__noise {
+  background-image: url("./../img/content/decor/noise-2.png"); }
+
 .gallery-main__noise {
   position: absolute;
-  top: 5px;
-  bottom: 5px;
+  top: 10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   background-repeat: repeat;
   background-position: center top;
-  background-size: 794px 520px;
-  background-image: url("./../img/content/decor/noise_dark.svg");
+  background-size: 388px 254px;
   opacity: 0.4;
 }
 
@@ -1336,6 +1357,174 @@ body {
   font-size: 100px;
   transform: translate(-50%, -50%);
   color: var(--color-green-dark);
+}
+
+.order {
+  position: relative;
+  padding: 60px 0;
+  background-color: var(--color-accent);
+}
+
+.order::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  width: 100vw;
+  height: 34px;
+  background: url("./../img/content/decor/cross-7.svg") center/auto 100% repeat-x;
+  pointer-events: none;
+}
+
+.order__body {
+  position: relative;
+  z-index: 1;
+}
+
+.order__content {
+  margin-bottom: 30px;
+}
+
+.order__desc {
+  margin-bottom: 16px;
+  color: var(--color-green);
+}
+
+.order__title {
+  margin-bottom: 20px;
+  color: var(--color-accent-dark);
+}
+
+.order__text {
+  margin-bottom: 20px;
+  color: var(--color-green);
+}
+
+.order__action {
+  position: relative;
+  flex-grow: 1;
+}
+
+.order__action::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 40px;
+  left: 51%;
+  transform: translateX(-50%);
+  bottom: -200px;
+  width: 180%;
+  background: url("./../img/content/decor/bg-3.svg") center/contain no-repeat;
+}
+
+.order__img-box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.order__img {
+  aspect-ratio: 132/84;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px -20px;
+}
+
+.contacts__item {
+  margin: 0 10px 20px;
+}
+
+.markets__link {
+  display: flex;
+  align-items: center;
+  padding: 20px 18px;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-large);
+}
+
+.markets__img-box {
+  align-self: center;
+  width: 50px;
+  border-radius: var(--radius-small);
+  background-color: var(--color-accent-dark);
+  overflow: hidden;
+}
+
+.markets__img {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.markets__text {
+  flex-grow: 1;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-green);
+}
+
+.markets__price {
+  white-space: nowrap;
+}
+
+.markets__price span:first-child {
+  font-size: 28px;
+  color: var(--color-accent-dark);
+  transition-duration: var(--transition-duration);
+  transition-property: color;
+}
+
+.markets__price span:last-child {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--color-green);
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 20px 0;
+  background-color: var(--color-green);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  width: 100vw;
+  height: 20px;
+  background: url("./../img/content/decor/cross-8.svg") center/auto 100% repeat-x;
+  pointer-events: none;
+}
+
+.footer__body {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -15px -20px;
+  font-size: 12px;
+  color: var(--color-accent-dark);
+}
+
+.footer__item {
+  margin: 0 15px 20px;
+  white-space: nowrap;
+}
+
+.footer__link {
+  color: inherit;
 }
 
 .popup {
@@ -1424,6 +1613,14 @@ body {
   .gallery-main__logo {
     font-size: 120px;
   }
+
+  .markets__price span:first-child {
+    font-size: 36px;
+  }
+
+  .markets__price span:last-child {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 479.98px) {
@@ -1469,9 +1666,48 @@ body {
     left: 82%;
     font-size: 160px;
   }
+
+  .order__action::before {
+    bottom: auto;
+    aspect-ratio: 86/79;
+  }
+
+  .markets {
+    display: flex;
+  }
+
+  .markets__item {
+    flex: 1 1 30%;
+  }
+
+  .markets__item + .markets__item {
+    margin-left: 8px;
+  }
+
+  .markets__item:nth-child(n+4) {
+    display: none;
+  }
+
+  .markets__link {
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+  }
+
+  .markets__img-box:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .markets__text:not(:last-child) {
+    margin-bottom: 6px;
+  }
 }
 
 @media (min-width: 575.98px) {
+  .container {
+    max-width: 540px;
+  }
+
   .welcome__title {
     margin-bottom: 32px;
   }
@@ -1580,11 +1816,19 @@ body {
   .gallery-main__mi-2 {
     display: none;
   }
+
+  .markets__text {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 767.98px) {
+  .container {
+    max-width: 730px;
+  }
+
   .welcome__title {
-    font-size: 380px;
+    font-size: 376px;
   }
 
   .about {
@@ -1725,12 +1969,16 @@ body {
 }
 
 @media (min-width: 1023.98px) {
+  .container {
+    max-width: 1024px;
+  }
+
   .h2 {
     font-size: 140px;
   }
 
   .h3 {
-    font-size: 70px;
+    font-size: 66px;
   }
 
   .h4 {
@@ -1896,6 +2144,10 @@ body {
     height: 670px;
   }
 
+  .friends__body::before {
+    height: 86px;
+  }
+
   .friends__bg {
     bottom: 60px;
   }
@@ -1937,6 +2189,15 @@ body {
     text-indent: 142px;
   }
 
+  .gallery-main::before {
+    height: 34px;
+  }
+
+  .gallery-main__noise {
+    top: 17px;
+    background-size: 794px 520px;
+  }
+
   .gallery-main__img-box_3 {
     top: 50%;
   }
@@ -1948,9 +2209,9 @@ body {
 
   .gallery-main__bonus {
     right: 100px;
-    bottom: 40px;
+    bottom: 50px;
     width: 400px;
-    padding: 60px 50px 60px 90px;
+    padding: 50px 50px 50px 90px;
   }
 
   .gallery-main__bonus p {
@@ -1961,9 +2222,43 @@ body {
     left: 62%;
     font-size: 262px;
   }
+
+  .order {
+    padding: 80px 0 74px;
+  }
+
+  .order::before {
+    height: 82px;
+  }
+
+  .order__body {
+    display: flex;
+    align-items: center;
+  }
+
+  .order__content {
+    flex-shrink: 0;
+    width: 480px;
+    margin-right: 26px;
+    margin-bottom: 0;
+  }
+
+  .order__action::before {
+    top: 52%;
+    width: 140%;
+    transform: translate(-50%, -50%);
+  }
+
+  .footer::before {
+    height: 30px;
+  }
 }
 
 @media (min-width: 1469.98px) {
+  .container {
+    max-width: 1469.98px;
+  }
+
   .h2 {
     font-size: 200px;
   }
@@ -2179,6 +2474,67 @@ body {
     left: 53%;
     font-size: 352px;
   }
+
+  .order {
+    padding: 100px 0 90px;
+  }
+
+  .order__content {
+    width: 726px;
+    margin-right: 80px;
+  }
+
+  .order__title {
+    margin-bottom: 38px;
+  }
+
+  .order__text {
+    margin-bottom: 38px;
+  }
+
+  .order__action::before {
+    width: 132%;
+  }
+
+  .order__img-box {
+    margin-bottom: 38px;
+  }
+
+  .contacts {
+    margin: 0 -11px -38px;
+  }
+
+  .contacts__item {
+    margin: 0 11px 38px;
+  }
+
+  .markets__item + .markets__item {
+    margin-left: 20px;
+  }
+
+  .markets__img-box:not(:last-child) {
+    margin-bottom: 36px;
+  }
+
+  .markets__text {
+    font-size: 24px;
+  }
+
+  .markets__price span:first-child {
+    font-size: 48px;
+  }
+
+  .markets__price span:last-child {
+    font-size: 20px;
+  }
+
+  .footer {
+    padding: 40px 0;
+  }
+
+  .footer__body {
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 1870.98px) {
@@ -2262,10 +2618,6 @@ body {
 }
 
 @media (max-width: 1469.98px) {
-  .container {
-    max-width: 1024px;
-  }
-
   .track__img-box_1 {
     top: 170px;
     width: 150px;
@@ -2280,10 +2632,6 @@ body {
 }
 
 @media (max-width: 1023.98px) {
-  .container {
-    max-width: 742px;
-  }
-
   .menu {
     display: none;
   }
@@ -2311,10 +2659,6 @@ body {
 }
 
 @media (max-width: 767.98px) {
-  .container {
-    max-width: 552px;
-  }
-
   .track__img-box_1 {
     top: 220px;
   }
@@ -2350,13 +2694,13 @@ body {
   .reviews-slider__controls {
     display: none;
   }
+
+  .contacts {
+    max-width: 400px;
+  }
 }
 
 @media (max-width: 575.98px) {
-  .container {
-    max-width: 100%;
-  }
-
   .track__img-box_1 {
     top: 200px;
     left: 39%;
@@ -2428,6 +2772,22 @@ body {
   .friends__btn {
     width: 100%;
   }
+
+  .order__text br {
+    display: none;
+  }
+
+  .markets__item + .markets__item {
+    margin-top: 8px;
+  }
+
+  .markets__img-box {
+    margin-right: 18px;
+  }
+
+  .markets__text:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 @media (max-width: 359.98px) {
@@ -2492,6 +2852,8 @@ body {
 .webp .friends__teas-box { background: url(./../img/content/product/teas-1-bg.webp) center/auto 100% repeat-x; }
 
 .webp .friends__bg::before { background: url(./../img/content/decor/friends.webp) center/contain no-repeat; }
+
+.webp .gallery-main__noise { background-image: url(./../img/content/decor/noise-2.webp); }
 
 @media (min-width: 1023.98px) {
 

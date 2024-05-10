@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Main page</title>
+    <title>Конопляный чай из Оренбурга от Steppe & Wind</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -68,7 +68,7 @@
                   </a>
                   <p class="welcome__text text">
                     Конопляный чай из <br>
-                    Оренбурга от Steppe & Wind
+                    Оренбурга от Steppe &amp; Wind
                   </p>
                 </div>
               </div>
@@ -193,17 +193,26 @@
                   <button
                     class="reviews-slider__button reviews-slider__button_prev"
                     type="button"
-                    aria-label="Предыдущий слайд"
+                    aria-label="Предыдущий отзыв"
+                    title="Предыдущий отзыв"
                   ></button>
                   <button
                     class="reviews-slider__button reviews-slider__button_next"
                     type="button"
-                    aria-label="Следующий слайд"
+                    aria-label="Следующий отзыв"
+                    title="Следующий отзыв"
                   ></button>
                 </div>
               </div>
               <div class="reviews__action">
-                <a class="reviews__btn reviews__btn_shop btn btn_dark" href="#">Заказать в тапруме</a>
+                <a
+                  class="reviews__btn reviews__btn_shop btn btn_dark"
+                  href="#"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  Заказать в тапруме
+                </a>
                 <button class="reviews__btn reviews__btn_more btn btn_green" type="button">
                   Загрузить еще отзывы
                 </button>
@@ -224,7 +233,8 @@
                   другом
                 </h2>
                 <p class="friends__text h5">
-                  мы открыты к сотрудничеству, если хотите видеть наш чай в своём кафе или на мероприятии
+                  мы открыты к сотрудничеству, если хотите видеть наш чай в своём кафе или
+                  на мероприятии
                 </p>
                 <a class="friends__btn btn btn_light" href="#">Оставить контакты</a>
               </div>
@@ -232,9 +242,9 @@
           </div>
         </section>
         <section class="gallery-head" id="gallery">
-          <div class="gallery-head__img-box" data-speed="auto">
+          <figure class="gallery-head__img-box" data-speed="auto">
             <picture><source srcset="./img/content/pic/steppe.webp" type="image/webp"><img class="gallery-head__img" src="./img/content/pic/steppe.jpg" alt="image"></picture>
-          </div>
+          </figure>
           <div class="container">
             <div class="gallery-head__body">
               <h2 class="gallery-head__title title h2">
@@ -257,24 +267,24 @@
           <div class="container">
             <div class="gallery-main__body">
               <div class="gallery-main__items">
-                <div
+                <figure
                   class="gallery-main__img-box gallery-main__img-box_1"
                   data-da=".gallery-main__mi-1,575,first"
                 >
                   <picture><source srcset="./img/content/pic/gallery-1.webp" type="image/webp"><img class="gallery-main__img gallery-main__img_1" src="./img/content/pic/gallery-1.jpg" alt="image"></picture>
-                </div>
-                <div
+                </figure>
+                <figure
                   class="gallery-main__img-box gallery-main__img-box_2"
                   data-da=".gallery-main__mi-2,575,first"
                 >
                   <picture><source srcset="./img/content/pic/gallery-2.webp" type="image/webp"><img class="gallery-main__img gallery-main__img_2" src="./img/content/pic/gallery-2.jpg" alt="image"></picture>
-                </div>
-                <div
+                </figure>
+                <figure
                   class="gallery-main__img-box gallery-main__img-box_3"
                   data-da=".gallery-main__mi-2,575,last"
                 >
                   <picture><source srcset="./img/content/pic/gallery-3.webp" type="image/webp"><img class="gallery-main__img gallery-main__img_3" src="./img/content/pic/gallery-3.jpg" alt="image"></picture>
-                </div>
+                </figure>
               </div>
               <p class="gallery-main__text text">
                 Наша компания &laquo;Степь и ветер&raquo; появилась в 2014 году. Этот год выдался особенно
@@ -293,8 +303,8 @@
                 «Степь и ветер»
               </h2>
               <p class="gallery-main__text text">
-                Звучное название возникло из-за месторасположения. Оренбург находится на границе Европы и
-                Азии, где дуют сильные степные ветра.
+                Звучное название возникло из-за месторасположения. Оренбург находится на границе
+                Европы и Азии, где дуют сильные степные ветра.
               </p>
               <div class="gallery-main__mi-2"></div>
               <div class="gallery-main__bonus h5">
@@ -304,27 +314,144 @@
             </div>
           </div>
         </section>
-      </main>
-
-          <footer class="footer">
-            <div class="container">
-              <div class="footer__body">
-
+        <section class="order">
+          <div class="container">
+            <div class="order__body">
+              <div class="order__content">
+                <p class="order__desc h5">Ещё больше CBD TEA</p>
+                <h2 class="order__title title h3">
+                  <span class="title__line">
+                    <span class="title__text">Вы можете</span>
+                  </span>
+                  <span class="title__line">
+                    <span class="title__text">заказать напитки</span>
+                  </span>
+                  <span class="title__line">
+                    <span class="title__text">Steppe & Wind</span>
+                  </span>
+                </h2>
+                <p class="order__text h4">
+                  Cвяжитесь с нами по телефону, <br>
+                  электронной почте или в Тelegram
+                </p>
+                <ul class="order__contacts contacts">
+                  <li class="contacts__item">
+                    <a
+                      class="contacts__link link"
+                      href="https://t.me/stepiveter1"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      @stepiveter1
+                    </a>
+                  </li>
+                  <li class="contacts__item">
+                    <a
+                      class="contacts__link link"
+                      href="mailto:sales@stepiveter.ru"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      sales@stepiveter.ru
+                    </a>
+                  </li>
+                  <li class="contacts__item">
+                    <a class="contacts__link link" href="tel:+79033980243">+7 (903) 398-02-43</a>
+                  </li>
+                  <li class="contacts__item">
+                    <a
+                      class="contacts__link link"
+                      href="https://stepiveter.ru"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      stepiveter.ru
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="order__action">
+                <figure class="order__img-box">
+                  <picture><source srcset="./img/content/product/teas-2.webp" type="image/webp"><img class="order__img" src="./img/content/product/teas-2.png" alt="image"></picture>
+                </figure>
+                <ul class="markets">
+                  <li class="markets__item">
+                    <a
+                      class="markets__link"
+                      href="https://market.yandex.ru/product--cbd-tea-konoplianyi-chai-c-aivoi/1878005855?cpa=1&sku=102055517606"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <figure class="markets__img-box">
+                        <picture><source srcset="@img" type="image/webp"><img class="markets__img" src="@img" alt="image"></picture>
+                      </figure>
+                      <span class="markets__text">
+                        заказать <br>
+                        на я.маркете
+                      </span>
+                      <span class="markets__price"><span>1450</span>  <span>₽/уп.</span></span>
+                    </a>
+                  </li>
+                  <li class="markets__item">
+                    <a
+                      class="markets__link"
+                      href="https://www.wildberries.ru"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <figure class="markets__img-box">
+                        <picture><source srcset="@img" type="image/webp"><img class="markets__img" src="@img" alt="image"></picture>
+                      </figure>
+                      <span class="markets__text">
+                        заказать <br>
+                        на wildberries
+                      </span>
+                      <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+                    </a>
+                  </li>
+                  <li class="markets__item">
+                    <a
+                      class="markets__link"
+                      href="https://www.ozon.ru"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <figure class="markets__img-box">
+                        <picture><source srcset="@img" type="image/webp"><img class="markets__img" src="@img" alt="image"></picture>
+                      </figure>
+                      <span class="markets__text">
+                        заказать <br>
+                        на Озон
+                      </span>
+                      <span class="markets__price"><span>1250</span>  <span>₽/уп.</span></span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-          </footer>
-    </div>
+          </div>
+        </section>
+      </main>
 
-    <div class="popup" id="contact-form">
-      <div class="popup__body">
-        <button
-          class="popup__close"
-          aria-label="Close popup"
-          type="button"
-          data-close
-        ></button>
-        <div class="popup__inner"></div>
-      </div>
+      <footer class="footer">
+        <div class="container">
+          <ul class="footer__body">
+            <li class="footer__item">
+              <p class="footer__text">&copy; 2024 Степь и ветер</p>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#" target="_blank" rel="nofollow noopener">
+                Политика по персональным данным
+              </a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="https://take-make.ru/" target="_blank" rel="nofollow noopener">
+                Разработка сайта Take&Make
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
