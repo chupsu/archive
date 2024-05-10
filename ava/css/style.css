@@ -1633,6 +1633,7 @@ body {
   width: 70px;
   aspect-ratio: 1/1;
   margin-bottom: -30px;
+  margin-left: 20px;
   color: var(--color-accent);
   border-radius: 50%;
   overflow: hidden;
@@ -2783,6 +2784,7 @@ body {
   }
 
   .team__title {
+    padding-right: calc(var(--height-btn) * 3);
     margin-bottom: 32px;
   }
 
@@ -3028,6 +3030,7 @@ body {
     width: 120px;
     margin-top: -70px;
     margin-bottom: 30px;
+    margin-left: 0;
   }
 
   .welcome__text {
