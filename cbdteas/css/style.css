@@ -623,8 +623,6 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
-  padding: 0 34px;
   white-space: nowrap;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -632,12 +630,17 @@ body {
   text-transform: uppercase;
   text-align: center;
   font-weight: 500;
-  font-size: 16px;
   line-height: 1;
-  border-radius: var(--radius-large);
   border: none;
   transition-duration: var(--transition-duration);
   transition-property: color, background-color, border-color;
+}
+
+.btn:not(.btn_custom) {
+  height: 52px;
+  padding: 0 34px;
+  font-size: 16px;
+  border-radius: var(--radius-normal);
 }
 
 .btn:focus-visible {
@@ -662,6 +665,13 @@ body {
 .btn_green {
   color: var(--color-accent);
   background-color: var(--color-green);
+}
+
+.btn:disabled,
+.btn_disabled {
+  color: var(--color-accent) !important;
+  background-color: var(--color-accent-light) !important;
+  cursor: default;
 }
 
 .link {
@@ -696,27 +706,13 @@ body {
 }
 
 .header__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   height: 44px;
-  padding: 0 24px;
+  padding: 0 20px;
   margin-left: auto;
-  white-space: nowrap;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 500;
   font-size: 16px;
-  line-height: 1;
   color: var(--color-accent);
   background-color: var(--color-green-dark);
-  border-radius: var(--radius-large);
-  border: none;
-  transition-duration: var(--transition-duration);
-  transition-property: color, background-color, border-color;
+  border-radius: var(--radius-normal);
 }
 
 .logo {
@@ -1176,6 +1172,13 @@ body {
 .time-product__desc {
   font-size: 12px;
   color: var(--color-accent-dark);
+}
+
+.time-product__btn {
+  padding: 0 18px;
+  height: 44px;
+  font-size: 16px;
+  border-radius: var(--text-normal);
 }
 
 .reviews {
@@ -2199,6 +2202,11 @@ body {
     margin-bottom: 12px;
   }
 
+  .time-product__btn {
+    color: var(--color-accent);
+    background-color: var(--color-accent-dark);
+  }
+
   .reviews {
     padding-top: 80px;
     padding-bottom: 20px;
@@ -2310,10 +2318,11 @@ body {
     font-size: 28px;
   }
 
-  .btn {
+  .btn:not(.btn_custom) {
     height: 60px;
     padding: 0 46px;
     font-size: 20px;
+    border-radius: var(--radius-medium);
   }
 
   .link {
@@ -2325,8 +2334,10 @@ body {
   }
 
   .header__btn {
+    padding: 0 24px;
     height: 58px;
     font-size: 20px;
+    border-radius: var(--radius-medium);
   }
 
   .logo {
@@ -2492,6 +2503,11 @@ body {
 
   .time-product__desc {
     font-size: 14px;
+  }
+
+  .time-product__btn {
+    height: 44px;
+    font-size: 18px;
   }
 
   .reviews-slider__text {
@@ -2797,6 +2813,11 @@ body {
     font-size: 16px;
   }
 
+  .time-product__btn {
+    height: 50px;
+    font-size: 20px;
+  }
+
   .reviews {
     padding-top: 120px;
     padding-bottom: 2px;
@@ -2980,10 +3001,11 @@ body {
     max-width: 1860px;
   }
 
-  .btn {
+  .btn:not(.btn_custom) {
     height: 70px;
     padding: 0 56px;
     font-size: 24px;
+    border-radius: var(--radius-large);
   }
 
   .header__body {
@@ -2995,6 +3017,7 @@ body {
   .header__btn {
     height: 70px;
     font-size: 24px;
+    border-radius: var(--radius-large);
   }
 
   .logo {
@@ -3237,6 +3260,17 @@ body {
 
   .time-product__btn {
     width: 100%;
+  }
+
+  ._1 .time-product__btn {
+    color: var(--color-accent-dark);
+    background-color: var(--color-accent);
+  }
+
+  ._2 .time-product__btn,
+  ._3 .time-product__btn {
+    color: var(--color-accent);
+    background-color: var(--color-accent-dark);
   }
 
   .reviews__btn_shop {
