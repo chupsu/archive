@@ -765,8 +765,22 @@ body {
 }
 
 .track {
+  --width-bg: 526px;
   position: relative;
   overflow: clip;
+}
+
+.track::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%) translate3d(0, 0, 0);
+  bottom: -66px;
+  width: var(--width-bg);
+  aspect-ratio: 1240/400;
+  background: url("./../img/content/decor/about-mask.svg") center/contain no-repeat;
+  pointer-events: none;
 }
 
 .track__img-box {
@@ -844,7 +858,6 @@ body {
 }
 
 .about {
-  --width-bg: 526px;
   position: relative;
   overflow: hidden;
 }
@@ -1246,7 +1259,7 @@ body {
   position: relative;
   flex-shrink: 0;
   padding: 22px 26px 16px 16px;
-  background: url("./../img/content/decor/review-bg.svg") center/100% 100% no-repeat;
+  background: url("./../img/content/decor/review-bg-1.svg") center/100% 100% no-repeat;
   overflow: hidden;
 }
 
@@ -2162,12 +2175,12 @@ body {
     max-width: 540px;
   }
 
-  .welcome__title {
-    margin-bottom: 32px;
+  .track {
+    --width-bg: 600px;
   }
 
-  .about {
-    --width-bg: 600px;
+  .welcome__title {
+    margin-bottom: 32px;
   }
 
   .about__bg::before {
@@ -2341,12 +2354,16 @@ body {
     max-width: 730px;
   }
 
-  .welcome__title {
-    font-size: 376px;
+  .track {
+    --width-bg: 700px;
   }
 
-  .about {
-    --width-bg: 700px;
+  .track::after {
+    bottom: -81px;
+  }
+
+  .welcome__title {
+    font-size: 376px;
   }
 
   .about::after {
@@ -2745,6 +2762,14 @@ body {
     font-size: 70px;
   }
 
+  .track {
+    --width-bg: 920px;
+  }
+
+  .track::after {
+    bottom: -132px;
+  }
+
   .welcome__body {
     padding-top: 230px;
     padding-bottom: 80px;
@@ -2791,10 +2816,6 @@ body {
   .welcome__text {
     padding-right: 15px;
     font-size: var(--text-medium);
-  }
-
-  .about {
-    --width-bg: 920px;
   }
 
   .about::after {
@@ -3150,6 +3171,14 @@ body {
     font-size: 36px;
   }
 
+  .track {
+    --width-bg: 1240px;
+  }
+
+  .track::after {
+    bottom: -185px;
+  }
+
   .welcome__body {
     padding-top: 280px;
     padding-bottom: 110px;
@@ -3163,10 +3192,6 @@ body {
   .welcome__target {
     top: -76px;
     height: 90px;
-  }
-
-  .about {
-    --width-bg: 1240px;
   }
 
   .about::after {
