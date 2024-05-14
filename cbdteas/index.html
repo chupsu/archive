@@ -30,17 +30,17 @@
             <nav class="menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a class="menu__link" href="#" data-goto-header data-goto=".class">В магазин</a>
+                  <button class="menu__link" type="button" data-popup="#shop">В магазин</button>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#" data-goto-header data-goto=".class">О компании</a>
+                  <button class="menu__link" type="button" data-goto=".gallery-head">О компании</button>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#" data-goto-header data-goto=".class">Контакты</a>
+                  <button class="menu__link" type="button" data-goto=".order__contacts">Контакты</button>
                 </li>
               </ul>
             </nav>
-            <button class="header__btn btn btn_custom" type="button">Выбери свой вкус</button>
+            <button class="header__btn btn btn_custom" type="button" data-goto=".time">Выбери свой вкус</button>
           </div>
         </div>
       </header>
@@ -138,14 +138,9 @@
                           <dd class="time-product__desc text">Сок айвы</dd>
                           <dd class="time-product__desc text">Минеральная вода</dd>
                         </dl>
-                        <span
-                          class="time-product__btn btn btn_custom btn_disabled"
-                          href="#"
-                          target="_blank"
-                          rel="nofollow noopener"
-                        >
-                          Закончилось(
-                        </span>
+                        <!-- a или button -->
+                        <!-- span.btn_disabled или <button disabled> -->
+                        <span class="time-product__btn btn btn_custom btn_disabled">Закончилось(</span>
                       </div>
                     </li>
                     <li class="time-product__item" tabindex="0">
@@ -162,12 +157,7 @@
                           <dd class="time-product__desc text">Зеленый чай</dd>
                           <dd class="time-product__desc text">Травяной сбор конопли</dd>
                         </dl>
-                        <a
-                          class="time-product__btn btn btn_custom"
-                          href="#"
-                          target="_blank"
-                          rel="nofollow noopener"
-                        >
+                        <a class="time-product__btn btn btn_custom" href="#" data-popup="#tea-2">
                           Купить
                         </a>
                       </div>
@@ -184,12 +174,7 @@
                           <dd class="time-product__desc text">Зеленый чай</dd>
                           <dd class="time-product__desc text">Травяной сбор конопли</dd>
                         </dl>
-                        <a
-                          class="time-product__btn btn btn_custom"
-                          href="#"
-                          target="_blank"
-                          rel="nofollow noopener"
-                        >
+                        <a class="time-product__btn btn btn_custom" href="#" data-popup="#tea-1">
                           Купить
                         </a>
                       </div>
@@ -206,7 +191,12 @@
                           <dd class="time-product__desc text">Зеленый чай</dd>
                           <dd class="time-product__desc text">Травяной сбор конопли</dd>
                         </dl>
-                        <button class="time-product__btn btn btn_custom" type="button" disabled>
+                        <button
+                          class="time-product__btn btn btn_custom"
+                          type="button"
+                          data-popup="#tea-2"
+                          disabled
+                        >
                           Закончилось(
                         </button>
                       </div>
@@ -235,12 +225,7 @@
                           <dd class="time-product__desc text">Зеленый чай</dd>
                           <dd class="time-product__desc text">Травяной сбор конопли</dd>
                         </dl>
-                        <a
-                          class="time-product__btn btn btn_custom"
-                          href="#"
-                          target="_blank"
-                          rel="nofollow noopener"
-                        >
+                        <a class="time-product__btn btn btn_custom" href="#" data-popup="#tea-3">
                           Купить
                         </a>
                       </div>
@@ -257,12 +242,7 @@
                           <dd class="time-product__desc text">Зеленый чай</dd>
                           <dd class="time-product__desc text">Травяной сбор конопли</dd>
                         </dl>
-                        <a
-                          class="time-product__btn btn btn_custom"
-                          href="#"
-                          target="_blank"
-                          rel="nofollow noopener"
-                        >
+                        <a class="time-product__btn btn btn_custom" href="#" data-popup="#tea-4">
                           Купить
                         </a>
                       </div>
@@ -293,12 +273,7 @@
                           <dd class="time-product__desc text">Зеленый чай</dd>
                           <dd class="time-product__desc text">Травяной сбор конопли</dd>
                         </dl>
-                        <a
-                          class="time-product__btn btn btn_custom"
-                          href="#"
-                          target="_blank"
-                          rel="nofollow noopener"
-                        >
+                        <a class="time-product__btn btn btn_custom" href="#" data-popup="#tea-5">
                           Купить
                         </a>
                       </div>
@@ -439,7 +414,9 @@
                   мы открыты к сотрудничеству, если хотите видеть наш чай в своём кафе или
                   на мероприятии
                 </p>
-                <a class="friends__btn btn btn_accent" href="#">Оставить контакты</a>
+                <a class="friends__btn btn btn_accent" href="#" target="_blank" rel="nofollow noopener">
+                  Оставить контакты
+                </a>
               </div>
             </div>
           </div>
@@ -586,7 +563,7 @@
                       rel="nofollow noopener"
                     >
                       <figure class="markets__img-box">
-                        <picture><source srcset="@img" type="image/webp"><img class="markets__img" src="@img" alt="image"></picture>
+                        <picture><source srcset="./img/icons/ym.webp" type="image/webp"><img class="markets__img" src="./img/icons/ym.png" alt="Яндекс Маркет"></picture>
                       </figure>
                       <span class="markets__text">
                         заказать <br>
@@ -603,7 +580,7 @@
                       rel="nofollow noopener"
                     >
                       <figure class="markets__img-box">
-                        <picture><source srcset="@img" type="image/webp"><img class="markets__img" src="@img" alt="image"></picture>
+                        <picture><source srcset="./img/icons/wb.webp" type="image/webp"><img class="markets__img" src="./img/icons/wb.png" alt="Wildberries"></picture>
                       </figure>
                       <span class="markets__text">
                         заказать <br>
@@ -620,7 +597,7 @@
                       rel="nofollow noopener"
                     >
                       <figure class="markets__img-box">
-                        <picture><source srcset="@img" type="image/webp"><img class="markets__img" src="@img" alt="image"></picture>
+                        <picture><source srcset="./img/icons/ozon.webp" type="image/webp"><img class="markets__img" src="./img/icons/ozon.png" alt="Озон"></picture>
                       </figure>
                       <span class="markets__text">
                         заказать <br>
@@ -655,6 +632,483 @@
           </ul>
         </div>
       </footer>
+    </div>
+
+    <div class="popup _product" id="tea-1">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+        <div class="product">
+          <div class="product__head">
+            <figure class="product__bg-box" aria-hidden="true">
+              <picture><source srcset="./img/content/product/1-bg.webp" type="image/webp"><img class="product__bg" src="./img/content/product/1-bg.png" alt="image"></picture>
+            </figure>
+            <div class="product__content">
+              <div class="product__title h5">Коноплянный чай</div>
+              <div class="product__type h5">Айва</div>
+              <p class="product__text text">
+                Чай для общения, который обладает успокаивающими свойствами и помогает снизить стресс.
+                Айва содержит витамины C и A, полезные для иммунной системы и здоровья кожи.
+                Чай также улучшает настроение благодаря своему составу и успокаивающему эффекту.
+              </p>
+            </div>
+            <div class="product__info">
+              <dl class="product__list">
+                <dt class="product__name">Состав напитка:</dt>
+                <dd class="product__desc text">Сок айвы</dd>
+                <dd class="product__desc text">Минеральная вода</dd>
+                <dd class="product__desc text">Зеленый чай</dd>
+                <dd class="product__desc text">Травяной сбор конопли</dd>
+              </dl>
+              <figure class="product__img-box">
+                <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="product__img" src="./img/content/product/1.png" alt="image"></picture>
+              </figure>
+            </div>
+          </div>
+          <div class="product__markets">
+            <h5 class="product__subtitle h5">Заказать на маркетплейсе</h5>
+            <ul class="markets">
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://market.yandex.ru/product--cbd-tea-konoplianyi-chai-c-aivoi/1878005855?cpa=1&sku=102055517606"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ym.webp" type="image/webp"><img class="markets__img" src="./img/icons/ym.png" alt="Яндекс Маркет"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на я.маркете
+                  </span>
+                  <span class="markets__price"><span>1450</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://www.wildberries.ru"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/wb.webp" type="image/webp"><img class="markets__img" src="./img/icons/wb.png" alt="Wildberries"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на wildberries
+                  </span>
+                  <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a class="markets__link" href="https://www.ozon.ru" target="_blank" rel="nofollow noopener">
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ozon.webp" type="image/webp"><img class="markets__img" src="./img/icons/ozon.png" alt="Озон"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на Озон
+                  </span>
+                  <span class="markets__price"><span>1250</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup _product" id="tea-2">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+        <div class="product">
+          <div class="product__head">
+            <figure class="product__bg-box" aria-hidden="true">
+              <picture><source srcset="./img/content/product/2-bg.webp" type="image/webp"><img class="product__bg" src="./img/content/product/2-bg.png" alt="image"></picture>
+            </figure>
+            <div class="product__content">
+              <div class="product__title h5">Коноплянный чай</div>
+              <div class="product__type h5">Шиповник</div>
+              <p class="product__text text">
+                Чай для общения, который обладает множеством полезных свойств. Он снижает стресс,
+                успокаивает нервную систему и улучшает настроение. Благодаря высокому содержанию
+                витаминов и минералов, этот чай укрепляет иммунитет и помогает организму
+                противостоять негативным воздействиям окружающей среды.
+              </p>
+            </div>
+            <div class="product__info">
+              <dl class="product__list">
+                <dt class="product__name">Состав напитка:</dt>
+                <dd class="product__desc text">Сок айвы</dd>
+                <dd class="product__desc text">Минеральная вода</dd>
+                <dd class="product__desc text">Зеленый чай</dd>
+                <dd class="product__desc text">Травяной сбор конопли</dd>
+              </dl>
+              <figure class="product__img-box">
+                <picture><source srcset="./img/content/product/2.webp" type="image/webp"><img class="product__img" src="./img/content/product/2.png" alt="image"></picture>
+              </figure>
+            </div>
+          </div>
+          <div class="product__markets">
+            <h5 class="product__subtitle h5">Заказать на маркетплейсе</h5>
+            <ul class="markets">
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://market.yandex.ru/product--cbd-tea-konoplianyi-chai-c-aivoi/1878005855?cpa=1&sku=102055517606"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ym.webp" type="image/webp"><img class="markets__img" src="./img/icons/ym.png" alt="Яндекс Маркет"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на я.маркете
+                  </span>
+                  <span class="markets__price"><span>1450</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://www.wildberries.ru"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/wb.webp" type="image/webp"><img class="markets__img" src="./img/icons/wb.png" alt="Wildberries"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на wildberries
+                  </span>
+                  <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a class="markets__link" href="https://www.ozon.ru" target="_blank" rel="nofollow noopener">
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ozon.webp" type="image/webp"><img class="markets__img" src="./img/icons/ozon.png" alt="Озон"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на Озон
+                  </span>
+                  <span class="markets__price"><span>1250</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup _product" id="tea-3">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+        <div class="product">
+          <div class="product__head">
+            <figure class="product__bg-box" aria-hidden="true">
+              <picture><source srcset="./img/content/product/3-bg.webp" type="image/webp"><img class="product__bg" src="./img/content/product/3-bg.png" alt="image"></picture>
+            </figure>
+            <div class="product__content">
+              <div class="product__title h5">Шу пуэр чай</div>
+              <div class="product__type h5">Малина</div>
+              <p class="product__text text">
+                Чай для повышения внимания: устраняет сонливость, снимает напряжение и улучшает мозговую
+                деятельность. Планируй дела &mdash; время их выполнять.
+              </p>
+            </div>
+            <div class="product__info">
+              <dl class="product__list">
+                <dt class="product__name">Состав напитка:</dt>
+                <dd class="product__desc text">Сок айвы</dd>
+                <dd class="product__desc text">Минеральная вода</dd>
+                <dd class="product__desc text">Зеленый чай</dd>
+                <dd class="product__desc text">Травяной сбор конопли</dd>
+              </dl>
+              <figure class="product__img-box">
+                <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="product__img" src="./img/content/product/3.png" alt="image"></picture>
+              </figure>
+            </div>
+          </div>
+          <div class="product__markets">
+            <h5 class="product__subtitle h5">Заказать на маркетплейсе</h5>
+            <ul class="markets">
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://market.yandex.ru/product--cbd-tea-konoplianyi-chai-c-aivoi/1878005855?cpa=1&sku=102055517606"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ym.webp" type="image/webp"><img class="markets__img" src="./img/icons/ym.png" alt="Яндекс Маркет"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на я.маркете
+                  </span>
+                  <span class="markets__price"><span>1450</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://www.wildberries.ru"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/wb.webp" type="image/webp"><img class="markets__img" src="./img/icons/wb.png" alt="Wildberries"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на wildberries
+                  </span>
+                  <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a class="markets__link" href="https://www.ozon.ru" target="_blank" rel="nofollow noopener">
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ozon.webp" type="image/webp"><img class="markets__img" src="./img/icons/ozon.png" alt="Озон"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на Озон
+                  </span>
+                  <span class="markets__price"><span>1250</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup _product" id="tea-4">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+        <div class="product">
+          <div class="product__head">
+            <figure class="product__bg-box" aria-hidden="true">
+              <picture><source srcset="./img/content/product/4-bg.webp" type="image/webp"><img class="product__bg" src="./img/content/product/4-bg.png" alt="image"></picture>
+            </figure>
+            <div class="product__content">
+              <div class="product__title h5">Шен пуэр чай</div>
+              <div class="product__type h5">Апельсин</div>
+              <p class="product__text text">
+                Чай для активности: бодрит и повышает настроение и работоспособность, заряжает тело
+                энергией. Сегодня лучший день чтобы свернуть горы.
+              </p>
+            </div>
+            <div class="product__info">
+              <dl class="product__list">
+                <dt class="product__name">Состав напитка:</dt>
+                <dd class="product__desc text">Сок айвы</dd>
+                <dd class="product__desc text">Минеральная вода</dd>
+                <dd class="product__desc text">Зеленый чай</dd>
+                <dd class="product__desc text">Травяной сбор конопли</dd>
+              </dl>
+              <figure class="product__img-box">
+                <picture><source srcset="./img/content/product/4.webp" type="image/webp"><img class="product__img" src="./img/content/product/4.png" alt="image"></picture>
+              </figure>
+            </div>
+          </div>
+          <div class="product__markets">
+            <h5 class="product__subtitle h5">Заказать на маркетплейсе</h5>
+            <ul class="markets">
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://market.yandex.ru/product--cbd-tea-konoplianyi-chai-c-aivoi/1878005855?cpa=1&sku=102055517606"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ym.webp" type="image/webp"><img class="markets__img" src="./img/icons/ym.png" alt="Яндекс Маркет"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на я.маркете
+                  </span>
+                  <span class="markets__price"><span>1450</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://www.wildberries.ru"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/wb.webp" type="image/webp"><img class="markets__img" src="./img/icons/wb.png" alt="Wildberries"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на wildberries
+                  </span>
+                  <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a class="markets__link" href="https://www.ozon.ru" target="_blank" rel="nofollow noopener">
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ozon.webp" type="image/webp"><img class="markets__img" src="./img/icons/ozon.png" alt="Озон"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на Озон
+                  </span>
+                  <span class="markets__price"><span>1250</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup _product" id="tea-5">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+        <div class="product">
+          <div class="product__head">
+            <figure class="product__bg-box" aria-hidden="true">
+              <picture><source srcset="./img/content/product/5-bg.webp" type="image/webp"><img class="product__bg" src="./img/content/product/5-bg.png" alt="image"></picture>
+            </figure>
+            <div class="product__content">
+              <div class="product__title h5">Ромашковый чай</div>
+              <div class="product__type h5">Груша</div>
+              <p class="product__text text">
+                Чай для отдыха: снимает тревогу, улучшает пищеварение, помогает заснуть. Расслабься
+                и наслаждайся моментом.
+              </p>
+            </div>
+            <div class="product__info">
+              <dl class="product__list">
+                <dt class="product__name">Состав напитка:</dt>
+                <dd class="product__desc text">Сок айвы</dd>
+                <dd class="product__desc text">Минеральная вода</dd>
+                <dd class="product__desc text">Зеленый чай</dd>
+                <dd class="product__desc text">Травяной сбор конопли</dd>
+              </dl>
+              <figure class="product__img-box">
+                <picture><source srcset="./img/content/product/5.webp" type="image/webp"><img class="product__img" src="./img/content/product/5.png" alt="image"></picture>
+              </figure>
+            </div>
+          </div>
+          <div class="product__markets">
+            <h5 class="product__subtitle h5">Заказать на маркетплейсе</h5>
+            <ul class="markets">
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://market.yandex.ru/product--cbd-tea-konoplianyi-chai-c-aivoi/1878005855?cpa=1&sku=102055517606"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ym.webp" type="image/webp"><img class="markets__img" src="./img/icons/ym.png" alt="Яндекс Маркет"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на я.маркете
+                  </span>
+                  <span class="markets__price"><span>1450</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a
+                  class="markets__link"
+                  href="https://www.wildberries.ru"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/wb.webp" type="image/webp"><img class="markets__img" src="./img/icons/wb.png" alt="Wildberries"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на wildberries
+                  </span>
+                  <span class="markets__price"><span>1560</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+              <li class="markets__item">
+                <a class="markets__link" href="https://www.ozon.ru" target="_blank" rel="nofollow noopener">
+                  <figure class="markets__img-box">
+                    <picture><source srcset="./img/icons/ozon.webp" type="image/webp"><img class="markets__img" src="./img/icons/ozon.png" alt="Озон"></picture>
+                  </figure>
+                  <span class="markets__text">
+                    заказать <br>
+                    на Озон
+                  </span>
+                  <span class="markets__price"><span>1250</span>  <span>₽/уп.</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup _product" id="shop">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+      </div>
+    </div>
+
+    <div class="popup _review" id="review274">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          type="button"
+          data-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        ></button>
+      </div>
     </div>
   </body>
 </html>
