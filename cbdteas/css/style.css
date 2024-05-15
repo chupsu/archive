@@ -1193,6 +1193,11 @@ body {
   position: relative;
 }
 
+.time-product__item:focus-visible,
+.time-product__item:focus-within {
+  outline: none;
+}
+
 .time-product__img {
   aspect-ratio: 218/582;
   -o-object-fit: contain;
@@ -2524,11 +2529,6 @@ body {
     z-index: 1;
     width: 15.14%;
     aspect-ratio: 218/510;
-  }
-
-  .time-product__item:focus-visible,
-  .time-product__item:focus-within {
-    outline: none;
   }
 
   .time-product__item:focus-visible .time-product__content,
