@@ -504,7 +504,7 @@ html {
   background-color: var(--color-green);
 }
 
-html .is-lock {
+html.is-lock {
   overflow: clip;
 }
 
