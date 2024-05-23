@@ -748,6 +748,7 @@ body {
 
 .menu__link {
   display: flex;
+  text-transform: uppercase;
   white-space: nowrap;
   color: var(--color-accent-dark);
   background-color: transparent;
@@ -1063,15 +1064,19 @@ body {
   overflow: hidden;
 }
 
-._1 .time__inner {
+.time__body {
+  position: relative;
+}
+
+._1 .time__body {
   padding-top: 20px;
 }
 
-._2 .time__inner {
-  padding-top: 60px;
+._2 .time__body {
+  padding-top: 50px;
 }
 
-._3 .time__inner {
+._3 .time__body {
   padding-top: 64px;
 }
 
@@ -1084,8 +1089,8 @@ body {
 }
 
 .time__object_sun-1 {
-  top: -1%;
-  left: 11%;
+  top: 8px;
+  left: 12%;
   width: 150px;
   aspect-ratio: 1/1;
   background-color: #cb8165;
@@ -1093,8 +1098,8 @@ body {
 }
 
 .time__object_sun-2 {
-  top: -3%;
-  right: -20%;
+  top: 30px;
+  right: -50px;
   width: 110px;
   aspect-ratio: 1/1;
   background-color: #cb8165;
@@ -1102,7 +1107,7 @@ body {
 }
 
 .time__object_star-1 {
-  top: -5%;
+  top: 20px;
   left: 1%;
   width: 36px;
   aspect-ratio: 116/97;
@@ -1110,7 +1115,7 @@ body {
 }
 
 .time__object_star-2 {
-  top: -14%;
+  top: 5px;
   right: 51%;
   width: 42px;
   aspect-ratio: 116/97;
@@ -1118,15 +1123,11 @@ body {
 }
 
 .time__object_star-3 {
-  top: -8%;
+  top: 30px;
   right: 3%;
   width: 42px;
   aspect-ratio: 116/97;
   background: url("./../img/content/decor/star.svg") center/contain no-repeat;
-}
-
-.time__body {
-  position: relative;
 }
 
 .time__title {
@@ -2449,36 +2450,36 @@ body {
     background: var(--color-green-dark);
   }
 
-  ._1 .time__inner {
+  ._1 .time__body {
     padding-top: 36px;
   }
 
   .time__object_sun-1 {
-    top: -3%;
+    top: 50px;
     left: 5%;
     width: 200px;
   }
 
   .time__object_sun-2 {
-    top: -2%;
+    top: 60px;
     right: -2%;
     width: 140px;
   }
 
   .time__object_star-1 {
-    top: -15%;
+    top: 60px;
     left: -2%;
     width: 60px;
   }
 
   .time__object_star-2 {
-    top: -5%;
+    top: 20px;
     right: 40%;
     width: 70px;
   }
 
   .time__object_star-3 {
-    top: 32%;
+    top: 50px;
     right: 13%;
     width: 70px;
   }
@@ -3259,15 +3260,15 @@ body {
     width: 355px;
   }
 
-  ._1 .time__inner {
+  ._1 .time__body {
     padding-top: 50px;
   }
 
-  ._2 .time__inner {
+  ._2 .time__body {
     padding-top: 80px;
   }
 
-  ._3 .time__inner {
+  ._3 .time__body {
     padding-top: 90px;
   }
 
@@ -3759,15 +3760,15 @@ body {
     padding-top: 52px;
   }
 
-  ._1 .time__inner {
+  ._1 .time__body {
     padding-bottom: 34px;
   }
 
-  ._2 .time__inner {
+  ._2 .time__body {
     padding-bottom: 50px;
   }
 
-  ._3 .time__inner {
+  ._3 .time__body {
     padding-bottom: 30px;
   }
 
