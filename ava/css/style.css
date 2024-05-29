@@ -1249,6 +1249,7 @@ body {
 .popup__body {
   position: relative;
   display: flex;
+  width: 100%;
   min-width: 0;
   max-height: 100%;
   background-color: var(--color-white);
@@ -1447,12 +1448,15 @@ body {
   margin-bottom: 0;
 }
 
-.article__media {
+.article__media,
+.article__body .video__block {
   background-image: var(--gradient);
 }
 
 .article__media iframe,
-.article__media video {
+.article__media video,
+.article__body .video__block iframe,
+.article__body .video__block video {
   display: block;
   width: 100%;
   height: auto;
