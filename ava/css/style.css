@@ -2386,7 +2386,7 @@ video {
 }
 
 .heading-box:not(:last-child) {
-  padding-bottom: 24px;
+  padding-bottom: 36px;
 }
 
 .heading-box__title:not(:last-child) {
@@ -2546,6 +2546,10 @@ video {
   transition-property: background-color;
 }
 
+.section_dark .info-card {
+  background-color: var(--color-white-5);
+}
+
 .info-card_text:hover {
   background-color: var(--color-accent-10);
 }
@@ -2578,6 +2582,10 @@ video {
 
 .info-card__content {
   margin-top: auto;
+}
+
+.info-card__name:not(:last-child) {
+  margin-bottom: 4px;
 }
 
 .info-card__desc {
@@ -3453,6 +3461,10 @@ video {
   }
 
   .heading-box:not(:last-child) {
+    padding-bottom: 48px;
+  }
+
+  .slider-init:not(.slider-lock) .heading-box:not(:last-child) {
     padding-bottom: 36px;
   }
 
@@ -3463,6 +3475,9 @@ video {
   .heading-box__title {
     flex-shrink: 0;
     width: 66%;
+  }
+
+  .slider-init:not(.slider-lock) .heading-box__title {
     min-height: var(--height-btn);
   }
 
@@ -3545,6 +3560,10 @@ video {
   }
 
   .partner__name:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  .info-card__name:not(:last-child) {
     margin-bottom: 8px;
   }
 }
@@ -3829,6 +3848,10 @@ video {
   }
 
   .heading-box:not(:last-child) {
+    padding-bottom: 64px;
+  }
+
+  .slider-init:not(.slider-lock) .heading-box:not(:last-child) {
     padding-bottom: 48px;
   }
 
