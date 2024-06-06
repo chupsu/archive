@@ -149,6 +149,10 @@ html {
   content: "\e907";
 }
 
+.icon-plus-circle::after {
+  content: "\e908";
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -2553,7 +2557,7 @@ video {
 }
 
 .info-card_text:hover {
-  background-color: var(--color-accent-10);
+  background-color: var(--color-light-hover);
 }
 
 .info-card_text:hover .info-card__icon-box {
@@ -2613,6 +2617,26 @@ video {
   padding: 24px;
   color: var(--color-white);
   overflow: auto;
+}
+
+.info-action__body {
+  padding: 48px 16px;
+  background-color: var(--color-light);
+}
+
+.info-action__title {
+  text-align: center;
+}
+
+.info-action__main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 48px calc(var(--gap) / -2) calc(var(--gap) * -1);
+}
+
+.info-action__btn {
+  margin: 0 calc(var(--gap) / 2) calc(var(--gap));
 }
 
 .error {
@@ -3208,6 +3232,10 @@ video {
 
   .img-card__content {
     padding: 8.27%;
+  }
+
+  .info-action__body {
+    padding: 80px;
   }
 
   .error__body {
@@ -3927,6 +3955,10 @@ video {
     margin-bottom: 48px;
   }
 
+  .info-action__body {
+    padding: 120px;
+  }
+
   .error__body {
     padding: 0 3.33% 96px;
   }
@@ -4269,6 +4301,14 @@ video {
 
   .geo-quote__img-box {
     right: 45%;
+  }
+
+  .info-action {
+    padding: 0;
+  }
+
+  .info-action .container {
+    padding: 0;
   }
 }
 
