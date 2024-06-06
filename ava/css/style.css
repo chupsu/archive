@@ -1940,7 +1940,6 @@ video {
   flex-shrink: 0;
   display: flex;
   width: 100%;
-  margin-right: var(--gap);
 }
 
 .thumb-slider__img-box {
@@ -2142,7 +2141,6 @@ video {
   display: flex;
   flex-direction: column;
   width: 320px;
-  margin-right: var(--gap);
 }
 
 .team-slider__img-box {
@@ -2447,7 +2445,6 @@ video {
 .cards-slider__item {
   flex-shrink: 0;
   width: 320px;
-  margin-right: var(--gap);
 }
 
 .cards-slider__item > * {
@@ -3574,7 +3571,6 @@ video {
 
   .num-stats-slider__item {
     width: 33%;
-    margin-right: var(--gap);
   }
 
   .num-stats-slider__item {
