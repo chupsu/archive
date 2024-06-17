@@ -1772,6 +1772,14 @@ body {
   margin: 0 10px 20px;
 }
 
+.markets:not(.markets_cards) {
+  margin: 0 -5px -10px;
+}
+
+.markets__item {
+  margin: 0 5px 10px;
+}
+
 .markets__link {
   --color-text-dark: var(--color-green);
   --color-text-accent: var(--color-accent-dark);
@@ -1797,6 +1805,7 @@ body {
 .markets__img-box {
   align-self: center;
   width: 50px;
+  margin-right: 10px;
   border-radius: var(--radius-small);
   overflow: hidden;
 }
@@ -1811,6 +1820,7 @@ body {
 
 .markets__text {
   flex-grow: 1;
+  margin-right: 10px;
   font-weight: 500;
   font-size: var(--text-medium);
   color: var(--color-text-dark);
@@ -2171,12 +2181,16 @@ body {
     font-size: 120px;
   }
 
+  .markets__img-box {
+    margin-right: 18px;
+  }
+
   .markets__price span:first-child {
     font-size: 36px;
   }
 
   .markets__price span:last-child {
-    font-size: var(--text-medium);
+    font-size: var(--text-normal);
   }
 }
 
@@ -2231,38 +2245,6 @@ body {
   .order__action::before {
     bottom: auto;
     aspect-ratio: 86/79;
-  }
-
-  .markets {
-    display: flex;
-    justify-content: center;
-  }
-
-  .markets__item {
-    flex: 1 1 30%;
-    max-width: 180px;
-  }
-
-  .markets__item + .markets__item {
-    margin-left: 8px;
-  }
-
-  .markets__item:nth-child(n+4) {
-    display: none;
-  }
-
-  .markets__link {
-    flex-direction: column;
-    height: 100%;
-    text-align: center;
-  }
-
-  .markets__img-box:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
-  .markets__text:not(:last-child) {
-    margin-bottom: 6px;
   }
 
   .review {
@@ -2383,10 +2365,6 @@ body {
   .gallery-main__mi-1,
   .gallery-main__mi-2 {
     display: none;
-  }
-
-  .markets__text {
-    font-size: var(--text-large);
   }
 
   ._product .popup__body {
@@ -2795,6 +2773,53 @@ body {
     font-size: 200px;
   }
 
+  .markets {
+    display: flex;
+    justify-content: center;
+  }
+
+  .markets:not(.markets_cards) {
+    flex-wrap: wrap;
+    margin: 0 -10px -20px;
+  }
+
+  .markets:not(.markets_cards) .markets__item {
+    flex: 1 1 auto;
+    min-width: 290px;
+    max-width: 360px;
+    margin: 0 10px 10px;
+  }
+
+  .markets_cards .markets__item {
+    flex: 1 1 20%;
+    max-width: 162px;
+    margin: 0;
+  }
+
+  .markets_cards .markets__item:not(:first-child) {
+    margin-left: 8px;
+  }
+
+  .markets_cards .markets__item:nth-child(n+5) {
+    display: none;
+  }
+
+  .markets_cards .markets__link {
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+  }
+
+  .markets_cards .markets__img-box {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .markets_cards .markets__text {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+
   .popup::-webkit-scrollbar {
     width: 4px;
     height: 4px;
@@ -2836,11 +2861,11 @@ body {
   }
 
   .h3 {
-    font-size: 66px;
+    font-size: 60px;
   }
 
   .h4 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .h5 {
@@ -2855,7 +2880,7 @@ body {
   }
 
   .link {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .header__body {
@@ -3190,8 +3215,8 @@ body {
 
   .order__content {
     flex-shrink: 0;
-    width: 480px;
-    margin-right: 26px;
+    width: 440px;
+    margin-right: 10px;
     margin-bottom: 0;
   }
 
@@ -3592,8 +3617,8 @@ body {
   }
 
   .order__content {
-    width: 726px;
-    margin-right: 80px;
+    width: 720px;
+    margin-right: 20px;
   }
 
   .order__title {
@@ -3624,24 +3649,18 @@ body {
     margin: 0 11px 38px;
   }
 
-  .markets__item + .markets__item {
-    margin-left: 20px;
+  .markets:not(.markets_cards) {
+    margin: 0 -20px -40px;
   }
 
-  .markets__img-box:not(:last-child) {
-    margin-bottom: 36px;
+  .markets:not(.markets_cards) .markets__item {
+    min-width: 340px;
+    max-width: 400px;
+    margin: 0 20px 20px;
   }
 
-  .markets__text {
-    font-size: 24px;
-  }
-
-  .markets__price span:first-child {
-    font-size: 48px;
-  }
-
-  .markets__price span:last-child {
-    font-size: var(--text-large);
+  .markets_cards .markets__item:not(:first-child) {
+    margin-left: 18px;
   }
 
   .footer {
@@ -4162,18 +4181,6 @@ body {
   .order__btn {
     width: 100%;
   }
-
-  .markets__item + .markets__item {
-    margin-top: 8px;
-  }
-
-  .markets__img-box {
-    margin-right: 18px;
-  }
-
-  .markets__text:not(:last-child) {
-    margin-right: 10px;
-  }
 }
 
 @media (max-width: 359.98px) {
@@ -4224,6 +4231,10 @@ body {
       font-size: calc(11.25rem + 6.875 * (100vw - 22.49875rem) / 13.5);
     }
 }
+
+  .markets__text {
+    font-size: var(--text-large);
+  }
 }
 
 @media (any-hover: hover) {
