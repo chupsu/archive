@@ -1135,6 +1135,7 @@ body {
 
 .time__text {
   max-width: 296px;
+  font-weight: 500;
   font-size: var(--text-small);
   letter-spacing: -0.03em;
 }
@@ -1715,7 +1716,7 @@ body {
 }
 
 .order__content {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .order__title {
@@ -1729,7 +1730,7 @@ body {
 }
 
 .order__btn {
-  margin-top: 46px;
+  margin-top: 40px;
 }
 
 .order__action {
@@ -2773,6 +2774,10 @@ body {
     font-size: 200px;
   }
 
+  .order {
+    padding: 70px 0;
+  }
+
   .markets {
     display: flex;
     justify-content: center;
@@ -2780,13 +2785,13 @@ body {
 
   .markets:not(.markets_cards) {
     flex-wrap: wrap;
-    margin: 0 -10px -20px;
+    margin: 0 -10px -10px;
   }
 
   .markets:not(.markets_cards) .markets__item {
     flex: 1 1 auto;
     min-width: 290px;
-    max-width: 360px;
+    max-width: 340px;
     margin: 0 10px 10px;
   }
 
@@ -3198,10 +3203,6 @@ body {
 
   .gallery-main__logo {
     font-size: 262px;
-  }
-
-  .order {
-    padding: 80px 0 74px;
   }
 
   .order::before {
@@ -3650,13 +3651,13 @@ body {
   }
 
   .markets:not(.markets_cards) {
-    margin: 0 -20px -40px;
+    margin: 0 -14px -14px;
   }
 
   .markets:not(.markets_cards) .markets__item {
-    min-width: 340px;
-    max-width: 400px;
-    margin: 0 20px 20px;
+    min-width: 320px;
+    max-width: 380px;
+    margin: 0 14px 14px;
   }
 
   .markets_cards .markets__item:not(:first-child) {
