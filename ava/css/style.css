@@ -530,7 +530,6 @@ img {
   display: block;
   max-width: 100%;
   width: 100%;
-  height: 100%;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -2776,12 +2775,29 @@ textarea.inputs__body ~ .inputs__label {
   margin-bottom: 4px;
 }
 
+.media-block {
+  position: relative;
+}
+
 .media-block__img {
   aspect-ratio: 16/9;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.media-block__logo {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 17%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
 }
 
 .info-card {
@@ -2810,6 +2826,50 @@ textarea.inputs__body ~ .inputs__label {
 
 .info-card_text:hover .info-card__desc {
   display: block;
+}
+
+.info-card_img {
+  position: relative;
+}
+
+.info-card_img .info-card__name {
+  display: none;
+}
+
+.info-card_img .info-card__icon-box {
+  display: none;
+}
+
+.info-card_img:hover {
+  background-color: var(--color-light-hover);
+}
+
+.info-card_img:hover .info-card__img-box {
+  display: none;
+}
+
+.info-card_img:hover .info-card__name {
+  display: block;
+}
+
+.info-card_img:hover .info-card__desc {
+  display: block;
+}
+
+.info-card__img-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.info-card__img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .info-card__icon-box {
@@ -2948,6 +3008,10 @@ textarea.inputs__body ~ .inputs__label {
 
   .file-upload__body {
     aspect-ratio: 31/28 auto;
+  }
+
+  .media-block__logo {
+    width: 13%;
   }
 }
 
@@ -3563,6 +3627,12 @@ textarea.inputs__body ~ .inputs__label {
 
   .cards-slider__item {
     width: 49%;
+  }
+
+  .media-block__logo {
+    top: 24px;
+    right: 24px;
+    width: 9%;
   }
 
   .info-card {
@@ -4360,6 +4430,11 @@ textarea.inputs__body ~ .inputs__label {
 
   .num-stats-slider__action {
     margin-bottom: 48px;
+  }
+
+  .media-block__logo {
+    top: 48px;
+    right: 48px;
   }
 
   .info-action__body {
