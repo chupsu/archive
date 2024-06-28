@@ -1042,6 +1042,7 @@ video {
 }
 
 .menu-cards__bg {
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -2031,6 +2032,7 @@ textarea.inputs__body ~ .inputs__label {
 }
 
 .category-card__bg {
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -2299,7 +2301,6 @@ textarea.inputs__body ~ .inputs__label {
   left: 0;
   width: 209%;
   max-width: none;
-  height: auto;
   aspect-ratio: 2334/1200;
 }
 
@@ -2866,8 +2867,8 @@ textarea.inputs__body ~ .inputs__label {
 
 .info-card__img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
   -o-object-position: center;
      object-position: center;
 }
