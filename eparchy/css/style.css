@@ -33,6 +33,28 @@
 }
 
 @font-face {
+  font-family: Golos;
+  font-display: swap;
+  src: url("../fonts/Golos-Regular.woff2") format("woff2"), url("../fonts/Golos-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: Golos, sans-serif;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Golos;
+  font-display: swap;
+  src: url("../fonts/Golos-SemiBold.woff2") format("woff2"), url("../fonts/Golos-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
   font-family: Lora;
   font-display: swap;
   src: url("../fonts/Lora-Medium.woff2") format("woff2"), url("../fonts/Lora-Medium.woff") format("woff");
@@ -50,33 +72,11 @@
 }
 
 @font-face {
-  font-family: Golos;
-  font-display: swap;
-  src: url("../fonts/Golos-SemiBold.woff2") format("woff2"), url("../fonts/Golos-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
   font-family: icons;
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
   font-style: normal;
-}
-
-@font-face {
-  font-family: Golos;
-  font-display: swap;
-  src: url("../fonts/Golos-Regular.woff2") format("woff2"), url("../fonts/Golos-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-html,
-body {
-  font-family: Golos, sans-serif;
-  font-weight: 400;
 }
 
 @font-face {
@@ -94,6 +94,19 @@ body {
 ._h4 {
   font-family: Lora, sans-serif;
   font-weight: 600;
+}
+
+@font-face {
+  font-family: Lora;
+  font-display: swap;
+  src: url("../fonts/Lora-Regular.woff2") format("woff2"), url("../fonts/Lora-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo__title {
+  font-family: Lora, sans-serif;
+  font-weight: 400;
 }
 
 [class^=icon-]::before,
