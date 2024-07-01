@@ -1739,6 +1739,14 @@ body {
   background-color: var(--color-white);
   border: none;
   border-radius: 50%;
+  transition-duration: var(--transition-duration);
+  transition-property: color, background-color;
+}
+
+.main-slider__button:focus-visible {
+  outline: none;
+  color: var(--color-white);
+  background-color: var(--color-accent);
 }
 
 .main-slider__button + .main-slider__button {
@@ -2194,7 +2202,7 @@ body {
 
 .related__button:focus-visible {
   outline: none;
-  background-color: var(--color-white);
+  background-color: var(--color-blue-light);
 }
 
 .related__button_prev {
@@ -3908,6 +3916,11 @@ body {
     background-color: var(--color-dark);
   }
 
+  .main-slider__button:not(:active):hover {
+    color: var(--color-white);
+    background-color: var(--color-accent);
+  }
+
   .info__link:not(:active):hover {
     color: var(--color-accent);
   }
@@ -3938,7 +3951,7 @@ body {
   }
 
   .related__button:not(:active):hover {
-    background-color: var(--color-white);
+    background-color: var(--color-blue-light);
   }
 
   .partner:not(:active):hover {
