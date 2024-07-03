@@ -1035,7 +1035,7 @@ body {
 }
 
 .time__wrapper._2 {
-  background: linear-gradient(to bottom, var(--color-accent-light) 160px, var(--color-accent) 0%);
+  background: linear-gradient(to bottom, var(--color-accent-light) 140px, var(--color-accent) 0%);
 }
 
 .time__wrapper._2::before {
@@ -1050,7 +1050,7 @@ body {
 }
 
 .time__wrapper._3 {
-  background: linear-gradient(to bottom, var(--color-green-dark) 150px, var(--color-green) 0%);
+  background: linear-gradient(to bottom, var(--color-green-dark) 135px, var(--color-green) 0%);
 }
 
 .time__wrapper._3::before {
