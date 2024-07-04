@@ -477,6 +477,7 @@ body {
 }
 
 :root {
+  --height-header: 81px;
   --padding-page: 15px;
   --gap-small: 6px;
   --gap-normal: 14px;
@@ -677,10 +678,10 @@ body * {
 .logo {
   order: -2;
   flex-shrink: 0;
-  aspect-ratio: 22/4;
 }
 
 .logo__img {
+  aspect-ratio: 22/4;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: center;
@@ -1134,6 +1135,8 @@ body * {
 .popup__body {
   position: relative;
   display: flex;
+  width: 100%;
+  max-width: 100%;
   max-height: 100%;
   background-color: var(--color-white);
 }
@@ -1443,6 +1446,10 @@ body * {
 }
 
 @media (min-width: 3840.98px) {
+  :root {
+    --height-header: 205px;
+  }
+
   :root {
     --padding-page: 120px;
   }
@@ -1779,6 +1786,11 @@ body * {
   .header .geo {
     display: none;
   }
+
+  .welcome__title:first-child::before {
+    content: "";
+    display: block;
+  }
 }
 
 @media (max-width: 1023.98px) {
@@ -1907,6 +1919,10 @@ body * {
 }
 
 @media (max-width: 359.98px) {
+  :root {
+    --height-header: 81px;
+  }
+
   :root {
     --padding-page: 15px;
   }
@@ -2042,6 +2058,10 @@ body * {
 
   .welcome__title {
     font-size: 28px;
+  }
+
+  .welcome__title:first-child::before {
+    padding-top: 46px;
   }
 
   .welcome__action {
@@ -2244,6 +2264,10 @@ body * {
 }
 
 @media (min-width: 359.98px) and (max-width: 1920px) {
+  :root {
+    --height-header: clamp( 81px , 75.9234240587px + 1.4102383303vw , 103px );
+  }
+
   :root {
     --padding-page: clamp( 15px , 4.6160946655px + 2.8845784028vw , 60px );
   }
@@ -2517,6 +2541,10 @@ body * {
 }
 
 @media (min-width: 1920.98px) and (max-width: 3840.98px) {
+  :root {
+    --height-header: clamp( 103px , 0.9479375px + 5.3125vw , 205px );
+  }
+
   :root {
     --padding-page: clamp( 60px , -0.030625px + 3.125vw , 120px );
   }
@@ -2877,7 +2905,7 @@ body * {
   }
 
   .popup__body_small {
-    width: clamp( 222px , -83.0605724198px + 39.7224631396vw , 680px );
+    width: clamp( 480px , 346.7857762359px + 17.3460537728vw , 680px );
   }
 
   .popup__body_large {
@@ -2898,6 +2926,10 @@ body * {
 @media (min-width: 359.98px) and (max-width: 1279.98px) {
   .geo {
     margin-bottom: clamp( 30px , 16.3051086957px + 3.8043478261vw , 65px );
+  }
+
+  .welcome__title:first-child::before {
+    padding-top: clamp( 46px , 31.5225434783px + 4.0217391304vw , 83px );
   }
 }
 
