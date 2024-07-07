@@ -702,6 +702,11 @@ body {
   touch-action: pan-x;
 }
 
+b,
+strong {
+  font-weight: 600;
+}
+
 ._h1 {
   font-size: 28px;
 }
@@ -1743,6 +1748,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: var(--radius-large);
 }
 
 .main-slider__action {
@@ -2312,7 +2318,6 @@ body {
 
 .events__body {
   padding-top: var(--padding-normal);
-  padding-bottom: var(--padding-normal);
 }
 
 .events__item:not(:last-child) {
@@ -2593,7 +2598,6 @@ body {
 
 .places__body {
   padding-top: 42px;
-  padding-bottom: 90px;
 }
 
 .places__title {
@@ -2992,6 +2996,7 @@ body {
 
   .events__body {
     padding-right: var(--padding-normal);
+    padding-bottom: var(--padding-normal);
     padding-left: var(--padding-normal);
     background-color: var(--color-grey-light);
     border-radius: var(--radius-large);
@@ -4159,7 +4164,6 @@ body {
 
   .places__body {
     padding-top: 62px;
-    padding-bottom: 100px;
   }
 
   .places__title {
