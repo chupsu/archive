@@ -1208,6 +1208,16 @@ body * {
   --quize-current: 1;
 }
 
+.quize__current::after {
+  counter-reset: variable var(--quize-current);
+  content: counter(variable);
+}
+
+.quize__total::after {
+  counter-reset: variable var(--quize-total);
+  content: counter(variable);
+}
+
 .quize__title {
   margin-bottom: var(--gap-medium);
   text-align: center;
@@ -1259,6 +1269,7 @@ body * {
 
 .quize__btn {
   flex-grow: 1;
+  width: auto !important;
 }
 
 .quize__btn span,
@@ -1380,6 +1391,10 @@ body * {
   border-radius: var(--radius-small);
   transition-duration: var(--transition-duration);
   transition-property: border-color;
+}
+
+.agree__text {
+  color: var(--color-grey);
 }
 
 .agree__text a {
