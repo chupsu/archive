@@ -471,37 +471,12 @@ button {
   white-space: nowrap;
 }
 
-[type=search]::-webkit-search-decoration,
-[type=search]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-          appearance: none;
-}
-
-[type=search] {
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
-  outline-offset: -2px;
-  /* Fix outline style in Safari */
-}
-
 html,
 body {
   height: 100%;
 }
 
 :root {
-  --height-header: 81px;
-  --padding-page: 15px;
-  --gap-small: 6px;
-  --gap-normal: 14px;
-  --gap-medium: 20px;
-  --gap-large: 20px;
-  --height-btn: 48px;
-  --height-btn-small: 40px;
-  --padding-btn: 20px;
-  --padding-btn-small: 20px;
-  --radius-small: 4px;
   --color-dark: #282a40;
   --color-grey: #575b7b;
   --color-accent: #507ef5;
@@ -510,15 +485,6 @@ body {
   --color-border: #a7b4d6;
   --color-error: #d43e3e;
   --transition-duration: 0.3s;
-  --radius-large: 26px;
-  --radius-medium: 22px;
-  --radius-normal: 18px;
-  --radius-smallest: 6px;
-  --text-large: 18px;
-  --text-medium: 16px;
-  --text-normal: 14px;
-  --text-small: 12px;
-  --text-smallest: 10px;
 }
 
 html.is-lock {
@@ -790,8 +756,17 @@ body * {
   font-weight: 600;
 }
 
+.header .phone__name {
+  margin-bottom: var(--gap-small);
+}
+
 .footer .phone__name {
   margin-bottom: 6px;
+}
+
+.popup .phone__name {
+  margin-bottom: var(--gap-small);
+  font-size: 24px;
 }
 
 .phone__name a {
@@ -813,6 +788,10 @@ body * {
   display: flex;
   flex-wrap: wrap;
   margin: 0 calc(-1 * var(--gap-social)) calc(-2 * var(--gap-social));
+}
+
+.popup .social {
+  justify-content: center;
 }
 
 .social__item {
@@ -1204,6 +1183,55 @@ body * {
   color: var(--color-grey);
 }
 
+.form__title {
+  margin-bottom: var(--gap-normal);
+  text-align: center;
+  font-size: var(--title-2);
+}
+
+.form__text {
+  text-align: center;
+  line-height: 1.4;
+  color: var(--color-grey);
+}
+
+.form__main {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--gap-medium);
+}
+
+.form__main:not(:last-child) {
+  margin-bottom: var(--gap-large);
+}
+
+.form__inputs {
+  margin-bottom: var(--gap-normal);
+}
+
+.form__input + .form__input {
+  margin-top: var(--gap-normal);
+}
+
+.form__input-title {
+  display: block;
+}
+
+.form__agree {
+  margin-bottom: var(--gap-medium);
+}
+
+.form-contacts {
+  display: grid;
+  row-gap: var(--gap-medium);
+  text-align: center;
+}
+
+.form-contacts__text {
+  line-height: 1.4;
+  color: var(--color-grey);
+}
+
 .quize {
   --quize-total: 6;
   --quize-current: 1;
@@ -1222,6 +1250,7 @@ body * {
 .quize__title {
   margin-bottom: var(--gap-medium);
   text-align: center;
+  font-size: var(--title-2);
 }
 
 .quize__progress {
@@ -1420,8 +1449,30 @@ body * {
   color: var(--color-accent);
 }
 
+.article dl {
+  line-height: 1.4;
+}
+
+.article dl div + div {
+  margin-top: var(--gap-normal);
+}
+
+.article dl dt {
+  display: inline;
+}
+
+.article dl dt::after {
+  content: ":";
+}
+
+.article dl dd {
+  display: inline;
+  font-weight: 400;
+}
+
 .article h2 {
   text-align: center;
+  font-size: var(--title-2);
 }
 
 .article h3 {
@@ -1757,6 +1808,10 @@ body * {
     --radius-small: 12px;
   }
 
+  :root {
+    --title-2: 80px;
+  }
+
   html,
   body {
     font-size: 40px;
@@ -1815,10 +1870,6 @@ body * {
   }
 
   .header .phone__name {
-    margin-bottom: 20px;
-  }
-
-  .header .phone__name {
     font-size: 48px;
   }
 
@@ -1836,6 +1887,10 @@ body * {
 
   .footer .phone__name {
     font-size: 56px;
+  }
+
+  .popup .phone__name {
+    font-size: 48px;
   }
 
   .phone__desc {
@@ -1998,8 +2053,12 @@ body * {
     width: 900px;
   }
 
-  .quize__title {
-    font-size: 80px;
+  .form__input-title {
+    margin-bottom: 32px;
+  }
+
+  .form__input-title {
+    font-size: 40px;
   }
 
   .quize__progress {
@@ -2053,10 +2112,6 @@ body * {
 
   .article h2 {
     margin-bottom: 80px;
-  }
-
-  .article h2 {
-    font-size: 80px;
   }
 
   .article h3 {
@@ -2171,7 +2226,8 @@ body * {
     width: 100%;
   }
 
-  .social {
+  .header .social,
+  .footer .social {
     margin-top: 20px;
   }
 
@@ -2267,6 +2323,10 @@ body * {
     --radius-small: 4px;
   }
 
+  :root {
+    --title-2: 24px;
+  }
+
   html,
   body {
     font-size: 16px;
@@ -2326,10 +2386,6 @@ body * {
 
   .geo__mark::before {
     width: 16px;
-  }
-
-  .header .phone__name {
-    margin-bottom: 6px;
   }
 
   .header .phone__name {
@@ -2516,8 +2572,12 @@ body * {
     padding-left: 15px;
   }
 
-  .quize__title {
-    font-size: 24px;
+  .form__input-title {
+    margin-bottom: 6px;
+  }
+
+  .form__input-title {
+    font-size: 14px;
   }
 
   .quize__progress {
@@ -2562,10 +2622,6 @@ body * {
 
   .article h2 {
     margin-bottom: 20px;
-  }
-
-  .article h2 {
-    font-size: 24px;
   }
 
   .article h3 {
@@ -2640,6 +2696,10 @@ body * {
     --radius-small: clamp( 4px , 3.5384930962px + 0.1282034846vw , 6px );
   }
 
+  :root {
+    --title-2: clamp( 24px , 20.3079447699px + 1.0256278766vw , 40px );
+  }
+
   html,
   body {
     font-size: clamp( 16px , 15.0769861925px + 0.2564069691vw , 20px );
@@ -2675,10 +2735,6 @@ body * {
 
   .geo__mark::before {
     width: clamp( 16px , 15.0769861925px + 0.2564069691vw , 20px );
-  }
-
-  .header .phone__name {
-    margin-bottom: clamp( 6px , 5.0769861925px + 0.2564069691vw , 10px );
   }
 
   .header .phone__name {
@@ -2821,8 +2877,12 @@ body * {
     padding-left: clamp( 15px , -4.6140434097px + 5.4486480943vw , 100px );
   }
 
-  .quize__title {
-    font-size: clamp( 24px , 20.3079447699px + 1.0256278766vw , 40px );
+  .form__input-title {
+    margin-bottom: clamp( 6px , 3.6924654812px + 0.6410174229vw , 16px );
+  }
+
+  .form__input-title {
+    font-size: clamp( 14px , 12.6154792887px + 0.3846104537vw , 20px );
   }
 
   .quize__progress {
@@ -2867,10 +2927,6 @@ body * {
 
   .article h2 {
     margin-bottom: clamp( 20px , 15.3849309624px + 1.2820348457vw , 40px );
-  }
-
-  .article h2 {
-    font-size: clamp( 24px , 20.3079447699px + 1.0256278766vw , 40px );
   }
 
   .article h3 {
@@ -2945,6 +3001,10 @@ body * {
     --radius-small: clamp( 6px , -0.0030625px + 0.3125vw , 12px );
   }
 
+  :root {
+    --title-2: clamp( 40px , -0.0204166667px + 2.0833333333vw , 80px );
+  }
+
   html,
   body {
     font-size: clamp( 20px , -0.0102083333px + 1.0416666667vw , 40px );
@@ -3003,10 +3063,6 @@ body * {
   }
 
   .header .phone__name {
-    margin-bottom: clamp( 10px , -0.0051041667px + 0.5208333333vw , 20px );
-  }
-
-  .header .phone__name {
     font-size: clamp( 24px , -0.01225px + 1.25vw , 48px );
   }
 
@@ -3024,6 +3080,10 @@ body * {
 
   .footer .phone__name {
     font-size: clamp( 28px , -0.0142916667px + 1.4583333333vw , 56px );
+  }
+
+  .popup .phone__name {
+    font-size: clamp( 24px , -0.01225px + 1.25vw , 48px );
   }
 
   .phone__desc {
@@ -3186,8 +3246,12 @@ body * {
     width: clamp( 450px , -0.2296875px + 23.4375vw , 900px );
   }
 
-  .quize__title {
-    font-size: clamp( 40px , -0.0204166667px + 2.0833333333vw , 80px );
+  .form__input-title {
+    margin-bottom: clamp( 16px , -0.0081666667px + 0.8333333333vw , 32px );
+  }
+
+  .form__input-title {
+    font-size: clamp( 20px , -0.0102083333px + 1.0416666667vw , 40px );
   }
 
   .quize__progress {
@@ -3243,10 +3307,6 @@ body * {
     margin-bottom: clamp( 40px , -0.0204166667px + 2.0833333333vw , 80px );
   }
 
-  .article h2 {
-    font-size: clamp( 40px , -0.0204166667px + 2.0833333333vw , 80px );
-  }
-
   .article h3 {
     font-size: clamp( 32px , 1.9846875px + 1.5625vw , 62px );
   }
@@ -3299,10 +3359,6 @@ body * {
 
   .menu__cta {
     margin-left: clamp( 20px , 6.6785776236px + 1.7346053773vw , 40px );
-  }
-
-  .popup__body_small {
-    width: clamp( 480px , 346.7857762359px + 17.3460537728vw , 680px );
   }
 
   .popup__body_large {
@@ -3401,6 +3457,10 @@ body * {
 }
 
 @media (min-width: 575.98px) and (max-width: 1920.98px) {
+  .popup__body_small {
+    width: clamp( 480px , 394.3524163569px + 14.8698884758vw , 680px );
+  }
+
   .cookies {
     width: clamp( 360px , 321.4585873606px + 6.6914498141vw , 450px );
   }
