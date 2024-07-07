@@ -1737,7 +1737,7 @@ body * {
     margin-right: var(--gap-small);
   }
 
-  .order__img-box_1 .about__img {
+  .order__img-box_1 .order__img {
     aspect-ratio: 284/266;
   }
 
@@ -1745,7 +1745,7 @@ body * {
     width: 100%;
   }
 
-  .order__img-box_2 .about__img {
+  .order__img-box_2 .order__img {
     aspect-ratio: 65/70;
   }
 }
