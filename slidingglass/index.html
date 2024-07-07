@@ -81,7 +81,7 @@
                 <button class="welcome__btn btn btn_second" type="button" data-popup="#contact-form">
                   Получить консультацию
                 </button>
-                <button class="welcome__btn btn btn_accent" type="button" data-popup="#contact-form">
+                <button class="welcome__btn btn btn_accent" type="button" data-popup="#quize-form">
                   Рассчитать стоимость
                 </button>
               </div>
@@ -323,7 +323,7 @@
                   стоимости со <b>скидкой 10%</b> за 1 минуту      
                 </h2>
                 <p class="order__text text">Ответьте на 6 вопросов и узнайте стоимость</p>
-                <button class="order__btn btn btn_accent" type="button" data-popup="#calc">
+                <button class="order__btn btn btn_accent" type="button" data-popup="#quize-form">
                   Получить расчёт
                 </button>
               </div>
@@ -436,7 +436,227 @@
             />
           </svg>
         </button>
-        <div class="popup__inner"></div>
+        <div class="popup__inner">
+          <form class="quize" action="#">
+            <h4 class="quize__title">Получить расчёт</h4>
+            <div class="quize__progress">
+              <span class="quize__current">1</span>/<span class="quize__total">6</span>
+            </div>
+            <div class="quize__body">
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Что остекляем?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Беседка</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Терраса</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Балкон</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Лоджия</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Примерные размеры проёмов?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">0–15 м2</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">15–30 м2</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">30–45 м2</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">Затрудняюсь ответить</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Цвет стекла?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Прозрачный</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Бронза</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Серебро</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Какую систему предпочитаете?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-4">
+                      <span class="input__body">Pivot</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-4">
+                      <span class="input__body">Slide</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Когда планируете работы?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В этом месяце</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В след. месяце</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В конце сезона</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">Пока не знаю</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Ваш номер телефона</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__body" type="tel" placeholder="Введите телефон" required>
+                    </label>
+                  </div>
+                </div>
+                <div class="quize__item">
+                  <p class="quize__question">Удобный канал для обратной связи?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">WhatsApp</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">Telegram</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">СМС-сообщение</span>
+                    </label>
+                  </div>
+                </div>
+                <label class="quize__agree agree">
+                  <input class="agree__checkbox" type="checkbox" required>
+                  <span class="agree__icon"></span>
+                  <span class="agree__text">
+                    Я даю согласие на
+                    <a href="#policy" data-popup="#policy">обработку персональных данных</a>
+                  </span>
+                </label>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="submit" data-quize="next">Отправить</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
