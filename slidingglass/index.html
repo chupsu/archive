@@ -233,7 +233,7 @@
                   class="projects__btn btn btn_accent"
                   type="button"
                   data-popup="#contact-form"
-                  data-da=".projects__actions,575,first"
+                  data-da=".projects__actions,575,last"
                 >
                   Начать проект
                 </button>
@@ -277,7 +277,31 @@
                     <picture><source srcset="./img/content/project/img12.webp" type="image/webp"><img class="projects__img" src="./img/content/project/img12.jpg" alt="Выполненный проект"></picture>
                   </figure>
                 </div>
-                <div class="projects__actions"></div>
+                <div class="projects__actions">
+                  <div class="projects-nav">
+                    <button
+                      class="projects-nav__button projects-nav__button_prev btn btn_small btn_icon btn_second"
+                      type="button"
+                      aria-label="Предыдущий слайд"
+                      title="Предыдущий слайд"
+                    >
+                      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M34 36.7962C34 37.6554 32.9881 38.1146 32.3415 37.5488L26.8601 32.7526C26.4048 32.3542 26.4048 31.6458 26.8601 31.2474L32.3415 26.4512C32.9881 25.8854 34 26.3446 34 27.2038L34 36.7962Z" fill="#2A3656"/>
+                      </svg>
+                    </button>
+                    <div class="projects-nav__scrollbar"></div>
+                    <button
+                      class="projects-nav__button projects-nav__button_next btn btn_small btn_icon btn_second"
+                      type="button"
+                      aria-label="Следующий слайд"
+                      title="Следующий слайд"
+                    >
+                      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 36.7962C30 37.6554 31.0119 38.1146 31.6585 37.5488L37.1399 32.7526C37.5952 32.3542 37.5952 31.6458 37.1399 31.2474L31.6585 26.4512C31.0119 25.8854 30 26.3446 30 27.2038L30 36.7962Z" fill="#2A3656"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
