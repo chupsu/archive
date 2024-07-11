@@ -10,302 +10,315 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Статья</title>
+    <title>Страница храма</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
 
   <body>
     <div class="wrapper">
-      <header class="header" data-lp>
-        <div class="header__box header__box_sup">
-          <div class="container">
-            <div class="header__body">
-              <div class="header__main header__main_sup">
-                <ul class="sup-menu" data-da=".menu__body,1279,last">
-                  <li class="sup-menu__item">
-                    <a class="sup-menu__link icon-calendar-1" href="./404.html">Православный календарь</a>
-                  </li>
-                  <li class="sup-menu__item">
-                    <a class="sup-menu__link icon-calendar-2" href="./events.html">Анонсы событий</a>
-                  </li>
-                </ul>
-                <ul class="sup-menu">
-                  <li class="sup-menu__item">
-                    <button
-                      class="sup-menu__link icon-search"
-                      type="button"
-                      data-search-btn
-                      data-text-open="Поиск"
-                      data-text-close="Скрыть поиск"
-                      aria-label="Поиск"
-                      title="Поиск"
-                    ></button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="header__box header__box_main">
-          <div class="container">
-            <div class="header__body">
-              <div class="logo">
-                <figure class="logo__img-box">
-                  <img class="logo__img" src="./img/content/logo.svg" alt="Златоустовская Епархия">
-                </figure>
-                <div class="logo__info">
-                  <a
-                    class="logo__link"
-                    href="./index.html"
-                    aria-label="На главную страницу"
-                    title="На главную страницу"
-                  ></a>
-                  <!-- на Главной ссылка логотипа ведет к началу страницы -->
-                  <!-- <a
-                    class="logo__link"
-                    href="#"
-                    data-goto=".wrapper"
-                    aria-label="К началу страницы" title="К началу страницы"
-                  ></a> -->
-                  <span class="logo__title">
-                    Златоустовская <br>
-                    Епархия
-                  </span>
-                  <span class="logo__desc">Русская православная церковь</span>
+      <main class="page">
+        <header class="header" data-lp>
+          <div class="header__box header__box_sup">
+            <div class="container">
+              <div class="header__body">
+                <div class="header__main header__main_sup">
+                  <ul class="sup-menu" data-da=".menu__body,1279,last">
+                    <li class="sup-menu__item">
+                      <a class="sup-menu__link icon-calendar-1" href="./404.html">Православный календарь</a>
+                    </li>
+                    <li class="sup-menu__item">
+                      <a class="sup-menu__link icon-calendar-2" href="./events.html">Анонсы событий</a>
+                    </li>
+                  </ul>
+                  <ul class="sup-menu">
+                    <li class="sup-menu__item">
+                      <button
+                        class="sup-menu__link icon-search"
+                        type="button"
+                        data-search-btn
+                        data-text-open="Поиск"
+                        data-text-close="Скрыть поиск"
+                        aria-label="Поиск"
+                        title="Поиск"
+                      ></button>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="header__main">
-                <nav class="menu">
-                  <button class="menu__btn" type="button" aria-label="Меню сайта" title="Меню сайта">
-                    <i class="menu__icon" aria-hidden="true">
-                      <span></span>
-                    </i>
-                  </button>
-                  <div class="menu__body">
-                    <form class="header-search" action="#">
-                      <label class="header-search__box">
-                        <input class="header-search__input" type="search" placeholder="Поиск по сайту">
-                      </label>
-                      <button
-                        class="header-search__btn icon-search"
-                        type="submit"
-                        aria-label="Искать"
-                        title="Искать"
-                      ></button>
-                    </form>
-                    <ul class="menu__list" data-spollers data-one-spoller data-spollers-speed="100">
-                      <li class="menu__item">
-                        <button
-                          class="menu__link icon-angle-down"
-                          type="button"
-                          data-spoller
-                          data-spoller-close
-                        >
-                          Епархия
-                        </button>
-                        <div class="sub-menu" hidden>
-                          <div class="sub-menu__body">
-                            <div class="sub-menu__main">
-                              <span class="sub-menu__title">Про епархию</span>
-                              <ul class="sub-menu__list">
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./404.html">Хронология епархии</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./404.html">Архиерей</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./dyhovenstvo.html">
-                                    Духовенство епархии
-                                  </a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./404.html">Новомученники</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./404.html">Святые</a>
-                                </li>
-                              </ul>
-                            </div>
-                            <figure class="sub-menu__img-box">
-                              <picture><source srcset="./img/content/photo/menu-1.webp" type="image/webp"><img class="sub-menu__img" src="./img/content/photo/menu-1.jpg" alt="image"></picture>
-                            </figure>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="menu__item">
-                        <button
-                          class="menu__link icon-angle-down"
-                          type="button"
-                          data-spoller
-                          data-spoller-close
-                        >
-                          Благочиния
-                        </button>
-                        <div class="sub-menu" hidden>
-                          <div class="sub-menu__body">
-                            <div class="sub-menu__main">
-                              <span class="sub-menu__title">в составе</span>
-                              <ul class="sub-menu__list">
-                                <li class="sub-menu__item">
-                                  <a
-                                    class="sub-menu__link"
-                                    href="./blagochiniya.html#tab-0-0"
-                                    data-tab-id="#tab-0-0"
-                                  >
-                                    Благочиния епархии
-                                  </a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a
-                                    class="sub-menu__link"
-                                    href="./blagochiniya.html#tab-0-1"
-                                    data-tab-id="#tab-0-1"
-                                  >
-                                    Храмы и монастыри
-                                  </a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./destroyed.html">Уничтоженные храмы</a>
-                                </li>
-                              </ul>
-                            </div>
-                            <figure class="sub-menu__img-box">
-                              <picture><source srcset="./img/content/photo/menu-2.webp" type="image/webp"><img class="sub-menu__img" src="./img/content/photo/menu-2.jpg" alt="image"></picture>
-                            </figure>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="menu__item">
-                        <button
-                          class="menu__link icon-angle-down"
-                          type="button"
-                          data-spoller
-                          data-spoller-close
-                        >
-                          Деятельность
-                        </button>
-                        <div class="sub-menu" hidden>
-                          <div class="sub-menu__body">
-                            <div class="sub-menu__main">
-                              <ul class="sub-menu__list">
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./deyatelnost.html">Социальная</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./deyatelnost.html">Молодежная</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./deyatelnost.html">Миссионерская</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./deyatelnost.html">Образовательная</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./deyatelnost.html">
-                                    Информационно-издательская
-                                  </a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./deyatelnost.html">
-                                    Взаимодействие с силовыми структурами
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="menu__item">
-                        <button
-                          class="menu__link icon-angle-down"
-                          type="button"
-                          data-spoller
-                          data-spoller-close
-                        >
-                          Новости
-                        </button>
-                        <div class="sub-menu" hidden>
-                          <div class="sub-menu__body">
-                            <div class="sub-menu__main">
-                              <span class="sub-menu__title">О важном</span>
-                              <ul class="sub-menu__list">
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./news.html">Епархия</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./news.html">Архиерей</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./news.html">Благочиния</a>
-                                </li>
-                                <li class="sub-menu__item">
-                                  <a class="sub-menu__link" href="./news.html">Храмы</a>
-                                </li>
-                              </ul>
-                            </div>
-                            <figure class="sub-menu__img-box">
-                              <picture><source srcset="./img/content/photo/menu-3.webp" type="image/webp"><img class="sub-menu__img" src="./img/content/photo/menu-3.jpg" alt="image"></picture>
-                            </figure>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="menu__item">
-                        <a class="menu__link" href="./media-all.html">Медиа</a>
-                      </li>
-                      <li class="menu__item">
-                        <a class="menu__link" href="./404.html">Документы</a>
-                      </li>
-                      <li class="menu__item">
-                        <a class="menu__link" href="./404.html">Контакты</a>
-                      </li>
-                    </ul>
+            </div>
+          </div>
+          <div class="header__box header__box_main">
+            <div class="container">
+              <div class="header__body">
+                <div class="logo">
+                  <figure class="logo__img-box">
+                    <img class="logo__img" src="./img/content/logo.svg" alt="Златоустовская Епархия">
+                  </figure>
+                  <div class="logo__info">
+                    <a
+                      class="logo__link"
+                      href="./index.html"
+                      aria-label="На главную страницу"
+                      title="На главную страницу"
+                    ></a>
+                    <!-- на Главной ссылка логотипа ведет к началу страницы -->
+                    <!-- <a
+                      class="logo__link"
+                      href="#"
+                      data-goto=".wrapper"
+                      aria-label="К началу страницы" title="К началу страницы"
+                    ></a> -->
+                    <span class="logo__title">
+                      Златоустовская <br>
+                      Епархия
+                    </span>
+                    <span class="logo__desc">Русская православная церковь</span>
                   </div>
-                </nav>
+                </div>
+                <div class="header__main">
+                  <nav class="menu">
+                    <button class="menu__btn" type="button" aria-label="Меню сайта" title="Меню сайта">
+                      <i class="menu__icon" aria-hidden="true">
+                        <span></span>
+                      </i>
+                    </button>
+                    <div class="menu__body">
+                      <form class="header-search" action="#">
+                        <label class="header-search__box">
+                          <input class="header-search__input" type="search" placeholder="Поиск по сайту">
+                        </label>
+                        <button
+                          class="header-search__btn icon-search"
+                          type="submit"
+                          aria-label="Искать"
+                          title="Искать"
+                        ></button>
+                      </form>
+                      <ul class="menu__list" data-spollers data-one-spoller data-spollers-speed="100">
+                        <li class="menu__item">
+                          <button
+                            class="menu__link icon-angle-down"
+                            type="button"
+                            data-spoller
+                            data-spoller-close
+                          >
+                            Епархия
+                          </button>
+                          <div class="sub-menu" hidden>
+                            <div class="sub-menu__body">
+                              <div class="sub-menu__main">
+                                <span class="sub-menu__title">Про епархию</span>
+                                <ul class="sub-menu__list">
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./404.html">Хронология епархии</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./404.html">Архиерей</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./dyhovenstvo.html">
+                                      Духовенство епархии
+                                    </a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./404.html">Новомученники</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./404.html">Святые</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <figure class="sub-menu__img-box">
+                                <picture><source srcset="./img/content/photo/menu-1.webp" type="image/webp"><img class="sub-menu__img" src="./img/content/photo/menu-1.jpg" alt="image"></picture>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="menu__item">
+                          <button
+                            class="menu__link icon-angle-down"
+                            type="button"
+                            data-spoller
+                            data-spoller-close
+                          >
+                            Благочиния
+                          </button>
+                          <div class="sub-menu" hidden>
+                            <div class="sub-menu__body">
+                              <div class="sub-menu__main">
+                                <span class="sub-menu__title">в составе</span>
+                                <ul class="sub-menu__list">
+                                  <li class="sub-menu__item">
+                                    <a
+                                      class="sub-menu__link"
+                                      href="./blagochiniya.html#tab-0-0"
+                                      data-tab-id="#tab-0-0"
+                                    >
+                                      Благочиния епархии
+                                    </a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a
+                                      class="sub-menu__link"
+                                      href="./blagochiniya.html#tab-0-1"
+                                      data-tab-id="#tab-0-1"
+                                    >
+                                      Храмы и монастыри
+                                    </a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./destroyed.html">Уничтоженные храмы</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <figure class="sub-menu__img-box">
+                                <picture><source srcset="./img/content/photo/menu-2.webp" type="image/webp"><img class="sub-menu__img" src="./img/content/photo/menu-2.jpg" alt="image"></picture>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="menu__item">
+                          <button
+                            class="menu__link icon-angle-down"
+                            type="button"
+                            data-spoller
+                            data-spoller-close
+                          >
+                            Деятельность
+                          </button>
+                          <div class="sub-menu" hidden>
+                            <div class="sub-menu__body">
+                              <div class="sub-menu__main">
+                                <ul class="sub-menu__list">
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./deyatelnost.html">Социальная</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./deyatelnost.html">Молодежная</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./deyatelnost.html">Миссионерская</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./deyatelnost.html">Образовательная</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./deyatelnost.html">
+                                      Информационно-издательская
+                                    </a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./deyatelnost.html">
+                                      Взаимодействие с силовыми структурами
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="menu__item">
+                          <button
+                            class="menu__link icon-angle-down"
+                            type="button"
+                            data-spoller
+                            data-spoller-close
+                          >
+                            Новости
+                          </button>
+                          <div class="sub-menu" hidden>
+                            <div class="sub-menu__body">
+                              <div class="sub-menu__main">
+                                <span class="sub-menu__title">О важном</span>
+                                <ul class="sub-menu__list">
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./news.html">Епархия</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./news.html">Архиерей</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./news.html">Благочиния</a>
+                                  </li>
+                                  <li class="sub-menu__item">
+                                    <a class="sub-menu__link" href="./news.html">Храмы</a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <figure class="sub-menu__img-box">
+                                <picture><source srcset="./img/content/photo/menu-3.webp" type="image/webp"><img class="sub-menu__img" src="./img/content/photo/menu-3.jpg" alt="image"></picture>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="./media-all.html">Медиа</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="./404.html">Документы</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="./404.html">Контакты</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <main class="page">
-        <div class="article">
+        <section class="welcome">
           <div class="container">
-            <article class="article__body">
-              <div class="article__head">
-                <ul class="article__breadcrumbs breadcrumbs">
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./index.html">Главная</a>
-                  </li>
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./404.html">Новости</a>
-                  </li>
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./404.html">Новости Ашинского благочиния</a>
-                  </li>
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./404.html">Название храма</a>
-                  </li>
-                  <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">
-                      Великопостное Богослужение в Серафимовском кафедральном соборе
-                    </span>
-                  </li>
-                </ul>
-                <ul class="article__tags tags _p3">
-                  <li class="tags__item">Новость дня</li>
-                  <li class="tags__item">Архиерей</li>
-                </ul>
-                <h1 class="article__title">
-                  Великопостное Богослужение в Серафимовском кафедральном соборе
-                </h1>
-                <div class="article__info">
-                  <time class="article__time _p2" datetime="2024-04-24 19:00">24/04/2024</time>
-                  <div class="article__share">
-                    <div class="share share_contour">
-                      
-                      <span class="share__text">Поделиться</span>
+            <div class="welcome__body">
+              <div class="welcome__main">
+                <!-- для welcome-slider указываем data-slider если welcome-slider__item больше 1 -->
+                <div class="welcome-slider" data-slider>
+                  <div class="welcome-slider__items">
+                    <div class="welcome-slider__item">
+                      <figure class="welcome-slider__img-box">
+                        <picture><source srcset="./img/content/photo/place-7.webp" type="image/webp"><img class="welcome-slider__img" src="./img/content/photo/place-7.jpg" alt="Научно-техническая конференция молодых специалистов"></picture>
+                      </figure>
+                    </div>
+                    <div class="welcome-slider__item">
+                      <figure class="welcome-slider__img-box">
+                        <picture><source srcset="./img/content/photo/place-8.webp" type="image/webp"><img class="welcome-slider__img" src="./img/content/photo/place-8.jpg" alt="Научно-техническая конференция молодых специалистов"></picture>
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="welcome-slider__actions">
+                    <button
+                      class="welcome-slider__button welcome-slider__button_prev icon-angle-left"
+                      type="button"
+                      aria-label="Предыдущий слайд"
+                    ></button>
+                    <button
+                      class="welcome-slider__button welcome-slider__button_next icon-angle-right"
+                      type="button"
+                      aria-label="Следующий слайд"
+                    ></button>
+                    <div class="welcome-slider__pagination"></div>
+                  </div>
+                </div>
+                <div class="welcome-content">
+                  <ul class="breadcrumbs">
+                    <li class="breadcrumbs__item">
+                      <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                      <span class="breadcrumbs__link">Троицкий храм г.Златоуст</span>
+                    </li>
+                  </ul>
+                  <h1 class="welcome-content__title _h1">Троицкий храм г.Златоуст</h1>
+                  <p class="welcome-content__text _p2">
+                    Основатели г. Катав-Ивановск промышленники Иван Твердышев и Иван Мясников
+                    поставили в поселке при железоделательном заводе первую деревянную церковь,
+                    освященую в честь Иоанна Предтечи.
+                  </p>
+                  <div class="welcome-content__action">
+                    <div class="share share_light-large">
                       
                       <ul class="share__list">
                          
@@ -348,139 +361,205 @@
                   </div>
                 </div>
               </div>
-              <div class="article__main">
-                <p>
-                  <i>
-                    Здание в неорусском стиле на Большой Покровской торжественно открыли
-                    в 1913 году, к 300-летию дома <a href="./404.html">Романовых</a>.
-                    С тех пор в нем всегда располагалось Нижегородское отделение главного банка
-                    страны: сначала Российской империи, затем СССР, а теперь &mdash; Российской
-                    Федерации. Читайте, как архитектор Владимир Покровский проектировал здание,
-                    а художник <a href="./404.html">Иван Билибин</a> оформлял интерьеры, кто
-                    приехал на церемонию открытия и какие легенды возникли вокруг дома.
-                  </i>
-                </p>
-                <div class="article__gallery">
-                  <figure class="article__img-box">
-                    <picture><source srcset="./img/content/photo/new-1.webp" type="image/webp"><img class="article__img" src="./img/content/photo/new-1.jpg" alt="image"></picture>
-                  </figure>
-                </div>
-                <p>
-                  Здание в неорусском стиле на Большой Покровской торжественно открыли
-                  в 1913 году, к 300-летию дома <a href="./404.html">Романовых</a>.
-                  С тех пор в нем всегда располагалось Нижегородское отделение главного банка
-                  страны: сначала Российской империи, затем СССР, а теперь &mdash; Российской
-                  Федерации. Читайте, как архитектор Владимир Покровский проектировал здание,
-                  а художник <a href="./404.html">Иван Билибин</a> оформлял интерьеры, кто
-                  приехал на церемонию открытия и какие легенды возникли вокруг дома.
-                </p>
-                <h2>Карман России и меновой двор Европы с Азией</h2>
-                <div class="article__gallery">
-                  <figure class="article__img-box">
-                    <picture><source srcset="./img/content/photo/new-2.webp" type="image/webp"><img class="article__img" src="./img/content/photo/new-2.jpg" alt="image"></picture>
-                  </figure>
-                  <figure class="article__img-box">
-                    <picture><source srcset="./img/content/photo/new-3.webp" type="image/webp"><img class="article__img" src="./img/content/photo/new-3.jpg" alt="image"></picture>
-                  </figure>
-                </div>
-                <p>
-                  Здание в неорусском стиле на Большой Покровской торжественно открыли
-                  в 1913 году, к 300-летию дома <a href="./404.html">Романовых</a>.
-                  С тех пор в нем всегда располагалось Нижегородское отделение главного банка
-                  страны: сначала Российской империи, затем СССР, а теперь &mdash; Российской
-                  Федерации. Читайте, как архитектор Владимир Покровский проектировал здание,
-                  а художник <a href="./404.html">Иван Билибин</a> оформлял интерьеры, кто
-                  приехал на церемонию открытия и какие легенды возникли вокруг дома. Здание
-                  в неорусском стиле на Большой Покровской торжественно открыли
-                  в 1913 году, к 300-летию дома <a href="./404.html">Романовых</a>.
-                  С тех пор в нем всегда располагалось Нижегородское отделение главного банка
-                  страны: сначала Российской империи, затем СССР, а теперь &mdash; Российской
-                  Федерации. Читайте, как архитектор Владимир Покровский проектировал здание,
-                  а художник <a href="./404.html">Иван Билибин</a> оформлял интерьеры, кто
-                  приехал на церемонию открытия и какие легенды возникли вокруг дома.
-                </p>
-                <h2>Карман России и меновой двор Европы с Азией</h2>
-                <div class="article__gallery">
-                  <figure class="article__img-box">
-                    <picture><source srcset="./img/content/photo/new-4.webp" type="image/webp"><img class="article__img" src="./img/content/photo/new-4.jpg" alt="image"></picture>
-                  </figure>
-                  <figure class="article__img-box">
-                    <picture><source srcset="./img/content/photo/new-5.webp" type="image/webp"><img class="article__img" src="./img/content/photo/new-5.jpg" alt="image"></picture>
-                  </figure>
-                  <figure class="article__img-box">
-                    <picture><source srcset="./img/content/photo/new-1.webp" type="image/webp"><img class="article__img" src="./img/content/photo/new-1.jpg" alt="image"></picture>
-                  </figure>
-                </div>
-                <p>
-                  <b>1918 г.</b> &mdash; в сквере возле Храма Христа Спасителя демонтирован
-                  памятник Императору Александру III. <br>
-                  <b>1922 г.</b> &mdash; принято решение о сносе Храма Христа Спасителя
-                  и строительстве на его месте грандиозного здания Дворца Советов. <br>
-                  <b>Храм Христа Спасителя 924 г.</b> &mdash; принято решение соорудить
-                  на месте Храма Христа Спасителя здание, которое должно стать одновременно
-                  памятником В..И. Ленину, Коминтерну и образованию Союза ССР.
-                </p>
-                <div class="article__gallery">
-                  <figure class="article__img-box">
-                    <picture><source srcset="./img/content/photo/new-6.webp" type="image/webp"><img class="article__img" src="./img/content/photo/new-6.jpg" alt="image"></picture>
-                  </figure>
-                </div>
-                <p>
-                  Здание в неорусском стиле на Большой Покровской торжественно открыли
-                  в 1913 году, к 300-летию дома <a href="./404.html">Романовых</a>.
-                  С тех пор в нем всегда располагалось Нижегородское отделение главного банка
-                  страны: сначала Российской империи, затем СССР, а теперь &mdash; Российской
-                  Федерации. Читайте, как архитектор Владимир Покровский проектировал здание,
-                  а художник <a href="./404.html">Иван Билибин</a> оформлял интерьеры, кто
-                  приехал на церемонию открытия и какие легенды возникли вокруг дома. Здание
-                  в неорусском стиле на Большой Покровской торжественно открыли
-                  в 1913 году, к 300-летию дома <a href="./404.html">Романовых</a>.
-                  С тех пор в нем всегда располагалось Нижегородское отделение главного банка
-                  страны: сначала Российской империи, затем СССР, а теперь &mdash; Российской
-                  Федерации. Читайте, как архитектор Владимир Покровский проектировал здание,
-                  а художник <a href="./404.html">Иван Билибин</a> оформлял интерьеры, кто
-                  приехал на церемонию открытия и какие легенды возникли вокруг дома. Здание
-                  в неорусском стиле на Большой Покровской торжественно открыли
-                  в 1913 году, к 300-летию дома <a href="./404.html">Романовых</a>.
-                  С тех пор в нем всегда располагалось Нижегородское отделение главного банка
-                  страны: сначала Российской империи, затем СССР, а теперь &mdash; Российской
-                  Федерации. Читайте, как архитектор Владимир Покровский проектировал здание,
-                  а художник <a href="./404.html">Иван Билибин</a> оформлял интерьеры, кто
-                  приехал на церемонию открытия и какие легенды возникли вокруг дома.
-                </p>
-                <blockquote>
-                  Это здание, открытие которого приурачивается к нынешнему юбилейному году, должно
-                  служить величественным памятником трехсотлетия царствования дома Романовых
-                  и в сих видах оно выстроено в русском стиле эпохи первых царей
-                  из дома Романовых. Все внутреннее убранство, как то: мебель, электрическая
-                  арматура, роспись стен и потолков и проч., до последних
-                  мелочей, &mdash; выдержаны также в русском стиле. Вообще это здание
-                  по своей художественности, цельности производимого впечатления, в связи
-                  с большими размерами его, должно занять одно из первых мест в ряду других
-                  построек русского стиля в Империи.
-                </blockquote>
-                <p>
-                  Здание в неорусском стиле на Большой Покровской торжественно открыли
-                  в 1913 году, к 300-летию дома <a href="./404.html">Романовых</a>.
-                  С тех пор в нем всегда располагалось Нижегородское отделение главного банка
-                  страны: сначала Российской империи, затем СССР, а теперь &mdash; Российской
-                  Федерации. Читайте, как архитектор Владимир Покровский проектировал здание,
-                  а художник <a href="./404.html">Иван Билибин</a> оформлял интерьеры, кто
-                  приехал на церемонию открытия и какие легенды возникли вокруг дома.
-                </p>
-              </div>
-              <div class="article__actions">
-                <button class="article__btn btn btn_contour" type="button" data-goto=".wrapper">
-                  Вернуться наверх
-                </button>
-              </div>
-            </article>
+            </div>
           </div>
-        </div>
+        </section>
+        <section class="about">
+          <div class="container">
+            <div class="about__wrapper">
+              <div class="about__body">
+                <div class="about__main">
+                  <div class="about__desc">О храме</div>
+                  <h2 class="about__title _h2">История</h2>
+                  <div class="about__inner" data-showmore>
+                    <div class="about__content" data-showmore-content="252">
+                      <p class="about__text _p1">
+                        Основатели г. Катав-Ивановск промышленники Иван Твердышев и Иван Мясников
+                        поставили в поселке при железоделательном заводе первую деревянную церковь,
+                        освященую в честь Иоанна Предтечи. <br>
+                        В 1824 году на месте деревянной церкви был построен большой каменный
+                        двухэтажный храм необычной для православных храмов архитектуры. Средства
+                        на постройку новой церкви выделила княгиня Анна Белосельская-Белозерская,
+                        ставшая владелицей Катав-Ивановского завода. Верхний (летний) храм был освящен
+                        в честь Казанской иконы Божией Матери, нижний &mdash; в честь
+                        Иоанна Предтечи. Величественная церковь сразу стала украшением небольшого поселка.
+                        <br>
+                        Здание выполнено с характерными особенностями планировки и декоративной
+                        отделки храмовой архитектуры 1-й половины 19 в. Монументальный 4-столпный
+                        храм является архитектурной доминантой Катав-Ивановска. Величественный облик
+                        церкви с прекрасными пропорциями, несмотря на значительные отклонения
+                        от оригинала (снос 2 колоколен) и видоизменения при реставрации,
+                        приведшие к утрате исторической подлинности сооружения, отличается строгой
+                        гармонией. Проект принадлежал неизвестному петербургскому архитектору. Престол
+                        в нижнем, отапливаемом, этаже был освящен во имя Св. Иоанна Предтечи
+                        и Крестителя Господня Иоанна, в верхнем, холодном, используемом
+                        в летнее время, &mdash; в честь Казанской иконы Божией Матери.
+                        <br>
+                        Оштукатуренное здание церкви всегда было выкрашено в белый цвет (отсюда
+                        обиходное название церкви &mdash; Белая). Пол раскрашивался масляной краской
+                        &laquo;под ковер&raquo;, своды обильно украшались живописью. Росписи
+                        в интерьере и первоначальный иконостас утрачены; современный выполнен
+                        после 1990 г. По обе стороны главного фасада 2 каменных 1-этажных
+                        здания &mdash; церковно-приходская школа и сторожка. Территория
+                        ограждена железной кованой решеткой на каменном цоколе. В церковной
+                        ограде &mdash; могилы священнослужителей, потомственных почётных горожан, высших
+                        заводских чинов, купцов. <br>
+                        В 1929 г. церковь закрыли, иконы и утварь были изъяты, масляные
+                        росписи забелены, в помещениях разместился рабочий клуб. В 1930-х гг.
+                        были утрачены верхние ярусы звона колоколен, придававшие облику церкви сходство
+                        с католическим костелом. Позднее в здании размещался кинотеатр
+                        и горный музей. <br>
+                        До начала 1960-х, когда здание было основательно перестроено, еще можно было
+                        увидеть их нижний ярус. В результате нескольких перестроек здание
+                        лишилось не только колоколен, но и многих других элементов. Сегодня
+                        западный фасад вновь имеет галерею, но уже высотой в один этаж,
+                        а не в два, как раньше. Несколько раз вносились изменения
+                        в проемы окон на западном фасаде. До начала 1960-х здание имело два
+                        дополнительных входа, устроенных на месте бывших оконных проемов первого
+                        этажа. А вот крайние окна второго этажа сейчас заложены. Исчезли
+                        и многие другие архитектурные детали здания. <br>
+                        В 1970-х в результате пожара значительно пострадала стропильная система
+                        кровли церкви. Устранение последствий пожара не проводилось. <br>
+                        В 1990 г. церковь возвращена верующим, проведены
+                        ремонтно-реставрационные работы внутри, частично восстановлены
+                        фасады. 17 апреля 1990 г. повторно освящен престол во имя Св.
+                        Иоанна Предтечи, 26 ноября 1995 г. &mdash; престол в честь
+                        Казанской иконы Божией Матери. <br>
+                        В 1999 году Казанско-Богородицкая церковь в Катав-Ивановске признана
+                        объектом культурного наследия. Уникальный для Южного Урала храм с почти
+                        двухсотлетней историей сейчас нуждается в капитальном ремонте. <br>
+                        В 2014 году во время ремонтных работ на потолке верхнего храма была
+                        обнаружена фреска дореволюционных времен. Точное время ее написания
+                        неизвестно, вполне возможно, что она является ровесницей храма. Фреска
+                        представляет собой икону Новозаветной Троицы: Отец, Сын и Святой дух
+                        в окружении ангелов. Икона, обнаруженная под слоем штукатурки, сохранилась
+                        почти полностью. Примечательно, что ценная находка пришлась на год
+                        190-летнего юбилея храма.
+                      </p>
+                    </div>
+                    <button class="about__show btn btn_contour" type="button" hidden data-showmore-button>
+                      <span>Подробнее</span>
+                      <span>Скрыть</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="about__contacts about-contacts">
+                  <div class="about-contacts__box">
+                    <iframe
+                      class="about-contacts__map"
+                      src="https://yandex.ru/map-widget/v1/?um=constructor%3A7e95d310c5f3eeb5d763f465d42c5628ebe2c2c505502b4125c40e0406b3e098&amp;source=constructor"
+                    ></iframe>
+                  </div>
+                  <div class="about-contacts__box">
+                    <h3 class="about-contacts__title">Адрес храма</h3>
+                    <address class="about-contacts__text _p1">
+                      Россия, Челябинская область, г. Златоуст, ул. Таганайская, 196
+                    </address>
+                  </div>
+                  <div class="about-contacts__box about-contacts__box_small">
+                    <h3 class="about-contacts__title">Телефон</h3>
+                    <ul class="about-contacts__list">
+                      <li class="about-contacts__item">
+                        <a class="about-contacts__link" href="tel:+79001234567">+7 900 123 45 67</a>
+                        <span
+                          class="about-contacts__tip"
+                          data-tippy-content="Если нужно пояснение к телефону"
+                        >
+                          ?
+                        </span>
+                      </li>
+                      <li class="about-contacts__item">
+                        <a class="about-contacts__link" href="tel:+79001234567">+7 900 123 45 67</a>
+                        <span
+                          class="about-contacts__tip"
+                          data-tippy-content="Если нужно пояснение к телефону"
+                        >
+                          ?
+                        </span>
+                      </li>
+                      <li class="about-contacts__item">
+                        <a class="about-contacts__link" href="tel:+79001234567">+7 900 123 45 67</a>
+                        <span
+                          class="about-contacts__tip"
+                          data-tippy-content="Если нужно пояснение к телефону"
+                        >
+                          ?
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="about-contacts__box about-contacts__box_small">
+                    <h3 class="about-contacts__title">Почта</h3>
+                    <ul class="about-contacts__list">
+                      <li class="about-contacts__item">
+                        <a class="about-contacts__link" href="mailto:mail@mail.ru">
+                          mailmailmailmail@mail.ru
+                        </a>
+                      </li>
+                      <li class="about-contacts__item">
+                        <a class="about-contacts__link" href="mailto:mail@mail.ru">mailmail@mail.ru</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="about__panorama">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/org/zlatoustovskaya_yeparkhiya_russkoy_pravoslavnoy_tserkvi/33296139266/panorama/?ll=59.669973%2C55.155078&panorama%5Bdirection%5D=18.435389%2C-3.405248&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=59.669876%2C55.154761&panorama%5Bspan%5D=83.078272%2C60.000000&z=16"
+                  width="560"
+                  height="400"
+                  frameborder="1"
+                  allowfullscreen="true"
+                  style="position: relative"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="clerics">
+          <div class="container">
+            <div class="clerics__body">
+              <h2 class="clerics__title _h2">Клирики благочиния</h2>
+              <div class="grid">
+                <ul class="grid__items grid__items_col-4">
+                  <li class="grid__item">
+                    <article class="cleric">
+                      <figure class="cleric__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                      </figure>
+                      <div class="cleric__info">
+                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
+                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      </div>
+                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                    </article>
+                  </li>
+                  <li class="grid__item">
+                    <article class="cleric">
+                      <figure class="cleric__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                      </figure>
+                      <div class="cleric__info">
+                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
+                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      </div>
+                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                    </article>
+                  </li>
+                </ul>
+                <!-- <div class="grid__actions">
+                  <button class="grid__btn btn btn_contour" type="button">Показать всех</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </section>
         <section class="related">
           <div class="container">
             <div class="related__body">
-              <h2 class="related__title _h2">Другие новости</h2>
+              <h2 class="related__title _h2">Новости благочиния</h2>
               <div class="related__wrapper">
                 <div class="related__actions">
                   <a class="related__btn btn btn_contour" href="./news.html">Все новости</a>
