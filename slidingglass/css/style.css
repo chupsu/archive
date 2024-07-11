@@ -809,10 +809,20 @@ body * {
   font-weight: 600;
 }
 
+.welcome__info {
+  margin-top: 75px;
+}
+
 .welcome__action {
   display: flex;
   flex-wrap: wrap;
-  margin: 110px calc(-1 * var(--gap-btn)) calc(-1 * var(--gap-btn));
+  margin: 0 calc(-1 * var(--gap-btn)) calc(-1 * var(--gap-btn));
+}
+
+.welcome__price {
+  width: 100%;
+  padding-right: var(--gap-btn);
+  padding-left: var(--gap-btn);
 }
 
 .welcome__btn {
@@ -1842,7 +1852,7 @@ span[class^=wpcf7-] {
   }
 
   .welcome__title {
-    margin-right: 8%;
+    margin-right: 2%;
   }
 
   .welcome__img {
@@ -1957,6 +1967,10 @@ span[class^=wpcf7-] {
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
+  }
+
+  .welcome__price {
+    text-align: right;
   }
 }
 
@@ -2112,6 +2126,14 @@ span[class^=wpcf7-] {
 
   .welcome__action {
     --gap-btn: 10px;
+  }
+
+  .welcome__price {
+    margin-bottom: 120px;
+  }
+
+  .welcome__price {
+    font-size: 56px;
   }
 
   .about__text {
@@ -2666,6 +2688,14 @@ span[class^=wpcf7-] {
     --gap-btn: 3px;
   }
 
+  .welcome__price {
+    margin-bottom: 15px;
+  }
+
+  .welcome__price {
+    font-size: 22px;
+  }
+
   .about__content {
     margin-bottom: 80px;
   }
@@ -3025,6 +3055,10 @@ span[class^=wpcf7-] {
 
   .welcome__action {
     --gap-btn: clamp( 3px , 2.5384930962px + 0.1282034846vw , 5px );
+  }
+
+  .welcome__price {
+    font-size: clamp( 22px , 20.6154792887px + 0.3846104537vw , 28px );
   }
 
   .about__text {
@@ -3388,6 +3422,14 @@ span[class^=wpcf7-] {
     --gap-btn: clamp( 5px , -0.0025520833px + 0.2604166667vw , 10px );
   }
 
+  .welcome__price {
+    margin-bottom: clamp( 60px , -0.030625px + 3.125vw , 120px );
+  }
+
+  .welcome__price {
+    font-size: clamp( 28px , -0.0142916667px + 1.4583333333vw , 56px );
+  }
+
   .about__text {
     max-width: clamp( 450px , -0.2296875px + 23.4375vw , 900px );
   }
@@ -3680,6 +3722,10 @@ span[class^=wpcf7-] {
   .geo {
     margin-left: clamp( 40px , -79.8109204368px + 9.360374415vw , 100px );
   }
+
+  .welcome__price {
+    margin-bottom: clamp( 30px , -29.9054602184px + 4.6801872075vw , 60px );
+  }
 }
 
 @media (min-width: 359.98px) and (max-width: 1279.98px) {
@@ -3689,6 +3735,10 @@ span[class^=wpcf7-] {
 
   .welcome__title:first-child::before {
     padding-top: clamp( 46px , 31.5225434783px + 4.0217391304vw , 83px );
+  }
+
+  .welcome__price {
+    margin-bottom: clamp( 15px , 9.1307608696px + 1.6304347826vw , 30px );
   }
 }
 
