@@ -511,6 +511,7 @@ body {
   --color-white: #ffffff;
   --color-black: #181d24;
   --transition-duration: 0.3s;
+  --transition-duration-img: 2s;
   --radius-large: 26px;
   --radius-medium: 22px;
   --radius-normal: 18px;
@@ -865,7 +866,7 @@ b {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  transition-duration: 2s;
+  transition-duration: var(--transition-duration-img);
   transition-property: transform;
 }
 
@@ -907,6 +908,89 @@ b {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+.faq__body {
+  padding: var(--padding-block) 0;
+}
+
+.spollers__item {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.spollers__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-medium) var(--gap-large) var(--gap-medium) 0;
+  list-style: none;
+  color: var(--color-dark);
+  transition-duration: var(--transition-duration);
+  transition-property: color, background-color, border-color, opacity, transform;
+}
+
+.spollers__title:focus-visible {
+  outline: none;
+  color: var(--color-accent);
+}
+
+.spollers__title:active {
+  color: var(--color-accent-light);
+}
+
+.spollers__title::before,
+.spollers__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-accent);
+  border-radius: 100px;
+}
+
+.spollers__title::before {
+  right: 0;
+  height: 2px;
+}
+
+.spollers__title::after {
+  width: 2px;
+  transition-duration: var(--transition-duration);
+  transition-property: height;
+}
+
+.spollers__title._spoller-active::after {
+  height: 0;
+}
+
+.spollers__body {
+  padding-bottom: var(--gap-medium);
+  color: var(--color-grey);
+}
+
+.spollers__body > * {
+  margin: var(--gap-small) 0;
+}
+
+.spollers__body > *:first-child {
+  margin-top: 0;
+}
+
+.spollers__body > *:last-child {
+  margin-bottom: 0;
+}
+
+.spollers__body ul li {
+  position: relative;
+}
+
+.spollers__body ul li::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
 }
 
 .popup {
@@ -1404,6 +1488,10 @@ span[class^=wpcf7-] {
   .services__list {
     grid-template-columns: 1fr 1fr;
   }
+
+  .faq .spollers {
+    margin-left: auto;
+  }
 }
 
 @media (min-width: 1023.98px) {
@@ -1602,6 +1690,42 @@ span[class^=wpcf7-] {
 
   .callback__img-box {
     width: 1300px;
+  }
+
+  .faq__title {
+    max-width: 1556px;
+  }
+
+  .faq .spollers {
+    max-width: 2360px;
+  }
+
+  .spollers__title::before {
+    width: 32px;
+  }
+
+  .spollers__title::before {
+    height: 4px;
+  }
+
+  .spollers__title::after {
+    right: 14px;
+  }
+
+  .spollers__title::after {
+    width: 4px;
+  }
+
+  .spollers__title::after {
+    height: 32px;
+  }
+
+  .spollers__body ul li {
+    padding-left: 60px;
+  }
+
+  .spollers__body ul li::before {
+    width: 60px;
   }
 
   .cookies {
@@ -1861,6 +1985,30 @@ span[class^=wpcf7-] {
     max-width: 330px;
   }
 
+  .faq__title {
+    max-width: 330px;
+  }
+
+  .spollers__title::before {
+    width: 12px;
+  }
+
+  .spollers__title::after {
+    right: 5px;
+  }
+
+  .spollers__title::after {
+    height: 12px;
+  }
+
+  .spollers__body ul li {
+    padding-left: 20px;
+  }
+
+  .spollers__body ul li::before {
+    width: 20px;
+  }
+
   .cookies {
     padding: 15px;
   }
@@ -2074,6 +2222,30 @@ span[class^=wpcf7-] {
 
   .callback__text {
     max-width: clamp( 330px , 304.6330557335px + 7.0467648943vw , 440px );
+  }
+
+  .faq__title {
+    max-width: clamp( 330px , 226.6873542601px + 28.6995515695vw , 778px );
+  }
+
+  .spollers__title::before {
+    width: clamp( 12px , 11.077565663px + 0.2562459962vw , 16px );
+  }
+
+  .spollers__title::after {
+    right: clamp( 5px , 4.5387828315px + 0.1281229981vw , 7px );
+  }
+
+  .spollers__title::after {
+    height: clamp( 12px , 11.077565663px + 0.2562459962vw , 16px );
+  }
+
+  .spollers__body ul li {
+    padding-left: clamp( 20px , 17.6939141576px + 0.6406149904vw , 30px );
+  }
+
+  .spollers__body ul li::before {
+    width: clamp( 20px , 17.6939141576px + 0.6406149904vw , 30px );
   }
 
   .cookies {
@@ -2311,6 +2483,42 @@ span[class^=wpcf7-] {
     width: clamp( 650px , -0.3317708333px + 33.8541666667vw , 1300px );
   }
 
+  .faq__title {
+    max-width: clamp( 778px , -0.3971041667px + 40.5208333333vw , 1556px );
+  }
+
+  .faq .spollers {
+    max-width: clamp( 1180px , -0.6022916667px + 61.4583333333vw , 2360px );
+  }
+
+  .spollers__title::before {
+    width: clamp( 16px , -0.0081666667px + 0.8333333333vw , 32px );
+  }
+
+  .spollers__title::before {
+    height: clamp( 2px , -0.0010208333px + 0.1041666667vw , 4px );
+  }
+
+  .spollers__title::after {
+    right: clamp( 7px , -0.0035729167px + 0.3645833333vw , 14px );
+  }
+
+  .spollers__title::after {
+    width: clamp( 2px , -0.0010208333px + 0.1041666667vw , 4px );
+  }
+
+  .spollers__title::after {
+    height: clamp( 16px , -0.0081666667px + 0.8333333333vw , 32px );
+  }
+
+  .spollers__body ul li {
+    padding-left: clamp( 30px , -0.0153125px + 1.5625vw , 60px );
+  }
+
+  .spollers__body ul li::before {
+    width: clamp( 30px , -0.0153125px + 1.5625vw , 60px );
+  }
+
   .cookies {
     width: clamp( 666px , -0.3399375px + 34.6875vw , 1332px );
   }
@@ -2439,15 +2647,19 @@ span[class^=wpcf7-] {
   }
 }
 
-@media (min-width: 575.98px) and (max-width: 1920.98px) {
-  .cookies {
-    width: clamp( 466px , 380.3524163569px + 14.8698884758vw , 666px );
+@media (min-width: 767.98px) and (max-width: 1920.98px) {
+  .faq .spollers {
+    max-width: clamp( 600px , 213.6787510841px + 50.303555941vw , 1180px );
+  }
+
+  .callback .form {
+    max-width: clamp( 580px , 458.7750563747px + 15.7849089332vw , 762px );
   }
 }
 
-@media (min-width: 767.98px) and (max-width: 1920.98px) {
-  .callback .form {
-    max-width: clamp( 580px , 458.7750563747px + 15.7849089332vw , 762px );
+@media (min-width: 575.98px) and (max-width: 1920.98px) {
+  .cookies {
+    width: clamp( 466px , 380.3524163569px + 14.8698884758vw , 666px );
   }
 }
 
@@ -2482,6 +2694,10 @@ span[class^=wpcf7-] {
 
   .services__link:not(:active):hover .services__img {
     transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  .spollers__title:not(:active):hover {
+    color: var(--color-accent);
   }
 
   .popup__close:not(:active):hover::before,
