@@ -2,16 +2,14 @@
 
 .popup__inner,
 .menu__body,
-html,
-body {
+html {
   overflow: auto;
 }
 
 @-moz-document url-prefix()  {
   .popup__inner,
   .menu__body,
-  html,
-  body {
+  html {
     scrollbar-color: var(--color-accent) #c0b5a8;
   }
 }
@@ -491,7 +489,6 @@ body {
 
 :root {
   --height-header: 80px;
-  --width-scroll: 4px;
   --padding-page: 15px;
   --padding-block: 60px;
   --height-btn: 50px;
@@ -537,9 +534,11 @@ body {
 }
 
 .wrapper {
+  --width-scroll: 4px;
   position: relative;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
   min-height: 100%;
   padding-top: var(--height-header);
   overflow: clip;
@@ -819,8 +818,22 @@ b {
   gap: var(--gap-medium);
 }
 
-.services__item {
+.services__link {
   position: relative;
+  color: var(--color-white);
+}
+
+.services__link:focus-visible {
+  outline: none;
+}
+
+.services__link:focus-visible .services__btn {
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+.services__link:focus-visible .services__img {
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .services__img-box {
@@ -829,6 +842,7 @@ b {
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .services__img-box::after {
@@ -842,11 +856,17 @@ b {
 }
 
 .services__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  transition-duration: 2s;
+  transition-property: transform;
 }
 
 .services__content {
@@ -854,7 +874,6 @@ b {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  color: var(--color-white);
 }
 
 .callback {
@@ -1437,10 +1456,6 @@ span[class^=wpcf7-] {
   }
 
   :root {
-    --width-scroll: 8px;
-  }
-
-  :root {
     --padding-page: 120px;
   }
 
@@ -1476,14 +1491,17 @@ span[class^=wpcf7-] {
     --gap-small: 40px;
   }
 
-  html,
-  body {
+  html {
     --width-scroll: 20px;
   }
 
   html,
   body {
     font-size: 36px;
+  }
+
+  .wrapper {
+    --width-scroll: 8px;
   }
 
   ._h2 {
@@ -1746,8 +1764,7 @@ span[class^=wpcf7-] {
     --gap-small: 10px;
   }
 
-  html,
-  body {
+  html {
     --width-scroll: 6px;
   }
 
@@ -1962,8 +1979,7 @@ span[class^=wpcf7-] {
     --gap-small: clamp( 10px , 7.6939141576px + 0.6406149904vw , 20px );
   }
 
-  html,
-  body {
+  html {
     --width-scroll: clamp( 6px , 5.077565663px + 0.2562459962vw , 10px );
   }
 
@@ -2147,10 +2163,6 @@ span[class^=wpcf7-] {
   }
 
   :root {
-    --width-scroll: clamp( 4px , -0.0020416667px + 0.2083333333vw , 8px );
-  }
-
-  :root {
     --padding-page: clamp( 60px , -0.030625px + 3.125vw , 120px );
   }
 
@@ -2186,14 +2198,17 @@ span[class^=wpcf7-] {
     --gap-small: clamp( 20px , -0.0102083333px + 1.0416666667vw , 40px );
   }
 
-  html,
-  body {
+  html {
     --width-scroll: clamp( 10px , -0.0051041667px + 0.5208333333vw , 20px );
   }
 
   html,
   body {
     font-size: clamp( 18px , -0.0091875px + 0.9375vw , 36px );
+  }
+
+  .wrapper {
+    --width-scroll: clamp( 4px , -0.0020416667px + 0.2083333333vw , 8px );
   }
 
   ._h2 {
@@ -2439,28 +2454,34 @@ span[class^=wpcf7-] {
 @media (any-hover: hover) {
   .popup__inner::-webkit-scrollbar,
   .menu__body::-webkit-scrollbar,
-  html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
+  html::-webkit-scrollbar {
     width: var(--width-scroll);
     height: var(--width-scroll);
   }
 
   .popup__inner::-webkit-scrollbar-track,
   .menu__body::-webkit-scrollbar-track,
-  html::-webkit-scrollbar-track,
-  body::-webkit-scrollbar-track {
+  html::-webkit-scrollbar-track {
     background-color: #c0b5a8;
   }
 
   .popup__inner::-webkit-scrollbar-thumb,
   .menu__body::-webkit-scrollbar-thumb,
-  html::-webkit-scrollbar-thumb,
-  body::-webkit-scrollbar-thumb {
+  html::-webkit-scrollbar-thumb {
     background-color: var(--color-accent);
   }
 
   .menu__link:hover {
     color: var(--color-dark);
+  }
+
+  .services__link:not(:active):hover .services__btn {
+    color: var(--color-dark);
+    background-color: var(--color-white);
+  }
+
+  .services__link:not(:active):hover .services__img {
+    transform: translate(-50%, -50%) scale(1.05);
   }
 
   .popup__close:not(:active):hover::before,
