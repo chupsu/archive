@@ -501,6 +501,7 @@ body {
   --gap-large: 30px;
   --gap-medium: 20px;
   --gap-small: 10px;
+  --height-vh: 100vh;
   --color-dark: #24262b;
   --color-grey: #445266;
   --color-grey-light: #777f89;
@@ -791,6 +792,8 @@ b {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
+  height: calc(var(--height-vh) - var(--height-header));
+  max-height: calc(var(--height-vh-max) - var(--height-header));
   padding: calc(3 * var(--padding-page)) 0 var(--gap-large);
 }
 
@@ -1528,7 +1531,11 @@ span[class^=wpcf7-] {
   }
 
   .welcome__body {
-    min-height: 1900px;
+    --height-vh-max: 2160px;
+  }
+
+  .welcome__body {
+    min-height: 1420px;
   }
 
   .welcome__title {
@@ -1794,7 +1801,11 @@ span[class^=wpcf7-] {
   }
 
   .welcome__body {
-    min-height: 620px;
+    --height-vh-max: 620px;
+  }
+
+  .welcome__body {
+    min-height: 340px;
   }
 
   .welcome__title {
@@ -2006,7 +2017,11 @@ span[class^=wpcf7-] {
   }
 
   .welcome__body {
-    min-height: clamp( 620px , 543.8991672005px + 21.1402946829vw , 950px );
+    --height-vh-max: clamp( 620px , 513.9200512492px + 29.468289558vw , 1080px );
+  }
+
+  .welcome__body {
+    min-height: clamp( 340px , 254.6748238309px + 23.7027546445vw , 710px );
   }
 
   .welcome__title {
@@ -2226,7 +2241,11 @@ span[class^=wpcf7-] {
   }
 
   .welcome__body {
-    min-height: clamp( 950px , -0.4848958333px + 49.4791666667vw , 1900px );
+    --height-vh-max: clamp( 1080px , -0.55125px + 56.25vw , 2160px );
+  }
+
+  .welcome__body {
+    min-height: clamp( 710px , -0.3623958333px + 36.9791666667vw , 1420px );
   }
 
   .welcome__title {
