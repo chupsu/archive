@@ -3103,13 +3103,13 @@ strong {
   overflow: hidden;
 }
 
-.cleric-cards {
+.clerics {
   padding: var(--padding-large) 0;
   border-radius: var(--radius-large);
   background-color: var(--color-grey-light);
 }
 
-.cleric-cards__title {
+.clerics__title {
   margin-bottom: var(--padding-medium);
   text-align: center;
 }
@@ -3184,6 +3184,11 @@ strong {
 }
 
 .cleric-card__title {
+  font-size: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   transition-duration: var(--transition-duration);
   transition-property: color;
 }
@@ -3193,6 +3198,10 @@ strong {
 }
 
 .cleric-card__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: var(--color-grey-dark);
 }
 
@@ -3645,6 +3654,7 @@ strong {
 
   .cleric-card__text:not(:last-child) {
     margin-bottom: 30px;
+    -webkit-line-clamp: 2;
   }
 
   .grid__items_col-2 {
