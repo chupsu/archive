@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FFFFFF">
+    <link rel="preload" href="./fonts/Lora-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="./img/content/favicon.svg">
     <link rel="mask-icon" href="./img/content/favicon.svg" color="#FFFFFF">
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
@@ -25,7 +26,9 @@
                 <div class="header__main header__main_sup">
                   <ul class="sup-menu" data-da=".menu__body,1279,last">
                     <li class="sup-menu__item">
-                      <a class="sup-menu__link icon-calendar-1" href="./404.html">Православный календарь</a>
+                      <a class="sup-menu__link icon-calendar-1" href="#" data-popup="#day-27-08">
+                        Православный календарь
+                      </a>
                     </li>
                     <li class="sup-menu__item">
                       <a class="sup-menu__link icon-calendar-2" href="./events.html">Анонсы событий</a>
@@ -108,7 +111,7 @@
                           <div class="sub-menu" hidden>
                             <div class="sub-menu__body">
                               <div class="sub-menu__main">
-                                <span class="sub-menu__title">Про епархию</span>
+                                <span class="sub-menu__title _p4u">Про епархию</span>
                                 <ul class="sub-menu__list">
                                   <li class="sub-menu__item">
                                     <a class="sub-menu__link" href="./404.html">Хронология епархии</a>
@@ -147,7 +150,7 @@
                           <div class="sub-menu" hidden>
                             <div class="sub-menu__body">
                               <div class="sub-menu__main">
-                                <span class="sub-menu__title">в составе</span>
+                                <span class="sub-menu__title _p4u">в составе</span>
                                 <ul class="sub-menu__list">
                                   <li class="sub-menu__item">
                                     <a
@@ -230,7 +233,7 @@
                           <div class="sub-menu" hidden>
                             <div class="sub-menu__body">
                               <div class="sub-menu__main">
-                                <span class="sub-menu__title">О важном</span>
+                                <span class="sub-menu__title _p4u">О важном</span>
                                 <ul class="sub-menu__list">
                                   <li class="sub-menu__item">
                                     <a class="sub-menu__link" href="./news.html">Епархия</a>
@@ -326,9 +329,9 @@
                         <li class="share__item">
                           <a class="share__link" href="#" aria-label="ww" title="ww">
                             <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.9841 14.6242L14.6245 9.98386L16.0166 11.376L11.3762 16.0164L9.9841 14.6242Z" fill="#C2964D"/>
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8727 8.12717C16.5272 6.7817 14.3458 6.7817 13.0003 8.12717L11.2455 9.88195L9.85343 8.48983L11.6082 6.73506C13.7225 4.62074 17.1505 4.62074 19.2648 6.73506C21.3792 8.84938 21.3792 12.2774 19.2648 14.3917L17.5101 16.1465L16.118 14.7544L17.8727 12.9996C19.2182 11.6541 19.2182 9.47265 17.8727 8.12717Z" fill="#C2964D"/>
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.1263 17.8728C9.47177 19.2183 11.6532 19.2183 12.9987 17.8728L14.7522 16.1193L16.1443 17.5114L14.3908 19.2649C12.2765 21.3793 8.8485 21.3793 6.73418 19.2649C4.61986 17.1506 4.61986 13.7226 6.73418 11.6083L8.48768 9.8548L9.8798 11.2469L8.1263 13.0004C6.78082 14.3459 6.78082 16.5273 8.1263 17.8728Z" fill="#C2964D"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93737 14.6495L14.6498 9.93711L16.0635 11.3508L11.3511 16.0632L9.93737 14.6495Z" fill="#5F9DC5"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M17.9486 8.05193C16.5823 6.68557 14.367 6.68557 13.0006 8.05193L11.2186 9.83393L9.80489 8.42021L11.5869 6.63821C13.734 4.49108 17.2152 4.49108 19.3623 6.63821C21.5095 8.78534 21.5095 12.2665 19.3623 14.4137L17.5803 16.1957L16.1666 14.7819L17.9486 12.9999C19.315 11.6336 19.315 9.41828 17.9486 8.05193Z" fill="#5F9DC5"/>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.05139 17.9483C9.41774 19.3147 11.633 19.3147 12.9994 17.9483L14.7801 16.1676L16.1938 17.5813L14.4131 19.362C12.266 21.5092 8.7848 21.5092 6.63767 19.362C4.49054 17.2149 4.49054 13.7337 6.63767 11.5866L8.41838 9.80587L9.8321 11.2196L8.05139 13.0003C6.68503 14.3667 6.68503 16.582 8.05139 17.9483Z" fill="#5F9DC5"/>
                             </svg>
                           </a>
                         </li>
@@ -343,7 +346,7 @@
                          
                         <li class="share__item">
                           <a class="share__link" href="#" aria-label="ww" title="ww">
-                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M17.3885 14.6154C17.7166 14.2876 17.7635 13.8194 17.4822 13.3512C17.2479 12.9766 16.826 12.7893 16.3573 12.8829C16.1698 12.9298 15.9823 13.0234 15.7949 13.1639C14.3419 14.1472 12.3733 14.1003 10.9203 13.1171C10.8265 13.0702 10.7328 13.0234 10.639 12.9766C10.1234 12.7425 9.60787 12.8361 9.32664 13.3044C8.99855 13.7726 9.04541 14.2876 9.46725 14.709C9.56099 14.8027 9.65474 14.8495 9.70161 14.9432L9.74848 14.99C10.4047 15.505 11.2015 15.8328 12.2327 15.9732L11.6233 16.5819C11.1077 17.097 10.5453 17.6589 10.0297 18.1739C9.8891 18.3144 9.70161 18.5485 9.70161 18.8763C9.70161 19.2977 9.93597 19.7191 10.3578 19.9064C10.4984 20 10.639 20 10.7796 20C11.014 20 11.2952 19.9064 11.4827 19.6722C12.1858 18.9699 12.7482 18.408 13.3107 17.8462C13.3576 17.7993 13.3576 17.7993 13.3576 17.7993C13.3576 17.7993 13.4044 17.7993 13.4044 17.8462C13.7794 18.2676 14.2012 18.6421 14.5762 19.0635C14.7637 19.2508 14.9512 19.4381 15.1387 19.6254C15.373 19.8595 15.5605 19.9532 15.8417 19.9532C16.2636 20 16.7323 19.7191 16.9198 19.2977C17.1073 18.9231 17.0135 18.4549 16.6854 18.1739C16.2167 17.7057 15.748 17.1906 15.2324 16.7224L14.4356 15.9264C14.8574 15.8796 15.3262 15.786 15.748 15.5987C16.4511 15.3646 16.9666 15.0368 17.3885 14.6154Z" fill="#5F9DC5"/>
                               <path d="M13.3576 13.3043C15.373 13.3043 17.0135 11.7124 17.0135 9.69899C17.0135 8.71572 16.6385 7.77927 15.9355 7.07692C15.2324 6.37458 14.3419 6 13.4044 6C11.389 6 9.79535 7.63879 9.74848 9.60535C9.74848 10.5886 10.1235 11.4783 10.8265 12.1806C11.4827 12.9298 12.3733 13.3043 13.3576 13.3043ZM12.3264 8.62208C12.6076 8.34114 12.9826 8.20067 13.3576 8.20067C14.2012 8.20067 14.8106 8.85619 14.8106 9.65217C14.8106 10.495 14.1544 11.1037 13.3576 11.1037C12.5139 11.1037 11.9046 10.4482 11.9046 9.65217C11.9046 9.27759 12.0452 8.90301 12.3264 8.62208Z" fill="#5F9DC5"/>
                               <path d="M17.3885 14.6154C17.7166 14.2876 17.7635 13.8194 17.4822 13.3512C17.2479 12.9766 16.826 12.7893 16.3573 12.8829C16.1698 12.9298 15.9823 13.0234 15.7949 13.1639C14.3419 14.1472 12.3733 14.1003 10.9203 13.1171C10.8265 13.0702 10.7328 13.0234 10.639 12.9766C10.1234 12.7425 9.60787 12.8361 9.32664 13.3044C8.99855 13.7726 9.04541 14.2876 9.46725 14.709C9.56099 14.8027 9.65474 14.8495 9.70161 14.9432L9.74848 14.99C10.4047 15.505 11.2015 15.8328 12.2327 15.9732L11.6233 16.5819C11.1077 17.097 10.5453 17.6589 10.0297 18.1739C9.8891 18.3144 9.70161 18.5485 9.70161 18.8763C9.70161 19.2977 9.93597 19.7191 10.3578 19.9064C10.4984 20 10.639 20 10.7796 20C11.014 20 11.2952 19.9064 11.4827 19.6722C12.1858 18.9699 12.7482 18.408 13.3107 17.8462C13.3576 17.7993 13.3576 17.7993 13.3576 17.7993C13.3576 17.7993 13.4044 17.7993 13.4044 17.8462C13.7794 18.2676 14.2012 18.6421 14.5762 19.0635C14.7637 19.2508 14.9512 19.4381 15.1387 19.6254C15.373 19.8595 15.5605 19.9532 15.8417 19.9532C16.2636 20 16.7323 19.7191 16.9198 19.2977C17.1073 18.9231 17.0135 18.4549 16.6854 18.1739C16.2167 17.7057 15.748 17.1906 15.2324 16.7224L14.4356 15.9264C14.8574 15.8796 15.3262 15.786 15.748 15.5987C16.4511 15.3646 16.9666 15.0368 17.3885 14.6154Z" fill="#5F9DC5"/>
@@ -364,7 +367,7 @@
             <div class="about__wrapper">
               <div class="about__body">
                 <div class="about__main">
-                  <div class="about__desc">общая информация</div>
+                  <div class="about__desc _p4u">общая информация</div>
                   <h2 class="about__title _h2">Историческая справка</h2>
                   <div class="about__inner">
                     <div class="about__content _p1">
@@ -396,13 +399,13 @@
                 <div class="about__contacts about-contacts">
                   <div class="about-contacts__items">
                     <div class="about-contacts__box">
-                      <h3 class="about-contacts__title">Адрес храма</h3>
+                      <h3 class="about-contacts__title _p4u">Адрес храма</h3>
                       <address class="about-contacts__text _p1">
                         Россия, Челябинская область, г. Златоуст, ул. Таганайская, 196
                       </address>
                     </div>
                     <div class="about-contacts__box about-contacts__box_small">
-                      <h3 class="about-contacts__title">Почта</h3>
+                      <h3 class="about-contacts__title _p4u">Почта</h3>
                       <ul class="about-contacts__list">
                         <li class="about-contacts__item">
                           <a class="about-contacts__link" href="mailto:mail@mail.ru" target="_blank">
@@ -424,29 +427,47 @@
               <div class="grid">
                 <ul class="grid__items grid__items_col-4 grid__items_center">
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                 </ul>
@@ -485,11 +506,11 @@
                         </figure>
                         <div class="card__content">
                           <div class="card__head">
-                            <ul class="card__tags tags _p3">
+                            <ul class="card__tags tags _p4u">
                               <li class="tags__item">Новость дня</li>
                               <li class="tags__item">Архиерей</li>
                             </ul>
-                            <time class="card__time _p3" datetime="2024-08-22 19:00">24/04/2024</time>
+                            <time class="card__time _p4u" datetime="2024-08-22 19:00">24/04/2024</time>
                           </div>
                           <h3 class="card__title _h6">Великопостное Богослужение в Серафимовском кафедральном соборе</h3>
                           <p class="card__text _p2">
@@ -508,11 +529,11 @@
                         </figure>
                         <div class="card__content">
                           <div class="card__head">
-                            <ul class="card__tags tags _p3">
+                            <ul class="card__tags tags _p4u">
                               <li class="tags__item">Новость дня</li>
                               <li class="tags__item">Архиерей</li>
                             </ul>
-                            <time class="card__time _p3" datetime="2024-08-22 19:00">24/04/2024</time>
+                            <time class="card__time _p4u" datetime="2024-08-22 19:00">24/04/2024</time>
                           </div>
                           <h3 class="card__title _h6">Великопостное Богослужение в Серафимовском кафедральном соборе</h3>
                           <p class="card__text _p2">
@@ -531,11 +552,11 @@
                         </figure>
                         <div class="card__content">
                           <div class="card__head">
-                            <ul class="card__tags tags _p3">
+                            <ul class="card__tags tags _p4u">
                               <li class="tags__item">Новость дня</li>
                               <li class="tags__item">Архиерей</li>
                             </ul>
-                            <time class="card__time _p3" datetime="2024-08-22 19:00">24/04/2024</time>
+                            <time class="card__time _p4u" datetime="2024-08-22 19:00">24/04/2024</time>
                           </div>
                           <h3 class="card__title _h6">Великопостное Богослужение в Серафимовском кафедральном соборе</h3>
                           <p class="card__text _p2">
@@ -554,11 +575,11 @@
                         </figure>
                         <div class="card__content">
                           <div class="card__head">
-                            <ul class="card__tags tags _p3">
+                            <ul class="card__tags tags _p4u">
                               <li class="tags__item">Новость дня</li>
                               <li class="tags__item">Архиерей</li>
                             </ul>
-                            <time class="card__time _p3" datetime="2024-08-22 19:00">24/04/2024</time>
+                            <time class="card__time _p4u" datetime="2024-08-22 19:00">24/04/2024</time>
                           </div>
                           <h3 class="card__title _h6">Великопостное Богослужение в Серафимовском кафедральном соборе</h3>
                           <p class="card__text _p2">
@@ -577,11 +598,11 @@
                         </figure>
                         <div class="card__content">
                           <div class="card__head">
-                            <ul class="card__tags tags _p3">
+                            <ul class="card__tags tags _p4u">
                               <li class="tags__item">Новость дня</li>
                               <li class="tags__item">Архиерей</li>
                             </ul>
-                            <time class="card__time _p3" datetime="2024-08-22 19:00">24/04/2024</time>
+                            <time class="card__time _p4u" datetime="2024-08-22 19:00">24/04/2024</time>
                           </div>
                           <h3 class="card__title _h6">Великопостное Богослужение в Серафимовском кафедральном соборе</h3>
                           <p class="card__text _p2">
@@ -816,15 +837,145 @@
       </footer>
     </div>
 
-    <div class="popup" id="contact-form">
-      <div class="popup__body">
+    <div class="popup" id="day-27-08">
+      <div class="popup__body popup__body_small">
         <button
-          class="popup__close"
-          aria-label="Close popup"
+          class="popup__close btn btn_contour icon-close"
           type="button"
-          data-close
-        ></button>
-        <div class="popup__inner"></div>
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <span>Закрыть</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__scroller">
+            <article class="holiday">
+              <figure class="holiday__img-box">
+                <picture><source srcset="./img/content/photo/icon-1.webp" type="image/webp"><img class="holiday__img" src="./img/content/photo/icon-1.jpg" alt="Седмица 6-я Великого поста (седмица ваий). Великий пост. Монастырский устав: cухоядение (хлеб, овощи, фрукты)."></picture>
+              </figure>
+              <time class="holiday__day _p4u" datetime="2024-04-24 19:00">
+                25 апреля 2024 г. ( 12 апреля ст.ст.), четверг.
+              </time>
+              <h4 class="holiday__title _h4">
+                Седмица 6-я Великого поста (седмица ваий). Великий пост. Монастырский устав: cухоядение (хлеб,
+                овощи, фрукты).
+              </h4>
+              <p class="holiday__text _p1">
+                Прп. <a href="./404.html">Василия</a> (<a href="./404.html">икона</a>) исп., еп.
+                Парийского. Сщмч. <a href="./404.html">Зинона</a>, еп. Веронийского. Прп. Исаака (икона)
+                Сирина в Сполете Италийском. Прмчч. Мины, Давида и Иоанна. Прп. Анфусы девы.
+                Прп. Афанасии игумении. Прмч. Сергия. Муромской (икона) и Белыничской (икона) икон Божией
+                Матери.На 6-м часе: Ис. LXV, 8-16. На веч.: Быт. XLVI, 1-7. Притч. XXIII, 15 - XXIV, 5.
+              </p>
+              <a
+                class="holiday__btn _p2"
+                href="https://days.pravoslavie.ru"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                Источник: days.pravoslavie.ru
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="cleric-38">
+      <div class="popup__body popup__body_small">
+        <button
+          class="popup__close btn btn_contour icon-close"
+          type="button"
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <span>Закрыть</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__scroller">
+            <article class="cleric">
+              <div class="cleric__main">
+                <figure class="cleric__img-box">
+                  <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Андрей Фоменко"></picture>
+                </figure>
+                <div class="cleric__status _p4u">Протоиерей</div>
+                <div class="cleric__info _h4">Андрей Фоменко, 1972</div>
+              </div>
+              <ul class="cleric-info">
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Епархиальные послушания</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">Секретарь Златоустовского епархиального управления</li>
+                    <li class="cleric-info__item">Секретарь епархиального совета</li>
+                    <li class="cleric-info__item">
+                      Благочинный <a href="./404.html">Златоустовского округа</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Места служения, должность</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">
+                      Настоятель <a href="./404.html">Иоанно-Златоустовского храма</a>, г.Златоуст
+                    </li>
+                    <li class="cleric-info__item">Настоятель храма блаж. Ксении Петербургской, с.Куваши</li>
+                    <li class="cleric-info__item">
+                      Настоятель храма блаж. Матроны Московской, п. Центральный
+                    </li>
+                    <li class="cleric-info__item">
+                      Настоятель храма в честь иконы Божией Матери «Умягчение злых сердец» при ИК-25
+                    </li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Светское образование</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">Среднее: СОШ №1, 1987</li>
+                    <li class="cleric-info__item">
+                      Средне-специальное: Коркинский горно-строительный техникум, 1991
+                    </li>
+                    <li class="cleric-info__item">
+                      Высшее: Красноярский институт цветных металлов им. М.И. Калинина, 1994
+                    </li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Духовное образование</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">Челябинское Духовное училище, 2008</li>
+                    <li class="cleric-info__item">Екатеринбургская Духовная Семинария, 2019</li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Хиротония</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">
+                      1 августа 1998, Архиепископом Челябинским и Златоустовским Иовом в Свято-Симеоновском
+                      кафедральном соборе г. Челябинска
+                    </li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Тезоименитство</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">1 сентября, мч. Андрея Стратилата</li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Награды</div>
+                  <ul class="cleric-info__list cleric-info__list_no-mark">
+                    <li class="cleric-info__item">2019 – палица</li>
+                    <li class="cleric-info__item">2008 – сан протоиерея</li>
+                    <li class="cleric-info__item">2004 – наперсный крест</li>
+                    <li class="cleric-info__item">2004 – камилавка</li>
+                    <li class="cleric-info__item">2002 – набедренник</li>
+                  </ul>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
       </div>
     </div>
   </body>

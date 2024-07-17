@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FFFFFF">
+    <link rel="preload" href="./fonts/Lora-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="./img/content/favicon.svg">
     <link rel="mask-icon" href="./img/content/favicon.svg" color="#FFFFFF">
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
@@ -24,7 +25,9 @@
               <div class="header__main header__main_sup">
                 <ul class="sup-menu" data-da=".menu__body,1279,last">
                   <li class="sup-menu__item">
-                    <a class="sup-menu__link icon-calendar-1" href="./404.html">Православный календарь</a>
+                    <a class="sup-menu__link icon-calendar-1" href="#" data-popup="#day-27-08">
+                      Православный календарь
+                    </a>
                   </li>
                   <li class="sup-menu__item">
                     <a class="sup-menu__link icon-calendar-2" href="./events.html">Анонсы событий</a>
@@ -107,7 +110,7 @@
                         <div class="sub-menu" hidden>
                           <div class="sub-menu__body">
                             <div class="sub-menu__main">
-                              <span class="sub-menu__title">Про епархию</span>
+                              <span class="sub-menu__title _p4u">Про епархию</span>
                               <ul class="sub-menu__list">
                                 <li class="sub-menu__item">
                                   <a class="sub-menu__link" href="./404.html">Хронология епархии</a>
@@ -146,7 +149,7 @@
                         <div class="sub-menu" hidden>
                           <div class="sub-menu__body">
                             <div class="sub-menu__main">
-                              <span class="sub-menu__title">в составе</span>
+                              <span class="sub-menu__title _p4u">в составе</span>
                               <ul class="sub-menu__list">
                                 <li class="sub-menu__item">
                                   <a
@@ -229,7 +232,7 @@
                         <div class="sub-menu" hidden>
                           <div class="sub-menu__body">
                             <div class="sub-menu__main">
-                              <span class="sub-menu__title">О важном</span>
+                              <span class="sub-menu__title _p4u">О важном</span>
                               <ul class="sub-menu__list">
                                 <li class="sub-menu__item">
                                   <a class="sub-menu__link" href="./news.html">Епархия</a>
@@ -292,159 +295,267 @@
                 <div class="grid__filter">фильтры</div>
                 <ul class="grid__items grid__items_col-4">
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                   <li class="grid__item">
-                    <article class="cleric">
-                      <figure class="cleric__img-box">
-                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
+                    <article class="cleric-card">
+                      <a
+                        class="cleric-card__link"
+                        href="#cleric"
+                        data-popup="#cleric-38"
+                        aria-label="Подробнее"
+                        title="Подробнее"
+                      ></a>
+                      <figure class="cleric-card__img-box">
+                        <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric-card__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Леонид Малых"></picture>
                       </figure>
-                      <div class="cleric__info">
-                        <h4 class="cleric__title _h6">Протоиерей Леонид Малых</h4>
-                        <p class="cleric__text _p2">Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.</p>
-                        <a class="cleric__link" href="#cleric" data-popup="#cleric">Подробнее</a>
+                      <div class="cleric-card__content">
+                        <h4 class="cleric-card__title _h6">Протоиерей Леонид Малых</h4>
+                        <p class="cleric-card__text _p2">
+                          Благочинный Кусинского округа. Настоятель Казанского храма г.Кусы.
+                        </p>
+                        <span class="cleric-card__info" aria-hidden="true">Подробнее</span>
                       </div>
-                      <span class="cleric__tip" data-tippy-content="Ашинский район"></span>
+                      <span class="cleric-card__tip" data-tippy-content="Ашинский район"></span>
                     </article>
                   </li>
                 </ul>
@@ -673,15 +784,145 @@
       </footer>
     </div>
 
-    <div class="popup" id="contact-form">
-      <div class="popup__body">
+    <div class="popup" id="day-27-08">
+      <div class="popup__body popup__body_small">
         <button
-          class="popup__close"
-          aria-label="Close popup"
+          class="popup__close btn btn_contour icon-close"
           type="button"
-          data-close
-        ></button>
-        <div class="popup__inner"></div>
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <span>Закрыть</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__scroller">
+            <article class="holiday">
+              <figure class="holiday__img-box">
+                <picture><source srcset="./img/content/photo/icon-1.webp" type="image/webp"><img class="holiday__img" src="./img/content/photo/icon-1.jpg" alt="Седмица 6-я Великого поста (седмица ваий). Великий пост. Монастырский устав: cухоядение (хлеб, овощи, фрукты)."></picture>
+              </figure>
+              <time class="holiday__day _p4u" datetime="2024-04-24 19:00">
+                25 апреля 2024 г. ( 12 апреля ст.ст.), четверг.
+              </time>
+              <h4 class="holiday__title _h4">
+                Седмица 6-я Великого поста (седмица ваий). Великий пост. Монастырский устав: cухоядение (хлеб,
+                овощи, фрукты).
+              </h4>
+              <p class="holiday__text _p1">
+                Прп. <a href="./404.html">Василия</a> (<a href="./404.html">икона</a>) исп., еп.
+                Парийского. Сщмч. <a href="./404.html">Зинона</a>, еп. Веронийского. Прп. Исаака (икона)
+                Сирина в Сполете Италийском. Прмчч. Мины, Давида и Иоанна. Прп. Анфусы девы.
+                Прп. Афанасии игумении. Прмч. Сергия. Муромской (икона) и Белыничской (икона) икон Божией
+                Матери.На 6-м часе: Ис. LXV, 8-16. На веч.: Быт. XLVI, 1-7. Притч. XXIII, 15 - XXIV, 5.
+              </p>
+              <a
+                class="holiday__btn _p2"
+                href="https://days.pravoslavie.ru"
+                target="_blank"
+                rel="nofollow noopener"
+              >
+                Источник: days.pravoslavie.ru
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="cleric-38">
+      <div class="popup__body popup__body_small">
+        <button
+          class="popup__close btn btn_contour icon-close"
+          type="button"
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <span>Закрыть</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__scroller">
+            <article class="cleric">
+              <div class="cleric__main">
+                <figure class="cleric__img-box">
+                  <picture><source srcset="./img/content/photo/cleric-1.webp" type="image/webp"><img class="cleric__img" src="./img/content/photo/cleric-1.jpg" alt="Протоиерей Андрей Фоменко"></picture>
+                </figure>
+                <div class="cleric__status _p4u">Протоиерей</div>
+                <div class="cleric__info _h4">Андрей Фоменко, 1972</div>
+              </div>
+              <ul class="cleric-info">
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Епархиальные послушания</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">Секретарь Златоустовского епархиального управления</li>
+                    <li class="cleric-info__item">Секретарь епархиального совета</li>
+                    <li class="cleric-info__item">
+                      Благочинный <a href="./404.html">Златоустовского округа</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Места служения, должность</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">
+                      Настоятель <a href="./404.html">Иоанно-Златоустовского храма</a>, г.Златоуст
+                    </li>
+                    <li class="cleric-info__item">Настоятель храма блаж. Ксении Петербургской, с.Куваши</li>
+                    <li class="cleric-info__item">
+                      Настоятель храма блаж. Матроны Московской, п. Центральный
+                    </li>
+                    <li class="cleric-info__item">
+                      Настоятель храма в честь иконы Божией Матери «Умягчение злых сердец» при ИК-25
+                    </li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Светское образование</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">Среднее: СОШ №1, 1987</li>
+                    <li class="cleric-info__item">
+                      Средне-специальное: Коркинский горно-строительный техникум, 1991
+                    </li>
+                    <li class="cleric-info__item">
+                      Высшее: Красноярский институт цветных металлов им. М.И. Калинина, 1994
+                    </li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Духовное образование</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">Челябинское Духовное училище, 2008</li>
+                    <li class="cleric-info__item">Екатеринбургская Духовная Семинария, 2019</li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Хиротония</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">
+                      1 августа 1998, Архиепископом Челябинским и Златоустовским Иовом в Свято-Симеоновском
+                      кафедральном соборе г. Челябинска
+                    </li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Тезоименитство</div>
+                  <ul class="cleric-info__list">
+                    <li class="cleric-info__item">1 сентября, мч. Андрея Стратилата</li>
+                  </ul>
+                </li>
+                <li class="cleric-info__box">
+                  <div class="cleric-info__title _p4u">Награды</div>
+                  <ul class="cleric-info__list cleric-info__list_no-mark">
+                    <li class="cleric-info__item">2019 – палица</li>
+                    <li class="cleric-info__item">2008 – сан протоиерея</li>
+                    <li class="cleric-info__item">2004 – наперсный крест</li>
+                    <li class="cleric-info__item">2004 – камилавка</li>
+                    <li class="cleric-info__item">2002 – набедренник</li>
+                  </ul>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
       </div>
     </div>
   </body>
