@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#F7FAFF">
+    <meta name="theme-color" content="#181d24">
+    <link rel="preload" href="./fonts/Bebas.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="./img/content/favicon.svg">
-    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#181d24">
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
@@ -38,15 +39,15 @@
                 <div class="contacts">
                   <ul class="contacts__list">
                     <li class="contacts__item">
-                      <a class="contacts__link" href="tel:+74952223422">+7 909 999-12-34</a>
+                      <a class="contacts__link" href="tel:+74952223422">+7 495 222-34-22</a>
                       <div class="contacts__city">Москва</div>
                     </li>
                     <li class="contacts__item">
-                      <a class="contacts__link" href="tel:+74952223422">+7 909 999-12-34</a>
+                      <a class="contacts__link" href="tel:+78129222622">+7 812 922-26-22</a>
                       <div class="contacts__city">Санкт-петербург</div>
                     </li>
                   </ul>
-                  <button class="contacts__btn btn btn_small btn_light" type="button" data-popup="#callback">
+                  <button class="contacts__btn btn btn_small btn_light" type="button" data-popup="#contact-form">
                     Заказать звонок
                   </button>
                   <ul class="social">
@@ -87,7 +88,7 @@
       </header>
 
       <main class="page">
-        <section class="welcome">
+        <section class="welcome _dark">
           <figure class="welcome__img-box" aria-hidden="true">
             <picture>
               <source srcset="./img/content/photo//1-mobile.webp" media="(max-width: 767px)" type="image/webp">
@@ -99,7 +100,7 @@
           <div class="container">
             <div class="welcome__body">
               <h1 class="welcome__title">Строительство и остекление беседок под ключ</h1>
-              <button class="welcome__btn btn btn_accent" type="button" data-popup="#quize">
+              <button class="welcome__btn btn btn_accent" type="button" data-popup="#quize-form">
                 рассчитать стоимость
               </button>
             </div>
@@ -117,7 +118,7 @@
               </div>
               <ul class="services__list">
                 <li class="services__item">
-                  <a class="services__link" href="#" data-popup="#callback">
+                  <a class="services__link" href="#" data-popup="#contact-form">
                     <figure class="services__img-box">
                       <picture>
                         <source srcset="./img/content/photo/2-mobile.webp" media="(max-width: 767px)" type="image/webp">
@@ -140,7 +141,7 @@
                   </a>
                 </li>
                 <li class="services__item">
-                  <a class="services__link" href="#" data-popup="#callback">
+                  <a class="services__link" href="#" data-popup="#contact-form">
                     <figure class="services__img-box">
                       <picture>
                         <source srcset="./img/content/photo/3-mobile.webp" media="(max-width: 767px)" type="image/webp">
@@ -178,7 +179,7 @@
               </div>
               <ul class="types__list">
                 <li class="types__item">
-                  <a class="types__link" href="#" data-popup="#callback">
+                  <a class="types__link" href="#" data-popup="#contact-form">
                     <figure class="types__img-box">
                       <picture>
                         <source srcset="./img/content/photo/4-mobile.webp" media="(max-width: 767px)" type="image/webp">
@@ -201,7 +202,7 @@
                   </a>
                 </li>
                 <li class="types__item">
-                  <a class="types__link" href="#" data-popup="#callback">
+                  <a class="types__link" href="#" data-popup="#contact-form">
                     <figure class="types__img-box">
                       <picture>
                         <source srcset="./img/content/photo/5-mobile.webp" media="(max-width: 767px)" type="image/webp">
@@ -224,7 +225,7 @@
                   </a>
                 </li>
                 <li class="types__item">
-                  <a class="types__link" href="#" data-popup="#callback">
+                  <a class="types__link" href="#" data-popup="#contact-form">
                     <figure class="types__img-box">
                       <picture>
                         <source srcset="./img/content/photo/6-mobile.webp" media="(max-width: 767px)" type="image/webp">
@@ -247,7 +248,7 @@
                   </a>
                 </li>
                 <li class="types__item">
-                  <a class="types__link" href="#" data-popup="#callback">
+                  <a class="types__link" href="#" data-popup="#contact-form">
                     <figure class="types__img-box">
                       <picture>
                         <source srcset="./img/content/photo/7-mobile.webp" media="(max-width: 767px)" type="image/webp">
@@ -314,7 +315,7 @@
         <section class="projects">
           <div class="container">
             <div class="projects__body">
-              <h2 class="projects__title _h2">Реализованные проекты</h2>
+              <h2 class="projects__title _h2">Реализованные <b>проекты</b></h2>
             </div>
           </div>
         </section>
@@ -331,7 +332,7 @@
                 </p>
               </div>
               <div class="form">
-                <button class="form__btn btn btn_accent" type="button" data-popup="#quize">
+                <button class="form__btn btn btn_accent" type="button" data-popup="#quize-form">
                   Рассчитать стоимость
                 </button>
               </div>
@@ -717,15 +718,15 @@
               <div class="contacts">
                 <ul class="contacts__list">
                   <li class="contacts__item">
-                    <a class="contacts__link" href="tel:+74952223422">+7 909 999-12-34</a>
+                    <a class="contacts__link" href="tel:+74952223422">+7 495 222-34-22</a>
                     <div class="contacts__city">Москва</div>
                   </li>
                   <li class="contacts__item">
-                    <a class="contacts__link" href="tel:+74952223422">+7 909 999-12-34</a>
+                    <a class="contacts__link" href="tel:+78129222622">+7 812 922-26-22</a>
                     <div class="contacts__city">Санкт-петербург</div>
                   </li>
                 </ul>
-                <button class="contacts__btn btn btn_small btn_light" type="button" data-popup="#callback">
+                <button class="contacts__btn btn btn_small btn_light" type="button" data-popup="#contact-form">
                   Заказать звонок
                 </button>
                 <ul class="social">
@@ -827,8 +828,8 @@
       </footer>
     </div>
 
-    <div class="popup" id="callback">
-      <div class="popup__body">
+    <div class="popup _light" id="contact-form">
+      <div class="popup__body popup__body_small">
         <button
           class="popup__close btn btn_small btn_icon btn_light"
           type="button"
@@ -843,7 +844,292 @@
             />
           </svg>
         </button>
-        <div class="popup__inner"></div>
+        <div class="popup__inner">
+          <form class="form" action="#">
+            <div class="form__head">
+              <h2 class="form__title _h2p">Заказать звонок</h2>
+              <p class="form__text _p2">
+                Отправьте свои контакты, наш менеджер свяжется с вами в ближайшее время
+              </p>
+            </div>
+            <label class="input">
+              <input class="input__body" type="text" name="name" placeholder="Введите имя" required>
+            </label>
+            <label class="input">
+              <input class="input__body" type="tel" name="tel" placeholder="Введите телефон" required>
+            </label>
+            <button class="form__btn btn btn_accent" type="submit">отправить</button>
+            <p class="form__info">
+              <span>
+                Нажимая на кнопку «Отправить», я соглашаюсь на <a href="#" data-popup="#policy">
+                  обработку персональных данных
+                </a>
+              </span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup _light" id="quize-form">
+      <div class="popup__body popup__body_quize">
+        <button
+          class="popup__close btn btn_small btn_icon btn_light"
+          type="button"
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.2929 20.2929C20.6834 19.9024 21.3166 19.9024 21.7071 20.2929L27 25.5858L32.2929 20.2929C32.6834 19.9024 33.3166 19.9024 33.7071 20.2929C34.0976 20.6834 34.0976 21.3166 33.7071 21.7071L28.4142 27L33.7071 32.2929C34.0976 32.6834 34.0976 33.3166 33.7071 33.7071C33.3166 34.0976 32.6834 34.0976 32.2929 33.7071L27 28.4142L21.7071 33.7071C21.3166 34.0976 20.6834 34.0976 20.2929 33.7071C19.9024 33.3166 19.9024 32.6834 20.2929 32.2929L25.5858 27L20.2929 21.7071C19.9024 21.3166 19.9024 20.6834 20.2929 20.2929Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <form class="quize" action="#">
+            <div class="quize__head">
+              <h4 class="quize__title _h2p">рассчитать стоимость</h4>
+              <p class="quize__text _p2">
+                Ответьте на 6 вопросов и получите предварительную стоимость и подарок
+                за экономию нашего времени
+              </p>
+            </div>
+            <div class="quize__body">
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question _h3">1. какой тип беседки вы хотите?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Открытая беседка</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Закрытая беседка</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Нужна консультация</span>
+                    </label>
+                    <p class="quize__error" aria-hidden="true">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.292893 15.6653C-0.0976311 15.219 -0.0976312 14.4953 0.292893 14.049L5.58579 8L0.292893 1.95098C-0.0976317 1.50467 -0.0976318 0.781048 0.292893 0.334735C0.683417 -0.11158 1.31658 -0.11158 1.70711 0.334735L7.70711 7.19188C8.09763 7.63819 8.09763 8.36181 7.70711 8.80812L1.70711 15.6653C1.31658 16.1116 0.683418 16.1116 0.292893 15.6653Z" fill="white"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question _h3">2. из какого материала хотите беседку?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">
+                        Деревянная <br>
+                        из бруса
+                      </span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">
+                        Пластиковая <br>
+                        из ПВХ профиля
+                      </span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">
+                        Беседка <br>
+                        из поликарбоната
+                      </span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">Кирпичная</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">Нужна консультация</span>
+                    </label>
+                    <p class="quize__error" aria-hidden="true">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_light" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.70711 15.6653C8.09763 15.219 8.09763 14.4953 7.70711 14.049L2.41421 8L7.70711 1.95098C8.09763 1.50467 8.09763 0.781048 7.70711 0.334735C7.31658 -0.11158 6.68342 -0.11158 6.29289 0.334735L0.292893 7.19188C-0.097632 7.63819 -0.0976321 8.36181 0.292893 8.80812L6.29289 15.6653C6.68342 16.1116 7.31658 16.1116 7.70711 15.6653Z" fill="#24262B"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.292893 15.6653C-0.0976311 15.219 -0.0976312 14.4953 0.292893 14.049L5.58579 8L0.292893 1.95098C-0.0976317 1.50467 -0.0976318 0.781048 0.292893 0.334735C0.683417 -0.11158 1.31658 -0.11158 1.70711 0.334735L7.70711 7.19188C8.09763 7.63819 8.09763 8.36181 7.70711 8.80812L1.70711 15.6653C1.31658 16.1116 0.683418 16.1116 0.292893 15.6653Z" fill="white"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question _h3">3. какой формы беседку выбираете?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body"> Квадратная/<br>Прямогульная </span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Многоугольная</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Круглая</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Комбинированная</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Нужна консультация</span>
+                    </label>
+                    <p class="quize__error" aria-hidden="true">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_light" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.70711 15.6653C8.09763 15.219 8.09763 14.4953 7.70711 14.049L2.41421 8L7.70711 1.95098C8.09763 1.50467 8.09763 0.781048 7.70711 0.334735C7.31658 -0.11158 6.68342 -0.11158 6.29289 0.334735L0.292893 7.19188C-0.097632 7.63819 -0.0976321 8.36181 0.292893 8.80812L6.29289 15.6653C6.68342 16.1116 7.31658 16.1116 7.70711 15.6653Z" fill="#24262B"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.292893 15.6653C-0.0976311 15.219 -0.0976312 14.4953 0.292893 14.049L5.58579 8L0.292893 1.95098C-0.0976317 1.50467 -0.0976318 0.781048 0.292893 0.334735C0.683417 -0.11158 1.31658 -0.11158 1.70711 0.334735L7.70711 7.19188C8.09763 7.63819 8.09763 8.36181 7.70711 8.80812L1.70711 15.6653C1.31658 16.1116 0.683418 16.1116 0.292893 15.6653Z" fill="white"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question _h3">4. укажите площадь беседки</p>
+                  <div class="quize__answers quize__answers_small">
+                    <label class="input">
+                      <input class="input__body" type="number" placeholder="Введите площадь" required>
+                      <span class="input__desc">m<sup>2</sup></span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-4">
+                      <span class="input__body">Затрудняюсь ответить</span>
+                    </label>
+                    <p class="quize__error" aria-hidden="true">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_light" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.70711 15.6653C8.09763 15.219 8.09763 14.4953 7.70711 14.049L2.41421 8L7.70711 1.95098C8.09763 1.50467 8.09763 0.781048 7.70711 0.334735C7.31658 -0.11158 6.68342 -0.11158 6.29289 0.334735L0.292893 7.19188C-0.097632 7.63819 -0.0976321 8.36181 0.292893 8.80812L6.29289 15.6653C6.68342 16.1116 7.31658 16.1116 7.70711 15.6653Z" fill="#24262B"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.292893 15.6653C-0.0976311 15.219 -0.0976312 14.4953 0.292893 14.049L5.58579 8L0.292893 1.95098C-0.0976317 1.50467 -0.0976318 0.781048 0.292893 0.334735C0.683417 -0.11158 1.31658 -0.11158 1.70711 0.334735L7.70711 7.19188C8.09763 7.63819 8.09763 8.36181 7.70711 8.80812L1.70711 15.6653C1.31658 16.1116 0.683418 16.1116 0.292893 15.6653Z" fill="white"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question _h3">5. когда планируете стройку беседки?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В этом месяце</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В след. месяце</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В течение полугода</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В течение года</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">Другое</span>
+                    </label>
+                    <p class="quize__error" aria-hidden="true">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_light" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.70711 15.6653C8.09763 15.219 8.09763 14.4953 7.70711 14.049L2.41421 8L7.70711 1.95098C8.09763 1.50467 8.09763 0.781048 7.70711 0.334735C7.31658 -0.11158 6.68342 -0.11158 6.29289 0.334735L0.292893 7.19188C-0.097632 7.63819 -0.0976321 8.36181 0.292893 8.80812L6.29289 15.6653C6.68342 16.1116 7.31658 16.1116 7.70711 15.6653Z" fill="#24262B"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.292893 15.6653C-0.0976311 15.219 -0.0976312 14.4953 0.292893 14.049L5.58579 8L0.292893 1.95098C-0.0976317 1.50467 -0.0976318 0.781048 0.292893 0.334735C0.683417 -0.11158 1.31658 -0.11158 1.70711 0.334735L7.70711 7.19188C8.09763 7.63819 8.09763 8.36181 7.70711 8.80812L1.70711 15.6653C1.31658 16.1116 0.683418 16.1116 0.292893 15.6653Z" fill="white"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question _h3">6. Где вам удобнее получить расчёт?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">WhatsApp</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">Telegram</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">СМС-сообщение</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="quize__item">
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__body" type="text" name="name" placeholder="Введите имя" required>
+                    </label>
+                    <label class="input">
+                      <input class="input__body" type="tel" name="tel" placeholder="Введите телефон" required>
+                    </label>
+                  </div>
+                </div>
+                <div class="quize__action quize__action_send">
+                  <button class="quize__btn btn btn_accent" type="submit">Отправить</button>
+                  <p class="quize__agree">
+                    Нажимая на кнопку «Отправить», я соглашаюсь на <a href="#" data-popup="#policy">
+                      обработку персональных данных
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
