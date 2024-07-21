@@ -38,6 +38,7 @@ html {
 
 .steps__item::before,
 .about__item::before,
+.welcome__gift,
 .welcome__title,
 .contacts__link,
 ._h5,
@@ -865,7 +866,12 @@ b {
   justify-content: flex-end;
   height: calc(var(--height-vh) - var(--height-header));
   max-height: calc(var(--height-vh-max) - var(--height-header));
-  padding: calc(3 * var(--padding-page)) 0 var(--gap-large);
+  padding: calc(3 * var(--padding-page)) 0 var(--padding-page);
+}
+
+.welcome__gift {
+  color: var(--color-dark);
+  background-color: var(--color-light);
 }
 
 .services {
@@ -888,6 +894,7 @@ b {
 
 .services__link {
   position: relative;
+  display: block;
   min-height: 100%;
   color: var(--color-white);
   background-color: var(--color-black);
@@ -965,6 +972,7 @@ b {
 
 .types__link {
   position: relative;
+  display: block;
   min-height: 100%;
   color: var(--color-white);
 }
@@ -2642,6 +2650,12 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
     margin: 0 calc(0.6 * var(--gap-large));
   }
 
+  .welcome__gift {
+    position: absolute;
+    right: 0;
+    bottom: var(--padding-page);
+  }
+
   .services__list {
     grid-template-columns: 1fr 1fr;
   }
@@ -3067,6 +3081,22 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
 
   .welcome__title {
     font-size: 240px;
+  }
+
+  .welcome__gift {
+    max-width: 1120px;
+  }
+
+  .welcome__gift {
+    padding: 60px;
+  }
+
+  .welcome__gift {
+    margin-top: 120px;
+  }
+
+  .welcome__gift {
+    font-size: 56px;
   }
 
   .services__content {
@@ -3597,7 +3627,7 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
   }
 
   .welcome__body {
-    min-height: 340px;
+    min-height: 370px;
   }
 
   .welcome__title {
@@ -3610,6 +3640,18 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
 
   .welcome__title {
     font-size: 48px;
+  }
+
+  .welcome__gift {
+    padding: 15px;
+  }
+
+  .welcome__gift {
+    margin-top: 25px;
+  }
+
+  .welcome__gift {
+    font-size: 17px;
   }
 
   .services__content {
@@ -3965,7 +4007,7 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
   }
 
   .welcome__body {
-    min-height: clamp( 340px , 254.6748238309px + 23.7027546445vw , 710px );
+    min-height: clamp( 370px , 291.5930813581px + 21.7809096733vw , 710px );
   }
 
   .welcome__title {
@@ -3978,6 +4020,18 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
 
   .welcome__title {
     font-size: clamp( 48px , 31.3961819347px + 4.6124279308vw , 120px );
+  }
+
+  .welcome__gift {
+    padding: clamp( 15px , 11.5408712364px + 0.9609224856vw , 30px );
+  }
+
+  .welcome__gift {
+    margin-top: clamp( 25px , 16.9286995516px + 2.2421524664vw , 60px );
+  }
+
+  .welcome__gift {
+    font-size: clamp( 17px , 14.4633055734px + 0.7046764894vw , 28px );
   }
 
   .services__content {
@@ -4340,6 +4394,22 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
     font-size: clamp( 120px , -0.06125px + 6.25vw , 240px );
   }
 
+  .welcome__gift {
+    max-width: clamp( 560px , -0.2858333333px + 29.1666666667vw , 1120px );
+  }
+
+  .welcome__gift {
+    padding: clamp( 30px , -0.0153125px + 1.5625vw , 60px );
+  }
+
+  .welcome__gift {
+    margin-top: clamp( 60px , -0.030625px + 3.125vw , 120px );
+  }
+
+  .welcome__gift {
+    font-size: clamp( 28px , -0.0142916667px + 1.4583333333vw , 56px );
+  }
+
   .services__content {
     min-height: clamp( 620px , -0.3164583333px + 32.2916666667vw , 1240px );
   }
@@ -4692,6 +4762,33 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
   }
 }
 
+@media (min-width: 767.98px) and (max-width: 1920.98px) {
+  .welcome__gift {
+    max-width: clamp( 390px , 276.7679098005px + 14.7441457069vw , 560px );
+  }
+
+  .about__list {
+    -moz-column-gap: clamp( 30px , 3.3571552472px + 3.4692107546vw , 70px );
+         column-gap: clamp( 30px , 3.3571552472px + 3.4692107546vw , 70px );
+  }
+
+  .faq .spollers {
+    max-width: clamp( 600px , 213.6787510841px + 50.303555941vw , 1180px );
+  }
+
+  .popup__body_large {
+    width: clamp( 660px , 247.0359063313px + 53.7727666956vw , 1280px );
+  }
+
+  .popup__body_quize {
+    width: clamp( 720px , 546.8215091067px + 22.5498699046vw , 980px );
+  }
+
+  .callback .form {
+    max-width: clamp( 580px , 458.7750563747px + 15.7849089332vw , 762px );
+  }
+}
+
 @media (min-width: 1279.98px) and (max-width: 1920.98px) {
   .types__head {
     margin-bottom: clamp( 96px , -111.6722620905px + 16.224648986vw , 200px );
@@ -4797,29 +4894,6 @@ form.wpcf7-form .quize__answers.quize__answers_small > * {
 
   .materials__item {
     min-height: clamp( 160px , 127.471686747px + 9.0361445783vw , 220px );
-  }
-}
-
-@media (min-width: 767.98px) and (max-width: 1920.98px) {
-  .about__list {
-    -moz-column-gap: clamp( 30px , 3.3571552472px + 3.4692107546vw , 70px );
-         column-gap: clamp( 30px , 3.3571552472px + 3.4692107546vw , 70px );
-  }
-
-  .faq .spollers {
-    max-width: clamp( 600px , 213.6787510841px + 50.303555941vw , 1180px );
-  }
-
-  .popup__body_large {
-    width: clamp( 660px , 247.0359063313px + 53.7727666956vw , 1280px );
-  }
-
-  .popup__body_quize {
-    width: clamp( 720px , 546.8215091067px + 22.5498699046vw , 980px );
-  }
-
-  .callback .form {
-    max-width: clamp( 580px , 458.7750563747px + 15.7849089332vw , 762px );
   }
 }
 
