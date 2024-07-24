@@ -688,6 +688,10 @@ b {
   background-color: var(--color-accent);
 }
 
+small {
+  opacity: 1 !important;
+}
+
 .header {
   position: fixed;
   z-index: 20;

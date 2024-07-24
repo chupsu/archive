@@ -661,6 +661,10 @@ body * {
   border-color: transparent;
 }
 
+small {
+  opacity: 1 !important;
+}
+
 .header {
   position: fixed;
   z-index: 20;
