@@ -2920,6 +2920,15 @@ strong {
   transform: scaleY(-1);
 }
 
+.select_response._select-active .select__title {
+  background-color: var(--color-blue-light);
+  border-color: transparent;
+}
+
+.select_response._select-active .select__value::after {
+  color: var(--color-blue);
+}
+
 .select_response .select__body {
   position: relative;
 }
@@ -2977,6 +2986,15 @@ strong {
   color: var(--color-dark);
 }
 
+.select_search._select-active .select__title {
+  background-color: var(--color-blue-light);
+  border-color: transparent;
+}
+
+.select_search._select-active .select__value::after {
+  color: var(--color-blue);
+}
+
 .select_search .select__body {
   position: relative;
 }
@@ -3016,6 +3034,7 @@ strong {
 
 .select_search .select__input {
   flex: 1 1 auto;
+  color: var(--color-dark);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -3025,6 +3044,7 @@ strong {
 
 .select_search .select__input::-moz-placeholder {
   max-width: 100%;
+  color: var(--color-dark);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -3032,6 +3052,7 @@ strong {
 
 .select_search .select__input::placeholder {
   max-width: 100%;
+  color: var(--color-dark);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
