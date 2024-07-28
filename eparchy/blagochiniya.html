@@ -512,7 +512,72 @@
                   <div class="places__content" hidden>
                     <!-- Содержимое второго таба -->
                     <div class="grid">
-                      <div class="grid__filter">фильтры</div>
+                      <div class="grid__filter">
+                        <div class="filters">
+                          <button
+                            class="filters__btn filters__btn_main btn btn_contour icon-filter"
+                            type="button"
+                          >
+                            <span>Фильтр по благочиниям</span>
+                          </button>
+                          <form class="filters__body" action="#">
+                            <div class="filters-reset">
+                              <div class="filters-reset__text _h6">Фильтр</div>
+                              <button class="filters-reset__btn" type="reset">Сбросить все</button>
+                            </div>
+                            <div class="filter">
+                              <ul class="filter__list" data-one-select>
+                                <li class="filter__item">
+                                  <div class="filter__name _p2">Выберите благочиние</div>
+                                  <ul class="options">
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="option" checked>
+                                        <span class="option__btn btn btn_contour">Все благочиния</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="option">
+                                        <span class="option__btn btn btn_contour">Ашинское</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="option">
+                                        <span class="option__btn btn btn_contour">Катав-Ивановское</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="option">
+                                        <span class="option__btn btn btn_contour">Трехгорное</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="option">
+                                        <span class="option__btn btn btn_contour">Златоустовское</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="option">
+                                        <span class="option__btn btn btn_contour">Кусинское</span>
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="filters__action">
+                              <button class="filters__submit btn btn_accent" type="submit">
+                                Показать
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
                       <ul class="grid__items grid__items_col-2">
                         <li class="grid__item">
                           <article class="place-card">

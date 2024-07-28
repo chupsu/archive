@@ -292,7 +292,244 @@
           <div class="container">
             <div class="catalog__body">
               <div class="grid">
-                <div class="grid__filter">фильтры</div>
+                <div class="grid__filter">
+                  <div class="filters">
+                    <button
+                      class="filters__btn filters__btn_main btn btn_contour icon-filter"
+                      type="button"
+                    >
+                      <span>Фильтр по благочиниям</span>
+                    </button>
+                    <form class="filters__body" action="#">
+                      <div class="filters-reset">
+                        <div class="filters-reset__text _h6">Фильтр</div>
+                        <button class="filters-reset__btn" type="reset">Сбросить все</button>
+                      </div>
+                      <div class="filter-tabs" data-tabs>
+                        <div class="filter-tabs__head">
+                          <div class="filter-tabs__title _p2">Основная категория поиска</div>
+                          <nav class="filter-tabs__navigation" data-tabs-titles>
+                            <button class="filter-tabs__btn btn _tab-active" type="button">
+                              По алфавиту
+                            </button>
+                            <button class="filter-tabs__btn btn" type="button">По благочиниям</button>
+                          </nav>
+                        </div>
+                        <div class="filter-tabs__content" data-tabs-body>
+                          <div class="filter-tabs__body" hidden>
+                            <div class="filter">
+                              <ul class="filter__list" data-one-select>
+                                <li class="filter__item">
+                                  <div class="filter__name _p2">Алфавит</div>
+                                  <ul class="options">
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl" checked>
+                                        <span class="option__btn btn btn_contour">Все</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">А</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">В</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Г</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Д</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Е</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">З</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">И</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">К</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Л</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">М</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Н</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">О</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">П</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Р</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">С</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Т</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">У</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Ф</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="fl">
+                                        <span class="option__btn btn btn_contour btn_icon">Х</span>
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                              <ul class="filter__list" data-one-select>
+                                <li class="filter__item">
+                                  <div class="filter__name _p2">Поиск по имени</div>
+                                  <div class="filter-search">
+                                    <div class="filter-search__body icon-search">
+                                      <input class="filter-search__input" type="search" placeholder="Поиск по имени">
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="filter-tabs__body" hidden>
+                            <div class="filter">
+                              <ul class="filter__list" data-one-select>
+                                <li class="filter__item">
+                                  <div class="filter__name _p2">Выберите благочиние</div>
+                                  <ul class="options">
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="place" checked>
+                                        <span class="option__btn btn btn_contour">Все благочиния</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="place">
+                                        <span class="option__btn btn btn_contour">Ашинское</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="place">
+                                        <span class="option__btn btn btn_contour">Златоустовское</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="place">
+                                        <span class="option__btn btn btn_contour">
+                                          Катав-Ивановское
+                                        </span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="place">
+                                        <span class="option__btn btn btn_contour">Кусинское</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="place">
+                                        <span class="option__btn btn btn_contour">Саткинское</span>
+                                      </label>
+                                    </li>
+                                    <li class="options__item">
+                                      <label class="option">
+                                        <input class="option__body" type="radio" name="place">
+                                        <span class="option__btn btn btn_contour">Трехгорное</span>
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                              <ul class="filter__list" data-one-select>
+                                <li class="filter__item">
+                                  <div class="filter__name _p2">Поиск по имени</div>
+                                  <div class="filter-search">
+                                    <div class="filter-search__body icon-search">
+                                      <input class="filter-search__input" type="search" placeholder="Поиск по имени">
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="filters__action">
+                        <button class="filters__submit btn btn_accent" type="submit">Показать</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
                 <ul class="grid__items grid__items_col-4">
                   <li class="grid__item">
                     <article class="cleric-card">
