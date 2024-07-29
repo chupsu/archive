@@ -1035,9 +1035,15 @@ small {
   padding: var(--padding-card);
 }
 
-.types__btn {
-  align-self: flex-end;
+.types__info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   margin-top: auto;
+}
+
+.types__btn {
+  flex-shrink: 0;
 }
 
 .callback {
@@ -1796,6 +1802,11 @@ span[class^=wpcf7-] {
   display: block;
   margin-bottom: var(--gap-small);
   color: var(--color-dark);
+}
+
+.callback .wpcf7-form.sent .wpcf7-response-output {
+  margin-left: 0;
+  text-align: left;
 }
 
 .form {
@@ -2773,6 +2784,10 @@ span[class^=wpcf7-] {
 
   .types__list {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .types__price {
+    font-size: 0.8em;
   }
 
   .materials__title {
