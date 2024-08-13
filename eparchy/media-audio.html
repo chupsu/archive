@@ -382,6 +382,62 @@
                     </p>
                   </div>
                   <div class="audio">
+                    <script>
+                      document.querySelector(".audio").innerHTML += "1";
+                      // все кроме timecode обязательны
+                      var audioData = [
+                        {
+                          path: "./files/audio-72.mp3",
+                          preview: "./img/content/photo/new-5.jpg",
+                          title:
+                            "OFM conv. Четверг в Октаве Пасхи.О. Андрей Буко OFM conv. Четверг в Октаве Пасхи.О. Андрей Буко OFM conv. Четверг в Октаве Пасхи.",
+                          date: "22.02.2022",
+                          timecode: [
+                            { time: "00:00", description: "Описание что будет происходить в это время" },
+                            { time: "02:00", description: "Разбивайте по времение событие" },
+                            {
+                              time: "2:33:58",
+                              description: "Описание что будет происходить в это время",
+                            },
+                          ],
+                        },
+                        {
+                          path: "./files/audio-12.mp3",
+                          preview: "./img/content/photo/new-2.jpg",
+                          title: "О. Андрей Буко OFM conv. Четверг в Октаве Пасхи.",
+                          date: "22.02.2022",
+                          timecode: [
+                            { time: "00:00", description: "Описание что будет происходить в это время" },
+                            { time: "02:00", description: "Разбивайте по времение событие" },
+                            {
+                              time: "2:33:58",
+                              description: "Описание что будет происходить в это время",
+                            },
+                          ],
+                        },
+                        {
+                          path: "./files/audio-72.mp3",
+                          preview: "./img/content/photo/new-6.jpg",
+                          title:
+                            "Четверг в Октаве Пасхи.О. Андрей Буко OFM conv. Четверг в Октаве Пасхи.О. Андрей Буко OFM conv. Четверг в Октаве Пасхи.",
+                          date: "22.02.2022",
+                        },
+                        {
+                          path: "./files/audio-12.mp3",
+                          preview: "./img/content/photo/new-3.jpg",
+                          title: "Андрей Буко OFM conv. Четверг в Октаве Пасхи.",
+                          date: "22.02.2022",
+                          timecode: [
+                            { time: "00:00", description: "Описание что будет происходить в это время" },
+                            { time: "02:00", description: "Разбивайте по времение событие" },
+                            {
+                              time: "2:33:58",
+                              description: "Описание что будет происходить в это время",
+                            },
+                          ],
+                        },
+                      ];
+                    </script>
                     <ul class="audio__list"></ul>
                     <div class="audio__player"></div>
                   </div>
