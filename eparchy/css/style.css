@@ -5091,7 +5091,7 @@ strong {
   align-items: center;
   justify-content: center;
   width: 22px;
-  align-self: 1/1;
+  aspect-ratio: 1/1;
   margin-left: 8px;
   font-weight: 600;
   color: var(--color-accent);
@@ -5180,7 +5180,7 @@ strong {
   align-items: center;
   justify-content: center;
   width: 22px;
-  align-self: 1/1;
+  aspect-ratio: 1/1;
   margin-left: 8px;
   font-weight: 600;
   color: var(--color-accent);
