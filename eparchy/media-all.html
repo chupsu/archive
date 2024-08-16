@@ -305,7 +305,7 @@
                         <div class="filters-reset__text _h6">Фильтр по медиа</div>
                         <button class="filters-reset__btn" type="reset">Сбросить все</button>
                       </div>
-                      <div class="filter">
+                      <div class="filter filter_line" data-one-select>
                         <ul class="filter__list">
                           <li class="filter__item">
                             <div class="filter__name _p2">Основная категория поиска</div>
@@ -336,9 +336,7 @@
                               </li>
                             </ul>
                           </li>
-                        </ul>
-                        <ul class="filter__list" data-one-select>
-                          <li class="filter__item">
+                          <li class="filter__item filter__item_response">
                             <div class="filter__name _p2">Архив медиа</div>
                             <ul class="options">
                               <li class="options__item">
@@ -373,6 +371,12 @@
                                 </select>
                               </li>
                             </ul>
+                          </li>
+                          <!-- Когда какой-либо фильтр выбран - выводим кнопку сброса -->
+                          <li class="filter__item filter__item_reset">
+                            <button class="filter__reset btn btn_dark" type="reset">
+                              Сбросить фильтр
+                            </button>
                           </li>
                         </ul>
                       </div>

@@ -6372,6 +6372,7 @@ textarea.form__input {
   }
 
   .options {
+    padding-right: var(--gap);
     margin: 0 -5px -10px;
   }
 
@@ -8301,10 +8302,6 @@ textarea.form__input {
     pointer-events: auto;
   }
 
-  .filter__list + .filter__list .options__item {
-    min-width: 100%;
-  }
-
   .filter__item {
     padding: 15px var(--padding-page) 28px;
     border-top: 1px solid var(--color-grey-light);
@@ -8312,6 +8309,10 @@ textarea.form__input {
 
   .filter__item_reset {
     display: none;
+  }
+
+  .filter__item_response .options__item {
+    min-width: 100%;
   }
 
   .filter-tabs__head {

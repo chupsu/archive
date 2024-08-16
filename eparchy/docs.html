@@ -306,7 +306,7 @@
                         <button class="filters-reset__btn" type="reset">Сбросить все</button>
                       </div>
                       <div class="filter">
-                        <ul class="filter__list">
+                        <ul class="filter__list" data-one-select>
                           <li class="filter__item">
                             <div class="filter__name _p2">Основная категория поиска</div>
                             <ul class="options">
@@ -336,9 +336,7 @@
                               </li>
                             </ul>
                           </li>
-                        </ul>
-                        <ul class="filter__list" data-one-select>
-                          <li class="filter__item">
+                          <li class="filter__item filter__item_response">
                             <div class="filter__name _p2">Архив документов</div>
                             <ul class="options">
                               <li class="options__item">
@@ -374,6 +372,11 @@
                               </li>
                             </ul>
                           </li>
+                          <!-- <li class="filter__item filter__item_reset">
+                            <button class="filter__reset btn btn_dark" type="reset">
+                              Сбросить фильтр
+                            </button>
+                          </li> -->
                         </ul>
                       </div>
                       <div class="filters__action">
