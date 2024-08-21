@@ -1876,6 +1876,14 @@ span[class^=wpcf7-] {
   width: 100%;
 }
 
+.popup .form {
+  translate: none !important;
+  rotate: none !important;
+  scale: none !important;
+  opacity: 1 !important;
+  transform: translate(0px, 0px) !important;
+}
+
 .form__head {
   padding-bottom: var(--gap-small);
   text-align: center;
@@ -3071,15 +3079,19 @@ span[class^=wpcf7-] {
   }
 
   .welcome__title {
-    max-width: 2000px;
-  }
-
-  .welcome__title {
     margin-bottom: 100px;
   }
 
   .welcome__title {
     font-size: 240px;
+  }
+
+  .welcome__title_small {
+    max-width: 2000px;
+  }
+
+  .welcome__title_large {
+    max-width: 2380px;
   }
 
   .welcome__gift {
@@ -3088,10 +3100,6 @@ span[class^=wpcf7-] {
 
   .welcome__gift {
     padding: 60px;
-  }
-
-  .welcome__gift {
-    margin-top: 120px;
   }
 
   .welcome__gift {
@@ -3618,15 +3626,15 @@ span[class^=wpcf7-] {
   }
 
   .welcome__title {
-    max-width: 330px;
-  }
-
-  .welcome__title {
     margin-bottom: 20px;
   }
 
   .welcome__title {
     font-size: 48px;
+  }
+
+  .welcome__title_small {
+    max-width: 330px;
   }
 
   .welcome__gift {
@@ -3998,10 +4006,6 @@ span[class^=wpcf7-] {
   }
 
   .welcome__title {
-    max-width: clamp( 330px , 175.4922485586px + 42.9212043562vw , 1000px );
-  }
-
-  .welcome__title {
     margin-bottom: clamp( 20px , 13.0817424728px + 1.9218449712vw , 50px );
   }
 
@@ -4009,12 +4013,12 @@ span[class^=wpcf7-] {
     font-size: clamp( 48px , 31.3961819347px + 4.6124279308vw , 120px );
   }
 
-  .welcome__gift {
-    padding: clamp( 15px , 11.5408712364px + 0.9609224856vw , 30px );
+  .welcome__title_small {
+    max-width: clamp( 330px , 175.4922485586px + 42.9212043562vw , 1000px );
   }
 
   .welcome__gift {
-    margin-top: clamp( 25px , 16.9286995516px + 2.2421524664vw , 60px );
+    padding: clamp( 15px , 11.5408712364px + 0.9609224856vw , 30px );
   }
 
   .welcome__gift {
@@ -4366,15 +4370,19 @@ span[class^=wpcf7-] {
   }
 
   .welcome__title {
-    max-width: clamp( 1000px , -0.5104166667px + 52.0833333333vw , 2000px );
-  }
-
-  .welcome__title {
     margin-bottom: clamp( 50px , -0.0255208333px + 2.6041666667vw , 100px );
   }
 
   .welcome__title {
     font-size: clamp( 120px , -0.06125px + 6.25vw , 240px );
+  }
+
+  .welcome__title_small {
+    max-width: clamp( 1000px , -0.5104166667px + 52.0833333333vw , 2000px );
+  }
+
+  .welcome__title_large {
+    max-width: clamp( 1190px , -0.6073958333px + 61.9791666667vw , 2380px );
   }
 
   .welcome__gift {
@@ -4383,10 +4391,6 @@ span[class^=wpcf7-] {
 
   .welcome__gift {
     padding: clamp( 30px , -0.0153125px + 1.5625vw , 60px );
-  }
-
-  .welcome__gift {
-    margin-top: clamp( 60px , -0.030625px + 3.125vw , 120px );
   }
 
   .welcome__gift {
@@ -4742,6 +4746,10 @@ span[class^=wpcf7-] {
 }
 
 @media (min-width: 767.98px) and (max-width: 1920.98px) {
+  .welcome__title_large {
+    max-width: clamp( 680px , 340.3037294016px + 44.2324371206vw , 1190px );
+  }
+
   .welcome__gift {
     max-width: clamp( 390px , 276.7679098005px + 14.7441457069vw , 560px );
   }
@@ -4761,6 +4769,12 @@ span[class^=wpcf7-] {
 
   .callback .form {
     max-width: clamp( 580px , 458.7750563747px + 15.7849089332vw , 762px );
+  }
+}
+
+@media (min-width: 359.98px) and (max-width: 767.98px) {
+  .welcome__gift {
+    margin-top: clamp( 25px , 16.1769607843px + 2.4509803922vw , 35px );
   }
 }
 
