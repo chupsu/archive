@@ -1788,6 +1788,7 @@ textarea.inputs__body ~ .inputs__label {
 .inputs__body:-webkit-autofill ~ .inputs__label,
 .inputs__body:not(:placeholder-shown) ~ .inputs__label {
   transform: scale(0.84);
+  max-width: 120%;
   padding: 0;
 }
 
@@ -1799,7 +1800,7 @@ textarea.inputs__body ~ .inputs__label {
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 120%;
+  max-width: 100%;
   padding: 20px 0 10px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1808,7 +1809,7 @@ textarea.inputs__body ~ .inputs__label {
   pointer-events: none;
   transform-origin: top left;
   transition-duration: var(--transition-duration);
-  transition-property: padding, transform;
+  transition-property: max-width, padding, transform;
 }
 
 .inputs__alert {
