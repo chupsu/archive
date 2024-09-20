@@ -992,19 +992,53 @@
                   <label class="file-upload">
                     <!-- <label class="file-upload is-error"> -->
                     <!-- <label class="file-upload is-load"> -->
-                    <input class="file-upload__input"
-                      type="file"
-                      data-upload-max-size="100"
-                      data-upload-desc-formats="jpeg, png, pdf, docx, mp4, mov"
-                      accept="video/mp4,video/mov,image/jpg,image/jpeg,image/png,.pdf,.doc,.docx,.xml,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                    >
-                    <span class="file-upload__body icon-attachment" data-upload-body>
-                      <span class="file-upload__text" data-upload-text>Прикрепить файлы</span>
-                      <span class="file-upload__desc _p2" data-upload-desc>
-                        jpeg, png, pdf, docx, mp4, mov до 100Мб
-                      </span>
+                    <input class="file-upload__input" type="file">
+                    <span class="file-upload__body icon-attachment">
+                      <span class="file-upload__text">Прикрепить файлы</span>
+                      <span class="file-upload__desc _p2">jpeg, png, pdf, docx, mp4, mov до 100Мб</span>
                     </span>
                   </label>
+                  <ul class="files">
+                    <li class="files__item files__item_loading">
+                      <div class="files__name">resume-mary.pdf</div>
+                      <div class="files__desc _p2">17 Мб</div>
+                      <button
+                        class="files__remove icon-close"
+                        type="button"
+                        aria-label="Открепить файл"
+                        title="Открепить файл"
+                      ></button>
+                      <div class="files__progress">
+                        <div class="files__progress-bar" style="width: 30%"></div>
+                      </div>
+                    </li>
+                    <li class="files__item">
+                      <div class="files__name">resume-mary-for-education-AVA.docx</div>
+                      <div class="files__desc _p2">1 Мб</div>
+                      <button
+                        class="files__remove icon-close"
+                        type="button"
+                        aria-label="Открепить файл"
+                        title="Открепить файл"
+                      ></button>
+                    </li>
+                    <li class="files__item">
+                      <div class="files__name">
+                        resumefffffffffffffffffffffffffffffffffffffffffffAVA.docx
+                      </div>
+                      <div class="files__desc _p2">1 Мб</div>
+                      <button
+                        class="files__remove icon-close"
+                        type="button"
+                        aria-label="Открепить файл"
+                        title="Открепить файл"
+                      ></button>
+                    </li>
+                    <li class="files__item files__item_error">
+                      <div class="files__name">photo.json</div>
+                      <div class="files__desc _p2">Недопустимый формат</div>
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div class="form__action">

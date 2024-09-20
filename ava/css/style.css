@@ -1889,7 +1889,80 @@ textarea.inputs__body ~ .inputs__label {
 }
 
 .file-upload__desc {
+  -webkit-hyphens: auto;
+          hyphens: auto;
   pointer-events: none;
+}
+
+.files:not(:first-child) {
+  margin-top: 12px;
+}
+
+.files__item {
+  position: relative;
+  padding: 12px 40px 12px 12px;
+  background-color: var(--color-light);
+}
+
+.files__item_loading {
+  background-color: var(--color-dark-5);
+}
+
+.files__item_error {
+  background-color: var(--color-error-10);
+}
+
+.files__item_error .files__desc {
+  color: var(--color-error);
+}
+
+.files__item + .files__item {
+  margin-top: 12px;
+}
+
+.files__remove {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  font-size: 20px;
+  color: var(--color-dark);
+  background-color: transparent;
+  border: none;
+}
+
+.files__name {
+  word-break: break-word;
+  font-size: var(--text-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.files__desc {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+}
+
+.files__progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--color-dark-5);
+}
+
+.files__progress-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-accent);
 }
 
 .agree {
@@ -3325,8 +3398,8 @@ textarea.inputs__body ~ .inputs__label {
 
   .form__btn {
     position: sticky;
-    bottom: 0;
-    margin-top: 0;
+    bottom: 36px;
+    margin-top: 4em;
   }
 
   .form__btn.btn:not(.btn_round-icon) {
@@ -3833,6 +3906,10 @@ textarea.inputs__body ~ .inputs__label {
     width: 34.6%;
   }
 
+  .files:not(:first-child) {
+    margin-top: 24px;
+  }
+
   .welcome__body {
     display: flex;
   }
@@ -4298,12 +4375,25 @@ textarea.inputs__body ~ .inputs__label {
     padding-left: 3.53%;
   }
 
+  .form__btn {
+    bottom: 48px;
+  }
+
   .inputs__item + .inputs__item {
     margin-top: var(--gap);
   }
 
   .file-upload__body {
     padding: 15.2%;
+  }
+
+  .files__item {
+    padding: 24px 54px 24px 24px;
+  }
+
+  .files__remove {
+    top: 24px;
+    right: 24px;
   }
 
   .welcome__body {
