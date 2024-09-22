@@ -3553,6 +3553,10 @@ textarea.inputs__body ~ .inputs__label {
     border: 1px solid var(--color-dark-10);
   }
 
+  .members__title:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
   .team__body {
     padding: 80px 0;
   }
@@ -4054,7 +4058,7 @@ textarea.inputs__body ~ .inputs__label {
   }
 
   .members__item + .members__item {
-    margin: 0 0 0 16px;
+    margin: 0 0 0 24px;
   }
 
   .team-slider__name {
