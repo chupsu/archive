@@ -808,6 +808,7 @@ video {
 }
 
 .btn_white:focus-visible {
+  color: var(--color-white);
   background-color: var(--color-accent-hover);
 }
 
@@ -4796,6 +4797,7 @@ textarea.inputs__body ~ .inputs__label {
   }
 
   .btn_white:not(:active):hover {
+    color: var(--color-white);
     background-color: var(--color-accent-hover);
   }
 
