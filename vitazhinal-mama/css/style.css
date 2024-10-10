@@ -240,20 +240,7 @@ body {
   z-index: 10;
   background: #fff;
   border-radius: 8px;
-  top: 160px;
   opacity: 0;
-}
-
-.arg-2-btns .top .item:nth-child(1) {
-  left: 24px;
-}
-
-.arg-2-btns .top .item:nth-child(2) {
-  left: 178px;
-}
-
-.arg-2-btns .top .item:nth-child(3) {
-  left: 332px;
 }
 
 .arg-2-btns {
@@ -269,24 +256,7 @@ body {
   z-index: 10;
   background: #fff;
   border-radius: 8px;
-  top: 344px;
   opacity: 0;
-}
-
-.arg-2-btns .bottom .item:nth-child(1) {
-  left: 24px;
-}
-
-.arg-2-btns .bottom .item:nth-child(2) {
-  left: 178px;
-}
-
-.arg-2-btns .bottom .item:nth-child(3) {
-  left: 332px;
-}
-
-.arg-2-btns .bottom .item:nth-child(4) {
-  left: 486px;
 }
 
 .click-btn {
@@ -294,7 +264,6 @@ body {
   width: 317px;
   height: 260px;
   position: absolute;
-  top: 106px;
   z-index: 10;
   background: #fff;
   border-radius: 24px;
