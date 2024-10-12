@@ -14,7 +14,7 @@ let slide5 = "img/content/table-4.png";
 let slide6 = "img/content/table-5.png";
 
 btn1.onclick = function () {
-  btn1.classList.toggle("active");
+  btn1.classList.add("active");
 
   contentTable.src = slide1;
 
@@ -26,7 +26,7 @@ btn1.onclick = function () {
 };
 
 btn2.onclick = function () {
-  btn2.classList.toggle("active");
+  btn2.classList.add("active");
 
   contentTable.src = slide2;
 
@@ -38,7 +38,7 @@ btn2.onclick = function () {
 };
 
 btn3.onclick = function () {
-  btn3.classList.toggle("active");
+  btn3.classList.add("active");
 
   contentTable.src = slide3;
 
@@ -50,7 +50,7 @@ btn3.onclick = function () {
 };
 
 btn4.onclick = function () {
-  btn4.classList.toggle("active");
+  btn4.classList.add("active");
 
   contentTable.src = slide4;
 
@@ -62,7 +62,7 @@ btn4.onclick = function () {
 };
 
 btn5.onclick = function () {
-  btn5.classList.toggle("active");
+  btn5.classList.add("active");
 
   contentTable.src = slide5;
 
@@ -74,7 +74,7 @@ btn5.onclick = function () {
 };
 
 btn6.onclick = function () {
-  btn6.classList.toggle("active");
+  btn6.classList.add("active");
 
   contentTable.src = slide6;
 
