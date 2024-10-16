@@ -1106,6 +1106,30 @@ body {
   margin: 0 auto;
 }
 
+.hero__item {
+  color: var(--color-dark);
+}
+
+.hero__item:focus-visible {
+  outline: none;
+}
+
+.hero__item:focus-visible .hero__preview {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.hero__item:focus-visible .hero__preview-box {
+  color: var(--color-hover) !important;
+}
+
+.hero__item:focus-visible .hero__preview-box svg {
+  transform: translate(-50%, -50%) rotate(16deg);
+}
+
+.hero__item:focus-visible .hero__category {
+  transform: translateY(-50%);
+}
+
 .hero__preview-box {
   position: relative;
   aspect-ratio: 294/281;

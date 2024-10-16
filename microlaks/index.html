@@ -20,7 +20,7 @@
       <header class="header" data-lp>
         <div class="container">
           <div class="header__body">
-            <a class="logo logo_header" href="./index.html">
+            <a class="logo logo_header" href="#" data-goto=".wrapper">
               <img class="logo__img" src="./img/content/logo-1.svg" alt="logo">
             </a>
             <nav class="menu">
@@ -32,16 +32,16 @@
               <div class="menu__body">
                 <ul class="menu__list">
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Режим дня</a>
+                    <a class="menu__link" href="#" data-goto="#category-1">Режим дня</a>
                   </li>
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Режим питания</a>
+                    <a class="menu__link" href="#" data-goto="#category-2">Режим питания</a>
                   </li>
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Регулярность стула</a>
+                    <a class="menu__link" href="#" data-goto="#category-3">Регулярность стула</a>
                   </li>
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Микроклизма</a>
+                    <a class="menu__link" href="#" data-goto="#category-4">Микроклизма</a>
                   </li>
                 </ul>
                 <ul class="menu__list">
@@ -72,7 +72,7 @@
                 </p>
               </div>
               <div class="hero__items">
-                <div class="hero__item">
+                <a class="hero__item" href="#category-1" data-goto="#category-1">
                   <div class="hero__preview-box">
                     <svg viewBox="0 0 252 203" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M251.857 72.1658C251.857 140.16 194.457 202.733 126.463 202.733C58.4681 202.733 0.170166 140.16 0.170166 72.1658C0.170166 4.17113 58.4681 0.405273 126.463 0.405273C194.457 0.405273 251.857 4.17113 251.857 72.1658Z" fill="currentColor"/>
@@ -80,8 +80,8 @@
                     <picture><source srcset="./img/content/art/hero-1.webp" type="image/webp"><img class="hero__preview" src="./img/content/art/hero-1.png" alt="Режим дня"></picture>
                   </div>
                   <p class="hero__category">Режим дня</p>
-                </div>
-                <div class="hero__item">
+                </a>
+                <a class="hero__item" href="#category-2" data-goto="#category-2">
                   <div class="hero__preview-box">
                     <svg viewBox="0 0 294 173" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M293.207 85.8353C293.207 153.83 203.096 172.181 135.101 172.181C67.1062 172.181 0.0136719 102.06 0.0136719 34.065C0.0136719 -33.9296 82.8564 21.3438 150.851 21.3438C218.846 21.3438 293.207 17.8406 293.207 85.8353Z" fill="currentColor"/>
@@ -89,8 +89,8 @@
                     <picture><source srcset="./img/content/art/hero-2.webp" type="image/webp"><img class="hero__preview" src="./img/content/art/hero-2.png" alt="Режим питания"></picture>
                   </div>
                   <p class="hero__category">Режим питания</p>
-                </div>
-                <div class="hero__item">
+                </a>
+                <a class="hero__item" href="#category-3" data-goto="#category-3">
                   <div class="hero__preview-box">
                     <svg width="252" height="210" viewBox="0 0 252 210" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M251.226 78.8605C251.226 146.855 199.919 209.219 131.925 209.219C63.9299 209.219 0.983398 138.708 0.983398 70.7131C0.983398 2.71841 58.6673 0.87793 126.662 0.87793C194.657 0.87793 251.226 10.8658 251.226 78.8605Z" fill="currentColor"/>
@@ -98,8 +98,8 @@
                     <picture><source srcset="./img/content/art/hero-3.webp" type="image/webp"><img class="hero__preview" src="./img/content/art/hero-3.png" alt="Регулярность стула"></picture>
                   </div>
                   <p class="hero__category">Регулярность стула</p>
-                </div>
-                <div class="hero__item">
+                </a>
+                <a class="hero__item" href="#category-4" data-goto="#category-4">
                   <div class="hero__preview-box">
                     <svg width="247" height="195" viewBox="0 0 247 195" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M246.533 104.286C246.533 172.281 161.218 194.49 93.2229 194.49C25.2282 194.49 0.946289 165.879 0.946289 97.8844C0.946289 29.8898 25.2282 0.115241 93.2229 0.115241C161.218 0.115241 246.533 36.2913 246.533 104.286Z" fill="currentColor"/>
@@ -107,7 +107,7 @@
                     <picture><source srcset="./img/content/art/hero-4.webp" type="image/webp"><img class="hero__preview" src="./img/content/art/hero-4.png" alt="Микроклизма"></picture>
                   </div>
                   <p class="hero__category">Микроклизма</p>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -170,7 +170,11 @@
             </div>
           </div>
         </section>
-        <section class="category _overcross-top _undercross-bottom" style="background-color: #f1efff">
+        <section
+          class="category _overcross-top _undercross-bottom"
+          id="category-1"
+          style="background-color: #f1efff"
+        >
           <div class="container">
             <div class="category__body">
               <div class="category__head">
@@ -220,7 +224,11 @@
             </div>
           </div>
         </section>
-        <section class="category _overcross-top _undercross-bottom" style="background-color: #ffe6ec">
+        <section
+          class="category _overcross-top _undercross-bottom"
+          id="category-2"
+          style="background-color: #ffe6ec"
+        >
           <div class="container">
             <div class="category__body">
               <div class="category__head">
@@ -271,7 +279,11 @@
             </div>
           </div>
         </section>
-        <section class="category _overcross-top _undercross-bottom" style="background-color: #f3f8ff">
+        <section
+          class="category _overcross-top _undercross-bottom"
+          id="category-3"
+          style="background-color: #f3f8ff"
+        >
           <div class="container">
             <div class="category__body">
               <div class="category__head">
@@ -321,7 +333,11 @@
             </div>
           </div>
         </section>
-        <section class="category _overcross-top _undercross-bottom" style="background-color: #f1efff">
+        <section
+          class="category _overcross-top _undercross-bottom"
+          id="category-4"
+          style="background-color: #f1efff"
+        >
           <div class="container">
             <div class="category__body">
               <div class="category__head">
@@ -432,30 +448,53 @@
           </div>
         </div>
       </main>
-
       <!-- на главной странице - _undercross-top, на внутренних - _overcross-top -->
       <footer class="footer _undercross-top">
         <div class="container">
           <div class="footer__body">
             <div class="footer__main">
               <div class="footer__box">
-                <a class="logo logo_footer" href="./index.html">
+                <a class="logo logo_footer" href="#" data-goto=".wrapper">
                   <img class="logo__img" src="./img/content/logo-2.svg" alt="image">
                 </a>
               </div>
               <div class="footer__box footer__box_menu">
                 <ul class="footer-menu">
                   <li class="footer-menu__item">
-                    <a class="footer-menu__link" href="#">Режим дня</a>
+                    <a
+                      class="footer-menu__link"
+                      href="./index.html#category-1"
+                      data-goto="./index.html#category-1"
+                    >
+                      Режим дня
+                    </a>
                   </li>
                   <li class="footer-menu__item">
-                    <a class="footer-menu__link" href="#">Регулярность стула</a>
+                    <a
+                      class="footer-menu__link"
+                      href="./index.html#category-2"
+                      data-goto="./index.html#category-2"
+                    >
+                      Регулярность стула
+                    </a>
                   </li>
                   <li class="footer-menu__item">
-                    <a class="footer-menu__link" href="#">Режим питания</a>
+                    <a
+                      class="footer-menu__link"
+                      href="./index.html#category-3"
+                      data-goto="./index.html#category-3"
+                    >
+                      Режим питания
+                    </a>
                   </li>
                   <li class="footer-menu__item">
-                    <a class="footer-menu__link" href="#">Микроклизма</a>
+                    <a
+                      class="footer-menu__link"
+                      href="./index.html#category-4"
+                      data-goto="./index.html#category-4"
+                    >
+                      Микроклизма
+                    </a>
                   </li>
                 </ul>
               </div>
