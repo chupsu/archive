@@ -17,41 +17,34 @@
 
   <body>
     <div class="wrapper">
-      <header class="header" data-lp>
+      <header class="header">
         <div class="container">
           <div class="header__body">
+            <!-- у ссылки разные параметры на главной и внутренних -->
             <a class="logo logo_header" href="#" data-goto=".wrapper">
               <img class="logo__img" src="./img/content/logo-1.svg" alt="logo">
             </a>
             <nav class="menu">
-              <button class="menu__btn" type="button" aria-label="Меню сайта" title="Меню сайта">
-                <i class="menu__icon" aria-hidden="true">
-                  <span></span>
-                </i>
-              </button>
-              <div class="menu__body">
-                <ul class="menu__list">
-                  <li class="menu__item">
-                    <a class="menu__link" href="#category-1" data-goto="#category-1">Режим дня</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="#category-2" data-goto="#category-2">Режим питания</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="#category-3" data-goto="#category-3">Регулярность стула</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="#category-4" data-goto="#category-4">Микроклизма</a>
-                  </li>
-                </ul>
-                <ul class="menu__list">
-                  <li class="menu__item">
-                    <a class="menu__link menu__link_btn" href="#contact-form" data-popup="#contact-form">
-                      Где купить
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <!-- у ссылок разные параметры на главной и внутренних -->
+              <ul class="menu__list _nav-menu">
+                <li class="menu__item">
+                  <a class="menu__link" href="#category-1" data-goto="#category-1" style="--color-link: #d3cfff">Режим дня</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#category-2" data-goto="#category-2" style="--color-link: #b9e9f5">Режим питания</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#category-3" data-goto="#category-3" style="--color-link: #fad0d9">Регулярность стула</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#category-4" data-goto="#category-4" style="--color-link: #b9e9f5">Микроклизма</a>
+                </li>
+              </ul>
+              <ul class="menu__list _help-menu">
+                <li class="menu__item">
+                  <a class="menu__link menu__link_btn" href="#" target="_blank">Где купить</a>
+                </li>
+              </ul>
             </nav>
           </div>
         </div>
@@ -72,7 +65,12 @@
                 </p>
               </div>
               <div class="hero__items">
-                <a class="hero__item" href="#category-1" data-goto="#category-1">
+                <a
+                  class="hero__item"
+                  href="#category-1"
+                  data-goto="#category-1"
+                  style="--color-hover: #d3cfff"
+                >
                   <div class="hero__preview-box">
                     <svg viewBox="0 0 252 203" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M251.857 72.1658C251.857 140.16 194.457 202.733 126.463 202.733C58.4681 202.733 0.170166 140.16 0.170166 72.1658C0.170166 4.17113 58.4681 0.405273 126.463 0.405273C194.457 0.405273 251.857 4.17113 251.857 72.1658Z" fill="currentColor"/>
@@ -81,7 +79,12 @@
                   </div>
                   <p class="hero__category">Режим дня</p>
                 </a>
-                <a class="hero__item" href="#category-2" data-goto="#category-2">
+                <a
+                  class="hero__item"
+                  href="#category-2"
+                  data-goto="#category-2"
+                  style="--color-hover: #b9e9f5"
+                >
                   <div class="hero__preview-box">
                     <svg viewBox="0 0 294 173" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M293.207 85.8353C293.207 153.83 203.096 172.181 135.101 172.181C67.1062 172.181 0.0136719 102.06 0.0136719 34.065C0.0136719 -33.9296 82.8564 21.3438 150.851 21.3438C218.846 21.3438 293.207 17.8406 293.207 85.8353Z" fill="currentColor"/>
@@ -90,7 +93,12 @@
                   </div>
                   <p class="hero__category">Режим питания</p>
                 </a>
-                <a class="hero__item" href="#category-3" data-goto="#category-3">
+                <a
+                  class="hero__item"
+                  href="#category-3"
+                  data-goto="#category-3"
+                  style="--color-hover: #fad0d9"
+                >
                   <div class="hero__preview-box">
                     <svg width="252" height="210" viewBox="0 0 252 210" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M251.226 78.8605C251.226 146.855 199.919 209.219 131.925 209.219C63.9299 209.219 0.983398 138.708 0.983398 70.7131C0.983398 2.71841 58.6673 0.87793 126.662 0.87793C194.657 0.87793 251.226 10.8658 251.226 78.8605Z" fill="currentColor"/>
@@ -99,7 +107,12 @@
                   </div>
                   <p class="hero__category">Регулярность стула</p>
                 </a>
-                <a class="hero__item" href="#category-4" data-goto="#category-4">
+                <a
+                  class="hero__item"
+                  href="#category-4"
+                  data-goto="#category-4"
+                  style="--color-hover: #b9e9f5"
+                >
                   <div class="hero__preview-box">
                     <svg width="247" height="195" viewBox="0 0 247 195" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M246.533 104.286C246.533 172.281 161.218 194.49 93.2229 194.49C25.2282 194.49 0.946289 165.879 0.946289 97.8844C0.946289 29.8898 25.2282 0.115241 93.2229 0.115241C161.218 0.115241 246.533 36.2913 246.533 104.286Z" fill="currentColor"/>
@@ -112,7 +125,36 @@
             </div>
           </div>
         </section>
-        <section class="facts _overcross-top _undercross-bottom">
+        <section class="video-info _overcross-top _undercross-bottom">
+          <div class="container">
+            <div class="video-info__body">
+              <h2 class="video-info__title _h2">Заголовок для видео</h2>
+              <div class="video">
+                <!-- для видео с youtube -->
+                <!-- во всех ссылках менять только ID видео "RD8QevthotA" на своё -->
+                <!-- <a class="video__link" href="https://youtu.be/RD8QevthotA" target="_blank"> -->
+                <!-- <picture> -->
+                <!-- <source srcset="https://i.ytimg.com/vi_webp/RD8QevthotA/maxresdefault.webp" type="image/webp"> -->
+                <!-- <img class="video__media" src="https://i.ytimg.com/vi/RD8QevthotA/maxresdefault.jpg" alt="Название видео"> -->
+                <!-- </picture> -->
+                <!-- </a> -->
+
+                <!-- для видео файлом .mp4 -->
+                <a class="video__link" href="./files/video.mp4" target="_blank">
+                  <picture><source srcset="./img/content/art/video.webp" type="image/webp"><img class="video__media" src="./img/content/art/video.png" alt="Название видео"></picture>
+                </a>
+
+                <button class="video__btn" type="button">
+                  <span class="seo">Запустить видео</span>
+                  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.3374 5.15993C17.3558 3.82328 16.0081 2.16721 13.817 0.783834C12.9682 0.247902 11.8906 0.322964 11.0393 0.855014C10.3762 1.26948 9.90653 1.93305 9.68534 2.68312C9.59335 2.99505 9.5004 3.30688 9.41828 3.62364C8.87236 5.72931 9.1076 8.21987 9.101 10.37C9.08909 14.255 9.11492 18.1207 9.33479 22.0007C9.69127 28.2915 9.63886 34.4977 9.1678 40.7785C8.99698 43.056 10.449 44.6686 12.4108 43.4992C13.5026 42.8483 14.5818 42.0159 15.5 41.5C22.7423 37.4305 29.3662 33.3628 37.1216 30.4419C37.5975 30.2627 38.0799 30.0883 38.5656 29.9149C43.2984 28.2247 44.4346 24.1057 40.6149 20.8399C37.2759 17.985 33.4676 15.1287 32.7298 14.5363C28.4541 11.1034 23.8769 8.22205 19.3374 5.15993Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- <section class="facts _overcross-top _undercross-bottom">
           <div class="container">
             <div class="facts__body">
               <h2 class="facts__title _h2">
@@ -121,7 +163,7 @@
               </h2>
               <div class="facts-slider">
                 <div class="facts-slider__wrapper">
-                  <!-- минимум 6 слайдов -->
+                  // минимум 6 слайдов //
                   <div class="facts-slider__items">
                     <div class="facts-slider__item">
                       <p class="facts-slider__text">
@@ -169,7 +211,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
         <section
           class="category _overcross-top _undercross-bottom"
           id="category-1"
@@ -187,30 +229,30 @@
               <div class="category__items">
                 <div class="category__grid">
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-1.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Советы педиатров</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-1.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-1.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-2.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Распространенные ошибки в режиме питания</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-2.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-2.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-3.html">
                       <span class="seo">Читать статью</span>
                     </a>
-                    <h3 class="article-card__title">Советы Чек-лист режима дня</h3>
+                    <h3 class="article-card__title">Чек-лист «Режим дня»</h3>
                     <figure class="article-card__img-box">
                       <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
                     </figure>
@@ -242,32 +284,32 @@
               <div class="category__items">
                 <div class="category__grid">
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-4.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Как правильно вводить прикорм</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-1.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-1.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-4.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-4.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-5.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Рацион питания</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-2.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-2.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-5.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-5.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-6.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Нормы калорий для ребенка в день</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-6.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-6.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
@@ -296,32 +338,32 @@
               <div class="category__items">
                 <div class="category__grid">
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-7.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Норма регулярности стула у детей</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-7.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-7.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-8.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Бристольская шкала</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-8.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-8.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-9.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Последствия неправильно питания грудничка</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-9.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-9.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
@@ -350,32 +392,32 @@
               <div class="category__items">
                 <div class="category__grid">
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-10.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Микроклизма – первый этап терапии запоров</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-10.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-10.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-11.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Микроносик учитывает анатомию малыша</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-11.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-11.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
                   <article class="article-card">
-                    <a class="article-card__link" href="./article.html">
+                    <a class="article-card__link" href="./article-12.html">
                       <span class="seo">Читать статью</span>
                     </a>
                     <h3 class="article-card__title">Схема применения микроклизмы</h3>
                     <figure class="article-card__img-box">
-                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="image"></picture>
+                      <picture><source srcset="./img/content/art/art-12.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-12.png" alt="image"></picture>
                     </figure>
                     <span class="article-card__icon" aria-hidden="true"></span>
                   </article>
@@ -454,11 +496,13 @@
           <div class="footer__body">
             <div class="footer__main">
               <div class="footer__box">
+                <!-- у ссылки разные параметры на главной и внутренних -->
                 <a class="logo logo_footer" href="#" data-goto=".wrapper">
                   <img class="logo__img" src="./img/content/logo-2.svg" alt="image">
                 </a>
               </div>
               <div class="footer__box footer__box_menu">
+                <!-- у ссылок разные параметры на главной и внутренних -->
                 <ul class="footer-menu">
                   <li class="footer-menu__item">
                     <a class="footer-menu__link" href="#category-1" data-goto="#category-1">Режим дня</a>
@@ -477,13 +521,13 @@
               <div class="footer__box">
                 <ul class="footer-shop">
                   <li class="footer-shop__item">
-                    <a class="footer-shop__link btn btn_secondary-1" href="#">Wb</a>
+                    <a class="footer-shop__link btn btn_secondary-1" href="#" target="_blank">Wb</a>
                   </li>
                   <li class="footer-shop__item">
-                    <a class="footer-shop__link btn btn_secondary-2" href="#">Озон</a>
+                    <a class="footer-shop__link btn btn_secondary-2" href="#" target="_blank">Озон</a>
                   </li>
                   <li class="footer-shop__item">
-                    <a class="footer-shop__link btn btn_accent" href="#">Где купить</a>
+                    <a class="footer-shop__link btn btn_accent" href="#" target="_blank">Где купить</a>
                   </li>
                 </ul>
               </div>
@@ -491,10 +535,10 @@
             <div class="footer__info">
               <ul class="footer-info">
                 <li class="footer-info__item">
-                  <a class="footer-info__link" href="#"> Политика конфиденциальности </a>
+                  <a class="footer-info__link" href="#">Политика конфиденциальности</a>
                 </li>
                 <li class="footer-info__item">
-                  <a class="footer-info__link" href="#"> Уведомления о cookie </a>
+                  <a class="footer-info__link" href="#">Уведомления о cookie</a>
                 </li>
               </ul>
             </div>
@@ -518,8 +562,8 @@
       <button
         class="cookie__btn btn btn_main"
         type="button"
-        aria-label="Принять файлы-cookie"
-        title="Принять файлы-cookie"
+        aria-label="Принять файлы cookie"
+        title="Принять файлы cookie"
       >
         Хорошо
       </button>

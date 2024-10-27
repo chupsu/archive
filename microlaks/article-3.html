@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Чек-лист «Режим дня»</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__body">
+            <!-- у ссылки разные параметры на главной и внутренних -->
+            <a class="logo logo_header" href="./index.html">
+              <img class="logo__img" src="./img/content/logo-1.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <!-- у ссылок разные параметры на главной и внутренних -->
+              <ul class="menu__list _nav-menu">
+                <li class="menu__item">
+                  <a class="menu__link" href="./index.html#category-1" style="--color-link: #d3cfff">Режим дня</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="./index.html#category-2" style="--color-link: #b9e9f5">Режим питания</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="./index.html#category-3" style="--color-link: #fad0d9">Регулярность стула</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="./index.html#category-4" style="--color-link: #b9e9f5">Микроклизма</a>
+                </li>
+              </ul>
+              <ul class="menu__list _help-menu">
+                <li class="menu__item">
+                  <a class="menu__link menu__link_btn" href="#" target="_blank">Где купить</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <article class="article">
+          <div class="heading _undercross-bottom">
+            <div class="container">
+              <div class="heading__body">
+                <div class="heading__content">
+                  <h1 class="heading__title _h1">Чек-лист «Режим дня»</h1>
+                  <span class="heading__tag">Режим дня</span>
+                </div>
+                <figure class="heading__img-box">
+                  <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="heading__img" src="./img/content/art/art-3.png" alt="Превью статьи"></picture>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="article__main _overcross-top _overcross-bottom">
+            <div class="container">
+              <div class="article__body">
+                <a class="article__back btn btn_main" href="./index.html">Вернуться на главную</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <section class="category _undercross-top _undercross-bottom" style="background-color: #f1efff">
+          <div class="container">
+            <div class="category__body">
+              <div class="category__head">
+                <h2 class="category__title _h2">Статьи по теме</h2>
+              </div>
+              <div class="category__items">
+                <div class="category__grid">
+                  <article class="article-card">
+                    <a class="article-card__link" href="./article-2.html">
+                      <span class="seo">Читать статью</span>
+                    </a>
+                    <h3 class="article-card__title">Распространенные ошибки в режиме питания</h3>
+                    <figure class="article-card__img-box">
+                      <picture><source srcset="./img/content/art/art-2.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-2.png" alt="Распространенные ошибки в режиме питания"></picture>
+                    </figure>
+                    <span class="article-card__icon" aria-hidden="true"></span>
+                  </article>
+                  <article class="article-card">
+                    <a class="article-card__link" href="./article-3.html">
+                      <span class="seo">Читать статью</span>
+                    </a>
+                    <h3 class="article-card__title">Чек-лист «Режим дня»</h3>
+                    <figure class="article-card__img-box">
+                      <picture><source srcset="./img/content/art/art-3.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-3.png" alt="Чек-лист «Режим дня»"></picture>
+                    </figure>
+                    <span class="article-card__icon" aria-hidden="true"></span>
+                  </article>
+                  <article class="article-card">
+                    <a class="article-card__link" href="./article-10.html">
+                      <span class="seo">Читать статью</span>
+                    </a>
+                    <h3 class="article-card__title">Микроклизма – первый этап терапии запоров</h3>
+                    <figure class="article-card__img-box">
+                      <picture><source srcset="./img/content/art/art-10.webp" type="image/webp"><img class="article-card__img" src="./img/content/art/art-10.png" alt="Микроклизма – первый этап терапии запоров"></picture>
+                    </figure>
+                    <span class="article-card__icon" aria-hidden="true"></span>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- на главной странице - _undercross-top, на внутренних - _overcross-top -->
+      <footer class="footer _overcross-top">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__main">
+              <div class="footer__box">
+                <!-- у ссылки разные параметры на главной и внутренних -->
+                <a class="logo logo_footer" href="./index.html">
+                  <img class="logo__img" src="./img/content/logo-2.svg" alt="image">
+                </a>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <!-- у ссылок разные параметры на главной и внутренних -->
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./index.html#category-1">Режим дня</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./index.html#category-2">Режим питания</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./index.html#category-3">Регулярность стула</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./index.html#category-4">Микроклизма</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box">
+                <ul class="footer-shop">
+                  <li class="footer-shop__item">
+                    <a class="footer-shop__link btn btn_secondary-1" href="#" target="_blank">Wb</a>
+                  </li>
+                  <li class="footer-shop__item">
+                    <a class="footer-shop__link btn btn_secondary-2" href="#" target="_blank">Озон</a>
+                  </li>
+                  <li class="footer-shop__item">
+                    <a class="footer-shop__link btn btn_accent" href="#" target="_blank">Где купить</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__info">
+              <ul class="footer-info">
+                <li class="footer-info__item">
+                  <a class="footer-info__link" href="#">Политика конфиденциальности</a>
+                </li>
+                <li class="footer-info__item">
+                  <a class="footer-info__link" href="#">Уведомления о cookie</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Close popup" type="button" data-close></button>
+        <div class="popup__inner"></div>
+      </div>
+    </div>
+
+    <div class="cookie">
+      <p class="cookie__text">
+        Мы используем файлы cookies, чтобы сделать наш веб-сайт максимально интересным для Вас.
+        <a href="#" target="_blank">Узнать больше</a>
+      </p>
+      <button
+        class="cookie__btn btn btn_main"
+        type="button"
+        aria-label="Принять файлы cookie"
+        title="Принять файлы cookie"
+      >
+        Хорошо
+      </button>
+    </div>
+  </body>
+</html>
