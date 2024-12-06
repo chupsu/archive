@@ -557,6 +557,7 @@ body {
 
 :root {
   --width-page: 100vw;
+  --height-header: 60px;
   --height-page: 100vh;
   --height-nav: 76px;
   --height-btn: 46px;
@@ -591,6 +592,7 @@ body {
   line-height: 1.4;
   color: var(--color-dark);
   background-color: var(--color-white);
+  scroll-padding-top: var(--height-header);
 }
 
 sup,
@@ -1432,6 +1434,7 @@ sub {
 
 .info__close:focus-visible {
   outline: none;
+  color: var(--color-main-dark);
 }
 
 .heading {
@@ -2789,6 +2792,7 @@ sub {
 
 @media (min-width: 1023.98px) {
   :root {
+    --height-header: 74px;
     --height-btn: 56px;
   }
 
@@ -3120,6 +3124,7 @@ sub {
 
 @media (min-width: 1365.98px) {
   :root {
+    --height-header: 94px;
     --height-btn: 72px;
     --radius-large: 50px;
     --radius-medium: 40px;
@@ -3643,12 +3648,19 @@ sub {
     z-index: 10;
     right: 0;
     bottom: 0;
+    transform: translateY(100%);
     left: 0;
     align-items: stretch;
     justify-content: space-around;
     padding: 12px calc((100% - 720px) / 2);
     background-color: var(--color-white);
     border-radius: var(--radius-small) var(--radius-small) 0 0;
+    transition-duration: var(--transition-duration);
+    transition-property: transform;
+  }
+
+  .is-scrolled .menu__list._nav-menu {
+    transform: none;
   }
 
   ._nav-menu .menu__link {
@@ -3715,6 +3727,10 @@ sub {
 
   .info__title:not(:active):hover {
     background-color: var(--color-light-hover);
+  }
+
+  .info__close:not(:active):hover {
+    color: var(--color-main-dark);
   }
 
   .spollers__title:not(:active):hover {
