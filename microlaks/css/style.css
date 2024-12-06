@@ -3238,6 +3238,10 @@ sub {
   .error-page__img-box {
     margin-right: calc(-1 * var(--padding-page));
   }
+
+  .error-page__img-box::before {
+    bottom: 0;
+  }
 }
 
 @media (min-width: 1365.98px) {
