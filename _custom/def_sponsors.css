@@ -176,13 +176,35 @@ ul {
 }
 
 .incp-nav__btn {
-  background: var(--gradient);
+  background: var(--gradient) !important;
   border: 1px solid #f36232;
   filter: drop-shadow(rgba(205, 60, 12, 0.5) 0 9px 30px);
+  color: #fff !important;
+}
+
+.incp-nav__btn:focus-visible {
+  outline: none;
+}
+
+.incp-nav-is-open .incp-nav__btn {
+  background: #fff !important;
 }
 
 .incp-nav-is-open .incp-nav__btn::before {
   content: "\e902";
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.incp-nav-is-open .incp-nav__btn span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .incp-nav__body {
@@ -259,6 +281,33 @@ ul {
 .incp-nav__link:focus-visible {
   outline: none;
   background-color: #f6af71;
+}
+
+.incp-nav__link_color {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #f6af71;
+}
+
+.incp-nav__link_color svg {
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.incp-nav__link_color span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.incp-nav__link_color:focus-visible {
+  background-color: #ffffff;
 }
 
 .partners-main__title {
@@ -1488,6 +1537,10 @@ ul {
 
   .incp-nav__link:not(:active):hover {
     background-color: #f6af71;
+  }
+
+  .incp-nav__link_color:not(:active):hover {
+    background-color: #ffffff;
   }
 
   .partners-main__item:not(:active):hover .partners-main__img {
