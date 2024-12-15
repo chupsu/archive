@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <div class="header__main">
+              <a class="header__logo logo" href="#" data-goto=".wrapper">
+                <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+              </a>
+              <nav class="header__nav header-nav">
+                <ul class="header-nav__list">
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./brends.html">Бренды</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./shops.html">Магазины</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./events.html">События</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./scheme.html">Схема</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./contacts.html">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+              <ul class="header__info header-info">
+                <li class="header-info__item header-info__item_schedule">
+                  <span class="header-info__box"><b>ПН-СБ</b> 10:00 - 21:00</span>
+                  <span class="header-info__box"><b>ВС</b> 10:00 - 20:00</span>
+                </li>
+                <li class="header-info__item"><a href="tel:+74958033335">+7 (495) 803-33-35</a></li>
+              </ul>
+            </div>
+            <nav class="header__menu menu">
+              <button class="menu__btn" type="button" title="Меню сайта">
+                <svg viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="24" y="33" width="4" height="4" fill="currentColor"/>
+                  <rect x="32" y="33" width="30" height="4" fill="currentColor"/>
+                  <rect x="24" y="41" width="38" height="4" fill="currentColor"/>
+                  <rect x="24" y="49" width="17" height="3" fill="currentColor"/>
+                  <rect x="45" y="49" width="17" height="3" fill="currentColor"/>
+                </svg>
+                <span class="seo">Меню сайта</span>
+              </button>
+              <div class="menu__body">
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link" href="#" data-goto-header data-goto=".class"></a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#contact-form" data-popup="#contact-form"></a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="welcome _mb">
+          <div class="container">
+            <div class="welcome__body">
+              <div class="welcome__main">
+                <figure class="welcome__img-box">
+                  <picture><source srcset="./img/content/photo/welcome-1.webp" type="image/webp"><img class="welcome__img" src="./img/content/photo/welcome-1.jpg" alt="image"></picture>
+                </figure>
+                <div class="welcome__content">
+                  <h1 class="welcome__title _h1">Уют и комфорт &mdash; это просто</h1>
+                  <p class="welcome__text _p1">
+                    За один визит к нам, вы приобретёте всё, что надо для ремонта
+                    и обустройства, а также получите грамотную консультацию от мастеров
+                    своего дела.
+                  </p>
+                </div>
+              </div>
+              <!-- welcome__cards выводим если есть ссылки welcome__link -->
+              <div class="welcome__cards">
+                <div class="welcome__card">
+                  <figure class="welcome__img-box">
+                    <picture><source srcset="./img/content/photo/welcome-2.webp" type="image/webp"><img class="welcome__img" src="./img/content/photo/welcome-2.jpg" alt="Бренды"></picture>
+                  </figure>
+                  <div class="welcome__card-content">
+                    <div class="welcome__action">
+                      <a class="welcome__link _h2" href="./brends.html">Бренды</a>
+                      <div
+                        class="welcome__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="welcome__card">
+                  <figure class="welcome__img-box">
+                    <picture><source srcset="./img/content/photo/welcome-3.webp" type="image/webp"><img class="welcome__img" src="./img/content/photo/welcome-3.jpg" alt="Магазины"></picture>
+                  </figure>
+                  <div class="welcome__card-content">
+                    <div class="welcome__action">
+                      <a class="welcome__link _h2" href="./shops.html">Магазины</a>
+                      <div
+                        class="welcome__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="hnews _mb">
+          <div class="container">
+            <div class="hnews__body">
+              <!-- если нужны стрелки - убрать style="padding-right: 0" -->
+              <div class="hnews__head" style="padding-right: 0">
+                <h2 class="hnews__title _h2">Новости и события</h2>
+                <div class="hnews__action">
+                  <a class="hnews__more" href="./events.html">
+                    <span class="hnews__more-icon icon-link ilink" aria-hidden="true"></span>
+                    <span class="hnews__more-text">Все cобытия</span>
+                  </a>
+                </div>
+              </div>
+              <div class="news-slider">
+                <div class="news-slider__wrapper">
+                  <div class="news-slider__items">
+                    <div class="news-slider__item">
+                      <div class="new-card">
+                        <figure class="new-card__img-box">
+                          <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                        </figure>
+                        <div class="new-card__main">
+                          <div class="new-card__content">
+                            <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                            <p class="new-card__text">
+                              Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                              Наступили холода, а значит, самое время укутаться в плед, заварить
+                              чашку ароматного чая...
+                            </p>
+                            <div class="new-card__info">
+                              <ul class="new-info">
+                                <li class="new-info__item">
+                                  <time class="new-info__date" datetime="2024-04-24 19:00">
+                                    14 ноября, 2024
+                                  </time>
+                                </li>
+                                <li class="new-info__item">
+                                  <!-- <a class="new-info__link" href="#">Акция</a> -->
+                                  Акция
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div
+                            class="new-card__link-icon icon-link ilink ilink_large"
+                            aria-hidden="true"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="news-slider__item">
+                      <div class="new-card">
+                        <figure class="new-card__img-box">
+                          <picture><source srcset="./img/content/photo/new-card-2.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-2.jpg" alt="Первая арт-выставка проектирующих дизайнеров"></picture>
+                        </figure>
+                        <div class="new-card__main">
+                          <div class="new-card__content">
+                            <h3 class="new-card__title _h3">
+                              Первая арт-выставка проектирующих дизайнеров
+                            </h3>
+                            <p class="new-card__text">
+                              Друзья, с 18:00 до 19:00 у нас будет проходить
+                              дизайн-activity, а с 19:00 мы начнём выбирать победителей
+                              и вручать подарки...
+                            </p>
+                            <div class="new-card__info">
+                              <ul class="new-info">
+                                <li class="new-info__item">
+                                  <time class="new-info__date" datetime="2024-04-24 19:00">
+                                    5 ноября, 2024
+                                  </time>
+                                </li>
+                                <li class="new-info__item">
+                                  <!-- <a class="new-info__link" href="#">Новость</a> -->
+                                  Новость
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div
+                            class="new-card__link-icon icon-link ilink ilink_large"
+                            aria-hidden="true"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="news-slider__item">
+                      <div class="new-card">
+                        <figure class="new-card__img-box">
+                          <picture><source srcset="./img/content/photo/new-card-3.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-3.jpg" alt="Летние скидки"></picture>
+                        </figure>
+                        <div class="new-card__main">
+                          <div class="new-card__content">
+                            <h3 class="new-card__title _h3">Летние скидки</h3>
+                            <p class="new-card__text">
+                              Долгожданные летние скидки &mdash; покупки, которыми вы будете
+                              наслаждаться! Осуществляйте свои мечты об уютном и стильном
+                              интерьере...
+                            </p>
+                            <div class="new-card__info">
+                              <ul class="new-info">
+                                <li class="new-info__item">
+                                  <time class="new-info__date" datetime="2024-04-24 19:00">
+                                    1 июля, 2024
+                                  </time>
+                                </li>
+                                <li class="new-info__item">
+                                  <!-- <a class="new-info__link" href="#">Акция</a> -->
+                                  Акция
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div
+                            class="new-card__link-icon icon-link ilink ilink_large"
+                            aria-hidden="true"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- если нужны стрелки - убрать style="display: none" -->
+                <div class="news-slider__actions" style="display: none">
+                  <button
+                    class="news-slider__button news-slider__button_prev icon-left ilink"
+                    type="button"
+                  >
+                    <span class="seo">Следующий слайд</span>
+                  </button>
+                  <button
+                    class="news-slider__button news-slider__button_next icon-right ilink"
+                    type="button"
+                  >
+                    <span class="seo">Следующий слайд</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+          <footer class="footer">
+            <div class="container">
+              <div class="footer__body">
+
+              </div>
+            </div>
+          </footer>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button
+          class="popup__close"
+          aria-label="Close popup"
+          type="button"
+          data-close
+        ></button>
+        <div class="popup__inner"></div>
+      </div>
+    </div>
+  </body>
+</html>
