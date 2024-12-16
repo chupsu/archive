@@ -1515,6 +1515,12 @@ body {
   margin-bottom: var(--gap-normal);
 }
 
+.h-about__text b,
+.h-about__text strong {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
 .h-about__text_accent {
   color: var(--color-accent);
 }
