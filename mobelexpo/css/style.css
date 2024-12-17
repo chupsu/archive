@@ -582,7 +582,7 @@ body {
   --width-border: 1px;
   --width-page: 100vw;
   --height-page: 100vh;
-  --width-col-4: 296;
+  --width-col-4: 296px;
   --height-btn: 56px;
   --height-ilink: 42px;
   --height-ilink-large: 42px;
@@ -602,8 +602,6 @@ body {
   --color-border: rgba(0, 0, 0, 0.12);
   --color-white: #ffffff;
   --transition-duration: 0.3s;
-  --radius-large: 26px;
-  --radius-medium: 22px;
   --radius-normal: 24px;
   --radius-small: 12px;
   --text-medium: 16px;
@@ -1613,6 +1611,125 @@ body {
   margin-bottom: var(--gap-smallest);
 }
 
+.h-contacts__main {
+  padding: var(--gap-large) var(--padding-normal);
+  margin-bottom: var(--gap-small);
+  background-color: var(--color-light);
+  border-radius: var(--radius-normal);
+}
+
+.h-contacts__title {
+  margin-bottom: var(--padding-medium);
+  color: var(--color-dark);
+}
+
+.h-contacts__map-box {
+  border-radius: var(--radius-normal);
+  overflow: hidden;
+}
+
+.h-contacts__map {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.contact__box + .contact__box {
+  position: relative;
+  margin-top: calc(2 * var(--gap-large) + var(--width-border));
+}
+
+.contact__box + .contact__box::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--gap-large) - var(--width-border));
+  right: 0;
+  left: 0;
+  height: var(--width-border);
+  background-color: var(--color-border);
+}
+
+.contact-card__item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-card__item + .contact-card__item {
+  margin-top: var(--padding-normal);
+}
+
+.contact-card__img-box {
+  flex-shrink: 0;
+  width: 52px;
+  margin-right: var(--gap-normal);
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.contact-card__img {
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.contact-card__name {
+  margin-bottom: calc(0.5 * var(--gap-smallest));
+}
+
+.contact-card__text {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.contact-card__text a {
+  color: inherit;
+  transition-duration: var(--transition-duration);
+  transition-property: color;
+}
+
+.contact-card__text a:focus-visible {
+  outline: none;
+  color: var(--color-accent);
+}
+
+.contact-card__text a:active {
+  color: var(--color-accent-light);
+}
+
+.contact-path__item + .contact-path__item {
+  margin-top: var(--padding-normal);
+}
+
+.contact-path__head {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--gap-smallest);
+}
+
+.contact-path__icon {
+  flex-shrink: 0;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  width: 2em;
+  margin-right: calc(0.5 * var(--gap-smallest));
+  font-size: 0.625em;
+  color: var(--color-white);
+  border-radius: 50%;
+}
+
+.contact-path__title {
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
 @media (min-width: 575.98px) {
   .h-about__btn {
     flex-grow: 0;
@@ -1667,6 +1784,36 @@ body {
 
   .h-shops__more-text {
     display: block;
+  }
+
+  .h-contacts__body {
+    position: relative;
+    padding: var(--gap-medium) var(--gap-normal);
+    background-color: var(--color-border);
+    border-radius: var(--radius-normal);
+    overflow: hidden;
+  }
+
+  .h-contacts__main {
+    position: relative;
+    z-index: 1;
+    width: 45%;
+    padding: var(--gap-large) var(--gap-normal);
+    margin-bottom: 0;
+    background-color: var(--color-white);
+  }
+
+  .h-contacts__map-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .h-contacts__map {
+    aspect-ratio: auto;
+    height: 100%;
   }
 }
 
@@ -1744,6 +1891,14 @@ body {
   .news-slider__item {
     width: calc((100% - 2 * var(--gap-small)) / 3);
   }
+
+  .h-contacts__body {
+    padding: var(--gap-large);
+  }
+
+  .h-contacts__main {
+    padding: var(--gap-large);
+  }
 }
 
 @media (min-width: 1439.98px) {
@@ -1799,6 +1954,10 @@ body {
 
   .h-about__content {
     padding: var(--gap-large);
+  }
+
+  .h-contacts__main {
+    width: 36%;
   }
 }
 
@@ -1988,6 +2147,10 @@ body {
 
   .benefits-slider__img-box {
     margin-bottom: 88px;
+  }
+
+  .contact-card__img-box {
+    width: 104px;
   }
 }
 
@@ -2409,6 +2572,10 @@ body {
   .benefits-slider__img-box {
     margin-bottom: clamp( 44px , -0.0224583333px + 2.2916666667vw , 88px );
   }
+
+  .contact-card__img-box {
+    width: clamp( 52px , -0.0265416667px + 2.7083333333vw , 104px );
+  }
 }
 
 @media (min-width: 359.98px) and (max-width: 1439.98px) {
@@ -2547,5 +2714,9 @@ body {
 
   .h-shops__more:not(:active):hover .h-shops__more-text {
     text-decoration: underline;
+  }
+
+  .contact-card__text a:not(:active):hover {
+    color: var(--color-accent);
   }
 }
