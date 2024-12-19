@@ -470,25 +470,34 @@
                       </div>
                     </div>
                   </div>
-                  <p class="h-about__text">
-                    Dekor&amp;Mobel Expo на Нахимовском проспекте, 24 это торговый комплекс, где
-                    представлены товары для дизайна, декора интерьера, а также мебель премиум класса.
-                    Комплекс делится на два тематических залла &mdash;
-                    <b>Dekor Expo</b> и <b>Mobel Expo</b>.
-                  </p>
-                  <p class="h-about__text">
-                    Dekor Expo &mdash; хорошо известный нашим постоянным посетителям комплекс, где
-                    располагаются, как крупные фирмы и знаменитые производители, так и небольшие
-                    частные предприятия, мастерские и артели, что даёт нашим покупателям широкий
-                    выбор ассортимента и цен на предметы декора и интерьера.
-                  </p>
-                  <p class="h-about__text">
-                    Mobel Expo &mdash; новый павильон, содержащий преимущественно мебельные бренды.
-                    Здесь наших покупателей ждёт огромный выбор мягкой и корпусной мебели
-                    на любой вкус. Ещё один плюс торгового комплекса &mdash; удобное
-                    территориальное расположение. До нас легко добраться как автомобилистам, так
-                    и пешеходам.
-                  </p>
+                  <div class="h-about__showmore" data-showmore data-showmore-media="576">
+                    <div class="h-about__showmore-content" data-showmore-content="220">
+                      <p class="h-about__text">
+                        Dekor&amp;Mobel Expo на Нахимовском проспекте, 24 это торговый комплекс,
+                        где представлены товары для дизайна, декора интерьера, а также мебель премиум
+                        класса. Комплекс делится на два тематических залла &mdash;
+                        <b>Dekor Expo</b> и <b>Mobel Expo</b>.
+                      </p>
+                      <p class="h-about__text">
+                        Dekor Expo &mdash; хорошо известный нашим постоянным посетителям комплекс,
+                        где располагаются, как крупные фирмы и знаменитые производители, так
+                        и небольшие частные предприятия, мастерские и артели, что даёт нашим
+                        покупателям широкий выбор ассортимента и цен на предметы декора
+                        и интерьера.
+                      </p>
+                      <p class="h-about__text">
+                        Mobel Expo &mdash; новый павильон, содержащий преимущественно мебельные
+                        бренды. Здесь наших покупателей ждёт огромный выбор мягкой и корпусной мебели
+                        на любой вкус. Ещё один плюс торгового комплекса &mdash; удобное
+                        территориальное расположение. До нас легко добраться как автомобилистам, так
+                        и пешеходам.
+                      </p>
+                    </div>
+                    <button class="h-about__showmore-btn" hidden data-showmore-button type="button">
+                      <span>Подробнее</span>
+                      <span>Скрыть</span>
+                    </button>
+                  </div>
                   <p class="h-about__text h-about__text_accent">
                     Мы работает ежедневно с 10:00 до 21:00, в воскресенье с 10:00
                     до 20:00
@@ -616,9 +625,52 @@
                   </div>
                 </div>
               </div>
-              <figure class="h-contacts__map-box">
-                <picture><source srcset="./img/content/map.webp" type="image/webp"><img class="h-contacts__map" src="./img/content/map.jpg" alt="image"></picture>
-              </figure>
+              <div class="h-contacts__map-box"></div>
+              <script src="https://api-maps.yandex.ru/2.1/?apikey=fe56076b-3bdf-425c-a83d-11dbe30b03b6&lang=ru_RU"></script>
+              <script>
+                function calculateNewSizeAndOffset() {
+                  var windowWidth = window.innerWidth;
+                  if (windowWidth < 768) {
+                    return { size: [192, 46], offset: [-20, -35], zoom: 14 };
+                  } else {
+                    return { size: [246, 59], offset: [20, 0], zoom: 16 };
+                  }
+                }
+
+                ymaps.ready(function () {
+                  const map = new ymaps.Map(document.querySelector(".h-contacts__map-box"), {
+                    center: [55.672428, 37.582709],
+                    zoom: calculateNewSizeAndOffset().zoom,
+                  });
+
+                  const myPlacemark = new ymaps.Placemark(
+                    [55.672428, 37.582709],
+                    {},
+                    {
+                      iconLayout: "default#image",
+                      iconImageHref: "./img/content/icons/map.svg",
+                      iconImageSize: calculateNewSizeAndOffset().size,
+                      iconImageOffset: calculateNewSizeAndOffset().offset,
+                    }
+                  );
+                  map.controls.remove("geolocationControl"); // удаляем геолокацию
+                  map.controls.remove("searchControl"); // удаляем поиск
+                  map.controls.remove("trafficControl"); // удаляем контроль трафика
+                  map.controls.remove("typeSelector"); // удаляем тип
+                  map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+                  map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+                  map.controls.remove("rulerControl"); // удаляем контрол правил
+                  map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+                  map.geoObjects.add(myPlacemark);
+
+                  window.addEventListener("resize", function () {
+                    const newSizeAndOffset = calculateNewSizeAndOffset();
+                    map.setZoom(newSizeAndOffset.zoom);
+                    myPlacemark.options.set("iconImageSize", newSizeAndOffset.size);
+                    myPlacemark.options.set("iconImageOffset", newSizeAndOffset.offset);
+                  });
+                });
+              </script>
             </div>
           </div>
         </section>

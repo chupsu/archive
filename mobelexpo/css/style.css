@@ -475,7 +475,7 @@ template {
  */
 
 [hidden] {
-  display: none;
+  display: none !important;
 }
 
 *,
@@ -1613,6 +1613,34 @@ body {
   margin-bottom: var(--gap-normal);
 }
 
+.h-about__showmore:not(:last-child) {
+  margin-bottom: var(--gap-normal);
+}
+
+.h-about__showmore-btn {
+  display: block;
+  width: 100%;
+  margin-top: var(--padding-normal);
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 500;
+  color: var(--color-accent);
+  background-color: transparent;
+  border: none;
+}
+
+.h-about__showmore-btn span:last-child {
+  display: none;
+}
+
+._showmore-active .h-about__showmore-btn span {
+  display: none;
+}
+
+._showmore-active .h-about__showmore-btn span:last-child {
+  display: block;
+}
+
 .h-about__text b,
 .h-about__text strong {
   font-weight: 500;
@@ -1724,16 +1752,13 @@ body {
 }
 
 .h-contacts__map-box {
+  width: 100%;
   border-radius: var(--radius-normal);
   overflow: hidden;
 }
 
-.h-contacts__map {
-  aspect-ratio: 1/1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+.h-contacts__map-box .ymaps-2-1-79-map-copyrights-promo {
+  display: none;
 }
 
 .contact__box + .contact__box {
@@ -1948,11 +1973,6 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-  }
-
-  .h-contacts__map {
-    aspect-ratio: auto;
-    height: 100%;
   }
 
   .contact-card__item_footer-social {
@@ -2345,6 +2365,29 @@ body {
   }
 }
 
+@media (max-width: 575.98px) {
+  .h-about__showmore-content {
+    position: relative;
+  }
+
+  .h-about__showmore-content::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 42px;
+    background-image: linear-gradient(180deg, rgba(250, 250, 250, 0) 0%, var(--color-light) 100%);
+    transition-duration: var(--transition-duration);
+    transition-property: opacity;
+    pointer-events: none;
+  }
+
+  ._showmore-active .h-about__showmore-content::after {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 359.98px) {
   :root {
     --height-header: 84px;
@@ -2492,6 +2535,10 @@ body {
 
   .benefits-slider__img-box {
     margin-bottom: 32px;
+  }
+
+  .h-contacts__map-box {
+    height: 340px;
   }
 }
 
@@ -2876,6 +2923,10 @@ body {
 
   .welcome__card-inner {
     min-height: clamp( 240px , 151.7696078431px + 24.5098039216vw , 340px );
+  }
+
+  .h-contacts__map-box {
+    height: clamp( 340px , 242.9465686275px + 26.9607843137vw , 450px );
   }
 }
 
