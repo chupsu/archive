@@ -1761,12 +1761,12 @@ body {
   display: none;
 }
 
-.contact__box + .contact__box {
+.list-grid__box + .list-grid__box {
   position: relative;
   margin-top: calc(2 * var(--gap-large) + var(--width-border));
 }
 
-.contact__box + .contact__box::before {
+.list-grid__box + .list-grid__box::before {
   content: "";
   position: absolute;
   top: calc(-1 * var(--gap-large) - var(--width-border));
