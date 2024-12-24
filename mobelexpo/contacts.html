@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <div class="header__main">
+              <a class="header__logo logo" href="./index.html">
+                <img class="logo__img" src="./img/content/logo.svg" alt="Dekor&Mobel Expo">
+              </a>
+              <nav class="header__nav header-nav">
+                <ul class="header-nav__list">
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./brends.html">Бренды</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./shops.html">Магазины</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./events.html">События</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./scheme.html">Схема</a>
+                  </li>
+                  <li class="header-nav__item">
+                    <a class="header-nav__link" href="./contacts.html">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+              <ul class="header__info header-info">
+                <li class="header-info__item header-info__item_schedule">
+                  <span class="header-info__box"><b>ПН-СБ</b> 10:00 - 21:00</span>
+                  <span class="header-info__box"><b>ВС</b> 10:00 - 20:00</span>
+                </li>
+                <li class="header-info__item"><a href="tel:+74958033335">+7 (495) 803-33-35</a></li>
+              </ul>
+            </div>
+            <button class="header__menu" type="button" data-menu>
+              <svg viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="24" y="33" width="4" height="4" fill="currentColor"/>
+                  <rect x="32" y="33" width="30" height="4" fill="currentColor"/>
+                  <rect x="24" y="41" width="38" height="4" fill="currentColor"/>
+                  <rect x="24" y="49" width="17" height="3" fill="currentColor"/>
+                  <rect x="45" y="49" width="17" height="3" fill="currentColor"/>
+                </svg>
+              <span class="seo">Меню сайта</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="contacts">
+          <div class="container">
+            <div class="contacts__body">
+              <div class="page-head">
+                <ul class="breadcrumbs">
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <span class="breadcrumbs__link">Контакты</span>
+                  </li>
+                </ul>
+                <h1 class="page-head__title _h1">Контакты</h1>
+              </div>
+              <div class="contacts__main">
+                <div class="contacts__action">
+                  <a class="contacts__btn btn btn_accent icon-mail" href="#" data-popup="#callback">
+                    Обратная связь
+                  </a>
+                  <a class="contacts__btn btn btn_contour icon-stack" href="./sheme.html">
+                    Схема центра
+                  </a>
+                </div>
+                <div class="contacts__map-box" id="map"></div>
+                <div class="contacts__content">
+                  <div class="list-grid">
+                    <div class="list-grid__box">
+                      <div class="contact-card">
+                        <div class="contact-card__item">
+                          <figure class="contact-card__img-box" aria-hidden="true">
+                            <img class="contact-card__img" src="./img/content/icons/tel.svg" alt="Телефон">
+                          </figure>
+                          <dl class="contact-card__content">
+                            <dt class="contact-card__name">Телефон</dt>
+                            <dd class="contact-card__text">
+                              <a href="tel:+74958033335">+7 (495) 803-33-35</a>
+                            </dd>
+                          </dl>
+                        </div>
+                        <div class="contact-card__item">
+                          <figure class="contact-card__img-box" aria-hidden="true">
+                            <img class="contact-card__img" src="./img/content/icons/time.svg" alt="Режим работы">
+                          </figure>
+                          <dl class="contact-card__content">
+                            <dt class="contact-card__name">Режим работы</dt>
+                            <dd class="contact-card__text">ПН-СБ 10:00 - 21:00, ВС 10:00 - 20:00</dd>
+                          </dl>
+                        </div>
+                        <div class="contact-card__item">
+                          <figure class="contact-card__img-box" aria-hidden="true">
+                            <img class="contact-card__img" src="./img/content/icons/pin.svg" alt="Адрес">
+                          </figure>
+                          <dl class="contact-card__content">
+                            <dt class="contact-card__name">Адрес</dt>
+                            <dd class="contact-card__text">Москва, Нахимовский проспект, 24</dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-grid__box">
+                      <div class="contact-path">
+                        <div class="contact-path__item">
+                          <div class="contact-path__head">
+                            <span
+                              class="contact-path__icon"
+                              aria-hidden="true"
+                              style="background-color: #ff6a00"
+                            >
+                              М
+                            </span>
+                            <span class="contact-path__title">«Профсоюзная»</span>
+                          </div>
+                          <p class="contact-path__text">
+                            (10 минут пешком) любые троллейбусы, автобусы 44, 219, остановка
+                            &laquo;Ткацкая фабрика&raquo;.
+                          </p>
+                        </div>
+                        <div class="contact-path__item">
+                          <div class="contact-path__head">
+                            <span
+                              class="contact-path__icon"
+                              aria-hidden="true"
+                              style="background-color: #adabac"
+                            >
+                              М
+                            </span>
+                            <span class="contact-path__title">«Нахимовский проспект»</span>
+                          </div>
+                          <p class="contact-path__text">
+                            (13 минут пешком) любые троллейбусы, автобус 219, остановка
+                            &laquo;Ткацкая фабрика&raquo;.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <script src="https://api-maps.yandex.ru/2.1/?apikey=fe56076b-3bdf-425c-a83d-11dbe30b03b6&lang=ru_RU"></script>
+                <script>
+                  function calculateNewSizeAndOffset() {
+                    var windowWidth = window.innerWidth;
+                    if (windowWidth < 768) {
+                      return { size: [192, 46], offset: [-20, -35], zoom: 13 };
+                    } else {
+                      return { size: [246, 59], offset: [20, 0], zoom: 14.5 };
+                    }
+                  }
+
+                  ymaps.ready(function () {
+                    const map = new ymaps.Map(document.querySelector("#map"), {
+                      center: [55.672428, 37.582709],
+                      zoom: calculateNewSizeAndOffset().zoom,
+                    });
+
+                    const myPlacemark = new ymaps.Placemark(
+                      [55.672428, 37.582709],
+                      {},
+                      {
+                        iconLayout: "default#image",
+                        iconImageHref: "./img/content/icons/map.svg",
+                        iconImageSize: calculateNewSizeAndOffset().size,
+                        iconImageOffset: calculateNewSizeAndOffset().offset,
+                      }
+                    );
+                    map.controls.remove("geolocationControl"); // удаляем геолокацию
+                    map.controls.remove("searchControl"); // удаляем поиск
+                    map.controls.remove("trafficControl"); // удаляем контроль трафика
+                    map.controls.remove("typeSelector"); // удаляем тип
+                    map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+                    map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+                    map.controls.remove("rulerControl"); // удаляем контрол правил
+                    map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+                    map.geoObjects.add(myPlacemark);
+
+                    window.addEventListener("resize", function () {
+                      const newSizeAndOffset = calculateNewSizeAndOffset();
+                      map.setZoom(newSizeAndOffset.zoom);
+                      myPlacemark.options.set("iconImageSize", newSizeAndOffset.size);
+                      myPlacemark.options.set("iconImageOffset", newSizeAndOffset.offset);
+                    });
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__grid footer__grid_main">
+              <div class="footer__box footer__box_menu">
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./index.html">Аренда помещения</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./index.html">Заявка на аренду</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./scheme.html">Схема центра</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./about.html">О комплексе</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./events.html">События</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./contacts.html">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <ul class="footer-menu">
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./shops.html">Магазины</a>
+                  </li>
+                  <li class="footer-menu__item">
+                    <a class="footer-menu__link" href="./brends.html">Бренды</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_">
+                <div class="contact-card">
+                  <div class="contact-card__item">
+                    <dl class="contact-card__content">
+                      <dt class="contact-card__name">Телефон</dt>
+                      <dd class="contact-card__text">
+                        <a href="tel:+74958033335">+7 (495) 803-33-35</a>
+                      </dd>
+                    </dl>
+                  </div>
+                  <div class="contact-card__item">
+                    <dl class="contact-card__content">
+                      <dt class="contact-card__name">Адрес</dt>
+                      <dd class="contact-card__text">Москва, Нахимовский проспект, 24</dd>
+                    </dl>
+                  </div>
+                  <div class="contact-card__item contact-card__item_footer-social"></div>
+                </div>
+              </div>
+            </div>
+            <div class="footer__grid footer__grid_info">
+              <div class="footer__box footer__box_copy">
+                <p class="footer__info">©2000–2024 «Dekor&Mobel Expo»</p>
+              </div>
+              <div class="footer__box footer__box_policy">
+                <p class="footer__info">
+                  <a href="./policy.html">Политика обработки персональных данных</a>
+                </p>
+              </div>
+              <div class="footer__box footer__box_social">
+                <ul class="social" data-da=".contact-card__item_footer-social,767,first">
+                  <li class="social__item">
+                    <a class="social__link" href="https://vk.com/" target="_blank">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.8728 17.5197C23.8437 17.457 23.8166 17.4051 23.7915 17.3635C23.3751 16.6135 22.5793 15.693 21.4048 14.6017L21.3799 14.5767L21.3675 14.5644L21.3549 14.5519H21.3423C20.8093 14.0437 20.4717 13.702 20.3303 13.5271C20.0716 13.1938 20.0137 12.8565 20.1551 12.5147C20.2549 12.2565 20.6301 11.7112 21.2797 10.878C21.6214 10.4364 21.892 10.0825 22.0918 9.81589C23.5331 7.89977 24.158 6.67535 23.9663 6.14213L23.8919 6.01753C23.8418 5.94251 23.7127 5.87388 23.5047 5.8113C23.2962 5.74884 23.0297 5.73851 22.7047 5.78014L19.106 5.80499C19.0477 5.78434 18.9645 5.78626 18.856 5.8113C18.7477 5.83633 18.6935 5.84889 18.6935 5.84889L18.6309 5.88019L18.5812 5.91778C18.5395 5.94264 18.4937 5.98637 18.4436 6.04887C18.3939 6.11115 18.3523 6.18424 18.319 6.26752C17.9272 7.27552 17.4817 8.21271 16.9818 9.07903C16.6735 9.59561 16.3904 10.0433 16.1319 10.4224C15.8737 10.8013 15.6571 11.0805 15.4823 11.2595C15.3073 11.4386 15.1493 11.5821 15.0074 11.6905C14.8657 11.799 14.7575 11.8448 14.6827 11.828C14.6076 11.8113 14.5369 11.7946 14.47 11.778C14.3534 11.703 14.2597 11.601 14.189 11.4719C14.118 11.3427 14.0702 11.1802 14.0452 10.9845C14.0204 10.7886 14.0057 10.6201 14.0015 10.4784C13.9976 10.3369 13.9994 10.1367 14.0078 9.87852C14.0165 9.62017 14.0204 9.44536 14.0204 9.35371C14.0204 9.0371 14.0265 8.69349 14.0389 8.32278C14.0515 7.95207 14.0617 7.65835 14.0703 7.44197C14.0788 7.22537 14.0827 6.9962 14.0827 6.75461C14.0827 6.51301 14.068 6.32355 14.0389 6.18603C14.0102 6.04869 13.9661 5.91538 13.9081 5.78613C13.8496 5.65702 13.7641 5.55714 13.6519 5.48624C13.5395 5.41542 13.3997 5.35923 13.2333 5.31747C12.7917 5.21755 12.2295 5.1635 11.5462 5.1551C9.99683 5.13847 9.00126 5.23852 8.55974 5.45512C8.3848 5.54664 8.2265 5.67168 8.08495 5.82985C7.93496 6.01319 7.91404 6.11325 8.02232 6.1297C8.52223 6.20459 8.87613 6.38373 9.08442 6.66694L9.15948 6.81702C9.21786 6.9253 9.27616 7.117 9.3345 7.39186C9.39276 7.66671 9.43035 7.97076 9.4469 8.30383C9.48847 8.91206 9.48847 9.43271 9.4469 9.86583C9.40519 10.2991 9.3658 10.6364 9.3282 10.878C9.2906 11.1196 9.23441 11.3154 9.15948 11.4653C9.08442 11.6152 9.03448 11.7069 9.00944 11.7402C8.98445 11.7734 8.96362 11.7944 8.94708 11.8026C8.8388 11.8441 8.72618 11.8652 8.60963 11.8652C8.49291 11.8652 8.35136 11.8069 8.18479 11.6902C8.01825 11.5735 7.84542 11.4132 7.66628 11.2091C7.48714 11.0049 7.28511 10.7196 7.0601 10.3531C6.83527 9.98658 6.60199 9.55342 6.3604 9.0536L6.16052 8.69112C6.03556 8.45793 5.86487 8.11839 5.64827 7.6728C5.43153 7.22703 5.23996 6.79584 5.07343 6.37931C5.00686 6.20437 4.90685 6.07119 4.77358 5.97954L4.71104 5.94194C4.66946 5.90868 4.60272 5.87336 4.51116 5.83572C4.41946 5.79812 4.32379 5.77116 4.22374 5.75457L0.799886 5.77943C0.450013 5.77943 0.21262 5.8587 0.0876216 6.017L0.0375959 6.09189C0.0126049 6.1336 0 6.20021 0 6.2919C0 6.38355 0.024991 6.49603 0.0750167 6.62922C0.574836 7.80392 1.11838 8.93683 1.70565 10.0281C2.29291 11.1194 2.80323 11.9985 3.23631 12.6645C3.66947 13.331 4.11099 13.9601 4.56088 14.5514C5.01076 15.1429 5.30855 15.522 5.45425 15.6885C5.60012 15.8553 5.71471 15.9801 5.79799 16.0634L6.11045 16.3632C6.31038 16.5632 6.60396 16.8027 6.99135 17.0817C7.37882 17.3609 7.80778 17.6357 8.27845 17.9067C8.74921 18.1772 9.29686 18.398 9.92172 18.5687C10.5465 18.7396 11.1546 18.8082 11.7461 18.7751H13.1832C13.4746 18.75 13.6954 18.6583 13.8455 18.5001L13.8952 18.4375C13.9286 18.3878 13.9599 18.3105 13.9888 18.2066C14.0181 18.1025 14.0326 17.9878 14.0326 17.863C14.0241 17.5048 14.0513 17.1821 14.1136 16.8947C14.1759 16.6074 14.2469 16.3908 14.3263 16.2449C14.4057 16.0992 14.4952 15.9762 14.5949 15.8765C14.6947 15.7766 14.7659 15.716 14.8077 15.6952C14.8491 15.6742 14.8823 15.66 14.9073 15.6515C15.1072 15.5849 15.3425 15.6494 15.6135 15.8453C15.8843 16.0411 16.1383 16.2828 16.3758 16.5701C16.6133 16.8577 16.8985 17.1803 17.2317 17.5384C17.5651 17.8967 17.8566 18.163 18.1064 18.3382L18.3562 18.4882C18.523 18.5882 18.7396 18.6799 19.0063 18.7631C19.2724 18.8464 19.5056 18.8672 19.7058 18.8256L22.9046 18.7757C23.221 18.7757 23.4672 18.7233 23.6419 18.6194C23.8168 18.5152 23.9208 18.4005 23.9543 18.2758C23.9878 18.1508 23.9895 18.0091 23.9607 17.8507C23.931 17.6926 23.9018 17.5821 23.8728 17.5197Z" fill="currentColor"/>
+                      </svg>
+                      <span class="seo">Dekor&Mobel Expo во Вконтакте</span>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="https://t.me/telegram" target="_blank">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.22461 20.3126L9.57461 15.0251L19.1746 6.37508C19.5996 5.98758 19.0871 5.80008 18.5246 6.13758L6.67461 13.6251L1.54961 12.0001C0.449613 11.6876 0.437112 10.9251 1.79961 10.3751L21.7621 2.67508C22.6746 2.26258 23.5496 2.90008 23.1996 4.30008L19.7996 20.3126C19.5621 21.4501 18.8746 21.7251 17.9246 21.2001L12.7496 17.3751L10.2621 19.7876C9.97461 20.0751 9.73711 20.3126 9.22461 20.3126Z" fill="currentColor"/>
+                      </svg>
+                      <span class="seo">Dekor&Mobel Expo в Телеграм</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_dev">
+                <p class="footer__info">
+                  Разработано в <a href="https://take-make.ru" target="_blank">Take&Make</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <aside class="menu">
+      <div class="menu__body">
+        <div class="menu__head">
+          <figure class="logo">
+            <img class="logo__img" src="./img/content/logo.svg" alt="Dekor&Mobel Expo">
+          </figure>
+          <button class="menu__btn" type="button" data-menu>
+            <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.8886 23.3436C23.9606 23.4157 24.001 23.5135 24.001 23.6154C24.0009 23.7173 23.9604 23.8151 23.8883 23.8872C23.8162 23.9592 23.7185 23.9997 23.6166 23.9998C23.5146 23.9999 23.4168 23.9595 23.3447 23.8875L19.001 19.5441L14.6573 23.8875C14.5851 23.9595 14.4873 23.9999 14.3854 23.9998C14.2835 23.9997 14.1857 23.9592 14.1136 23.8872C14.0416 23.8151 14.001 23.7173 14.001 23.6154C14.0009 23.5135 14.0413 23.4157 14.1133 23.3436L18.457 19.0001L14.1133 14.6567C14.0413 14.5846 14.0009 14.4868 14.001 14.3848C14.001 14.2829 14.0416 14.1852 14.1136 14.1131C14.1857 14.041 14.2835 14.0005 14.3854 14.0005C14.4873 14.0004 14.5851 14.0408 14.6573 14.1128L19.001 18.4562L23.3447 14.1128C23.4168 14.0408 23.5146 14.0004 23.6166 14.0005C23.7185 14.0005 23.8162 14.041 23.8883 14.1131C23.9604 14.1852 24.0009 14.2829 24.001 14.3848C24.001 14.4868 23.9606 14.5846 23.8886 14.6567L19.5449 19.0001L23.8886 23.3436Z" fill="currentColor"/>
+            </svg>
+            <span class="seo">Закрыть меню</span>
+          </button>
+        </div>
+        <div class="list-grid">
+          <div class="list-grid__box">
+            <ul class="header-menu">
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./about.html">О комплексе</a>
+              </li>
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./shops.html">Магазины</a>
+              </li>
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./brends.html">Бренды</a>
+              </li>
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./services.html">Услуги</a>
+              </li>
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./events.html">События</a>
+              </li>
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./contacts.html">Контакты</a>
+              </li>
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./scheme.html">Схема</a>
+              </li>
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./index.html">Информация об аренде</a>
+              </li>
+              <li class="header-menu__item">
+                <a class="header-menu__link" href="./index.html">Заявка на аренду</a>
+              </li>
+            </ul>
+          </div>
+          <div class="list-grid__box">
+            <div class="contact-card">
+              <div class="contact-card__item">
+                <dl class="contact-card__content">
+                  <dt class="contact-card__name">Телефон</dt>
+                  <dd class="contact-card__text">
+                    <a href="tel:+74958033335">+7 (495) 803-33-35</a>
+                  </dd>
+                </dl>
+              </div>
+              <div class="contact-card__item">
+                <dl class="contact-card__content">
+                  <dt class="contact-card__name">Режим работы</dt>
+                  <dd class="contact-card__text">ПН-СБ 10:00 - 21:00    ВС 10:00 - 20:00</dd>
+                </dl>
+              </div>
+              <div class="contact-card__item">
+                <dl class="contact-card__content">
+                  <dt class="contact-card__name">Email</dt>
+                  <dd class="contact-card__text">
+                    <a href="mailto:info@mobelexpo.ru">info@mobelexpo.ru</a>
+                  </dd>
+                </dl>
+              </div>
+              <div class="contact-card__item">
+                <dl class="contact-card__content">
+                  <dt class="contact-card__name">Адрес</dt>
+                  <dd class="contact-card__text">Москва, Нахимовский проспект, 24</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="popup" id="callback">
+      <div class="popup__body">
+        <div class="popup__inner">
+          <div class="popup__head">
+            <h5 class="popup__title _h2">Обратная связь</h5>
+            <button class="popup__close icon-close" type="button" data-close>
+              <span class="seo">Закрыть окно</span>
+            </button>
+          </div>
+          <div class="popup__content">
+            <!-- <form class="form wpcf7-form sent" action="#"> -->
+            <!-- <form class="form wpcf7-form failed aborted" action="#"> -->
+            <form class="form" action="#">
+              <div class="form__inner">
+                <div class="form__body">
+                  <div class="form__item form__item_large">
+                    <div class="form__label">Как к вам обращаться? <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input type="text" placeholder="Иванов Иван Сергеевич" required>
+                    </span>
+                  </div>
+                  <div class="form__item">
+                    <div class="form__label">Адрес эл. почты <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input class="wpcf7-not-valid" type="email" placeholder="my@mail.ru" required>
+                    </span>
+                    <div class="wpcf7-not-valid-tip">Адрес должен соответствовать шаблону my@mail.ru</div>
+                  </div>
+                  <div class="form__item">
+                    <div class="form__label">Телефон <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input type="tel" placeholder="+7" required>
+                    </span>
+                  </div>
+                  <div class="form__item form__item_large">
+                    <div class="form__label">Ваше сообщение</div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <textarea placeholder="Введите текст..."></textarea>
+                    </span>
+                  </div>
+                </div>
+                <div class="form__action">
+                  <div class="form__submit">
+                    <button class="form__btn btn btn_accent icon-link" type="submit">Отправить</button>
+                  </div>
+                  <div class="form__agree">
+                    Нажимая на кнопку вы принимаете условия <a href="#">пользовательского соглашения</a>.
+                    Этот сайт защищен reCAPTCHA и применяются.
+                    <a href="#">Политика конфиденциальности</a> и
+                    <a href="#">Условия обслуживания</a> Google
+                  </div>
+                </div>
+                <div class="form__reload">
+                  <a class="form__btn btn btn_accent icon-link" href="#">Отправить еще раз</a>
+                </div>
+                <div class="wpcf7-response-output">
+                  Спасибо за заполнение формы! <br>
+                  Оно успешно отправлено и мы свяжемся с вами в ближайшее время
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
