@@ -1080,6 +1080,10 @@ body {
   flex-direction: column;
 }
 
+.menu__list + .menu__list {
+  border-top: 1px solid var(--color-light);
+}
+
 .menu__item + .menu__item {
   border-top: 1px solid var(--color-light);
 }
@@ -1098,6 +1102,10 @@ body {
 
 .menu__link:focus-visible {
   outline: none;
+  color: var(--color-accent);
+}
+
+.menu__link_btn {
   color: var(--color-accent);
 }
 
@@ -2292,6 +2300,7 @@ body {
 
 .article__body img {
   margin: 24px 0;
+  border-radius: 6px;
 }
 
 .article__body > *:first-child {
@@ -2555,6 +2564,7 @@ body {
 
   .menu__list + .menu__list {
     margin-left: 44px;
+    border-top: none;
   }
 
   .menu__item + .menu__item {
