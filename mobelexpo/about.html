@@ -69,7 +69,51 @@
         <section class="about _mb">
           <div class="container">
             <div class="about__body">
-              <div class="about__media"></div>
+              <div class="about__media">
+                <div class="about__gallery">
+                  <div class="gallery-slider">
+                    <div class="gallery-slider__items">
+                      <figure class="gallery-slider__item">
+                        <picture><source srcset="./img/content/photo/about-1.webp" type="image/webp"><img class="gallery-slider__img" src="./img/content/photo/about-1.jpg" alt="image"></picture>
+                      </figure>
+                      <figure class="gallery-slider__item">
+                        <picture><source srcset="./img/content/photo/about-2.webp" type="image/webp"><img class="gallery-slider__img" src="./img/content/photo/about-2.jpg" alt="image"></picture>
+                      </figure>
+                    </div>
+                    <div class="gallery-slider__actions">
+                      <div class="gallery-slider__pagination"></div>
+                      <button
+                        class="gallery-slider__button gallery-slider__button_prev icon-left ilink"
+                        type="button"
+                      >
+                        <span class="seo">Следующий слайд</span>
+                      </button>
+                      <button
+                        class="gallery-slider__button gallery-slider__button_next icon-right ilink"
+                        type="button"
+                      >
+                        <span class="seo">Следующий слайд</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="about__info about__info_top">
+                  <dl class="info-grid">
+                    <div class="info-grid__item">
+                      <dt class="info-grid__name _h3">25 000 м<sup>2</sup></dt>
+                      <dd class="info-grid__desc">
+                        Общая площадь торгово-выставочной площадки Москвы и области
+                      </dd>
+                    </div>
+                    <div class="info-grid__item">
+                      <dt class="info-grid__name _h3">Более 1000</dt>
+                      <dd class="info-grid__desc">
+                        Фирменных магазинов ведущих производителей на территории центра
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
               <div class="about__main">
                 <div class="about__content">
                   <ul class="breadcrumbs">
@@ -186,6 +230,12 @@
               <!-- если нужны стрелки - убрать style="padding-right: 0" -->
               <div class="h-news__head" style="padding-right: 0">
                 <h2 class="h-news__title _h2">Новости и события</h2>
+                <div class="h-news__action">
+                  <a class="h-news__more" href="./events.html">
+                    <span class="h-news__more-icon icon-link ilink" aria-hidden="true"></span>
+                    <span class="h-news__more-text">Все cобытия</span>
+                  </a>
+                </div>
               </div>
               <div class="news-slider">
                 <div class="news-slider__wrapper">
