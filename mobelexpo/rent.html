@@ -453,7 +453,7 @@
                 <a class="header-menu__link" href="./rent.html">Информация об аренде</a>
               </li>
               <li class="header-menu__item">
-                <a class="header-menu__link" href="./index.html">Заявка на аренду</a>
+                <a class="header-menu__link" href="./rent.html#rent-order">Заявка на аренду</a>
               </li>
             </ul>
           </div>
@@ -495,8 +495,106 @@
     <div class="popup" id="rent-order">
       <div class="popup__body">
         <div class="popup__inner">
-          <div class="popup__head"></div>
-          <div class="popup__content"></div>
+          <div class="popup__head">
+            <h5 class="popup__title _h2">Заявка на аренду</h5>
+            <button class="popup__close icon-close" type="button" data-close>
+              <span class="seo">Закрыть окно</span>
+            </button>
+          </div>
+          <div class="popup__content">
+            <!-- <form class="form wpcf7-form sent" action="#"> -->
+            <!-- <form class="form wpcf7-form failed aborted" action="#"> -->
+            <form class="form" action="#">
+              <div class="form__inner">
+                <div class="form__body">
+                  <div class="form__item">
+                    <div class="form__label">Название компании <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input type="text" placeholder="ООО “Компания”" required>
+                    </span>
+                  </div>
+                  <div class="form__item">
+                    <div class="form__label">Сайт <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input type="text" placeholder="www.site.ru" required>
+                    </span>
+                  </div>
+                  <div class="form__item form__item_large">
+                    <div class="form__label">Какой ассортимент хотите представлять? <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input type="text" placeholder="Одежда" required>
+                    </span>
+                    <div class="wpcf7-not-valid-tip">Адрес должен соответствовать шаблону my@mail.ru</div>
+                  </div>
+                  <div class="form__item">
+                    <div class="form__label">Телефон <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input type="tel" placeholder="+7" required>
+                    </span>
+                  </div>
+                  <div class="form__item">
+                    <div class="form__label">Контактное лицо (ФИО) <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input type="text" placeholder="Иванов Иван Сергеевич" required>
+                    </span>
+                  </div>
+                  <div class="form__item">
+                    <div class="form__label">Площадь, м² <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <input type="text" placeholder="от 10м²" required>
+                    </span>
+                  </div>
+                  <div class="form__item">
+                    <div class="form__label">Помещение под <b>*</b></div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <select data-modifier="fill" data-speed="0" data-show-selected data-scroll>
+                      <option value="Торговлю" selected>Торговлю</option>
+                      <option value="Вариант 2">Вариант 2</option>
+                    </select>
+                  </div>
+                  <div class="form__item form__item_large">
+                    <div class="form__label">Дополнительная информация</div>
+                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
+                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
+                    <span class="wpcf7-form-control-wrap">
+                      <textarea placeholder="Введите текст..."></textarea>
+                    </span>
+                  </div>
+                </div>
+                <div class="form__action">
+                  <div class="form__submit">
+                    <button class="form__btn btn btn_accent icon-link" type="submit">Отправить</button>
+                  </div>
+                  <div class="form__agree">
+                    Нажимая на кнопку вы принимаете условия <a href="#">пользовательского соглашения</a>.
+                    Этот сайт защищен reCAPTCHA и применяются.
+                    <a href="#">Политика конфиденциальности</a> и
+                    <a href="#">Условия обслуживания</a> Google
+                  </div>
+                </div>
+                <div class="form__reload">
+                  <a class="form__btn btn btn_accent icon-link" href="#">Отправить еще раз</a>
+                </div>
+                <div class="wpcf7-response-output">
+                  Спасибо за заполнение формы! <br>
+                  Оно успешно отправлено и мы свяжемся с вами в ближайшее время
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

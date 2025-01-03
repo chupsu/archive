@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Контакты</title>
+    <title>События</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -66,148 +66,321 @@
       </header>
 
       <main class="page">
-        <section class="contacts _mb">
+        <section class="events _mb">
           <div class="container">
-            <div class="contacts__body">
+            <div class="events__body">
               <div class="page-head">
                 <ul class="breadcrumbs">
                   <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link" href="./index.html">Главная</a>
                   </li>
                   <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Контакты</span>
+                    <span class="breadcrumbs__link">События</span>
                   </li>
                 </ul>
-                <h1 class="page-head__title _h1">Контакты</h1>
+                <h1 class="page-head__title _h1">События</h1>
               </div>
-              <div class="contacts__main">
-                <div class="contacts__action">
-                  <a class="contacts__btn btn btn_accent icon-mail" href="#" data-popup="#callback">
-                    Обратная связь
-                  </a>
-                  <a class="contacts__btn btn btn_contour icon-stack" href="./sheme.html">
-                    Схема центра
-                  </a>
+              <div class="events__main">
+                <div class="events__filters">
+                  <select data-modifier="adaptive" data-speed="0" data-show-selected data-scroll>
+                    <option value="Все события" selected>Все события</option>
+                    <option value="Акции">Акции</option>
+                    <option value="Новости">Новости</option>
+                  </select>
                 </div>
-                <div class="contacts__map-box" id="map"></div>
-                <div class="contacts__content">
-                  <div class="list-grid">
-                    <div class="list-grid__box">
-                      <div class="contact-card">
-                        <div class="contact-card__item">
-                          <figure class="contact-card__img-box" aria-hidden="true">
-                            <img class="contact-card__img" src="./img/content/icons/tel.svg" alt="Телефон">
-                          </figure>
-                          <dl class="contact-card__content">
-                            <dt class="contact-card__name">Телефон</dt>
-                            <dd class="contact-card__text">
-                              <a href="tel:+74958033335">+7 (495) 803-33-35</a>
-                            </dd>
-                          </dl>
-                        </div>
-                        <div class="contact-card__item">
-                          <figure class="contact-card__img-box" aria-hidden="true">
-                            <img class="contact-card__img" src="./img/content/icons/time.svg" alt="Режим работы">
-                          </figure>
-                          <dl class="contact-card__content">
-                            <dt class="contact-card__name">Режим работы</dt>
-                            <dd class="contact-card__text">ПН-СБ 10:00 - 21:00, ВС 10:00 - 20:00</dd>
-                          </dl>
-                        </div>
-                        <div class="contact-card__item">
-                          <figure class="contact-card__img-box" aria-hidden="true">
-                            <img class="contact-card__img" src="./img/content/icons/pin.svg" alt="Адрес">
-                          </figure>
-                          <dl class="contact-card__content">
-                            <dt class="contact-card__name">Адрес</dt>
-                            <dd class="contact-card__text">Москва, Нахимовский проспект, 24</dd>
-                          </dl>
-                        </div>
+                <div class="events__items">
+                  <article class="new-card">
+                    <figure class="new-card__img-box">
+                      <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                    </figure>
+                    <div class="new-card__main">
+                      <a class="new-card__link" href="./new.html">
+                        <span class="seo">Открыть событие</span>
+                      </a>
+                      <div class="new-card__content">
+                        <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                        <p class="new-card__text">
+                          Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                          Наступили холода, а значит, самое время укутаться в плед, заварить
+                          чашку ароматного чая...
+                        </p>
                       </div>
+                      <div
+                        class="new-card__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
                     </div>
-                    <div class="list-grid__box">
-                      <div class="contact-path">
-                        <div class="contact-path__item">
-                          <div class="contact-path__head">
-                            <span
-                              class="contact-path__icon"
-                              aria-hidden="true"
-                              style="background-color: #ff6a00"
-                            >
-                              М
-                            </span>
-                            <span class="contact-path__title">«Профсоюзная»</span>
-                          </div>
-                          <p class="contact-path__text">
-                            (10 минут пешком) любые троллейбусы, автобусы 44, 219, остановка
-                            &laquo;Ткацкая фабрика&raquo;.
-                          </p>
-                        </div>
-                        <div class="contact-path__item">
-                          <div class="contact-path__head">
-                            <span
-                              class="contact-path__icon"
-                              aria-hidden="true"
-                              style="background-color: #adabac"
-                            >
-                              М
-                            </span>
-                            <span class="contact-path__title">«Нахимовский проспект»</span>
-                          </div>
-                          <p class="contact-path__text">
-                            (13 минут пешком) любые троллейбусы, автобус 219, остановка
-                            &laquo;Ткацкая фабрика&raquo;.
-                          </p>
-                        </div>
+                    <div class="new-card__info">
+                      <ul class="new-info">
+                        <li class="new-info__item">
+                          <time class="new-info__date" datetime="2024-04-24 19:00">
+                            14 ноября, 2024
+                          </time>
+                        </li>
+                        <li class="new-info__item">Акция</li>
+                      </ul>
+                    </div>
+                  </article>
+                  <article class="new-card">
+                    <figure class="new-card__img-box">
+                      <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                    </figure>
+                    <div class="new-card__main">
+                      <a class="new-card__link" href="./new.html">
+                        <span class="seo">Открыть событие</span>
+                      </a>
+                      <div class="new-card__content">
+                        <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                        <p class="new-card__text">
+                          Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                          Наступили холода, а значит, самое время укутаться в плед, заварить
+                          чашку ароматного чая...
+                        </p>
                       </div>
+                      <div
+                        class="new-card__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
                     </div>
+                    <div class="new-card__info">
+                      <ul class="new-info">
+                        <li class="new-info__item">
+                          <time class="new-info__date" datetime="2024-04-24 19:00">
+                            14 ноября, 2024
+                          </time>
+                        </li>
+                        <li class="new-info__item">Акция</li>
+                      </ul>
+                    </div>
+                  </article>
+                  <article class="new-card">
+                    <figure class="new-card__img-box">
+                      <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                    </figure>
+                    <div class="new-card__main">
+                      <a class="new-card__link" href="./new.html">
+                        <span class="seo">Открыть событие</span>
+                      </a>
+                      <div class="new-card__content">
+                        <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                        <p class="new-card__text">
+                          Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                          Наступили холода, а значит, самое время укутаться в плед, заварить
+                          чашку ароматного чая...
+                        </p>
+                      </div>
+                      <div
+                        class="new-card__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
+                    </div>
+                    <div class="new-card__info">
+                      <ul class="new-info">
+                        <li class="new-info__item">
+                          <time class="new-info__date" datetime="2024-04-24 19:00">
+                            14 ноября, 2024
+                          </time>
+                        </li>
+                        <li class="new-info__item">Акция</li>
+                      </ul>
+                    </div>
+                  </article>
+                  <article class="new-card">
+                    <figure class="new-card__img-box">
+                      <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                    </figure>
+                    <div class="new-card__main">
+                      <a class="new-card__link" href="./new.html">
+                        <span class="seo">Открыть событие</span>
+                      </a>
+                      <div class="new-card__content">
+                        <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                        <p class="new-card__text">
+                          Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                          Наступили холода, а значит, самое время укутаться в плед, заварить
+                          чашку ароматного чая...
+                        </p>
+                      </div>
+                      <div
+                        class="new-card__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
+                    </div>
+                    <div class="new-card__info">
+                      <ul class="new-info">
+                        <li class="new-info__item">
+                          <time class="new-info__date" datetime="2024-04-24 19:00">
+                            14 ноября, 2024
+                          </time>
+                        </li>
+                        <li class="new-info__item">Акция</li>
+                      </ul>
+                    </div>
+                  </article>
+                  <article class="new-card">
+                    <figure class="new-card__img-box">
+                      <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                    </figure>
+                    <div class="new-card__main">
+                      <a class="new-card__link" href="./new.html">
+                        <span class="seo">Открыть событие</span>
+                      </a>
+                      <div class="new-card__content">
+                        <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                        <p class="new-card__text">
+                          Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                          Наступили холода, а значит, самое время укутаться в плед, заварить
+                          чашку ароматного чая...
+                        </p>
+                      </div>
+                      <div
+                        class="new-card__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
+                    </div>
+                    <div class="new-card__info">
+                      <ul class="new-info">
+                        <li class="new-info__item">
+                          <time class="new-info__date" datetime="2024-04-24 19:00">
+                            14 ноября, 2024
+                          </time>
+                        </li>
+                        <li class="new-info__item">Акция</li>
+                      </ul>
+                    </div>
+                  </article>
+                  <article class="new-card">
+                    <figure class="new-card__img-box">
+                      <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                    </figure>
+                    <div class="new-card__main">
+                      <a class="new-card__link" href="./new.html">
+                        <span class="seo">Открыть событие</span>
+                      </a>
+                      <div class="new-card__content">
+                        <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                        <p class="new-card__text">
+                          Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                          Наступили холода, а значит, самое время укутаться в плед, заварить
+                          чашку ароматного чая...
+                        </p>
+                      </div>
+                      <div
+                        class="new-card__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
+                    </div>
+                    <div class="new-card__info">
+                      <ul class="new-info">
+                        <li class="new-info__item">
+                          <time class="new-info__date" datetime="2024-04-24 19:00">
+                            14 ноября, 2024
+                          </time>
+                        </li>
+                        <li class="new-info__item">Акция</li>
+                      </ul>
+                    </div>
+                  </article>
+                  <article class="new-card">
+                    <figure class="new-card__img-box">
+                      <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                    </figure>
+                    <div class="new-card__main">
+                      <a class="new-card__link" href="./new.html">
+                        <span class="seo">Открыть событие</span>
+                      </a>
+                      <div class="new-card__content">
+                        <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                        <p class="new-card__text">
+                          Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                          Наступили холода, а значит, самое время укутаться в плед, заварить
+                          чашку ароматного чая...
+                        </p>
+                      </div>
+                      <div
+                        class="new-card__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
+                    </div>
+                    <div class="new-card__info">
+                      <ul class="new-info">
+                        <li class="new-info__item">
+                          <time class="new-info__date" datetime="2024-04-24 19:00">
+                            14 ноября, 2024
+                          </time>
+                        </li>
+                        <li class="new-info__item">Акция</li>
+                      </ul>
+                    </div>
+                  </article>
+                  <article class="new-card">
+                    <figure class="new-card__img-box">
+                      <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
+                    </figure>
+                    <div class="new-card__main">
+                      <a class="new-card__link" href="./new.html">
+                        <span class="seo">Открыть событие</span>
+                      </a>
+                      <div class="new-card__content">
+                        <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
+                        <p class="new-card__text">
+                          Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
+                          Наступили холода, а значит, самое время укутаться в плед, заварить
+                          чашку ароматного чая...
+                        </p>
+                      </div>
+                      <div
+                        class="new-card__link-icon icon-link ilink ilink_large"
+                        aria-hidden="true"
+                      ></div>
+                    </div>
+                    <div class="new-card__info">
+                      <ul class="new-info">
+                        <li class="new-info__item">
+                          <time class="new-info__date" datetime="2024-04-24 19:00">
+                            14 ноября, 2024
+                          </time>
+                        </li>
+                        <li class="new-info__item">Акция</li>
+                      </ul>
+                    </div>
+                  </article>
+                </div>
+                <div class="page-action">
+                  <button class="page-action__btn page-action__btn_more btn btn_light" type="button">
+                    Загрузить еще
+                  </button>
+                  <div class="page-action__main">
+                    <nav class="pagination">
+                      <ul>
+                        <li>
+                          <a href="#" class="page-numbers">1</a>
+                        </li>
+                        <li>
+                          <span class="page-numbers dots">...</span>
+                        </li>
+                        <li>
+                          <a class="page-numbers" href="#">8</a>
+                        </li>
+                        <li>
+                          <a class="page-numbers current" href="#">9</a>
+                        </li>
+                        <li>
+                          <a class="page-numbers" href="#">10</a>
+                        </li>
+                        <li>
+                          <span class="page-numbers dots">...</span>
+                        </li>
+                        <li>
+                          <a class="page-numbers" href="#">33</a>
+                        </li>
+                      </ul>
+                    </nav>
                   </div>
+                  <a class="page-action__btn page-action__btn_next btn btn_light icon-right" href="#">
+                    Вперед
+                  </a>
                 </div>
-                <script src="https://api-maps.yandex.ru/2.1/?apikey=fe56076b-3bdf-425c-a83d-11dbe30b03b6&lang=ru_RU"></script>
-                <script>
-                  function calculateNewSizeAndOffset() {
-                    var windowWidth = window.innerWidth;
-                    if (windowWidth < 768) {
-                      return { size: [192, 46], offset: [-20, -35], zoom: 13 };
-                    } else {
-                      return { size: [246, 59], offset: [20, 0], zoom: 14.5 };
-                    }
-                  }
-
-                  ymaps.ready(function () {
-                    const map = new ymaps.Map(document.querySelector("#map"), {
-                      center: [55.672428, 37.582709],
-                      zoom: calculateNewSizeAndOffset().zoom,
-                    });
-
-                    const myPlacemark = new ymaps.Placemark(
-                      [55.672428, 37.582709],
-                      {},
-                      {
-                        iconLayout: "default#image",
-                        iconImageHref: "./img/content/icons/map.svg",
-                        iconImageSize: calculateNewSizeAndOffset().size,
-                        iconImageOffset: calculateNewSizeAndOffset().offset,
-                      }
-                    );
-                    map.controls.remove("geolocationControl"); // удаляем геолокацию
-                    map.controls.remove("searchControl"); // удаляем поиск
-                    map.controls.remove("trafficControl"); // удаляем контроль трафика
-                    map.controls.remove("typeSelector"); // удаляем тип
-                    map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
-                    map.controls.remove("zoomControl"); // удаляем контрол зуммирования
-                    map.controls.remove("rulerControl"); // удаляем контрол правил
-                    map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
-                    map.geoObjects.add(myPlacemark);
-
-                    window.addEventListener("resize", function () {
-                      const newSizeAndOffset = calculateNewSizeAndOffset();
-                      map.setZoom(newSizeAndOffset.zoom);
-                      myPlacemark.options.set("iconImageSize", newSizeAndOffset.size);
-                      myPlacemark.options.set("iconImageOffset", newSizeAndOffset.offset);
-                    });
-                  });
-                </script>
               </div>
             </div>
           </div>
@@ -393,78 +566,5 @@
         </div>
       </div>
     </aside>
-    <div class="popup" id="callback">
-      <div class="popup__body">
-        <div class="popup__inner">
-          <div class="popup__head">
-            <h5 class="popup__title _h2">Обратная связь</h5>
-            <button class="popup__close icon-close" type="button" data-close>
-              <span class="seo">Закрыть окно</span>
-            </button>
-          </div>
-          <div class="popup__content">
-            <!-- <form class="form wpcf7-form sent" action="#"> -->
-            <!-- <form class="form wpcf7-form failed aborted" action="#"> -->
-            <form class="form" action="#">
-              <div class="form__inner">
-                <div class="form__body">
-                  <div class="form__item form__item_large">
-                    <div class="form__label">Как к вам обращаться? <b>*</b></div>
-                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
-                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
-                    <span class="wpcf7-form-control-wrap">
-                      <input type="text" placeholder="Иванов Иван Сергеевич" required>
-                    </span>
-                  </div>
-                  <div class="form__item">
-                    <div class="form__label">Адрес эл. почты <b>*</b></div>
-                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
-                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
-                    <span class="wpcf7-form-control-wrap">
-                      <input class="wpcf7-not-valid" type="email" placeholder="my@mail.ru" required>
-                    </span>
-                    <div class="wpcf7-not-valid-tip">Адрес должен соответствовать шаблону my@mail.ru</div>
-                  </div>
-                  <div class="form__item">
-                    <div class="form__label">Телефон <b>*</b></div>
-                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
-                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
-                    <span class="wpcf7-form-control-wrap">
-                      <input type="tel" placeholder="+7" required>
-                    </span>
-                  </div>
-                  <div class="form__item form__item_large">
-                    <div class="form__label">Ваше сообщение</div>
-                    <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
-                    <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
-                    <span class="wpcf7-form-control-wrap">
-                      <textarea placeholder="Введите текст..."></textarea>
-                    </span>
-                  </div>
-                </div>
-                <div class="form__action">
-                  <div class="form__submit">
-                    <button class="form__btn btn btn_accent icon-link" type="submit">Отправить</button>
-                  </div>
-                  <div class="form__agree">
-                    Нажимая на кнопку вы принимаете условия <a href="#">пользовательского соглашения</a>.
-                    Этот сайт защищен reCAPTCHA и применяются.
-                    <a href="#">Политика конфиденциальности</a> и
-                    <a href="#">Условия обслуживания</a> Google
-                  </div>
-                </div>
-                <div class="form__reload">
-                  <a class="form__btn btn btn_accent icon-link" href="#">Отправить еще раз</a>
-                </div>
-                <div class="wpcf7-response-output">
-                  Спасибо за заполнение формы! <br>
-                  Оно успешно отправлено и мы свяжемся с вами в ближайшее время
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
