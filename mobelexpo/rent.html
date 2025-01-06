@@ -322,7 +322,7 @@
                     <a class="footer-menu__link" href="./rent.html">Аренда помещения</a>
                   </li>
                   <li class="footer-menu__item">
-                    <a class="footer-menu__link" href="./index.html">Заявка на аренду</a>
+                    <a class="footer-menu__link" href="./rent.html#rent-order">Заявка на аренду</a>
                   </li>
                   <li class="footer-menu__item">
                     <a class="footer-menu__link" href="./scheme.html">Схема центра</a>
@@ -492,7 +492,7 @@
         </div>
       </div>
     </aside>
-    <div class="popup" id="rent-order">
+    <div class="popup popup_right" id="rent-order">
       <div class="popup__body">
         <div class="popup__inner">
           <div class="popup__head">
@@ -553,7 +553,7 @@
                     <!-- span class="wpcf7-form-control-wrap полностью заменить инпутом CF7 -->
                     <!-- в function.php отключить у CF7 вывод лишних <p> и <br> -->
                     <span class="wpcf7-form-control-wrap">
-                      <input type="text" placeholder="от 10м²" required>
+                      <input type="number" placeholder="от 10м²" min="10" required>
                     </span>
                   </div>
                   <div class="form__item">

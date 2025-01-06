@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>О комплексе</title>
+    <title>Магазины</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -66,300 +66,196 @@
       </header>
 
       <main class="page">
-        <section class="about _mb">
+        <section class="catalog _mb">
           <div class="container">
-            <div class="about__body">
-              <div class="about__media">
-                <div class="about__gallery">
-                  <div class="gallery-slider">
-                    <div class="gallery-slider__items">
-                      <figure class="gallery-slider__item">
-                        <picture><source srcset="./img/content/photo/about-1.webp" type="image/webp"><img class="gallery-slider__img" src="./img/content/photo/about-1.jpg" alt="image"></picture>
-                      </figure>
-                      <figure class="gallery-slider__item">
-                        <picture><source srcset="./img/content/photo/about-2.webp" type="image/webp"><img class="gallery-slider__img" src="./img/content/photo/about-2.jpg" alt="image"></picture>
-                      </figure>
+            <div class="catalog__body">
+              <div class="page-head">
+                <ul class="breadcrumbs">
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <span class="breadcrumbs__link">Магазины</span>
+                  </li>
+                </ul>
+
+                <h1 class="page-head__title _h1">Магазины</h1>
+              </div>
+              <div class="catalog-head" data-one-select>
+                <div class="catalog-head__row catalog-head__row_small">
+                  <div class="catalog-head__col">
+                    <div class="catalog-head__items">
+                      <div class="catalog-head__item">
+                        <select data-modifier="medium" data-speed="0" data-show-selected data-scroll>
+                          <option value="Все категории" selected>Все категории</option>
+                          <option value="Мягкая мебель">Мягкая мебель</option>
+                          <option value="Корпусная мебель">Корпусная мебель</option>
+                          <option value="Детская мебель">Детская мебель</option>
+                          <option value="Кухни">Кухни</option>
+                          <option value="Столы и стулья">Столы и стулья</option>
+                          <option value="Кровати и матрасы">Кровати и матрасы</option>
+                          <option value="Предметы интерьера">Предметы интерьера</option>
+                          <option value="Ковры">Ковры</option>
+                          <option value="Текстиль">Текстиль</option>
+                          <option value="Освещение">Освещение</option>
+                          <option value="Электрооборудование">Электрооборудование</option>
+                          <option value="Двери и окна">Двери и окна</option>
+                          <option value="Напольные покрытия">Напольные покрытия</option>
+                          <option value="Плитка и керамогранит">Плитка и керамогранит</option>
+                          <option value="Искусственный и натуральный камень">
+                            Искусственный и натуральный камень
+                          </option>
+                          <option value="Лакокрасочные материалы">Лакокрасочные материалы</option>
+                          <option value="Сантехника">Сантехника</option>
+                          <option value="Вентиляция и кондиционирование">
+                            Вентиляция и кондиционирование
+                          </option>
+                          <option value="Камины">Камины</option>
+                          <option value="Лифты">Лифты</option>
+                        </select>
+                      </div>
                     </div>
-                    <div class="gallery-slider__actions">
-                      <div class="gallery-slider__pagination"></div>
-                      <button
-                        class="gallery-slider__button gallery-slider__button_prev icon-left ilink"
-                        type="button"
-                      >
-                        <span class="seo">Следующий слайд</span>
-                      </button>
-                      <button
-                        class="gallery-slider__button gallery-slider__button_next icon-right ilink"
-                        type="button"
-                      >
-                        <span class="seo">Следующий слайд</span>
-                      </button>
+                  </div>
+                  <div class="catalog-head__col">
+                    <div class="catalog-head__items">
+                      <div class="catalog-head__item">
+                        <form class="search" action="#">
+                          <input class="search__body" type="search" placeholder="Введите название магазина">
+                          <button class="search__btn icon-search" type="submit">
+                            <span class="seo">Искать</span>
+                          </button>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="about__info about__info_top">
-                  <dl class="info-grid">
-                    <div class="info-grid__item">
-                      <dt class="info-grid__name _h3">25 000 м<sup>2</sup></dt>
-                      <dd class="info-grid__desc">
-                        Общая площадь торгово-выставочной площадки Москвы и области
-                      </dd>
-                    </div>
-                    <div class="info-grid__item">
-                      <dt class="info-grid__name _h3">Более 1000</dt>
-                      <dd class="info-grid__desc">
-                        Фирменных магазинов ведущих производителей на территории центра
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
               </div>
-              <div class="about__main">
-                <div class="about__content">
-                  <ul class="breadcrumbs">
-                    <li class="breadcrumbs__item">
-                      <a class="breadcrumbs__link" href="./index.html">Главная</a>
-                    </li>
-                    <li class="breadcrumbs__item">
-                      <span class="breadcrumbs__link">О комплексе</span>
-                    </li>
-                  </ul>
-                  <h1 class="about__title _h2">О комплексе</h1>
-                  <p class="about__text">
-                    Торгово-выставочный комплекс MobelExpo и DekorExpo, где располагаются, как
-                    крупные фирмы и знаменитые производители, так и небольшие частные
-                    предприятия, мастерские и артели, в которых представлена продукция крупнейших
-                    торговых марок России и Европы. Большой выбор сантехники, керамической плитки,
-                    напольных и настенных покрытий, светильников, дверей, штор и многое другое
-                    на ваш вкус.
-                  </p>
-                </div>
-                <div class="about__content">
-                  <h3 class="about__subtitle _h3">Все, что нужно</h3>
-                  <p class="about__text">
-                    За один визит к нам, вы приобретёте всё, что надо для ремонта
-                    и обустройства, а также получите грамотную консультацию от мастеров
-                    своего дела.
-                  </p>
-                  <p class="about__text">
-                    Всё это позволяет покупателю обдумать и взвесить все возможные варианты
-                    и предложения из огромного ассортимента товаров и разного диапазона
-                    цен. Именно в широком ассортименте предложений заключается уникальность главной
-                    торгово-выставочной площадки Москвы и области. MobelExpo
-                    &amp; DekorExpo &mdash; это центр строительства, ремонта и дизайна.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section _mb">
-          <div class="container">
-            <div class="section__body">
-              <!-- если нужны стрелки - убрать style="padding-right: 0" -->
-              <div class="section__head" style="padding-right: 0">
-                <div class="section__head-content">
-                  <h2 class="section__title _h2">Услуги комплекса</h2>
-                </div>
-              </div>
-              <div class="benefits-slider">
-                <div class="benefits-slider__wrapper">
-                  <div class="benefits-slider__items">
-                    <div class="benefits-slider__item">
-                      <figure class="benefits-slider__img-box">
-                        <img class="benefits-slider__img" src="./img/content/icons/coffee.svg" alt="Кафе">
-                      </figure>
-                      <h3 class="benefits-slider__title _h3">Кафе</h3>
-                      <p class="benefits-slider__text">
-                        Для тех, кто проголодался, Dekor&amp;Mobel Expo может предложить отличные кафе,
-                        где можно недорого перекусить.
-                      </p>
-                    </div>
-                    <div class="benefits-slider__item">
-                      <figure class="benefits-slider__img-box">
-                        <img class="benefits-slider__img" src="./img/content/icons/car.svg" alt="Парковка">
-                      </figure>
-                      <h3 class="benefits-slider__title _h3">Парковка</h3>
-                      <p class="benefits-slider__text">
-                        Просторная парковка торгового центра, рассчитана на более 400 мест и способна
-                        вместить транспорт всех наших гостей и арендаторов.
-                      </p>
-                    </div>
-                    <div class="benefits-slider__item">
-                      <figure class="benefits-slider__img-box">
-                        <img class="benefits-slider__img" src="./img/content/icons/battery.svg" alt="Зарядная станция для электромобиля">
-                      </figure>
-                      <h3 class="benefits-slider__title _h3">Зарядная станция для электромобиля</h3>
-                      <p class="benefits-slider__text">
-                        Возле 3-го входа в Mobel Expo расположена станция для зарядки электромобиля.
-                      </p>
-                    </div>
-                    <div class="benefits-slider__item">
-                      <figure class="benefits-slider__img-box">
-                        <img class="benefits-slider__img" src="./img/content/icons/card.svg" alt="Банковские услуги">
-                      </figure>
-                      <h3 class="benefits-slider__title _h3">Банковские услуги</h3>
-                      <p class="benefits-slider__text">
-                        На 1-м этаже Dekor Expo расположен банкомат, где можно снять наличные средства.
-                      </p>
-                    </div>
-                  </div>
-                  <!-- если нужны стрелки - убрать style="display: none" -->
-                  <div class="benefits-slider__actions" style="display: none">
-                    <button
-                      class="benefits-slider__button benefits-slider__button_prev icon-left ilink"
-                      type="button"
-                    >
-                      <span class="seo">Следующий слайд</span>
-                    </button>
-                    <button
-                      class="benefits-slider__button benefits-slider__button_next icon-right ilink"
-                      type="button"
-                    >
-                      <span class="seo">Следующий слайд</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="h-news _mb">
-          <div class="container">
-            <div class="h-news__body">
-              <!-- если нужны стрелки - убрать style="padding-right: 0" -->
-              <div class="h-news__head" style="padding-right: 0">
-                <h2 class="h-news__title _h2">Новости и события</h2>
-                <div class="h-news__action">
-                  <a class="h-news__more" href="./events.html">
-                    <span class="h-news__more-icon icon-link ilink" aria-hidden="true"></span>
-                    <span class="h-news__more-text">Все cобытия</span>
-                  </a>
-                </div>
-              </div>
-              <div class="news-slider">
-                <div class="news-slider__wrapper">
-                  <div class="news-slider__items">
-                    <div class="news-slider__item">
-                      <article class="new-card">
-                        <figure class="new-card__img-box">
-                          <picture><source srcset="./img/content/photo/new-card-1.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-1.jpg" alt="Скидки до 50% для тех кто ценит уют"></picture>
-                        </figure>
-                        <div class="new-card__main">
-                          <a class="new-card__link" href="./new.html">
-                            <span class="seo">Открыть событие</span>
-                          </a>
-                          <div class="new-card__content">
-                            <h3 class="new-card__title _h3">Скидки до 50% для тех кто ценит уют</h3>
-                            <p class="new-card__text">
-                              Выгодные предложения в Dekor&amp;Mobel Expo для тех, кто ценит уют!
-                              Наступили холода, а значит, самое время укутаться в плед, заварить
-                              чашку ароматного чая...
-                            </p>
-                          </div>
-                          <div
-                            class="new-card__link-icon icon-link ilink ilink_large"
-                            aria-hidden="true"
-                          ></div>
-                        </div>
-                        <div class="new-card__info">
-                          <ul class="new-info">
-                            <li class="new-info__item">
-                              <time class="new-info__date" datetime="2024-04-24 19:00">
-                                14 ноября, 2024
-                              </time>
-                            </li>
-                            <li class="new-info__item">Акция</li>
-                          </ul>
-                        </div>
-                      </article>
-                    </div>
-                    <div class="news-slider__item">
-                      <article class="new-card">
-                        <figure class="new-card__img-box">
-                          <picture><source srcset="./img/content/photo/new-card-2.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-2.jpg" alt="Первая арт-выставка проектирующих дизайнеров"></picture>
-                        </figure>
-                        <div class="new-card__main">
-                          <a class="new-card__link" href="./new.html">
-                            <span class="seo">Открыть событие</span>
-                          </a>
-                          <div class="new-card__content">
-                            <h3 class="new-card__title _h3">
-                              Первая арт-выставка проектирующих дизайнеров
-                            </h3>
-                            <p class="new-card__text">
-                              Друзья, с 18:00 до 19:00 у нас будет проходить
-                              дизайн-activity, а с 19:00 мы начнём выбирать победителей
-                              и вручать подарки...
-                            </p>
-                          </div>
-                          <div
-                            class="new-card__link-icon icon-link ilink ilink_large"
-                            aria-hidden="true"
-                          ></div>
-                        </div>
-                        <div class="new-card__info">
-                          <ul class="new-info">
-                            <li class="new-info__item">
-                              <time class="new-info__date" datetime="2024-04-24 19:00">
-                                5 ноября, 2024
-                              </time>
-                            </li>
-                            <li class="new-info__item">Новость</li>
-                          </ul>
-                        </div>
-                      </article>
-                    </div>
-                    <div class="news-slider__item">
-                      <article class="new-card">
-                        <figure class="new-card__img-box">
-                          <picture><source srcset="./img/content/photo/new-card-3.webp" type="image/webp"><img class="new-card__img" src="./img/content/photo/new-card-3.jpg" alt="Летние скидки"></picture>
-                        </figure>
-                        <div class="new-card__main">
-                          <a class="new-card__link" href="./new.html">
-                            <span class="seo">Открыть событие</span>
-                          </a>
-                          <div class="new-card__content">
-                            <h3 class="new-card__title _h3">Летние скидки</h3>
-                            <p class="new-card__text">
-                              Долгожданные летние скидки &mdash; покупки, которыми вы будете
-                              наслаждаться! Осуществляйте свои мечты об уютном и стильном
-                              интерьере...
-                            </p>
-                          </div>
-                          <div
-                            class="new-card__link-icon icon-link ilink ilink_large"
-                            aria-hidden="true"
-                          ></div>
-                        </div>
-                        <div class="new-card__info">
-                          <ul class="new-info">
-                            <li class="new-info__item">
-                              <time class="new-info__date" datetime="2024-04-24 19:00">
-                                1 июля, 2024
-                              </time>
-                            </li>
-                            <li class="new-info__item">Акция</li>
-                          </ul>
-                        </div>
-                      </article>
-                    </div>
-                  </div>
-                </div>
-                <!-- если нужны стрелки - убрать style="display: none" -->
-                <div class="news-slider__actions" style="display: none">
+              <div class="catalog__main">
+                <hr class="divider" aria-hidden="tree">
+                <ul class="catalog__items catalog__items_large">
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-1.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-1.jpg" alt="Мягкая мебель"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Мягкая мебель</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-2.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-2.jpg" alt="Корпусная мебель"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Корпусная мебель</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-3.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-3.jpg" alt="Детская мебель"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Детская мебель</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-4.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-4.jpg" alt="Кухни"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Кухни</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-5.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-5.jpg" alt="Столы и стулья"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Столы и стулья</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-6.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-6.jpg" alt="Кровати и матрасы"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Кровати и матрасы</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-7.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-7.jpg" alt="Предметы интерьера"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Предметы интерьера</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-8.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-8.jpg" alt="Ковры"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Ковры</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-9.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-9.jpg" alt="Текстиль"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Текстиль</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-10.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-10.jpg" alt="Освещение"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Освещение</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-11.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-11.jpg" alt="Электрооборудование"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Электрооборудование</span>
+                    </a>
+                  </li>
+                  <li class="catalog__item">
+                    <figure class="catalog__img-box">
+                      <picture><source srcset="./img/content/category/category-12.webp" type="image/webp"><img class="catalog__img" src="./img/content/category/category-12.jpg" alt="Двери и окна"></picture>
+                    </figure>
+                    <a class="catalog__btn btn btn_light icon-link" href="./category.html">
+                      <span>Двери и окна</span>
+                    </a>
+                  </li>
+                </ul>
+                <hr class="divider" aria-hidden="tree">
+                <div class="page-action">
                   <button
-                    class="news-slider__button news-slider__button_prev icon-left ilink"
+                    class="page-action__btn page-action__btn_more btn btn_light"
                     type="button"
+                    disabled
                   >
-                    <span class="seo">Следующий слайд</span>
+                    Загрузить еще
                   </button>
-                  <button
-                    class="news-slider__button news-slider__button_next icon-right ilink"
-                    type="button"
+                  <div class="page-action__main">
+                    <nav class="pagination">
+                      <ul>
+                        <li>
+                          <a class="page-numbers" href="#">1</a>
+                        </li>
+                        <li>
+                          <span class="page-numbers current">2</span>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <span
+                    class="page-action__btn page-action__btn_next page-action__btn_disabled btn btn_light icon-right"
                   >
-                    <span class="seo">Следующий слайд</span>
-                  </button>
+                    Вперед
+                  </span>
                 </div>
               </div>
             </div>
