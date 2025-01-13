@@ -270,7 +270,7 @@
                         <li class="tags__item">Кровля</li>
                         <li class="tags__item">Мебель по индивидуальным проектам</li>
                         <li class="tags__item">Плитка</li>
-                        <li class="tags__item">+6</li>
+                        <li class="tags__item"><span>+6</span></li>
                       </ul>
                     </div>
                   </article>
@@ -287,46 +287,32 @@
                         <li class="tags__item">Кровля</li>
                         <li class="tags__item">Мебель по индивидуальным проектам</li>
                         <li class="tags__item">Плитка</li>
-                        <li class="tags__item">+6</li>
+                        <li class="tags__item"><span>+6</span></li>
                       </ul>
                     </div>
                   </article>
                 </div>
                 <hr class="divider" aria-hidden="true">
-                <div class="page-action">
-                  <button class="page-action__btn page-action__btn_more btn btn_light" type="button">
-                    Загрузить еще
-                  </button>
-                  <div class="page-action__main">
-                    <nav class="pagination">
-                      <ul>
-                        <li>
-                          <a class="page-numbers" href="#">1</a>
-                        </li>
-                        <li>
-                          <span class="page-numbers dots">...</span>
-                        </li>
-                        <li>
-                          <a class="page-numbers" href="#">8</a>
-                        </li>
-                        <li>
-                          <span class="page-numbers current">9</span>
-                        </li>
-                        <li>
-                          <a class="page-numbers" href="#">10</a>
-                        </li>
-                        <li>
-                          <span class="page-numbers dots">...</span>
-                        </li>
-                        <li>
-                          <a class="page-numbers" href="#">33</a>
-                        </li>
+                <h2 class="catalog__title _h2"><b>список</b> А-Я</h2>
+                <div class="catalog__list-head" aria-hidden="true">
+                  <span>Наименование магазина</span><span>Место</span><span>Бренды</span>
+                </div>
+                <div class="catalog__items">
+                  <article class="card card_small">
+                    <a class="card__link" href="#" data-popup="#brend-more"><span class="seo"></span></a>
+                    <div class="card__head">
+                      <div class="card__content">
+                        <h4 class="card__title _h3">Артекс</h4>
+                      </div>
+                    </div>
+                    <div class="card__footer">
+                      <h5 class="card__subtitle _h4">Категории</h5>
+                      <ul class="tags">
+                        <li class="tags__item">Лаки</li>
+                        <li class="tags__item">Декоративные краски и штукатурки</li>
                       </ul>
-                    </nav>
-                  </div>
-                  <a class="page-action__btn page-action__btn_next btn btn_light icon-right" href="#">
-                    Вперед
-                  </a>
+                    </div>
+                  </article>
                 </div>
               </div>
             </div>
@@ -459,7 +445,7 @@
                 <a class="header-menu__link" href="./brends.html">Бренды</a>
               </li>
               <li class="header-menu__item">
-                <a class="header-menu__link" href="./services.html">Услуги</a>
+                <a class="header-menu__link" href="./#">Услуги</a>
               </li>
               <li class="header-menu__item">
                 <a class="header-menu__link" href="./events.html">События</a>
@@ -513,6 +499,17 @@
         </div>
       </div>
     </aside>
+
+    <div class="cookies">
+      <p class="cookies__text">
+        Пользуясь нашим сайтом, вы соглашаетесь с тем,
+        что <a href="#" target="_blank">мы используем cookies</a> 🍪
+      </p>
+      <button class="cookies__btn btn" type="button">
+        Окей
+        <span class="seo">, принять файлы cookies</span>
+      </button>
+    </div>
     <div class="popup popup_right" id="brend-more">
       <div class="popup__body">
         <div class="popup__inner">
@@ -522,7 +519,49 @@
               <span class="seo">Закрыть окно</span>
             </button>
           </div>
-          <div class="popup__content"></div>
+          <div class="popup__content">
+            <div class="information">
+              <h5 class="information__title _h3">Бренд представлен в категориях</h5>
+              <ul class="information__list">
+                <li class="information__item">
+                  <a class="information__link" href="#">Электроустановочные изделия</a>
+                </li>
+              </ul>
+              <hr class="divider divider_small">
+              <h5 class="information__title _h3">Бренд представлен в магазинах</h5>
+              <ul class="information__list">
+                <li class="information__item">
+                  <a class="information__link" href="#">Розетки и выключатели МСК</a>
+                </li>
+                <li class="information__item">
+                  <a class="information__link" href="#">Электро Маг</a>
+                </li>
+                <li class="information__item">
+                  <a class="information__link" href="#">Щека С.В., ИП</a>
+                </li>
+                <li class="information__item">
+                  <a class="information__link" href="#">HIT-ELECTRO</a>
+                </li>
+                <li class="information__item">
+                  <a class="information__link" href="#">Салон электрики</a>
+                </li>
+                <li class="information__item">
+                  <a class="information__link" href="#">Сдвижкова Л.Ю., ИП</a>
+                </li>
+                <li class="information__item">
+                  <a class="information__link" href="#">МЕЛЕК</a>
+                </li>
+              </ul>
+              <div class="information__desc">
+                <p>
+                  ЦДиИ &laquo;Экспострой на Нахимовском&raquo; не несет юридическую
+                  ответственность за предоставленную информацию. Информация получена из открытых
+                  источников и направлена на ознакомление потребителей с Брендами
+                  и не несет в себе коммерческой направленности
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
