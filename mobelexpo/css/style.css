@@ -967,7 +967,7 @@ html {
   padding: 0 var(--gap-small);
   color: var(--color-dark)!important;
   background-color: transparent!important;
-  border-radius: none;
+  border-radius: 0;
   pointer-events: none;
 }
 .pagination li a.current,

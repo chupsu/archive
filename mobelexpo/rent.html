@@ -502,6 +502,15 @@
         Окей
         <span class="seo">, принять файлы cookies</span>
       </button>
+      <!-- Удалить скрипт при интеграции! -->
+      <script>
+        (() => {
+          "use strict";
+          document.querySelector(".cookies__btn").addEventListener("click", (e) => {
+            e.target.parentElement.remove();
+          });
+        })();
+      </script>
     </div>
     <div class="popup popup_right" id="rent-order">
       <div class="popup__body">
