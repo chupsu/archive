@@ -1547,6 +1547,7 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: var(--radius-normal);
 }
 .new-card__link:focus-visible {
   outline: 0;
@@ -1669,6 +1670,7 @@ html {
   will-change: transform;
 }
 .shops-slider__item {
+  position: relative;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -1693,6 +1695,16 @@ html {
 .shops-slider__btn {
   flex-grow: 1;
   margin-top: var(--gap-smallest);
+  border-radius: var(--radius-normal);
+}
+.shops-slider__btn::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border-radius: var(--radius-normal);
 }
 .shops-slider__actions {
@@ -2010,6 +2022,14 @@ html {
   background-color: var(--color-light);
   border: var(--width-border) solid transparent;
   border-radius: var(--radius-smallest);
+  transition-duration: var(--transition-duration);
+  transition-property: color,background-color,border-color;
+}
+.form__item input:focus-visible,
+.form__item textarea:focus-visible {
+  outline: 0;
+  background-color: var(--color-white);
+  border-color: var(--color-dark);
 }
 .form__item input::-moz-placeholder,
 .form__item textarea::-moz-placeholder {
@@ -2497,6 +2517,7 @@ span[class^=wpcf7-] {
   gap: var(--gap-small);
 }
 .catalog__item {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -2515,6 +2536,16 @@ span[class^=wpcf7-] {
 .catalog__btn {
   flex-grow: 1;
   margin-top: var(--gap-smallest);
+  border-radius: var(--radius-normal);
+}
+.catalog__btn::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border-radius: var(--radius-normal);
 }
 .catalog-head__row {
@@ -3550,9 +3581,6 @@ html:not([data-catalog-type=list]) .card__link-more::after {
     position: absolute;
     top: 32px;
   }
-  .new-card__main {
-    position: relative;
-  }
   .new-card__title {
     margin-top: auto;
   }
@@ -4434,6 +4462,11 @@ html:not([data-catalog-type=list]) .card__link-more::after {
   }
   .contact-card__text a:not(:active):hover {
     color: var(--color-accent);
+  }
+  .form__item input:not(:active):hover,
+  .form__item textarea:not(:active):hover {
+    background-color: var(--color-white);
+    border-color: var(--color-dark);
   }
   .form__agree a:not(:active):hover {
     text-decoration: none;
