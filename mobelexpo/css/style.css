@@ -1417,6 +1417,7 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: var(--radius-normal);
 }
 .welcome__link:focus-visible {
   outline: 0;
@@ -3250,9 +3251,6 @@ html:not([data-catalog-type=list]) .card__link-more::after {
   }
   .welcome__card-inner {
     min-height: 100%;
-  }
-  .welcome__link::after {
-    display: none;
   }
   .news-slider__item {
     width: calc((100% - 2 * var(--gap-small)) / 3);
