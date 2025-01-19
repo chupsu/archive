@@ -401,6 +401,7 @@ body {
 }
 
 .table-intro__slide._active.table-intro__slide_first {
+  margin-top: -4px;
   border-top: 4px solid rgb(202, 146, 245);
   border-radius: 12px 12px 0 0;
 }

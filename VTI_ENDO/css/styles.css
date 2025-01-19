@@ -19,6 +19,7 @@
 }
 
 body {
+  --main-color: rgb(254, 84, 139);
   font-family: Montserrat, sans-serif;
   background-color: #fff;
 }
@@ -82,21 +83,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   flex-wrap: wrap;
   gap: 12px;
-}
-
-.main-grid {
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-.main-grid-cell {
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
-}
-.main-grid-cell.fill {
-  grid-column: -1/1;
 }
 
 .item {
@@ -182,23 +168,18 @@ body {
   width: 178px;
   height: 101px;
   border-radius: 8px;
-  background: rgb(202, 146, 245);
+  background: var(--main-color);
   opacity: 0.2;
   position: absolute;
   bottom: 77px;
 }
 
 .item.vita {
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 0;
-}
-
-.item.vita.col-2 {
-  -ms-grid-column-span: 2;
-  grid-column: span 2;
 }
 
 .item-image-vita {
@@ -261,7 +242,7 @@ body {
 }
 
 .button:hover {
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
 }
 
 .button-a:hover svg path,
@@ -277,7 +258,7 @@ body {
 }
 
 .active-button:hover {
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
 }
 
 .button-home {
@@ -645,7 +626,7 @@ body {
 }
 
 .panel-intro__icon_pink {
-  background: #ca92f5;
+  background: var(--main-color);
 }
 
 .panel-intro__icon_pink path {
@@ -657,11 +638,11 @@ body {
 }
 
 .panel-intro__icon_light-pink.panel-intro__icon_fill path {
-  fill: #ca92f5;
+  fill: var(--main-color);
 }
 
 .panel-intro__icon_light-pink.panel-intro__icon_stroke path {
-  stroke: #ca92f5;
+  stroke: var(--main-color);
 }
 
 .panel-intro__icon._hide {
@@ -709,7 +690,7 @@ body {
 .panel-intro__close path {
   -webkit-transition: all 0.25s ease 0ms;
   transition: all 0.25s ease 0ms;
-  fill: #ca92f5;
+  fill: var(--main-color);
 }
 
 .panel-intro__close._active {

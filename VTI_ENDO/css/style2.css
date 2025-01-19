@@ -129,6 +129,8 @@ html._lock {
 }
 
 body {
+  --main-color: rgb(254, 84, 139);
+  font-family: Montserrat, sans-serif;
   color: #29366b;
   background-color: #fff;
 }
@@ -378,7 +380,7 @@ body {
 .table-intro__slide_last:after {
   content: "";
   position: absolute;
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
   width: 4px;
   height: calc(100% + 4px);
   top: 0;
@@ -396,18 +398,18 @@ body {
 }
 
 .table-intro__slide._active {
-  border-left: 4px solid rgb(202, 146, 245);
-  border-right: 4px solid rgb(202, 146, 245);
+  border-left: 4px solid var(--main-color);
+  border-right: 4px solid var(--main-color);
 }
 
 .table-intro__slide._active.table-intro__slide_first {
   margin-top: -4px;
-  border-top: 4px solid rgb(202, 146, 245);
+  border-top: 4px solid var(--main-color);
   border-radius: 12px 12px 0 0;
 }
 
 .table-intro__slide._active.table-intro__slide_last {
-  border-bottom: 4px solid rgb(202, 146, 245);
+  border-bottom: 4px solid var(--main-color);
   border-radius: 0 0 12px 12px;
 }
 
@@ -459,7 +461,7 @@ body {
 .table-intro__item_last:after {
   content: "";
   position: absolute;
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
   width: 4px;
   height: calc(100% + 4px);
   top: 0;
@@ -488,7 +490,7 @@ body {
 }
 
 .table-intro__text span {
-  color: rgb(202, 146, 245);
+  color: var(--main-color);
 }
 
 .table-intro__info {
@@ -529,7 +531,7 @@ body {
   flex-shrink: 0;
   min-height: 44px;
   width: 150px;
-  background-color: rgb(162, 88, 255);
+  background-color: rgb(41, 54, 107);
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -561,7 +563,7 @@ body {
   height: 4px;
   top: -4px;
   left: 0;
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
   -webkit-transition: all 0.25s ease 0ms;
   transition: all 0.25s ease 0ms;
   opacity: 0;
@@ -570,7 +572,7 @@ body {
 .names-intro__slide:before {
   content: "";
   position: absolute;
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
   top: 100%;
   left: 1px;
   right: 1px;
@@ -587,7 +589,7 @@ body {
 
 .names-intro__slide._active {
   left: -1px;
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
 }
 
 .names-intro__slide._active:before,
@@ -596,7 +598,7 @@ body {
 }
 
 .names-intro__slide._active:not(:last-child) {
-  border-right: 1px solid rgb(202, 146, 245);
+  border-right: 1px solid var(--main-color);
 }
 
 .intro__arrows {
@@ -762,7 +764,7 @@ body {
 }
 
 .button:hover {
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
 }
 
 .button-a:hover svg path,
@@ -778,7 +780,7 @@ body {
 }
 
 .active-button:hover {
-  background-color: rgb(202, 146, 245);
+  background-color: var(--main-color);
 }
 
 .okno-info {
@@ -1102,7 +1104,7 @@ body {
 }
 
 .panel-intro__icon_pink {
-  background: #ca92f5;
+  background: var(--main-color);
 }
 
 .panel-intro__icon_pink path {
@@ -1114,11 +1116,11 @@ body {
 }
 
 .panel-intro__icon_light-pink.panel-intro__icon_fill path {
-  fill: #ca92f5;
+  fill: var(--main-color);
 }
 
 .panel-intro__icon_light-pink.panel-intro__icon_stroke path {
-  stroke: #ca92f5;
+  stroke: var(--main-color);
 }
 
 .panel-intro__icon._hide {
@@ -1166,7 +1168,7 @@ body {
 .panel-intro__close path {
   -webkit-transition: all 0.25s ease 0ms;
   transition: all 0.25s ease 0ms;
-  fill: #ca92f5;
+  fill: var(--main-color);
 }
 
 .panel-intro__close._active {
