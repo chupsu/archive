@@ -777,13 +777,8 @@ video {
 }
 .breadcrumbs__item:last-child {
   display: -webkit-box;
-  box-orient: vertical;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  -ms-text-overflow: ellipsis;
-  line-clamp: 1;
-  -ms-line-clamp: 1;
   -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .popup {
