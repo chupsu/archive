@@ -786,8 +786,6 @@ body {
 
 .btn_white {
   background: var(--gradient-3);
-  transition-duration: var(--transition-duration);
-  transition-property: color, background-color, border-color, opacity, transform;
 }
 
 .btn_white::before,
@@ -824,7 +822,6 @@ body {
 }
 
 .btn_white:focus-visible::before {
-  content: "";
   opacity: 0;
 }
 
@@ -3258,7 +3255,6 @@ body {
   }
 
   .btn_white:not(:active):hover::before {
-    content: "";
     opacity: 0;
   }
 
