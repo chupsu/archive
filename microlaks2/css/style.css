@@ -1442,20 +1442,20 @@ html:not(.is-scrolled) .cookie {
   border-left: 1px solid var(--color-border);
 }
 .table-2 {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  width: var(--width-page);
+  margin: 0 calc(-1 * var(--padding-page));
   border: 1px solid var(--color-border);
   border-radius: var(--radius-large);
   overflow: hidden;
 }
 .table-2__head {
   display: grid;
-  grid-template-columns: 1fr 2.8fr 2.8fr;
+  grid-template-columns: 1fr 1.6fr 1.6fr;
 }
 .table-2__head-cell {
   display: flex;
-}
-.table-2__head-cell + .table-2__head-cell {
-  border-left: 1px solid var(--color-border);
 }
 .table-2__head-cell_grid {
   flex-direction: column;
@@ -1465,14 +1465,14 @@ html:not(.is-scrolled) .cookie {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px;
+  padding: 8px 4px;
   text-align: center;
   font-size: var(--text-normal);
   color: var(--color-white);
 }
 .table-2__head-cell:nth-child(1) .table-2__title {
   justify-content: flex-start;
-  padding-left: 14px;
+  padding-left: 8px;
   text-align: left;
   background-color: var(--color-main);
 }
@@ -1482,20 +1482,15 @@ html:not(.is-scrolled) .cookie {
 .table-2__head-cell:nth-child(3) .table-2__title {
   background-color: var(--color-main);
 }
-.table-2__head-cell:nth-child(4) .table-2__title {
-  background-color: var(--color-secondary-ultradark);
-}
 .table-2__subhead {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--color-border);
+  display: none;
 }
 .table-2__subhead-cell {
-  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 8px;
   font-weight: 700;
   font-size: 10px;
   color: rgba(45, 42, 58, 0.6);
@@ -1508,83 +1503,24 @@ html:not(.is-scrolled) .cookie {
 }
 .table-2__row {
   display: grid;
-  grid-template-columns: 1fr 1.4fr 1.4fr 1.4fr 1.4fr;
+  grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr 0.8fr;
 }
 .table-2__row + .table-2__row {
   border-top: 1px solid var(--color-border);
 }
-.table-2__row:nth-child(2n+3) {
-  background-color: var(--color-light);
-}
 .table-2__cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 8px;
+  padding: 8px 4px;
   text-align: center;
   font-size: var(--text-small);
 }
-.table-2__cell + .table-2__cell {
-  border-left: 1px solid var(--color-border);
-}
-.table-2__cell:first-child {
-  background-color: var(--color-main-ultralight);
+.table-2__cell:not(.table-2__cell_row) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
 }
 .table-2__cell_col-2 {
   grid-column: span 2;
-}
-.table-2__cell:first-child {
-  justify-content: flex-start;
-  padding-left: 14px;
-  text-align: left;
-}
-.table-2-mob {
-  display: flex;
-  flex-direction: column;
-  width: var(--width-page);
-  margin: 0 calc(-1 * var(--padding-page));
-  text-align: center;
-  border-radius: var(--radius-small);
-  overflow: hidden;
-}
-.table-2-mob__row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.table-2-mob__col {
-  padding: 8px 4px;
-  font-size: var(--text-normal);
-  background-color: var(--color-white);
-}
-.table-2-mob__col:first-child:last-child {
-  grid-column: -1/1;
-  max-width: 100%;
-}
-.table-2-mob__col:not(.table-2-mob__col_head):not(.table-2-mob__col_title):first-child {
-  background-color: var(--color-secondary-ultralight);
-}
-.table-2-mob__col:not(.table-2-mob__col_head):not(.table-2-mob__col_title):last-child {
-  background-color: var(--color-main-ultralight);
-}
-.table-2-mob__col_head {
-  font-weight: 700;
-  color: var(--color-white);
-}
-.table-2-mob__col_head:first-child {
-  background-color: var(--color-secondary-ultradark);
-}
-.table-2-mob__col_head:last-child {
-  background-color: var(--color-main);
-}
-.table-2-mob__col_title {
-  font-weight: 700;
-}
-.table-2-mob__col b {
-  padding: 4px 8px;
-  white-space: nowrap;
-  color: var(--color-white);
-  background-color: var(--color-main);
-  border-radius: 8px;
 }
 .table-3 {
   width: calc(var(--width-page) - 2 * var(--padding-page));
@@ -2054,11 +1990,59 @@ html:not(.is-scrolled) .cookie {
     margin: 0;
   }
   .table-2 {
-    display: flex;
-    flex-direction: column;
-    width: 790px;
+    width: 720px;
+    margin: 0;
   }
-  .table-2-mob {
+  .table-2__head {
+    grid-template-columns: 1fr 2.8fr 2.8fr;
+  }
+  .table-2__head-cell + .table-2__head-cell {
+    border-left: 1px solid var(--color-border);
+  }
+  .table-2__title {
+    padding: 14px;
+  }
+  .table-2__head-cell:nth-child(1) .table-2__title {
+    padding-left: 14px;
+  }
+  .table-2__subhead {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .table-2__row {
+    grid-template-columns: 1fr 1.4fr 1.4fr 1.4fr 1.4fr;
+  }
+  .table-2__row:nth-child(2n+3) {
+    background-color: var(--color-light);
+  }
+  .table-2__cell:not(.table-2__cell_row) {
+    padding: 14px 8px;
+  }
+  .table-2__cell + .table-2__cell {
+    border-left: 1px solid var(--color-border);
+  }
+  .table-2__cell:first-child {
+    justify-content: flex-start;
+    padding-left: 14px;
+    text-align: left;
+    background-color: var(--color-main-ultralight);
+  }
+  .table-2__cell_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+  .table-2__subcell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 8px;
+  }
+  .table-2__subcell + .table-2__subcell {
+    border-left: 1px solid var(--color-border);
+  }
+  .table-2__subcell span {
     display: none;
   }
   .table-3 {
@@ -2223,9 +2207,6 @@ html:not(.is-scrolled) .cookie {
   .table-1__desc,
   .table-1__name {
     padding: 14px 26px;
-  }
-  .table-2 {
-    width: 860px;
   }
   .table-2__title {
     padding: 18px 14px;
@@ -2889,11 +2870,14 @@ html:not(.is-scrolled) .cookie {
   .table-2__subhead-cell {
     font-size: 12px;
   }
-  .table-2__cell {
+  .table-2__cell:not(.table-2__cell_row) {
     padding: 16px 14px;
   }
   .table-2__cell:first-child {
     padding-left: 40px;
+  }
+  .table-2__subcell {
+    padding: 16px 14px;
   }
   .table-3__item {
     padding-bottom: 14px;
@@ -3087,6 +3071,16 @@ html:not(.is-scrolled) .cookie {
 @media (max-width: 575.98px) {
   .menu__list._nav-menu {
     padding: 12px var(--padding-page);
+  }
+  .table-2__title {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  .table-2__cell:nth-child(2) {
+    background-color: var(--color-secondary-ultralight);
+  }
+  .table-2__cell:nth-child(3) {
+    background-color: var(--color-main-ultralight);
   }
   .table-4__item {
     display: grid;
