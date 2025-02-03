@@ -1239,7 +1239,7 @@ html:not(.is-scrolled) .cookie {
   color: var(--color-dark);
   background-color: var(--color-light);
   transition-duration: var(--transition-duration);
-  transition-property: color,background-color,border-color,opacity,transform;
+  transition-property: color,background-color,opacity;
   opacity: 0.4;
 }
 .tabs__title:not(._tab-active):focus-visible {

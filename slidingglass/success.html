@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="preload" href="./fonts/VelaSans-Medium.woff2" as="font" type="font/woff2" crossorigin> 
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>SlidingGlass &mdash; Системы безрамного остекления</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <figure class="logo">
+              <img class="logo__img" src="./img/content/logo.svg" alt="SlidingGlass - Системы безрамного остекления">
+            </figure>
+            <div class="geo" data-da=".welcome__body,1279,first">
+              <p class="geo__mark">Москва и Московская область</p>
+            </div>
+            <div class="menu">
+              <button
+                class="menu__btn btn btn_small btn_light btn_icon"
+                type="button"
+                aria-label="Меню сайта"
+                title="Меню сайта"
+              >
+                <i class="menu__icon" aria-hidden="true">
+                  <span></span>
+                </i>
+              </button>
+              <div class="menu__body">
+                <dl class="phone">
+                  <dt class="phone__name"><a href="tel:+74952223422">+7 (495) 222-34-22</a></dt>
+                  <dd class="phone__desc">10:00 - 20:00</dd>
+                </dl>
+                <button class="menu__cta btn btn_small btn_light" type="button" data-popup="#contact-form">
+                  Заказать звонок
+                </button>
+                <ul class="social">
+                  <li class="social__item">
+                    <a
+                      class="social__link btn btn_small btn_icon btn_light"
+                      href="https://t.me/+79852223422"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      aria-label="Telegram"
+                      title="Telegram"
+                    >
+                      <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M36.9243 20.0816L34.0249 34.6356C33.9128 35.2075 33.6713 35.6846 33.2343 35.8945C32.7988 36.1037 32.311 35.9799 31.8595 35.7146L31.8372 35.7015L25.4452 30.671C24.8593 30.2099 24.8172 29.2937 25.3579 28.7739L31.5153 22.8549L22.9484 28.6122C22.6622 28.8045 22.311 28.8535 21.9878 28.746L17.9579 27.4062L17.9568 27.4058C17.6886 27.3182 17.4509 27.1927 17.2778 27.0186C17.0978 26.8377 16.9765 26.5889 17.0038 26.2974C17.0298 26.0212 17.1819 25.7912 17.3713 25.613C17.563 25.4325 17.8234 25.2747 18.1392 25.1397L18.144 25.1377L35.1691 18.1448C35.664 17.9099 36.22 17.9498 36.6042 18.3455C36.9843 18.7371 37.0898 19.3674 36.9243 20.0816Z" fill="#282A40"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a
+                      class="social__link btn btn_small btn_icon btn_light"
+                      href="https://wa.me/message/MA4A4AYWMZM7J1"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      aria-label="WhatsApp"
+                      title="WhatsApp"
+                    >
+                      <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4158 34.746L22.0871 34.551L19.5187 35.2245C19.1463 35.3221 18.8079 34.98 18.9096 34.6088L19.59 32.1243L19.376 31.7839C18.4751 30.3515 17.9993 28.6959 18 26.996C18.002 22.0356 22.0394 18 27.0037 18C29.4076 18.0008 31.6673 18.9378 33.3665 20.6384C35.0657 22.339 36.0009 24.5993 36 27.0033C35.998 31.964 31.9607 36 27.0002 36H26.9965C25.3816 35.9994 23.7976 35.5656 22.4158 34.746ZM31.3576 28.7937C31.5143 28.8616 31.6201 28.9075 31.6653 28.9752C31.7214 29.0592 31.7214 29.4629 31.5343 29.9339C31.347 30.4048 30.4494 30.8346 30.0177 30.8924C29.6307 30.9444 29.1409 30.966 28.6027 30.8125C28.2763 30.7196 27.8579 30.5956 27.3218 30.3879C25.2156 29.5718 23.7922 27.74 23.5232 27.3938C23.5043 27.3696 23.4912 27.3526 23.4838 27.3438L23.482 27.3416C23.3631 27.1993 22.5664 26.2455 22.5664 25.2583C22.5664 24.3297 23.0748 23.843 23.3088 23.6189C23.3248 23.6036 23.3395 23.5895 23.3527 23.5765C23.5587 23.3747 23.8021 23.3242 23.9519 23.3242C24.1016 23.3242 24.2516 23.3255 24.3825 23.3314C24.3986 23.3321 24.4154 23.332 24.4328 23.3319C24.5637 23.3312 24.7269 23.3304 24.888 23.6774C24.9499 23.811 25.0406 24.009 25.1362 24.2179C25.3295 24.6402 25.5431 25.1068 25.5807 25.1743C25.6369 25.2752 25.6743 25.3929 25.5994 25.5275C25.5882 25.5477 25.5778 25.5668 25.5678 25.585C25.5116 25.688 25.4702 25.7638 25.3747 25.8638C25.3372 25.9031 25.2984 25.9455 25.2596 25.9879C25.1823 26.0724 25.105 26.1569 25.0377 26.217C24.9252 26.3176 24.8082 26.4266 24.9392 26.6285C25.0703 26.8303 25.5212 27.4904 26.1891 28.025C26.9071 28.5997 27.5311 28.8425 27.8474 28.9656C27.9091 28.9897 27.9592 29.0092 27.9959 29.0256C28.2204 29.1266 28.3515 29.1097 28.4826 28.9752C28.6136 28.8406 29.0442 28.3865 29.194 28.1847C29.3437 27.9829 29.4936 28.0166 29.6995 28.0838C29.9054 28.1511 31.01 28.6388 31.2347 28.7397C31.2786 28.7594 31.3196 28.7772 31.3576 28.7937Z" fill="#282A40"/>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page page_small">
+        <div class="information">
+          <div class="information__body">
+            <h1 class="information__title title">
+              <b>Спасибо</b> <br>
+              Заявка отправлена
+            </h1>
+            <p class="information__text text">Наш менеджер скоро свяжется с вами</p>
+            <a class="information__btn btn btn_accent" href="./index.html">Вернуться на главную</a>
+          </div>
+          <picture aria-hidden="true">
+            <source srcset="./img/content/photo/info-mobile.webp" media="(max-width: 767px)" type="image/webp">
+            <source srcset="./img/content/photo/info-mobile.jpg" media="(max-width: 767px)">
+            <source srcset="./img/content/photo/info.webp" type="image/webp">
+            <img class="information__img" src="./img/content/photo/info.jpg" alt="image">
+          </picture>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__main">
+          <div class="container">
+            <div class="footer__body">
+              <figure class="logo">
+                <img class="logo__img" src="./img/content/logo.svg" alt="SlidingGlass - Системы безрамного остекления">
+              </figure>
+              <div class="footer__actions">
+                <dl class="phone">
+                  <dt class="phone__name"><a href="tel:+74952223422">+7 (495) 222-34-22</a></dt>
+                  <dd class="phone__desc">10:00 - 20:00</dd>
+                </dl>
+                <button class="footer__cta btn btn_small btn_light" type="button" data-popup="#contact-form">
+                  Заказать звонок
+                </button>
+                <ul class="social">
+                  <li class="social__item">
+                    <a
+                      class="social__link btn btn_small btn_icon btn_light"
+                      href="https://t.me/+79852223422"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      aria-label="Telegram"
+                      title="Telegram"
+                    >
+                      <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M36.9243 20.0816L34.0249 34.6356C33.9128 35.2075 33.6713 35.6846 33.2343 35.8945C32.7988 36.1037 32.311 35.9799 31.8595 35.7146L31.8372 35.7015L25.4452 30.671C24.8593 30.2099 24.8172 29.2937 25.3579 28.7739L31.5153 22.8549L22.9484 28.6122C22.6622 28.8045 22.311 28.8535 21.9878 28.746L17.9579 27.4062L17.9568 27.4058C17.6886 27.3182 17.4509 27.1927 17.2778 27.0186C17.0978 26.8377 16.9765 26.5889 17.0038 26.2974C17.0298 26.0212 17.1819 25.7912 17.3713 25.613C17.563 25.4325 17.8234 25.2747 18.1392 25.1397L18.144 25.1377L35.1691 18.1448C35.664 17.9099 36.22 17.9498 36.6042 18.3455C36.9843 18.7371 37.0898 19.3674 36.9243 20.0816Z" fill="#282A40"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a
+                      class="social__link btn btn_small btn_icon btn_light"
+                      href="https://wa.me/message/MA4A4AYWMZM7J1"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      aria-label="WhatsApp"
+                      title="WhatsApp"
+                    >
+                      <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4158 34.746L22.0871 34.551L19.5187 35.2245C19.1463 35.3221 18.8079 34.98 18.9096 34.6088L19.59 32.1243L19.376 31.7839C18.4751 30.3515 17.9993 28.6959 18 26.996C18.002 22.0356 22.0394 18 27.0037 18C29.4076 18.0008 31.6673 18.9378 33.3665 20.6384C35.0657 22.339 36.0009 24.5993 36 27.0033C35.998 31.964 31.9607 36 27.0002 36H26.9965C25.3816 35.9994 23.7976 35.5656 22.4158 34.746ZM31.3576 28.7937C31.5143 28.8616 31.6201 28.9075 31.6653 28.9752C31.7214 29.0592 31.7214 29.4629 31.5343 29.9339C31.347 30.4048 30.4494 30.8346 30.0177 30.8924C29.6307 30.9444 29.1409 30.966 28.6027 30.8125C28.2763 30.7196 27.8579 30.5956 27.3218 30.3879C25.2156 29.5718 23.7922 27.74 23.5232 27.3938C23.5043 27.3696 23.4912 27.3526 23.4838 27.3438L23.482 27.3416C23.3631 27.1993 22.5664 26.2455 22.5664 25.2583C22.5664 24.3297 23.0748 23.843 23.3088 23.6189C23.3248 23.6036 23.3395 23.5895 23.3527 23.5765C23.5587 23.3747 23.8021 23.3242 23.9519 23.3242C24.1016 23.3242 24.2516 23.3255 24.3825 23.3314C24.3986 23.3321 24.4154 23.332 24.4328 23.3319C24.5637 23.3312 24.7269 23.3304 24.888 23.6774C24.9499 23.811 25.0406 24.009 25.1362 24.2179C25.3295 24.6402 25.5431 25.1068 25.5807 25.1743C25.6369 25.2752 25.6743 25.3929 25.5994 25.5275C25.5882 25.5477 25.5778 25.5668 25.5678 25.585C25.5116 25.688 25.4702 25.7638 25.3747 25.8638C25.3372 25.9031 25.2984 25.9455 25.2596 25.9879C25.1823 26.0724 25.105 26.1569 25.0377 26.217C24.9252 26.3176 24.8082 26.4266 24.9392 26.6285C25.0703 26.8303 25.5212 27.4904 26.1891 28.025C26.9071 28.5997 27.5311 28.8425 27.8474 28.9656C27.9091 28.9897 27.9592 29.0092 27.9959 29.0256C28.2204 29.1266 28.3515 29.1097 28.4826 28.9752C28.6136 28.8406 29.0442 28.3865 29.194 28.1847C29.3437 27.9829 29.4936 28.0166 29.6995 28.0838C29.9054 28.1511 31.01 28.6388 31.2347 28.7397C31.2786 28.7594 31.3196 28.7772 31.3576 28.7937Z" fill="#282A40"/>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <button
+                class="footer__btn btn btn_small btn_icon btn_light"
+                type="button"
+                data-goto=".wrapper"
+                aria-label="К началу страницы"
+                title="К началу страницы"
+              >
+                <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M31.7962 31C32.6554 31 33.1146 29.9881 32.5488 29.3415L27.7526 23.8601C27.3542 23.4048 26.6458 23.4048 26.2474 23.8601L21.4512 29.3415C20.8854 29.9881 21.3446 31 22.2038 31H31.7962Z" fill="#2A3656"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="footer__info">
+          <div class="container">
+            <div class="footer-info">
+              <ul class="footer-info__list">
+                <li class="footer-info__item footer-info__item_copy">© ООО «ОСТЕК», 2024</li>
+                <li class="footer-info__item">
+                  <a class="footer-info__link" href="#props" data-popup="#props">Реквизиты</a>
+                </li>
+                <li class="footer-info__item">
+                  <a class="footer-info__link" href="#policy" data-popup="#policy">
+                    Политика конфиденциальности
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body popup__body_small">
+        <button
+          class="popup__close btn btn_small btn_icon btn_light"
+          type="button"
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.2929 20.2929C20.6834 19.9024 21.3166 19.9024 21.7071 20.2929L27 25.5858L32.2929 20.2929C32.6834 19.9024 33.3166 19.9024 33.7071 20.2929C34.0976 20.6834 34.0976 21.3166 33.7071 21.7071L28.4142 27L33.7071 32.2929C34.0976 32.6834 34.0976 33.3166 33.7071 33.7071C33.3166 34.0976 32.6834 34.0976 32.2929 33.7071L27 28.4142L21.7071 33.7071C21.3166 34.0976 20.6834 34.0976 20.2929 33.7071C19.9024 33.3166 19.9024 32.6834 20.2929 32.2929L25.5858 27L20.2929 21.7071C19.9024 21.3166 19.9024 20.6834 20.2929 20.2929Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <form class="form" action="#">
+            <h2 class="form__title">Получить консультацию</h2>
+            <p class="form__text">
+              Оставьте свои контакты, наш менеджер свяжется с вами в ближайшее время и ответит
+              на все вопросы
+            </p>
+            <div class="form__main">
+              <div class="form__inputs">
+                <div class="form__input">
+                  <span class="form__input-title">Имя</span>
+                  <label class="input">
+                    <input class="input__body" type="text" name="name" placeholder="Введите имя" required>
+                  </label>
+                </div>
+                <div class="form__input">
+                  <span class="form__input-title">Телефон</span>
+                  <label class="input">
+                    <input class="input__body" type="tel" name="tel" placeholder="Введите телефон" required>
+                  </label>
+                </div>
+              </div>
+              <div class="form__action">
+                <label class="form__agree agree">
+                  <input class="agree__checkbox" type="checkbox" required>
+                  <span class="agree__icon"></span>
+                  <span class="agree__text">
+                    Я даю согласие на
+                    <a href="#policy" data-popup="#policy">обработку персональных данных</a>
+                  </span>
+                </label>
+                <button class="form__btn btn btn_accent" type="submit">Отправить</button>
+              </div>
+            </div>
+            <div class="form-contacts">
+              <p class="form-contacts__text">Или свяжитесь с нами напрямую</p>
+              <dl class="phone">
+                <dt class="phone__name"><a href="tel:+74952223422">+7 (495) 222-34-22</a></dt>
+                <dd class="phone__desc">10:00 - 20:00</dd>
+              </dl>
+              <ul class="social">
+                <li class="social__item">
+                  <a
+                    class="social__link btn btn_small btn_icon btn_light"
+                    href="https://t.me/+79852223422"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    aria-label="Telegram"
+                    title="Telegram"
+                  >
+                    <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M36.9243 20.0816L34.0249 34.6356C33.9128 35.2075 33.6713 35.6846 33.2343 35.8945C32.7988 36.1037 32.311 35.9799 31.8595 35.7146L31.8372 35.7015L25.4452 30.671C24.8593 30.2099 24.8172 29.2937 25.3579 28.7739L31.5153 22.8549L22.9484 28.6122C22.6622 28.8045 22.311 28.8535 21.9878 28.746L17.9579 27.4062L17.9568 27.4058C17.6886 27.3182 17.4509 27.1927 17.2778 27.0186C17.0978 26.8377 16.9765 26.5889 17.0038 26.2974C17.0298 26.0212 17.1819 25.7912 17.3713 25.613C17.563 25.4325 17.8234 25.2747 18.1392 25.1397L18.144 25.1377L35.1691 18.1448C35.664 17.9099 36.22 17.9498 36.6042 18.3455C36.9843 18.7371 37.0898 19.3674 36.9243 20.0816Z" fill="#282A40"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a
+                    class="social__link btn btn_small btn_icon btn_light"
+                    href="https://wa.me/message/MA4A4AYWMZM7J1"
+                    target="_blank"
+                    rel="nofollow noopener"
+                    aria-label="WhatsApp"
+                    title="WhatsApp"
+                  >
+                    <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4158 34.746L22.0871 34.551L19.5187 35.2245C19.1463 35.3221 18.8079 34.98 18.9096 34.6088L19.59 32.1243L19.376 31.7839C18.4751 30.3515 17.9993 28.6959 18 26.996C18.002 22.0356 22.0394 18 27.0037 18C29.4076 18.0008 31.6673 18.9378 33.3665 20.6384C35.0657 22.339 36.0009 24.5993 36 27.0033C35.998 31.964 31.9607 36 27.0002 36H26.9965C25.3816 35.9994 23.7976 35.5656 22.4158 34.746ZM31.3576 28.7937C31.5143 28.8616 31.6201 28.9075 31.6653 28.9752C31.7214 29.0592 31.7214 29.4629 31.5343 29.9339C31.347 30.4048 30.4494 30.8346 30.0177 30.8924C29.6307 30.9444 29.1409 30.966 28.6027 30.8125C28.2763 30.7196 27.8579 30.5956 27.3218 30.3879C25.2156 29.5718 23.7922 27.74 23.5232 27.3938C23.5043 27.3696 23.4912 27.3526 23.4838 27.3438L23.482 27.3416C23.3631 27.1993 22.5664 26.2455 22.5664 25.2583C22.5664 24.3297 23.0748 23.843 23.3088 23.6189C23.3248 23.6036 23.3395 23.5895 23.3527 23.5765C23.5587 23.3747 23.8021 23.3242 23.9519 23.3242C24.1016 23.3242 24.2516 23.3255 24.3825 23.3314C24.3986 23.3321 24.4154 23.332 24.4328 23.3319C24.5637 23.3312 24.7269 23.3304 24.888 23.6774C24.9499 23.811 25.0406 24.009 25.1362 24.2179C25.3295 24.6402 25.5431 25.1068 25.5807 25.1743C25.6369 25.2752 25.6743 25.3929 25.5994 25.5275C25.5882 25.5477 25.5778 25.5668 25.5678 25.585C25.5116 25.688 25.4702 25.7638 25.3747 25.8638C25.3372 25.9031 25.2984 25.9455 25.2596 25.9879C25.1823 26.0724 25.105 26.1569 25.0377 26.217C24.9252 26.3176 24.8082 26.4266 24.9392 26.6285C25.0703 26.8303 25.5212 27.4904 26.1891 28.025C26.9071 28.5997 27.5311 28.8425 27.8474 28.9656C27.9091 28.9897 27.9592 29.0092 27.9959 29.0256C28.2204 29.1266 28.3515 29.1097 28.4826 28.9752C28.6136 28.8406 29.0442 28.3865 29.194 28.1847C29.3437 27.9829 29.4936 28.0166 29.6995 28.0838C29.9054 28.1511 31.01 28.6388 31.2347 28.7397C31.2786 28.7594 31.3196 28.7772 31.3576 28.7937Z" fill="#282A40"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="quize-form">
+      <div class="popup__body popup__body_small">
+        <button
+          class="popup__close btn btn_small btn_icon btn_light"
+          type="button"
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.2929 20.2929C20.6834 19.9024 21.3166 19.9024 21.7071 20.2929L27 25.5858L32.2929 20.2929C32.6834 19.9024 33.3166 19.9024 33.7071 20.2929C34.0976 20.6834 34.0976 21.3166 33.7071 21.7071L28.4142 27L33.7071 32.2929C34.0976 32.6834 34.0976 33.3166 33.7071 33.7071C33.3166 34.0976 32.6834 34.0976 32.2929 33.7071L27 28.4142L21.7071 33.7071C21.3166 34.0976 20.6834 34.0976 20.2929 33.7071C19.9024 33.3166 19.9024 32.6834 20.2929 32.2929L25.5858 27L20.2929 21.7071C19.9024 21.3166 19.9024 20.6834 20.2929 20.2929Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <form class="quize" action="#">
+            <h4 class="quize__title">Получить расчёт</h4>
+            <div class="quize__progress">
+              <span class="quize__current"></span>/<span class="quize__total"></span>
+            </div>
+            <div class="quize__body">
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Что остекляем?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Беседка</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Терраса</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Балкон</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-1">
+                      <span class="input__body">Лоджия</span>
+                    </label>
+                    <p class="quize__error">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Примерные размеры проёмов?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">0–15 м2</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">15–30 м2</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">30–45 м2</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-2">
+                      <span class="input__body">Затрудняюсь ответить</span>
+                    </label>
+                    <p class="quize__error">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Цвет стекла?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Прозрачный</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Бронза</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-3">
+                      <span class="input__body">Серебро</span>
+                    </label>
+                    <p class="quize__error">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Какую систему предпочитаете?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-4">
+                      <span class="input__body">Pivot</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-4">
+                      <span class="input__body">Slide</span>
+                    </label>
+                    <p class="quize__error">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Когда планируете работы?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В этом месяце</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В след. месяце</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">В конце сезона</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-5">
+                      <span class="input__body">Пока не знаю</span>
+                    </label>
+                    <p class="quize__error">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="button" data-quize="next">
+                    <span>Далее</span>
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M-5.1563e-07 11.7962C-5.53185e-07 12.6554 1.01192 13.1146 1.6585 12.5488L7.13991 7.75258C7.59524 7.35417 7.59524 6.64583 7.13991 6.24742L1.6585 1.45119C1.01192 0.88543 -5.87748e-08 1.34461 -9.63298e-08 2.20377L-5.1563e-07 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="quize__box">
+                <div class="quize__item">
+                  <p class="quize__question">Ваш номер телефона</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__body" type="tel" name="tel" placeholder="Введите телефон" required>
+                    </label>
+                    <p class="quize__error">Пожалуйста, укажите номер телефона</p>
+                  </div>
+                </div>
+                <div class="quize__item">
+                  <p class="quize__question">Удобный канал для обратной связи?</p>
+                  <div class="quize__answers">
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">WhatsApp</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">Telegram</span>
+                    </label>
+                    <label class="input">
+                      <input class="input__choice" type="radio" name="answer-6">
+                      <span class="input__body">СМС-сообщение</span>
+                    </label>
+                    <p class="quize__error">Пожалуйста, выберите вариант ответа</p>
+                  </div>
+                </div>
+                <label class="quize__agree agree">
+                  <input class="agree__checkbox" type="checkbox" required>
+                  <span class="agree__icon"></span>
+                  <span class="agree__text">
+                    Я даю согласие на
+                    <a href="#policy" data-popup="#policy">обработку персональных данных</a>
+                  </span>
+                </label>
+                <div class="quize__action">
+                  <button class="quize__btn btn btn_second" type="button" data-quize="prev">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 11.7962C8 12.6554 6.98808 13.1146 6.3415 12.5488L0.860088 7.75258C0.404761 7.35417 0.404761 6.64583 0.860088 6.24742L6.3415 1.45119C6.98808 0.88543 8 1.34461 8 2.20377L8 11.7962Z" fill="#2A3656"/>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button class="quize__btn btn btn_accent" type="submit">Отправить</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="policy">
+      <div class="popup__body popup__body_large">
+        <button
+          class="popup__close btn btn_small btn_icon btn_light"
+          type="button"
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.2929 20.2929C20.6834 19.9024 21.3166 19.9024 21.7071 20.2929L27 25.5858L32.2929 20.2929C32.6834 19.9024 33.3166 19.9024 33.7071 20.2929C34.0976 20.6834 34.0976 21.3166 33.7071 21.7071L28.4142 27L33.7071 32.2929C34.0976 32.6834 34.0976 33.3166 33.7071 33.7071C33.3166 34.0976 32.6834 34.0976 32.2929 33.7071L27 28.4142L21.7071 33.7071C21.3166 34.0976 20.6834 34.0976 20.2929 33.7071C19.9024 33.3166 19.9024 32.6834 20.2929 32.2929L25.5858 27L20.2929 21.7071C19.9024 21.3166 19.9024 20.6834 20.2929 20.2929Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <article class="article" aria-hidden="true">
+            <h2>Политика конфиденциальности</h2>
+            <p>
+              Настоящая Политика конфиденциальности персональных данных (далее &mdash; Политика
+              конфиденциальности) действует в отношении всей информации, которую ООО &laquo;ОСТЕК&raquo;,
+              расположенный на доменном имени https://e-slidingglass.ru, может получить
+              о Пользователе во время использования сайта &laquo;SlidingGlass&raquo;, программ
+              и продуктов &laquo;SlidingGlass&raquo;.
+            </p>
+            <ol>
+              <li>
+                <h3>Определение терминов</h3>
+                <ol>
+                  <li>
+                    В настоящей Политике конфиденциальности используются следующие термины:
+                    <ol>
+                      <li>
+                        &laquo;Администрация сайта SlidingGlass (далее &mdash; Администрация
+                        сайта)&raquo; &mdash; уполномоченные сотрудники на управления сайтом,
+                        действующие от имени ООО &laquo;ОСТЕК&raquo;, которые организуют и (или)
+                        осуществляет обработку персональных данных, а также определяет цели обработки
+                        персональных данных, состав персональных данных, подлежащих обработке, действия
+                        (операции), совершаемые с персональными данными.
+                      </li>
+                      <li>
+                        &laquo;Персональные данные&raquo; &mdash; любая информация, относящаяся
+                        к прямо или косвенно определённому или определяемому физическому лицу (субъекту
+                        персональных данных).
+                      </li>
+                      <li>
+                        &laquo;Обработка персональных данных&raquo; &mdash; любое действие (операция) или
+                        совокупность действий (операций), совершаемых с использованием средств
+                        автоматизации или без использования таких средств с персональными данными,
+                        включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление,
+                        изменение), извлечение, использование, передачу (распространение, предоставление,
+                        доступ), обезличивание, блокирование, удаление, уничтожение персональных данных.
+                      </li>
+                      <li>
+                        &laquo;Конфиденциальность персональных данных&raquo; &mdash; обязательное для
+                        соблюдения Оператором или иным получившим доступ к персональным данным лицом
+                        требование не допускать их распространения без согласия субъекта
+                        персональных данных или наличия иного законного основания.
+                      </li>
+                      <li>
+                        &laquo;Пользователь сайта SlidingGlass (далее ‑ Пользователь)&raquo; &mdash;
+                        лицо, имеющее доступ к сайту, посредством сети Интернет и использующее сайт
+                        ресторана доставки.
+                      </li>
+                      <li>
+                        &laquo;Cookies&raquo; &mdash; небольшой фрагмент данных, отправленный
+                        веб-сервером и хранимый на компьютере пользователя, который веб-клиент или
+                        веб-браузер каждый раз пересылает веб-серверу в HTTP-запросе при попытке открыть
+                        страницу соответствующего сайта.
+                      </li>
+                      <li>
+                        &laquo;IP-адрес&raquo; &mdash; уникальный сетевой адрес узла в компьютерной
+                        сети, построенной по протоколу IP.
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Общие положения</h3>
+                <ol>
+                  <li>
+                    Использование Пользователем сайта https://e-slidingglass.ru означает согласие
+                    с настоящей Политикой конфиденциальности и условиями обработки персональных
+                    данных Пользователя.
+                  </li>
+                  <li>
+                    В случае несогласия с условиями Политики конфиденциальности Пользователь должен
+                    прекратить использование сайта https://e-slidingglass.ru.
+                  </li>
+                  <li>
+                    Настоящая Политика конфиденциальности применяется только к сайту
+                    https://e-slidingglass.ru. ООО &laquo;ОСТЕК&raquo; не контролирует
+                    и не несёт ответственность за сайты третьих лиц, на которые
+                    Пользователь может перейти по ссылкам, доступным на сайте
+                    https://e-slidingglass.ru.
+                  </li>
+                  <li>
+                    Администрация сайта не проверяет достоверность персональных данных, предоставляемых
+                    Пользователем сайта https://e-slidingglass.ru.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Предмет политики конфиденциальности</h3>
+                <ol>
+                  <li>
+                    Настоящая Политика конфиденциальности устанавливает обязательства Администрации сайта
+                    https://e-slidingglass.ru по неразглашению и обеспечению режима защиты
+                    конфиденциальности персональных данных, которые Пользователь предоставляет по запросу
+                    Администрации сайта.
+                  </li>
+                  <li>
+                    Персональные данные, разрешённые к обработке в рамках настоящей Политики
+                    конфиденциальности, предоставляются Пользователем путём заполнения форм на сайте
+                    https://e-slidingglass.ru и включают в себя следующую информацию:
+                    <ol>
+                      <li>имя Пользователя;</li>
+                      <li>контактный телефон Пользователя.</li>
+                    </ol>
+                  </li>
+                  <li>
+                    ООО &laquo;ОСТЕК&raquo; защищает Данные, которые автоматически передаются в процессе
+                    просмотра рекламных блоков и при посещении страниц, на которых установлен
+                    статистический скрипт системы (&laquo;пиксель&raquo;):
+                    <ul>
+                      <li>IP адрес;</li>
+                      <li>информация из cookies;</li>
+                      <li>
+                        информация о браузере (или иной программе, которая осуществляет доступ
+                        к показу рекламы);
+                      </li>
+                      <li>время доступа;</li>
+                      <li>адрес страницы, на которой расположен рекламный блок;</li>
+                      <li>реферер (адрес предыдущей страницы).</li>
+                    </ul>
+                    <ol>
+                      <li>
+                        Отключение cookies может повлечь невозможность доступа к частям сайта ООО
+                        &laquo;ОСТЕК&raquo;, требующим авторизации.
+                      </li>
+                      <li>
+                        ООО &laquo;ОСТЕК&raquo; осуществляет сбор статистики об IP-адресах своих
+                        посетителей. Данная информация используется с целью выявления и решения
+                        технических проблем, для контроля законности проводимых финансовых платежей.
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Любая иная персональная информация неоговоренная выше (используемые браузеры
+                    и операционные системы и т.д.) подлежит надёжному хранению
+                    и нераспространению, за исключением случаев, предусмотренных
+                    в п.п. 5.2. и 5.3. настоящей Политики конфиденциальности.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Цели сбора персональной информации пользователя</h3>
+                <ol>
+                  <li>
+                    Персональные данные Пользователя Администрация сайта https://e-slidingglass.ru может
+                    использовать в целях:
+                    <ol>
+                      <li>
+                        Идентификации Пользователя, зарегистрированного на сайте
+                        https://e-slidingglass.ru.
+                      </li>
+                      <li>
+                        Предоставления Пользователю доступа к персонализированным ресурсам сайта
+                        https://e-slidingglass.ru.
+                      </li>
+                      <li>
+                        Установления с Пользователем обратной связи, включая направление уведомлений,
+                        запросов, касающихся использования сайта https://e-slidingglass.ru, оказания услуг,
+                        обработка запросов и заявок от Пользователя.
+                      </li>
+                      <li>
+                        Определения места нахождения Пользователя для обеспечения безопасности, предотвращения
+                        мошенничества.
+                      </li>
+                      <li>
+                        Подтверждения достоверности и полноты персональных данных, предоставленных
+                        Пользователем.
+                      </li>
+                      <li>
+                        Предоставления Пользователю эффективной клиентской и технической поддержки при
+                        возникновении проблем связанных с использованием сайта https://e-slidingglass.ru.
+                      </li>
+                      <li>
+                        Предоставления Пользователю с его согласия, обновлений продукции, специальных
+                        предложений, информации о ценах, новостной рассылки и иных сведений
+                        от имени ООО &laquo;ОСТЕК&raquo; или от имени партнёров ООО
+                        &laquo;ОСТЕК&raquo;.
+                      </li>
+                      <li>Осуществления рекламной деятельности.</li>
+                      <li>
+                        Предоставления доступа Пользователю на сайты или сервисы партнёров ООО
+                        &laquo;ОСТЕК&raquo; с целью получения продуктов, обновлений и услуг.
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Способы и сроки обработки персональной информации</h3>
+                <ol>
+                  <li>
+                    Обработка персональных данных Пользователя осуществляется без ограничения срока, любым
+                    законным способом, в том числе в информационных системах персональных данных
+                    с использованием средств автоматизации или без использования таких средств.
+                  </li>
+                  <li>
+                    Персональные данные Пользователя могут быть переданы уполномоченным органам
+                    государственной власти Российской Федерации только по основаниям
+                    и в порядке, установленным законодательством Российской Федерации.
+                  </li>
+                  <li>
+                    Администрация сайта принимает необходимые организационные и технические меры для
+                    защиты персональной информации Пользователя от неправомерного или случайного доступа,
+                    уничтожения, изменения, блокирования, копирования, распространения, а также
+                    от иных неправомерных действий третьих лиц.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Обязательства сторон</h3>
+                <ol>
+                  <li>
+                    Пользователь обязан:
+                    <ol>
+                      <li>
+                        Предоставить информацию о персональных данных, необходимую для пользования сайтом
+                        https://e-slidingglass.ru.
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Администрация сайта обязана:
+                    <ol>
+                      <li>
+                        Использовать полученную информацию исключительно для целей, указанных
+                        в п. 4 настоящей Политики конфиденциальности.
+                      </li>
+                      <li>
+                        Обеспечить хранение конфиденциальной информации в тайне, не разглашать без
+                        предварительного письменного разрешения Пользователя, а также
+                        не осуществлять продажу, обмен, опубликование, либо разглашение иными возможными
+                        способами переданных персональных данных Пользователя, за исключением
+                        п.п. 5.2. и 5.3. настоящей Политики Конфиденциальности.
+                      </li>
+                      <li>
+                        Принимать меры предосторожности для защиты конфиденциальности персональных данных
+                        Пользователя согласно порядку, обычно используемого для защиты такого рода информации
+                        в существующем деловом обороте.
+                      </li>
+                      <li>
+                        Осуществить блокирование персональных данных, относящихся к соответствующему
+                        Пользователю, с момента обращения или запроса Пользователя или его законного
+                        представителя либо уполномоченного органа по защите прав субъектов персональных
+                        данных на период проверки, в случае выявления недостоверных персональных
+                        данных или неправомерных действий.
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Ответственность сторон</h3>
+                <ol>
+                  <li>
+                    Администрация сайта, не исполнившая свои обязательства, несёт ответственность
+                    за убытки, понесённые Пользователем в связи с неправомерным использованием
+                    персональных данных, в соответствии с законодательством Российской Федерации,
+                    за исключением случаев, предусмотренных п.п. 5.2., 5.3. и 7.2. настоящей
+                    Политики Конфиденциальности.
+                  </li>
+                  <li>
+                    В случае утраты или разглашения Конфиденциальной информации Администрация сайта
+                    не несёт ответственность, если данная конфиденциальная информация:
+                    <ol>
+                      <li>Стала публичным достоянием до её утраты или разглашения.</li>
+                      <li>
+                        Была получена от третьей стороны до момента её получения Администрацией
+                        сайта.
+                      </li>
+                      <li>Была разглашена с согласия Пользователя.</li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Разрешение споров</h3>
+                <ol>
+                  <li>
+                    До обращения в суд с иском по спорам, возникающим из отношений
+                    между Пользователем сайта https://e-slidingglass.ru и Администрацией сайта,
+                    обязательным является предъявление претензии (письменного предложения о добровольном
+                    урегулировании спора).
+                  </li>
+                  <li>
+                    Получатель претензии в течение 30 календарных дней со дня получения
+                    претензии, письменно уведомляет заявителя претензии о результатах рассмотрения
+                    претензии.
+                  </li>
+                  <li>
+                    При не достижении соглашения спор будет передан на рассмотрение в судебный
+                    орган в соответствии с действующим законодательством Российской Федерации.
+                  </li>
+                  <li>
+                    К настоящей Политике конфиденциальности и отношениям между Пользователем
+                    и Администрацией сайта применяется действующее законодательство Российской Федерации.
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Дополнительные условия</h3>
+                <ol>
+                  <li>
+                    Администрация сайта вправе вносить изменения в настоящую Политику конфиденциальности
+                    без согласия Пользователя.
+                  </li>
+                  <li>
+                    Новая Политика конфиденциальности вступает в силу с момента её размещения
+                    на сайте интернет-магазина, если иное не предусмотрено новой редакцией Политики
+                    конфиденциальности.
+                  </li>
+                  <li>
+                    Действующая Политика конфиденциальности размещена на сайте
+                    https://e-slidingglass.ru/#policy.
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="props">
+      <div class="popup__body popup__body_large">
+        <button
+          class="popup__close btn btn_small btn_icon btn_light"
+          type="button"
+          data-popup-close
+          aria-label="Закрыть окно"
+          title="Закрыть окно"
+        >
+          <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.2929 20.2929C20.6834 19.9024 21.3166 19.9024 21.7071 20.2929L27 25.5858L32.2929 20.2929C32.6834 19.9024 33.3166 19.9024 33.7071 20.2929C34.0976 20.6834 34.0976 21.3166 33.7071 21.7071L28.4142 27L33.7071 32.2929C34.0976 32.6834 34.0976 33.3166 33.7071 33.7071C33.3166 34.0976 32.6834 34.0976 32.2929 33.7071L27 28.4142L21.7071 33.7071C21.3166 34.0976 20.6834 34.0976 20.2929 33.7071C19.9024 33.3166 19.9024 32.6834 20.2929 32.2929L25.5858 27L20.2929 21.7071C19.9024 21.3166 19.9024 20.6834 20.2929 20.2929Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <div class="popup__inner">
+          <article class="article">
+            <h2>Реквизиты компании</h2>
+            <dl>
+              <div>
+                <dt>Полное наименование организации</dt>
+                <dd>Общество с ограниченной ответственностью &laquo;ОСТЕК&raquo;</dd>
+              </div>
+              <div>
+                <dt>Краткое наименование организации</dt>
+                <dd>ООО &laquo;ОСТ&raquo;</dd>
+              </div>
+              <div>
+                <dt>Юридический адрес</dt>
+                <dd>
+                  142003, Московская обл, г.о. Домодедово, г. Домодедово, мкр. Западный,
+                  ул. Рабочая, д. 44
+                </dd>
+              </div>
+              <div>
+                <dt>ИНН</dt>
+                <dd>5009138210</dd>
+              </div>
+              <div>
+                <dt>КПП</dt>
+                <dd>500901001</dd>
+              </div>
+              <div>
+                <dt>ОГРН</dt>
+                <dd>1245000003676</dd>
+              </div>
+              <div>
+                <dt>Генеральный директор</dt>
+                <dd>Слизский Данил Сергеевич</dd>
+              </div>
+              <div>
+                <dt>Телефон</dt>
+                <dd>+7 495 023-33-26</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookies">
+      <p class="cookies__text">Мы используем файлы-cookie, чтобы улучшить сайт для вас</p>
+      <button
+        class="cookies__btn btn btn_small btn_icon btn_light"
+        type="button"
+        aria-label="Принять файлы-cookie"
+        title="Принять файлы-cookie"
+      >
+        <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M20.2929 20.2929C20.6834 19.9024 21.3166 19.9024 21.7071 20.2929L27 25.5858L32.2929 20.2929C32.6834 19.9024 33.3166 19.9024 33.7071 20.2929C34.0976 20.6834 34.0976 21.3166 33.7071 21.7071L28.4142 27L33.7071 32.2929C34.0976 32.6834 34.0976 33.3166 33.7071 33.7071C33.3166 34.0976 32.6834 34.0976 32.2929 33.7071L27 28.4142L21.7071 33.7071C21.3166 34.0976 20.6834 34.0976 20.2929 33.7071C19.9024 33.3166 19.9024 32.6834 20.2929 32.2929L25.5858 27L20.2929 21.7071C19.9024 21.3166 19.9024 20.6834 20.2929 20.2929Z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+    </div>
+  </body>
+</html>
