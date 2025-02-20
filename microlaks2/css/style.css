@@ -1405,6 +1405,11 @@ html:not(.is-scrolled) .cookie {
   border-radius: var(--radius-large);
   overflow: hidden;
 }
+.table-1 a {
+  text-decoration: none;
+  color: inherit;
+  pointer-events: none;
+}
 .table-1__item {
   display: flex;
 }
@@ -1449,6 +1454,11 @@ html:not(.is-scrolled) .cookie {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-large);
   overflow: hidden;
+}
+.table-2 a {
+  text-decoration: none;
+  color: inherit;
+  pointer-events: none;
 }
 .table-2__head {
   display: grid;
@@ -1534,6 +1544,11 @@ html:not(.is-scrolled) .cookie {
   border-radius: var(--radius-large);
   overflow: hidden;
 }
+.table-3 a {
+  text-decoration: none;
+  color: inherit;
+  pointer-events: none;
+}
 .table-3__item {
   flex: 0 0 50%;
   padding-bottom: 10px;
@@ -1581,6 +1596,11 @@ html:not(.is-scrolled) .cookie {
   border-radius: var(--radius-small);
   overflow: hidden;
 }
+.table-4 a {
+  text-decoration: none;
+  color: inherit;
+  pointer-events: none;
+}
 .table-4__item + .table-4__item {
   border-style: solid;
   border-width: 1px 0 0;
@@ -1621,6 +1641,11 @@ html:not(.is-scrolled) .cookie {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-small);
   overflow: hidden;
+}
+.table-5 a {
+  text-decoration: none;
+  color: inherit;
+  pointer-events: none;
 }
 .table-5__head {
   display: grid;
@@ -1755,10 +1780,30 @@ html:not(.is-scrolled) .cookie {
   background-image: linear-gradient(180deg, var(--color-lvl-from) 0, var(--color-lvl-to) 100%);
 }
 .scale__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 4em;
+  overflow: hidden;
   padding: 12px 14px 12px 39%;
 }
 .scale__item + .scale__item {
   border-top: 1px solid var(--color-border);
+}
+.scale__img-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1%;
+  width: 32%;
+}
+.scale__img {
+  aspect-ratio: 15/8;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
 }
 .scale__name {
   margin-bottom: 4px;
@@ -2312,6 +2357,9 @@ html:not(.is-scrolled) .cookie {
   .scale__item {
     padding-right: 16px;
     padding-left: 26%;
+  }
+  .scale__img-box {
+    width: 19%;
   }
   .scale__name {
     margin-bottom: 6px;
