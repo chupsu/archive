@@ -227,13 +227,9 @@ let bodyLock = (delay = 500) => {
     let lock_padding = document.querySelectorAll("[data-lp]");
     for (let index = 0; index < lock_padding.length; index++) {
       const el = lock_padding[index];
-      el.style.paddingRight =
-        window.innerWidth -
-        document.querySelector(".wrapper").offsetWidth +
-        "px";
+      el.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
     }
-    body.style.paddingRight =
-      window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+    body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
     document.documentElement.classList.add("is-lock");
 
     bodyLockStatus = false;
@@ -250,19 +246,17 @@ let bodyLock = (delay = 500) => {
 function spollers() {
   const spollersArray = document.querySelectorAll("[data-spollers]");
   if (spollersArray.length > 0) {
+    // Событие клика
+    document.addEventListener("click", setSpollerAction);
     // Получение обычных слойлеров
-    const spollersRegular = Array.from(spollersArray).filter(function (
-      item,
-      index,
-      self
-    ) {
+    const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
       return !item.dataset.spollers.split(",")[0];
     });
     // Инициализация обычных слойлеров
     if (spollersRegular.length) {
       initSpollers(spollersRegular);
     }
-    // Получение слойлеров с медиа запросами
+    // Получение слойлеров с медиа-запросами
     let mdQueriesArray = dataMediaQueries(spollersArray, "spollers");
     if (mdQueriesArray && mdQueriesArray.length) {
       mdQueriesArray.forEach((mdQueriesItem) => {
@@ -280,29 +274,32 @@ function spollers() {
         if (matchMedia.matches || !matchMedia) {
           spollersBlock.classList.add("_spoller-init");
           initSpollerBody(spollersBlock);
-          spollersBlock.addEventListener("click", setSpollerAction);
         } else {
           spollersBlock.classList.remove("_spoller-init");
           initSpollerBody(spollersBlock, false);
-          spollersBlock.removeEventListener("click", setSpollerAction);
         }
       });
     }
     // Работа с контентом
     function initSpollerBody(spollersBlock, hideSpollerBody = true) {
-      let spollerTitles = spollersBlock.querySelectorAll("[data-spoller]");
-      if (spollerTitles.length) {
-        spollerTitles = Array.from(spollerTitles).filter(
-          (item) => item.closest("[data-spollers]") === spollersBlock
-        );
-        spollerTitles.forEach((spollerTitle) => {
+      let spollerItems = spollersBlock.querySelectorAll("details");
+      if (spollerItems.length) {
+        //spollerItems = Array.from(spollerItems).filter(item => item.closest('[data-spollers]') === spollersBlock);
+        spollerItems.forEach((spollerItem) => {
+          let spollerTitle = spollerItem.querySelector("summary");
           if (hideSpollerBody) {
             spollerTitle.removeAttribute("tabindex");
-            if (!spollerTitle.classList.contains("_spoller-active")) {
+            if (!spollerItem.hasAttribute("data-open")) {
+              spollerItem.open = false;
               spollerTitle.nextElementSibling.hidden = true;
+            } else {
+              spollerTitle.classList.add("_spoller-active");
+              spollerItem.open = true;
             }
           } else {
             spollerTitle.setAttribute("tabindex", "-1");
+            spollerTitle.classList.remove("_spoller-active");
+            spollerItem.open = true;
             spollerTitle.nextElementSibling.hidden = false;
           }
         });
@@ -310,57 +307,82 @@ function spollers() {
     }
     function setSpollerAction(e) {
       const el = e.target;
-      if (el.closest("[data-spoller]")) {
-        const spollerTitle = el.closest("[data-spoller]");
-        const spollersBlock = spollerTitle.closest("[data-spollers]");
-        const oneSpoller = spollersBlock.hasAttribute("data-one-spoller");
-        const spollerSpeed = spollersBlock.dataset.spollersSpeed
-          ? parseInt(spollersBlock.dataset.spollersSpeed)
-          : 500;
-        if (!spollersBlock.querySelectorAll("._slide").length) {
-          if (
-            oneSpoller &&
-            !spollerTitle.classList.contains("_spoller-active")
-          ) {
-            hideSpollersBody(spollersBlock);
-          }
-          spollerTitle.classList.toggle("_spoller-active");
-          _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
-        }
+      if (el.closest("summary") && el.closest("[data-spollers]")) {
         e.preventDefault();
+        if (el.closest("[data-spollers]").classList.contains("_spoller-init")) {
+          const spollerTitle = el.closest("summary");
+          const spollerBlock = spollerTitle.closest("details");
+          const spollersBlock = spollerTitle.closest("[data-spollers]");
+          const oneSpoller = spollersBlock.hasAttribute("data-one-spoller");
+          const scrollSpoller = spollerBlock.hasAttribute("data-spoller-scroll");
+          const spollerSpeed = spollersBlock.dataset.spollersSpeed
+            ? parseInt(spollersBlock.dataset.spollersSpeed)
+            : 500;
+          if (!spollersBlock.querySelectorAll("._slide").length) {
+            if (oneSpoller && !spollerBlock.open) {
+              hideSpollersBody(spollersBlock);
+            }
+
+            !spollerBlock.open
+              ? (spollerBlock.open = true)
+              : setTimeout(() => {
+                  spollerBlock.open = false;
+                }, spollerSpeed);
+
+            spollerTitle.classList.toggle("_spoller-active");
+            _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
+
+            if (scrollSpoller && spollerTitle.classList.contains("_spoller-active")) {
+              const scrollSpollerValue = spollerBlock.dataset.spollerScroll;
+              const scrollSpollerOffset = +scrollSpollerValue ? +scrollSpollerValue : 0;
+              const scrollSpollerNoHeader = spollerBlock.hasAttribute("data-spoller-scroll-noheader")
+                ? document.querySelector(".header").offsetHeight
+                : 0;
+
+              //setTimeout(() => {
+              window.scrollTo({
+                top: spollerBlock.offsetTop - (scrollSpollerOffset + scrollSpollerNoHeader),
+                behavior: "smooth",
+              });
+              //}, spollerSpeed);
+            }
+          }
+        }
+      }
+      // Закрытие при клике вне спойлера
+      if (!el.closest("[data-spollers]")) {
+        const spollersClose = document.querySelectorAll("[data-spoller-close]");
+        if (spollersClose.length) {
+          spollersClose.forEach((spollerClose) => {
+            const spollersBlock = spollerClose.closest("[data-spollers]");
+            const spollerCloseBlock = spollerClose.parentNode;
+            if (spollersBlock.classList.contains("_spoller-init")) {
+              const spollerSpeed = spollersBlock.dataset.spollersSpeed
+                ? parseInt(spollersBlock.dataset.spollersSpeed)
+                : 500;
+              spollerClose.classList.remove("_spoller-active");
+              _slideUp(spollerClose.nextElementSibling, spollerSpeed);
+              setTimeout(() => {
+                spollerCloseBlock.open = false;
+              }, spollerSpeed);
+            }
+          });
+        }
       }
     }
     function hideSpollersBody(spollersBlock) {
-      const spollerActiveTitle = spollersBlock.querySelector(
-        "[data-spoller]._spoller-active"
-      );
-      const spollerSpeed = spollersBlock.dataset.spollersSpeed
-        ? parseInt(spollersBlock.dataset.spollersSpeed)
-        : 500;
-      if (
-        spollerActiveTitle &&
-        !spollersBlock.querySelectorAll("._slide").length
-      ) {
+      const spollerActiveBlock = spollersBlock.querySelector("details[open]");
+      if (spollerActiveBlock && !spollersBlock.querySelectorAll("._slide").length) {
+        const spollerActiveTitle = spollerActiveBlock.querySelector("summary");
+        const spollerSpeed = spollersBlock.dataset.spollersSpeed
+          ? parseInt(spollersBlock.dataset.spollersSpeed)
+          : 500;
         spollerActiveTitle.classList.remove("_spoller-active");
         _slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
+        setTimeout(() => {
+          spollerActiveBlock.open = false;
+        }, spollerSpeed);
       }
-    }
-    // Закрытие при клике вне спойлера
-    const spollersClose = document.querySelectorAll("[data-spoller-close]");
-    if (spollersClose.length) {
-      document.addEventListener("click", function (e) {
-        const el = e.target;
-        if (!el.closest("[data-spollers]")) {
-          spollersClose.forEach((spollerClose) => {
-            const spollersBlock = spollerClose.closest("[data-spollers]");
-            const spollerSpeed = spollersBlock.dataset.spollersSpeed
-              ? parseInt(spollersBlock.dataset.spollersSpeed)
-              : 500;
-            spollerClose.classList.remove("_spoller-active");
-            _slideUp(spollerClose.nextElementSibling, spollerSpeed);
-          });
-        }
-      });
     }
   }
 }
@@ -431,18 +453,12 @@ function tabs() {
     const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
 
     if (tabsActiveHashBlock) {
-      const tabsActiveTitle = tabsBlock.querySelector(
-        "[data-tabs-titles]>._tab-active"
-      );
+      const tabsActiveTitle = tabsBlock.querySelector("[data-tabs-titles]>._tab-active");
       tabsActiveTitle ? tabsActiveTitle.classList.remove("_tab-active") : null;
     }
     if (tabsContent.length) {
-      tabsContent = Array.from(tabsContent).filter(
-        (item) => item.closest("[data-tabs]") === tabsBlock
-      );
-      tabsTitles = Array.from(tabsTitles).filter(
-        (item) => item.closest("[data-tabs]") === tabsBlock
-      );
+      tabsContent = Array.from(tabsContent).filter((item) => item.closest("[data-tabs]") === tabsBlock);
+      tabsTitles = Array.from(tabsTitles).filter((item) => item.closest("[data-tabs]") === tabsBlock);
       tabsContent.forEach((tabsContentItem, index) => {
         tabsTitles[index].setAttribute("data-tabs-title", "");
         tabsContentItem.setAttribute("data-tabs-item", "");
@@ -450,8 +466,7 @@ function tabs() {
         if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
           tabsTitles[index].classList.add("_tab-active");
         }
-        tabsContentItem.hidden =
-          !tabsTitles[index].classList.contains("_tab-active");
+        tabsContentItem.hidden = !tabsTitles[index].classList.contains("_tab-active");
       });
     }
   }
@@ -461,20 +476,14 @@ function tabs() {
     const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
     function isTabsAnamate(tabsBlock) {
       if (tabsBlock.hasAttribute("data-tabs-animate")) {
-        return tabsBlock.dataset.tabsAnimate > 0
-          ? Number(tabsBlock.dataset.tabsAnimate)
-          : 500;
+        return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
       }
     }
     const tabsBlockAnimate = isTabsAnamate(tabsBlock);
     if (tabsContent.length > 0) {
       const isHash = tabsBlock.hasAttribute("data-tabs-hash");
-      tabsContent = Array.from(tabsContent).filter(
-        (item) => item.closest("[data-tabs]") === tabsBlock
-      );
-      tabsTitles = Array.from(tabsTitles).filter(
-        (item) => item.closest("[data-tabs]") === tabsBlock
-      );
+      tabsContent = Array.from(tabsContent).filter((item) => item.closest("[data-tabs]") === tabsBlock);
+      tabsTitles = Array.from(tabsTitles).filter((item) => item.closest("[data-tabs]") === tabsBlock);
       tabsContent.forEach((tabsContentItem, index) => {
         if (tabsTitles[index].classList.contains("_tab-active")) {
           if (tabsBlockAnimate) {
@@ -500,21 +509,14 @@ function tabs() {
     if (el.closest("[data-tabs-title]")) {
       const tabTitle = el.closest("[data-tabs-title]");
       const tabsBlock = tabTitle.closest("[data-tabs]");
-      if (
-        !tabTitle.classList.contains("_tab-active") &&
-        !tabsBlock.querySelector("._slide")
-      ) {
-        let tabActiveTitle = tabsBlock.querySelectorAll(
-          "[data-tabs-title]._tab-active"
-        );
+      if (!tabTitle.classList.contains("_tab-active") && !tabsBlock.querySelector("._slide")) {
+        let tabActiveTitle = tabsBlock.querySelectorAll("[data-tabs-title]._tab-active");
         tabActiveTitle.length
           ? (tabActiveTitle = Array.from(tabActiveTitle).filter(
               (item) => item.closest("[data-tabs]") === tabsBlock
             ))
           : null;
-        tabActiveTitle.length
-          ? tabActiveTitle[0].classList.remove("_tab-active")
-          : null;
+        tabActiveTitle.length ? tabActiveTitle[0].classList.remove("_tab-active") : null;
         tabTitle.classList.add("_tab-active");
         setTabsStatus(tabsBlock);
       }
@@ -553,142 +555,124 @@ function menuClose() {
 Сниппет (HTML): showmore
 */
 function showMore() {
-  window.addEventListener("load", function (e) {
-    const showMoreBlocks = document.querySelectorAll("[data-showmore]");
-    let showMoreBlocksRegular;
-    let mdQueriesArray;
-    if (showMoreBlocks.length) {
-      // Получение обычных объектов
-      showMoreBlocksRegular = Array.from(showMoreBlocks).filter(function (
-        item,
-        index,
-        self
-      ) {
-        return !item.dataset.showmoreMedia;
-      });
-      // Инициализация обычных объектов
-      showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+  const showMoreBlocks = document.querySelectorAll("[data-showmore]");
+  let showMoreBlocksRegular;
+  let mdQueriesArray;
+  if (showMoreBlocks.length) {
+    // Получение обычных объектов
+    showMoreBlocksRegular = Array.from(showMoreBlocks).filter(function (item, index, self) {
+      return !item.dataset.showmoreMedia;
+    });
+    // Инициализация обычных объектов
+    showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
 
-      document.addEventListener("click", showMoreActions);
-      window.addEventListener("resize", showMoreActions);
+    document.addEventListener("click", showMoreActions);
+    window.addEventListener("resize", showMoreActions);
 
-      // Получение объектов с медиа запросами
-      mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
-      if (mdQueriesArray && mdQueriesArray.length) {
-        mdQueriesArray.forEach((mdQueriesItem) => {
-          // Событие
-          mdQueriesItem.matchMedia.addEventListener("change", function () {
-            initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-          });
-        });
-        initItemsMedia(mdQueriesArray);
-      }
-    }
-    function initItemsMedia(mdQueriesArray) {
+    // Получение объектов с медиа запросами
+    mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
+    if (mdQueriesArray && mdQueriesArray.length) {
       mdQueriesArray.forEach((mdQueriesItem) => {
-        initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+        // Событие
+        mdQueriesItem.matchMedia.addEventListener("change", function () {
+          initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+        });
       });
+      initItemsMedia(mdQueriesArray);
     }
-    function initItems(showMoreBlocks, matchMedia) {
-      showMoreBlocks.forEach((showMoreBlock) => {
-        initItem(showMoreBlock, matchMedia);
-      });
-    }
-    function initItem(showMoreBlock, matchMedia = false) {
-      showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
-      let showMoreContent = showMoreBlock.querySelectorAll(
-        "[data-showmore-content]"
-      );
-      let showMoreButton = showMoreBlock.querySelectorAll(
-        "[data-showmore-button]"
-      );
-      showMoreContent = Array.from(showMoreContent).filter(
-        (item) => item.closest("[data-showmore]") === showMoreBlock
-      )[0];
-      showMoreButton = Array.from(showMoreButton).filter(
-        (item) => item.closest("[data-showmore]") === showMoreBlock
-      )[0];
-      const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
-      if (matchMedia.matches || !matchMedia) {
-        if (hiddenHeight < getOriginalHeight(showMoreContent)) {
-          _slideUp(showMoreContent, 0, hiddenHeight);
-          showMoreButton.hidden = false;
-        } else {
-          _slideDown(showMoreContent, 0, hiddenHeight);
-          showMoreButton.hidden = true;
-        }
+  }
+  function initItemsMedia(mdQueriesArray) {
+    mdQueriesArray.forEach((mdQueriesItem) => {
+      initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+    });
+  }
+  function initItems(showMoreBlocks, matchMedia) {
+    showMoreBlocks.forEach((showMoreBlock) => {
+      initItem(showMoreBlock, matchMedia);
+    });
+  }
+  function initItem(showMoreBlock, matchMedia = false) {
+    showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
+    let showMoreContent = showMoreBlock.querySelectorAll("[data-showmore-content]");
+    let showMoreButton = showMoreBlock.querySelectorAll("[data-showmore-button]");
+    showMoreContent = Array.from(showMoreContent).filter(
+      (item) => item.closest("[data-showmore]") === showMoreBlock
+    )[0];
+    showMoreButton = Array.from(showMoreButton).filter(
+      (item) => item.closest("[data-showmore]") === showMoreBlock
+    )[0];
+    const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+    if (matchMedia.matches || !matchMedia) {
+      if (hiddenHeight < getOriginalHeight(showMoreContent)) {
+        _slideUp(showMoreContent, 0, hiddenHeight);
+        showMoreButton.hidden = false;
       } else {
         _slideDown(showMoreContent, 0, hiddenHeight);
         showMoreButton.hidden = true;
       }
+    } else {
+      _slideDown(showMoreContent, 0, hiddenHeight);
+      showMoreButton.hidden = true;
     }
-    function getHeight(showMoreBlock, showMoreContent) {
-      let hiddenHeight = 0;
-      const showMoreType = showMoreBlock.dataset.showmore
-        ? showMoreBlock.dataset.showmore
-        : "size";
-      if (showMoreType === "items") {
-        const showMoreTypeValue = showMoreContent.dataset.showmoreContent
-          ? showMoreContent.dataset.showmoreContent
-          : 3;
-        const showMoreItems = showMoreContent.children;
-        for (let index = 1; index < showMoreItems.length; index++) {
-          const showMoreItem = showMoreItems[index - 1];
-          hiddenHeight += showMoreItem.offsetHeight;
-          if (index == showMoreTypeValue) break;
+  }
+  function getHeight(showMoreBlock, showMoreContent) {
+    let hiddenHeight = 0;
+    const showMoreType = showMoreBlock.dataset.showmore ? showMoreBlock.dataset.showmore : "size";
+    if (showMoreType === "items") {
+      const showMoreTypeValue = showMoreContent.dataset.showmoreContent
+        ? showMoreContent.dataset.showmoreContent
+        : 3;
+      const showMoreItems = showMoreContent.children;
+      for (let index = 1; index < showMoreItems.length; index++) {
+        const showMoreItem = showMoreItems[index - 1];
+        hiddenHeight += showMoreItem.offsetHeight;
+        if (index == showMoreTypeValue) break;
+      }
+    } else {
+      const showMoreTypeValue = showMoreContent.dataset.showmoreContent
+        ? showMoreContent.dataset.showmoreContent
+        : 150;
+      hiddenHeight = showMoreTypeValue;
+    }
+    return hiddenHeight;
+  }
+  function getOriginalHeight(showMoreContent) {
+    let parentHidden;
+    let hiddenHeight = showMoreContent.offsetHeight;
+    showMoreContent.style.removeProperty("height");
+    if (showMoreContent.closest(`[hidden]`)) {
+      parentHidden = showMoreContent.closest(`[hidden]`);
+      parentHidden.hidden = false;
+    }
+    let originalHeight = showMoreContent.offsetHeight;
+    parentHidden ? (parentHidden.hidden = true) : null;
+    showMoreContent.style.height = `${hiddenHeight}px`;
+    return originalHeight;
+  }
+  function showMoreActions(e) {
+    const targetEvent = e.target;
+    const targetType = e.type;
+    if (targetType === "click") {
+      if (targetEvent.closest("[data-showmore-button]")) {
+        const showMoreButton = targetEvent.closest("[data-showmore-button]");
+        const showMoreBlock = showMoreButton.closest("[data-showmore]");
+        const showMoreContent = showMoreBlock.querySelector("[data-showmore-content]");
+        const showMoreSpeed = showMoreBlock.dataset.showmoreButton
+          ? showMoreBlock.dataset.showmoreButton
+          : "500";
+        const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+        if (!showMoreContent.classList.contains("_slide")) {
+          showMoreBlock.classList.contains("_showmore-active")
+            ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight)
+            : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
+          showMoreBlock.classList.toggle("_showmore-active");
         }
-      } else {
-        const showMoreTypeValue = showMoreContent.dataset.showmoreContent
-          ? showMoreContent.dataset.showmoreContent
-          : 150;
-        hiddenHeight = showMoreTypeValue;
       }
-      return hiddenHeight;
+    } else if (targetType === "resize") {
+      showMoreBlocksRegular && showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+      mdQueriesArray && mdQueriesArray.length ? initItemsMedia(mdQueriesArray) : null;
     }
-    function getOriginalHeight(showMoreContent) {
-      let parentHidden;
-      let hiddenHeight = showMoreContent.offsetHeight;
-      showMoreContent.style.removeProperty("height");
-      if (showMoreContent.closest(`[hidden]`)) {
-        parentHidden = showMoreContent.closest(`[hidden]`);
-        parentHidden.hidden = false;
-      }
-      let originalHeight = showMoreContent.offsetHeight;
-      parentHidden ? (parentHidden.hidden = true) : null;
-      showMoreContent.style.height = `${hiddenHeight}px`;
-      return originalHeight;
-    }
-    function showMoreActions(e) {
-      const targetEvent = e.target;
-      const targetType = e.type;
-      if (targetType === "click") {
-        if (targetEvent.closest("[data-showmore-button]")) {
-          const showMoreButton = targetEvent.closest("[data-showmore-button]");
-          const showMoreBlock = showMoreButton.closest("[data-showmore]");
-          const showMoreContent = showMoreBlock.querySelector(
-            "[data-showmore-content]"
-          );
-          const showMoreSpeed = showMoreBlock.dataset.showmoreButton
-            ? showMoreBlock.dataset.showmoreButton
-            : "500";
-          const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
-          if (!showMoreContent.classList.contains("_slide")) {
-            showMoreBlock.classList.contains("_showmore-active")
-              ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight)
-              : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
-            showMoreBlock.classList.toggle("_showmore-active");
-          }
-        }
-      } else if (targetType === "resize") {
-        showMoreBlocksRegular && showMoreBlocksRegular.length
-          ? initItems(showMoreBlocksRegular)
-          : null;
-        mdQueriesArray && mdQueriesArray.length
-          ? initItemsMedia(mdQueriesArray)
-          : null;
-      }
-    }
-  });
+  }
 }
 //================================================================================================================================================================================================================================================================================================================
 // Прочие полезные функции ================================================================================================================================================================================================================================================================================================================
@@ -741,16 +725,7 @@ function dataMediaQueries(array, dataSetValue) {
     });
     // Получаем уникальные брейкпоинты
     let mdQueries = breakpointsArray.map(function (item) {
-      return (
-        "(" +
-        item.type +
-        "-width: " +
-        item.value +
-        "px)," +
-        item.value +
-        "," +
-        item.type
-      );
+      return "(" + item.type + "-width: " + item.value + "px)," + item.value + "," + item.type;
     });
     mdQueries = uniqArray(mdQueries);
     const mdQueriesArray = [];
@@ -925,7 +900,7 @@ function findVideos() {
 
 function setupVideo(video) {
   let link = video.querySelector(".video__link");
-  let button = video.querySelector(".video__button");
+  let button = video.querySelector(".video__btn");
   let isYoutubeVideo = link.href.includes("youtu.be");
   let id;
 
@@ -12777,6 +12752,7 @@ window.onload = function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuInit)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
+  (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.showMore)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
   _module_scroll_js__WEBPACK_IMPORTED_MODULE_1__.pageNavigation();
 
@@ -12882,9 +12858,9 @@ window.onload = function () {
       slidePrevClass: "preview-slider__item_prev",
       slideNextClass: "preview-slider__item_next",
       navigation: {
-        prevEl: ".preview-slider__button_prev",
-        nextEl: ".preview-slider__button_next",
-        disabledClass: "preview-slider__button_disabled",
+        prevEl: ".preview-slider__btn_prev",
+        nextEl: ".preview-slider__btn_next",
+        disabledClass: "preview-slider__btn_disabled",
       },
       breakpoints: {
         480: {},
