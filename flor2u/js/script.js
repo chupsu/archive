@@ -12949,6 +12949,10 @@ window.onload = function () {
     if (window.innerWidth >= 992 && document.querySelector(".is-lock")) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
     }
+
+    if (document.querySelector("[data-showmore]")) {
+      document.querySelector("[data-showmore]").classList.remove("_showmore-active");
+    }
   });
 };
 
