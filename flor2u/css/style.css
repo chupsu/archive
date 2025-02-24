@@ -945,6 +945,7 @@ html {
   color: var(--color-shadow-dark);
 }
 .product-color {
+  transform: translate3d(0, 0, 0);
   display: flex;
   max-width: var(--width-page);
   padding: 0 calc(var(--padding-page) - 0.5 * var(--gap-normal));
@@ -1010,6 +1011,7 @@ html {
   color: var(--color-shadow-dark);
 }
 .product-size {
+  transform: translate3d(0, 0, 0);
   display: flex;
   max-width: var(--width-page);
   padding: 0 calc(var(--padding-page) - 0.5 * var(--gap-smallest));
@@ -1429,6 +1431,7 @@ html {
   align-items: flex-start;
   padding: var(--gap-medium);
   border-radius: var(--radius-large);
+  list-style: none;
   cursor: pointer;
 }
 .icon-spollers__btn:not(.icon-spollers__btn._spoller-active):focus-visible {
