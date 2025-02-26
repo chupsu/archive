@@ -10,18 +10,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   _slideDown: () => (/* binding */ _slideDown),
 /* harmony export */   _slideToggle: () => (/* binding */ _slideToggle),
 /* harmony export */   _slideUp: () => (/* binding */ _slideUp),
-/* harmony export */   addLoadedClass: () => (/* binding */ addLoadedClass),
-/* harmony export */   addTouchClass: () => (/* binding */ addTouchClass),
 /* harmony export */   bodyLock: () => (/* binding */ bodyLock),
 /* harmony export */   bodyLockStatus: () => (/* binding */ bodyLockStatus),
 /* harmony export */   bodyLockToggle: () => (/* binding */ bodyLockToggle),
 /* harmony export */   bodyUnlock: () => (/* binding */ bodyUnlock),
 /* harmony export */   dataMediaQueries: () => (/* binding */ dataMediaQueries),
-/* harmony export */   fullVHfix: () => (/* binding */ fullVHfix),
-/* harmony export */   getDigFormat: () => (/* binding */ getDigFormat),
-/* harmony export */   getDigFromString: () => (/* binding */ getDigFromString),
 /* harmony export */   getHash: () => (/* binding */ getHash),
-/* harmony export */   indexInParent: () => (/* binding */ indexInParent),
 /* harmony export */   isMobile: () => (/* binding */ isMobile),
 /* harmony export */   isWebp: () => (/* binding */ isWebp),
 /* harmony export */   menuClose: () => (/* binding */ menuClose),
@@ -31,8 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setHash: () => (/* binding */ setHash),
 /* harmony export */   showMore: () => (/* binding */ showMore),
 /* harmony export */   spollers: () => (/* binding */ spollers),
-/* harmony export */   tabs: () => (/* binding */ tabs),
-/* harmony export */   uniqArray: () => (/* binding */ uniqArray)
+/* harmony export */   tabs: () => (/* binding */ tabs)
 /* harmony export */ });
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 function isWebp() {
@@ -79,18 +72,18 @@ let isMobile = {
   },
 };
 /* Добавление класса touch для HTML если браузер мобильный */
-function addTouchClass() {
-  // Добавление класса _touch для HTML если браузер мобильный
-  if (isMobile.any()) document.documentElement.classList.add("touch");
-}
+// export function addTouchClass() {
+//   // Добавление класса _touch для HTML если браузер мобильный
+//   if (isMobile.any()) document.documentElement.classList.add("touch");
+// }
 // Добавление loaded для HTML после полной загрузки страницы
-function addLoadedClass() {
-  window.addEventListener("load", function () {
-    setTimeout(function () {
-      document.documentElement.classList.add("loaded");
-    }, 0);
-  });
-}
+// export function addLoadedClass() {
+//   window.addEventListener("load", function () {
+//     setTimeout(function () {
+//       document.documentElement.classList.add("loaded");
+//     }, 0);
+//   });
+// }
 // Получение хеша в адресе сайта
 function getHash() {
   if (location.hash) {
@@ -103,17 +96,17 @@ function setHash(hash) {
   history.pushState("", "", hash);
 }
 // Учет плавающей панели на мобильных устройствах при 100vh
-function fullVHfix() {
-  const fullScreens = document.querySelectorAll("[data-fullscreen]");
-  if (fullScreens.length && isMobile.any()) {
-    window.addEventListener("resize", fixHeight);
-    function fixHeight() {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    }
-    fixHeight();
-  }
-}
+// export function fullVHfix() {
+//   const fullScreens = document.querySelectorAll("[data-fullscreen]");
+//   if (fullScreens.length && isMobile.any()) {
+//     window.addEventListener("resize", fixHeight);
+//     function fixHeight() {
+//       let vh = window.innerHeight * 0.01;
+//       document.documentElement.style.setProperty("--vh", `${vh}px`);
+//     }
+//     fixHeight();
+//   }
+// }
 // Вспомогательные модули плавного расскрытия и закрытия объекта ======================================================================================================================================================================
 let _slideUp = (target, duration = 500, showmore = 0) => {
   if (!target.classList.contains("_slide")) {
@@ -593,6 +586,7 @@ function showMore() {
   }
   function initItem(showMoreBlock, matchMedia = false) {
     showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
+    showMoreBlock.classList.remove("_showmore-init");
     let showMoreContent = showMoreBlock.querySelectorAll("[data-showmore-content]");
     let showMoreButton = showMoreBlock.querySelectorAll("[data-showmore-button]");
     showMoreContent = Array.from(showMoreContent).filter(
@@ -601,6 +595,8 @@ function showMore() {
     showMoreButton = Array.from(showMoreButton).filter(
       (item) => item.closest("[data-showmore]") === showMoreBlock
     )[0];
+    showMoreContent.style.height = "";
+    showMoreContent.dataset.showmoreContent = showMoreContent.offsetHeight;
     const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
     if (matchMedia.matches || !matchMedia) {
       if (hiddenHeight < getOriginalHeight(showMoreContent)) {
@@ -614,6 +610,7 @@ function showMore() {
       _slideDown(showMoreContent, 0, hiddenHeight);
       showMoreButton.hidden = true;
     }
+    showMoreBlock.classList.add("_showmore-init");
   }
   function getHeight(showMoreBlock, showMoreContent) {
     let hiddenHeight = 0;
@@ -639,7 +636,7 @@ function showMore() {
   function getOriginalHeight(showMoreContent) {
     let parentHidden;
     let hiddenHeight = showMoreContent.offsetHeight;
-    showMoreContent.style.removeProperty("height");
+    showMoreContent.style.height = "auto";
     if (showMoreContent.closest(`[hidden]`)) {
       parentHidden = showMoreContent.closest(`[hidden]`);
       parentHidden.hidden = false;
@@ -679,13 +676,13 @@ function showMore() {
 //================================================================================================================================================================================================================================================================================================================
 
 // Получить цифры из строки
-function getDigFromString(item) {
-  return parseInt(item.replace(/[^\d]/g, ""));
-}
+// export function getDigFromString(item) {
+//   return parseInt(item.replace(/[^\d]/g, ""));
+// }
 // Форматирование цифр типа 100 000 000
-function getDigFormat(item) {
-  return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
-}
+// export function getDigFormat(item) {
+//   return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
+// }
 // Убрать класс из всех элементов массива
 function removeClasses(array, className) {
   for (var i = 0; i < array.length; i++) {
@@ -693,16 +690,16 @@ function removeClasses(array, className) {
   }
 }
 // Уникализация массива
-function uniqArray(array) {
-  return array.filter(function (item, index, self) {
-    return self.indexOf(item) === index;
-  });
-}
+// export function uniqArray(array) {
+//   return array.filter(function (item, index, self) {
+//     return self.indexOf(item) === index;
+//   });
+// }
 // Функция получения индекса внутри родителя
-function indexInParent(parent, element) {
-  const array = Array.prototype.slice.call(parent.children);
-  return Array.prototype.indexOf.call(array, element);
-}
+// export function indexInParent(parent, element) {
+//   const array = Array.prototype.slice.call(parent.children);
+//   return Array.prototype.indexOf.call(array, element);
+// }
 // Обработа медиа запросов из атрибутов
 function dataMediaQueries(array, dataSetValue) {
   // Получение объектов с медиа запросами
@@ -12748,7 +12745,7 @@ __webpack_require__.r(__webpack_exports__);
 // import Masonry from "masonry-layout";
 
 
-window.onload = function () {
+window.addEventListener("load", function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuInit)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
@@ -12954,7 +12951,7 @@ window.onload = function () {
       document.querySelector("[data-showmore]").classList.remove("_showmore-active");
     }
   });
-};
+});
 
 })();
 
