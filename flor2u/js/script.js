@@ -587,6 +587,7 @@ function showMore() {
   function initItem(showMoreBlock, matchMedia = false) {
     showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
     showMoreBlock.classList.remove("_showmore-init");
+    showMoreBlock.classList.remove("_showmore-active");
     let showMoreContent = showMoreBlock.querySelectorAll("[data-showmore-content]");
     let showMoreButton = showMoreBlock.querySelectorAll("[data-showmore-button]");
     showMoreContent = Array.from(showMoreContent).filter(
@@ -12906,6 +12907,7 @@ window.addEventListener("load", function () {
     }
 
     // Quantity
+    // код будет переделан
     if (targetElement.closest("[data-quantity-button]")) {
       const valueElement = targetElement
         .closest("[data-quantity]")
@@ -12945,10 +12947,6 @@ window.addEventListener("load", function () {
 
     if (window.innerWidth >= 992 && document.querySelector(".is-lock")) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
-    }
-
-    if (document.querySelector("[data-showmore]")) {
-      document.querySelector("[data-showmore]").classList.remove("_showmore-active");
     }
   });
 });
