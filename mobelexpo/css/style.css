@@ -2695,7 +2695,7 @@ html:not([data-catalog-type=list]) .card__link-more::after {
   color: var(--color-grey);
 }
 .tags__item:not(:last-child)::after {
-  content: "  / ";
+  content: " / ";
 }
 .tags__item span {
   color: var(--color-accent);
