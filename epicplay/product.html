@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Каталог</title>
+    <title>Продукт</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -89,87 +89,296 @@
       </header>
 
       <main class="page">
-        <section class="catalog _mb">
+        <section class="product _mb">
           <div class="container">
-            <div class="catalog__body">
-              <div class="heading">
-                <ul class="breadcrumbs _p4">
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./index.html">Главная</a>
-                  </li>
-                  <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Каталог</span>
-                  </li>
-                </ul>
-                <h1 class="heading__title _h2">Каталог</h1>
-              </div>
-              <div class="catalog__nav">
-                <ul class="category">
-                  <li class="category__item">
+            <div class="product__body">
+              <div class="product__main">
+                <div class="heading">
+                  <ul class="breadcrumbs _p4">
+                    <li class="breadcrumbs__item">
+                      <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                      <span class="breadcrumbs__link">HyperX Pulsefire Haste Wireless White</span>
+                    </li>
+                  </ul>
+                  <h1 class="heading__title _h2">HyperX Pulsefire Haste Wireless White</h1>
+                </div>
+                <div class="product__content">
+                  <div class="product__code _p4">арт. 123456789</div>
+                  <div class="product__info">
+                    <div class="data">
+                      <h4 class="data__title _p1">Коротко о товаре:</h4>
+                      <dl class="data__list">
+                        <div class="data__item">
+                          <dt class="data__name"><span>Размеры (ДхШхВ):</span></dt>
+                          <dd class="data__desc">160 х 80 х 80 см</dd>
+                        </div>
+                        <div class="data__item">
+                          <dt class="data__name"><span>Материал столешницы:</span></dt>
+                          <dd class="data__desc">ДСП 25 мм</dd>
+                        </div>
+                        <div class="data__item">
+                          <dt class="data__name"><span>Максимальная нагрузка:</span></dt>
+                          <dd class="data__desc">100 кг</dd>
+                        </div>
+                        <div class="data__item">
+                          <dt class="data__name"><span>Материал столешницы:</span></dt>
+                          <dd class="data__desc">ДСП 25 мм</dd>
+                        </div>
+                        <div class="data__item">
+                          <dt class="data__name"><span>Цвет корпуса:</span></dt>
+                          <dd class="data__desc">Белый Премиум</dd>
+                        </div>
+                      </dl>
+                    </div>
+                    <!-- для data-tab-id указываем id таба, который нужно открыть -->
+                    <!-- для data-goto указываем class или id к которой проскролить страницу -->
                     <a
-                      class="category__link category__link_active btn btn_main"
-                      href="./catalog.html"
+                      class="product__info-link _p3"
+                      href="#"
+                      data-tab-id="#data"
+                      data-goto=".product__data"
+                      data-goto-top="70"
                     >
-                      <span class="btn__body btn__body_main icon-periphery" aria-hidden="true"><span>Периферия</span></span>
-                      <span class="btn__body btn__body_hover icon-periphery" aria-hidden="true"><span>Периферия</span></span>
-                      <span class="seo">Периферия</span>
+                      Все характеристики
                     </a>
-                  </li>
-                  <li class="category__item">
-                    <a class="category__link btn btn_main" href="./catalog.html">
-                      <span class="btn__body btn__body_main icon-seat" aria-hidden="true"><span>Кресла</span></span>
-                      <span class="btn__body btn__body_hover icon-seat" aria-hidden="true"><span>Кресла</span></span>
-                      <span class="seo">Кресла</span>
-                    </a>
-                  </li>
-                  <li class="category__item">
-                    <a class="category__link btn btn_main" href="./catalog.html">
-                      <span class="btn__body btn__body_main icon-shelves" aria-hidden="true"><span>Статуэтки, полки</span></span>
-                      <span class="btn__body btn__body_hover icon-shelves" aria-hidden="true"><span>Статуэтки, полки</span></span>
-                      <span class="seo">Статуэтки, полки</span>
-                    </a>
-                  </li>
-                  <li class="category__item">
-                    <a class="category__link btn btn_main" href="./catalog.html">
-                      <span class="btn__body btn__body_main icon-desk" aria-hidden="true"><span>Столы</span></span>
-                      <span class="btn__body btn__body_hover icon-desk" aria-hidden="true"><span>Столы</span></span>
-                      <span class="seo">Столы</span>
-                    </a>
-                  </li>
-                </ul>
+                  </div>
+                  <div class="product__footer">
+                    <div class="product__cost">
+                      <div class="product__price">22 700 <span>₽</span></div>
+                    </div>
+                    <div class="product__action">
+                      <button class="product__btn btn btn_cta" type="button">
+                        <span class="btn__body btn__body_main icon-cart" aria-hidden="true"><span>В корзину</span></span>
+                        <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"><span>В корзину</span></span>
+                        <span class="seo">В корзину</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- <div class="product__footer">
+                    <div class="product__cost">
+                      <div class="product__price">Нет в наличии</div>
+                    </div>
+                  </div> -->
+                </div>
               </div>
-              <div class="catalog__main">
-                <div class="catalog__items">
-                  <div class="catalog__item">
+              <div class="product__preview">
+                <span class="bg-text" data-text="EPICPLAYDESK" aria-hidden="true"></span>
+                <div class="preview-slider">
+                  <div class="preview-slider__items">
+                    <figure class="preview-slider__item product-img">
+                      <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="preview-slider__img" src="./img/content/product/1.png" alt="image"></picture>
+                    </figure>
+                    <figure class="preview-slider__item product-img">
+                      <picture><source srcset="./img/content/product/2.webp" type="image/webp"><img class="preview-slider__img" src="./img/content/product/2.png" alt="image"></picture>
+                    </figure>
+                    <figure class="preview-slider__item product-img">
+                      <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="preview-slider__img" src="./img/content/product/3.png" alt="image"></picture>
+                    </figure>
+                    <figure class="preview-slider__item product-img">
+                      <picture><source srcset="./img/content/product/4.webp" type="image/webp"><img class="preview-slider__img" src="./img/content/product/4.png" alt="image"></picture>
+                    </figure>
+                    <figure class="preview-slider__item product-img">
+                      <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="preview-slider__img" src="./img/content/product/1.png" alt="image"></picture>
+                    </figure>
+                    <figure class="preview-slider__item product-img">
+                      <picture><source srcset="./img/content/product/2.webp" type="image/webp"><img class="preview-slider__img" src="./img/content/product/2.png" alt="image"></picture>
+                    </figure>
+                    <figure class="preview-slider__item product-img">
+                      <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="preview-slider__img" src="./img/content/product/3.png" alt="image"></picture>
+                    </figure>
+                    <figure class="preview-slider__item product-img">
+                      <picture><source srcset="./img/content/product/4.webp" type="image/webp"><img class="preview-slider__img" src="./img/content/product/4.png" alt="image"></picture>
+                    </figure>
+                  </div>
+                  <div class="preview-slider__actions">
+                    <button
+                      class="preview-slider__button preview-slider__button_prev btn btn_main btn_icon btn_round"
+                      type="button"
+                    >
+                      <span class="btn__body btn__body_main icon-left" aria-hidden="true"></span>
+                      <span class="btn__body btn__body_hover icon-left" aria-hidden="true"></span>
+                      <span class="seo">Предыдущий слайд</span>
+                    </button>
+                    <div class="preview-slider__pagination" data-slider-pagination></div>
+                    <button
+                      class="preview-slider__button preview-slider__button_next btn btn_main btn_icon btn_round"
+                      type="button"
+                    >
+                      <span class="btn__body btn__body_main icon-right" aria-hidden="true"></span>
+                      <span class="btn__body btn__body_hover icon-right" aria-hidden="true"></span>
+                      <span class="seo">Следующий слайд</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product__data">
+              <div class="data-tabs" data-tabs>
+                <nav class="data-tabs__navigation" data-tabs-titles>
+                  <button class="data-tabs__btn _tab-active _h4" type="button" id="data">
+                    Характеристики
+                  </button>
+                  <button class="data-tabs__btn _h4" type="button">Описание</button>
+                  <button class="data-tabs__btn _h4" type="button">Документация</button>
+                </nav>
+                <div class="data-tabs__content" data-tabs-body>
+                  <div class="data-tabs__body" hidden>
+                    <div class="data-tabs__grid">
+                      <div class="data">
+                        <h4 class="data__title _p1">Коротко о товаре:</h4>
+                        <dl class="data__list">
+                          <div class="data__item">
+                            <dt class="data__name"><span>Размеры (ДхШхВ):</span></dt>
+                            <dd class="data__desc">160 х 80 х 80 см</dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name"><span>Материал столешницы:</span></dt>
+                            <dd class="data__desc">ДСП 25 мм</dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name"><span>Максимальная нагрузка:</span></dt>
+                            <dd class="data__desc">100 кг</dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name"><span>Материал столешницы:</span></dt>
+                            <dd class="data__desc">ДСП 25 мм</dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name"><span>Цвет корпуса:</span></dt>
+                            <dd class="data__desc">Белый Премиум</dd>
+                          </div>
+                        </dl>
+                      </div>
+                      <div class="data">
+                        <h4 class="data__title _p1">Металлокаркас:</h4>
+                        <dl class="data__list">
+                          <div class="data__item">
+                            <dt class="data__name"><span>Размеры (ДхШхВ):</span></dt>
+                            <dd class="data__desc">160 х 80 х 80 см</dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name"><span>Материал столешницы:</span></dt>
+                            <dd class="data__desc">ДСП 25 мм</dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name"><span>Максимальная нагрузка:</span></dt>
+                            <dd class="data__desc">100 кг</dd>
+                          </div>
+                        </dl>
+                      </div>
+                      <div class="data">
+                        <h4 class="data__title _p1">Столешница:</h4>
+                        <dl class="data__list">
+                          <div class="data__item">
+                            <dt class="data__name"><span>Размеры (ДхШхВ):</span></dt>
+                            <dd class="data__desc">160 х 80 х 80 см</dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name"><span>Материал столешницы:</span></dt>
+                            <dd class="data__desc">ДСП 25 мм</dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name"><span>Цвет корпуса:</span></dt>
+                            <dd class="data__desc">
+                              Lorem ipsum dolor sit amet consectetur. Interdum eu odio turpis pellentesque
+                              arcu sed et sodales.
+                            </dd>
+                          </div>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="data-tabs__body" hidden>
+                    <div class="data-tabs__article _wysiwyg">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Nibh aliquet ut vestibulum commodo sit
+                        elementum quam neque est. Quam nibh libero orci nulla pretium mollis. Nec vitae
+                        nunc fames fusce. Ultrices dignissim mauris porttitor aliquam. Non morbi consequat
+                        habitasse enim tortor porttitor pharetra vehicula bibendum. Porttitor tellus enim
+                        viverra sed dapibus in a et blandit. Rhoncus lorem congue ultrices id placerat
+                        bibendum rhoncus nascetur. Tempor at rutrum magna purus amet sed ac morbi. Blandit
+                        molestie scelerisque ante porta porta velit ornare. Mauris commodo nec non mauris.
+                      </p>
+                      <p>
+                        Eget vitae tellus aliquam magna ac. Ac non mattis id amet neque odio lacus mus.
+                        Magna lorem sagittis tellus sodales eleifend lacus bibendum eget a. Massa
+                        habitasse nisl ac orci tortor orci. Nulla scelerisque vulputate dictumst eget
+                        scelerisque consequat. Ut duis fermentum scelerisque vel tortor. Dolor cras eu
+                        malesuada at sed laoreet in a. Neque vitae pretium a aliquet etiam a vitae velit
+                        magna. In dictum aliquam eu est. Tellus diam vestibulum sed tempus netus elementum
+                        libero. Habitant consequat nec urna suspendisse vitae proin amet natoque ac.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="data-tabs__body" hidden>
+                    <div class="data-tabs__article">
+                      <div class="data">
+                        <h4 class="data__title _p1"></h4>
+                        <dl class="data__list">
+                          <div class="data__item">
+                            <dt class="data__name">
+                              <span><b>Инструкция по сборке</b> PDF, 15Mb</span>
+                            </dt>
+                            <dd class="data__desc"><a href="#" download>Скачать</a></dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name">
+                              <span><b>Гарантия</b> PDF, 15Mb</span>
+                            </dt>
+                            <dd class="data__desc"><a href="#" download>Скачать</a></dd>
+                          </div>
+                          <div class="data__item">
+                            <dt class="data__name">
+                              <span><b>Название документа</b> PDF, 15Mb</span>
+                            </dt>
+                            <dd class="data__desc"><a href="#" download>Скачать</a></dd>
+                          </div>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="related _mb">
+          <div class="related__bg">
+            <span class="bg-text" data-text="FEATURED DESKS" aria-hidden="true"></span>
+          </div>
+          <div class="container">
+            <div class="related__body">
+              <div class="related__head">
+                <h2 class="related__title _h2">Другие товары</h2>
+              </div>
+              <div class="related-slider">
+                <div class="related-slider__items">
+                  <div class="related-slider__item">
                     <article class="product-card">
                       <div class="card-bg">
                         <div class="card-bg__mask card-bg__mask_top"></div>
                         <div class="card-bg__mask card-bg__mask_bottom"></div>
                       </div>
                       <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/3.png" alt="image"></picture>
+                        <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/1.png" alt="image"></picture>
                       </figure>
                       <div class="product-card__content">
                         <a class="product-card__link" href="./product.html">
-                          <span class="seo">
-                            Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
-                            Русская раскладка белый, фиолетовый
-                          </span>
+                          <span class="seo">Модуль стол</span>
                         </a>
                         <div class="product-card__info">
                           <h3 class="product-card__title _p1">
-                            <span>
-                              Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
-                              Русская раскладка белый, фиолетовый
-                            </span>
+                            <span>Модуль стол</span>
                           </h3>
                           <div class="product-card__code _p4">арт. 123456788</div>
                         </div>
                         <div class="product-card__footer">
                           <div class="product-card__cost">
                             <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">0 <span>₽</span></div>
-                              <div class="product-card__sale-info">-100%</div>
+                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
+                              <div class="product-card__sale-info">-10%</div>
                             </div>
                             <div class="product-card__sale _p5">250 000 ₽</div>
                           </div>
@@ -184,38 +393,30 @@
                       </div>
                     </article>
                   </div>
-                  <div class="catalog__item">
+                  <div class="related-slider__item">
                     <article class="product-card">
                       <div class="card-bg">
                         <div class="card-bg__mask card-bg__mask_top"></div>
                         <div class="card-bg__mask card-bg__mask_bottom"></div>
                       </div>
                       <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/4.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/4.png" alt="image"></picture>
+                        <picture><source srcset="./img/content/product/6.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/6.png" alt="image"></picture>
                       </figure>
                       <div class="product-card__content">
                         <a class="product-card__link" href="./product.html">
-                          <span class="seo">
-                            Мышь HyperX Pulsefire Haste 2 Mini белый оптическая (26000dpi) беспроводная
-                            BT/Radio USB (6but)
-                          </span>
+                          <span class="seo">Модуль стол</span>
                         </a>
                         <div class="product-card__info">
                           <h3 class="product-card__title _p1">
-                            <span>
-                              Мышь HyperX Pulsefire Haste 2 Mini белый оптическая (26000dpi) беспроводная
-                              BT/Radio USB (6but)
-                            </span>
+                            <span>Модуль стол</span>
                           </h3>
                           <div class="product-card__code _p4">арт. 123456788</div>
                         </div>
                         <div class="product-card__footer">
                           <div class="product-card__cost">
                             <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
-                              <div class="product-card__sale-info">-10%</div>
+                              <div class="product-card__price _p1">22 700 <span>₽</span></div>
                             </div>
-                            <div class="product-card__sale _p5">250 000 ₽</div>
                           </div>
                           <div class="product-card__action">
                             <button class="product-card__btn btn btn_cta btn_icon added" type="button">
@@ -228,172 +429,22 @@
                       </div>
                     </article>
                   </div>
-                  <div class="catalog__item">
+                  <div class="related-slider__item">
                     <article class="product-card">
                       <div class="card-bg">
                         <div class="card-bg__mask card-bg__mask_top"></div>
                         <div class="card-bg__mask card-bg__mask_bottom"></div>
                       </div>
                       <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/1.png" alt="image"></picture>
+                        <picture><source srcset="./img/content/product/7.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/7.png" alt="image"></picture>
                       </figure>
                       <div class="product-card__content">
                         <a class="product-card__link" href="./product.html">
-                          <span class="seo">Модульный стол</span>
+                          <span class="seo">Модуль стол</span>
                         </a>
                         <div class="product-card__info">
                           <h3 class="product-card__title _p1">
-                            <span>Модульный стол</span>
-                          </h3>
-                          <div class="product-card__code _p4">арт. 123456788</div>
-                        </div>
-                        <div class="product-card__footer">
-                          <div class="product-card__cost">
-                            <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">22 700 <span>₽</span></div>
-                            </div>
-                          </div>
-                          <div class="product-card__action">
-                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
-                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
-                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
-                              <span class="seo">В корзину</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="catalog__item">
-                    <article class="product-card">
-                      <div class="card-bg">
-                        <div class="card-bg__mask card-bg__mask_top"></div>
-                        <div class="card-bg__mask card-bg__mask_bottom"></div>
-                      </div>
-                      <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/10.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/10.png" alt="image"></picture>
-                      </figure>
-                      <div class="product-card__content">
-                        <a class="product-card__link" href="./product.html">
-                          <span class="seo">Модуль</span>
-                        </a>
-                        <div class="product-card__info">
-                          <h3 class="product-card__title _p1">
-                            <span>Модуль</span>
-                          </h3>
-                          <div class="product-card__code _p4">арт. 123456788</div>
-                        </div>
-                        <div class="product-card__footer">
-                          <div class="product-card__cost">
-                            <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">22 700 <span>₽</span></div>
-                            </div>
-                          </div>
-                          <div class="product-card__action">
-                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
-                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
-                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
-                              <span class="seo">В корзину</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="catalog__item">
-                    <article class="product-card">
-                      <div class="card-bg">
-                        <div class="card-bg__mask card-bg__mask_top"></div>
-                        <div class="card-bg__mask card-bg__mask_bottom"></div>
-                      </div>
-                      <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/1.png" alt="image"></picture>
-                      </figure>
-                      <div class="product-card__content">
-                        <a class="product-card__link" href="./product.html">
-                          <span class="seo">Модульный стол</span>
-                        </a>
-                        <div class="product-card__info">
-                          <h3 class="product-card__title _p1">
-                            <span>Модульный стол</span>
-                          </h3>
-                          <div class="product-card__code _p4">арт. 123456788</div>
-                        </div>
-                        <div class="product-card__footer">
-                          <div class="product-card__cost">
-                            <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">22 700 <span>₽</span></div>
-                            </div>
-                          </div>
-                          <div class="product-card__action">
-                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
-                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
-                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
-                              <span class="seo">В корзину</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="catalog__item">
-                    <article class="product-card">
-                      <div class="card-bg">
-                        <div class="card-bg__mask card-bg__mask_top"></div>
-                        <div class="card-bg__mask card-bg__mask_bottom"></div>
-                      </div>
-                      <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/10.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/10.png" alt="image"></picture>
-                      </figure>
-                      <div class="product-card__content">
-                        <a class="product-card__link" href="./product.html">
-                          <span class="seo">Модуль</span>
-                        </a>
-                        <div class="product-card__info">
-                          <h3 class="product-card__title _p1">
-                            <span>Модуль</span>
-                          </h3>
-                          <div class="product-card__code _p4">арт. 123456788</div>
-                        </div>
-                        <div class="product-card__footer">
-                          <div class="product-card__cost">
-                            <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">22 700 <span>₽</span></div>
-                            </div>
-                          </div>
-                          <div class="product-card__action">
-                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
-                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
-                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
-                              <span class="seo">В корзину</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="catalog__item">
-                    <article class="product-card">
-                      <div class="card-bg">
-                        <div class="card-bg__mask card-bg__mask_top"></div>
-                        <div class="card-bg__mask card-bg__mask_bottom"></div>
-                      </div>
-                      <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/3.png" alt="image"></picture>
-                      </figure>
-                      <div class="product-card__content">
-                        <a class="product-card__link" href="./product.html">
-                          <span class="seo">
-                            Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
-                            Русская раскладка белый, фиолетовый
-                          </span>
-                        </a>
-                        <div class="product-card__info">
-                          <h3 class="product-card__title _p1">
-                            <span>
-                              Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
-                              Русская раскладка белый, фиолетовый
-                            </span>
+                            <span>Модуль стол</span>
                           </h3>
                           <div class="product-card__code _p4">арт. 123456788</div>
                         </div>
@@ -416,154 +467,22 @@
                       </div>
                     </article>
                   </div>
-                  <div class="catalog__item">
+                  <div class="related-slider__item">
                     <article class="product-card">
                       <div class="card-bg">
                         <div class="card-bg__mask card-bg__mask_top"></div>
                         <div class="card-bg__mask card-bg__mask_bottom"></div>
                       </div>
                       <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/4.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/4.png" alt="image"></picture>
+                        <picture><source srcset="./img/content/product/8.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/8.png" alt="image"></picture>
                       </figure>
                       <div class="product-card__content">
                         <a class="product-card__link" href="./product.html">
-                          <span class="seo">
-                            Мышь HyperX Pulsefire Haste 2 Mini белый оптическая (26000dpi) беспроводная
-                            BT/Radio USB (6but)
-                          </span>
+                          <span class="seo">Модуль стол</span>
                         </a>
                         <div class="product-card__info">
                           <h3 class="product-card__title _p1">
-                            <span>
-                              Мышь HyperX Pulsefire Haste 2 Mini белый оптическая (26000dpi) беспроводная
-                              BT/Radio USB (6but)
-                            </span>
-                          </h3>
-                          <div class="product-card__code _p4">арт. 123456788</div>
-                        </div>
-                        <div class="product-card__footer">
-                          <div class="product-card__cost">
-                            <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
-                              <div class="product-card__sale-info">-10%</div>
-                            </div>
-                            <div class="product-card__sale _p5">250 000 ₽</div>
-                          </div>
-                          <div class="product-card__action">
-                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
-                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
-                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
-                              <span class="seo">В корзину</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="catalog__item">
-                    <article class="product-card">
-                      <div class="card-bg">
-                        <div class="card-bg__mask card-bg__mask_top"></div>
-                        <div class="card-bg__mask card-bg__mask_bottom"></div>
-                      </div>
-                      <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/3.png" alt="image"></picture>
-                      </figure>
-                      <div class="product-card__content">
-                        <a class="product-card__link" href="./product.html">
-                          <span class="seo">
-                            Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
-                            Русская раскладка белый, фиолетовый
-                          </span>
-                        </a>
-                        <div class="product-card__info">
-                          <h3 class="product-card__title _p1">
-                            <span>
-                              Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
-                              Русская раскладка белый, фиолетовый
-                            </span>
-                          </h3>
-                          <div class="product-card__code _p4">арт. 123456788</div>
-                        </div>
-                        <div class="product-card__footer">
-                          <div class="product-card__cost">
-                            <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
-                              <div class="product-card__sale-info">-10%</div>
-                            </div>
-                            <div class="product-card__sale _p5">250 000 ₽</div>
-                          </div>
-                          <div class="product-card__action">
-                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
-                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
-                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
-                              <span class="seo">В корзину</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="catalog__item">
-                    <article class="product-card">
-                      <div class="card-bg">
-                        <div class="card-bg__mask card-bg__mask_top"></div>
-                        <div class="card-bg__mask card-bg__mask_bottom"></div>
-                      </div>
-                      <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/4.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/4.png" alt="image"></picture>
-                      </figure>
-                      <div class="product-card__content">
-                        <a class="product-card__link" href="./product.html">
-                          <span class="seo">
-                            Мышь HyperX Pulsefire Haste 2 Mini белый оптическая (26000dpi) беспроводная
-                            BT/Radio USB (6but)
-                          </span>
-                        </a>
-                        <div class="product-card__info">
-                          <h3 class="product-card__title _p1">
-                            <span>
-                              Мышь HyperX Pulsefire Haste 2 Mini белый оптическая (26000dpi) беспроводная
-                              BT/Radio USB (6but)
-                            </span>
-                          </h3>
-                          <div class="product-card__code _p4">арт. 123456788</div>
-                        </div>
-                        <div class="product-card__footer">
-                          <div class="product-card__cost">
-                            <div class="product-card__cost-main">
-                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
-                              <div class="product-card__sale-info">-10%</div>
-                            </div>
-                            <div class="product-card__sale _p5">250 000 ₽</div>
-                          </div>
-                          <div class="product-card__action">
-                            <button class="product-card__btn btn btn_cta btn_icon added" type="button">
-                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
-                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
-                              <span class="seo">В корзину</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="catalog__item">
-                    <article class="product-card">
-                      <div class="card-bg">
-                        <div class="card-bg__mask card-bg__mask_top"></div>
-                        <div class="card-bg__mask card-bg__mask_bottom"></div>
-                      </div>
-                      <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/1.png" alt="image"></picture>
-                      </figure>
-                      <div class="product-card__content">
-                        <a class="product-card__link" href="./product.html">
-                          <span class="seo">Модульный стол</span>
-                        </a>
-                        <div class="product-card__info">
-                          <h3 class="product-card__title _p1">
-                            <span>Модульный стол</span>
+                            <span>Модуль стол</span>
                           </h3>
                           <div class="product-card__code _p4">арт. 123456788</div>
                         </div>
@@ -584,22 +503,60 @@
                       </div>
                     </article>
                   </div>
-                  <div class="catalog__item">
+                  <div class="related-slider__item">
                     <article class="product-card">
                       <div class="card-bg">
                         <div class="card-bg__mask card-bg__mask_top"></div>
                         <div class="card-bg__mask card-bg__mask_bottom"></div>
                       </div>
                       <figure class="product-card__img-box product-img">
-                        <picture><source srcset="./img/content/product/10.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/10.png" alt="image"></picture>
+                        <picture><source srcset="./img/content/product/6.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/6.png" alt="image"></picture>
                       </figure>
                       <div class="product-card__content">
                         <a class="product-card__link" href="./product.html">
-                          <span class="seo">Модуль</span>
+                          <span class="seo">Модуль стол</span>
                         </a>
                         <div class="product-card__info">
                           <h3 class="product-card__title _p1">
-                            <span>Модуль</span>
+                            <span>Модуль стол</span>
+                          </h3>
+                          <div class="product-card__code _p4">арт. 123456788</div>
+                        </div>
+                        <div class="product-card__footer">
+                          <div class="product-card__cost">
+                            <div class="product-card__cost-main">
+                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
+                              <div class="product-card__sale-info">-10%</div>
+                            </div>
+                            <div class="product-card__sale _p5">250 000 ₽</div>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
+                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
+                              <span class="seo">В корзину</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="related-slider__item">
+                    <article class="product-card">
+                      <div class="card-bg">
+                        <div class="card-bg__mask card-bg__mask_top"></div>
+                        <div class="card-bg__mask card-bg__mask_bottom"></div>
+                      </div>
+                      <figure class="product-card__img-box product-img">
+                        <picture><source srcset="./img/content/product/7.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/7.png" alt="image"></picture>
+                      </figure>
+                      <div class="product-card__content">
+                        <a class="product-card__link" href="./product.html">
+                          <span class="seo">Модуль стол</span>
+                        </a>
+                        <div class="product-card__info">
+                          <h3 class="product-card__title _p1">
+                            <span>Модуль стол</span>
                           </h3>
                           <div class="product-card__code _p4">арт. 123456788</div>
                         </div>
@@ -621,11 +578,294 @@
                     </article>
                   </div>
                 </div>
-                <button class="catalog__btn btn btn_main" type="button">
-                  <span class="btn__body btn__body_main icon-load" aria-hidden="true"><span>Загрузить еще</span></span>
-                  <span class="btn__body btn__body_hover icon-load" aria-hidden="true"><span>Загрузить еще</span></span>
-                  <span class="seo">Загрузить еще</span>
-                </button>
+                <div class="related-slider__actions">
+                  <button
+                    class="related-slider__button related-slider__button_prev btn btn_main btn_icon btn_round"
+                    type="button"
+                  >
+                    <span class="btn__body btn__body_main icon-left" aria-hidden="true"></span>
+                    <span class="btn__body btn__body_hover icon-left" aria-hidden="true"></span>
+                    <span class="seo">Предыдущий слайд</span>
+                  </button>
+                  <div class="related-slider__pagination" data-slider-pagination></div>
+                  <button
+                    class="related-slider__button related-slider__button_next btn btn_main btn_icon btn_round"
+                    type="button"
+                  >
+                    <span class="btn__body btn__body_main icon-right" aria-hidden="true"></span>
+                    <span class="btn__body btn__body_hover icon-right" aria-hidden="true"></span>
+                    <span class="seo">Следующий слайд</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="related _mb">
+          <div class="related__bg">
+            <span class="bg-text" data-text="FEATURED DESKS" aria-hidden="true"></span>
+          </div>
+          <div class="container">
+            <div class="related__body">
+              <div class="related__head">
+                <h2 class="related__title _h2">Сопутствующие товары</h2>
+              </div>
+              <div class="related-slider">
+                <div class="related-slider__items">
+                  <div class="related-slider__item">
+                    <article class="product-card">
+                      <div class="card-bg">
+                        <div class="card-bg__mask card-bg__mask_top"></div>
+                        <div class="card-bg__mask card-bg__mask_bottom"></div>
+                      </div>
+                      <figure class="product-card__img-box product-img">
+                        <picture><source srcset="./img/content/product/9.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/9.png" alt="image"></picture>
+                      </figure>
+                      <div class="product-card__content">
+                        <a class="product-card__link" href="./product.html">
+                          <span class="seo">Модуль</span>
+                        </a>
+                        <div class="product-card__info">
+                          <h3 class="product-card__title _p1">
+                            <span>Модуль</span>
+                          </h3>
+                          <div class="product-card__code _p4">арт. 123456788</div>
+                        </div>
+                        <div class="product-card__footer">
+                          <div class="product-card__cost">
+                            <div class="product-card__cost-main">
+                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
+                              <div class="product-card__sale-info">-10%</div>
+                            </div>
+                            <div class="product-card__sale _p5">250 000 ₽</div>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
+                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
+                              <span class="seo">В корзину</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="related-slider__item">
+                    <article class="product-card">
+                      <div class="card-bg">
+                        <div class="card-bg__mask card-bg__mask_top"></div>
+                        <div class="card-bg__mask card-bg__mask_bottom"></div>
+                      </div>
+                      <figure class="product-card__img-box product-img">
+                        <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/1.png" alt="image"></picture>
+                      </figure>
+                      <div class="product-card__content">
+                        <a class="product-card__link" href="./product.html">
+                          <span class="seo">Модульльный стол</span>
+                        </a>
+                        <div class="product-card__info">
+                          <h3 class="product-card__title _p1">
+                            <span>Модульльный стол</span>
+                          </h3>
+                          <div class="product-card__code _p4">арт. 123456788</div>
+                        </div>
+                        <div class="product-card__footer">
+                          <div class="product-card__cost">
+                            <div class="product-card__cost-main">
+                              <div class="product-card__price _p1">22 700 <span>₽</span></div>
+                            </div>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__btn btn btn_cta btn_icon added" type="button">
+                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
+                              <span class="seo">В корзину</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="related-slider__item">
+                    <article class="product-card">
+                      <div class="card-bg">
+                        <div class="card-bg__mask card-bg__mask_top"></div>
+                        <div class="card-bg__mask card-bg__mask_bottom"></div>
+                      </div>
+                      <figure class="product-card__img-box product-img">
+                        <picture><source srcset="./img/content/product/11.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/11.png" alt="image"></picture>
+                      </figure>
+                      <div class="product-card__content">
+                        <a class="product-card__link" href="./product.html">
+                          <span class="seo">Модуль</span>
+                        </a>
+                        <div class="product-card__info">
+                          <h3 class="product-card__title _p1">
+                            <span>Модуль</span>
+                          </h3>
+                          <div class="product-card__code _p4">арт. 123456788</div>
+                        </div>
+                        <div class="product-card__footer">
+                          <div class="product-card__cost">
+                            <div class="product-card__cost-main">
+                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
+                              <div class="product-card__sale-info">-10%</div>
+                            </div>
+                            <div class="product-card__sale _p5">250 000 ₽</div>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
+                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
+                              <span class="seo">В корзину</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="related-slider__item">
+                    <article class="product-card">
+                      <div class="card-bg">
+                        <div class="card-bg__mask card-bg__mask_top"></div>
+                        <div class="card-bg__mask card-bg__mask_bottom"></div>
+                      </div>
+                      <figure class="product-card__img-box product-img">
+                        <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/3.png" alt="image"></picture>
+                      </figure>
+                      <div class="product-card__content">
+                        <a class="product-card__link" href="./product.html">
+                          <span class="seo">
+                            Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
+                            Русская раскладка белый, фиолетовый
+                          </span>
+                        </a>
+                        <div class="product-card__info">
+                          <h3 class="product-card__title _p1">
+                            <span>
+                              Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
+                              Русская раскладка белый, фиолетовый
+                            </span>
+                          </h3>
+                          <div class="product-card__code _p4">арт. 123456788</div>
+                        </div>
+                        <div class="product-card__footer">
+                          <div class="product-card__cost">
+                            <div class="product-card__cost-main">
+                              <div class="product-card__price _p1">22 700 <span>₽</span></div>
+                            </div>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
+                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
+                              <span class="seo">В корзину</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="related-slider__item">
+                    <article class="product-card">
+                      <div class="card-bg">
+                        <div class="card-bg__mask card-bg__mask_top"></div>
+                        <div class="card-bg__mask card-bg__mask_bottom"></div>
+                      </div>
+                      <figure class="product-card__img-box product-img">
+                        <picture><source srcset="./img/content/product/10.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/10.png" alt="image"></picture>
+                      </figure>
+                      <div class="product-card__content">
+                        <a class="product-card__link" href="./product.html">
+                          <span class="seo">Модуль</span>
+                        </a>
+                        <div class="product-card__info">
+                          <h3 class="product-card__title _p1">
+                            <span>Модуль</span>
+                          </h3>
+                          <div class="product-card__code _p4">арт. 123456788</div>
+                        </div>
+                        <div class="product-card__footer">
+                          <div class="product-card__cost">
+                            <div class="product-card__cost-main">
+                              <div class="product-card__price _p1">229 700 <span>₽</span></div>
+                              <div class="product-card__sale-info">-10%</div>
+                            </div>
+                            <div class="product-card__sale _p5">250 000 ₽</div>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
+                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
+                              <span class="seo">В корзину</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="related-slider__item">
+                    <article class="product-card">
+                      <div class="card-bg">
+                        <div class="card-bg__mask card-bg__mask_top"></div>
+                        <div class="card-bg__mask card-bg__mask_bottom"></div>
+                      </div>
+                      <figure class="product-card__img-box product-img">
+                        <picture><source srcset="./img/content/product/4.webp" type="image/webp"><img class="product-card__img" src="./img/content/product/4.png" alt="image"></picture>
+                      </figure>
+                      <div class="product-card__content">
+                        <a class="product-card__link" href="./product.html">
+                          <span class="seo">
+                            Мышь HyperX Pulsefire Haste 2 Mini белый оптическая (26000dpi) беспроводная
+                            BT/Radio USB (6but)
+                          </span>
+                        </a>
+                        <div class="product-card__info">
+                          <h3 class="product-card__title _p1">
+                            <span>
+                              Мышь HyperX Pulsefire Haste 2 Mini белый оптическая (26000dpi) беспроводная
+                              BT/Radio USB (6but)
+                            </span>
+                          </h3>
+                          <div class="product-card__code _p4">арт. 123456788</div>
+                        </div>
+                        <div class="product-card__footer">
+                          <div class="product-card__cost">
+                            <div class="product-card__cost-main">
+                              <div class="product-card__price _p1">22 700 <span>₽</span></div>
+                            </div>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__btn btn btn_cta btn_icon" type="button">
+                              <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
+                              <span class="seo">В корзину</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="related-slider__actions">
+                  <button
+                    class="related-slider__button related-slider__button_prev btn btn_main btn_icon btn_round"
+                    type="button"
+                  >
+                    <span class="btn__body btn__body_main icon-left" aria-hidden="true"></span>
+                    <span class="btn__body btn__body_hover icon-left" aria-hidden="true"></span>
+                    <span class="seo">Предыдущий слайд</span>
+                  </button>
+                  <div class="related-slider__pagination" data-slider-pagination></div>
+                  <button
+                    class="related-slider__button related-slider__button_next btn btn_main btn_icon btn_round"
+                    type="button"
+                  >
+                    <span class="btn__body btn__body_main icon-right" aria-hidden="true"></span>
+                    <span class="btn__body btn__body_hover icon-right" aria-hidden="true"></span>
+                    <span class="seo">Следующий слайд</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
