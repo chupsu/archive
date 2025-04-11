@@ -2588,6 +2588,9 @@ html {
     --gap-large: 80px;
     width: 1780px;
   }
+  .tuning__inner {
+    min-height: 640px;
+  }
   .tuning__name {
     margin-bottom: 60px;
   }
@@ -2902,6 +2905,9 @@ html {
   .tuning__main {
     --gap-large: 20px;
   }
+  .tuning__inner {
+    min-height: 150px;
+  }
   .tuning__name {
     margin-bottom: 14px;
   }
@@ -3099,6 +3105,9 @@ html {
   }
   .tuning__main {
     --gap-large: clamp( 20px , 15.3878283152px + 1.2812299808vw , 40px );
+  }
+  .tuning__inner {
+    min-height: clamp( 150px , 110.7965406791px + 10.8904548366vw , 320px );
   }
   .tuning__name {
     margin-bottom: clamp( 14px , 10.3102626521px + 1.0249839846vw , 30px );
@@ -3359,6 +3368,9 @@ html {
   .tuning__main {
     --gap-large: clamp( 40px , -0.0204166667px + 2.0833333333vw , 80px );
     width: clamp( 890px , -0.4542708333px + 46.3541666667vw , 1780px );
+  }
+  .tuning__inner {
+    min-height: clamp( 320px , -0.1633333333px + 16.6666666667vw , 640px );
   }
   .tuning__name {
     margin-bottom: clamp( 30px , -0.0153125px + 1.5625vw , 60px );
