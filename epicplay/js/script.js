@@ -12751,7 +12751,9 @@ window.addEventListener("load", function () {
   let mdMax;
 
   const heightFix = () => {
-    document.documentElement.style.setProperty("--height-header", `${HEADER.offsetHeight}px`);
+    if (HEADER) {
+      document.documentElement.style.setProperty("--height-header", `${HEADER.offsetHeight}px`);
+    }
     document.documentElement.style.setProperty(
       "--width-page",
       `${document.documentElement.offsetWidth}px`
@@ -12894,15 +12896,15 @@ window.addEventListener("load", function () {
     });
   }
 
-  const textArea = document.getElementsByTagName("textarea");
-  for (let i = 0; i < textArea.length; i++) {
-    textArea[i].setAttribute("style", "height:" + textArea[i].scrollHeight + "px;overflow-y:hidden;");
-    textArea[i].addEventListener("input", OnInput, false);
-  }
-  function OnInput() {
-    this.style.height = "auto";
-    this.style.height = this.scrollHeight + "px";
-  }
+  // const textArea = document.getElementsByTagName("textarea");
+  // for (let i = 0; i < textArea.length; i++) {
+  //   textArea[i].setAttribute("style", "height:" + textArea[i].scrollHeight + "px;overflow-y:hidden;");
+  //   textArea[i].addEventListener("input", OnInput, false);
+  // }
+  // function OnInput() {
+  //   this.style.height = "auto";
+  //   this.style.height = this.scrollHeight + "px";
+  // }
 
   const variantsHide = () => {
     const variantsBodies = document.querySelectorAll(".variants__list._is-active");
@@ -12946,9 +12948,11 @@ window.addEventListener("load", function () {
     }
   }
 
-  window.onscroll = function () {
-    HEADER.classList.toggle("header_scroll", document.documentElement.scrollTop > 10);
-  };
+  // window.onscroll = function () {
+  // if (HEADER) {
+  //   HEADER.classList.toggle("header_scroll", document.documentElement.scrollTop > 10);
+  // }
+  // };
 
   window.addEventListener("resize", () => {
     heightFix();
