@@ -12911,7 +12911,7 @@ window.addEventListener("load", function () {
 
     variantsBodies.forEach((variantsBody) => {
       const variants = variantsBody.querySelectorAll(".variants__item");
-      const variantsShowBtn = variantsBody.querySelector(".variants__item_counter *");
+      const variantsShowBtn = variantsBody.querySelector(".variants__item_counter > *");
 
       if (variantsShowBtn && variants.length > 9) {
         variantsShowBtn.innerHTML = `<span>+${variants.length - 8}</span>`;
