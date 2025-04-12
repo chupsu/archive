@@ -467,6 +467,9 @@ html {
   --radius-btn: 12px;
   --radius-smallest: 4px;
 }
+html {
+  scroll-behavior: smooth;
+}
 html.is-lock {
   overflow: hidden;
   overflow: clip;
@@ -478,6 +481,7 @@ html {
   letter-spacing: -0.03em;
   color: var(--color-light);
   background-color: var(--color-main);
+  scroll-padding-top: var(--height-header);
 }
 .wrapper {
   position: relative;
