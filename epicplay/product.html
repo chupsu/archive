@@ -46,10 +46,10 @@
                       <a class="menu__link _h5 icon-right" href="./contacts.html">Контакты</a>
                     </li>
                     <li class="menu__item">
-                      <a class="menu__link _h5 icon-right" href="./info.html#buy">Доставка и оплата</a>
+                      <a class="menu__link _h5 icon-right" href="./info.html#tab-0-0">Доставка и оплата</a>
                     </li>
                     <li class="menu__item">
-                      <a class="menu__link _h5 icon-right" href="./info.html#guard">Гарантия и возврат</a>
+                      <a class="menu__link _h5 icon-right" href="./info.html#tab-0-1">Гарантия и возврат</a>
                     </li>
                   </ul>
                 </div>
@@ -59,9 +59,9 @@
               <img class="logo__img" src="./img/content/logo.svg" alt="logo">
             </a>
             <div class="header__actions">
-              <div class="header__cart">
-                <!-- класс _is-active для отображения индикатора товара в корзине -->
-                <!-- <div class="header__cart _is-active"> -->
+              <!-- класс _is-active для отображения индикатора товара в корзине -->
+              <!-- <div class="header__cart"> -->
+              <div class="header__cart _is-active">
                 <a class="btn btn_main btn_icon btn_round" href="./cart.html">
                   <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
                   <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
@@ -121,14 +121,7 @@
                       </dl>
                     </div>
                     <!-- для data-tab-id указываем id таба, который нужно открыть -->
-                    <!-- для data-goto указываем class или id к которой проскролить страницу -->
-                    <a
-                      class="product__info-link _p3"
-                      href="#"
-                      data-tab-id="#data"
-                      data-goto=".product__data"
-                      data-goto-top="70"
-                    >
+                    <a class="product__info-link _p3" href="#data" data-tab-id="#data">
                       Все характеристики
                     </a>
                   </div>
@@ -204,7 +197,7 @@
             </div>
             <div class="product__data">
               <div class="data-tabs" data-tabs>
-                <nav class="data-tabs__navigation" data-tabs-titles>
+                <nav class="data-tabs__nav" data-tabs-titles>
                   <button class="data-tabs__btn _tab-active _h4" type="button" id="data">
                     Характеристики
                   </button>

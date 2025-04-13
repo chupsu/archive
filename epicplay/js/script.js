@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   _slideDown: () => (/* binding */ _slideDown),
@@ -751,1374 +751,12 @@ function dataMediaQueries(array, dataSetValue) {
 /* 2 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   gotoBlock: () => (/* binding */ gotoBlock),
-/* harmony export */   pageNavigation: () => (/* binding */ pageNavigation)
-/* harmony export */ });
-/* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
-// Подключение дополнения для увеличения возможностей
-// Документация: https://github.com/smooth-scroll
-
-// Модуль плавной проктутки к блоку
-let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
-  const targetBlockElement = document.querySelector(targetBlock);
-  if (targetBlockElement) {
-    let headerItem = '';
-    let headerItemHeight = 0;
-    if (noHeader) {
-      headerItem = 'header.header';
-      headerItemHeight = document.querySelector(headerItem).offsetHeight;
-    }
-    let options = {
-      speedAsDuration: true,
-      speed: speed,
-      header: headerItem,
-      offset: offsetTop,
-      easing: 'easeOutQuad',
-    };
-    if (typeof smooth_scroll__WEBPACK_IMPORTED_MODULE_0__ !== 'undefined') {
-      // Прокрутка с использованием дополнения
-      new smooth_scroll__WEBPACK_IMPORTED_MODULE_0__().animateScroll(targetBlockElement, '', options);
-    } else {
-      // Прокрутка стандартными средствами
-      let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
-      targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
-      targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
-      window.scrollTo({
-        top: targetBlockElementPosition,
-        behavior: "smooth"
-      });
-    }
-  }
-};
-function pageNavigation() {
-  // data-goto - указать ID блока
-  // data-goto-header - учитывать header
-  // data-goto-top - недокрутить на указанный размер
-  // data-goto-speed - скорость (только если используется доп плагин)
-  // Работаем при клике на пункт
-  document.addEventListener("click", pageNavigationAction);
-  // Основная функция
-  function pageNavigationAction(e) {
-    if (e.type === "click") {
-      const targetElement = e.target;
-      if (targetElement.closest('[data-goto]')) {
-        const gotoLink = targetElement.closest('[data-goto]');
-        const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : '';
-        const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
-        const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
-        const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
-        gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
-        e.preventDefault();
-        // const closeMenu = () => {
-        //   const menuBtn = document.querySelector('.menu__btn');
-        //   const menuBody = document.querySelector('.menu__body');
-        //   if (menuBody.classList.contains('_active')) {
-        //     menuBody.classList.remove('_active');
-        //     menuBtn.classList.remove('_active');
-        //   }
-        // }
-        // closeMenu();
-      }
-    }
-  }
-}
-// Работа с шапкой при скроле
-// export function headerScroll() {
-//   addWindowScrollEvent = true;
-//   const header = document.querySelector('header.header');
-//   const headerShow = header.hasAttribute('data-scroll-show');
-//   const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
-//   const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
-//   let scrollDirection = 0;
-//   let timer;
-//   document.addEventListener("windowScroll", function (e) {
-//     const scrollTop = window.scrollY;
-//     clearTimeout(timer);
-//     if (scrollTop >= startPoint) {
-//       !header.classList.contains('_header-scroll') ? header.classList.add('_header-scroll') : null;
-//       if (headerShow) {
-//         if (scrollTop > scrollDirection) {
-//           // downscroll code
-//           header.classList.contains('_header-show') ? header.classList.remove('_header-show') : null;
-//         } else {
-//           // upscroll code
-//           !header.classList.contains('_header-show') ? header.classList.add('_header-show') : null;
-//         }
-//         timer = setTimeout(() => {
-//           !header.classList.contains('_header-show') ? header.classList.add('_header-show') : null;
-//         }, headerShowTimer);
-//       }
-//     } else {
-//       header.classList.contains('_header-scroll') ? header.classList.remove('_header-scroll') : null;
-//       if (headerShow) {
-//         header.classList.contains('_header-show') ? header.classList.remove('_header-show') : null;
-//       }
-//     }
-//     scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
-//   });
-// }
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! smooth-scroll v16.1.3 | (c) 2020 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/smooth-scroll */
-window.Element&&!Element.prototype.closest&&(Element.prototype.closest=function(e){var t,n=(this.document||this.ownerDocument).querySelectorAll(e),o=this;do{for(t=n.length;0<=--t&&n.item(t)!==o;);}while(t<0&&(o=o.parentElement));return o}),(function(){if("function"==typeof window.CustomEvent)return;function e(e,t){t=t||{bubbles:!1,cancelable:!1,detail:void 0};var n=document.createEvent("CustomEvent");return n.initCustomEvent(e,t.bubbles,t.cancelable,t.detail),n}e.prototype=window.Event.prototype,window.CustomEvent=e})(),(function(){for(var r=0,e=["ms","moz","webkit","o"],t=0;t<e.length&&!window.requestAnimationFrame;++t)window.requestAnimationFrame=window[e[t]+"RequestAnimationFrame"],window.cancelAnimationFrame=window[e[t]+"CancelAnimationFrame"]||window[e[t]+"CancelRequestAnimationFrame"];window.requestAnimationFrame||(window.requestAnimationFrame=function(e,t){var n=(new Date).getTime(),o=Math.max(0,16-(n-r)),a=window.setTimeout((function(){e(n+o)}),o);return r=n+o,a}),window.cancelAnimationFrame||(window.cancelAnimationFrame=function(e){clearTimeout(e)})})(),(function(e,t){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function(){return t(e)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})("undefined"!=typeof __webpack_require__.g?__webpack_require__.g:"undefined"!=typeof window?window:this,(function(M){"use strict";var q={ignore:"[data-scroll-ignore]",header:null,topOnEmptyHash:!0,speed:500,speedAsDuration:!1,durationMax:null,durationMin:null,clip:!0,offset:0,easing:"easeInOutCubic",customEasing:null,updateURL:!0,popstate:!0,emitEvents:!0},I=function(){var n={};return Array.prototype.forEach.call(arguments,(function(e){for(var t in e){if(!e.hasOwnProperty(t))return;n[t]=e[t]}})),n},r=function(e){"#"===e.charAt(0)&&(e=e.substr(1));for(var t,n=String(e),o=n.length,a=-1,r="",i=n.charCodeAt(0);++a<o;){if(0===(t=n.charCodeAt(a)))throw new InvalidCharacterError("Invalid character: the input contains U+0000.");1<=t&&t<=31||127==t||0===a&&48<=t&&t<=57||1===a&&48<=t&&t<=57&&45===i?r+="\\"+t.toString(16)+" ":r+=128<=t||45===t||95===t||48<=t&&t<=57||65<=t&&t<=90||97<=t&&t<=122?n.charAt(a):"\\"+n.charAt(a)}return"#"+r},F=function(){return Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight,document.body.clientHeight,document.documentElement.clientHeight)},L=function(e){return e?(t=e,parseInt(M.getComputedStyle(t).height,10)+e.offsetTop):0;var t},x=function(e,t,n){0===e&&document.body.focus(),n||(e.focus(),document.activeElement!==e&&(e.setAttribute("tabindex","-1"),e.focus(),e.style.outline="none"),M.scrollTo(0,t))},H=function(e,t,n,o){if(t.emitEvents&&"function"==typeof M.CustomEvent){var a=new CustomEvent(e,{bubbles:!0,detail:{anchor:n,toggle:o}});document.dispatchEvent(a)}};return function(o,e){var b,a,A,O,C={};C.cancelScroll=function(e){cancelAnimationFrame(O),O=null,e||H("scrollCancel",b)},C.animateScroll=function(a,r,e){C.cancelScroll();var i=I(b||q,e||{}),c="[object Number]"===Object.prototype.toString.call(a),t=c||!a.tagName?null:a;if(c||t){var s=M.pageYOffset;i.header&&!A&&(A=document.querySelector(i.header));var n,o,u,l,m,d,f,h,p=L(A),g=c?a:(function(e,t,n,o){var a=0;if(e.offsetParent)for(;a+=e.offsetTop,e=e.offsetParent;);return a=Math.max(a-t-n,0),o&&(a=Math.min(a,F()-M.innerHeight)),a})(t,p,parseInt("function"==typeof i.offset?i.offset(a,r):i.offset,10),i.clip),y=g-s,v=F(),w=0,S=(n=y,u=(o=i).speedAsDuration?o.speed:Math.abs(n/1e3*o.speed),o.durationMax&&u>o.durationMax?o.durationMax:o.durationMin&&u<o.durationMin?o.durationMin:parseInt(u,10)),E=function(e){var t,n,o;l||(l=e),w+=e-l,d=s+y*(n=m=1<(m=0===S?0:w/S)?1:m,"easeInQuad"===(t=i).easing&&(o=n*n),"easeOutQuad"===t.easing&&(o=n*(2-n)),"easeInOutQuad"===t.easing&&(o=n<.5?2*n*n:(4-2*n)*n-1),"easeInCubic"===t.easing&&(o=n*n*n),"easeOutCubic"===t.easing&&(o=--n*n*n+1),"easeInOutCubic"===t.easing&&(o=n<.5?4*n*n*n:(n-1)*(2*n-2)*(2*n-2)+1),"easeInQuart"===t.easing&&(o=n*n*n*n),"easeOutQuart"===t.easing&&(o=1- --n*n*n*n),"easeInOutQuart"===t.easing&&(o=n<.5?8*n*n*n*n:1-8*--n*n*n*n),"easeInQuint"===t.easing&&(o=n*n*n*n*n),"easeOutQuint"===t.easing&&(o=1+--n*n*n*n*n),"easeInOutQuint"===t.easing&&(o=n<.5?16*n*n*n*n*n:1+16*--n*n*n*n*n),t.customEasing&&(o=t.customEasing(n)),o||n),M.scrollTo(0,Math.floor(d)),(function(e,t){var n=M.pageYOffset;if(e==t||n==t||(s<t&&M.innerHeight+n)>=v)return C.cancelScroll(!0),x(a,t,c),H("scrollStop",i,a,r),!(O=l=null)})(d,g)||(O=M.requestAnimationFrame(E),l=e)};0===M.pageYOffset&&M.scrollTo(0,0),f=a,h=i,c||history.pushState&&h.updateURL&&history.pushState({smoothScroll:JSON.stringify(h),anchor:f.id},document.title,f===document.documentElement?"#top":"#"+f.id),"matchMedia"in M&&M.matchMedia("(prefers-reduced-motion)").matches?x(a,Math.floor(g),!1):(H("scrollStart",i,a,r),C.cancelScroll(!0),M.requestAnimationFrame(E))}};var t=function(e){if(!e.defaultPrevented&&!(0!==e.button||e.metaKey||e.ctrlKey||e.shiftKey)&&"closest"in e.target&&(a=e.target.closest(o))&&"a"===a.tagName.toLowerCase()&&!e.target.closest(b.ignore)&&a.hostname===M.location.hostname&&a.pathname===M.location.pathname&&/#/.test(a.href)){var t,n;try{t=r(decodeURIComponent(a.hash))}catch(e){t=r(a.hash)}if("#"===t){if(!b.topOnEmptyHash)return;n=document.documentElement}else n=document.querySelector(t);(n=n||"#top"!==t?n:document.documentElement)&&(e.preventDefault(),(function(e){if(history.replaceState&&e.updateURL&&!history.state){var t=M.location.hash;t=t||"",history.replaceState({smoothScroll:JSON.stringify(e),anchor:t||M.pageYOffset},document.title,t||M.location.href)}})(b),C.animateScroll(n,a))}},n=function(e){if(null!==history.state&&history.state.smoothScroll&&history.state.smoothScroll===JSON.stringify(b)){var t=history.state.anchor;"string"==typeof t&&t&&!(t=document.querySelector(r(history.state.anchor)))||C.animateScroll(t,null,{updateURL:!1})}};C.destroy=function(){b&&(document.removeEventListener("click",t,!1),M.removeEventListener("popstate",n,!1),C.cancelScroll(),O=A=a=b=null)};return (function(){if(!("querySelector"in document&&"addEventListener"in M&&"requestAnimationFrame"in M&&"closest"in M.Element.prototype))throw"Smooth Scroll: This browser does not support the required JavaScript methods and browser APIs.";C.destroy(),b=I(q,e||{}),A=b.header?document.querySelector(b.header):null,document.addEventListener("click",t,!1),b.updateURL&&b.popstate&&M.addEventListener("popstate",n,!1)})(),C}}));
-
-/***/ }),
-/* 4 */
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// Dynamic Adapt v.1
-// HTML data-da="where(uniq class name),when(breakpoint),position(digi)"
-// e.x. data-da=".item,992,2"
-// Andrikanych Yevhen 2020
-// https://www.youtube.com/c/freelancerlifestyle
-
-function DynamicAdapt(type) {
-	this.type = type;
-}
-DynamicAdapt.prototype.init = function () {
-	const _this = this;
-	// массив объектов
-	this.оbjects = [];
-	this.daClassname = "_dynamic_adapt_";
-	// массив DOM-элементов
-	this.nodes = document.querySelectorAll("[data-da]");
-	// наполнение оbjects объктами
-	for (let i = 0; i < this.nodes.length; i++) {
-		const node = this.nodes[i];
-		const data = node.dataset.da.trim();
-		const dataArray = data.split(",");
-		const оbject = {};
-		оbject.element = node;
-		оbject.parent = node.parentNode;
-		оbject.destination = document.querySelector(dataArray[0].trim());
-		оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
-		оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
-		оbject.index = this.indexInParent(оbject.parent, оbject.element);
-		this.оbjects.push(оbject);
-	}
-	this.arraySort(this.оbjects);
-	// массив уникальных медиа-запросов
-	this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
-		return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
-	}, this);
-	this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
-		return Array.prototype.indexOf.call(self, item) === index;
-	});
-	// навешивание слушателя на медиа-запрос
-	// и вызов обработчика при первом запуске
-	for (let i = 0; i < this.mediaQueries.length; i++) {
-		const media = this.mediaQueries[i];
-		const mediaSplit = String.prototype.split.call(media, ',');
-		const matchMedia = window.matchMedia(mediaSplit[0]);
-		const mediaBreakpoint = mediaSplit[1];
-		// массив объектов с подходящим брейкпоинтом
-		const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
-			return item.breakpoint === mediaBreakpoint;
-		});
-		matchMedia.addListener(function () {
-			_this.mediaHandler(matchMedia, оbjectsFilter);
-		});
-		this.mediaHandler(matchMedia, оbjectsFilter);
-	}
-};
-DynamicAdapt.prototype.mediaHandler = function (matchMedia, оbjects) {
-	if (matchMedia.matches) {
-		for (let i = 0; i < оbjects.length; i++) {
-			const оbject = оbjects[i];
-			оbject.index = this.indexInParent(оbject.parent, оbject.element);
-			this.moveTo(оbject.place, оbject.element, оbject.destination);
-		}
-	} else {
-		//for (let i = 0; i < оbjects.length; i++) {
-		for (let i = оbjects.length - 1; i >= 0; i--) {
-			const оbject = оbjects[i];
-			if (оbject.element.classList.contains(this.daClassname)) {
-				this.moveBack(оbject.parent, оbject.element, оbject.index);
-			}
-		}
-	}
-};
-// Функция перемещения
-DynamicAdapt.prototype.moveTo = function (place, element, destination) {
-	element.classList.add(this.daClassname);
-	if (place === 'last' || place >= destination.children.length) {
-		destination.insertAdjacentElement('beforeend', element);
-		return;
-	}
-	if (place === 'first') {
-		destination.insertAdjacentElement('afterbegin', element);
-		return;
-	}
-	destination.children[place].insertAdjacentElement('beforebegin', element);
-}
-// Функция возврата
-DynamicAdapt.prototype.moveBack = function (parent, element, index) {
-	element.classList.remove(this.daClassname);
-	if (parent.children[index] !== undefined) {
-		parent.children[index].insertAdjacentElement('beforebegin', element);
-	} else {
-		parent.insertAdjacentElement('beforeend', element);
-	}
-}
-// Функция получения индекса внутри родителя
-DynamicAdapt.prototype.indexInParent = function (parent, element) {
-	const array = Array.prototype.slice.call(parent.children);
-	return Array.prototype.indexOf.call(array, element);
-};
-// Функция сортировки массива по breakpoint и place 
-// по возрастанию для this.type = min
-// по убыванию для this.type = max
-DynamicAdapt.prototype.arraySort = function (arr) {
-	if (this.type === "min") {
-		Array.prototype.sort.call(arr, function (a, b) {
-			if (a.breakpoint === b.breakpoint) {
-				if (a.place === b.place) {
-					return 0;
-				}
-
-				if (a.place === "first" || b.place === "last") {
-					return -1;
-				}
-
-				if (a.place === "last" || b.place === "first") {
-					return 1;
-				}
-
-				return a.place - b.place;
-			}
-
-			return a.breakpoint - b.breakpoint;
-		});
-	} else {
-		Array.prototype.sort.call(arr, function (a, b) {
-			if (a.breakpoint === b.breakpoint) {
-				if (a.place === b.place) {
-					return 0;
-				}
-
-				if (a.place === "first" || b.place === "last") {
-					return 1;
-				}
-
-				if (a.place === "last" || b.place === "first") {
-					return -1;
-				}
-
-				return b.place - a.place;
-			}
-
-			return b.breakpoint - a.breakpoint;
-		});
-		return;
-	}
-};
-const da = new DynamicAdapt("max");
-da.init();
-
-/***/ }),
-/* 5 */
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-// Модуль попапов
-// (c) Фрилансер по жизни, Хмурый Кот
-// Документация по работе в шаблоне: https://template.fls.guru/template-docs/funkcional-popup.html
-// Сниппет (HTML): pl
-
-// Подключение функционала "Чертогов Фрилансера"
-
-
-// Класс Popup
-class Popup {
-  constructor(options) {
-    let config = {
-      logging: true,
-      init: true,
-      // Для кнопок
-      attributeOpenButton: "data-popup", // Атрибут для кнопки, которая вызывает попап
-      attributeCloseButton: "data-close", // Атрибут для кнопки, которая закрывает попап
-      // Для сторонних объектов
-      fixElementSelector: "[data-lp]", // Атрибут для элементов с левым паддингом (которые fixed)
-      // Для объекта попапа
-      youtubeAttribute: "data-popup-youtube", // Атрибут для кода youtube
-      youtubePlaceAttribute: "data-popup-youtube-place", // Атрибут для вставки ролика youtube
-      setAutoplayYoutube: true,
-      // Изменение классов
-      classes: {
-        popup: "popup",
-        popupWrapper: "popup",
-        popupContent: "popup__body",
-        popupActive: "is-open", // Добавляется для попапа, когда он открывается
-        bodyActive: "is-popup-open", // Добавляется для боди, когда попап открыт
-      },
-      focusCatch: true, // Фокус внутри попапа зациклен
-      closeEsc: true, // Закрытие по ESC
-      bodyLock: true, // Блокировка скролла
-      hashSettings: {
-        location: true, // Хэш в адресной строке
-        goHash: true, // Переход по наличию в адресной строке
-      },
-      on: {
-        // События
-        beforeOpen: function () {},
-        afterOpen: function () {},
-        beforeClose: function () {},
-        afterClose: function () {},
-      },
-    };
-    this.youTubeCode;
-    this.isOpen = false;
-    // Текущее окно
-    this.targetOpen = {
-      selector: false,
-      element: false,
-    };
-    // Предыдущее открытое
-    this.previousOpen = {
-      selector: false,
-      element: false,
-    };
-    // Последнее закрытое
-    this.lastClosed = {
-      selector: false,
-      element: false,
-    };
-    this._dataValue = false;
-    this.hash = false;
-
-    this._reopen = false;
-    this._selectorOpen = false;
-
-    this.lastFocusEl = false;
-    this._focusEl = [
-      "a[href]",
-      'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
-      "button:not([disabled]):not([aria-hidden])",
-      "select:not([disabled]):not([aria-hidden])",
-      "textarea:not([disabled]):not([aria-hidden])",
-      "area[href]",
-      "iframe",
-      "object",
-      "embed",
-      "[contenteditable]",
-      '[tabindex]:not([tabindex^="-"])',
-    ];
-    //this.options = Object.assign(config, options);
-    this.options = {
-      ...config,
-      ...options,
-      classes: {
-        ...config.classes,
-        ...options?.classes,
-      },
-      hashSettings: {
-        ...config.hashSettings,
-        ...options?.hashSettings,
-      },
-      on: {
-        ...config.on,
-        ...options?.on,
-      },
-    };
-    this.bodyLock = false;
-    this.options.init ? this.initPopups() : null;
-  }
-  initPopups() {
-    this.popupLogging(`Проснулся`);
-    this.eventsPopup();
-  }
-  eventsPopup() {
-    // Клик на всем документе
-    document.addEventListener(
-      "click",
-      function (e) {
-        // Клик по кнопке "открыть"
-        const buttonOpen = e.target.closest(
-          `[${this.options.attributeOpenButton}]`
-        );
-        if (buttonOpen) {
-          e.preventDefault();
-          this._dataValue = buttonOpen.getAttribute(
-            this.options.attributeOpenButton
-          )
-            ? buttonOpen.getAttribute(this.options.attributeOpenButton)
-            : "error";
-          this.youTubeCode = buttonOpen.getAttribute(
-            this.options.youtubeAttribute
-          )
-            ? buttonOpen.getAttribute(this.options.youtubeAttribute)
-            : null;
-          if (this._dataValue !== "error") {
-            if (!this.isOpen) this.lastFocusEl = buttonOpen;
-            this.targetOpen.selector = `${this._dataValue}`;
-            this._selectorOpen = true;
-            this.open();
-            return;
-          } else
-            this.popupLogging(
-              `Ой ой, не заполнен атрибут у ${buttonOpen.classList}`
-            );
-
-          return;
-        }
-        // Закрытие на пустом месте (popup__wrapper) и кнопки закрытия (popup__close) для закрытия
-        const buttonClose = e.target.closest(
-          `[${this.options.attributeCloseButton}]`
-        );
-        if (
-          buttonClose ||
-          (!e.target.closest(`.${this.options.classes.popupContent}`) &&
-            this.isOpen)
-        ) {
-          e.preventDefault();
-          this.close();
-          return;
-        }
-      }.bind(this)
-    );
-    // Закрытие по ESC
-    document.addEventListener(
-      "keydown",
-      function (e) {
-        if (
-          this.options.closeEsc &&
-          e.which == 27 &&
-          e.code === "Escape" &&
-          this.isOpen
-        ) {
-          e.preventDefault();
-          this.close();
-          return;
-        }
-        if (this.options.focusCatch && e.which == 9 && this.isOpen) {
-          this._focusCatch(e);
-          return;
-        }
-      }.bind(this)
-    );
-
-    // Открытие по хешу
-    if (this.options.hashSettings.goHash) {
-      // Проверка изменения адресной строки
-      window.addEventListener(
-        "hashchange",
-        function () {
-          if (window.location.hash) {
-            this._openToHash();
-          } else {
-            this.close(this.targetOpen.selector);
-          }
-        }.bind(this)
-      );
-
-      window.addEventListener(
-        "load",
-        function () {
-          if (window.location.hash) {
-            this._openToHash();
-          }
-        }.bind(this)
-      );
-    }
-  }
-  open(selectorValue) {
-    if (_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLockStatus) {
-      // Если перед открытием попапа был режим lock
-      this.bodyLock = document.documentElement.classList.contains("lock")
-        ? true
-        : false;
-
-      // Если ввести значение селектора (селектор настраивается в options)
-      if (
-        selectorValue &&
-        typeof selectorValue === "string" &&
-        selectorValue.trim() !== ""
-      ) {
-        this.targetOpen.selector = selectorValue;
-        this._selectorOpen = true;
-      }
-      if (this.isOpen) {
-        this._reopen = true;
-        this.close();
-      }
-      if (!this._selectorOpen)
-        this.targetOpen.selector = this.lastClosed.selector;
-      if (!this._reopen) this.previousActiveElement = document.activeElement;
-
-      this.targetOpen.element = document.querySelector(
-        this.targetOpen.selector
-      );
-
-      if (this.targetOpen.element) {
-        // YouTube
-        if (this.youTubeCode) {
-          const codeVideo = this.youTubeCode;
-          const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
-          const iframe = document.createElement("iframe");
-          iframe.setAttribute("allowfullscreen", "");
-
-          const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
-          iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
-
-          iframe.setAttribute("src", urlVideo);
-
-          if (
-            !this.targetOpen.element.querySelector(
-              `[${this.options.youtubePlaceAttribute}]`
-            )
-          ) {
-            const youtubePlace = this.targetOpen.element
-              .querySelector(".popup__text")
-              .setAttribute(`${this.options.youtubePlaceAttribute}`, "");
-          }
-          this.targetOpen.element
-            .querySelector(`[${this.options.youtubePlaceAttribute}]`)
-            .appendChild(iframe);
-        }
-        if (this.options.hashSettings.location) {
-          // Получение хэша и его выставление
-          this._getHash();
-          this._setHash();
-        }
-
-        // До открытия
-        this.options.on.beforeOpen(this);
-        // Создаем свое событие после открытия попапа
-        document.dispatchEvent(
-          new CustomEvent("beforePopupOpen", {
-            detail: {
-              popup: this,
-            },
-          })
-        );
-
-        this.targetOpen.element.classList.add(this.options.classes.popupActive);
-        document.documentElement.classList.add(this.options.classes.bodyActive);
-
-        if (!this._reopen) {
-          !this.bodyLock ? (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLock)() : null;
-        } else this._reopen = false;
-
-        this.targetOpen.element.setAttribute("aria-hidden", "false");
-
-        // Запоминаю это открытое окно. Оно будет последним открытым
-        this.previousOpen.selector = this.targetOpen.selector;
-        this.previousOpen.element = this.targetOpen.element;
-
-        this._selectorOpen = false;
-
-        this.isOpen = true;
-
-        setTimeout(() => {
-          this._focusTrap();
-        }, 50);
-
-        // После открытия
-        this.options.on.afterOpen(this);
-        // Создаем свое событие после открытия попапа
-        document.dispatchEvent(
-          new CustomEvent("afterPopupOpen", {
-            detail: {
-              popup: this,
-            },
-          })
-        );
-        this.popupLogging(`Открыл попап`);
-      } else
-        this.popupLogging(
-          `Ой ой, такого попапа нет.Проверьте корректность ввода. `
-        );
-    }
-  }
-  close(selectorValue) {
-    if (
-      selectorValue &&
-      typeof selectorValue === "string" &&
-      selectorValue.trim() !== ""
-    ) {
-      this.previousOpen.selector = selectorValue;
-    }
-    if (!this.isOpen || !_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLockStatus) {
-      return;
-    }
-    // До закрытия
-    this.options.on.beforeClose(this);
-    // Создаем свое событие перед закрытием попапа
-    document.dispatchEvent(
-      new CustomEvent("beforePopupClose", {
-        detail: {
-          popup: this,
-        },
-      })
-    );
-
-    // YouTube
-    if (this.youTubeCode) {
-      if (
-        this.targetOpen.element.querySelector(
-          `[${this.options.youtubePlaceAttribute}]`
-        )
-      )
-        this.targetOpen.element.querySelector(
-          `[${this.options.youtubePlaceAttribute}]`
-        ).innerHTML = "";
-    }
-    this.previousOpen.element.classList.remove(
-      this.options.classes.popupActive
-    );
-    // aria-hidden
-    this.previousOpen.element.setAttribute("aria-hidden", "true");
-    if (!this._reopen) {
-      document.documentElement.classList.remove(
-        this.options.classes.bodyActive
-      );
-      !this.bodyLock ? (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyUnlock)() : null;
-      this.isOpen = false;
-    }
-    // Очищение адресной строки
-    this._removeHash();
-    if (this._selectorOpen) {
-      this.lastClosed.selector = this.previousOpen.selector;
-      this.lastClosed.element = this.previousOpen.element;
-    }
-    // После закрытия
-    this.options.on.afterClose(this);
-    // Создаем свое событие после закрытия попапа
-    document.dispatchEvent(
-      new CustomEvent("afterPopupClose", {
-        detail: {
-          popup: this,
-        },
-      })
-    );
-
-    setTimeout(() => {
-      this._focusTrap();
-    }, 50);
-
-    this.popupLogging(`Закрыл попап`);
-  }
-  // Получение хэша
-  _getHash() {
-    if (this.options.hashSettings.location) {
-      this.hash = this.targetOpen.selector.includes("#")
-        ? this.targetOpen.selector
-        : this.targetOpen.selector.replace(".", "#");
-    }
-  }
-  _openToHash() {
-    let classInHash = document.querySelector(
-      `.${window.location.hash.replace("#", "")}`
-    )
-      ? `.${window.location.hash.replace("#", "")}`
-      : document.querySelector(`${window.location.hash}`)
-      ? `${window.location.hash}`
-      : null;
-
-    const buttons = document.querySelector(
-      `[${this.options.attributeOpenButton} = "${classInHash}"]`
-    )
-      ? document.querySelector(
-          `[${this.options.attributeOpenButton} = "${classInHash}"]`
-        )
-      : document.querySelector(
-          `[${this.options.attributeOpenButton} = "${classInHash.replace(
-            ".",
-            "#"
-          )}"]`
-        );
-    if (buttons && classInHash) this.open(classInHash);
-  }
-  // Утсановка хэша
-  _setHash() {
-    history.pushState("", "", this.hash);
-  }
-  _removeHash() {
-    history.pushState("", "", window.location.href.split("#")[0]);
-  }
-  _focusCatch(e) {
-    const focusable = this.targetOpen.element.querySelectorAll(this._focusEl);
-    const focusArray = Array.prototype.slice.call(focusable);
-    const focusedIndex = focusArray.indexOf(document.activeElement);
-
-    if (e.shiftKey && focusedIndex === 0) {
-      focusArray[focusArray.length - 1].focus();
-      e.preventDefault();
-    }
-    if (!e.shiftKey && focusedIndex === focusArray.length - 1) {
-      focusArray[0].focus();
-      e.preventDefault();
-    }
-  }
-  _focusTrap() {
-    const focusable = this.previousOpen.element.querySelectorAll(this._focusEl);
-    if (!this.isOpen && this.lastFocusEl) {
-      this.lastFocusEl.focus();
-    } else {
-      focusable[0].focus();
-    }
-  }
-  // Функция вывода в консоль
-  popupLogging(message) {
-    // this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
-  }
-}
-// Запускаем и добавляем в объект модулей
-new Popup({});
-
-
-/***/ }),
-/* 6 */
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-// Подключение функционала "Чертогов Фрилансера"
-
-
-// Подключение файла стилей
-// Базовые стили поключаются в src/scss/forms.scss
-// Файл базовых стилей src/scss/forms/select.scss
-
-/*
-Документация:
-Снипет (HTML): sel
-*/
-/*
-// Настройки
-Для селекта (select):
-multiple - мультивыбор
-data-modifier="имя класса" - модификатор к конкретному селекту
-data-tags - режим тегов (только для multiple)
-data-scroll - включит прокрутку для выпадающего списка, дополнительно можно подключить кастомный скролл simplebar в app.js. Указанное число для атрибута ограничит высоту
-data-checkbox - стилизация элементов по checkbox (только для multiple)
-data-show-selected - отключает скрытие выбранного элемента
-data-search - позволяет искать по выпадающему списку
-data-open - селект открыт сразу
-data-submit - отправляет форму при изменении селекта
-
-data-one-select - селекты внутри оболочки с атрибутом будут показываться только по одному
-data-pseudo-label - добавляет псевдоэлемент к заголовку селекта с указанным текстом
-
-Для плейсхолдера (Плейсхолдер - это option с value=""):
-data-label для плейсхолдера, добавляет label к селекту
-data-show для плейсхолдера, показывает его в списке (только для единичного выбора)
-
-Для элемента (option):
-data-class="имя класса" - добавляет класс
-data-asset="путь к картинке или текст" - добавляет структуру 2х колонок и данными
-data-href="адрес ссылки" - добавляет ссылку в элемент списка
-data-href-blank - откроет ссылку в новом окне
-*/
-
-/*
-// Возможные доработки:
-попап на мобилке
-*/
-
-// Класс построения Select
-class SelectConstructor {
-  constructor(props, data = null) {
-    let defaultConfig = {
-      init: true,
-    };
-    this.config = Object.assign(defaultConfig, props);
-    // CSS классы модуля
-    this.selectClasses = {
-      classSelect: "select", // Главный блок
-      classSelectBody: "select__body", // Тело селекта
-      classSelectTitle: "select__title", // Заголовок
-      classSelectValue: "select__value", // Значение в заголовке
-      classSelectLabel: "select__label", // Лабел
-      classSelectInput: "select__input", // Поле ввода
-      classSelectText: "select__text", // Оболочка текстовых данных
-      classSelectLink: "select__link", // Ссылка в элементе
-      classSelectOptions: "select__options", // Выпадающий список
-      classSelectOptionsScroll: "select__scroll", // Оболочка при скролле
-      classSelectOption: "select__option", // Пункт
-      classSelectContent: "select__content", // Оболочка контента в заголовке
-      classSelectRow: "select__row", // Ряд
-      classSelectData: "select__asset", // Дополнительные данные
-      classSelectDisabled: "select_disabled", // Запрешен
-      classSelectTag: "select_tag", // Класс тега
-      classSelectOpen: "select_open", // Список открыт
-      classSelectActive: "select_active", // Список выбран
-      classSelectFocus: "select_focus", // Список в фокусе
-      classSelectMultiple: "select_multiple", // Мультивыбор
-      classSelectCheckBox: "select_checkbox", // Стиль чекбокса
-      classSelectOptionSelected: "select_selected", // Выбранный пункт
-      classSelectPseudoLabel: "select_pseudo-label", // Псевдолейбл
-    };
-    this._this = this;
-    // Запуск инициализации
-    if (this.config.init) {
-      // Получение всех select на странице
-      const selectItems = data ? document.querySelectorAll(data) : document.querySelectorAll("select");
-      if (selectItems.length) {
-        this.selectsInit(selectItems);
-      }
-    }
-  }
-  // Конструктор CSS класса
-  getSelectClass(className) {
-    return `.${className}`;
-  }
-  // Геттер элементов псевдоселекта
-  getSelectElement(selectItem, className) {
-    return {
-      originalSelect: selectItem.querySelector("select"),
-      selectElement: selectItem.querySelector(this.getSelectClass(className)),
-    };
-  }
-  // Функция инициализации всех селектов
-  selectsInit(selectItems) {
-    selectItems.forEach((originalSelect, index) => {
-      this.selectInit(originalSelect, index + 1);
-    });
-    // Обработчики событий...
-    // ...при клике
-    document.addEventListener(
-      "click",
-      function (e) {
-        this.selectsActions(e);
-      }.bind(this)
-    );
-    // ...при нажатии клавиши
-    document.addEventListener(
-      "keydown",
-      function (e) {
-        this.selectsActions(e);
-      }.bind(this)
-    );
-    // ...при фокусе
-    document.addEventListener(
-      "focusin",
-      function (e) {
-        this.selectsActions(e);
-      }.bind(this)
-    );
-    // ...при потере фокуса
-    document.addEventListener(
-      "focusout",
-      function (e) {
-        this.selectsActions(e);
-      }.bind(this)
-    );
-  }
-  // Функция инициализации конкретного селекта
-  selectInit(originalSelect, index) {
-    const _this = this;
-    // Создаем оболочку
-    let selectItem = document.createElement("div");
-    selectItem.classList.add(this.selectClasses.classSelect);
-    // Выводим оболочку перед оригинальным селектом
-    originalSelect.parentNode.insertBefore(selectItem, originalSelect);
-    // Помещаем оригинальный селект в оболочку
-    selectItem.appendChild(originalSelect);
-    // Скрываем оригинальный селект
-    originalSelect.hidden = true;
-    // Присваиваем уникальный ID
-    index ? (originalSelect.dataset.id = index) : null;
-
-    // Работа с плейсхолдером
-    if (this.getSelectPlaceholder(originalSelect)) {
-      // Запоминаем плейсхолдер
-      originalSelect.dataset.placeholder = this.getSelectPlaceholder(originalSelect).value;
-      // Если включен режим label
-      if (this.getSelectPlaceholder(originalSelect).label.show) {
-        const selectItemTitle = this.getSelectElement(
-          selectItem,
-          this.selectClasses.classSelectTitle
-        ).selectElement;
-        selectItemTitle.insertAdjacentHTML(
-          "afterbegin",
-          `<span class="${this.selectClasses.classSelectLabel}">${
-            this.getSelectPlaceholder(originalSelect).label.text
-              ? this.getSelectPlaceholder(originalSelect).label.text
-              : this.getSelectPlaceholder(originalSelect).value
-          }</span>`
-        );
-      }
-    }
-    // Конструктор основных элементов
-    selectItem.insertAdjacentHTML(
-      "beforeend",
-      `<div class="${this.selectClasses.classSelectBody}"><div hidden class="${this.selectClasses.classSelectOptions}"></div></div>`
-    );
-    // Запускаем конструктор псевдоселекта
-    this.selectBuild(originalSelect);
-
-    // Запоминаем скорость
-    originalSelect.dataset.speed = originalSelect.dataset.speed ? originalSelect.dataset.speed : "150";
-    // Событие при изменении оригинального select
-    originalSelect.addEventListener("change", function (e) {
-      _this.selectChange(e);
-    });
-  }
-  // Конструктор псевдоселекта
-  selectBuild(originalSelect) {
-    const selectItem = originalSelect.parentElement;
-    // Добавляем ID селекта
-    selectItem.dataset.id = originalSelect.dataset.id;
-    // Получаем класс оригинального селекта, создаем модификатор и добавляем его
-    selectItem.classList.add(
-      originalSelect.dataset.modifier ? `select_${originalSelect.dataset.modifier}` : ""
-    );
-    // Если множественный выбор, добавляем класс
-    originalSelect.multiple
-      ? selectItem.classList.add(this.selectClasses.classSelectMultiple)
-      : selectItem.classList.remove(this.selectClasses.classSelectMultiple);
-    // Cтилизация элементов под checkbox (только для multiple)
-    originalSelect.hasAttribute("data-checkbox") && originalSelect.multiple
-      ? selectItem.classList.add(this.selectClasses.classSelectCheckBox)
-      : selectItem.classList.remove(this.selectClasses.classSelectCheckBox);
-    // Сеттер значения заголовка селекта
-    this.setSelectTitleValue(selectItem, originalSelect);
-    // Сеттер элементов списка (options)
-    this.setOptions(selectItem, originalSelect);
-    // Если включена опция поиска data-search, запускаем обработчик
-    originalSelect.hasAttribute("data-search") ? this.searchActions(selectItem) : null;
-    // Если указана настройка data-open, открываем селект
-    originalSelect.hasAttribute("data-open") ? this.selectAction(selectItem) : null;
-    // Обработчик disabled
-    this.selectDisabled(selectItem, originalSelect);
-  }
-  // Функция реакций на события
-  selectsActions(e) {
-    const targetElement = e.target;
-    const targetType = e.type;
-    if (
-      targetElement.closest(this.getSelectClass(this.selectClasses.classSelect)) ||
-      targetElement.closest(this.getSelectClass(this.selectClasses.classSelectTag))
-    ) {
-      const selectItem = targetElement.closest(".select")
-        ? targetElement.closest(".select")
-        : document.querySelector(
-            `.${this.selectClasses.classSelect}[data-id="${
-              targetElement.closest(this.getSelectClass(this.selectClasses.classSelectTag)).dataset
-                .selectId
-            }"]`
-          );
-      const originalSelect = this.getSelectElement(selectItem).originalSelect;
-      if (targetType === "click") {
-        if (!originalSelect.disabled) {
-          if (targetElement.closest(this.getSelectClass(this.selectClasses.classSelectTag))) {
-            // Обработка клика на тег
-            const targetTag = targetElement.closest(
-              this.getSelectClass(this.selectClasses.classSelectTag)
-            );
-            const optionItem = document.querySelector(
-              `.${this.selectClasses.classSelect}[data-id="${targetTag.dataset.selectId}"] .select__option[data-value="${targetTag.dataset.value}"]`
-            );
-            this.optionAction(selectItem, originalSelect, optionItem);
-          } else if (targetElement.closest(this.getSelectClass(this.selectClasses.classSelectTitle))) {
-            // Обработка клика на заголовок селекта
-            this.selectAction(selectItem);
-          } else if (targetElement.closest(this.getSelectClass(this.selectClasses.classSelectOption))) {
-            // Обработка клика на элемент селекта
-            const optionItem = targetElement.closest(
-              this.getSelectClass(this.selectClasses.classSelectOption)
-            );
-            this.optionAction(selectItem, originalSelect, optionItem);
-          }
-        }
-      } else if (targetType === "focusin" || targetType === "focusout") {
-        if (targetElement.closest(this.getSelectClass(this.selectClasses.classSelect))) {
-          targetType === "focusin"
-            ? selectItem.classList.add(this.selectClasses.classSelectFocus)
-            : selectItem.classList.remove(this.selectClasses.classSelectFocus);
-        }
-      } else if (targetType === "keydown" && e.code === "Escape") {
-        this.selectsСlose();
-      }
-    } else {
-      this.selectsСlose();
-    }
-  }
-  // Функция закрытия всех селектов
-  selectsСlose(selectOneGroup) {
-    const selectsGroup = selectOneGroup ? selectOneGroup : document;
-    const selectActiveItems = selectsGroup.querySelectorAll(
-      `${this.getSelectClass(this.selectClasses.classSelect)}${this.getSelectClass(
-        this.selectClasses.classSelectOpen
-      )}`
-    );
-    if (selectActiveItems.length) {
-      selectActiveItems.forEach((selectActiveItem) => {
-        this.selectСlose(selectActiveItem);
-      });
-    }
-  }
-  // Функция закрытия конкретного селекта
-  selectСlose(selectItem) {
-    const originalSelect = this.getSelectElement(selectItem).originalSelect;
-    const selectOptions = this.getSelectElement(
-      selectItem,
-      this.selectClasses.classSelectOptions
-    ).selectElement;
-    if (!selectOptions.classList.contains("_slide")) {
-      selectItem.classList.remove(this.selectClasses.classSelectOpen);
-      (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__._slideUp)(selectOptions, originalSelect.dataset.speed);
-    }
-  }
-  // Функция открытия/закрытия конкретного селекта
-  selectAction(selectItem) {
-    const originalSelect = this.getSelectElement(selectItem).originalSelect;
-    const selectOptions = this.getSelectElement(
-      selectItem,
-      this.selectClasses.classSelectOptions
-    ).selectElement;
-
-    // Если селекты помещенны в элемент с дата атрибутом data-one-select
-    // закрываем все открытые селекты
-    if (originalSelect.closest("[data-one-select]")) {
-      const selectOneGroup = originalSelect.closest("[data-one-select]");
-      this.selectsСlose(selectOneGroup);
-    }
-
-    if (!selectOptions.classList.contains("_slide")) {
-      selectItem.classList.toggle(this.selectClasses.classSelectOpen);
-      (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__._slideToggle)(selectOptions, originalSelect.dataset.speed);
-    }
-  }
-  // Сеттер значения заголовка селекта
-  setSelectTitleValue(selectItem, originalSelect) {
-    const selectItemBody = this.getSelectElement(
-      selectItem,
-      this.selectClasses.classSelectBody
-    ).selectElement;
-    const selectItemTitle = this.getSelectElement(
-      selectItem,
-      this.selectClasses.classSelectTitle
-    ).selectElement;
-    if (selectItemTitle) selectItemTitle.remove();
-    selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
-  }
-  // Конструктор значения заголовка
-  getSelectTitleValue(selectItem, originalSelect) {
-    // Получаем выбранные текстовые значения
-    let selectTitleValue = this.getSelectedOptionsData(originalSelect, 2).html;
-    // Обработка значений мультивыбора
-    // Если включен режим тегов (указана настройка data-tags)
-    if (originalSelect.multiple && originalSelect.hasAttribute("data-tags")) {
-      selectTitleValue = this.getSelectedOptionsData(originalSelect)
-        .elements.map(
-          (option) =>
-            `<span role="button" data-select-id="${selectItem.dataset.id}" data-value="${
-              option.value
-            }" class="_select-tag">${this.getSelectElementContent(option)}</span>`
-        )
-        .join("");
-      // Если вывод тегов во внешний блок
-      if (originalSelect.dataset.tags && document.querySelector(originalSelect.dataset.tags)) {
-        document.querySelector(originalSelect.dataset.tags).innerHTML = selectTitleValue;
-        if (originalSelect.hasAttribute("data-search")) selectTitleValue = false;
-      }
-    }
-    // Значение(я) или плейсхолдер
-    selectTitleValue = selectTitleValue.length
-      ? selectTitleValue
-      : originalSelect.dataset.placeholder
-      ? originalSelect.dataset.placeholder
-      : "";
-    // Если включен режим pseudo
-    let pseudoAttribute = "";
-    let pseudoAttributeClass = "";
-    if (originalSelect.hasAttribute("data-pseudo-label")) {
-      pseudoAttribute = originalSelect.dataset.pseudoLabel
-        ? ` data-pseudo-label="${originalSelect.dataset.pseudoLabel}"`
-        : ` data-pseudo-label="Заполните атрибут"`;
-      pseudoAttributeClass = ` ${this.selectClasses.classSelectPseudoLabel}`;
-    }
-    // Если есть значение, добавляем класс
-    this.getSelectedOptionsData(originalSelect).values.length
-      ? selectItem.classList.add(this.selectClasses.classSelectActive)
-      : selectItem.classList.remove(this.selectClasses.classSelectActive);
-    // Возвращаем поле ввода для поиска или текст
-    if (originalSelect.hasAttribute("data-search")) {
-      // Выводим поле ввода для поиска
-      return `<div class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}"><input autocomplete="off" type="text" placeholder="${selectTitleValue}" data-placeholder="${selectTitleValue}" class="${this.selectClasses.classSelectInput}"></span></div>`;
-    } else {
-      // Если выбран элемент со своим классом
-      const customClass =
-        this.getSelectedOptionsData(originalSelect).elements.length &&
-        this.getSelectedOptionsData(originalSelect).elements[0].dataset.class
-          ? ` ${this.getSelectedOptionsData(originalSelect).elements[0].dataset.class}`
-          : "";
-      // Выводим текстовое значение
-      return `<button class="${this.selectClasses.classSelectTitle}${pseudoAttributeClass}"${pseudoAttribute} type="button"><span class="${this.selectClasses.classSelectValue}"><span class="${this.selectClasses.classSelectContent}${customClass}">${selectTitleValue}</span></span></button>`;
-    }
-  }
-  // Конструктор данных для значения заголовка
-  getSelectElementContent(selectOption) {
-    // Если для элемента указан вывод картинки или текста, перестраиваем конструкцию
-    const selectOptionData = selectOption.dataset.asset ? `${selectOption.dataset.asset}` : "";
-    const selectOptionDataHTML =
-      selectOptionData.indexOf("img") >= 0
-        ? `<img src="${selectOptionData}" alt="icon">`
-        : selectOptionData;
-    let selectOptionContentHTML = ``;
-    selectOptionContentHTML += selectOptionData
-      ? `<span class="${this.selectClasses.classSelectRow}">`
-      : "";
-    selectOptionContentHTML += selectOptionData
-      ? `<span class="${this.selectClasses.classSelectData}">`
-      : "";
-    selectOptionContentHTML += selectOptionData ? selectOptionDataHTML : "";
-    selectOptionContentHTML += selectOptionData ? `</span>` : "";
-    selectOptionContentHTML += selectOptionData
-      ? `<span class="${this.selectClasses.classSelectText}">`
-      : "";
-    selectOptionContentHTML += selectOption.textContent;
-    selectOptionContentHTML += selectOptionData ? `</span>` : "";
-    selectOptionContentHTML += selectOptionData ? `</span>` : "";
-    return selectOptionContentHTML;
-  }
-  // Получение данных плейсхолдера
-  getSelectPlaceholder(originalSelect) {
-    const selectPlaceholder = Array.from(originalSelect.options).find((option) => !option.value);
-    if (selectPlaceholder) {
-      return {
-        value: selectPlaceholder.textContent,
-        show: selectPlaceholder.hasAttribute("data-show"),
-        label: {
-          show: selectPlaceholder.hasAttribute("data-label"),
-          text: selectPlaceholder.dataset.label,
-        },
-      };
-    }
-  }
-  // Получение данных из выбранных элементов
-  getSelectedOptionsData(originalSelect, type) {
-    // Получаем все выбранные объекты из select
-    let selectedOptions = [];
-    if (originalSelect.multiple) {
-      // Если мультивыбор
-      // Убираем плейсхолдер, получаем остальные выбранные элементы
-      selectedOptions = Array.from(originalSelect.options)
-        .filter((option) => option.value)
-        .filter((option) => option.selected);
-    } else {
-      // Если единичный выбор
-      selectedOptions.push(originalSelect.options[originalSelect.selectedIndex]);
-    }
-    return {
-      elements: selectedOptions.map((option) => option),
-      values: selectedOptions.filter((option) => option.value).map((option) => option.value),
-      html: selectedOptions.map((option) => this.getSelectElementContent(option)),
-    };
-  }
-  // Конструктор элементов списка
-  getOptions(originalSelect) {
-    // Настрока скролла элементов
-    let selectOptionsScroll = originalSelect.hasAttribute("data-scroll") ? `data-simplebar` : "";
-    let selectOptionsScrollHeight = originalSelect.dataset.scroll
-      ? `style="max-height:${originalSelect.dataset.scroll}px"`
-      : "";
-    // Получаем элементы списка
-    let selectOptions = Array.from(originalSelect.options);
-    if (selectOptions.length > 0) {
-      let selectOptionsHTML = ``;
-      // Если указана настройка data-show, показываем плейсхолдер в списке
-      if (
-        (this.getSelectPlaceholder(originalSelect) && !this.getSelectPlaceholder(originalSelect).show) ||
-        originalSelect.multiple
-      ) {
-        selectOptions = selectOptions.filter((option) => option.value);
-      }
-      // Строим и выводим основную конструкцию
-      selectOptionsHTML += selectOptionsScroll
-        ? `<div ${selectOptionsScroll} ${selectOptionsScrollHeight} class="${this.selectClasses.classSelectOptionsScroll}">`
-        : "";
-      selectOptions.forEach((selectOption) => {
-        // Получаем конструкцию конкретного элемента списка
-        selectOptionsHTML += this.getOption(selectOption, originalSelect);
-      });
-      selectOptionsHTML += selectOptionsScroll ? `</div>` : "";
-      return selectOptionsHTML;
-    }
-  }
-  // Конструктор конкретного элемента списка
-  getOption(selectOption, originalSelect) {
-    // Если элемент выбран и включен режим мультивыбора, добавляем класс
-    const selectOptionSelected =
-      selectOption.selected && originalSelect.multiple
-        ? ` ${this.selectClasses.classSelectOptionSelected}`
-        : "";
-    // Если элемент выбрани и нет настройки data-show-selected, скрываем элемент
-    const selectOptionHide =
-      selectOption.selected &&
-      !originalSelect.hasAttribute("data-show-selected") &&
-      !originalSelect.multiple
-        ? `hidden`
-        : ``;
-    // Если для элемента указан класс добавляем
-    const selectOptionClass = selectOption.dataset.class ? ` ${selectOption.dataset.class}` : "";
-    // Если указан режим ссылки
-    const selectOptionLink = selectOption.dataset.href ? selectOption.dataset.href : false;
-    const selectOptionLinkTarget = selectOption.hasAttribute("data-href-blank") ? `target="_blank"` : "";
-    // Строим и возвращаем конструкцию элемента
-    let selectOptionHTML = ``;
-    selectOptionHTML += selectOptionLink
-      ? `<a ${selectOptionLinkTarget} ${selectOptionHide} href="${selectOptionLink}" data-value="${selectOption.value}" class="${this.selectClasses.classSelectOption}${selectOptionClass}${selectOptionSelected}">`
-      : `<button ${selectOptionHide} class="${this.selectClasses.classSelectOption}${selectOptionClass}${selectOptionSelected}" data-value="${selectOption.value}" type="button">`;
-    selectOptionHTML += this.getSelectElementContent(selectOption);
-    selectOptionHTML += selectOptionLink ? `</a>` : `</button>`;
-    return selectOptionHTML;
-  }
-  // Сеттер элементов списка (options)
-  setOptions(selectItem, originalSelect) {
-    // Получаем объект тела псевдоселекта
-    const selectItemOptions = this.getSelectElement(
-      selectItem,
-      this.selectClasses.classSelectOptions
-    ).selectElement;
-    // Запускаем конструктор элементов списка (options) и добавляем в тело псевдоселекта
-    selectItemOptions.innerHTML = this.getOptions(originalSelect);
-  }
-  // Обработчик клика на элемент списка
-  optionAction(selectItem, originalSelect, optionItem) {
-    if (originalSelect.multiple) {
-      // Если мультивыбор
-      // Выделяем классом элемент
-      optionItem.classList.toggle(this.selectClasses.classSelectOptionSelected);
-      // Очищаем выбранные элементы
-      const originalSelectSelectedItems = this.getSelectedOptionsData(originalSelect).elements;
-      originalSelectSelectedItems.forEach((originalSelectSelectedItem) => {
-        originalSelectSelectedItem.removeAttribute("selected");
-      });
-      // Выбираем элементы
-      const selectSelectedItems = selectItem.querySelectorAll(
-        this.getSelectClass(this.selectClasses.classSelectOptionSelected)
-      );
-      selectSelectedItems.forEach((selectSelectedItems) => {
-        originalSelect
-          .querySelector(`option[value="${selectSelectedItems.dataset.value}"]`)
-          .setAttribute("selected", "selected");
-      });
-    } else {
-      // Если единичный выбор
-      // Если не указана настройка data-show-selected, скрываем выбранный элемент
-      if (!originalSelect.hasAttribute("data-show-selected")) {
-        // Сначала все показать
-        if (
-          selectItem.querySelector(`${this.getSelectClass(this.selectClasses.classSelectOption)}[hidden]`)
-        ) {
-          selectItem.querySelector(
-            `${this.getSelectClass(this.selectClasses.classSelectOption)}[hidden]`
-          ).hidden = false;
-        }
-        // Скрываем выбранную
-        optionItem.hidden = true;
-      }
-      originalSelect.value = optionItem.hasAttribute("data-value")
-        ? optionItem.dataset.value
-        : optionItem.textContent;
-      this.selectAction(selectItem);
-    }
-    // Обновляем заголовок селекта
-    this.setSelectTitleValue(selectItem, originalSelect);
-    // Вызываем реакцию на изменение селекта
-    this.setSelectChange(originalSelect);
-  }
-  // Реакция на измененение оригинального select
-  selectChange(e) {
-    const originalSelect = e.target;
-    this.selectBuild(originalSelect);
-    this.setSelectChange(originalSelect);
-  }
-  // Обработчик изменения в селекте
-  setSelectChange(originalSelect) {
-    // При изменении селекта отправляем форму
-    if (originalSelect.hasAttribute("data-submit") && originalSelect.value) {
-      let tempButton = document.createElement("button");
-      tempButton.type = "submit";
-      originalSelect.closest("form").append(tempButton);
-      tempButton.click();
-      tempButton.remove();
-    }
-    const selectItem = originalSelect.parentElement;
-    // Вызов коллбэк функции
-    this.selectCallback(selectItem, originalSelect);
-  }
-  // Обработчик disabled
-  selectDisabled(selectItem, originalSelect) {
-    if (originalSelect.disabled) {
-      selectItem.classList.add(this.selectClasses.classSelectDisabled);
-      this.getSelectElement(
-        selectItem,
-        this.selectClasses.classSelectTitle
-      ).selectElement.disabled = true;
-    } else {
-      selectItem.classList.remove(this.selectClasses.classSelectDisabled);
-      this.getSelectElement(
-        selectItem,
-        this.selectClasses.classSelectTitle
-      ).selectElement.disabled = false;
-    }
-  }
-  // Обработчик поиска по элементам списка
-  searchActions(selectItem) {
-    const originalSelect = this.getSelectElement(selectItem).originalSelect;
-    const selectInput = this.getSelectElement(
-      selectItem,
-      this.selectClasses.classSelectInput
-    ).selectElement;
-    const selectOptions = this.getSelectElement(
-      selectItem,
-      this.selectClasses.classSelectOptions
-    ).selectElement;
-    const selectOptionsItems = selectOptions.querySelectorAll(`.${this.selectClasses.classSelectOption}`);
-    const _this = this;
-    selectInput.addEventListener("input", function () {
-      selectOptionsItems.forEach((selectOptionsItem) => {
-        if (selectOptionsItem.textContent.toUpperCase().indexOf(selectInput.value.toUpperCase()) >= 0) {
-          selectOptionsItem.hidden = false;
-        } else {
-          selectOptionsItem.hidden = true;
-        }
-      });
-      // Если список закрыт открываем
-      selectOptions.hidden === true ? _this.selectAction(selectItem) : null;
-    });
-  }
-  // Коллбэк функция
-  selectCallback(selectItem, originalSelect) {
-    document.dispatchEvent(
-      new CustomEvent("selectCallback", {
-        detail: {
-          select: originalSelect,
-        },
-      })
-    );
-  }
-}
-new SelectConstructor({});
-
-
-/***/ }),
-/* 7 */
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Swiper: () => (/* reexport safe */ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S),
 /* harmony export */   "default": () => (/* reexport safe */ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S)
 /* harmony export */ });
-/* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /**
  * Swiper 11.2.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -2135,17 +773,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 8 */
+/* 3 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   S: () => (/* binding */ Swiper),
 /* harmony export */   d: () => (/* binding */ defaults)
 /* harmony export */ });
-/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -6070,10 +4707,9 @@ Swiper.use([Resize, Observer]);
 
 
 /***/ }),
-/* 9 */
+/* 4 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ getWindow),
@@ -6228,10 +4864,9 @@ function getWindow() {
 
 
 /***/ }),
-/* 10 */
+/* 5 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ elementParents),
@@ -6259,7 +4894,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   w: () => (/* binding */ extend),
 /* harmony export */   x: () => (/* binding */ deleteProps)
 /* harmony export */ });
-/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 
 function classesToTokens(classes) {
@@ -6594,10 +5229,9 @@ function getRotateFix(swiper) {
 
 
 /***/ }),
-/* 11 */
+/* 6 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A11y: () => (/* reexport safe */ _a11y_mjs__WEBPACK_IMPORTED_MODULE_9__["default"]),
@@ -6624,29 +5258,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Virtual: () => (/* reexport safe */ _virtual_mjs__WEBPACK_IMPORTED_MODULE_0__["default"]),
 /* harmony export */   Zoom: () => (/* reexport safe */ _zoom_mjs__WEBPACK_IMPORTED_MODULE_7__["default"])
 /* harmony export */ });
-/* harmony import */ var _virtual_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
-/* harmony import */ var _keyboard_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
-/* harmony import */ var _mousewheel_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
-/* harmony import */ var _navigation_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(15);
-/* harmony import */ var _pagination_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17);
-/* harmony import */ var _scrollbar_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(19);
-/* harmony import */ var _parallax_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(20);
-/* harmony import */ var _zoom_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(21);
-/* harmony import */ var _controller_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(22);
-/* harmony import */ var _a11y_mjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(23);
-/* harmony import */ var _history_mjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(24);
-/* harmony import */ var _hash_navigation_mjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(25);
-/* harmony import */ var _autoplay_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(26);
-/* harmony import */ var _thumbs_mjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(27);
-/* harmony import */ var _free_mode_mjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(28);
-/* harmony import */ var _grid_mjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(29);
-/* harmony import */ var _manipulation_mjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(30);
-/* harmony import */ var _effect_fade_mjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(31);
-/* harmony import */ var _effect_cube_mjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(35);
-/* harmony import */ var _effect_flip_mjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(36);
-/* harmony import */ var _effect_coverflow_mjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(38);
-/* harmony import */ var _effect_creative_mjs__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(39);
-/* harmony import */ var _effect_cards_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(40);
+/* harmony import */ var _virtual_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+/* harmony import */ var _keyboard_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var _mousewheel_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _navigation_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+/* harmony import */ var _pagination_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
+/* harmony import */ var _scrollbar_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
+/* harmony import */ var _parallax_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(15);
+/* harmony import */ var _zoom_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(16);
+/* harmony import */ var _controller_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(17);
+/* harmony import */ var _a11y_mjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(18);
+/* harmony import */ var _history_mjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(19);
+/* harmony import */ var _hash_navigation_mjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(20);
+/* harmony import */ var _autoplay_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(21);
+/* harmony import */ var _thumbs_mjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(22);
+/* harmony import */ var _free_mode_mjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(23);
+/* harmony import */ var _grid_mjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(24);
+/* harmony import */ var _manipulation_mjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(25);
+/* harmony import */ var _effect_fade_mjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(26);
+/* harmony import */ var _effect_cube_mjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(30);
+/* harmony import */ var _effect_flip_mjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(31);
+/* harmony import */ var _effect_coverflow_mjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(33);
+/* harmony import */ var _effect_creative_mjs__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(34);
+/* harmony import */ var _effect_cards_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(35);
 
 
 
@@ -6672,16 +5306,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 12 */
+/* 7 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Virtual)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -7034,16 +5667,15 @@ function Virtual(_ref) {
 
 
 /***/ }),
-/* 13 */
+/* 8 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Keyboard)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -7164,16 +5796,15 @@ function Keyboard(_ref) {
 
 
 /***/ }),
-/* 14 */
+/* 9 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Mousewheel)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -7572,16 +6203,15 @@ function Mousewheel(_ref) {
 
 
 /***/ }),
-/* 15 */
+/* 10 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Navigation)
 /* harmony export */ });
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -7785,15 +6415,14 @@ function Navigation(_ref) {
 
 
 /***/ }),
-/* 16 */
+/* 11 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createElementIfNotDefined)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
@@ -7818,17 +6447,16 @@ function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
 
 
 /***/ }),
-/* 17 */
+/* 12 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Pagination)
 /* harmony export */ });
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 
 
 
@@ -8292,10 +6920,9 @@ function Pagination(_ref) {
 
 
 /***/ }),
-/* 18 */
+/* 13 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ classesToSelector)
@@ -8312,18 +6939,17 @@ function classesToSelector(classes) {
 
 
 /***/ }),
-/* 19 */
+/* 14 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Scrollbar)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
 
 
 
@@ -8693,15 +7319,14 @@ function Scrollbar(_ref) {
 
 
 /***/ }),
-/* 20 */
+/* 15 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Parallax)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 function Parallax(_ref) {
@@ -8829,16 +7454,15 @@ function Parallax(_ref) {
 
 
 /***/ }),
-/* 21 */
+/* 16 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Zoom)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -9543,15 +8167,14 @@ function Zoom(_ref) {
 
 
 /***/ }),
-/* 22 */
+/* 17 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Controller)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 /* eslint no-bitwise: ["error", { "allow": [">>"] }] */
@@ -9746,17 +8369,16 @@ function Controller(_ref) {
 
 
 /***/ }),
-/* 23 */
+/* 18 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ A11y)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(18);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 
 
 
@@ -10138,15 +8760,14 @@ function A11y(_ref) {
 
 
 /***/ }),
-/* 24 */
+/* 19 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ History)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 
 function History(_ref) {
@@ -10292,16 +8913,15 @@ function History(_ref) {
 
 
 /***/ }),
-/* 25 */
+/* 20 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HashNavigation)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -10398,15 +9018,14 @@ function HashNavigation(_ref) {
 
 
 /***/ }),
-/* 26 */
+/* 21 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Autoplay)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 
 /* eslint no-underscore-dangle: "off" */
@@ -10714,16 +9333,15 @@ function Autoplay(_ref) {
 
 
 /***/ }),
-/* 27 */
+/* 22 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Thumb)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -10924,15 +9542,14 @@ function Thumb(_ref) {
 
 
 /***/ }),
-/* 28 */
+/* 23 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ freeMode)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 function freeMode(_ref) {
@@ -11173,10 +9790,9 @@ function freeMode(_ref) {
 
 
 /***/ }),
-/* 29 */
+/* 24 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Grid)
@@ -11339,10 +9955,9 @@ function Grid(_ref) {
 
 
 /***/ }),
-/* 30 */
+/* 25 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Manipulation)
@@ -11541,18 +10156,17 @@ function Manipulation(_ref) {
 
 
 /***/ }),
-/* 31 */
+/* 26 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFade)
 /* harmony export */ });
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(34);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
 
 
 
@@ -11622,10 +10236,9 @@ function EffectFade(_ref) {
 
 
 /***/ }),
-/* 32 */
+/* 27 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectInit)
@@ -11691,15 +10304,14 @@ function effectInit(params) {
 
 
 /***/ }),
-/* 33 */
+/* 28 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectTarget)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 function effectTarget(effectParams, slideEl) {
@@ -11715,15 +10327,14 @@ function effectTarget(effectParams, slideEl) {
 
 
 /***/ }),
-/* 34 */
+/* 29 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectVirtualTransitionEnd)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 function effectVirtualTransitionEnd(_ref) {
@@ -11775,16 +10386,15 @@ function effectVirtualTransitionEnd(_ref) {
 
 
 /***/ }),
-/* 35 */
+/* 30 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCube)
 /* harmony export */ });
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 
@@ -11962,19 +10572,18 @@ function EffectCube(_ref) {
 
 
 /***/ }),
-/* 36 */
+/* 31 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFlip)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(34);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 
 
 
@@ -12089,15 +10698,14 @@ function EffectFlip(_ref) {
 
 
 /***/ }),
-/* 37 */
+/* 32 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createShadow)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 function createShadow(suffix, slideEl, side) {
@@ -12115,18 +10723,17 @@ function createShadow(suffix, slideEl, side) {
 
 
 /***/ }),
-/* 38 */
+/* 33 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCoverflow)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
 
 
 
@@ -12234,19 +10841,18 @@ function EffectCoverflow(_ref) {
 
 
 /***/ }),
-/* 39 */
+/* 34 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCreative)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(34);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 
 
 
@@ -12396,19 +11002,18 @@ function EffectCreative(_ref) {
 
 
 /***/ }),
-/* 40 */
+/* 35 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCards)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(34);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 
 
 
@@ -12560,7 +11165,7 @@ function EffectCards(_ref) {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -12577,18 +11182,6 @@ function EffectCards(_ref) {
 /******/ 				}
 /******/ 			}
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -12609,24 +11202,19 @@ function EffectCards(_ref) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _module_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _module_scroll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _module_dynamic_adapt_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _module_popup_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _module_select_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(11);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 
 
-
+// import * as scroll from "./module/scroll.js";
 // import * as video from "./module/video.js";
-
-
-
+// import "./module/dynamic_adapt.js";
+// import "./module/popup.js";
+// import "./module/select.js";
 
 
 // import tippy from "tippy.js";
@@ -12651,7 +11239,7 @@ window.addEventListener("load", function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuInit)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
-  _module_scroll_js__WEBPACK_IMPORTED_MODULE_1__.pageNavigation();
+  // scroll.pageNavigation();
 
   const disableIOSTextFieldZoom = () => {
     if (!isIOS()) {
@@ -12780,8 +11368,8 @@ window.addEventListener("load", function () {
   if (document.querySelector(".hero-slider")) {
     document.querySelector(".hero-slider").classList.add("_is-init");
 
-    new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](".hero-slider", {
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Pagination],
+    new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".hero-slider", {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
       slidesPerView: "auto",
       spaceBetween:
         gapMedium + gapScale * ((document.documentElement.offsetWidth - mdMin) / (mdMax - mdMin)),
@@ -12824,8 +11412,8 @@ window.addEventListener("load", function () {
     relatedSliders.forEach((el, i) => {
       el.classList.add("_is-init");
 
-      let relatedSlider = new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](el, {
-        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Pagination],
+      let relatedSlider = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](el, {
+        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination],
         slidesPerView: "auto",
         spaceBetween:
           gapMedium + gapScale * ((document.documentElement.offsetWidth - mdMin) / (mdMax - mdMin)),
@@ -12864,8 +11452,8 @@ window.addEventListener("load", function () {
   }
 
   if (document.querySelector(".preview-slider")) {
-    new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](".preview-slider", {
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectFade],
+    new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".preview-slider", {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.EffectFade],
       slidesPerView: 1,
       effect: "fade",
       fadeEffect: {
@@ -12919,6 +11507,7 @@ window.addEventListener("load", function () {
 
         variantsShowBtn.addEventListener("click", (e) => {
           e.preventDefault();
+
           variantsShowBtn.parentElement.style.display = "none";
           variantsBody.classList.remove("_is-active");
         });
@@ -12930,6 +11519,55 @@ window.addEventListener("load", function () {
 
   if (document.querySelector(".variants__list._is-active")) {
     variantsHide();
+  }
+
+  const initQuantity = () => {
+    const quantities = document.querySelectorAll("[data-quantity]");
+
+    quantities.forEach((quantity) => {
+      const quantityInput = quantity.querySelector("[data-quantity-value]");
+      const quantityMin = parseInt(quantityInput.dataset.quantityMin);
+      const quantityMax = parseInt(quantityInput.dataset.quantityMax);
+
+      const setQuantityValue = (value) => {
+        if (value > quantityMax) {
+          value = quantityMax;
+        }
+        if (value < quantityMin) {
+          value = quantityMin;
+        }
+
+        quantityInput.value = value;
+      };
+
+      quantity.addEventListener("click", (e) => {
+        const targetElement = e.target;
+        let quantityValue = parseInt(quantityInput.value);
+
+        if (targetElement.closest("[data-quantity-button]")) {
+          e.preventDefault();
+
+          if (targetElement.dataset.quantityButton == "plus") {
+            quantityValue++;
+          }
+          if (targetElement.dataset.quantityButton == "minus") {
+            quantityValue--;
+          }
+
+          setQuantityValue(quantityValue);
+        }
+      });
+
+      quantityInput.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/[^\d.]/g, "");
+
+        setQuantityValue(e.target.value);
+      });
+    });
+  };
+
+  if (document.querySelector("[data-quantity]")) {
+    initQuantity();
   }
 
   //---------- При клике

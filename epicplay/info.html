@@ -46,10 +46,10 @@
                       <a class="menu__link _h5 icon-right" href="./contacts.html">Контакты</a>
                     </li>
                     <li class="menu__item">
-                      <a class="menu__link _h5 icon-right" href="./info.html#buy">Доставка и оплата</a>
+                      <a class="menu__link _h5 icon-right" href="./info.html#tab-0-0">Доставка и оплата</a>
                     </li>
                     <li class="menu__item">
-                      <a class="menu__link _h5 icon-right" href="./info.html#guard">Гарантия и возврат</a>
+                      <a class="menu__link _h5 icon-right" href="./info.html#tab-0-1">Гарантия и возврат</a>
                     </li>
                   </ul>
                 </div>
@@ -59,9 +59,9 @@
               <img class="logo__img" src="./img/content/logo.svg" alt="logo">
             </a>
             <div class="header__actions">
-              <div class="header__cart">
-                <!-- класс _is-active для отображения индикатора товара в корзине -->
-                <!-- <div class="header__cart _is-active"> -->
+              <!-- класс _is-active для отображения индикатора товара в корзине -->
+              <!-- <div class="header__cart"> -->
+              <div class="header__cart _is-active">
                 <a class="btn btn_main btn_icon btn_round" href="./cart.html">
                   <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
                   <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
@@ -74,7 +74,7 @@
       </header>
 
       <main class="page">
-        <section class="section">
+        <section class="section _mb">
           <div class="container">
             <div class="section__body">
               <div class="heading">
@@ -87,6 +87,145 @@
                   </li>
                 </ul>
                 <h1 class="heading__title _h2">Покупателям</h1>
+              </div>
+              <div class="info" data-tabs data-tabs-hash>
+                <nav class="info__nav" data-tabs-titles>
+                  <button class="info__tab _tab-active btn btn_main" type="button">
+                    <span class="btn__body btn__body_main" aria-hidden="true"><span>Доставка и оплата</span></span>
+                    <span class="btn__body btn__body_hover" aria-hidden="true"><span>Доставка и оплата</span></span>
+                    <span class="seo">Доставка и оплата</span>
+                  </button>
+                  <button class="info__tab btn btn_main" type="button">
+                    <span class="btn__body btn__body_main" aria-hidden="true"><span>Гарантия и возврат</span></span>
+                    <span class="btn__body btn__body_hover" aria-hidden="true"><span>Гарантия и возврат</span></span>
+                    <span class="seo">Гарантия и возврат</span>
+                  </button>
+                </nav>
+                <div class="info__content" data-tabs-body>
+                  <div class="info__body" hidden>
+                    <div class="info__inner">
+                      <div class="info__box">
+                        <h2 class="info__title _h4">Доставка</h2>
+                        <div class="info-list">
+                          <div class="info-list__box">
+                            <h3 class="info-list__title _p1">Способы доставки:</h3>
+                            <ul class="info-list__items">
+                              <li class="info-list__item">
+                                Курьерская доставка по Москве и Московской области &mdash;
+                                предпочтительно через Яндекс.Доставку, но возможны и другие
+                                варианты по согласованию.
+                              </li>
+                              <li class="info-list__item">
+                                Доставка транспортными компаниями по России.
+                              </li>
+                              <li class="info-list__item">
+                                Самовывоз с нашего склада по адресу: <br>
+                                улица Лесная Цесарка, 11, д. Поярково, Химки городской округ, МО.
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="info-list__box">
+                            <h3 class="info-list__title _p1">Сроки доставки:</h3>
+                            <ul class="info-list__items">
+                              <li class="info-list__item">
+                                Курьером по Москве и Московской области &mdash; в день
+                                заказа.
+                              </li>
+                              <li class="info-list__item">
+                                В другие регионы &mdash; согласно срокам транспортных компаний.
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="info-list__box">
+                            <h3 class="info-list__title _p1">Стоимость:</h3>
+                            <ul class="info-list__items">
+                              <li class="info-list__item">Рассчитывается при оформлении заказа.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="info__box">
+                        <h2 class="info__title _h4">Оплата</h2>
+                        <div class="info-list">
+                          <div class="info-list__box">
+                            <h3 class="info-list__title _p1">Способы оплаты:</h3>
+                            <ul class="info-list__items">
+                              <li class="info-list__item">
+                                Онлайн-оплата на сайте (банковские карты, электронные кошельки).
+                              </li>
+                              <li class="info-list__item">
+                                Наличный и безналичный расчет при самовывозе.
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="info-list__box">
+                            <h3 class="info-list__title _p1"><strong>Важно:</strong></h3>
+                            <ul class="info-list__items">
+                              <li class="info-list__item">
+                                При оформлении заказа с доставкой требуется полная предоплата.
+                              </li>
+                              <li class="info-list__item">
+                                Все платежи проходят через защищенные сервисы.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="info__body" hidden>
+                    <div class="info__inner">
+                      <div class="info__box">
+                        <h2 class="info__title _h4">Гарантия</h2>
+                        <div class="info-card">
+                          <h3 class="info-card__title _h5">Гарантия качества</h3>
+                          <div class="info-card__text _p3">
+                            Мы используем только надежные материалы и тщательно проверяем
+                            продукцию перед отправкой
+                          </div>
+                          <figure
+                            class="info-card__icon-box"
+                            style="--color-blur: rgba(59, 169, 234, 0.6)"
+                          >
+                            <img class="info-card__icon" src="./img/content/icons/ability-4.svg" alt="Гарантия качества">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="info__box">
+                        <h2 class="info__title _h4">Возврат и обмен</h2>
+                        <div class="info-list">
+                          <div class="info-list__box">
+                            <ul class="info-list__items">
+                              <li class="info-list__item">
+                                Возврат возможен в течение 14 дней при сохранении товарного вида
+                                и упаковки.
+                              </li>
+                              <li class="info-list__item">Обмен товара возможен при наличии дефектов.</li>
+                            </ul>
+                          </div>
+                          <div class="info-list__box">
+                            <h3 class="info-list__title _p1">Как оформить возврат?</h3>
+                            <ol class="info-list__items">
+                              <li class="info-list__item">
+                                Свяжитесь с нами по телефону:
+                                <a href="tel:+79955029055">+7 995 502-90-55</a> или email:
+                                <a href="mailto:epicplaydesk@mail.ru" target="_blank">
+                                  epicplaydesk@mail.ru
+                                </a>
+                              </li>
+                              <li class="info-list__item">
+                                Отправьте товар обратно удобным для вас способом.
+                              </li>
+                              <li class="info-list__item">
+                                После проверки мы оформим замену или возврат средств.
+                              </li>
+                            </ol>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

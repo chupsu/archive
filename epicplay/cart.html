@@ -46,10 +46,10 @@
                       <a class="menu__link _h5 icon-right" href="./contacts.html">Контакты</a>
                     </li>
                     <li class="menu__item">
-                      <a class="menu__link _h5 icon-right" href="./info.html#buy">Доставка и оплата</a>
+                      <a class="menu__link _h5 icon-right" href="./info.html#tab-0-0">Доставка и оплата</a>
                     </li>
                     <li class="menu__item">
-                      <a class="menu__link _h5 icon-right" href="./info.html#guard">Гарантия и возврат</a>
+                      <a class="menu__link _h5 icon-right" href="./info.html#tab-0-1">Гарантия и возврат</a>
                     </li>
                   </ul>
                 </div>
@@ -59,9 +59,9 @@
               <img class="logo__img" src="./img/content/logo.svg" alt="logo">
             </a>
             <div class="header__actions">
-              <div class="header__cart">
-                <!-- класс _is-active для отображения индикатора товара в корзине -->
-                <!-- <div class="header__cart _is-active"> -->
+              <!-- класс _is-active для отображения индикатора товара в корзине -->
+              <!-- <div class="header__cart"> -->
+              <div class="header__cart _is-active">
                 <a class="btn btn_main btn_icon btn_round" href="./cart.html">
                   <span class="btn__body btn__body_main icon-cart" aria-hidden="true"></span>
                   <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"></span>
@@ -87,6 +87,198 @@
                   </li>
                 </ul>
                 <h1 class="heading__title _h2">Корзина</h1>
+              </div>
+              <div class="cart _mb">
+                <form class="cart__body" action="#">
+                  <ul class="cart__items">
+                    <li class="cart__item">
+                      <article class="purchase">
+                        <div class="purchase__head">
+                          <a class="purchase__link" href="./product.html" title="Модуль Стол">
+                            <span class="seo">
+                              Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
+                              Русская раскладка белый, фиолетовый
+                            </span>
+                          </a>
+                          <figure class="purchase__img-box product-img">
+                            <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="purchase__img" src="./img/content/product/3.png" alt="image"></picture>
+                          </figure>
+                          <div class="purchase__info">
+                            <h2 class="purchase__title">
+                              Клавиатура Red Square Keyrox TKL Hyperion (RSQ-20039) G3ms Sapphire Switch
+                              Русская раскладка белый, фиолетовый
+                            </h2>
+                            <span class="purchase__code _p4">арт. 123456789</span>
+                          </div>
+                        </div>
+                        <div class="purchase__body">
+                          <div class="purchase__cost purchase__cost_main">
+                            <div class="purchase__cost-main">
+                              <div class="purchase__price _p1">40 000 <span>₽</span></div>
+                            </div>
+                          </div>
+                          <div class="purchase__quantity">
+                            <div class="quantity" data-quantity>
+                              <button
+                                class="quantity__btn btn btn_main btn_icon btn_round"
+                                type="button"
+                                data-quantity-button="minus"
+                              >
+                                <span class="btn__body btn__body_main icon-minus" aria-hidden="true"></span>
+                                <span class="btn__body btn__body_hover icon-minus" aria-hidden="true"></span>
+                                <span class="seo">Меньше</span>
+                              </button>
+                              <div class="quantity__main">
+                                <input class="quantity__input" type="text" value="2" 
+                                  data-quantity-value 
+                                  data-quantity-min="1"
+                                  data-quantity-max="999"
+                                >
+                              </div>
+                              <button
+                                class="quantity__btn btn btn_main btn_icon btn_round"
+                                type="button"
+                                data-quantity-button="plus"
+                              >
+                                <span class="btn__body btn__body_main icon-plus" aria-hidden="true"></span>
+                                <span class="btn__body btn__body_hover icon-plus" aria-hidden="true"></span>
+                                <span class="seo">Больше</span>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="purchase__cost purchase__cost_total">
+                            <div class="purchase__cost-main">
+                              <div class="purchase__price _p1">80 000 <span>₽</span></div>
+                            </div>
+                          </div>
+                          <div class="purchase__remove">
+                            <button
+                              class="btn btn_main btn_icon btn_round"
+                              type="button"
+                              title="Удалить товар"
+                            >
+                              <span class="btn__body btn__body_main icon-close" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-close" aria-hidden="true"></span>
+                              <span class="seo">Удалить товар</span>
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="cart__item">
+                      <article class="purchase">
+                        <div class="purchase__head">
+                          <a class="purchase__link" href="./product2.html" title="Модуль Стол">
+                            <span class="seo">Модуль Стол</span>
+                          </a>
+                          <figure class="purchase__img-box product-img">
+                            <picture><source srcset="./img/content/product/1.webp" type="image/webp"><img class="purchase__img" src="./img/content/product/1.png" alt="image"></picture>
+                          </figure>
+                          <div class="purchase__info">
+                            <h2 class="purchase__title">Модуль Стол</h2>
+                            <span class="purchase__code _p4">арт. 123456789</span>
+                          </div>
+                        </div>
+                        <div class="purchase__body">
+                          <div class="purchase__cost purchase__cost_main">
+                            <div class="purchase__cost-main">
+                              <div class="purchase__price _p1">229 700 <span>₽</span></div>
+                              <div class="purchase__sale-info">-10%</div>
+                            </div>
+                            <div class="purchase__sale _p5">250 000 ₽</div>
+                          </div>
+                          <div class="purchase__quantity">
+                            <div class="quantity" data-quantity>
+                              <button
+                                class="quantity__btn btn btn_main btn_icon btn_round"
+                                type="button"
+                                data-quantity-button="minus"
+                              >
+                                <span class="btn__body btn__body_main icon-minus" aria-hidden="true"></span>
+                                <span class="btn__body btn__body_hover icon-minus" aria-hidden="true"></span>
+                                <span class="seo">Меньше</span>
+                              </button>
+                              <div class="quantity__main">
+                                <input class="quantity__input" type="text" value="1" 
+                                  data-quantity-value 
+                                  data-quantity-min="1"
+                                  data-quantity-max="999"
+                                >
+                              </div>
+                              <button
+                                class="quantity__btn btn btn_main btn_icon btn_round"
+                                type="button"
+                                data-quantity-button="plus"
+                              >
+                                <span class="btn__body btn__body_main icon-plus" aria-hidden="true"></span>
+                                <span class="btn__body btn__body_hover icon-plus" aria-hidden="true"></span>
+                                <span class="seo">Больше</span>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="purchase__cost purchase__cost_total">
+                            <div class="purchase__cost-main">
+                              <div class="purchase__price _p1">229 700 <span>₽</span></div>
+                            </div>
+                          </div>
+                          <div class="purchase__remove">
+                            <button
+                              class="btn btn_main btn_icon btn_round"
+                              type="button"
+                              title="Удалить товар"
+                            >
+                              <span class="btn__body btn__body_main icon-close" aria-hidden="true"></span>
+                              <span class="btn__body btn__body_hover icon-close" aria-hidden="true"></span>
+                              <span class="seo">Удалить товар</span>
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+                    </li>
+                  </ul>
+                  <div class="cart__footer">
+                    <div class="cart__promo">
+                      <div class="promo">
+                        <div class="promo__form">
+                          <input class="promo__input" type="text" placeholder="Введите промокод">
+                          <button class="btn btn_main btn_icon" type="button" title="Применить промокод">
+                            <span class="btn__body btn__body_main icon-arrow-right" aria-hidden="true"></span>
+                            <span class="btn__body btn__body_hover icon-arrow-right" aria-hidden="true"></span>
+                            <span class="seo">Применить промокод</span>
+                          </button>
+                        </div>
+                        <div class="promo__info">
+                          <div class="promo__status promo__status_success _p1">PROMOKOD</div>
+                          <button
+                            class="promo__reset-btn btn icon-close"
+                            type="button"
+                            title="Удалить промокод"
+                          >
+                            <span class="seo">Удалить промокод</span>
+                          </button>
+                        </div>
+                        <div class="promo__info">
+                          <div class="promo__status promo__status_deny _p1">
+                            Похоже такого промокода нет
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cart__result">
+                      <div class="cart__total">
+                        <span class="cart__total-text _p4">Итого:</span>
+                        <span class="cart__total-price">270 000 <span>₽</span></span>
+                      </div>
+                      <div class="cart__action">
+                        <a class="cart__btn btn btn_cta" href="./order.html">
+                          <span class="btn__body btn__body_main icon-cart" aria-hidden="true"><span>Оформить заказ</span></span>
+                          <span class="btn__body btn__body_hover icon-cart" aria-hidden="true"><span>Оформить заказ</span></span>
+                          <span class="seo">Оформить заказ</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
