@@ -11210,36 +11210,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 
 
-// import * as scroll from "./module/scroll.js";
-// import * as video from "./module/video.js";
-// import "./module/dynamic_adapt.js";
-// import "./module/popup.js";
-// import "./module/select.js";
 
 
-// import tippy from "tippy.js";
-
-// import * as THREE from "three";
-// import Masonry from "masonry-layout";
-// import AirDatepicker from "air-datepicker";
-// import "./../../node_modules/wowjs/dist/wow.js"; // }).call(window);
-
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-// import {
-//   gsap,
-//   ScrollTrigger,
-//   ScrollToPlugin,
-//   ScrollSmoother,
-// } from "./module/gsap/all.js";
-// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
 window.addEventListener("load", function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuInit)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
-  // scroll.pageNavigation();
 
   const disableIOSTextFieldZoom = () => {
     if (!isIOS()) {
@@ -11269,70 +11247,7 @@ window.addEventListener("load", function () {
   }
   disableIOSTextFieldZoom();
 
-  // tippy("[data-tippy-content]", { maxWidth: 230 });
-  // new WOW({ offset: 200 }).init();
-
-  // let smoother = ScrollSmoother.create({
-  //   smooth: 2,
-  //   smoothTouch: 2,
-  //   normalizeScroll: true,
-  // });
-
-  // if (document.querySelector(".video")) {
-  //   video.findVideos();
-  // }
-
   const HEADER = document.querySelector(".header");
-  // const animateMedia = gsap.matchMedia();
-
-  // animateMedia.add("(max-width: 992px)", () => {
-  //   gsap.to(HEADER, {
-  //     scrollTrigger: {
-  //       trigger: ".wrapper",
-  //       start: "1px top",
-  //       onEnter: () => {
-  //         HEADER.parentElement.style.paddingBottom = `${HEADER.offsetHeight}px`;
-  //         HEADER.classList.add("is-header-sticky");
-  //       },
-  //       onLeaveBack: () => {
-  //         HEADER.parentElement.style.paddingBottom = "";
-  //         HEADER.classList.remove("is-header-sticky");
-  //       },
-  //     },
-  //   });
-  // });
-  // animateMedia.add("(min-width: 992px)", () => {
-  //   gsap.utils.toArray("[data-animated]").forEach((cardBox) => {
-  //     gsap.utils.toArray(cardBox.children).forEach((card, i) => {
-  //       gsap.from(card, {
-  //         y: 60,
-  //         opacity: 0,
-  //         duration: 1,
-  //         delay: i * 0.15,
-  //         ease: "power2.out",
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           start: "top 95%",
-  //           once: true,
-  //         },
-  //       });
-  //     });
-  //   });
-
-  //   gsap.utils.toArray("[data-animate]").forEach((card) => {
-  //     gsap.from(card, {
-  //       y: 60,
-  //       opacity: 0,
-  //       duration: 1,
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: "top 95%",
-  //         once: true,
-  //       },
-  //     });
-  //   });
-  // });
   let gapMedium;
   let gapScale;
   let mdMin;
@@ -11483,16 +11398,6 @@ window.addEventListener("load", function () {
       },
     });
   }
-
-  // const textArea = document.getElementsByTagName("textarea");
-  // for (let i = 0; i < textArea.length; i++) {
-  //   textArea[i].setAttribute("style", "height:" + textArea[i].scrollHeight + "px;overflow-y:hidden;");
-  //   textArea[i].addEventListener("input", OnInput, false);
-  // }
-  // function OnInput() {
-  //   this.style.height = "auto";
-  //   this.style.height = this.scrollHeight + "px";
-  // }
 
   const variantsHide = () => {
     const variantsBodies = document.querySelectorAll(".variants__list._is-active");
