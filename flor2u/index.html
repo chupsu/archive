@@ -48,20 +48,31 @@
       </header>
 
       <!-- 'logo_link': 'href="./index.html"', -->
-      <main class="page"></main>
+      <main class="page">
+        <a href="./product.html">product</a>
+        <a href="./product2.html">product2</a>
+      </main>
       <footer class="footer">
         <div class="container">
           <div class="footer__body _h2">футер</div>
         </div>
       </footer>
 
-      <!-- Удалить скрипт при интеграции! -->
+      <!-- При интеграции переместить скрипт в функционал "Избранное"! -->
       <script>
         (() => {
           "use strict";
           document.addEventListener("click", (e) => {
             if (e.target.closest("[data-favourites]")) {
               e.target.classList.toggle("is-active");
+
+              if (e.target.classList.contains("is-active")) {
+                e.target.querySelector(".seo").innerText = "Удалить из избранного";
+                e.target.setAttribute("title", "Удалить из избранного");
+              } else {
+                e.target.querySelector(".seo").innerText = "Добавить в избранное";
+                e.target.setAttribute("title", "Добавить в избранное");
+              }
             }
           });
         })();

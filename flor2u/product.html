@@ -77,7 +77,7 @@
                           <video class="preview-slider__media" src="./files/product.mp4" preload="auto" playsInline muted loop></video>
                         </div>
                         <div class="preview-slider__item">
-                          <picture><source srcset="./img/content/product/2.webp" type="image/webp"><img class="preview-slider__media" src="./img/content/product/2.jpg" alt="image"></picture>
+                          <picture><source srcset="./img/content/product/13.webp" type="image/webp"><img class="preview-slider__media" src="./img/content/product/13.jpg" alt="image"></picture>
                         </div>
                         <div class="preview-slider__item">
                           <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="preview-slider__media" src="./img/content/product/3.jpg" alt="image"></picture>
@@ -123,32 +123,74 @@
                       </button>
                     </div>
                   </div>
-                  <ul class="product-promo">
-                    <li class="product-promo__item">-30%</li>
-                    <!-- <li class="product-promo__item">День Святого Валентина</li> -->
-                  </ul>
-                  <div class="product-rating">
-                    <span class="product-rating__main">4.9</span>
-                    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.2436 10.7877C7.09187 10.7028 6.9069 10.7028 6.75516 10.7877L3.83098 12.4246C3.45868 12.633 3.01321 12.3093 3.09634 11.8908L3.74934 8.60387C3.78323 8.43331 3.72606 8.25739 3.59839 8.13933L1.1377 5.86397C0.824434 5.5743 0.994572 5.0506 1.41827 5.00035L4.74631 4.60564C4.91898 4.58516 5.06861 4.47645 5.14144 4.31856L6.54536 1.27522C6.72408 0.887807 7.27468 0.887807 7.4534 1.27522L8.85732 4.31856C8.93016 4.47645 9.07979 4.58516 9.25245 4.60564L12.5805 5.00035C13.0042 5.0506 13.1743 5.5743 12.8611 5.86397L10.4004 8.13933C10.2727 8.25739 10.2155 8.43331 10.2494 8.60387L10.9024 11.8908C10.9856 12.3093 10.5401 12.633 10.1678 12.4246L7.2436 10.7877Z" fill="var(--color-rating)"/>
-                    </svg>
-                    <span class="product-rating__info">178 отзывов</span>
+                  <div class="product__extra">
+                    <div class="product__extra-box product__extra-box_main">
+                      <ul class="product-promo">
+                        <li class="product-promo__item">-30%</li>
+                        <!-- <li class="product-promo__item">День Святого Валентина</li> -->
+                      </ul>
+                      <div class="product-rating">
+                        <span class="product-rating__main">4.9</span>
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.2436 10.7877C7.09187 10.7028 6.9069 10.7028 6.75516 10.7877L3.83098 12.4246C3.45868 12.633 3.01321 12.3093 3.09634 11.8908L3.74934 8.60387C3.78323 8.43331 3.72606 8.25739 3.59839 8.13933L1.1377 5.86397C0.824434 5.5743 0.994572 5.0506 1.41827 5.00035L4.74631 4.60564C4.91898 4.58516 5.06861 4.47645 5.14144 4.31856L6.54536 1.27522C6.72408 0.887807 7.27468 0.887807 7.4534 1.27522L8.85732 4.31856C8.93016 4.47645 9.07979 4.58516 9.25245 4.60564L12.5805 5.00035C13.0042 5.0506 13.1743 5.5743 12.8611 5.86397L10.4004 8.13933C10.2727 8.25739 10.2155 8.43331 10.2494 8.60387L10.9024 11.8908C10.9856 12.3093 10.5401 12.633 10.1678 12.4246L7.2436 10.7877Z" fill="var(--color-rating)"/>
+                        </svg>
+                        <span class="product-rating__info">178 отзывов</span>
+                      </div>
+                      <button
+                        class="product__favourites"
+                        type="button"
+                        title="Добавить в избранное"
+                        data-favourites
+                      >
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M16.5 4C18.9251 4 21 5.98969 21 9C21 12.1131 19.3377 14.6183 17.252 16.585C15.4151 18.3169 13.3471 19.5416 12 20.3369C10.6529 19.5416 8.58492 18.3169 6.74805 16.585C4.66226 14.6183 3 12.1131 3 9C3 5.99431 5.10853 4 7.5 4C9.01232 4 10.4128 4.82685 11.293 5.70703L12 6.41406L12.707 5.70703C13.5872 4.82685 14.9877 4 16.5 4Z"
+                            stroke-width="2"
+                            stroke="var(--color-shadow-light)"
+                            fill="currentColor"
+                          />
+                        </svg>
+                        <span class="seo">Добавить в избранное</span>
+                      </button>
+                      <div class="product__info">40 × 25 см</div>
+                    </div>
+                    <div class="product__extra-box product__extra-box_bottom">
+                      <div class="product-ability">
+                        <div class="product-ability__title">Только у нас</div>
+                        <ul class="product-ability__list">
+                          <li class="product-ability__item">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.01367 0C9.21499 2.3227e-06 11 1.78403 11 3.98535V7.0127C11 9.21402 9.21499 10.999 7.01367 10.999H3.98633C1.78501 10.999 0 9.21402 0 7.0127V3.98535C3.35328e-06 1.78403 1.78501 0 3.98633 0H7.01367ZM8.87402 3.5127C8.59172 3.21168 8.11944 3.19725 7.81836 3.47949L5.13965 5.98828L3.85742 4.78711L3.79883 4.7373C3.49773 4.50767 3.06634 4.53906 2.80176 4.82129C2.53714 5.10362 2.53341 5.53662 2.78223 5.82227L2.83594 5.87695L5.13965 8.03809L8.83984 4.56934C9.14096 4.28704 9.15632 3.81381 8.87402 3.5127Z" fill="var(--color-primary)"/>
+                            </svg>
+                            Простоят больше 5 дней
+                          </li>
+                          <li class="product-ability__item">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.01367 0C9.21499 2.3227e-06 11 1.78403 11 3.98535V7.0127C11 9.21402 9.21499 10.999 7.01367 10.999H3.98633C1.78501 10.999 0 9.21402 0 7.0127V3.98535C3.35328e-06 1.78403 1.78501 0 3.98633 0H7.01367ZM8.87402 3.5127C8.59172 3.21168 8.11944 3.19725 7.81836 3.47949L5.13965 5.98828L3.85742 4.78711L3.79883 4.7373C3.49773 4.50767 3.06634 4.53906 2.80176 4.82129C2.53714 5.10362 2.53341 5.53662 2.78223 5.82227L2.83594 5.87695L5.13965 8.03809L8.83984 4.56934C9.14096 4.28704 9.15632 3.81381 8.87402 3.5127Z" fill="var(--color-primary)"/>
+                            </svg>
+                            Имеют натуральный аромат
+                          </li>
+                          <li class="product-ability__item">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.01367 0C9.21499 2.3227e-06 11 1.78403 11 3.98535V7.0127C11 9.21402 9.21499 10.999 7.01367 10.999H3.98633C1.78501 10.999 0 9.21402 0 7.0127V3.98535C3.35328e-06 1.78403 1.78501 0 3.98633 0H7.01367ZM8.87402 3.5127C8.59172 3.21168 8.11944 3.19725 7.81836 3.47949L5.13965 5.98828L3.85742 4.78711L3.79883 4.7373C3.49773 4.50767 3.06634 4.53906 2.80176 4.82129C2.53714 5.10362 2.53341 5.53662 2.78223 5.82227L2.83594 5.87695L5.13965 8.03809L8.83984 4.56934C9.14096 4.28704 9.15632 3.81381 8.87402 3.5127Z" fill="var(--color-primary)"/>
+                            </svg>
+                            Раскрываются у получателя
+                          </li>
+                          <li class="product-ability__item">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.01367 0C9.21499 2.3227e-06 11 1.78403 11 3.98535V7.0127C11 9.21402 9.21499 10.999 7.01367 10.999H3.98633C1.78501 10.999 0 9.21402 0 7.0127V3.98535C3.35328e-06 1.78403 1.78501 0 3.98633 0H7.01367ZM8.87402 3.5127C8.59172 3.21168 8.11944 3.19725 7.81836 3.47949L5.13965 5.98828L3.85742 4.78711L3.79883 4.7373C3.49773 4.50767 3.06634 4.53906 2.80176 4.82129C2.53714 5.10362 2.53341 5.53662 2.78223 5.82227L2.83594 5.87695L5.13965 8.03809L8.83984 4.56934C9.14096 4.28704 9.15632 3.81381 8.87402 3.5127Z" fill="var(--color-primary)"/>
+                            </svg>
+                            Или 100% анонимная доставка
+                          </li>
+                          <li class="product-ability__item">
+                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.01367 0C9.21499 2.3227e-06 11 1.78403 11 3.98535V7.0127C11 9.21402 9.21499 10.999 7.01367 10.999H3.98633C1.78501 10.999 0 9.21402 0 7.0127V3.98535C3.35328e-06 1.78403 1.78501 0 3.98633 0H7.01367ZM8.87402 3.5127C8.59172 3.21168 8.11944 3.19725 7.81836 3.47949L5.13965 5.98828L3.85742 4.78711L3.79883 4.7373C3.49773 4.50767 3.06634 4.53906 2.80176 4.82129C2.53714 5.10362 2.53341 5.53662 2.78223 5.82227L2.83594 5.87695L5.13965 8.03809L8.83984 4.56934C9.14096 4.28704 9.15632 3.81381 8.87402 3.5127Z" fill="var(--color-primary)"/>
+                            </svg>
+                            Доставим букет, зная только номер телефона
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <button
-                    class="product__favourites"
-                    type="button"
-                    title="Добавить в избранное"
-                    data-favourites
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.6464 5.35355L12 5.70711L12.3536 5.35355C13.2936 4.41346 14.8138 3.5 16.5 3.5C19.2316 3.5 21.5 5.74484 21.5 9C21.5 12.3066 19.7312 14.9341 17.5945 16.9487C15.7003 18.7347 13.5666 19.9937 12.2223 20.7868C12.1456 20.8321 12.0714 20.8759 12 20.9181C11.9286 20.8759 11.8544 20.8321 11.7777 20.7868C10.4334 19.9937 8.29969 18.7347 6.40551 16.9487C4.26881 14.9341 2.5 12.3066 2.5 9C2.5 5.74715 4.80427 3.5 7.5 3.5C9.18616 3.5 10.7064 4.41346 11.6464 5.35355Z"
-                        stroke="var(--color-shadow-light)"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <span class="seo">Добавить в избранное</span>
-                  </button>
-                  <div class="product__info">40 × 25 см</div>
                 </div>
                 <div class="product__thumbs">
                   <div class="thumbs-slider">
@@ -164,7 +206,7 @@
                         </svg>
                       </div>
                       <div class="thumbs-slider__item">
-                        <picture><source srcset="./img/content/product/2.webp" type="image/webp"><img class="thumbs-slider__media" src="./img/content/product/2.jpg" alt="image"></picture>
+                        <picture><source srcset="./img/content/product/13.webp" type="image/webp"><img class="thumbs-slider__media" src="./img/content/product/13.jpg" alt="image"></picture>
                       </div>
                       <div class="thumbs-slider__item">
                         <picture><source srcset="./img/content/product/3.webp" type="image/webp"><img class="thumbs-slider__media" src="./img/content/product/3.jpg" alt="image"></picture>
@@ -207,7 +249,10 @@
               </div>
               <div class="product__main">
                 <div class="product__content">
-                  <h1 class="product__title _h2">Букет из 101 розы в Санкт-Петербурге</h1>
+                  <div class="product__head">
+                    <div class="product__code">Код товара: 4707</div>
+                    <h1 class="product__title _h2">Букет из 101 розы в Санкт-Петербурге</h1>
+                  </div>
                   <div class="product__choice">
                     <div class="product-option">
                       <div class="product-option__box" data-choice-body>
@@ -432,22 +477,22 @@
                         </div>
                         <div class="product-buy__price">299 920 ₽</div>
                       </div>
-                      <div class="product-buy__extra">Бесплатная доставка*</div>
+                      <!-- <div class="product-buy__extra">Бесплатная доставка*</div> -->
                     </div>
                     <button class="product-buy__btn btn btn_medium btn_primary" type="button">
                       Купить
                     </button>
                   </div>
-                  <div class="product__note _wysiwyg">
+                  <!-- <div class="product__note _wysiwyg">
                     <p>*Бесплатная доставка с 07:00 до 21:00</p>
-                  </div>
+                  </div> -->
                   <div class="product-benefits">
                     <div class="product-benefits__item">
                       <figure class="product-benefits__img-box">
                         <picture><source srcset="./img/content/pic/benefits-1.webp" type="image/webp"><img class="product-benefits__img" src="./img/content/pic/benefits-1.png" alt="image"></picture>
                       </figure>
                       <div class="product-benefits__content">
-                        <p><b>Бесплатная доставка</b> в пределах вашего города</p>
+                        <p><b>Быстрая доставка</b> от 2-х часов</p>
                       </div>
                     </div>
                     <div class="product-benefits__item">
@@ -463,7 +508,7 @@
                         <picture><source srcset="./img/content/pic/benefits-3.webp" type="image/webp"><img class="product-benefits__img" src="./img/content/pic/benefits-3.png" alt="image"></picture>
                       </figure>
                       <div class="product-benefits__content">
-                        <p><b>Сообщим вам</b>, когда доставим букет получателю</p>
+                        <p>Отправим вам <b>фото перед доставкой</b></p>
                       </div>
                     </div>
                   </div>

@@ -12703,7 +12703,7 @@ window.addEventListener("load", function () {
   adaptiveFix();
 
   if (document.querySelector("[data-choice]")) {
-    document.querySelectorAll("[data-choice-body").forEach((choice) => {
+    document.querySelectorAll("[data-choice-body]").forEach((choice) => {
       choice.querySelector("[data-choice-value]").innerText =
         choice.querySelector("[data-choice]").dataset.choice;
     });
@@ -12802,15 +12802,59 @@ window.addEventListener("load", function () {
     });
   }
 
+  const initQuantity = () => {
+    const quantities = document.querySelectorAll("[data-quantity]");
+
+    quantities.forEach((quantity) => {
+      const quantityInput = quantity.querySelector("[data-quantity-value]");
+      const quantityMin = parseInt(quantityInput.dataset.quantityMin);
+      const quantityMax = parseInt(quantityInput.dataset.quantityMax);
+
+      const setQuantityValue = (value) => {
+        if (value > quantityMax) {
+          value = quantityMax;
+        }
+        if (value < quantityMin) {
+          value = quantityMin;
+        }
+
+        quantityInput.value = value;
+      };
+
+      quantity.addEventListener("click", (e) => {
+        const targetElement = e.target;
+        let quantityValue = parseInt(quantityInput.value);
+
+        if (targetElement.closest("[data-quantity-button]")) {
+          e.preventDefault();
+
+          if (targetElement.dataset.quantityButton == "plus") {
+            quantityValue++;
+          }
+          if (targetElement.dataset.quantityButton == "minus") {
+            quantityValue--;
+          }
+
+          setQuantityValue(quantityValue);
+        }
+      });
+
+      quantityInput.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/[^\d.]/g, "");
+
+        setQuantityValue(e.target.value);
+      });
+    });
+  };
+
+  if (document.querySelector("[data-quantity]")) {
+    initQuantity();
+  }
+
   //---------- При клике
   document.addEventListener("click", documentActions);
   function documentActions(e) {
     const targetElement = e.target;
-
-    //   Menu
-    // if (!targetElement.closest(".menu") || targetElement.closest(".menu__link")) {
-    //   menuClose();
-    // }
 
     if (targetElement.closest("[data-choice]")) {
       targetElement.parentElement
@@ -12825,37 +12869,6 @@ window.addEventListener("load", function () {
       targetElement.parentElement.querySelector("input").setAttribute("type", inputType);
       targetElement.classList.toggle("active");
     }
-
-    // Quantity
-    // код будет переделан
-    if (targetElement.closest("[data-quantity-button]")) {
-      const valueElement = targetElement
-        .closest("[data-quantity]")
-        .querySelector("[data-quantity-value]");
-      let value = parseInt(valueElement.value);
-      if (targetElement.dataset.quantityButton == "plus") {
-        value++;
-        if (+valueElement.dataset.quantityMax && +valueElement.dataset.quantityMax < value) {
-          value = valueElement.dataset.quantityMax;
-        }
-      } else {
-        --value;
-        if (+valueElement.dataset.quantityMin) {
-          if (+valueElement.dataset.quantityMin > value) {
-            value = valueElement.dataset.quantityMin;
-          }
-        } else if (value < 1) {
-          value = 1;
-        }
-      }
-      targetElement.closest("[data-quantity]").querySelector("[data-quantity-value]").value = value;
-    }
-  }
-
-  if (document.querySelector("[data-quantity]")) {
-    document.querySelector("[data-quantity-value]").addEventListener("input", function (e) {
-      this.value = this.value.replace(/[^\d.]/g, "");
-    });
   }
 
   window.addEventListener("scroll", function () {
@@ -12864,10 +12877,6 @@ window.addEventListener("load", function () {
 
   window.addEventListener("resize", () => {
     adaptiveFix();
-
-    // if (window.innerWidth >= 992 && document.querySelector(".is-lock")) {
-    //   menuClose();
-    // }
   });
 });
 
