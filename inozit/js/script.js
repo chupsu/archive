@@ -21,7 +21,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   menuInit: () => (/* binding */ menuInit),
 /* harmony export */   menuOpen: () => (/* binding */ menuOpen),
 /* harmony export */   setHash: () => (/* binding */ setHash),
-/* harmony export */   spollers: () => (/* binding */ spollers)
+/* harmony export */   spollers: () => (/* binding */ spollers),
+/* harmony export */   uniqArray: () => (/* binding */ uniqArray)
 /* harmony export */ });
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 function isWebp() {
@@ -396,6 +397,13 @@ function dataMediaQueries(array, dataSetValue) {
       return mdQueriesArray;
     }
   }
+}
+
+// Уникализация массива
+function uniqArray(array) {
+  return array.filter(function (item, index, self) {
+    return self.indexOf(item) === index;
+  });
 }
 
 
@@ -11391,6 +11399,17 @@ window.addEventListener("load", function () {
     return window.getComputedStyle(document.documentElement).getPropertyValue(prop);
   };
 
+  const wrappedTextWidrh = (element) => {
+    const { firstChild, lastChild } = element;
+    if (!element || !firstChild || !lastChild) return;
+    const range = document.createRange();
+    range.setStartBefore(firstChild);
+    range.setEndAfter(lastChild);
+    const { width } = range.getBoundingClientRect();
+    element.style.width = width + "px";
+    element.style.boxSizing = "content-box";
+  };
+
   const shopsHide = (shopsCount) => {
     const shopsBody = document.querySelector(".shops__list");
     const shops = shopsBody.querySelectorAll(".shops__item:not(.shops__item_more)");
@@ -11411,7 +11430,7 @@ window.addEventListener("load", function () {
     }
   };
 
-  const heightFix = () => {
+  const adaptiveFix = () => {
     document.documentElement.style.setProperty("--height-header", `${HEADER.offsetHeight}px`);
     document.documentElement.style.setProperty(
       "--width-page",
@@ -11436,9 +11455,16 @@ window.addEventListener("load", function () {
       }
 
       shopsHide(shopsCount);
+
+      if (document.querySelector("[data-adaptive-width]")) {
+        document.querySelectorAll("[data-adaptive-width]").forEach((el) => {
+          el.style.width = "";
+          wrappedTextWidrh(el);
+        });
+      }
     }
   };
-  heightFix();
+  adaptiveFix();
 
   if (document.querySelector(".substance-slider")) {
     document.querySelector(".substance-slider").classList.add("_is-init");
@@ -11460,7 +11486,7 @@ window.addEventListener("load", function () {
         bulletActiveClass: "_is-active",
       },
       breakpoints: {
-        1024: { spaceBetween: 18 },
+        1024: { spaceBetween: 16 },
         1860: { spaceBetween: 24 },
       },
     });
@@ -11492,7 +11518,7 @@ window.addEventListener("load", function () {
         bulletActiveClass: "_is-active",
       },
       breakpoints: {
-        1024: { spaceBetween: 18 },
+        1024: { spaceBetween: 16 },
         1860: { spaceBetween: 24 },
       },
     });
@@ -11518,7 +11544,39 @@ window.addEventListener("load", function () {
         bulletActiveClass: "_is-active",
       },
       breakpoints: {
-        1024: { spaceBetween: 18 },
+        1024: { spaceBetween: 16 },
+        1860: { spaceBetween: 24 },
+      },
+    });
+  }
+
+  if (document.querySelector(".related__slider")) {
+    document.querySelector(".related__slider").classList.add("_is-init");
+
+    new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](".related__slider", {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation],
+      slidesPerView: "auto",
+      spaceBetween: 12,
+      wrapperClass: "related__items",
+      slideClass: "related__item",
+      slideActiveClass: "related__item_active",
+      slidePrevClass: "related__item_prev",
+      slideNextClass: "related__item_next",
+      navigation: {
+        prevEl: ".related__btn_prev",
+        nextEl: ".related__btn_next",
+        disabledClass: "related__btn_disabled",
+        lockClass: "_is-lock",
+      },
+      pagination: {
+        bulletElement: "span",
+        el: ".related__pagination",
+        lockClass: "_is-lock",
+        bulletClass: "related__bullet",
+        bulletActiveClass: "_is-active",
+      },
+      breakpoints: {
+        1024: { spaceBetween: 16 },
         1860: { spaceBetween: 24 },
       },
     });
@@ -11550,7 +11608,7 @@ window.addEventListener("load", function () {
   };
 
   window.addEventListener("resize", () => {
-    heightFix();
+    adaptiveFix();
 
     if (window.innerWidth >= 1600 && document.querySelector("._is-lock")) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
