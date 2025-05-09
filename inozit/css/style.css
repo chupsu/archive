@@ -2070,7 +2070,7 @@ html {
     padding-right: 100px;
   }
   .substance__title {
-    max-width: 880px;
+    max-width: 860px;
   }
   .benefits__item {
     --width-count: 2;
@@ -2358,8 +2358,7 @@ html {
   }
   .effect__title {
     flex-shrink: 0;
-    width: 370px;
-    padding-right: var(--gap-medium);
+    width: 380px;
   }
   .effect__title:not(:last-child) {
     margin: 0 var(--gap-normal) 0 0;
@@ -2368,7 +2367,7 @@ html {
     max-width: 620px;
   }
   .effect-slider__item {
-    width: 370px;
+    width: 380px;
   }
   .tools__img-box {
     top: calc(2.6 * var(--title-3) + var(--padding-larger));
@@ -2398,6 +2397,7 @@ html {
     position: fixed;
     top: var(--padding-larger);
     right: var(--padding-container);
+    margin: 0;
   }
   .use__list {
     grid-template-columns: 1fr;
@@ -2464,7 +2464,7 @@ html {
   :root {
     --width-container: 1260px;
     --title-2: 40px;
-    --title-3: 30px;
+    --title-3: 28px;
     --title-4: 23px;
   }
   .utility {
@@ -2543,13 +2543,13 @@ html {
     --width-count: 5;
   }
   .use__body::before {
-    top: 6%;
+    top: 9%;
     left: 95%;
     width: 2800px;
   }
   .use__img-box {
     top: 46%;
-    left: 43%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
   }
