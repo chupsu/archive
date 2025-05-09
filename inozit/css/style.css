@@ -954,6 +954,7 @@ html {
   justify-content: space-between;
   gap: 1em;
   padding: 16px 20px 16px 24px;
+  text-wrap: balance;
   font-size: var(--text-medium);
   color: var(--color-main);
   background-color: var(--color-neutral);
@@ -968,6 +969,7 @@ html {
   color: var(--color-accent);
 }
 .f-nav__up {
+  flex-direction: row-reverse;
   width: 100%;
   margin-top: var(--gap-larger);
 }
@@ -1231,10 +1233,14 @@ html {
   text-align: center;
 }
 .welcome__title {
+  text-wrap: balance;
   font-weight: 400;
 }
 .welcome__title:not(:last-child) {
   margin-bottom: var(--gap-medium);
+}
+.welcome__text {
+  font-weight: 400;
 }
 .welcome__subtitle {
   margin-bottom: var(--gap-normal);
@@ -1340,6 +1346,7 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 12px 20px;
+  text-wrap: balance;
   font-size: var(--text-medium);
   color: var(--color-main);
 }
@@ -1488,11 +1495,17 @@ html {
 .effect__head {
   margin-bottom: var(--gap-larger);
 }
+.effect__title {
+  width: 85%;
+}
 .effect__title:not(:last-child) {
   margin: 0 0 var(--gap-medium);
 }
+.effect__title span {
+  color: var(--color-accent);
+}
 .effect__desc {
-  max-width: 540px;
+  max-width: 550px;
   font-weight: 400;
 }
 .effect-slider {
@@ -1541,6 +1554,9 @@ html {
 .effect-slider__actions {
   display: flex;
   gap: var(--gap-normal);
+}
+.effect-slider__btn._is-lock {
+  display: none;
 }
 .tools {
   position: relative;
@@ -1710,6 +1726,7 @@ html {
 }
 .benefits__name {
   max-width: 220px;
+  text-wrap: balance;
   color: var(--color-neutral);
 }
 .benefits__icon {
@@ -1928,6 +1945,9 @@ html {
   display: flex;
   gap: var(--gap-normal);
 }
+.related__btn._is-lock {
+  display: none;
+}
 .article-card {
   position: relative;
   display: flex;
@@ -1989,6 +2009,7 @@ html {
 .article-card__title {
   position: relative;
   z-index: 1;
+  text-wrap: balance;
 }
 .article-card__title span {
   display: -webkit-box;
@@ -2267,10 +2288,12 @@ html {
   .welcome__head:not(:last-child) {
     margin-bottom: var(--gap-medium);
   }
+  .welcome__info {
+    max-width: 60%;
+  }
   .welcome__list {
     display: grid;
     gap: var(--gap-normal);
-    max-width: 60%;
   }
   .product-preview {
     justify-content: flex-end;
@@ -2335,7 +2358,8 @@ html {
   }
   .effect__title {
     flex-shrink: 0;
-    width: 340px;
+    width: 370px;
+    padding-right: var(--gap-medium);
   }
   .effect__title:not(:last-child) {
     margin: 0 var(--gap-normal) 0 0;
@@ -2344,7 +2368,7 @@ html {
     max-width: 620px;
   }
   .effect-slider__item {
-    width: 340px;
+    width: 370px;
   }
   .tools__img-box {
     top: calc(2.6 * var(--title-3) + var(--padding-larger));
