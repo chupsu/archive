@@ -11343,61 +11343,7 @@ window.addEventListener("load", function () {
   // }
 
   const HEADER = document.querySelector(".header");
-  let gapNormal;
-  // const animateMedia = gsap.matchMedia();
-
-  // animateMedia.add("(max-width: 992px)", () => {
-  //   gsap.to(HEADER, {
-  //     scrollTrigger: {
-  //       trigger: ".wrapper",
-  //       start: "1px top",
-  //       onEnter: () => {
-  //         HEADER.parentElement.style.paddingBottom = `${HEADER.offsetHeight}px`;
-  //         HEADER.classList.add("is-header-sticky");
-  //       },
-  //       onLeaveBack: () => {
-  //         HEADER.parentElement.style.paddingBottom = "";
-  //         HEADER.classList.remove("is-header-sticky");
-  //       },
-  //     },
-  //   });
-  // });
-  // animateMedia.add("(min-width: 992px)", () => {
-  //   gsap.utils.toArray("[data-animated]").forEach((cardBox) => {
-  //     gsap.utils.toArray(cardBox.children).forEach((card, i) => {
-  //       gsap.from(card, {
-  //         y: 60,
-  //         opacity: 0,
-  //         duration: 1,
-  //         delay: i * 0.15,
-  //         ease: "power2.out",
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           start: "top 95%",
-  //           once: true,
-  //         },
-  //       });
-  //     });
-  //   });
-
-  //   gsap.utils.toArray("[data-animate]").forEach((card) => {
-  //     gsap.from(card, {
-  //       y: 60,
-  //       opacity: 0,
-  //       duration: 1,
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: "top 95%",
-  //         once: true,
-  //       },
-  //     });
-  //   });
-  // });
-
-  const cssValue = (prop) => {
-    return window.getComputedStyle(document.documentElement).getPropertyValue(prop);
-  };
+  const ALERT = document.querySelector(".alert");
 
   const wrappedTextWidrh = (element) => {
     const { firstChild, lastChild } = element;
@@ -11432,6 +11378,7 @@ window.addEventListener("load", function () {
 
   const adaptiveFix = () => {
     document.documentElement.style.setProperty("--height-header", `${HEADER.offsetHeight}px`);
+    document.documentElement.style.setProperty("--height-alert", `${ALERT ? ALERT.offsetHeight : 0}px`);
     document.documentElement.style.setProperty(
       "--width-page",
       `${document.documentElement.offsetWidth}px`
@@ -11440,8 +11387,6 @@ window.addEventListener("load", function () {
       "--height-page",
       `${document.documentElement.offsetHeight}px`
     );
-
-    gapNormal = parseInt(cssValue("--gap-normal"), 10);
 
     if (document.querySelector(".shops__list")) {
       let shopsCount = 4;
@@ -11600,6 +11545,10 @@ window.addEventListener("load", function () {
     //   Menu
     if (!targetElement.closest(".menu") || targetElement.closest(".menu__link")) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+    }
+
+    if (targetElement.closest("[data-spoller-hide]")) {
+      targetElement.parentElement.closest("[data-spollers]").querySelector("._spoller-active").click();
     }
   }
 
