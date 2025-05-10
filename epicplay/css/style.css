@@ -834,7 +834,7 @@ html {
   border-radius: 50%;
 }
 .header {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 0;
   right: 0;
@@ -844,7 +844,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: var(--radius-normal);
+  padding-top: 4px;
 }
 .header__cart {
   position: relative;
@@ -861,6 +861,11 @@ html {
   position: relative;
   z-index: 1;
   flex-shrink: 0;
+}
+.logo_header {
+  aspect-ratio: 116/136;
+}
+.logo_footer {
   aspect-ratio: 97/108;
 }
 .logo__img {
@@ -3019,7 +3024,7 @@ ol.info-list__items .info-list__item::before {
     --gap-medium: 40px;
     --gap-normal: 32px;
     --width-stroke-text: 2px;
-    --height-header: 156px;
+    --height-header: 280px;
     --height-btn: 128px;
     --padding-page: 120px;
     --padding-normal: 80px;
@@ -3048,16 +3053,18 @@ ol.info-list__items .info-list__item::before {
     gap: 28px;
   }
   .header__body {
+    padding-top: 8px;
     position: relative;
   }
   .header__cart._is-active::after {
     width: 24px;
   }
-  .logo {
-    width: 184px;
-  }
   .logo_header {
+    width: 232px;
     margin-right: 100px;
+  }
+  .logo_footer {
+    width: 184px;
   }
   .menu__body {
     left: calc(-1 * var(--padding-page));
@@ -3465,7 +3472,7 @@ ol.info-list__items .info-list__item::before {
     --gap-medium: 15px;
     --gap-normal: 10px;
     --width-stroke-text: 0.3px;
-    --height-header: 67px;
+    --height-header: 76px;
     --height-btn: 48px;
     --padding-page: 15px;
     --padding-normal: 20px;
@@ -3488,7 +3495,10 @@ ol.info-list__items .info-list__item::before {
   .header__cart._is-active::after {
     width: 9px;
   }
-  .logo {
+  .logo_header {
+    width: 61px;
+  }
+  .logo_footer {
     width: 49px;
   }
   .menu__scroll {
@@ -3721,7 +3731,7 @@ ol.info-list__items .info-list__item::before {
     --gap-medium: clamp( 15px , 13.8469570788px + 0.3203074952vw , 20px );
     --gap-normal: clamp( 10px , 8.6163484946px + 0.3843689942vw , 16px );
     --width-stroke-text: clamp( 0.3px , 0.138573991px + 0.0448430493vw , 1px );
-    --height-header: clamp( 67px , 52.9328763613px + 3.9077514414vw , 128px );
+    --height-header: clamp( 76px , 61.2410506086px + 4.0999359385vw , 140px );
     --height-btn: clamp( 48px , 44.3102626521px + 1.0249839846vw , 64px );
     --padding-page: clamp( 15px , 4.6226137092px + 2.8827674568vw , 60px );
     --padding-normal: clamp( 20px , 15.3878283152px + 1.2812299808vw , 40px );
@@ -3744,7 +3754,10 @@ ol.info-list__items .info-list__item::before {
   .header__cart._is-active::after {
     width: clamp( 9px , 8.3081742473px + 0.1921844971vw , 12px );
   }
-  .logo {
+  .logo_header {
+    width: clamp( 61px , 48.3165278668px + 3.5233824471vw , 116px );
+  }
+  .logo_footer {
     width: clamp( 49px , 37.9307879564px + 3.0749519539vw , 97px );
   }
   .footer__body {
@@ -3961,7 +3974,7 @@ ol.info-list__items .info-list__item::before {
     --gap-medium: clamp( 20px , -0.0102083333px + 1.0416666667vw , 40px );
     --gap-normal: clamp( 16px , -0.0081666667px + 0.8333333333vw , 32px );
     --width-stroke-text: clamp( 1px , -0.0005104167px + 0.0520833333vw , 2px );
-    --height-header: clamp( 128px , 99.9857083333px + 1.4583333333vw , 156px );
+    --height-header: clamp( 140px , -0.0714583333px + 7.2916666667vw , 280px );
     --height-btn: clamp( 64px , -0.0326666667px + 3.3333333333vw , 128px );
     --padding-page: clamp( 60px , -0.030625px + 3.125vw , 120px );
     --padding-normal: clamp( 40px , -0.0204166667px + 2.0833333333vw , 80px );
@@ -3986,14 +3999,18 @@ ol.info-list__items .info-list__item::before {
   .btn_main .btn__body {
     gap: clamp( 14px , -0.0071458333px + 0.7291666667vw , 28px );
   }
+  .header__body {
+    padding-top: clamp( 4px , -0.0020416667px + 0.2083333333vw , 8px );
+  }
   .header__cart._is-active::after {
     width: clamp( 12px , -0.006125px + 0.625vw , 24px );
   }
-  .logo {
-    width: clamp( 97px , 9.95559375px + 4.53125vw , 184px );
-  }
   .logo_header {
+    width: clamp( 116px , -0.0592083333px + 6.0416666667vw , 232px );
     margin-right: clamp( 50px , -0.0255208333px + 2.6041666667vw , 100px );
+  }
+  .logo_footer {
+    width: clamp( 97px , 9.95559375px + 4.53125vw , 184px );
   }
   .menu__scroll {
     min-width: clamp( 500px , -0.2552083333px + 26.0416666667vw , 1000px );
