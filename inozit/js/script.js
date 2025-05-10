@@ -11400,13 +11400,13 @@ window.addEventListener("load", function () {
       }
 
       shopsHide(shopsCount);
+    }
 
-      if (document.querySelector("[data-adaptive-width]")) {
-        document.querySelectorAll("[data-adaptive-width]").forEach((el) => {
-          el.style.width = "";
-          wrappedTextWidrh(el);
-        });
-      }
+    if (document.querySelector("[data-adaptive-width]")) {
+      document.querySelectorAll("[data-adaptive-width]").forEach((el) => {
+        el.style.width = "";
+        wrappedTextWidrh(el);
+      });
     }
   };
   adaptiveFix();
@@ -11527,15 +11527,20 @@ window.addEventListener("load", function () {
     });
   }
 
-  // const textArea = document.getElementsByTagName("textarea");
-  // for (let i = 0; i < textArea.length; i++) {
-  //   textArea[i].setAttribute("style", "height:" + textArea[i].scrollHeight + "px;overflow-y:hidden;");
-  //   textArea[i].addEventListener("input", OnInput, false);
-  // }
-  // function OnInput() {
-  //   this.style.height = "auto";
-  //   this.style.height = this.scrollHeight + "px";
-  // }
+  if (document.querySelector(".filters")) {
+    document.querySelector(".filters").classList.add("_is-init");
+
+    new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](".filters", {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.FreeMode],
+      slidesPerView: "auto",
+      spaceBetween: 4,
+      wrapperClass: "filters__items",
+      slideClass: "filters__item",
+      slideActiveClass: "filters__item_active",
+      slidePrevClass: "filters__item_prev",
+      slideNextClass: "filters__item_next",
+    });
+  }
 
   //---------- При клике
   document.addEventListener("click", documentActions);
