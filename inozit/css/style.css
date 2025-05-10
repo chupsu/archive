@@ -385,7 +385,7 @@ html {
   --width-icon-smaller: 24px;
   --height-alert: 76px;
   --height-page: 100vh;
-  --height-header: 80px;
+  --height-header: 82px;
   --height-btn-large: 76px;
   --height-btn-normal: 60px;
   --height-btn-small: 48px;
@@ -2191,6 +2191,7 @@ html {
     --width-icon-large: 72px;
     --width-icon-normal: 56px;
     --height-alert: 96px;
+    --height-header: 98px;
     --height-btn-large: 86px;
     --height-btn-small: 56px;
     --height-btn-smaller: 48px;
@@ -2750,6 +2751,7 @@ html {
     --width-icon-normal: 64px;
     --width-icon-smaller: 32px;
     --height-alert: 108px;
+    --height-header: 114px;
     --height-btn-large: 96px;
     --height-btn-normal: 64px;
     --height-btn-small: 64px;
