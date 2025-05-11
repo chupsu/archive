@@ -11079,27 +11079,6 @@ window.addEventListener("load", function () {
   }
   disableIOSTextFieldZoom();
 
-  // tippy("[data-tippy-content]", { maxWidth: 230 });
-  // new WOW({ offset: 200 }).init();
-
-  // let smoother = ScrollSmoother.create({
-  //   smooth: 2,
-  //   smoothTouch: 2,
-  //   normalizeScroll: true,
-  // });
-
-  // Lottie.loadAnimation({
-  //   container: document.querySelector(".__img-box"),
-  //   renderer: "svg",
-  //   loop: true,
-  //   autoplay: true,
-  //   path: "./file.json",
-  // });
-
-  // if (document.querySelector(".video")) {
-  //   video.findVideos();
-  // }
-
   const HEADER = document.querySelector(".header");
   const ALERT = document.querySelector(".alert");
 
@@ -11306,8 +11285,10 @@ window.addEventListener("load", function () {
     const targetElement = e.target;
 
     //   Menu
-    if (!targetElement.closest(".menu") || targetElement.closest(".menu__link")) {
-      (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+    if (document.documentElement.closest("._is-menu-open")) {
+      if (!targetElement.closest(".menu") || targetElement.closest(".menu__link")) {
+        (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+      }
     }
 
     if (targetElement.closest("[data-spoller-hide]")) {
