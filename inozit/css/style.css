@@ -3298,6 +3298,16 @@ html {
   .article-nav__body[open] .article-nav__title {
     border-radius: 0 0 var(--radius-normal) var(--radius-normal);
   }
+  .article-nav__inner {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    left: 0;
+    background-color: var(--color-shadow);
+    border-bottom: 1px solid var(--color-main-20);
+    border-radius: var(--radius-normal) var(--radius-normal) 0 0;
+    overflow: hidden;
+  }
 }
 @media (max-width: 1023.98px) {
   .menu__dropdown {
@@ -3350,16 +3360,6 @@ html {
   .use + .shops {
     padding-top: var(--radius-larger);
     margin-top: calc(-1 * var(--radius-larger));
-  }
-  .article-nav__inner {
-    position: absolute;
-    bottom: 100%;
-    right: 0;
-    left: 0;
-    background-color: var(--color-shadow);
-    border-bottom: 1px solid var(--color-main-20);
-    border-radius: var(--radius-normal) var(--radius-normal) 0 0;
-    overflow: hidden;
   }
 }
 @media (max-width: 767.98px) {
