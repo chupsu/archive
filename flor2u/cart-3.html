@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Данные получателя и оплата</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo" href="./index.html">
+              <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" type="button" aria-label="Меню сайта" title="Меню сайта">
+                <i class="menu__icon" aria-hidden="true">
+                  <span></span>
+                </i>
+              </button>
+              <div class="menu__body">
+                <ul class="menu__list">
+                  <!-- <li class="menu__item">
+                    <a class="menu__link" href="#" data-goto-header data-goto=".class">Menu</a>
+                  </li> -->
+                  <li class="menu__item">
+                    <a class="menu__link" href="./product.html">Продукт</a>
+                  </li>
+                  <!-- <li class="menu__item">
+                    <a class="menu__link" href="#contact-form" data-popup="#contact-form">Contacts</a>
+                  </li> -->
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <div class="checkout">
+          <div class="container">
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="./index.html">Главная</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="./404.html">Мои заказы</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__link">Оформление заказа</span>
+              </li>
+            </ul>
+            <div class="checkout__body">
+              <div class="checkout__bar">
+                <div class="checkout__steps">
+                  <a class="checkout__step" href="#">Корзина</a>
+                  <a class="checkout__step" href="./cart-2.html">Адрес и время доставки</a>
+                  <a class="checkout__step checkout__step_active" href="./cart-3.html">
+                    Данные получателя и оплата
+                  </a>
+                </div>
+              </div>
+              <div class="checkout__main">
+                <div class="checkout__box">
+                  <div class="checkout__head">
+                    <h2 class="checkout__title _h2">Получатель</h2>
+                  </div>
+                  <div class="checkout__inner">
+                    <div class="checkout-fields">
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox">
+                            <span class="checkbox__icon"></span>
+                            <span class="checkbox__body"
+                              ><span class="fields-text">Я получу заказ сам</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <div class="inputs-grid">
+                            <div class="inputs-grid__item inputs-grid__item_col-05">
+                              <label class="input">
+                                <input class="input__body" type="text" placeholder="Имя получателя">
+                              </label>
+                            </div>
+                            <div class="inputs-grid__item inputs-grid__item_col-05">
+                              <label class="input">
+                                <input class="input__body" type="tel" placeholder="Телефон получателя">
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox">
+                            <span class="checkbox__icon"></span
+                            ><span class="checkbox__body">
+                              <span class="fields-text">Фото получателя с букетом</span>
+                            </span>
+                          </label>
+                          <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox">
+                            <span class="checkbox__icon"></span>
+                            <span class="checkbox__body">
+                              <span class="fields-text">Анонимная доставка</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout__box">
+                  <div class="checkout__head">
+                    <h2 class="checkout__title _h2">Открытка</h2>
+                  </div>
+                  <div class="checkout__inner">
+                    <div class="checkout-fields">
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox">
+                            <span class="checkbox__icon"></span>
+                            <span class="checkbox__body">
+                              <span class="fields-text">
+                                Добавить дизайнерскую открытку ❤️ <b>+ 399 ₽</b>
+                              </span>
+                            </span>
+                          </label>
+                        </div>
+                        <div class="checkout-fields__item">
+                          <div class="inputs-grid">
+                            <div class="inputs-grid__item">
+                              <label class="input">
+                                <textarea class="input__body" placeholder="Текст открытки"></textarea>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout__box">
+                  <div class="checkout__head">
+                    <h2 class="checkout__title _h2">Способ оплаты</h2>
+                  </div>
+                  <div class="checkout__inner">
+                    <div class="pay-checkout">
+                      <label class="pay-checkout__item">
+                        <input class="pay-checkout__input" type="radio" name="pay-checkout" checked>
+                        <span class="pay-checkout__card">
+                          <span class="pay-checkout__main">
+                            <span class="pay-checkout__info">
+                              <span class="pay-checkout__title">СБП</span>
+                              <span class="pay-checkout__desc">Сервис быстрых платежей</span>
+                            </span>
+                          </span>
+                          <span class="pay-checkout__previews">
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-1.svg" alt="image">
+                            </span>
+                          </span>
+                        </span>
+                      </label>
+                      <label class="pay-checkout__item">
+                        <input class="pay-checkout__input" type="radio" name="pay-checkout">
+                        <span class="pay-checkout__card">
+                          <span class="pay-checkout__main">
+                            <span class="pay-checkout__info">
+                              <span class="pay-checkout__title">Банковские карты (РФ)</span>
+                            </span>
+                          </span>
+                          <span class="pay-checkout__previews">
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-2.svg" alt="image">
+                            </span>
+                            <span class="pay-checkout__img-box">
+                              <picture><source srcset="./img/content/pay/pay-3.webp" type="image/webp"><img class="pay-checkout__img" src="./img/content/pay/pay-3.png" alt="image"></picture>
+                            </span>
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-4.svg" alt="image">
+                            </span>
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-5.svg" alt="image">
+                            </span>
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-6.svg" alt="image">
+                            </span>
+                          </span>
+                        </span>
+                      </label>
+                      <label class="pay-checkout__item">
+                        <input class="pay-checkout__input" type="radio" name="pay-checkout">
+                        <span class="pay-checkout__card">
+                          <span class="pay-checkout__main">
+                            <span class="pay-checkout__info">
+                              <span class="pay-checkout__title">
+                                Банковскими картами, <br>
+                                выпущенными за пределами России
+                              </span>
+                              <span class="pay-checkout__desc">Комиссия системы - 10%</span>
+                            </span>
+                          </span>
+                          <span class="pay-checkout__previews">
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-5.svg" alt="image">
+                            </span>
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-6.svg" alt="image">
+                            </span>
+                          </span>
+                        </span>
+                      </label>
+                      <label class="pay-checkout__item">
+                        <input class="pay-checkout__input" type="radio" name="pay-checkout">
+                        <span class="pay-checkout__card">
+                          <span class="pay-checkout__main">
+                            <span class="pay-checkout__info">
+                              <span class="pay-checkout__title">Эл. кошельки, карты рассрочки и др.</span>
+                            </span>
+                          </span>
+                          <span class="pay-checkout__previews">
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-7.svg" alt="image">
+                            </span>
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-8.svg" alt="image">
+                            </span>
+                          </span>
+                        </span>
+                      </label>
+                      <label class="pay-checkout__item">
+                        <input class="pay-checkout__input" type="radio" name="pay-checkout">
+                        <span class="pay-checkout__card">
+                          <span class="pay-checkout__main">
+                            <span class="pay-checkout__info">
+                              <span class="pay-checkout__title">Наличными при доставке</span>
+                            </span>
+                          </span>
+                          <span class="pay-checkout__previews">
+                            <span class="pay-checkout__img-box">
+                              <img class="pay-checkout__img" src="./img/content/pay/pay-9.svg" alt="image">
+                            </span>
+                          </span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout__box checkout__box_col-05">
+                  <div class="checkout__head">
+                    <h2 class="checkout__title _h2">Промокод</h2>
+                  </div>
+                  <div class="checkout__inner">
+                    <div class="checkout-fields">
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <div class="inputs-grid">
+                            <!-- будет доработано позже -->
+                            <div class="inputs-grid__item">Промокод</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout__box checkout__box_col-05">
+                  <div class="checkout__head">
+                    <h2 class="checkout__title _h2">Бонусы</h2>
+                  </div>
+                  <div class="checkout__inner">
+                    <div class="checkout-fields">
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <div class="inputs-grid">
+                            <div class="inputs-grid__item inputs-grid__item_col-03">
+                              <label class="input">
+                                <input class="input__body" type="text" placeholder="000">
+                              </label>
+                            </div>
+                            <div
+                              class="inputs-grid__item inputs-grid__item_col-07 inputs-grid__item_center"
+                            >
+                              <span class="fields-text">
+                                Или потратьте накопленные бонусы. <br>
+                                <b><span>На вашем счету 239 ₽</span></b>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout__box">
+                  <div class="checkout__head">
+                    <h2 class="checkout__title _h2">Укажите вашу почту</h2>
+                  </div>
+                  <div class="checkout__inner">
+                    <div class="checkout-fields">
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <div class="inputs-grid">
+                            <div class="inputs-grid__item inputs-grid__item_col-05">
+                              <label class="input">
+                                <input class="input__body" type="email" placeholder="Ваш Email для получения бонусов">
+                              </label>
+                            </div>
+                            <div
+                              class="inputs-grid__item inputs-grid__item_col-05 inputs-grid__item_center"
+                            >
+                              <div class="ability">
+                                <ul class="ability__list">
+                                  <li class="ability__item">
+                                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M7.01367 0C9.21499 2.3227e-06 11 1.78403 11 3.98535V7.0127C11 9.21402 9.21499 10.999 7.01367 10.999H3.98633C1.78501 10.999 0 9.21402 0 7.0127V3.98535C3.35328e-06 1.78403 1.78501 0 3.98633 0H7.01367ZM8.87402 3.5127C8.59172 3.21168 8.11944 3.19725 7.81836 3.47949L5.13965 5.98828L3.85742 4.78711L3.79883 4.7373C3.49773 4.50767 3.06634 4.53906 2.80176 4.82129C2.53714 5.10362 2.53341 5.53662 2.78223 5.82227L2.83594 5.87695L5.13965 8.03809L8.83984 4.56934C9.14096 4.28704 9.15632 3.81381 8.87402 3.5127Z" fill="var(--color-primary)"/>
+                                    </svg>
+                                    Начислим 629 бонусных рублей для оплаты будущих заказов!
+                                  </li>
+                                  <li class="ability__item">
+                                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M7.01367 0C9.21499 2.3227e-06 11 1.78403 11 3.98535V7.0127C11 9.21402 9.21499 10.999 7.01367 10.999H3.98633C1.78501 10.999 0 9.21402 0 7.0127V3.98535C3.35328e-06 1.78403 1.78501 0 3.98633 0H7.01367ZM8.87402 3.5127C8.59172 3.21168 8.11944 3.19725 7.81836 3.47949L5.13965 5.98828L3.85742 4.78711L3.79883 4.7373C3.49773 4.50767 3.06634 4.53906 2.80176 4.82129C2.53714 5.10362 2.53341 5.53662 2.78223 5.82227L2.83594 5.87695L5.13965 8.03809L8.83984 4.56934C9.14096 4.28704 9.15632 3.81381 8.87402 3.5127Z" fill="var(--color-primary)"/>
+                                    </svg>
+                                    Вовремя уведомим о статусе заказа!
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="checkout__footer">
+                <div class="checkout__cost">
+                  <p class="checkout__price-desc">Итоговая цена</p>
+                  <div class="checkout__price">2 290 ₽</div>
+                </div>
+                <div class="checkout__action">
+                  <div class="checkout__submit">
+                    <button class="checkout__send btn btn_large-extra btn_primary" type="submit">
+                      Оформить заказ
+                    </button>
+                  </div>
+                  <div class="checkout__agree">
+                    <p>С условиями <a href="#">оферты</a> ознакомлен и согласен</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body _h2">футер</div>
+        </div>
+      </footer>
+
+      <!-- При интеграции переместить скрипт в функционал "Избранное"! -->
+      <script>
+        (() => {
+          "use strict";
+          document.addEventListener("click", (e) => {
+            if (e.target.closest("[data-favourites]")) {
+              e.target.classList.toggle("is-active");
+
+              if (e.target.classList.contains("is-active")) {
+                e.target.querySelector(".seo").innerText = "Удалить из избранного";
+                e.target.setAttribute("title", "Удалить из избранного");
+              } else {
+                e.target.querySelector(".seo").innerText = "Добавить в избранное";
+                e.target.setAttribute("title", "Добавить в избранное");
+              }
+            }
+          });
+        })();
+      </script>
+    </div>
+  </body>
+</html>

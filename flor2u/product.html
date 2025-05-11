@@ -534,7 +534,9 @@
                       </div>
                     </dl>
                     <div class="product-result__action">
-                      <a class="product-result__btn btn btn_normal btn_primary" href="#"> Все букеты </a>
+                      <a class="product-result__btn btn btn_medium-extra btn_primary" href="#">
+                        Все букеты
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -744,7 +746,7 @@
                     </div>
                   </article>
                 </div>
-                <a class="cards__btn btn btn_normal btn_primary-link" href="#">
+                <a class="cards__btn btn btn_medium btn_primary-link" href="#">
                   <span>Показать все</span>
                 </a>
               </div>
@@ -1204,7 +1206,7 @@
                   </li>
                 </ul>
                 <div class="reviews__action">
-                  <button class="reviews__more btn btn_neutral btn_large">Еще отзывы</button>
+                  <button class="reviews__more btn btn_shadow btn_large">Еще отзывы</button>
                 </div>
               </div>
             </div>
@@ -1412,7 +1414,7 @@
                     </div>
                   </article>
                 </div>
-                <a class="cards__btn btn btn_normal btn_primary-link" href="#">
+                <a class="cards__btn btn btn_medium btn_primary-link" href="#">
                   <span>Показать все</span>
                 </a>
               </div>
@@ -1742,33 +1744,6 @@
                 e.target.setAttribute("title", "Добавить в избранное");
               }
             }
-          });
-        })();
-      </script>
-    </div>
-
-    <div class="popup" id="contact-form">
-      <div class="popup__body">
-        <button class="popup__close" aria-label="Close popup" type="button" data-close></button>
-        <div class="popup__inner"></div>
-      </div>
-    </div>
-
-    <div class="cookies">
-      <p class="cookies__text">
-        Пользуясь нашим сайтом, вы соглашаетесь с тем,
-        что <a href="#" target="_blank">мы используем cookies</a> 🍪
-      </p>
-      <button class="cookies__btn btn" type="button">
-        Окей
-        <span class="seo">, принять файлы cookies</span>
-      </button>
-      <!-- Удалить скрипт при интеграции! -->
-      <script>
-        (() => {
-          "use strict";
-          document.querySelector(".cookies__btn").addEventListener("click", (e) => {
-            e.target.parentElement.remove();
           });
         })();
       </script>

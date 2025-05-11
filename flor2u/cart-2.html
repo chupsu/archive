@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Адрес и время доставки</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo" href="./index.html">
+              <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" type="button" aria-label="Меню сайта" title="Меню сайта">
+                <i class="menu__icon" aria-hidden="true">
+                  <span></span>
+                </i>
+              </button>
+              <div class="menu__body">
+                <ul class="menu__list">
+                  <!-- <li class="menu__item">
+                    <a class="menu__link" href="#" data-goto-header data-goto=".class">Menu</a>
+                  </li> -->
+                  <li class="menu__item">
+                    <a class="menu__link" href="./product.html">Продукт</a>
+                  </li>
+                  <!-- <li class="menu__item">
+                    <a class="menu__link" href="#contact-form" data-popup="#contact-form">Contacts</a>
+                  </li> -->
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <div class="checkout">
+          <div class="container">
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="./index.html">Главная</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="./404.html">Мои заказы</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__link">Оформление заказа</span>
+              </li>
+            </ul>
+            <div class="checkout__body">
+              <div class="checkout__bar">
+                <div class="checkout__steps">
+                  <a class="checkout__step" href="#">Корзина</a>
+                  <a class="checkout__step checkout__step_active" href="./cart-2.html">
+                    Адрес и время доставки
+                  </a>
+                  <a class="checkout__step" href="./cart-3.html">Данные получателя и оплата</a>
+                </div>
+              </div>
+              <div class="checkout__main">
+                <div class="checkout__box">
+                  <div class="checkout__head">
+                    <h2 class="checkout__title _h2">Адрес доставки</h2>
+                    <div class="checkout-fastbuy">
+                      <div class="checkout-fastbuy__head">
+                        <div class="checkout-fastbuy__title">Не хотите заполнять форму?</div>
+                        <p class="checkout-fastbuy__desc">
+                          Закажите в 1 клик. С вами свяжется менеджер для уточнения адреса
+                          и времени доставки.
+                        </p>
+                      </div>
+                      <a class="checkout-fastbuy__btn btn btn_medium btn_primary-light" href="#">
+                        Купить в 1 клик
+                      </a>
+                    </div>
+                  </div>
+                  <div class="checkout__inner">
+                    <div class="checkout-fields">
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox">
+                            <span class="checkbox__icon"></span>
+                            <span class="checkbox__body">
+                              <span class="fields-text">
+                                Уточнить адрес и время у получателя
+                              </span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <div class="inputs-grid">
+                            <div class="inputs-grid__item inputs-grid__item_col-07">
+                              <label class="input">
+                                <input class="input__body" type="text" placeholder="Улица и номер дома">
+                              </label>
+                            </div>
+                            <div class="inputs-grid__item inputs-grid__item_col-03">
+                              <label class="input">
+                                <input class="input__body" type="text" placeholder="Квартира или офис">
+                              </label>
+                            </div>
+                            <div class="inputs-grid__item">
+                              <label class="input">
+                                <textarea class="input__body" placeholder="Комментарий для курьера (этаж, подъезд, домофон и тд)"></textarea>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="checkout-fields__item">
+                          <span class="fields-text">
+                            Расстояние от MKAД:
+                            <span><b>до 8 км</b></span>
+                            <b>= 490 ₽</b>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <span class="fields-text">Курьер позвонит за 30 минут</span>
+                        </div>
+                        <div class="checkout-fields__item">
+                          <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox">
+                            <span class="checkbox__icon"></span>
+                            <span class="checkbox__body">
+                              <span class="fields-text">
+                                Не звонить получателю &mdash; это сюрприз 🥰
+                              </span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkout__box">
+                  <div class="checkout__head">
+                    <h2 class="checkout__title _h2">Дата и время доставки</h2>
+                  </div>
+                  <div class="checkout__inner">
+                    <div class="checkout-fields">
+                      <div class="checkout-fields__box">
+                        <div class="checkout-fields__item">
+                          <div class="inputs-grid">
+                            <div class="inputs-grid__item inputs-grid__item_col-05">
+                              <!-- будет доработано позже -->
+                              <label class="input">
+                                <input class="input__body" type="text" placeholder="Сегодня 26 марта">
+                              </label>
+                            </div>
+                            <div class="inputs-grid__item inputs-grid__item_col-05">
+                              <!-- будет доработано позже -->
+                              <select data-modifier="time" data-show-selected>
+                                <option value="" selected>13:00-18:00, бесплатно</option>
+                                <option value="18:00-21:00">18:00-21:00</option>
+                                <option value="21:00-00:00">21:00-00:00</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="checkout-fields__item">
+                          <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox">
+                            <span class="checkbox__toggle"></span>
+                            <span class="checkbox__body">
+                              <span class="fields-text">
+                                Срочная доставка (в ближайшие 2 часа)
+                                <b>+ 990 ₽</b>
+                              </span>
+                            </span>
+                          </label>
+                        </div>
+                        <div class="checkout-fields__item">
+                          <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox">
+                            <span class="checkbox__toggle"></span>
+                            <span class="checkbox__body">
+                              <span class="fields-text">
+                                Точное время доставки (+/-15 минут)
+                                <b>+ 1 000 ₽</b>
+                              </span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="checkout__footer">
+                <div class="checkout__cost">
+                  <p class="checkout__price-desc">Сумма заказа, с учетом доставки:</p>
+                  <div class="checkout__price">2 290 ₽</div>
+                </div>
+                <div class="checkout__action">
+                  <div class="checkout__submit">
+                    <a
+                      class="checkout__send checkout__send_step btn btn_large-extra btn_primary"
+                      href="./cart-3.html"
+                    >
+                      Далее
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body _h2">футер</div>
+        </div>
+      </footer>
+
+      <!-- При интеграции переместить скрипт в функционал "Избранное"! -->
+      <script>
+        (() => {
+          "use strict";
+          document.addEventListener("click", (e) => {
+            if (e.target.closest("[data-favourites]")) {
+              e.target.classList.toggle("is-active");
+
+              if (e.target.classList.contains("is-active")) {
+                e.target.querySelector(".seo").innerText = "Удалить из избранного";
+                e.target.setAttribute("title", "Удалить из избранного");
+              } else {
+                e.target.querySelector(".seo").innerText = "Добавить в избранное";
+                e.target.setAttribute("title", "Добавить в избранное");
+              }
+            }
+          });
+        })();
+      </script>
+    </div>
+  </body>
+</html>
