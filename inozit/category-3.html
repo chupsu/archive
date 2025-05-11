@@ -17,7 +17,7 @@
 
   <body>
     <div class="wrapper" id="wrapper">
-      <header class="header" data-lp>
+      <header class="header " data-lp>
         <!-- на внутренних страницах добавляем header_border -->
         <!-- <header class="header header_border" data-lp> -->
         <div class="container">
@@ -228,6 +228,14 @@
                       <img class="welcome__img" src="./img/content/pic/welcome-3.png" alt="image">
                     </picture>
                   </figure>
+                  <div class="welcome__footer">
+                    <div class="welcome__action" data-da=".welcome__box_action,1023,first">
+                      <a class="welcome__btn btn btn_cta icon-arrow-right" href="#">текст кнопки</a>
+                      <a class="welcome__btn btn btn_cta icon-arrow-right" href="#">
+                        текст кнопки текст кнопки
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="welcome__box welcome__box_product">
@@ -274,6 +282,8 @@
                   </details>
                 </div>
               </div>
+              <!-- в welcome__box_action будут перемещаться кнопки на моб -->
+              <div class="welcome__box welcome__box_action"></div>
             </div>
           </div>
         </section>
