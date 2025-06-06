@@ -12902,7 +12902,6 @@ window.addEventListener("load", function () {
   }
 
   const HEADER = document.querySelector(".header");
-  let heightHeader = HEADER.offsetHeight;
   const USER_BAR = document.querySelector(".user-bar");
 
   const wrappedTextWidrh = (element) => {
@@ -13321,6 +13320,16 @@ window.addEventListener("load", function () {
     //   Menu
     if (!targetElement.closest(".menu") || targetElement.closest(".menu__link")) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+    }
+
+    if (targetElement.closest(".assortment__btn") && window.innerWidth >= 1024) {
+      setTimeout(() => {
+        targetElement.parentElement.querySelector(".assortment__name").click();
+      }, 300);
+    }
+
+    if (targetElement.closest("[data-assortment-close]")) {
+      targetElement.parentElement.closest(".assortment__item").querySelector(".assortment__name").click();
     }
 
     dataAction(targetElement, "assortment");
