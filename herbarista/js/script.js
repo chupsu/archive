@@ -13006,13 +13006,18 @@ window.addEventListener("load", function () {
         searchInput.value = "";
         searchWrapper.classList.remove("_is-fill");
       }
-
-      if (targetElement.closest("[data-search]")) {
-        document.documentElement.classList.toggle("_is-search-open");
-      }
     });
   };
   search();
+
+  const dataAction = (target, attr) => {
+    if (target.closest(`[data-${attr}]`)) {
+      document.documentElement.classList.toggle(`_is-${attr}-open`);
+    }
+    if (document.documentElement.closest(`._is-${attr}-open`) && !target.closest(`.${attr}`)) {
+      document.documentElement.classList.remove(`_is-${attr}-open`);
+    }
+  };
 
   const textArea = document.getElementsByTagName("textarea");
   for (let i = 0; i < textArea.length; i++) {
@@ -13318,20 +13323,9 @@ window.addEventListener("load", function () {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
     }
 
-    //   Catalog menu
-    if (targetElement.closest("[data-assortment]")) {
-      document.documentElement.classList.toggle("_is-assortment-open");
-    }
-    if (
-      document.documentElement.closest("._is-assortment-open") &&
-      !targetElement.closest(".assortment")
-    ) {
-      document.documentElement.classList.remove("_is-assortment-open");
-    }
-
-    if (document.documentElement.closest("._is-search-open") && !targetElement.closest(".search")) {
-      document.documentElement.classList.remove("_is-search-open");
-    }
+    dataAction(targetElement, "assortment");
+    dataAction(targetElement, "header-extra");
+    dataAction(targetElement, "search");
 
     //   Product card buy
     if (targetElement.closest(".product-card__buy")) {
