@@ -13352,7 +13352,7 @@ window.addEventListener("load", function () {
   }
 
   window.onscroll = function () {
-    HEADER.classList.toggle("header_scroll", document.documentElement.scrollTop > heightHeader);
+    document.documentElement.classList.toggle("_is-scroll", document.documentElement.scrollTop > 50);
   };
 
   window.addEventListener("resize", () => {

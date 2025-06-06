@@ -746,7 +746,7 @@ body {
   border-color: currentColor;
 }
 .header {
-  position: absolute;
+  position: fixed;
   z-index: 9;
   top: 0;
   right: 0;
@@ -754,11 +754,9 @@ body {
   background-color: var(--color-neutral);
   border-bottom: 1px solid transparent;
 }
+._is-scroll .header,
 .header_border {
   border-color: var(--color-shadow);
-}
-.header_scroll {
-  box-shadow: 0 5px 30px 0 rgba(142, 142, 142, 0.14);
 }
 .header__top {
   background-color: var(--color-shadow-lightest);
@@ -768,11 +766,17 @@ body {
   justify-content: space-between;
   padding: 14px 0;
 }
+.header__main {
+  transition-duration: var(--transition-duration);
+  transition-property: color,background-color,border-color,opacity,transform,padding;
+}
 .header__body {
   position: relative;
   display: flex;
   align-items: center;
   padding: 20px var(--padding-page);
+  transition-duration: var(--transition-duration);
+  transition-property: color,background-color,border-color,opacity,transform,padding;
 }
 .header__inner {
   display: flex;
@@ -1090,11 +1094,12 @@ body {
   color: var(--color-main-light);
 }
 .user-bar__link::before {
-  margin-bottom: 6px;
   font-size: 24px;
 }
 .user-bar__name {
   max-width: 75px;
+  height: 1.3em;
+  margin-top: 6px;
   text-align: center;
   font-weight: 500;
   font-size: var(--text-smaller);
@@ -1102,6 +1107,12 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  transition-duration: var(--transition-duration);
+  transition-property: color,background-color,border-color,opacity,transform,height,margin;
+}
+._is-scroll .user-bar__name {
+  margin-top: 4px;
+  height: 0;
 }
 .user-bar__info {
   position: absolute;
@@ -2593,6 +2604,15 @@ textarea.input__body {
     --title-2: 30px;
     --text-cursive: 120px;
   }
+  ._is-scroll .header {
+    transform: translateY(-56px);
+  }
+  ._is-scroll .header__main {
+    padding-top: 16px;
+  }
+  ._is-scroll .header__body {
+    padding: 12px 0;
+  }
   .header__inner {
     flex-grow: 1;
     gap: 15px;
@@ -3016,6 +3036,12 @@ textarea.input__body {
     width: 8px;
     height: 8px;
   }
+  ._is-scroll .header {
+    transform: translateY(-82px);
+  }
+  ._is-scroll .header__main {
+    padding-top: 40px;
+  }
   .header__body {
     padding: 30px 0 34px;
   }
@@ -3060,7 +3086,6 @@ textarea.input__body {
     gap: 32px;
   }
   .user-bar__link::before {
-    margin-bottom: 7px;
     font-size: 26px;
   }
   .user-bar__name {
