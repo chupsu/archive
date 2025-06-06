@@ -13336,11 +13336,8 @@ window.addEventListener("load", function () {
     //   Product card buy
     if (targetElement.closest(".product-card__buy")) {
       const parentElem = targetElement.parentElement;
-      const input = parentElem.querySelector("input");
 
       parentElem.classList.add("added");
-      input?.setSelectionRange(input.value.length, input.value.length);
-      input?.focus();
     }
 
     //   Show / Hide Password
