@@ -623,11 +623,7 @@
                       <form class="search__form" action="#">
                         <div class="search__main">
                           <input class="search__input" type="search" placeholder="Найти">
-                          <button
-                            class="search__btn search__btn_submit icon-search"
-                            type="submit"
-                            title="Искать"
-                          >
+                          <button class="search__btn search__btn_submit icon-search" type="submit">
                             <span class="seo">Искать</span>
                           </button>
                         </div>
@@ -671,7 +667,7 @@
                   </div>
                 </div>
               </div>
-              <div class="user-bar">
+              <div class="user-bar" data-lp>
                 <ul class="user-bar__list">
                   <li class="user-bar__item user-bar__item_mob">
                     <a class="user-bar__link icon-menu" href="./catalog.html">
@@ -2487,10 +2483,93 @@
       </script>
     </div>
 
-    <div class="popup" id="contact-form">
+    <div class="popup" id="callback">
       <div class="popup__body">
-        <button class="popup__close" aria-label="Close popup" type="button" data-close></button>
-        <div class="popup__inner"></div>
+        <button class="popup__close icon-cross" type="button" data-close>
+          <span class="seo">Закрыть</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__content popup__content_small">
+            <div class="popup__head popup__head_center">
+              <h4 class="popup__title _h2">Обратный звонок</h4>
+              <p class="popup__text">Представьтесь, мы вам перезвоним.</p>
+            </div>
+            <form class="callback-form" action="#">
+              <div class="callback-form__inputs">
+                <label class="input">
+                  <!-- input::placeholder=" " должен быть не пустым -->
+                  <input class="input__body" type="email" placeholder=" " required>
+                  <span class="input__placeholder">Имя и фамилия*</span>
+                </label>
+                <label class="input">
+                  <!-- input::placeholder=" " должен быть не пустым -->
+                  <input class="input__body" type="email" placeholder=" " required>
+                  <span class="input__placeholder">Ваш телефон*</span>
+                </label>
+              </div>
+              <div class="callback-form__agpee">
+                <label class="checkbox">
+                  <input class="checkbox__input" type="checkbox">
+                  <span class="checkbox__icon icon-check"></span>
+                  <span class="checkbox__body">
+                    <span class="fields-text">
+                      Согласен с условиями <a href="./" target="_blank">обработки данных</a>,
+                      <a href="./" target="_blank">пользовательского соглашения</a>
+                      и <a href="./" target="_blank">оферты</a>
+                    </span>
+                  </span>
+                </label>
+              </div>
+              <div class="callback-form__action">
+                <button class="callback-form__btn btn btn_main" type="submit">Отправить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="geo">
+      <div class="popup__body">
+        <button class="popup__close icon-cross" type="button" data-close>
+          <span class="seo">Закрыть</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__content popup__content_small">
+            <div class="popup__head popup__head_center">
+              <h4 class="popup__title _h2">Выберите город</h4>
+              <p class="popup__text">
+                Подтвердите ваш адрес доставки, чтобы увидеть актуальные предложения для вашего региона
+              </p>
+            </div>
+            <form class="form-geo" action="#">
+              <div class="form-geo__related">
+                <button
+                  class="form-geo__variable form-geo__variable_active btn btn_shadow btn_small"
+                  type="button"
+                >
+                  Москва
+                </button>
+                <button class="form-geo__variable btn btn_shadow btn_small" type="button">Новосибирск</button>
+              </div>
+              <div class="form-geo__body">
+                <input class="form-geo__input" type="search" placeholder="Ваш город" list="geo-help">
+                <datalist id="geo-help">
+                  <!-- Выводим в option города подходящие вводу -->
+                  <option value="Неринск"></option>
+                  <option value="Нижний Новгород"></option>
+                  <option value="Ницаха"></option>
+                  <option value="Новгород-Северский"></option>
+                  <option value="Новогрудок"></option>
+                  <option value="Новосиль"></option>
+                </datalist>
+                <button class="form-geo__btn icon-search" type="submit">
+                  <span class="seo">Искать</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
