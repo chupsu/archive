@@ -12782,6 +12782,8 @@ window.addEventListener("load", function () {
   }
 
   if (document.querySelector(".welcome-slider")) {
+    document.querySelector(".welcome-slider").classList.add("_is-init");
+
     new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](".welcome-slider", {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectFade],
       slidesPerView: 1,
