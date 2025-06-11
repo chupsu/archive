@@ -12834,6 +12834,60 @@ window.addEventListener("load", function () {
     });
   }
 
+  if (document.querySelector(".extra-cart__slider")) {
+    const extraCartSliderBody = document.querySelector(".extra-cart__slider");
+
+    extraCartSliderBody.classList.add("_is-init");
+
+    new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](extraCartSliderBody, {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Scrollbar, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Mousewheel],
+      slidesPerView: "auto",
+      spaceBetween: 12,
+      freeMode: { momentum: false },
+      mousewheel: true,
+      wrapperClass: "extra-cart__items",
+      slideClass: "extra-cart__item",
+      slideActiveClass: "extra-cart__item_active",
+      slidePrevClass: "extra-cart__item_prev",
+      slideNextClass: "extra-cart__item_next",
+      scrollbar: {
+        el: ".extra-cart__scrollbar",
+        dragClass: "extra-cart__scrollbar-drag",
+        draggable: true,
+      },
+      breakpoints: {
+        992: { direction: "vertical" },
+      },
+      on: {
+        init: (swiper) => {
+          swiper.el.classList.toggle("_is-lock", swiper.isLocked);
+        },
+        resize: (swiper) => {
+          swiper.el.classList.toggle("_is-lock", swiper.isLocked);
+        },
+      },
+    });
+  }
+
+  const hiddenBlockToggle = () => {
+    const blocks = document.querySelectorAll("[data-hidden-block]");
+ 
+    blocks.forEach((block) => {
+      const trigger = block.querySelector("[data-hidden-block-trigger]");
+      const body = block.querySelector("[data-hidden-block-body]");
+      const reverse = trigger.dataset.hideBlockTrigger == "reverse" ? true : false;
+      const status = reverse ? !trigger.checked : trigger.checked;
+      body.hidden = !status;
+
+      trigger.addEventListener("change", () => {
+        body.hidden = !body.hidden;
+      });
+    }); 
+  };
+  if (document.querySelector("[data-hidden-block]")) {
+    hiddenBlockToggle();
+  }
+
   if (document.querySelector("#schedule")) {
     const scheduleInput = document.querySelector("#schedule");
 
@@ -12884,7 +12938,9 @@ window.addEventListener("load", function () {
         years: "yyyy1 - yyyy2",
       },
       onSelect: ({ date, datepicker, formattedDate }) => {
-        datepicker.$el.value = `${getWeekDay(date)} ${date.getDate()} ${getMonthNameInGenitiveCase(date)}`;
+        datepicker.$el.value = `${getWeekDay(date)} ${date.getDate()} ${getMonthNameInGenitiveCase(
+          date
+        )}`;
       },
     });
 
