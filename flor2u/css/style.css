@@ -1244,7 +1244,7 @@ html {
   object-position: center;
 }
 .footer {
-  margin-top: 62px;
+  margin-top: 65px;
   padding: var(--gap-largest);
   background-color: var(--color-shadow-light);
 }
@@ -3229,10 +3229,12 @@ textarea.input__body {
 .air-datepicker-cell.-focus-:not(.-selected-):active {
   background-color: var(--adp-background-color-active);
 }
+.cart__head {
+  margin-bottom: 24px;
+}
 .cart__title {
   font-weight: 600;
   font-size: 20px;
-  margin-bottom: 24px;
 }
 .cart__main {
   display: grid;
@@ -3259,6 +3261,26 @@ textarea.input__body {
 }
 .property__desc {
   display: inline;
+}
+.cart-empty {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.cart-empty__media {
+  width: 116px;
+  margin-bottom: 16px;
+}
+.cart-empty__img {
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.cart-empty__text {
+  font-weight: 400;
+  font-size: var(--text-medium);
 }
 .cart-item {
   display: grid;
@@ -3953,6 +3975,9 @@ textarea.input__body {
   .logo {
     width: 120px;
   }
+  .footer {
+    margin-top: 112px;
+  }
   .inputs-grid {
     gap: var(--gap-normal);
   }
@@ -4099,8 +4124,18 @@ textarea.input__body {
   .checkout-fields__box {
     gap: var(--gap-normal);
   }
-  .cart__title {
+  .cart__head {
     margin-bottom: 32px;
+  }
+  .cart-empty {
+    padding-top: 20px;
+  }
+  .cart-empty__media {
+    width: 152px;
+  }
+  .cart-empty__text {
+    font-weight: 600;
+    font-size: 20px;
   }
   .cart-item__body {
     min-height: 92px;
@@ -4133,9 +4168,6 @@ textarea.input__body {
   }
   .container {
     max-width: 964px;
-  }
-  .footer {
-    margin-top: 84px;
   }
   .product__body {
     flex-direction: row;
@@ -4430,12 +4462,21 @@ textarea.input__body {
   .checkout-fields__box {
     gap: var(--gap-medium);
   }
-  .cart__title {
+  .cart__head {
     margin-bottom: 40px;
   }
   .cart__extra {
     width: 368px;
     margin-left: 92px;
+  }
+  .cart-empty {
+    padding-top: 50px;
+  }
+  .cart-empty__media {
+    width: 200px;
+  }
+  .cart-empty__text {
+    font-size: 24px;
   }
   .cart-item__body {
     min-height: 120px;
