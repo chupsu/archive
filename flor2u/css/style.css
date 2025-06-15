@@ -716,6 +716,7 @@
 .input__btn,
 .input__icon,
 .order-auth-form__agree a,
+.order-info__btn-arrow,
 .order-info__btn-arrow svg,
 .order-list__desc a,
 .pay-checkout__card,
@@ -3844,6 +3845,13 @@ textarea.input__body {
   padding: 18px;
   font-weight: 600;
   font-size: var(--text-medium);
+  cursor: pointer;
+}
+.order-info__btn:focus-visible {
+  outline: 0;
+}
+.order-info__btn:focus-visible .order-info__btn-arrow {
+  background-color: var(--color-primary-light);
 }
 .order-info__btn > svg {
   flex-shrink: 0;
@@ -3865,6 +3873,7 @@ textarea.input__body {
   width: 22px;
   margin-left: 12px;
   color: var(--color-main);
+  border-radius: var(--radius-small);
 }
 .order-info__btn-arrow svg {
   aspect-ratio: 1/1;
@@ -4154,7 +4163,6 @@ textarea.input__body {
     width: 28px;
     color: var(--color-shadow-dark);
     background-color: var(--color-shadow-light);
-    border-radius: var(--radius-small);
   }
   .order-list {
     padding: 12px 0 6px;
@@ -4852,6 +4860,9 @@ textarea.input__body {
   .order__btn_cancel:not(:active):hover {
     color: var(--color-accent);
     background-color: var(--color-accent-light);
+  }
+  .order-info__btn:not(:active):hover .order-info__btn-arrow {
+    background-color: var(--color-primary-light);
   }
   .order-list__desc a:not(:active):hover {
     color: var(--color-link-hover);
