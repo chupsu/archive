@@ -253,8 +253,23 @@
                       <div class="checkout-fields__box">
                         <div class="checkout-fields__item">
                           <div class="inputs-grid">
-                            <!-- будет доработано позже -->
-                            <div class="inputs-grid__item">Промокод</div>
+                            <div class="inputs-grid__item">
+                              <label class="input input_status">
+                                <input class="input__body" type="text" placeholder="Промокод">
+                                <span class="input__status input__status_accept" style="display: none">
+                                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.16232 2.39474C8.3564 2.26657 8.62036 2.28833 8.79122 2.45919C8.96209 2.63006 8.98384 2.89402 8.85568 3.0881L8.79122 3.16622L4.41622 7.54122C4.24536 7.71209 3.9814 7.73384 3.78732 7.60568L3.70919 7.54122L1.52169 5.35372L1.45724 5.2756C1.32907 5.08152 1.35083 4.81756 1.52169 4.64669C1.69256 4.47583 1.95652 4.45407 2.1506 4.58224L2.22872 4.64669L4.06271 6.48068L8.08419 2.45919L8.16232 2.39474Z" fill="currentColor"/>
+                                  </svg>
+                                  Промокод принят
+                                </span>
+                                <span class="input__status input__status_alert" style="display: none">
+                                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.868 2.132C7.69201 1.956 7.40666 1.956 7.23067 2.132L5 4.36267L2.76933 2.132C2.59334 1.956 2.30799 1.956 2.132 2.132C1.956 2.30799 1.956 2.59334 2.132 2.76933L4.36267 5L2.132 7.23067C1.956 7.40666 1.956 7.69201 2.132 7.868C2.30799 8.044 2.59334 8.044 2.76933 7.868L5 5.63733L7.23067 7.868C7.40666 8.044 7.69201 8.044 7.868 7.868C8.044 7.69201 8.044 7.40666 7.868 7.23067L5.63733 5L7.868 2.76933C8.044 2.59334 8.044 2.30799 7.868 2.132Z" fill="currentColor"/>
+                                  </svg>
+                                  Промокод не существует
+                                </span>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>

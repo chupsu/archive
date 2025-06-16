@@ -1346,7 +1346,8 @@ html {
   flex-direction: column;
   min-height: var(--height-btn-large);
 }
-.input_icon {
+.input_icon,
+.input_status {
   position: relative;
 }
 .input__body {
@@ -1355,6 +1356,9 @@ html {
   background-color: var(--color-shadow-light);
   border: 1px solid transparent;
   border-radius: var(--radius-normal);
+}
+.input_status .input__body {
+  padding-right: 200px;
 }
 .input_icon .input__body {
   padding-right: 124px;
@@ -1400,6 +1404,34 @@ textarea.input__body {
   width: 24px;
   height: 24px;
   pointer-events: none;
+}
+.input__status {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  display: flex;
+  align-items: center;
+  font-size: var(--text-small);
+  line-height: 1;
+}
+.input__status_accept {
+  color: var(--color-primary);
+}
+.input__status_alert {
+  color: var(--color-accent);
+}
+.input__status_notify {
+  color: var(--color-secondary);
+}
+.input__status svg {
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  width: 0.84em;
+  margin-right: 0.84em;
+}
+.input__status svg path {
+  fill: currentColor;
 }
 .input__btn {
   position: absolute;
