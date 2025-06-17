@@ -180,6 +180,7 @@ html {
 }
 ._h1,
 ._h2,
+._h3,
 ._h6,
 .categories__amount span,
 .footer__title,
@@ -517,7 +518,8 @@ html {
   --color-shadow-lightest: #f8f8f8;
   --transition-duration: 0.3s;
   --title-1: 30px;
-  --title-2: 20px;
+  --title-2: 24px;
+  --title-3: 20px;
   --title-6: 14px;
   --text-cursive: 70px;
   --text-larger: 20px;
@@ -583,6 +585,10 @@ body {
 }
 ._h2 {
   font-size: var(--title-2);
+  line-height: 1.2;
+}
+._h3 {
+  font-size: var(--title-3);
   line-height: 1.2;
 }
 ._h6 {
@@ -2299,7 +2305,7 @@ textarea.input__body {
 }
 .sale__filters {
   display: flex;
-  gap: 10px;
+  gap: 6px 10px;
   margin-top: 24px;
   margin-bottom: 4px;
 }
@@ -2810,7 +2816,8 @@ textarea.input__body {
     --gap-section: 40px;
     --gap-section-head: 26px;
     --title-1: 36px;
-    --title-2: 24px;
+    --title-2: 28px;
+    --title-3: 22px;
     --title-6: 16px;
     --text-cursive: 90px;
   }
@@ -2887,7 +2894,7 @@ textarea.input__body {
     width: calc((100% - 3 * var(--gap-small)) / 4);
   }
   .sale__filters {
-    gap: 12px;
+    gap: 8px 12px;
     margin-bottom: 0;
   }
   .sale__btn {
@@ -2972,7 +2979,8 @@ textarea.input__body {
     --gap-section: 52px;
     --gap-section-head: 34px;
     --title-1: 42px;
-    --title-2: 30px;
+    --title-2: 32px;
+    --title-3: 24px;
     --text-cursive: 120px;
   }
   html._is-scroll {
@@ -3272,7 +3280,7 @@ textarea.input__body {
     display: none;
   }
   .welcome-slider__inner {
-    height: 440px;
+    height: 430px;
   }
   .extra-slider {
     height: 100%;
@@ -3406,6 +3414,7 @@ textarea.input__body {
     --gap-section-head: 42px;
     --title-1: 48px;
     --title-2: 36px;
+    --title-3: 26px;
     --text-cursive: 150px;
   }
   .header__inner {
@@ -3440,8 +3449,15 @@ textarea.input__body {
   .footer__social {
     margin-bottom: 44px;
   }
+  .welcome__main:not(:last-child) {
+    --width-welcome-slider: calc(0.76 * var(--width-container) - var(--gap-normal));
+    margin-right: var(--gap-normal);
+  }
+  .welcome__extra {
+    width: 24%;
+  }
   .welcome-slider__inner {
-    height: 490px;
+    height: 460px;
   }
   .sale__filters {
     margin-bottom: -14px;
@@ -3467,6 +3483,7 @@ textarea.input__body {
     --gap-section-head: 50px;
     --title-1: 54px;
     --title-2: 42px;
+    --title-3: 30px;
     --title-6: 18px;
     --text-cursive: 185px;
   }
@@ -3617,13 +3634,6 @@ textarea.input__body {
   .form-geo {
     gap: 32px;
   }
-  .welcome__main:not(:last-child) {
-    --width-welcome-slider: calc(0.76 * var(--width-container) - var(--gap-normal));
-    margin-right: var(--gap-normal);
-  }
-  .welcome__extra {
-    width: 24%;
-  }
   .welcome-slider__actions {
     right: 30px;
     bottom: 30px;
@@ -3646,7 +3656,7 @@ textarea.input__body {
     padding: 0 30px 45px;
   }
   .sale__filters {
-    gap: 18px;
+    gap: 12px 18px;
     margin-bottom: -20px;
   }
   .sale__items {
