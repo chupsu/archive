@@ -488,6 +488,7 @@ html {
   --width-quantity-small: 22px;
   --height-page: 100vh;
   --height-header: 69px;
+  --height-header-scroll-scale: 0px;
   --height-userbar: 73px;
   --height-input: 52px;
   --height-btn-normal: 42px;
@@ -555,6 +556,7 @@ body {
 }
 .page {
   flex: 1 1 auto;
+  padding-bottom: calc(2 * var(--gap-section));
 }
 .page_small {
   display: flex;
@@ -1272,10 +1274,6 @@ body {
   overflow: hidden;
   transition-duration: var(--transition-duration);
   transition-property: color,background-color,border-color,opacity,transform,height,margin;
-}
-._is-scroll .user-bar__name {
-  margin-top: 4px;
-  height: 0;
 }
 .user-bar__info {
   position: absolute;
@@ -2069,6 +2067,7 @@ textarea.input__body {
   height: 100%;
   overflow: hidden;
 }
+.welcome-slider._is-lock,
 .welcome-slider:not(.welcome-slider._is-init) {
   --transform-percent: 0%;
 }
@@ -2102,6 +2101,9 @@ textarea.input__body {
   display: flex;
   gap: var(--gap-normal);
 }
+._is-lock .welcome-slider__actions {
+  display: none;
+}
 .welcome-slider__btn {
   flex-shrink: 0;
   display: flex;
@@ -2124,6 +2126,9 @@ textarea.input__body {
   width: var(--width-welcome-slider);
   height: 100%;
   overflow: hidden;
+}
+._is-lock .welcome-slider__mask {
+  width: var(--width-welcome-slider);
 }
 .welcome-slider__inner {
   position: relative;
@@ -2555,7 +2560,6 @@ textarea.input__body {
 }
 .blog-slider__body {
   padding-top: var(--gap-section);
-  padding-bottom: calc(2 * var(--gap-section));
 }
 .blog-slider__head {
   position: relative;
@@ -2810,6 +2814,9 @@ textarea.input__body {
     --title-6: 16px;
     --text-cursive: 90px;
   }
+  .page {
+    padding-bottom: var(--gap-section);
+  }
   [data-slider-nav] {
     margin-top: 22px;
   }
@@ -2919,9 +2926,6 @@ textarea.input__body {
   .new__more:focus-visible {
     color: var(--color-accent);
   }
-  .blog-slider__body {
-    padding-bottom: var(--gap-section);
-  }
   .blog-slider__swiper {
     overflow: hidden;
   }
@@ -2971,6 +2975,9 @@ textarea.input__body {
     --title-2: 30px;
     --text-cursive: 120px;
   }
+  html._is-scroll {
+    --height-header-scroll-scale: 56px;
+  }
   ._is-assortment-open .wrapper::after,
   ._is-header-extra-open .wrapper::after {
     content: "";
@@ -2983,7 +2990,7 @@ textarea.input__body {
     background-color: var(--color-main-30);
   }
   ._is-scroll .header {
-    transform: translateY(-56px);
+    transform: translateY(calc(-1 * var(--height-header-scroll-scale)));
   }
   ._is-scroll .header__main {
     padding-top: 16px;
@@ -3065,10 +3072,7 @@ textarea.input__body {
   .assortment__dropdown {
     top: 100%;
     bottom: auto;
-    max-height: calc(var(--height-page) - var(--height-header) - var(--height-userbar));
-  }
-  ._is-scroll .assortment__dropdown {
-    max-height: calc(var(--height-page) - var(--height-header) - var(--height-userbar) + 56px);
+    max-height: calc(var(--height-page) - var(--height-header) - var(--height-userbar) + var(--height-header-scroll-scale));
   }
   .assortment__title {
     width: var(--width-assortment-list);
@@ -3192,6 +3196,10 @@ textarea.input__body {
   .user-bar__item_mob {
     display: none;
   }
+  ._is-scroll .user-bar__name {
+    margin-top: 4px;
+    height: 0;
+  }
   .user-bar__info {
     top: 0;
     margin-left: 14px;
@@ -3272,6 +3280,9 @@ textarea.input__body {
   }
   .extra-slider__items {
     height: 100%;
+  }
+  .extra-slider__item {
+    width: 100%;
   }
   .extra-slider__actions {
     position: absolute;
@@ -3459,6 +3470,9 @@ textarea.input__body {
     --title-6: 18px;
     --text-cursive: 185px;
   }
+  html._is-scroll {
+    --height-header-scroll-scale: 82px;
+  }
   .btn:not(.btn_small) {
     font-size: var(--text-medium);
   }
@@ -3477,9 +3491,6 @@ textarea.input__body {
   [data-slider-pagination] > *::after {
     width: 8px;
     height: 8px;
-  }
-  ._is-scroll .header {
-    transform: translateY(-82px);
   }
   ._is-scroll .header__main {
     padding-top: 40px;
@@ -3508,9 +3519,6 @@ textarea.input__body {
   }
   .assortment__btn::before {
     margin-right: calc(0.5 * var(--height-btn));
-  }
-  ._is-scroll .assortment__dropdown {
-    max-height: calc(var(--height-page) - var(--height-header) - var(--height-userbar) + 82px);
   }
   .assortment__title {
     font-size: var(--text-larger);
