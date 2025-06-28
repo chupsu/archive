@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7FAFF">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#F7FAFF">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="cnt">
+      <div class="cnt__body">
+        <h2 class="cnt__title">Заявка на участие</h2>
+        <div class="cnt__form">
+          <form class="request-form" action="#" data-one-select>
+            <div class="request-form__box">
+              <div class="request-form__head">
+                <h3 class="request-form__title">Общие данные</h3>
+              </div>
+              <div class="request-form__items">
+                <div class="request-form__item">
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <div class="request-inputs">
+                        <div class="request-inputs__box">
+                          <select
+                            data-class-modifier="request"
+                            data-show-selected
+                            data-pseudo-label="Номинация"
+                          >
+                            <option value="" selected>Номинация</option>
+                            <option value="Предметный дизайн" disabled>Предметный дизайн</option>
+                            <option value="Дизайн транспортных средств">Дизайн транспортных средств</option>
+                            <option value="Дизайн промышленного оборудования">Дизайн промышленного оборудования</option>
+                            <option value="Дизайн медицинского оборудования">Дизайн медицинского оборудования</option>
+                            <option value="Дизайн предметов обихода">Дизайн предметов обихода</option>
+                            <option value="Средовой дизайн" disabled>Средовой дизайн</option>
+                            <option value="Городской дизайн">Городской дизайн</option>
+                            <option value="Дизайн промышленных пространств">Дизайн промышленных пространств</option>
+                            <option value="Коммуникационный дизайн" disabled>Коммуникационный дизайн</option>
+                            <option value="Дизайн упаковки продуктов питания">Дизайн упаковки продуктов питания</option>
+                            <option value="Дизайн упаковки лекарственных средств">Дизайн упаковки лекарственных средств</option>
+                            <option value="Дизайн медицинского оборудования">Дизайн медицинского оборудования</option>
+                            <option value="Дизайн предметов обихода">Дизайн предметов обихода</option>
+                          </select>
+                        </div>
+                        <div class="request-inputs__box _is-field-error">
+                          <select
+                            data-class-modifier="request"
+                            data-show-selected
+                            data-pseudo-label="Категория"
+                          >
+                            <option value="" selected>Категория</option>
+                            <option value="Предметный дизайн" disabled>Предметный дизайн</option>
+                            <option value="Дизайн транспортных средств">Дизайн транспортных средств</option>
+                            <option value="Дизайн промышленного оборудования">Дизайн промышленного оборудования</option>
+                            <option value="Дизайн медицинского оборудования">Дизайн медицинского оборудования</option>
+                            <option value="Дизайн предметов обихода">Дизайн предметов обихода</option>
+                            <option value="Средовой дизайн" disabled>Средовой дизайн</option>
+                            <option value="Городской дизайн">Городской дизайн</option>
+                            <option value="Дизайн промышленных пространств">Дизайн промышленных пространств</option>
+                            <option value="Коммуникационный дизайн" disabled>Коммуникационный дизайн</option>
+                            <option value="Дизайн упаковки продуктов питания">Дизайн упаковки продуктов питания</option>
+                            <option value="Дизайн упаковки лекарственных средств">Дизайн упаковки лекарственных средств</option>
+                            <option value="Дизайн медицинского оборудования">Дизайн медицинского оборудования</option>
+                            <option value="Дизайн предметов обихода">Дизайн предметов обихода</option>
+                          </select>
+                        </div>
+                        <div class="request-inputs__box">
+                          <label class="request-input">
+                            <!-- input::placeholder=" " должен быть не пустым -->
+                            <input class="request-input__body" type="text" placeholder=" ">
+                            <span class="request-input__placeholder">
+                              Наименование компании/предприятия/студии
+                            </span>
+                          </label>
+                        </div>
+                        <div class="request-inputs__box request-inputs__box_small">
+                          <label class="request-input">
+                            <!-- input::placeholder=" " должен быть не пустым -->
+                            <input class="request-input__body" type="text" placeholder=" ">
+                            <span class="request-input__placeholder">Производитель (ИНН)</span>
+                          </label>
+                        </div>
+                        <div class="request-inputs__box request-inputs__box_small _is-field-error">
+                          <label class="request-input">
+                            <!-- input::placeholder=" " должен быть не пустым -->
+                            <input class="request-input__body" type="text" placeholder=" ">
+                            <span class="request-input__placeholder">Производитель (ОКВЭД)</span>
+                          </label>
+                        </div>
+                        <div class="request-inputs__box">
+                          <label class="request-input">
+                            <!-- input::placeholder=" " должен быть не пустым -->
+                            <input class="request-input__body" type="text" placeholder=" ">
+                            <span class="request-input__placeholder">ФИО автора дизайна</span>
+                          </label>
+                        </div>
+                        <div class="request-inputs__box">
+                          <label class="request-input">
+                            <!-- input::placeholder=" " должен быть не пустым -->
+                            <input class="request-input__body" type="text" placeholder=" ">
+                            <span class="request-input__placeholder">
+                              Ссылка на ресурс, где можно приобрести продукт
+                            </span>
+                          </label>
+                        </div>
+                        <div class="request-inputs__box">
+                          <select
+                            data-class-modifier="request"
+                            data-show-selected
+                            data-pseudo-label="Регион"
+                          >
+                            <option value="" selected>Регион</option>
+                            <option value="Московская область (Москва)">Московская область (Москва)</option> 
+                            <option value="Воронежская область (Воронеж)">Воронежская область (Воронеж)</option> 
+                            <option value="Ростовская область (Ростов-на-Дону)">Ростовская область (Ростов-на-Дону)</option> 
+                          </select>
+                        </div>
+                        <div class="request-inputs__box">
+                          <label class="request-input" data-textarea-limit="textarea">
+                            <textarea class="request-input__body" placeholder="Подробное описание"></textarea>
+                            <span class="request-input__placeholder"></span>
+                            <span class="request-input__limit" data-textarea-limit-value="500"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="request-form__info">
+                      <p class="request-form__desc">Обязательно проверяйте введенные данные</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="request-form__box">
+              <div class="request-form__head">
+                <h3 class="request-form__title">Изображения проекта</h3>
+              </div>
+              <div class="request-form__items">
+                <div class="request-form__item">
+                  <div class="request-form__content request-form__content_reverse">
+                    <div class="request-form__main">
+                      <div class="request-upload">
+                        <div class="request-upload__box request-upload__box_main">
+                          <label class="request-upload__action">
+                            <input class="request-upload__input" type="file">
+                            <span class="request-upload__btn request-btn request-btn_cta">
+                              Добавить фото
+                            </span>
+                          </label>
+                        </div>
+                        <div class="request-upload__box">
+                          <figure class="request-upload__media">
+                            <img class="request-upload__img" src="https://upload.wikimedia.org/wikipedia/commons/3/34/FutureDesign.gif" alt="image">
+                          </figure>
+                          <button class="request-upload__remove" type="button">
+                            <span>Удалить файл</span>
+                          </button>
+                        </div>
+                        <div class="request-upload__box">
+                          <figure class="request-upload__media">
+                            <img class="request-upload__img" src="https://upload.wikimedia.org/wikipedia/commons/3/34/FutureDesign.gif" alt="image">
+                          </figure>
+                          <div class="request-upload__status">
+                            <span class="request-upload__info">100Kb из 2Мb</span>
+                            <div class="request-upload__progress" style="--width-progress: 27%"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="request-form__info">
+                      <p class="request-form__desc">
+                        В проект можно добавить до 5 изображений. Размер ХХХхХХХ, весом до 100МВ
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="request-form__box">
+              <div class="request-form__head">
+                <h3 class="request-form__title">Описание проекта</h3>
+              </div>
+              <div class="request-form__items">
+                <div class="request-form__item">
+                  <h4 class="request-form__subtitle">Технологическая новизна</h4>
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <div class="request-inputs">
+                        <div class="request-inputs__box">
+                          <label class="request-input" data-textarea-limit="textarea">
+                            <textarea class="request-input__body" placeholder="Подробное описание"></textarea>
+                            <span class="request-input__placeholder"></span>
+                            <span class="request-input__limit" data-textarea-limit-value="300"> </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="request-form__info">
+                      <div class="request-form__alert">Важно</div>
+                      <p class="request-form__desc">
+                        Оценивается технологический эффект от использования продукта для отраслей, в
+                        которых используется продукт, и представленное в заявке описание
+                        достигнутых преимуществ продукта организации в сравнении с аналогичными
+                        существующими продуктами.
+                      </p>
+                      <div class="request-form__ref">
+                        [ <a href="#" target="_blank">Читать постановление</a> ]
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="request-form__item">
+                  <h4 class="request-form__subtitle">Экономический эффект</h4>
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <div class="request-inputs">
+                        <div class="request-inputs__box _is-field-error">
+                          <label class="request-input" data-textarea-limit="textarea">
+                            <textarea class="request-input__body" placeholder="Подробное описание"></textarea>
+                            <span class="request-input__placeholder"></span>
+                            <span class="request-input__limit" data-textarea-limit-value="300"> </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="request-form__info">
+                      <div class="request-form__alert">Важно</div>
+                      <p class="request-form__desc">
+                        Оценивается экономическая выгода для конечного потребителя от использования
+                        продукта, который представлен на конкурс. Анализируется фактический спрос на
+                        продукт и объем потенциального рынка. Для этого организации соискателю премии
+                        необходимо в заявке представить полученные результаты, указать, какой эффект
+                        от продукта имеет конечный потребитель.
+                      </p>
+                      <div class="request-form__ref">
+                        [ <a href="#" target="_blank">Читать постановление</a> ]
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="request-form__item">
+                  <h4 class="request-form__subtitle">Межотраслевое значение продукта</h4>
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <div class="request-inputs">
+                        <div class="request-inputs__box">
+                          <label class="request-input" data-textarea-limit="textarea">
+                            <textarea class="request-input__body" placeholder="Подробное описание"></textarea>
+                            <span class="request-input__placeholder"></span>
+                            <span class="request-input__limit" data-textarea-limit-value="300"> </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="request-form__info">
+                      <div class="request-form__alert">Важно</div>
+                      <p class="request-form__desc">
+                        Анализируется, насколько представленный продукт может быть использован
+                        в других секторах промышленности и влияет на уровень
+                        производительности и конкурентоспособности. Для этого
+                        организации &mdash; соискателю премии необходимо оценить
+                        и аргументировать потенциал спроса на продукт в других отраслях
+                      </p>
+                      <div class="request-form__ref">
+                        [ <a href="#" target="_blank">Читать постановление</a> ]
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="request-form__item">
+                  <h4 class="request-form__subtitle">Эргономичность</h4>
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <div class="request-inputs">
+                        <div class="request-inputs__box">
+                          <label class="request-input" data-textarea-limit="textarea">
+                            <textarea class="request-input__body" placeholder="Подробное описание"></textarea>
+                            <span class="request-input__placeholder"></span>
+                            <span class="request-input__limit" data-textarea-limit-value="300"> </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="request-form__info">
+                      <div class="request-form__alert">Важно</div>
+                      <p class="request-form__desc">
+                        Анализируется, насколько представленный продукт отвечает современным требованиям
+                        оптимизации деятельности потребителя с учетом его социально-психологических,
+                        психофизических, психологических, антропометрических, физиологических
+                        и других объективных характеристик и возможностей. Для этого
+                        организации &mdash; соискателю премии необходимо оценить
+                        и аргументировать, насколько продукт отвечает особенностям
+                        и возможностям функционирования в системе
+                        &laquo;человек-продукт-среда&raquo;.
+                      </p>
+                      <div class="request-form__ref">
+                        [ <a href="#" target="_blank">Читать постановление</a> ]
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="request-form__item">
+                  <h4 class="request-form__subtitle">Художественная значимость</h4>
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <div class="request-inputs">
+                        <div class="request-inputs__box">
+                          <label class="request-input" data-textarea-limit="textarea">
+                            <textarea class="request-input__body" placeholder="Подробное описание"></textarea>
+                            <span class="request-input__placeholder"></span>
+                            <span class="request-input__limit" data-textarea-limit-value="300"> </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="request-form__info">
+                      <div class="request-form__alert">Важно</div>
+                      <p class="request-form__desc">
+                        Анализируется, насколько представленный продукт оригинален, общественно значим,
+                        эстетичен, имеет уникальные особенности дизайна, указывающие на его
+                        универсальную значимость, а также особенные технические характеристики. Для
+                        этого организации &mdash; соискателю премии необходимо аргументировать вклад
+                        продукта в развитие отечественного промышленного дизайна.
+                      </p>
+                      <div class="request-form__ref">
+                        [ <a href="#" target="_blank">Читать постановление</a> ]
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="request-form__item">
+                  <h4 class="request-form__subtitle">Ориентация на глобальный рынок</h4>
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <div class="request-inputs">
+                        <div class="request-inputs__box">
+                          <label class="request-input" data-textarea-limit="textarea">
+                            <textarea class="request-input__body" placeholder="Подробное описание"></textarea>
+                            <span class="request-input__placeholder"></span>
+                            <span class="request-input__limit" data-textarea-limit-value="300"> </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="request-form__info">
+                      <div class="request-form__alert">Важно</div>
+                      <p class="request-form__desc">
+                        Оценивается фактическое присутствие организации на глобальном рынке,
+                        а также рынках дружественных стран (либо потенциал выхода на зарубежные
+                        рынки для дизайн-прототипа).
+                        <br>
+                        <br>
+                        Для этого организации-соискателю премии необходимо указать объемы выручки от
+                        экспорта продукта в общем объеме выручки, а также количество
+                        стран-экспортеров, либо потенциал реализации продукта для дизайн-прототипа.
+                      </p>
+                      <div class="request-form__ref">
+                        [ <a href="#" target="_blank">Читать постановление</a> ]
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="request-form__footer">
+                <div class="request-form__agree">
+                  <!-- <label class="request-checkbox _is-field-error"> -->
+                  <label class="request-checkbox">
+                    <input class="request-checkbox__input" type="checkbox" required>
+                    <span class="request-checkbox__icon">
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.9787 6.90141C15.5853 6.33737 16.5347 6.37197 17.0988 6.97856C17.6628 7.5852 17.6282 8.53455 17.0216 9.09868L9.54899 16.0489L4.97867 11.7989L4.87125 11.6885C4.36982 11.1172 4.37286 10.2475 4.90153 9.67876C5.46568 9.07213 6.41501 9.03747 7.02164 9.60161L9.54801 11.9512L14.9787 6.90141Z" fill="#212844"/>
+                      </svg>
+                    </span>
+                    <span class="request-checkbox__text">
+                      Отправляя данную форму, Вы соглашаетесь на обработку
+                      <a href="#">персональных данных</a>
+                    </span>
+                  </label>
+                </div>
+                <div class="request-form__action">
+                  <button class="request-btn request-btn_main" type="submit">Отправить проект</button>
+                </div>
+              </div>
+            </div>
+            <div class="request-form__box">
+              <div class="request-form__head">
+                <h3 class="request-form__title">Заявка успешно отправлена!</h3>
+              </div>
+              <div class="request-form__items">
+                <div class="request-form__item">
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <p class="request-form__text">
+                        Ваша заявка успешно отправлена. Процесс модерации занимает
+                        от 10 до 15 рабочих дней. После прохождения модерации заявка
+                        будет включена в лонг-лист и отобразится в списке номинантов.
+                        Рекомендуем отслеживать статус заявки в личном кабинете.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="request-form__footer">
+                <div class="request-form__action">
+                  <a class="request-btn request-btn_main" href="#">Обновить страницу</a>
+                </div>
+              </div>
+            </div>
+            <div class="request-form__box">
+              <div class="request-form__head">
+                <h3 class="request-form__title">Что-то пошло не так</h3>
+              </div>
+              <div class="request-form__items">
+                <div class="request-form__item">
+                  <div class="request-form__content">
+                    <div class="request-form__main">
+                      <p class="request-form__text">
+                        Произошла ошибка. Возможной причиной может быть нестабильное интернет-соединение
+                        или временные неполадки при подключении к сайту. Пожалуйста, обновите
+                        страницу и попробуйте повторить действие. Если проблема сохраняется,
+                        обратитесь в техническую поддержку.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="request-form__footer">
+                <div class="request-form__action">
+                  <a class="request-btn request-btn_main" href="#">Обновить страницу</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
