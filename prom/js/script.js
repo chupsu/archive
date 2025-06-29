@@ -301,7 +301,7 @@ class SelectConstructor {
       selectItem,
       this.selectClasses.classSelectOptions
     ).selectElement;
-    const selectOpenzIndex = originalSelect.dataset.zIndex ? originalSelect.dataset.zIndex : 3;
+    const selectOpenzIndex = originalSelect.dataset.zIndex ? originalSelect.dataset.zIndex : "";
 
     // Определяем, где отобразить выпадающий список
     // this.setOptionsPosition(selectItem);
