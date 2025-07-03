@@ -12773,9 +12773,10 @@ window.addEventListener("load", function () {
 
   const specsCol = () => {
     const specs = document.querySelector("#specs");
+    const specBox = specs.querySelectorAll(".spec__box");
     const specItems = specs.querySelectorAll(".spec__item");
 
-    if (specItems.length > 10) {
+    if (specItems.length > 10 && specBox.length > 1) {
       specs.classList.add("spec_col-2");
     }
   };
@@ -12853,10 +12854,12 @@ window.addEventListener("load", function () {
     document.querySelector(".extra-slider").classList.add("_is-init");
 
     const extraSliderBody = document.querySelector(".extra-slider");
+    const responsiveBreakpoint = 1024;
+    const matchMediaSlider = window.matchMedia(`(min-width: ${responsiveBreakpoint}px)`);
     let extraSlider;
 
     function responsiveInit() {
-      if (window.innerWidth < 1024) {
+      if (window.innerWidth < responsiveBreakpoint) {
         if (extraSlider) {
           extraSlider.destroy(true, true);
         }
@@ -12894,7 +12897,7 @@ window.addEventListener("load", function () {
           },
         });
       }
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= responsiveBreakpoint) {
         if (extraSlider) {
           extraSlider.destroy(true, true);
         }
@@ -12950,9 +12953,10 @@ window.addEventListener("load", function () {
         });
       }
     }
+
     responsiveInit();
-    window.addEventListener("resize", () => {
-      responsiveInit();
+    matchMediaSlider.addEventListener("change", () => {
+      responsiveSliders();
     });
   }
 
@@ -13001,6 +13005,7 @@ window.addEventListener("load", function () {
     const thumbsSliderBody = document.querySelector(".product-thumbs");
     const previewSlides = document.querySelectorAll(".product-preview__item");
     const responsiveBreakpoint = 480;
+    const matchMediaSlider = window.matchMedia(`(min-width: ${responsiveBreakpoint}px)`);
     let previewSlider;
     let thumbsSlider;
 
@@ -13147,7 +13152,7 @@ window.addEventListener("load", function () {
     }
 
     responsiveSliders();
-    window.addEventListener("resize", () => {
+    matchMediaSlider.addEventListener("change", () => {
       responsiveSliders();
     });
   }
@@ -13246,7 +13251,7 @@ window.addEventListener("load", function () {
   window.addEventListener("resize", () => {
     adaptiveFix();
 
-    if (window.innerWidth >= 992 && document.querySelector(".is-lock")) {
+    if (window.innerWidth >= 1024 && document.querySelector("._is-lock")) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
     }
   });

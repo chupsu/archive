@@ -189,7 +189,8 @@ html {
   font-weight: 500;
   font-style: normal;
 }
-.btn {
+.btn,
+.product-order__sale {
   font-family: SONGER,sans-serif;
   font-weight: 500;
 }
@@ -623,6 +624,18 @@ html._is-lock {
 }
 ._mb:not(:last-child) {
   margin-bottom: var(--gap-section);
+}
+._sale {
+  position: relative;
+}
+._sale::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../img/content/decor/sale.svg) center/100% 100% no-repeat;
 }
 .cursive-title {
   position: absolute;
@@ -2874,7 +2887,7 @@ textarea.input__body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0 8px;
+  gap: 2px 8px;
 }
 .product-card__price {
   font-size: var(--text-medium);
@@ -2888,22 +2901,13 @@ textarea.input__body {
   color: var(--color-warning);
 }
 .product-card__sale {
-  position: relative;
   font-weight: 500;
   color: var(--color-label);
   font-size: var(--text-smaller);
+  line-height: 1.1;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-.product-card__sale::after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: -4px;
-  bottom: 0;
-  left: 0;
-  background: url(../img/content/decor/sale.svg) center/100% 100% no-repeat;
 }
 .product-card__tags {
   position: fixed;
@@ -3071,8 +3075,6 @@ textarea.input__body {
 }
 .product__order {
   order: 1;
-  padding: 20px;
-  background-color: var(--color-shadow-lightest);
 }
 .product-preview {
   position: relative;
@@ -3088,6 +3090,7 @@ textarea.input__body {
 .product-preview__item {
   flex-shrink: 0;
   width: 100%;
+  background-color: var(--color-shadow-lightest);
 }
 ._is-init .product-preview__item {
   margin-right: 0;
@@ -3310,6 +3313,80 @@ textarea.input__body {
   object-fit: contain;
   -o-object-position: center;
   object-position: center;
+}
+.product-order {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+  background-color: var(--color-shadow-lightest);
+}
+.product-order__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-small);
+}
+.product-order__tag {
+  padding: 5px 8px;
+  text-align: center;
+  font-size: var(--text-small);
+  line-height: 1.1;
+  color: var(--color-neutral);
+  background-color: var(--color-main);
+  border-radius: var(--radius-smallest);
+}
+.product-order__tag_accent {
+  background-color: var(--color-accent);
+}
+.product-order__tag_neutral {
+  background-color: var(--color-label);
+}
+.product-order__tag_negative {
+  background-color: var(--color-shadow-dark);
+}
+.product-order__tag_warning {
+  background-color: var(--color-warning);
+}
+.product-order__cost {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+.product-order__price {
+  line-height: 1.1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.product-order__price:not(:first-child),
+.product-order__price:not(:last-child) {
+  color: var(--color-warning);
+}
+.product-order__sale {
+  color: var(--color-label);
+  line-height: 1.1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.product-order__desc {
+  font-size: var(--text-small);
+  color: var(--color-main-light);
+}
+.product-order__info {
+  display: grid;
+  gap: 14px;
+}
+.product-order__notify {
+  display: flex;
+  align-items: flex-start;
+  font-size: var(--text-small);
+  color: var(--color-shadow-dark);
+}
+.product-order__notify::before {
+  margin-top: 0.1666em;
+  margin-right: 14px;
+  color: var(--color-main);
 }
 .product-specs__head,
 .product-specs__title {
@@ -3788,6 +3865,9 @@ textarea.input__body {
   }
   .product-stats__item + .product-stats__item {
     margin-top: var(--gap-small);
+  }
+  .product-order {
+    padding: 20px;
   }
   .product-specs {
     display: grid;
@@ -4700,6 +4780,23 @@ textarea.input__body {
   }
   .product-stats__item + .product-stats__item {
     margin-top: var(--gap-normal);
+  }
+  .product-order {
+    gap: 16px;
+    padding: 26px;
+  }
+  .product-order__tags {
+    gap: var(--gap-normal-extra);
+  }
+  .product-order__tag {
+    padding: 6px 12px;
+    font-size: var(--text-normal);
+  }
+  .product-order__cost {
+    gap: 8px 22px;
+  }
+  .product-order__info {
+    gap: 16px;
   }
   .product-specs__content {
     font-size: var(--text-normal);
