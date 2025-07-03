@@ -12703,9 +12703,9 @@ window.addEventListener("load", function () {
         if (value < quantityMin) {
           value = quantityMin;
 
-          if (quantity.parentElement.closest(".product-card__quantity.added")) {
+          if (quantity.parentElement.closest(".added")) {
             quantity.parentElement.classList.remove("added");
-            quantity.parentElement.querySelector(".product-card__buy")?.focus();
+            quantity.parentElement.querySelector("[data-buy]")?.focus();
           }
         }
 

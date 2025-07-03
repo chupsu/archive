@@ -31,6 +31,7 @@
     scrollbar-width: thin;
   }
 }
+.breadcrumbs,
 .sale__filters,
 [data-slider-nav] {
   max-width: var(--width-page);
@@ -41,6 +42,7 @@
   overflow: auto;
   scrollbar-width: none;
 }
+.breadcrumbs::-webkit-scrollbar,
 .sale__filters::-webkit-scrollbar,
 [data-slider-nav]::-webkit-scrollbar {
   display: none;
@@ -1842,8 +1844,7 @@ textarea.input__body {
 }
 .breadcrumbs {
   display: flex;
-  padding: 12px 0;
-  max-width: 100%;
+  padding: 12px var(--padding-page);
   white-space: nowrap;
   font-weight: 400;
   font-size: var(--text-small);
@@ -1851,6 +1852,7 @@ textarea.input__body {
 }
 .breadcrumbs__item {
   display: flex;
+  white-space: nowrap;
 }
 .breadcrumbs__item:not(:last-child)::after {
   content: "—";
@@ -1861,10 +1863,6 @@ textarea.input__body {
 }
 .breadcrumbs__item:not(:last-child) .breadcrumbs__link:active {
   color: var(--color-main-light);
-}
-.breadcrumbs__item:last-child {
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 .breadcrumbs__link {
   color: inherit;
@@ -2536,8 +2534,8 @@ textarea.input__body {
 .sale .article-card {
   aspect-ratio: 32/18;
 }
-.default-slider .article-card,
-.extra-slider .article-card {
+.extra-slider .article-card,
+.product-specs .article-card {
   aspect-ratio: 15/22;
 }
 .article-card__link {
@@ -3464,6 +3462,17 @@ textarea.input__body {
     height: 1px;
     width: var(--width-page);
     background-color: var(--color-shadow);
+  }
+  .breadcrumbs {
+    max-width: 100%;
+    padding: 12px 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  .breadcrumbs__item:last-child {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .related .default-slider__items > * {
     width: calc((100% - 2 * var(--gap-small)) / 3);
@@ -4847,8 +4856,8 @@ textarea.input__body {
   .sale__filter:last-child {
     margin-right: auto;
   }
-  .default-slider .article-card,
-  .extra-slider .article-card {
+  .extra-slider .article-card,
+  .product-specs .article-card {
     --padding-card: 8px;
   }
   .default-slider .article-card__link::before,
