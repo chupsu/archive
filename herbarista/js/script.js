@@ -13230,7 +13230,7 @@ window.addEventListener("load", function () {
     dataAction(targetElement, "search");
 
     //   Product card buy
-    if (targetElement.closest(".product-card__buy")) {
+    if (targetElement.closest("[data-buy]")) {
       const parentElem = targetElement.parentElement;
 
       parentElem.classList.add("added");

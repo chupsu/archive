@@ -521,6 +521,7 @@ html {
   --height-userbar: 73px;
   --height-input: 52px;
   --height-btn-normal: 42px;
+  --height-btn-normal-extra: 48px;
   --height-btn-small: 34px;
   --gap-section: 30px;
   --gap-section-head: 20px;
@@ -708,11 +709,18 @@ html._is-lock {
 .btn_shadow:focus-visible {
   background-color: var(--color-shadow);
 }
+.btn_normal-extra {
+  --height-btn: var(--height-btn-normal-extra);
+}
 .btn_small {
   --height-btn: var(--height-btn-small);
 }
 .btn_small.btn {
   text-transform: none;
+}
+.btn_icon {
+  padding: 0;
+  min-width: var(--height-btn);
 }
 [data-favourites]._is-active::before {
   content: "\e90a";
@@ -1770,6 +1778,10 @@ textarea.input__body {
 }
 .quantity_small {
   --width-quantity: var(--width-quantity-small);
+}
+.quantity_large {
+  width: 100%;
+  --width-quantity: var(--height-btn-normal-extra);
 }
 .quantity__btn,
 .quantity__input {
@@ -3372,6 +3384,37 @@ textarea.input__body {
 .product-order__desc {
   font-size: var(--text-small);
   color: var(--color-main-light);
+}
+.product-order__action {
+  display: flex;
+  gap: var(--gap-normal-extra);
+  min-width: 0;
+}
+.product-order__quantity {
+  position: relative;
+  flex-grow: 1;
+  border-radius: var(--radius-smallest);
+  background-color: var(--color-main);
+  overflow: hidden;
+}
+.product-order__quantity.added .product-order__btn,
+.product-order__quantity:not(.added) .quantity {
+  display: none;
+}
+.product-order__btn {
+  justify-content: space-between;
+  width: 100%;
+}
+.product-order__btn span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.product-order__btn::before {
+  order: 1;
+}
+.product-order__favourites {
+  background-color: var(--color-shadow);
 }
 .product-order__info {
   display: grid;

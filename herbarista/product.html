@@ -1264,9 +1264,37 @@
                   </div>
                   <div class="product-order__desc">Минимальное количество бутылок 6 штук</div>
                   <div class="product-order__action">
-                    <div class="product-order__buy"></div>
+                    <div class="product-order__quantity">
+                      <div class="quantity quantity_large" data-quantity>
+                        <button
+                          class="quantity__btn icon-minus"
+                          type="button"
+                          data-quantity-button="minus"
+                        >
+                          <span class="seo">Меньше</span>
+                        </button>
+                        <div class="quantity__main">
+                          <input class="quantity__input" type="text" value="1"
+                          data-quantity-value
+                          data-quantity-min="1"
+                          data-quantity-max="9999"
+                        >
+                        </div>
+                        <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
+                          <span class="seo">Больше</span>
+                        </button>
+                      </div>
+                      <button
+                        class="product-order__btn btn btn_main btn_normal-extra icon-plus"
+                        data-buy
+                        type="button"
+                        title="Добавить в корзину"
+                      >
+                        <span>Добавить в корзину</span>
+                      </button>
+                    </div>
                     <button
-                      class="product-order__favourites icon-fav"
+                      class="product-order__favourites btn btn_normal-extra btn_icon icon-fav"
                       type="button"
                       title="Добавить в избранное"
                       data-favourites
