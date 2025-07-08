@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f1efe9">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#f1efe9">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo logo_header logo_h-fix" href="./index.html#wrapper">
+              <img class="logo__img" src="./img/content/logo-1.svg" alt="logo">
+            </a>
+            <a class="logo logo_header logo_h-scroll" href="./index.html#wrapper">
+              <img class="logo__img" src="./img/content/logo-2.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" type="button" title="Меню сайта" data-menu>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.01562" y="4" width="24.9844" height="4" rx="1" fill="currentColor"/>
+                  <rect x="1.01562" y="11" width="18.5156" height="4" rx="1" fill="currentColor"/>
+                  <rect x="1.01562" y="18" width="24.9844" height="4" rx="1" fill="currentColor"/>
+                </svg>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5.58594" y="2.75244" width="24.9844" height="4" rx="1" transform="rotate(45 5.58594 2.75244)" fill="currentColor"/>
+                  <rect width="24.9844" height="4" rx="1" transform="matrix(-0.707107 0.707107 0.707107 0.707107 20.4219 2.75244)" fill="currentColor"/>
+                </svg>
+                <span class="_seo">Меню сайта</span>
+              </button>
+              <div class="menu__dropdown">
+                <div class="menu__body">
+                  <div class="menu__main">
+                    <div class="menu__box">
+                      <ul class="menu__list">
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Виды спорта</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Участники</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Расписание</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Вопросы</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="menu__box">
+                      <ul class="menu__list">
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Новости</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Галерея</a>
+                        </li>
+                        <li class="menu__item menu__item_pc">
+                          <a class="menu__link menu__link_accent" href="#">Подать заявку/Войти в ЛК</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="menu__extra"></div>
+                </div>
+              </div>
+            </nav>
+            <div class="header__action">
+              <a class="header__link" href="./login.html">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8.16406" y="2.37988" width="9.66797" height="9.66797" rx="4.83398" fill="currentColor"/>
+                  <rect x="2.53125" y="16.2203" width="20.9375" height="9.77966" rx="2" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="./index.html">Home</a>
+          </li>
+          
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="./Page.html">Page1</a>
+          </li>
+          
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__link">Page2</span>
+          </li>
+        </ul>
+        <nav class="blog__pagination pagination">
+          <ul class="pagination__list">
+            <li
+              class="pagination__item pagination__item_prev pagination__item_disabled"
+            >
+              <span></span>
+            </li>
+            <li class="pagination__item pagination__item_active">
+              <span>1</span>
+            </li>
+            <li class="pagination__item">
+              <a href="#">2</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#">3</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#">4</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#">5</a>
+            </li>
+            <li class="pagination__item pagination__item_next">
+              <a href="#" aria-label="next page"></a>
+            </li>
+          </ul>
+        </nav>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body"></div>
+        </div>
+      </footer>
+
+      <!-- При интеграции переместить скрипт в функционал "Избранное"! -->
+      <script>
+        (() => {
+          "use strict";
+          document.addEventListener("click", (e) => {
+            if (e.target.closest("[data-favourites]")) {
+              e.target.classList.toggle("is-active");
+
+              if (e.target.classList.contains("is-active")) {
+                e.target.querySelector(".seo").innerText = "Удалить из избранного";
+                e.target.setAttribute("title", "Удалить из избранного");
+              } else {
+                e.target.querySelector(".seo").innerText = "Добавить в избранное";
+                e.target.setAttribute("title", "Добавить в избранное");
+              }
+            }
+          });
+        })();
+      </script>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Close popup" type="button" data-close></button>
+        <div class="popup__inner"></div>
+      </div>
+    </div>
+
+    <div class="noise"></div>
+    <div class="page-lines">
+      <span class="page-lines__side page-lines__side_left"></span>
+      <span class="page-lines__side page-lines__side_right"></span>
+      <span class="page-lines__top page-lines__top_left"><span></span></span>
+      <span class="page-lines__top page-lines__top_right"><span></span></span>
+    </div>
+
+    <div class="cookies">
+      <p class="cookies__text">
+        Пользуясь нашим сайтом, вы соглашаетесь с тем,
+        что <a href="#" target="_blank">мы используем cookies</a> 🍪
+      </p>
+      <button class="cookies__btn btn" type="button">
+        Окей
+        <span class="seo">, принять файлы cookies</span>
+      </button>
+      <!-- Удалить скрипт при интеграции! -->
+      <script>
+        (() => {
+          "use strict";
+          document.querySelector(".cookies__btn").addEventListener("click", (e) => {
+            e.target.parentElement.remove();
+          });
+        })();
+      </script>
+    </div>
+  </body>
+</html>

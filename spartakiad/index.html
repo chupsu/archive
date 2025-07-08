@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f1efe9">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#f1efe9">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Главная</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="header" data-lp>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo logo_header logo_h-fix" href="./index.html#wrapper">
+              <img class="logo__img" src="./img/content/logo-1.svg" alt="logo">
+            </a>
+            <a class="logo logo_header logo_h-scroll" href="./index.html#wrapper">
+              <img class="logo__img" src="./img/content/logo-2.svg" alt="logo">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" type="button" title="Меню сайта" data-menu>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.01562" y="4" width="24.9844" height="4" rx="1" fill="currentColor"/>
+                  <rect x="1.01562" y="11" width="18.5156" height="4" rx="1" fill="currentColor"/>
+                  <rect x="1.01562" y="18" width="24.9844" height="4" rx="1" fill="currentColor"/>
+                </svg>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5.58594" y="2.75244" width="24.9844" height="4" rx="1" transform="rotate(45 5.58594 2.75244)" fill="currentColor"/>
+                  <rect width="24.9844" height="4" rx="1" transform="matrix(-0.707107 0.707107 0.707107 0.707107 20.4219 2.75244)" fill="currentColor"/>
+                </svg>
+                <span class="_seo">Меню сайта</span>
+              </button>
+              <div class="menu__dropdown">
+                <div class="menu__body">
+                  <div class="menu__main">
+                    <div class="menu__box">
+                      <ul class="menu__list">
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Виды спорта</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Участники</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Расписание</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Вопросы</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="menu__box">
+                      <ul class="menu__list">
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Новости</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Галерея</a>
+                        </li>
+                        <li class="menu__item menu__item_pc">
+                          <a class="menu__link menu__link_accent" href="#">Подать заявку/Войти в ЛК</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="menu__extra"></div>
+                </div>
+              </div>
+            </nav>
+            <div class="header__action">
+              <a class="header__link" href="./login.html">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8.16406" y="2.37988" width="9.66797" height="9.66797" rx="4.83398" fill="currentColor"/>
+                  <rect x="2.53125" y="16.2203" width="20.9375" height="9.77966" rx="2" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="welcome">
+          <div class="container">
+            <div class="welcome__body">
+              <h1 class="_seo">Главный заголовок страницы для СЕО</h1>
+              <div class="welcome__head">
+                <div class="welcome__title">
+                  <span class="welcome__title-line welcome__title-line_1 _h4">ПРОИЗВОДИМ</span>
+                  <span class="welcome__title-line welcome__title-line_2 _h2">РЕКОРДЫ</span>
+                </div>
+                <!-- <a class="welcome__btn btn btn_large btn_cta" href="#">Подать заявку</a> -->
+              </div>
+              <div class="welcome__promo">
+                <div class="welcome-video" data-video="welcome-video">
+                  <!-- для видео с youtube -->
+                  <!-- во всех ссылках менять только ID видео "#######" на своё -->
+                  <!-- <a class="welcome-video__link" href="https://youtu.be/#######" target="_blank">
+                    <picture>
+                      <source srcset="https://i.ytimg.com/vi_webp/#######/maxresdefault.webp" type="image/webp">
+                      <img class="welcome-video__media" src="https://i.ytimg.com/vi/#######/maxresdefault.jpg" alt="Название видео">
+                    </picture>
+                  </a> -->
+
+                  <!-- для видео файлом .mp4 -->
+                  <a class="welcome-video__link" href="./files/video_1.mp4" target="_blank">
+                    <picture><source srcset="./img/content/pic/promo-0.webp" type="image/webp"><img class="welcome-video__media" src="./img/content/pic/promo-0.jpg" alt="Проморолик"></picture>
+                  </a>
+
+                  <button class="welcome-video__btn" type="button" title="Запустить видео">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8L3 16L3 -6.11959e-07L17 8Z" fill="currentColor"/>
+                    </svg>
+                    <span class="_seo">Запустить видео</span>
+                  </button>
+                </div>
+                <div class="welcome__promo-label">Проморолик</div>
+              </div>
+              <div class="welcome__demo"></div>
+              <div class="welcome__slider">
+                <div class="promo-slider">
+                  <div class="promo-slider__items">
+                    <div class="promo-slider__item promo-slider__item_promo">
+                      <article class="promo-card">
+                        <figure class="promo-card__media">
+                          <video class="promo-card__video" src="./files/video_1.mp4" preload="auto" playsInline autoplay muted loop></video>
+                        </figure>
+                        <div class="promo-card__content">
+                          <h3 class="promo-card__title">промовидео</h3>
+                          <time class="promo-card__info" datetime="2024-04-24 19:00">2024</time>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="promo-slider__item">
+                      <article class="promo-card">
+                        <figure class="promo-card__media">
+                          <picture><source srcset="./img/content/pic/promo-1.webp" type="image/webp"><img class="promo-card__img" src="./img/content/pic/promo-1.jpg" alt="Изображение"></picture>
+                        </figure>
+                        <div class="promo-card__content">
+                          <h3 class="promo-card__title">футбол</h3>
+                          <time class="promo-card__info" datetime="2024-04-24 19:00">2024</time>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="promo-slider__item">
+                      <article class="promo-card">
+                        <figure class="promo-card__media">
+                          <picture><source srcset="./img/content/pic/promo-2.webp" type="image/webp"><img class="promo-card__img" src="./img/content/pic/promo-2.jpg" alt="Изображение"></picture>
+                        </figure>
+                        <div class="promo-card__content">
+                          <h3 class="promo-card__title">легкая атлетика</h3>
+                          <time class="promo-card__info" datetime="2024-04-24 19:00">2024</time>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="promo-slider__item">
+                      <article class="promo-card">
+                        <figure class="promo-card__media">
+                          <picture><source srcset="./img/content/pic/promo-3.webp" type="image/webp"><img class="promo-card__img" src="./img/content/pic/promo-3.jpg" alt="Изображение"></picture>
+                        </figure>
+                        <div class="promo-card__content">
+                          <h3 class="promo-card__title">баскетбол 3х3</h3>
+                          <time class="promo-card__info" datetime="2024-04-24 19:00">2024</time>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="promo-slider__item">
+                      <article class="promo-card">
+                        <figure class="promo-card__media">
+                          <picture><source srcset="./img/content/pic/promo-4.webp" type="image/webp"><img class="promo-card__img" src="./img/content/pic/promo-4.jpg" alt="Изображение"></picture>
+                        </figure>
+                        <div class="promo-card__content">
+                          <h3 class="promo-card__title">плавание</h3>
+                          <time class="promo-card__info" datetime="2024-04-24 19:00">2024</time>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="join">
+          <div class="container">
+            <div class="join__body">
+              <div class="join__head">
+                <h2 class="join__title _h1"><span>Прими</span> <span>участие</span></h2>
+                <!-- <p class="join__label"><span>Идет набор команд</span><span>2025 год</span></p> -->
+              </div>
+              <div class="category-slider">
+                <p class="category-slider__label btn btn_normal btn_primary">14 Видов спорта</p>
+                <ul class="category-slider__items">
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-1.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-1-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-1-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-2.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-2-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-2-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-3.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-3-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-3-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-4.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-4-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-4-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-5.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-5-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-5-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-6.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-6-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-6-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-7.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-7-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-7-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-8.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-8-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-8-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-9.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-9-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-9-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-10.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-10-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-10-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-11.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-11-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-11-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-12.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-12-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-12-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-13.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-13-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-13-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                  <li class="category-slider__item">
+                    <a class="category-slider__link" href="#"></a>
+                    <figure class="category-slider__media">
+                      <img class="category-slider__img" src="./img/content/category/category-14.svg" alt="Изображение">
+                      <picture><source srcset="./img/content/category/category-14-hover.webp" type="image/webp"><img class="category-slider__img category-slider__img_hover" src="./img/content/category/category-14-hover.jpg" alt="Изображение"></picture>
+                    </figure>
+                  </li>
+                </ul>
+                <div class="join-slider__actions">
+                  <button class="join-slider__btn join-slider__btn_prev" type="button">
+                    <span class="_seo">Предыдущий слайд</span>
+                  </button>
+                  <button class="join-slider__btn join-slider__btn_next" type="button">
+                    <span class="_seo">Следующий слайд</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="partners">
+          <div class="container">
+            <div class="partners__body">
+              <div class="partners__head">
+                <h2 class="partners__title _h3">Партнеры</h2>
+              </div>
+              <div class="partners__main">
+                <ul class="partners__list _is-list-init">
+                  <li class="partners__item">
+                    <a class="partners__link" href="https://letbefit.ru/" target="_blank">
+                      <picture><source srcset="./img/content/logo/partner-1.webp" type="image/webp"><img class="partners__img" src="./img/content/logo/partner-1.jpg" alt="Изображение"></picture>
+                    </a>
+                  </li>
+                  <li class="partners__item">
+                    <a class="partners__link" href="https://bite.ru/" target="_blank">
+                      <picture><source srcset="./img/content/logo/partner-2.webp" type="image/webp"><img class="partners__img" src="./img/content/logo/partner-2.jpg" alt="Изображение"></picture>
+                    </a>
+                  </li>
+                  <li class="partners__item">
+                    <a class="partners__link" href="https://cityfootball.ru/" target="_blank">
+                      <picture><source srcset="./img/content/logo/partner-3.webp" type="image/webp"><img class="partners__img" src="./img/content/logo/partner-3.jpg" alt="Изображение"></picture>
+                    </a>
+                  </li>
+                  <li class="partners__item">
+                    <a class="partners__link" href="https://invokedrinks.com/" target="_blank">
+                      <picture><source srcset="./img/content/logo/partner-4.webp" type="image/webp"><img class="partners__img" src="./img/content/logo/partner-4.jpg" alt="Изображение"></picture>
+                    </a>
+                  </li>
+                  <li class="partners__item">
+                    <a class="partners__link" href="https://helix.ru/moskva" target="_blank">
+                      <picture><source srcset="./img/content/logo/partner-5.webp" type="image/webp"><img class="partners__img" src="./img/content/logo/partner-5.jpg" alt="Изображение"></picture>
+                    </a>
+                  </li>
+                  <li class="partners__item">
+                    <a class="partners__link" href="https://newtonarena.ru/" target="_blank">
+                      <picture><source srcset="./img/content/logo/partner-6.webp" type="image/webp"><img class="partners__img" src="./img/content/logo/partner-6.jpg" alt="Изображение"></picture>
+                    </a>
+                  </li>
+                  <li class="partners__item">
+                    <a class="partners__link" href="https://www.ozon.ru/" target="_blank">
+                      <picture><source srcset="./img/content/logo/partner-7.webp" type="image/webp"><img class="partners__img" src="./img/content/logo/partner-7.jpg" alt="Изображение"></picture>
+                    </a>
+                  </li>
+                </ul>
+                <button
+                  class="partners__btn btn btn_normal btn_primary"
+                  type="button"
+                  data-show-text="Показать всех"
+                  data-hide-text="Скрыть всех"
+                >
+                  <span class="btn__icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="faq">
+          <div class="container">
+            <div class="faq__body">
+              <div class="faq__head">
+                <h2 class="faq__title _h3"><span>Вопросы</span> <span>и ответы</span></h2>
+              </div>
+              <div class="faq__main">
+                <div class="faq-items" data-spollers>
+                  <details class="faq-items__item">
+                    <summary class="faq-items__btn">
+                      <span class="faq-items__title">
+                        Какова стоимость участия в Спартакиаде &laquo;Моспром&raquo;?
+                      </span>
+                      <span class="faq-items__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq-items__inner">
+                      Участие в Спартакиаде &laquo;Моспром&raquo; бесплатное. Принять участие могут
+                      только сотрудники промышленных предприятий и учащиеся вузов профильной
+                      направленности г. Москвы.
+                    </div>
+                  </details>
+                  <details class="faq-items__item">
+                    <summary class="faq-items__btn">
+                      <span class="faq-items__title">
+                        Кто обеспечивает участников Спартакиады спортивной экипировкой?
+                      </span>
+                      <span class="faq-items__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq-items__inner">
+                      Команды-участники соревнований обеспечивают себя спортивной формой самостоятельно.
+                      Организаторы спортивную форму участникам не предоставляют. Подробная информация
+                      размещена в Положении Спартакиады, который размещен в разделе
+                      &laquo;Документы&raquo;.
+                    </div>
+                  </details>
+                  <details class="faq-items__item">
+                    <summary class="faq-items__btn">
+                      <span class="faq-items__title">
+                        Появятся ли в списке спортивных дисциплин Спартакиады новые виды?
+                      </span>
+                      <span class="faq-items__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq-items__inner">
+                      В этом году соревнования пройдут по 13 видам спорта &mdash;
+                      бильярд, плавание, легкая атлетика, баскетбол 3&times;3, волейбол, настольный
+                      теннис, хоккей, футбол, киберспорт, дартс и шахматам, а также по двум
+                      новым видам спорта &mdash; стендовая стрельба и бадминтон.
+                    </div>
+                  </details>
+                  <details class="faq-items__item">
+                    <summary class="faq-items__btn">
+                      <span class="faq-items__title">
+                        Есть ли ограничение по количеству участников от одного предприятия?
+                      </span>
+                      <span class="faq-items__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq-items__inner">
+                      Нет, ограничений нет. В каждом виде спорта можно регистрировать неограниченное
+                      количество команд. Участие первой зарегистрированной команды гарантировано, участие
+                      вторых и т.д. команд подтверждается Оргкомитетом Спартакиады по окончании
+                      срока регистрации участников при условии наличия технической возможности участия
+                      дополнительных команд.
+                    </div>
+                  </details>
+                  <details class="faq-items__item">
+                    <summary class="faq-items__btn">
+                      <span class="faq-items__title">
+                        Каким способом можно узнать даты и время проведения соревнований?
+                      </span>
+                      <span class="faq-items__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq-items__inner">
+                      Соответствующая информация будет размещена на сайте в разделе
+                      &laquo;Расписание&raquo; и доведена кураторам команд по электронной почте.
+                      А также все актуальные новости можно найти в нашем Telegram-канале:
+                      https://t.me/spartakiadamosprom
+                    </div>
+                  </details>
+                  <details class="faq-items__item">
+                    <summary class="faq-items__btn">
+                      <span class="faq-items__title">
+                        Кто оплачивает проезд, питание и жильё участников соревнований?
+                      </span>
+                      <span class="faq-items__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq-items__inner">
+                      Все расходы берёт на себя предприятие, заявившее участников соревнований.
+                    </div>
+                  </details>
+                  <details class="faq-items__item">
+                    <summary class="faq-items__btn">
+                      <span class="faq-items__title">
+                        Будут ли применены штрафные санкции к участнику Спартакиады,
+                        не пришедшему на соревнование?
+                      </span>
+                      <span class="faq-items__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq-items__inner">
+                      Данная команда по этому виду спорта не сможет продолжить участие
+                      в Спартакиаде. Исключением является хоккей, где за неявку в день
+                      отборочных соревнований команде начисляется поражение со счетом 0:3.
+                    </div>
+                  </details>
+                  <details class="faq-items__item">
+                    <summary class="faq-items__btn">
+                      <span class="faq-items__title">
+                        Каким способом можно узнать даты и время проведения соревнований?
+                      </span>
+                      <span class="faq-items__icon" aria-hidden="true"></span>
+                    </summary>
+                    <div class="faq-items__inner">
+                      Информация о дате, времени и месте проведения спортивных соревнований
+                      будет опубликована на сайте в разделе &laquo;Расписание игр&raquo;. Кроме
+                      этого, с координаторами команд от предприятий будет взаимодействовать
+                      представитель организационного комитета Спартакиады &laquo;Моспром&raquo;.
+                    </div>
+                  </details>
+                </div>
+                <a class="faq__btn btn btn_normal btn_accent" href="./faq.html">Все вопросы</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__body"></div>
+        </div>
+      </footer>
+
+      <!-- При интеграции переместить скрипт в функционал "Избранное"! -->
+      <script>
+        (() => {
+          "use strict";
+          document.addEventListener("click", (e) => {
+            if (e.target.closest("[data-favourites]")) {
+              e.target.classList.toggle("is-active");
+
+              if (e.target.classList.contains("is-active")) {
+                e.target.querySelector(".seo").innerText = "Удалить из избранного";
+                e.target.setAttribute("title", "Удалить из избранного");
+              } else {
+                e.target.querySelector(".seo").innerText = "Добавить в избранное";
+                e.target.setAttribute("title", "Добавить в избранное");
+              }
+            }
+          });
+        })();
+      </script>
+    </div>
+
+    <div class="popup" id="contact-form">
+      <div class="popup__body">
+        <button class="popup__close" aria-label="Close popup" type="button" data-close></button>
+        <div class="popup__inner"></div>
+      </div>
+    </div>
+
+    <div class="noise"></div>
+    <div class="page-lines">
+      <span class="page-lines__side page-lines__side_left"></span>
+      <span class="page-lines__side page-lines__side_right"></span>
+      <span class="page-lines__top page-lines__top_left"><span></span></span>
+      <span class="page-lines__top page-lines__top_right"><span></span></span>
+    </div>
+
+    <div class="cookies">
+      <p class="cookies__text">
+        Пользуясь нашим сайтом, вы соглашаетесь с тем,
+        что <a href="#" target="_blank">мы используем cookies</a> 🍪
+      </p>
+      <button class="cookies__btn btn" type="button">
+        Окей
+        <span class="seo">, принять файлы cookies</span>
+      </button>
+      <!-- Удалить скрипт при интеграции! -->
+      <script>
+        (() => {
+          "use strict";
+          document.querySelector(".cookies__btn").addEventListener("click", (e) => {
+            e.target.parentElement.remove();
+          });
+        })();
+      </script>
+    </div>
+  </body>
+</html>

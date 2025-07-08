@@ -1,0 +1,26 @@
+<svg width="362" height="548" viewBox="0 0 362 548" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2099_5967)">
+<mask id="path-1-inside-1_2099_5967" fill="white">
+<path d="M120 0H241V54H120V0Z"/>
+</mask>
+<path d="M241 54V60H247V54H241ZM120 54H114V60H120V54ZM241 0H235V54H241H247V0H241ZM241 54V48H120V54V60H241V54ZM120 54H126V0H120H114V54H120Z" fill="#C60E14" mask="url(#path-1-inside-1_2099_5967)"/>
+<mask id="path-3-inside-2_2099_5967" fill="white">
+<path d="M241 548L120 548L120 494L241 494L241 548Z"/>
+</mask>
+<path d="M120 494L120 488L114 488L114 494L120 494ZM241 494L247 494L247 488L241 488L241 494ZM120 548L126 548L126 494L120 494L114 494L114 548L120 548ZM120 494L120 500L241 500L241 494L241 488L120 488L120 494ZM241 494L235 494L235 548L241 548L247 548L247 494L241 494Z" fill="#C60E14" mask="url(#path-3-inside-2_2099_5967)"/>
+<circle cx="79" cy="117" r="38" stroke="#C60E14" stroke-width="6"/>
+<circle cx="79" cy="431" r="38" stroke="#C60E14" stroke-width="6"/>
+<circle cx="283" cy="117" r="38" stroke="#C60E14" stroke-width="6"/>
+<circle cx="283" cy="431" r="38" stroke="#C60E14" stroke-width="6"/>
+<circle cx="181" cy="274" r="61" stroke="#C60E14" stroke-width="6"/>
+<line x1="-0.609375" y1="271" x2="120.391" y2="271" stroke="#C60E14" stroke-width="6"/>
+<line x1="241" y1="271" x2="362" y2="271" stroke="#C60E14" stroke-width="6"/>
+<line x1="-0.609375" y1="352" x2="360.997" y2="352" stroke="#C60E14" stroke-width="6"/>
+<line x1="-0.609375" y1="190" x2="360.997" y2="190" stroke="#C60E14" stroke-width="6"/>
+</g>
+<defs>
+<clipPath id="clip0_2099_5967">
+<rect width="362" height="548" fill="white"/>
+</clipPath>
+</defs>
+</svg>
