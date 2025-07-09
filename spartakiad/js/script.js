@@ -12938,6 +12938,7 @@ window.addEventListener("load", function () {
       spaceBetween:
         gapMin + gapScale * ((document.documentElement.offsetWidth - mdMin) / (mdMax - mdMin)),
       observer: true,
+      resistanceRatio: 0,
       slideVisibleClass: "promo-slider__item_visible",
       slideFullyVisibleClass: "promo-slider__item_shown",
       wrapperClass: "promo-slider__items",
