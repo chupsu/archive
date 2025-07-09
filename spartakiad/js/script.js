@@ -12682,14 +12682,6 @@ window.addEventListener("load", function () {
   //   normalizeScroll: true,
   // });
 
-  // Lottie.loadAnimation({
-  //   container: document.querySelector(".__img-box"),
-  //   renderer: "svg",
-  //   loop: true,
-  //   autoplay: true,
-  //   path: "./file.json",
-  // });
-
   if (document.querySelector("[data-video]")) {
     _module_video_js__WEBPACK_IMPORTED_MODULE_1__.findVideos();
   }
@@ -12784,22 +12776,22 @@ window.addEventListener("load", function () {
   //   });
   // });
 
-  let gapNormal;
-  const cssValue = (prop) => {
-    return window.getComputedStyle(document.documentElement).getPropertyValue(prop);
-  };
-  gapNormal = parseInt(cssValue("--gap-normal"), 10);
+  // let gapNormal;
+  // const cssValue = (prop) => {
+  //   return window.getComputedStyle(document.documentElement).getPropertyValue(prop);
+  // };
+  // gapNormal = parseInt(cssValue("--gap-normal"), 10);
 
-  const wrappedTextWidrh = (element) => {
-    const { firstChild, lastChild } = element;
-    if (!element || !firstChild || !lastChild) return;
-    const range = document.createRange();
-    range.setStartBefore(firstChild);
-    range.setEndAfter(lastChild);
-    const { width } = range.getBoundingClientRect();
-    element.style.width = width + "px";
-    element.style.boxSizing = "content-box";
-  };
+  // const wrappedTextWidrh = (element) => {
+  //   const { firstChild, lastChild } = element;
+  //   if (!element || !firstChild || !lastChild) return;
+  //   const range = document.createRange();
+  //   range.setStartBefore(firstChild);
+  //   range.setEndAfter(lastChild);
+  //   const { width } = range.getBoundingClientRect();
+  //   element.style.width = width + "px";
+  //   element.style.boxSizing = "content-box";
+  // };
 
   const partnersHide = (partnersCount) => {
     const partnersBody = document.querySelector(".partners__list");
@@ -12810,7 +12802,6 @@ window.addEventListener("load", function () {
       partnersBody.classList.add("_is-list-init");
       partnersBody.classList.remove("_is-list-lock");
       partnersShowBtn.classList.remove("partners__btn_active");
-      console.log(partners[0].offsetHeight);
 
       partnersShowBtn.onclick = (e) => {
         e.preventDefault();
@@ -12856,80 +12847,76 @@ window.addEventListener("load", function () {
       partnersHide(partnersCount);
     }
 
-    if (document.querySelector("[data-adaptive-width]")) {
-      document.querySelectorAll("[data-adaptive-width]").forEach((el) => {
-        el.style.width = "";
-        wrappedTextWidrh(el);
-      });
-    }
+    // if (document.querySelector("[data-adaptive-width]")) {
+    //   document.querySelectorAll("[data-adaptive-width]").forEach((el) => {
+    //     el.style.width = "";
+    //     wrappedTextWidrh(el);
+    //   });
+    // }
   };
   adaptiveFix();
 
-  const initQuantity = () => {
-    const quantities = document.querySelectorAll("[data-quantity]");
+  // const initQuantity = () => {
+  //   const quantities = document.querySelectorAll("[data-quantity]");
 
-    quantities.forEach((quantity) => {
-      const quantityInput = quantity.querySelector("[data-quantity-value]");
-      const quantityMin = parseInt(quantityInput.dataset.quantityMin);
-      const quantityMax = parseInt(quantityInput.dataset.quantityMax);
+  //   quantities.forEach((quantity) => {
+  //     const quantityInput = quantity.querySelector("[data-quantity-value]");
+  //     const quantityMin = parseInt(quantityInput.dataset.quantityMin);
+  //     const quantityMax = parseInt(quantityInput.dataset.quantityMax);
 
-      const setQuantityValue = (value) => {
-        if (value > quantityMax) {
-          value = quantityMax;
-        }
-        if (value < quantityMin) {
-          value = quantityMin;
-        }
+  //     const setQuantityValue = (value) => {
+  //       if (value > quantityMax) {
+  //         value = quantityMax;
+  //       }
+  //       if (value < quantityMin) {
+  //         value = quantityMin;
+  //       }
 
-        quantityInput.value = value;
-      };
+  //       quantityInput.value = value;
+  //     };
 
-      quantity.addEventListener("click", (e) => {
-        const targetElement = e.target;
-        let quantityValue = parseInt(quantityInput.value);
+  //     quantity.addEventListener("click", (e) => {
+  //       const targetElement = e.target;
+  //       let quantityValue = parseInt(quantityInput.value);
 
-        if (targetElement.closest("[data-quantity-button]")) {
-          e.preventDefault();
+  //       if (targetElement.closest("[data-quantity-button]")) {
+  //         e.preventDefault();
 
-          if (targetElement.dataset.quantityButton == "plus") {
-            quantityValue++;
-          }
-          if (targetElement.dataset.quantityButton == "minus") {
-            quantityValue--;
-          }
+  //         if (targetElement.dataset.quantityButton == "plus") {
+  //           quantityValue++;
+  //         }
+  //         if (targetElement.dataset.quantityButton == "minus") {
+  //           quantityValue--;
+  //         }
 
-          setQuantityValue(quantityValue);
-        }
-      });
+  //         setQuantityValue(quantityValue);
+  //       }
+  //     });
 
-      quantityInput.addEventListener("input", (e) => {
-        e.target.value = e.target.value.replace(/[^\d.]/g, "");
+  //     quantityInput.addEventListener("input", (e) => {
+  //       e.target.value = e.target.value.replace(/[^\d.]/g, "");
 
-        setQuantityValue(e.target.value);
-      });
-    });
-  };
+  //       setQuantityValue(e.target.value);
+  //     });
+  //   });
+  // };
 
-  if (document.querySelector("[data-quantity]")) {
-    initQuantity();
-  }
+  // if (document.querySelector("[data-quantity]")) {
+  //   initQuantity();
+  // }
 
-  const textArea = document.getElementsByTagName("textarea");
-  for (let i = 0; i < textArea.length; i++) {
-    textArea[i].setAttribute("style", "height:" + textArea[i].scrollHeight + "px;overflow-y:hidden;");
-    textArea[i].addEventListener("input", OnInput, false);
-  }
-  function OnInput() {
-    this.style.height = "auto";
-    this.style.height = this.scrollHeight + "px";
-  }
+  // const textArea = document.getElementsByTagName("textarea");
+  // for (let i = 0; i < textArea.length; i++) {
+  //   textArea[i].setAttribute("style", "height:" + textArea[i].scrollHeight + "px;overflow-y:hidden;");
+  //   textArea[i].addEventListener("input", OnInput, false);
+  // }
+  // function OnInput() {
+  //   this.style.height = "auto";
+  //   this.style.height = this.scrollHeight + "px";
+  // }
 
   if (document.querySelector(".promo-slider")) {
     const promoSliderBody = document.querySelector(".promo-slider");
-
-    // if (promoSliderBody.querySelector(".promo-slider__item_promo")) {
-    //   promoSliderBody.querySelector(".promo-slider__item_promo").remove();
-    // }
 
     promoSliderBody.classList.add("_is-init");
 
@@ -12994,25 +12981,21 @@ window.addEventListener("load", function () {
   function documentActions(e) {
     const targetElement = e.target;
 
-    //   Menu
-    if (!targetElement.closest(".menu") || targetElement.closest(".menu__link")) {
-      (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+    //   Menu"use strict";
+
+    if (document.documentElement.classList.contains("_is-menu-open")) {
+      if (!targetElement.closest(".menu") || targetElement.closest(".menu__link")) {
+        (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+      }
     }
 
     //   Show / Hide Password
-    if (targetElement.closest('[class*="__viewpass"]')) {
-      let inputType = targetElement.classList.contains("active") ? "password" : "text";
-      targetElement.parentElement.querySelector("input").setAttribute("type", inputType);
-      targetElement.classList.toggle("active");
-    }
+    // if (targetElement.closest('[class*="__viewpass"]')) {
+    //   let inputType = targetElement.classList.contains("active") ? "password" : "text";
+    //   targetElement.parentElement.querySelector("input").setAttribute("type", inputType);
+    //   targetElement.classList.toggle("active");
+    // }
   }
-
-  window.onscroll = function () {
-    HEADER.classList.toggle(
-      "header_scroll",
-      document.documentElement.scrollTop > HEADER.offsetHeight * 6
-    );
-  };
 
   window.addEventListener("resize", () => {
     adaptiveFix();
@@ -13027,6 +13010,11 @@ window.addEventListener("load", function () {
   };
 
   window.addEventListener("scroll", () => {
+    document.documentElement.classList.toggle(
+      "_is-page-scroll",
+      document.documentElement.scrollTop > HEADER.offsetHeight * 6
+    );
+
     handleScroll();
   });
 });
