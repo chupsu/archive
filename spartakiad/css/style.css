@@ -425,6 +425,14 @@ html._is-lock {
   font-size: var(--title-4);
   line-height: 1;
 }
+.extra {
+  display: block;
+  font-size: 0;
+}
+.extra__img {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
 .btn {
   --height-btn: var(--height-btn-normal);
   display: inline-flex;
@@ -1476,6 +1484,9 @@ html._is-lock {
   }
   .welcome__promo {
     display: none;
+  }
+  .welcome__demo {
+    padding: 0 var(--padding-page);
   }
   .promo-slider__item_promo {
     display: block;

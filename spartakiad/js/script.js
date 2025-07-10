@@ -12921,10 +12921,12 @@ window.addEventListener("load", function () {
     promoSliderBody.classList.add("_is-init");
 
     new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](promoSliderBody, {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
       slidesPerView: "auto",
       spaceBetween:
         gapMin + gapScale * ((document.documentElement.offsetWidth - mdMin) / (mdMax - mdMin)),
       observer: true,
+      freeMode: true,
       resistanceRatio: 0,
       slideVisibleClass: "promo-slider__item_visible",
       slideFullyVisibleClass: "promo-slider__item_shown",
