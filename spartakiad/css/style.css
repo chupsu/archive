@@ -24,6 +24,7 @@
   overflow: hidden;
 }
 .btn,
+.category-slider__btn,
 .category-slider__img_hover,
 .category-slider__link,
 .faq-items__btn,
@@ -42,12 +43,13 @@
   transition-duration: var(--transition-duration);
   transition-property: color,background-color,border-color,opacity,transform;
 }
-.btn__icon,
-.category-slider__btn,
+.category-slider__btn svg,
 .faq-items__icon,
+.faq-items__icon svg,
 .header__link svg,
 .menu__btn,
 .menu__btn svg,
+.partners__btn-icon,
 .social__link svg,
 .welcome-video__btn {
   aspect-ratio: 1/1;
@@ -277,6 +279,9 @@ video {
   -moz-user-select: none;
   user-select: none;
 }
+svg {
+  pointer-events: none;
+}
 button,
 input,
 select,
@@ -338,7 +343,6 @@ html {
 }
 body,
 html {
-  font-size: var(--text-medium);
   line-height: 1.5;
   color: var(--color-main);
   background-color: var(--color-shadow);
@@ -389,7 +393,6 @@ html._is-lock {
   background-repeat: repeat;
   background-position: top center;
   background-size: 480px 480px;
-  opacity: 0.75;
   mix-blend-mode: screen;
 }
 .swiper-horizontal {
@@ -544,30 +547,6 @@ html._is-lock {
 }
 .btn_primary:focus-visible {
   background-color: var(--color-primary-dark);
-}
-.btn__icon {
-  position: relative;
-  flex-shrink: 0;
-  width: var(--height-btn-icon);
-}
-.btn__icon::after,
-.btn__icon::before {
-  content: "";
-  position: absolute;
-  top: 8.7%;
-  bottom: 8.7%;
-  width: calc(0.65 * var(--width-line));
-  background-color: currentColor;
-}
-.btn__icon::before {
-  right: 50%;
-  transform-origin: right bottom;
-  transform: skewX(204deg);
-}
-.btn__icon::after {
-  left: 50%;
-  transform-origin: left bottom;
-  transform: skewX(-204deg);
 }
 .page-lines {
   pointer-events: none;
@@ -1213,16 +1192,18 @@ html._is-lock {
 .partners__btn_active::before {
   content: attr(data-hide-text);
 }
-.partners__btn_active .btn__icon::before {
-  transform-origin: right top;
-  transform: skewX(-204deg);
-}
-.partners__btn_active .btn__icon::after {
-  transform-origin: left top;
-  transform: skewX(204deg);
+.partners__btn_active .partners__btn-icon {
+  transform: scaleY(-1);
 }
 ._is-list-lock .partners__btn {
   display: none;
+}
+.partners__btn-icon {
+  flex-shrink: 0;
+  width: var(--height-btn-icon);
+}
+.partners__btn-icon path {
+  fill: currentColor;
 }
 .join {
   position: relative;
@@ -1305,15 +1286,16 @@ html._is-lock {
 .category-slider__btn {
   position: relative;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: none;
 }
-.category-slider__btn ._arrow {
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: calc(1.5 * var(--width-line));
-  background-color: currentColor;
+.category-slider__btn:focus-visible {
+  outline: 0;
+  color: var(--color-primary-dark);
 }
 .category-slider__label {
   position: absolute;
@@ -1411,38 +1393,21 @@ html._is-lock {
 .faq-items__icon {
   position: relative;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: var(--gap-normal);
+  color: var(--color-neutral);
   background-color: var(--color-primary);
 }
-.faq-items__icon::after,
-.faq-items__icon::before {
-  content: "";
-  position: absolute;
-  top: 40.74%;
-  bottom: 40.74%;
-  width: var(--width-line);
-  background-color: var(--color-neutral);
-}
-.faq-items__icon::before {
-  right: 50%;
-  transform-origin: right bottom;
-  transform: skewX(212deg);
-}
-.faq-items__icon::after {
-  left: 50%;
-  transform-origin: left bottom;
-  transform: skewX(-212deg);
+.faq-items__icon svg {
+  width: 38.5%;
 }
 ._spoller-active .faq-items__icon {
   background-color: var(--color-accent);
 }
-._spoller-active .faq-items__icon::before {
-  transform-origin: right top;
-  transform: skewX(-212deg);
-}
-._spoller-active .faq-items__icon::after {
-  transform-origin: left top;
-  transform: skewX(212deg);
+._spoller-active .faq-items__icon svg {
+  transform: scaleY(-1);
 }
 @media (min-width: 575.98px) {
   .partners__item {
@@ -1786,7 +1751,7 @@ html._is-lock {
     gap: 124px;
     margin-bottom: 80px;
   }
-  .category-slider__btn {
+  .category-slider__btn svg {
     width: 136px;
   }
   .category-slider__link {
@@ -1815,7 +1780,7 @@ html._is-lock {
     max-width: 1320px;
   }
   .faq-items__icon {
-    width: 108px;
+    width: 104px;
   }
   .faq-items__content {
     padding: 20px 700px 48px 80px;
@@ -2076,7 +2041,7 @@ html._is-lock {
     gap: 38px;
     margin-top: 28px;
   }
-  .category-slider__btn {
+  .category-slider__btn svg {
     width: 36px;
   }
   .category-slider__link {
@@ -2318,7 +2283,7 @@ html._is-lock {
     gap: clamp( 62px , -0.0316458333px + 3.2291666667vw , 124px );
     margin-bottom: clamp( 40px , -0.0204166667px + 2.0833333333vw , 80px );
   }
-  .category-slider__btn {
+  .category-slider__btn svg {
     width: clamp( 68px , -0.0347083333px + 3.5416666667vw , 136px );
   }
   .category-slider__link {
@@ -2350,7 +2315,7 @@ html._is-lock {
     max-width: clamp( 660px , -0.336875px + 34.375vw , 1320px );
   }
   .faq-items__icon {
-    width: clamp( 54px , -0.0275625px + 2.8125vw , 108px );
+    width: clamp( 52px , -0.0265416667px + 2.7083333333vw , 104px );
   }
   .faq-items__content {
     padding-top: clamp( 10px , -0.0051041667px + 0.5208333333vw , 20px );
@@ -2468,7 +2433,7 @@ html._is-lock {
   .category-slider__actions {
     gap: clamp( 38px , 32.4653939782px + 1.5374759769vw , 62px );
   }
-  .category-slider__btn {
+  .category-slider__btn svg {
     width: clamp( 36px , 28.6205253043px + 2.0499679693vw , 68px );
   }
   .category-slider__link {
@@ -2496,7 +2461,7 @@ html._is-lock {
     font-size: clamp( 14px , 12.6163484946px + 0.3843689942vw , 20px );
   }
   .faq-items__icon {
-    width: clamp( 30px , 24.4653939782px + 1.5374759769vw , 54px );
+    width: clamp( 30px , 24.9266111467px + 1.4093529789vw , 52px );
   }
   .faq-items__content {
     padding-top: clamp( 4px , 2.6163484946px + 0.3843689942vw , 10px );
@@ -2637,6 +2602,7 @@ html._is-lock {
   .popup__close:not(:active):hover::before {
     background-color: var(--color-main);
   }
+  .category-slider__btn:not(:active):hover,
   .category-slider__link:not(:active):hover {
     color: var(--color-primary-dark);
   }
