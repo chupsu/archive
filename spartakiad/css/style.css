@@ -321,7 +321,7 @@ html {
   --width-page: 100vw;
   --width-line: 4px;
   --width-line-gap: 14px;
-  --width-container: calc(100% - 2 * (var(--padding-page) + var(--width-line)));
+  --width-container: calc(100% - 2 * (var(--padding-page) + var(--width-line)) + 2px);
   --height-page: 100vh;
   --height-logo-small: 27px;
   --color-main: #333333;
@@ -345,13 +345,11 @@ html {
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--height-header));
 }
 html._is-lock {
   overflow: hidden;
   overflow: clip;
-}
-body {
-  scroll-padding-top: var(--padding-page);
 }
 .wrapper {
   position: relative;
@@ -739,7 +737,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 calc(-0.5 * var(--width-line));
 }
 .header_scroll .header__body {
   background-color: var(--color-primary);
@@ -1454,7 +1451,10 @@ body {
 }
 @media (min-width: 767.98px) {
   :root {
-    --width-container: calc(100% - 2 * (3 * var(--width-line) + 3 * var(--width-line-gap)));
+    --width-container: calc(100% - 2 * (3 * var(--width-line) + 3 * var(--width-line-gap)) + 2px);
+  }
+  html {
+    scroll-padding-top: 0;
   }
   .page-lines__side::before {
     content: "";
@@ -1713,11 +1713,11 @@ body {
     font-size: 36px;
   }
   .footer-contacts__text {
-    margin-bottom: 4px;
+    margin-bottom: 28px;
     font-size: 44px;
   }
   .footer-contacts__list {
-    gap: 4px;
+    gap: 28px;
     font-size: 50px;
   }
   .footer-contacts__link_large {
@@ -1942,6 +1942,7 @@ body {
     --gap-normal: 8px;
     --gap-small: 8px;
     --padding-page: 8px;
+    --padding-page: 9px;
     --title-1: 62px;
     --title-1: 58px;
     --title-2: 50px;
@@ -2244,11 +2245,11 @@ body {
     font-size: clamp( 18px , -0.0091875px + 0.9375vw , 36px );
   }
   .footer-contacts__text {
-    margin-bottom: clamp( 2px , -0.0010208333px + 0.1041666667vw , 4px );
+    margin-bottom: clamp( 14px , -0.0071458333px + 0.7291666667vw , 28px );
     font-size: clamp( 22px , -0.0112291667px + 1.1458333333vw , 44px );
   }
   .footer-contacts__list {
-    gap: clamp( 2px , -0.0010208333px + 0.1041666667vw , 4px );
+    gap: clamp( 14px , -0.0071458333px + 0.7291666667vw , 28px );
     font-size: clamp( 25px , -0.0127604167px + 1.3020833333vw , 50px );
   }
   .footer-contacts__link_large {
@@ -2369,7 +2370,7 @@ body {
     --gap-medium: clamp( 20px , 17.6939141576px + 0.6406149904vw , 30px );
     --gap-normal: clamp( 8px , 5.2326969891px + 0.7687379885vw , 20px );
     --gap-small: clamp( 8px , 7.5387828315px + 0.1281229981vw , 10px );
-    --padding-page: clamp( 8px , -3.0692120436px + 3.0749519539vw , 56px );
+    --padding-page: clamp( 9px , -1.8386034593px + 3.0108904548vw , 56px );
     --title-2: clamp( 50px , 10.3353235106px + 11.0185778347vw , 222px );
     --title-3: clamp( 50px , 21.8657527226px + 7.8155028828vw , 172px );
     --title-4: clamp( 40px , 12.7881870596px + 7.5592568866vw , 158px );
@@ -2403,11 +2404,11 @@ body {
     font-size: clamp( 12px , 11.077565663px + 0.2562459962vw , 16px );
   }
   .footer-contacts__text {
-    margin-bottom: clamp( 2px , 11.8448686739px + -0.5124919923vw , 10px );
+    margin-bottom: clamp( 10px , 9.077565663px + 0.2562459962vw , 14px );
     font-size: clamp( 12px , 9.6939141576px + 0.6406149904vw , 22px );
   }
   .footer-contacts__list {
-    gap: clamp( 2px , 11.8448686739px + -0.5124919923vw , 10px );
+    gap: clamp( 10px , 9.077565663px + 0.2562459962vw , 14px );
     font-size: clamp( 18px , 16.3857399103px + 0.4484304933vw , 25px );
   }
   .social__link svg {
