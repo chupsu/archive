@@ -13014,6 +13014,10 @@ window.addEventListener("load", function () {
       "_is-page-scroll",
       document.documentElement.scrollTop > HEADER.offsetHeight * 6
     );
+    HEADER.classList.toggle(
+      "header_scroll",
+      document.documentElement.scrollTop > HEADER.offsetHeight * 2.5
+    );
 
     handleScroll();
   });
