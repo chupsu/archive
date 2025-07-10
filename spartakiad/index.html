@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f1efe9">
-    <link rel="icon" href="./img/content/favicon.svg">
-    <link rel="mask-icon" href="./img/content/favicon.svg" color="#f1efe9">
-    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Главная</title>
+    <title>Спартакиада Моспром</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -106,29 +101,23 @@
                 </a>
               </div>
               <div class="welcome__promo">
-                <div class="welcome-video" data-video="welcome-video">
-                  <!-- для видео с youtube -->
-                  <!-- во всех ссылках менять только ID видео "#######" на своё -->
-                  <!-- <a class="welcome-video__link" href="https://youtu.be/#######" target="_blank">
-                    <picture>
-                      <source srcset="https://i.ytimg.com/vi_webp/#######/maxresdefault.webp" type="image/webp">
-                      <img class="welcome-video__media" src="https://i.ytimg.com/vi/#######/maxresdefault.jpg" alt="Название видео">
-                    </picture>
-                  </a> -->
-
-                  <!-- для видео файлом .mp4 -->
-                  <a class="welcome-video__link" href="./files/video_1.mp4" target="_blank">
-                    <picture><source srcset="./img/content/pic/promo-0.webp" type="image/webp"><img class="welcome-video__media" src="./img/content/pic/promo-0.jpg" alt="Проморолик"></picture>
-                  </a>
-
-                  <button class="welcome-video__btn" type="button" title="Запустить видео">
-                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M17 8L3 16L3 -6.11959e-07L17 8Z" fill="currentColor"/>
-                    </svg>
-                    <span class="_seo">Запустить видео</span>
-                  </button>
+                <div class="welcome-promo">
+                  <figure class="welcome-promo__media">
+                    <picture><source srcset="./img/content/pic/promo-0.webp" type="image/webp"><img class="welcome-promo__img" src="./img/content/pic/promo-0.jpg" alt="Проморолик"></picture>
+                  </figure>
+                  <div class="welcome-promo__label">Проморолик</div>
                 </div>
-                <div class="welcome__promo-label">Проморолик</div>
+                <button
+                  class="promo-btn"
+                  type="button"
+                  data-popup="#promo-video"
+                  data-popup-video="./files/video_1.mp4"
+                >
+                  <span class="_seo">Смотреть видео</span>
+                  <svg class="promo-btn__icon" aria-hidden="true">
+                    <use xlink:href="#icon-play"></use>
+                  </svg>
+                </button>
               </div>
               <div class="welcome__demo">
                 <a class="extra" href="#" target="_blank">
@@ -146,12 +135,24 @@
                     <div class="promo-slider__item promo-slider__item_promo">
                       <article class="promo-card">
                         <figure class="promo-card__media">
-                          <video class="promo-card__video" src="./files/video_1.mp4" preload="auto" playsInline autoplay muted loop></video>
+                          <picture><source srcset="./img/content/pic/promo-0.webp" type="image/webp"><img class="promo-card__img" src="./img/content/pic/promo-0.jpg" alt="Проморолик"></picture>
+                          <!-- <video class="promo-card__video" src="./files/video_1.mp4" preload="auto" playsInline autoplay muted loop></video> -->
                         </figure>
                         <div class="promo-card__content">
                           <h3 class="promo-card__title">промовидео</h3>
                           <time class="promo-card__info" datetime="2024-04-24 19:00">2024</time>
                         </div>
+                        <button
+                          class="promo-btn"
+                          type="button"
+                          data-popup="#promo-video"
+                          data-popup-video="./files/video_1.mp4"
+                        >
+                          <span class="_seo">Смотреть видео</span>
+                          <svg class="promo-btn__icon" aria-hidden="true">
+                            <use xlink:href="#icon-play"></use>
+                          </svg>
+                        </button>
                       </article>
                     </div>
                     <div class="promo-slider__item">
@@ -681,13 +682,6 @@
       </footer>
     </div>
 
-    <div class="popup" id="contact-form">
-      <div class="popup__body">
-        <button class="popup__close" aria-label="Close popup" type="button" data-close></button>
-        <div class="popup__inner"></div>
-      </div>
-    </div>
-
     <div class="page-lines">
       <span class="page-lines__side page-lines__side_left"></span>
       <span class="page-lines__side page-lines__side_right"></span>
@@ -696,7 +690,25 @@
     </div>
     <div class="noise"></div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none">
+    <div class="popup" id="promo-video">
+      <div class="popup__wrapper">
+        <div class="popup__body">
+          <button class="popup__close" type="button" data-popup-close>
+            <span class="_seo">Закрыть окно</span>
+            <svg aria-hidden="true">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__scroll">
+              <div data-popup-video-place></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <symbol fill="none" viewBox="0 0 22 22" id="icon-arr-down" xmlns="http://www.w3.org/2000/svg">
         <path
           d="m3.556 3.82 7.443 14.243L18.443 3.82h3.524l-7.479 14.31H7.51L.03 3.82h3.525Z"
@@ -715,8 +727,14 @@
           d="M0 30.073h68v7.912H0zM36.156 4.453l31.846 16.792v7.912L36.156 12.365V4.453ZM36.156 63.603l31.846-16.791V38.9L36.156 55.692v7.911Z"
         />
       </symbol>
+      <symbol fill="none" viewBox="0 0 36 36" id="icon-close" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.253 29.511 7.02 27.278 27.298 7l2.233 2.233L9.253 29.511Z" fill="currentColor" />
+        <path d="m27.434 29.511 2.234-2.233L9.389 7 7.156 9.233l20.279 20.278Z" fill="currentColor" />
+      </symbol>
+      <symbol fill="none" viewBox="0 0 36 36" id="icon-play" xmlns="http://www.w3.org/2000/svg">
+        <path d="m26.75 18-14 8V10l14 8Z" fill="currentColor" />
+      </symbol>
     </svg>
-
     <div class="cookies">
       <p class="cookies__text">
         Пользуясь нашим сайтом, вы соглашаетесь с тем,

@@ -1022,8 +1022,8 @@ class Popup {
       // Для сторонних объектов
       fixElementSelector: "[data-lp]", // Атрибут для элементов с левым паддингом (которые fixed)
       // Для объекта попапа
-      youtubeAttribute: "data-popup-youtube", // Атрибут для кода youtube
-      youtubePlaceAttribute: "data-popup-youtube-place", // Атрибут для вставки ролика youtube
+      youtubeAttribute: "data-popup-video", // Атрибут для кода youtube
+      youtubePlaceAttribute: "data-popup-video-place", // Атрибут для вставки ролика youtube
       setAutoplayYoutube: true,
       // Изменение классов
       classes: {
@@ -1203,15 +1203,33 @@ class Popup {
       if (this.targetOpen.element) {
         // YouTube
         if (this.youTubeCode) {
-          const codeVideo = this.youTubeCode;
-          const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
-          const iframe = document.createElement("iframe");
-          iframe.setAttribute("allowfullscreen", "");
+          // const codeVideo = this.youTubeCode;
+          let urlVideo = this.youTubeCode;
+          let iframe;
+          // let isYoutubeVideo = this.youTubeCode.includes("youtu.be");
 
-          const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
-          iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
+          // if (isYoutubeVideo) {
+          //   urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
+          // } else {
+          //   urlVideo = codeVideo;
+          // }
 
+          // const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
+
+          // if (isYoutubeVideo) {
+          //   iframe = document.createElement("iframe");
+          //   iframe.setAttribute("allowfullscreen", "");
+          //   iframe.setAttribute("allow", "autoplay");
+          //   iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
+          //   iframe.setAttribute("src", urlVideo);
+          // } else {
+          iframe = document.createElement("video");
+          iframe.setAttribute("playsinline", "");
+          iframe.setAttribute("controls", "");
+          iframe.setAttribute("autoplay", "");
+          iframe.setAttribute("preload", "auto");
           iframe.setAttribute("src", urlVideo);
+          // }
 
           if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
             const youtubePlace = this.targetOpen.element
