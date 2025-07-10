@@ -371,7 +371,7 @@ html._is-lock {
 .wrapper::after {
   content: "";
   position: fixed;
-  z-index: 999;
+  z-index: 20;
   top: 0;
   right: 0;
   bottom: 0;
