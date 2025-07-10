@@ -37,7 +37,9 @@
 .menu__btn,
 .menu__link,
 .popup,
+.popup__close,
 .promo-btn,
+.promo-btn__icon,
 .social__link {
   transition-duration: var(--transition-duration);
   transition-property: color,background-color,border-color,opacity,transform;
@@ -344,7 +346,7 @@ html {
 }
 body,
 html {
-  line-height: 1.5;
+  line-height: 1.3;
   color: var(--color-main);
   background-color: var(--color-shadow);
 }
@@ -363,6 +365,23 @@ html._is-lock {
   min-height: 100%;
   overflow: clip;
 }
+.no-webp .wrapper::after {
+  background-image: url(../img/content/noise.png);
+}
+.wrapper::after {
+  content: "";
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: 480px 480px;
+  mix-blend-mode: screen;
+}
 .page {
   flex: 1 1 auto;
 }
@@ -379,22 +398,6 @@ html._is-lock {
 .container {
   max-width: var(--width-container);
   margin: 0 auto;
-}
-.no-webp .noise {
-  background-image: url(../img/content/noise.png);
-}
-.noise {
-  position: fixed;
-  z-index: 20;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  background-repeat: repeat;
-  background-position: top center;
-  background-size: 480px 480px;
-  mix-blend-mode: screen;
 }
 .swiper-horizontal {
   touch-action: pan-y;
@@ -955,17 +958,24 @@ html._is-lock {
   visibility: visible;
   pointer-events: auto;
 }
-.popup__body {
+.popup__wrapper {
   position: relative;
   display: flex;
-  max-width: var(--width-page);
-  max-height: calc(0.95 * var(--height-page));
-  background-color: var(--color-neutral);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.popup__body {
+  display: flex;
+  max-width: calc(var(--width-container));
+  max-height: calc(var(--height-page) - 2 * var(--gap-normal));
 }
 .popup__close {
   position: absolute;
   z-index: 1;
-  right: 0;
+  top: var(--gap-medium);
+  right: calc(var(--width-line) + var(--padding-page));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -986,9 +996,7 @@ html._is-lock {
   transform: translate3d(0, 0, 0);
   max-width: 100%;
   max-height: 100%;
-}
-.cookies {
-  display: none;
+  border: var(--width-line) solid var(--color-primary);
 }
 .welcome {
   overflow: hidden;
@@ -1025,7 +1033,8 @@ html._is-lock {
   border-top: var(--width-line) solid var(--color-primary);
   border-bottom: var(--width-line) solid var(--color-primary);
 }
-.welcome-promo {
+.welcome-promo,
+.welcome__slider {
   position: relative;
 }
 .welcome-promo__img {
@@ -1064,6 +1073,9 @@ html._is-lock {
 .promo-btn:focus-visible {
   outline: 0;
 }
+.promo-btn:focus-visible .promo-btn__icon {
+  background-color: var(--color-shadow-darkest);
+}
 .promo-btn__icon {
   position: absolute;
   right: calc(1.5 * var(--gap-normal));
@@ -1084,6 +1096,8 @@ html._is-lock {
 }
 .promo-slider {
   width: 100%;
+  padding: 0 1px;
+  overflow: hidden;
 }
 .promo-slider__items {
   position: relative;
@@ -1117,6 +1131,7 @@ html._is-lock {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  padding: 0 1px;
 }
 .promo-card__info,
 .promo-card__title {
@@ -1460,6 +1475,12 @@ html._is-lock {
     flex-wrap: wrap;
     gap: var(--gap-row) var(--gap-col);
   }
+  .popup__body {
+    position: relative;
+  }
+  .popup__close {
+    right: var(--gap-medium);
+  }
   .welcome__promo {
     display: none;
   }
@@ -1574,6 +1595,9 @@ html._is-lock {
   .footer-contacts__list {
     align-items: flex-end;
     text-align: right;
+  }
+  .popup__body {
+    max-width: calc(0.73 * var(--width-page));
   }
   .partners__item {
     width: calc((100% - 3 * var(--gap-normal)) / 4);
@@ -2579,6 +2603,7 @@ html._is-lock {
     color: var(--color-shadow-darkest);
   }
   .popup__close:not(:active):hover,
+  .promo-btn:not(:active):hover .promo-btn__icon,
   .social__link:not(:active):hover {
     background-color: var(--color-shadow-darkest);
   }
@@ -2602,6 +2627,6 @@ html._is-lock {
     background-color: var(--color-accent-dark);
   }
 }
-.webp .noise {
+.webp .wrapper::after {
   background-image: url(../img/content/noise.webp);
 }
