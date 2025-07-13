@@ -12692,6 +12692,14 @@ window.addEventListener("load", function () {
   //   normalizeScroll: true,
   // });
 
+  document.documentElement.classList.add("_is-page-loaded");
+
+  if (document.querySelector(".letter-anim")) {
+    setTimeout(() => {
+      document.querySelector(".letter-anim").classList.add("_is-anim-end");
+    }, 7500);
+  }
+
   if (document.querySelector("[data-video]")) {
     _module_video_js__WEBPACK_IMPORTED_MODULE_1__.findVideos();
   }
@@ -12819,11 +12827,9 @@ window.addEventListener("load", function () {
         if (partnersBody.classList.contains("_is-list-init")) {
           partnersBody.classList.remove("_is-list-init");
           partnersShowBtn.classList.add("partners__btn_active");
-          // _slideUp(partnersBody, 500, partners[0].offsetHeight);
         } else {
           partnersBody.classList.add("_is-list-init");
           partnersShowBtn.classList.remove("partners__btn_active");
-          // _slideDown(partnersBody, 500, partnersBody.offsetHeight);
         }
       };
     } else {
@@ -12841,6 +12847,10 @@ window.addEventListener("load", function () {
     document.documentElement.style.setProperty(
       "--height-page",
       `${document.documentElement.offsetHeight}px`
+    );
+    document.documentElement.classList.toggle(
+      "_is-header-scroll",
+      document.documentElement.scrollTop > HEADER.offsetHeight * 2.5
     );
 
     if (document.querySelector(".partners__list")) {
@@ -13026,8 +13036,8 @@ window.addEventListener("load", function () {
       "_is-page-scroll",
       document.documentElement.scrollTop > HEADER.offsetHeight * 6
     );
-    HEADER.classList.toggle(
-      "header_scroll",
+    document.documentElement.classList.toggle(
+      "_is-header-scroll",
       document.documentElement.scrollTop > HEADER.offsetHeight * 2.5
     );
 
