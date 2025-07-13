@@ -1152,7 +1152,6 @@ html._is-lock {
 .promo-slider {
   width: 100%;
   padding: 0 1px;
-  overflow: hidden;
 }
 .promo-slider__items {
   position: relative;
@@ -1596,9 +1595,9 @@ html._is-lock {
     left: 50%;
     display: flex;
     opacity: 0;
-    transform: translate(-55%, -10%) rotate(-6deg);
+    transform: translate(-55%, -20%) rotate(-6deg);
     transition-duration: calc(1.5 * var(--transition-duration-large));
-    transition-delay: 6.5s;
+    transition-delay: 4.75s;
     transition-property: transform,opacity;
     transition-timing-function: ease-out;
   }
@@ -1610,7 +1609,17 @@ html._is-lock {
     display: none;
   }
   .welcome__demo {
+    transform: translateY(30%);
     padding: 0 var(--padding-page);
+    opacity: 0;
+    transition-duration: var(--transition-duration-large);
+    transition-property: transform,opacity;
+    transition-timing-function: ease-out;
+  }
+  ._is-page-loaded:not(._is-watch) .welcome__demo,
+  .welcome__demo._watcher-view {
+    transform: translate(0, 0);
+    opacity: 1;
   }
   .letter-anim__col {
     transition-delay: calc(1.5 * var(--transition-duration-large));
@@ -1618,33 +1627,33 @@ html._is-lock {
   }
   .letter-anim__col:nth-child(1) {
     transform: translateY(3em);
-    transition-duration: calc(1.5 * var(--transition-duration-large));
+    transition-duration: calc(1 * var(--transition-duration-large));
   }
   .letter-anim__col:nth-child(2) {
     transform: translateY(6em);
-    transition-duration: calc(2.5 * var(--transition-duration-large));
+    transition-duration: calc(1.5 * var(--transition-duration-large));
   }
   .letter-anim__col:nth-child(3) {
     transform: translateY(10em);
-    transition-duration: calc(4 * var(--transition-duration-large));
+    transition-duration: calc(2.5 * var(--transition-duration-large));
   }
   .letter-anim__col:nth-child(4) {
     transform: translateY(9em);
-    transition-duration: calc(3.5 * var(--transition-duration-large));
+    transition-duration: calc(2 * var(--transition-duration-large));
   }
   .letter-anim__col:nth-child(5) {
     transform: translateY(16em);
-    transition-duration: calc(5.5 * var(--transition-duration-large));
+    transition-duration: calc(3.5 * var(--transition-duration-large));
   }
   .letter-anim__col:nth-child(6) {
     padding-left: 0.1em;
     margin-left: -0.2em;
     transform: translateY(14em);
-    transition-duration: calc(5 * var(--transition-duration-large));
+    transition-duration: calc(3 * var(--transition-duration-large));
   }
   .letter-anim__col:nth-child(7) {
     transform: translateY(16em);
-    transition-duration: calc(6 * var(--transition-duration-large));
+    transition-duration: calc(4 * var(--transition-duration-large));
   }
   ._is-page-loaded .letter-anim__col {
     transform: translateY(0);
@@ -1659,6 +1668,30 @@ html._is-lock {
   }
   .promo-slider__item:nth-child(even) .promo-btn {
     aspect-ratio: 536/398;
+  }
+  .promo-slider__item {
+    transform: translate(10%, 10%);
+    opacity: 0;
+    transition-duration: var(--transition-duration-large);
+    transition-property: transform,opacity;
+    transition-timing-function: ease-out;
+  }
+  .promo-slider__item:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .promo-slider__item:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .promo-slider__item:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .promo-slider__item:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  ._is-page-loaded:not(._is-watch) .promo-slider__item,
+  ._watcher-view .promo-slider__item {
+    transform: translate(0, 0);
+    opacity: 1;
   }
   .promo-slider__item_promo {
     display: block;
@@ -1683,6 +1716,30 @@ html._is-lock {
   }
   .join__title span + span {
     margin-top: -0.243em;
+  }
+  .join__label span {
+    opacity: 0;
+    transition-duration: var(--transition-duration-large);
+    transition-property: transform,opacity;
+    transition-timing-function: ease-out;
+  }
+  .join__label span:first-child {
+    transition-delay: 0.1s;
+    transform: translateY(50%) rotate(-3deg);
+  }
+  ._is-page-loaded:not(._is-watch) .join__label span:first-child,
+  ._watcher-view .join__label span:first-child {
+    transform: translateY(0) rotate(-3deg);
+    opacity: 1;
+  }
+  .join__label span:nth-child(2) {
+    transition-delay: 0.2s;
+    transform: translateY(50%) rotate(-2deg);
+  }
+  ._is-page-loaded:not(._is-watch) .join__label span:nth-child(2),
+  ._watcher-view .join__label span:nth-child(2) {
+    transform: translateY(0) rotate(-2deg);
+    opacity: 1;
   }
   .category-slider {
     margin: 0 calc(-0.5 * var(--width-line));

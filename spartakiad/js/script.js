@@ -2119,11 +2119,193 @@ new SelectConstructor({});
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _module_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+
+// Data-watch - можно писать значения для применения кастомного кода
+// Data-watch-root-родительский элемент внутри которого наблюдать за объектом
+// data-watch-margin-отступ
+// data-watch-threshold-процент показа объекта для срабатывания
+// data-watch-once - смотреть только один раз
+// _is-watch - класс body который добавляется при появлении объекта
+// _watcher-view - класс который добавляется при появлении объекта
+
+class ScrollWatcher {
+  constructor(props) {
+    let defaultConfig = {};
+    this.config = Object.assign(defaultConfig, props);
+    this.observer;
+    !document.documentElement.classList.contains("watcher") ? this.scrollWatcherRun() : null;
+  }
+  // Обновляем конструктор
+  scrollWatcherUpdate() {
+    this.scrollWatcherRun();
+  }
+  // Запускаем конструктор
+  scrollWatcherRun() {
+    document.documentElement.classList.add("_is-watch");
+    this.scrollWatcherConstructor(document.querySelectorAll("[data-watch]"));
+  }
+  // Конструктор наблюдателей
+  scrollWatcherConstructor(items) {
+    if (items.length) {
+      // Уникализируем параметры
+      let uniqParams = (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.uniqArray)(
+        Array.from(items).map(function (item) {
+          // Вычисление автоматического Threshold
+          if (item.dataset.watch === "navigator" && !item.dataset.watchThreshold) {
+            let valueOfThreshold;
+            if (item.clientHeight > 2) {
+              valueOfThreshold = window.innerHeight / 2 / (item.clientHeight - 1);
+              if (valueOfThreshold > 1) {
+                valueOfThreshold = 1;
+              }
+            } else {
+              valueOfThreshold = 1;
+            }
+            item.setAttribute("data-watch-threshold", valueOfThreshold.toFixed(2));
+          }
+          return `${
+            item.dataset.watchRoot ? item.dataset.watchRoot : null
+          }|${item.dataset.watchMargin ? item.dataset.watchMargin : "0px"}|${item.dataset.watchThreshold ? item.dataset.watchThreshold : 0}`;
+        })
+      );
+      // Получаем группы объектов с одинаковыми параметрами,
+      // создаем настройки, инициализируем наблюдатель
+      uniqParams.forEach((uniqParam) => {
+        let uniqParamArray = uniqParam.split("|");
+        let paramsWatch = {
+          root: uniqParamArray[0],
+          margin: uniqParamArray[1],
+          threshold: uniqParamArray[2],
+        };
+        let groupItems = Array.from(items).filter(function (item) {
+          let watchRoot = item.dataset.watchRoot ? item.dataset.watchRoot : null;
+          let watchMargin = item.dataset.watchMargin ? item.dataset.watchMargin : "0px";
+          let watchThreshold = item.dataset.watchThreshold ? item.dataset.watchThreshold : 0;
+          if (
+            String(watchRoot) === paramsWatch.root &&
+            String(watchMargin) === paramsWatch.margin &&
+            String(watchThreshold) === paramsWatch.threshold
+          ) {
+            return item;
+          }
+        });
+
+        let configWatcher = this.getScrollWatcherConfig(paramsWatch);
+
+        // Инициализация наблюдателя со своими настройками
+        this.scrollWatcherInit(groupItems, configWatcher);
+      });
+    }
+  }
+  // Функция создания настроек
+  getScrollWatcherConfig(paramsWatch) {
+    //Создаем настройки
+    let configWatcher = {};
+    // Отец, в котором ведется наблюдение
+    if (document.querySelector(paramsWatch.root)) {
+      configWatcher.root = document.querySelector(paramsWatch.root);
+    }
+    // Отступ срабатывания
+    configWatcher.rootMargin = paramsWatch.margin;
+    if (paramsWatch.margin.indexOf("px") < 0 && paramsWatch.margin.indexOf("%") < 0) {
+      return;
+    }
+    // Точки срабатывания
+    if (paramsWatch.threshold === "prx") {
+      // Режим паралакса
+      paramsWatch.threshold = [];
+      for (let i = 0; i <= 1.0; i += 0.005) {
+        paramsWatch.threshold.push(i);
+      }
+    } else {
+      paramsWatch.threshold = paramsWatch.threshold.split(",");
+    }
+    configWatcher.threshold = paramsWatch.threshold;
+
+    return configWatcher;
+  }
+  // Функция создания нового наблюдателя с вашими настройками
+  scrollWatcherCreate(configWatcher) {
+    this.observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        this.scrollWatcherCallback(entry, observer);
+      });
+    }, configWatcher);
+  }
+  // Функция инициализации наблюдателя с его настройками
+  scrollWatcherInit(items, configWatcher) {
+    // Создание нового наблюдателя с вашими настройками
+    this.scrollWatcherCreate(configWatcher);
+    // Передача элементов наблюдателю
+    items.forEach((item) => this.observer.observe(item));
+  }
+  // Функция обработки базовых действий точек срабатывания
+  scrollWatcherIntersecting(entry, targetElement) {
+    if (entry.isIntersecting) {
+      // Видим объект
+      // Добавляем класс
+      !targetElement.classList.contains("_watcher-view")
+        ? targetElement.classList.add("_watcher-view")
+        : null;
+    } else {
+      // Не видим объект
+      // Удаляем  класс
+      targetElement.classList.contains("_watcher-view")
+        ? targetElement.classList.remove("_watcher-view")
+        : null;
+    }
+  }
+  // Функция отключения слежения за объектом
+  scrollWatcherOff(targetElement, observer) {
+    observer.unobserve(targetElement);
+  }
+  // Функция обработки наблюдения
+  scrollWatcherCallback(entry, observer) {
+    const targetElement = entry.target;
+    // Обработка базовых действий точек срабатывания
+    this.scrollWatcherIntersecting(entry, targetElement);
+    // Если есть атрибут data-watch-once убираем слежение
+    targetElement.hasAttribute("data-watch-once") && entry.isIntersecting
+      ? this.scrollWatcherOff(targetElement, observer)
+      : null;
+    // Создаем свое событие обратной связи
+    document.dispatchEvent(
+      new CustomEvent("watcherCallback", {
+        detail: {
+          entry: entry,
+        },
+      })
+    );
+
+    /*
+		// Выбираем нужные объекты
+		if (targetElement.dataset.watch === 'some value') {
+			// пишем уникальную спецификацию
+		}
+		if (entry.isIntersecting) {
+			//Видим обьект
+		} else {
+			//Не видим обьєкт
+		}
+		*/
+  }
+}
+// Запускаем и добавляем в объект модулей
+new ScrollWatcher({});
+
+
+/***/ }),
+/* 7 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Swiper: () => (/* reexport safe */ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S),
 /* harmony export */   "default": () => (/* reexport safe */ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S)
 /* harmony export */ });
-/* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+/* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
 /**
  * Swiper 11.2.10
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -2140,7 +2322,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -2148,8 +2330,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   S: () => (/* binding */ Swiper),
 /* harmony export */   d: () => (/* binding */ defaults)
 /* harmony export */ });
-/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -6105,7 +6287,7 @@ Swiper.use([Resize, Observer]);
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -6262,7 +6444,7 @@ function getWindow() {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -6293,7 +6475,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   x: () => (/* binding */ extend),
 /* harmony export */   y: () => (/* binding */ deleteProps)
 /* harmony export */ });
-/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
 
 
 function classesToTokens(classes) {
@@ -6640,7 +6822,7 @@ function setInnerHTML(el, html) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -6669,29 +6851,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Virtual: () => (/* reexport safe */ _virtual_mjs__WEBPACK_IMPORTED_MODULE_0__["default"]),
 /* harmony export */   Zoom: () => (/* reexport safe */ _zoom_mjs__WEBPACK_IMPORTED_MODULE_7__["default"])
 /* harmony export */ });
-/* harmony import */ var _virtual_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
-/* harmony import */ var _keyboard_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
-/* harmony import */ var _mousewheel_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
-/* harmony import */ var _navigation_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
-/* harmony import */ var _pagination_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16);
-/* harmony import */ var _scrollbar_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(18);
-/* harmony import */ var _parallax_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(19);
-/* harmony import */ var _zoom_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(20);
-/* harmony import */ var _controller_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(21);
-/* harmony import */ var _a11y_mjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(22);
-/* harmony import */ var _history_mjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(23);
-/* harmony import */ var _hash_navigation_mjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(24);
-/* harmony import */ var _autoplay_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(25);
-/* harmony import */ var _thumbs_mjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(26);
-/* harmony import */ var _free_mode_mjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(27);
-/* harmony import */ var _grid_mjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(28);
-/* harmony import */ var _manipulation_mjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(29);
-/* harmony import */ var _effect_fade_mjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(30);
-/* harmony import */ var _effect_cube_mjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(34);
-/* harmony import */ var _effect_flip_mjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(35);
-/* harmony import */ var _effect_coverflow_mjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(37);
-/* harmony import */ var _effect_creative_mjs__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(38);
-/* harmony import */ var _effect_cards_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(39);
+/* harmony import */ var _virtual_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _keyboard_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+/* harmony import */ var _mousewheel_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
+/* harmony import */ var _navigation_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(15);
+/* harmony import */ var _pagination_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17);
+/* harmony import */ var _scrollbar_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(19);
+/* harmony import */ var _parallax_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(20);
+/* harmony import */ var _zoom_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(21);
+/* harmony import */ var _controller_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(22);
+/* harmony import */ var _a11y_mjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(23);
+/* harmony import */ var _history_mjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(24);
+/* harmony import */ var _hash_navigation_mjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(25);
+/* harmony import */ var _autoplay_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(26);
+/* harmony import */ var _thumbs_mjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(27);
+/* harmony import */ var _free_mode_mjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(28);
+/* harmony import */ var _grid_mjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(29);
+/* harmony import */ var _manipulation_mjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(30);
+/* harmony import */ var _effect_fade_mjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(31);
+/* harmony import */ var _effect_cube_mjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(35);
+/* harmony import */ var _effect_flip_mjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(36);
+/* harmony import */ var _effect_coverflow_mjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(38);
+/* harmony import */ var _effect_creative_mjs__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(39);
+/* harmony import */ var _effect_cards_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(40);
 
 
 
@@ -6717,15 +6899,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Virtual)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -7078,15 +7260,15 @@ function Virtual(_ref) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Keyboard)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -7207,15 +7389,15 @@ function Keyboard(_ref) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Mousewheel)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -7614,15 +7796,15 @@ function Mousewheel(_ref) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Navigation)
 /* harmony export */ });
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -7826,14 +8008,14 @@ function Navigation(_ref) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createElementIfNotDefined)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 
 
 function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
@@ -7858,16 +8040,16 @@ function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Pagination)
 /* harmony export */ });
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
 
 
 
@@ -8331,7 +8513,7 @@ function Pagination(_ref) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -8350,17 +8532,17 @@ function classesToSelector(classes) {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Scrollbar)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(17);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
 
 
 
@@ -8730,14 +8912,14 @@ function Scrollbar(_ref) {
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Parallax)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 
 
 function Parallax(_ref) {
@@ -8865,15 +9047,15 @@ function Parallax(_ref) {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Zoom)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -9578,14 +9760,14 @@ function Zoom(_ref) {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Controller)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 
 
 /* eslint no-bitwise: ["error", { "allow": [">>"] }] */
@@ -9780,16 +9962,16 @@ function Controller(_ref) {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ A11y)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(18);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
 
 
 
@@ -10170,14 +10352,14 @@ function A11y(_ref) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ History)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
 
 
 function History(_ref) {
@@ -10323,15 +10505,15 @@ function History(_ref) {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HashNavigation)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -10428,14 +10610,14 @@ function HashNavigation(_ref) {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Autoplay)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
 
 
 /* eslint no-underscore-dangle: "off" */
@@ -10743,15 +10925,15 @@ function Autoplay(_ref) {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Thumb)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -10952,14 +11134,14 @@ function Thumb(_ref) {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ freeMode)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 
 
 function freeMode(_ref) {
@@ -11200,7 +11382,7 @@ function freeMode(_ref) {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -11365,14 +11547,14 @@ function Grid(_ref) {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Manipulation)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 
 
 function appendSlide(slides) {
@@ -11569,17 +11751,17 @@ function Manipulation(_ref) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFade)
 /* harmony export */ });
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(34);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
 
 
 
@@ -11649,7 +11831,7 @@ function EffectFade(_ref) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -11717,14 +11899,14 @@ function effectInit(params) {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectTarget)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 
 
 function effectTarget(effectParams, slideEl) {
@@ -11740,14 +11922,14 @@ function effectTarget(effectParams, slideEl) {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectVirtualTransitionEnd)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 
 
 function effectVirtualTransitionEnd(_ref) {
@@ -11799,15 +11981,15 @@ function effectVirtualTransitionEnd(_ref) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCube)
 /* harmony export */ });
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 
 
 
@@ -11985,18 +12167,18 @@ function EffectCube(_ref) {
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFlip)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(34);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
 
 
 
@@ -12111,14 +12293,14 @@ function EffectFlip(_ref) {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createShadow)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 
 
 function createShadow(suffix, slideEl, side) {
@@ -12136,17 +12318,17 @@ function createShadow(suffix, slideEl, side) {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCoverflow)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
 
 
 
@@ -12254,18 +12436,18 @@ function EffectCoverflow(_ref) {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCreative)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(34);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
 
 
 
@@ -12415,18 +12597,18 @@ function EffectCreative(_ref) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCards)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(34);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
 
 
 
@@ -12623,8 +12805,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _module_dynamic_adapt_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _module_popup_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _module_select_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+/* harmony import */ var _libs_watcher_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
+
 
 
 
@@ -12697,7 +12881,7 @@ window.addEventListener("load", function () {
   if (document.querySelector(".letter-anim")) {
     setTimeout(() => {
       document.querySelector(".letter-anim").classList.add("_is-anim-end");
-    }, 7500);
+    }, 5500);
   }
 
   if (document.querySelector("[data-video]")) {
@@ -12940,8 +13124,8 @@ window.addEventListener("load", function () {
 
     promoSliderBody.classList.add("_is-init");
 
-    new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](promoSliderBody, {
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.FreeMode],
+    new swiper__WEBPACK_IMPORTED_MODULE_6__["default"](promoSliderBody, {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_7__.FreeMode],
       slidesPerView: "auto",
       spaceBetween:
         gapMin + gapScale * ((document.documentElement.offsetWidth - mdMin) / (mdMax - mdMin)),
@@ -12971,8 +13155,8 @@ window.addEventListener("load", function () {
   if (document.querySelector(".category-slider")) {
     document.querySelector(".category-slider").classList.add("_is-init");
 
-    new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](".category-slider", {
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Navigation],
+    new swiper__WEBPACK_IMPORTED_MODULE_6__["default"](".category-slider", {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_7__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_7__.Navigation],
       slidesPerView: "auto",
       freeMode: true,
       resistanceRatio: 0,
