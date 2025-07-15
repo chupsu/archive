@@ -141,7 +141,7 @@
                   title="Обратный звонок"
                   data-popup="#callback"
                 >
-                  <span class="seo">Обратный звонок</span>
+                  <span class="_seo">Обратный звонок</span>
                 </button>
                 <div class="assortment" data-da=".menu__box_catalog,1023,first">
                   <button class="assortment__btn btn btn_main icon-arr-right" type="button" data-assortment>
@@ -616,7 +616,7 @@
                 </div>
                 <div class="search">
                   <button class="header-btn icon-search" type="button" title="Поиск" data-search>
-                    <span class="seo">Поиск</span>
+                    <span class="_seo">Поиск</span>
                   </button>
                   <div class="search__dropdown">
                     <div class="search__body">
@@ -624,7 +624,7 @@
                         <div class="search__main">
                           <input class="search__input" type="search" placeholder="Найти">
                           <button class="search__btn search__btn_submit icon-search" type="submit">
-                            <span class="seo">Искать</span>
+                            <span class="_seo">Искать</span>
                           </button>
                         </div>
                         <div class="search__action">
@@ -634,16 +634,21 @@
                             title="Закрыть поиск"
                             data-search
                           >
-                            <span class="seo">Закрыть поиск</span>
+                            <span class="_seo">Закрыть поиск</span>
                           </button>
                           <button
                             class="search__btn search__btn_reset icon-cross"
                             type="button"
                             title="Очистить"
                           >
-                            <span class="seo">Очистить</span>
+                            <span class="_seo">Очистить</span>
                           </button>
-                          <select data-class-modifier="search" data-show-selected data-speed="300">
+                          <select
+                            data-class-modifier="search"
+                            data-show-selected
+                            data-speed="0"
+                            data-pseudo-label="Искать:"
+                          >
                             <option value="Везде" selected>Везде</option>
                             <option value="Каталог">В каталоге</option>
                             <option value="Блог">В блоге</option>
@@ -656,7 +661,7 @@
                 </div>
                 <div class="menu">
                   <button class="menu__btn header-btn icon-burger" type="button" title="Меню сайта">
-                    <span class="seo">Меню сайта</span>
+                    <span class="_seo">Меню сайта</span>
                   </button>
                   <div class="menu__dropdown">
                     <div class="menu__body">
@@ -971,10 +976,10 @@
               e.target.classList.toggle("_is-active");
 
               if (e.target.classList.contains("_is-active")) {
-                e.target.querySelector(".seo").innerText = "Удалить из избранного";
+                e.target.querySelector("._seo").innerText = "Удалить из избранного";
                 e.target.setAttribute("title", "Удалить из избранного");
               } else {
-                e.target.querySelector(".seo").innerText = "Добавить в избранное";
+                e.target.querySelector("._seo").innerText = "Добавить в избранное";
                 e.target.setAttribute("title", "Добавить в избранное");
               }
             }
@@ -986,7 +991,7 @@
     <div class="popup" id="callback">
       <div class="popup__body">
         <button class="popup__close icon-cross" type="button" data-close>
-          <span class="seo">Закрыть</span>
+          <span class="_seo">Закрыть</span>
         </button>
         <div class="popup__inner">
           <div class="popup__content popup__content_small">
@@ -1012,11 +1017,9 @@
                   <input class="checkbox__input" type="checkbox">
                   <span class="checkbox__icon icon-check"></span>
                   <span class="checkbox__body">
-                    <span class="fields-text">
-                      Согласен с условиями <a href="./" target="_blank">обработки данных</a>,
-                      <a href="./" target="_blank">пользовательского соглашения</a>
-                      и <a href="./" target="_blank">оферты</a>
-                    </span>
+                    Согласен с условиями <a href="./" target="_blank">обработки данных</a>,
+                    <a href="./" target="_blank">пользовательского соглашения</a>
+                    и <a href="./" target="_blank">оферты</a>
                   </span>
                 </label>
               </div>
@@ -1032,7 +1035,7 @@
     <div class="popup" id="geo">
       <div class="popup__body">
         <button class="popup__close icon-cross" type="button" data-close>
-          <span class="seo">Закрыть</span>
+          <span class="_seo">Закрыть</span>
         </button>
         <div class="popup__inner">
           <div class="popup__content popup__content_small">
@@ -1064,7 +1067,7 @@
                   <option value="Новосиль"></option>
                 </datalist>
                 <button class="form-geo__btn icon-search" type="submit">
-                  <span class="seo">Искать</span>
+                  <span class="_seo">Искать</span>
                 </button>
               </div>
             </form>
@@ -1080,7 +1083,7 @@
       </p>
       <button class="cookies__btn btn btn_main" type="button">
         Хорошо
-        <span class="seo">, принять файлы cookies</span>
+        <span class="_seo">, принять файлы cookies</span>
       </button>
       <!-- Удалить скрипт при интеграции! -->
       <script>
