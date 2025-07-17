@@ -88,7 +88,9 @@
 .categories__link,
 .category__img,
 .category__link,
+.checkbox__body,
 .checkbox__body a,
+.checkbox__color,
 .checkbox__icon,
 .checkbox__icon::before,
 .checkbox__toggle,
@@ -1669,6 +1671,10 @@ textarea.input__body {
 .checkbox__input:not(:checked):hover ~ .checkbox__toggle {
   background-color: var(--color-shadow-dark);
 }
+.filters .checkbox__input:focus-visible ~ .checkbox__body,
+.filters .checkbox__input:not(:checked):hover ~ .checkbox__body {
+  color: var(--color-accent);
+}
 .checkbox__input:checked ~ .checkbox__icon {
   background-color: var(--color-main);
   border-color: transparent;
@@ -1940,16 +1946,31 @@ input[type=radio] ~ .checkbox__icon {
   padding-bottom: 24px;
 }
 .page-head__main {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: calc(1.2 * var(--title-2));
-  position: relative;
 }
 .page-head__actions {
   position: relative;
 }
 .page-head__actions:not(:first-child) {
   margin-top: 24px;
+}
+.page-head__back {
+  order: -1;
+  flex-shrink: 0;
+  margin-right: var(--gap-normal-extra);
+  font-size: var(--text-normal);
+  color: var(--color-main);
+}
+.page-head__back::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .page-action {
   display: flex;
@@ -2939,6 +2960,8 @@ input[type=radio] ~ .checkbox__icon {
   color: var(--color-label);
 }
 .catalog__filters {
+  position: relative;
+  z-index: 3;
   margin-bottom: 18px;
 }
 .catalog__items {
@@ -2959,7 +2982,7 @@ input[type=radio] ~ .checkbox__icon {
   display: flex;
   align-items: center;
   gap: var(--gap-normal-extra);
-  padding: 12px 0;
+  padding: 12px 6px;
   font-size: var(--text-normal);
   line-height: 1.2;
   color: var(--color-main);
@@ -4125,6 +4148,9 @@ input[type=radio] ~ .checkbox__icon {
     width: var(--width-page);
     background-color: var(--color-shadow);
   }
+  .page-head__back {
+    display: none;
+  }
   .breadcrumbs {
     max-width: 100%;
     padding: 12px 0;
@@ -4226,6 +4252,9 @@ input[type=radio] ~ .checkbox__icon {
   }
   .catalog__items {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .catalog-nav__link {
+    padding: 12px 0;
   }
   .product__head {
     margin-top: calc(-1.2 * var(--gap-section-head));
@@ -4424,6 +4453,37 @@ input[type=radio] ~ .checkbox__icon {
   .category__amount span {
     font-size: var(--text-smaller);
   }
+  .catalog__body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    -moz-column-gap: var(--gap-small);
+    column-gap: var(--gap-small);
+  }
+  .catalog__aside {
+    padding-right: var(--gap-normal-extra);
+  }
+  .catalog__items {
+    grid-template-columns: 1fr 1fr;
+  }
+  .catalog-nav {
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .catalog-nav__link {
+    flex-direction: row-reverse;
+    padding: 8px 12px 8px 15px;
+    background-color: var(--color-shadow-lightest);
+    border-radius: var(--radius-smallest);
+  }
+  .catalog-nav__link:not(.catalog-nav__link_active):focus-visible {
+    outline: 0;
+    background-color: var(--color-shadow);
+  }
+  .catalog-nav__link_active {
+    color: var(--color-neutral);
+    background-color: var(--color-main);
+    pointer-events: none;
+  }
   .product-card__tags {
     top: 10px;
     left: 10px;
@@ -4491,6 +4551,9 @@ input[type=radio] ~ .checkbox__icon {
   .blog-slider__more:not(:active):hover,
   .new__more:not(:active):hover {
     color: var(--color-accent);
+  }
+  .catalog-nav__link:not(.catalog-nav__link_active):not(:active):hover {
+    background-color: var(--color-shadow);
   }
 }
 @media (min-width: 1023.98px) {
@@ -4960,37 +5023,10 @@ input[type=radio] ~ .checkbox__icon {
   .catalog__body {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    -moz-column-gap: var(--gap-small);
-    column-gap: var(--gap-small);
-  }
-  .catalog__aside {
-    padding-right: var(--gap-normal-extra);
-  }
-  .catalog__filters {
-    position: relative;
-    z-index: 3;
   }
   .catalog__items {
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: 25px;
-  }
-  .catalog-nav {
-    align-items: flex-start;
-    gap: 2px;
-  }
-  .catalog-nav__link {
-    flex-direction: row-reverse;
-    padding: 8px 12px 8px 15px;
-    background-color: var(--color-shadow-lightest);
-    border-radius: var(--radius-smallest);
-  }
-  .catalog-nav__link:not(.catalog-nav__link_active):focus-visible {
-    outline: 0;
-    background-color: var(--color-shadow);
-  }
-  .catalog-nav__link_active {
-    color: var(--color-neutral);
-    background-color: var(--color-main);
-    pointer-events: none;
   }
   .filters__btn {
     display: none;
@@ -5099,7 +5135,6 @@ input[type=radio] ~ .checkbox__icon {
     padding: 9px 12px;
     background-color: var(--color-shadow-lightest);
   }
-  .catalog-nav__link:not(.catalog-nav__link_active):not(:active):hover,
   .checkbox_f-toggle:not(:active):hover,
   .filter-choice__btn:not(:active):hover {
     background-color: var(--color-shadow);
@@ -5666,10 +5701,6 @@ input[type=radio] ~ .checkbox__icon {
     margin-top: 4px;
     -webkit-line-clamp: 2;
   }
-  .catalog-nav,
-  .catalog-nav__link::before {
-    display: none;
-  }
   .filters__dropdown {
     --padding-page: calc(6px + 0.5 * (var(--width-page) - var(--width-container)));
     position: fixed;
@@ -5744,12 +5775,14 @@ input[type=radio] ~ .checkbox__icon {
   .pagination__item + .pagination__item {
     margin-left: 2px;
   }
+  .catalog-nav__link::before,
   .sale .article-card__link::before {
     display: none;
   }
 }
 @media (max-width: 575.98px) {
   .catalog .page-head__actions,
+  .category .page-head__actions,
   .cursive-title {
     display: none;
   }
@@ -5782,6 +5815,20 @@ input[type=radio] ~ .checkbox__icon {
   }
   .favorites-empty__btn {
     min-width: 230px;
+  }
+  .catalog__aside {
+    position: relative;
+    padding-top: 12px;
+  }
+  .catalog__aside::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--width-page);
+    height: 1px;
+    background-color: var(--color-shadow);
   }
 }
 @media (max-width: 359.98px) {
@@ -5907,6 +5954,9 @@ input[type=radio] ~ .checkbox__icon {
   }
   .checkbox__input:not(:checked):hover ~ .checkbox__toggle {
     background-color: var(--color-shadow-dark);
+  }
+  .filters .checkbox__input:not(:checked):hover ~ .checkbox__body {
+    color: var(--color-accent);
   }
   .checkbox__body a:not(:active):hover,
   .select__option:not(:active):hover {

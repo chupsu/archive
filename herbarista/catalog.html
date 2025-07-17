@@ -726,6 +726,9 @@
                 </div>
                 <div class="page-head__main">
                   <h1 class="page-head__title _h2">Инвентарь бармена</h1>
+                  <a class="page-head__back icon-arr-left" href="./categories.html">
+                    <span class="_seo">Назад</span>
+                  </a>
                 </div>
                 <div class="page-head__actions">
                   <ul class="page-action">
@@ -781,6 +784,14 @@
           <div class="container">
             <div class="catalog__body">
               <div class="catalog__aside">
+                <!-- заглушка для пк версии -->
+                <style>
+                  @media (max-width: 767.98px) {
+                    .catalog__aside {
+                      display: none;
+                    }
+                  }
+                </style>
                 <ul class="catalog-nav">
                   <li class="catalog-nav__item">
                     <a class="catalog-nav__link icon-arr-right" href="#">
@@ -875,6 +886,14 @@
                 </ul>
               </div>
               <div class="catalog__main">
+                <!-- заглушка для моб версии -->
+                <!-- <style>
+                  @media (max-width: 767.98px) {
+                    .catalog__main {
+                      display: none;
+                    }
+                  }
+                </style> -->
                 <div class="catalog__filters">
                   <form class="filters" action="#">
                     <button class="filters__btn icon-filter" type="button" data-filters>
