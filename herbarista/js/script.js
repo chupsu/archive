@@ -15057,10 +15057,6 @@ window.addEventListener("load", function () {
     const positionContainerBoundingsRight =
       positionContainer.getBoundingClientRect().x + positionContainer.getBoundingClientRect().width;
 
-    console.log(dropdownElement);
-    console.log(positionContainer);
-    console.log(positionContainerBoundingsRight);
-
     targetElement.parentElement.style.setProperty("--position-left", "");
     const dropdownPosition =
       dropdownElement.getBoundingClientRect().x + dropdownElement.getBoundingClientRect().width >
@@ -15586,6 +15582,49 @@ window.addEventListener("load", function () {
           },
         },
       });
+    });
+  }
+
+  if (document.querySelector(".cabinet-extra")) {
+    const extraSliderElement = document.querySelector(".cabinet-extra");
+    const extraSliderDelay = Number(extraSliderElement.getAttribute("data-delay"));
+
+    extraSliderElement.classList.add("_is-init");
+
+    new swiper__WEBPACK_IMPORTED_MODULE_5__["default"](extraSliderElement, {
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_6__.EffectFade],
+      slidesPerView: 1,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: extraSliderDelay ? extraSliderDelay : 5000,
+        disableOnInteraction: false,
+      },
+      observer: true,
+      allowTouchMove: false,
+      wrapperClass: "cabinet-extra__items",
+      slideClass: "cabinet-extra__item",
+      slideActiveClass: "cabinet-extra__item_active",
+      slidePrevClass: "cabinet-extra__item_prev",
+      slideNextClass: "cabinet-extra__item_next",
+      navigation: {
+        prevEl: ".cabinet-extra__btn_prev",
+        nextEl: ".cabinet-extra__btn_next",
+        disabledClass: "cabinet-extra__btn_disabled",
+        lockClass: "cabinet-extra__btn_is-lock",
+      },
+      on: {
+        init: (swiper) => {
+          swiper.el.classList.toggle("_is-lock", swiper.isLocked);
+        },
+        resize: (swiper) => {
+          swiper.el.classList.toggle("_is-lock", swiper.isLocked);
+        },
+      },
     });
   }
 
