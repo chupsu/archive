@@ -15138,11 +15138,11 @@ window.addEventListener("load", function () {
     document.querySelector(".extra-slider").classList.add("_is-init");
 
     const extraSliderBody = document.querySelector(".extra-slider");
-    const responsiveBreakpoint = 1024;
+    const responsiveBreakpoint = 1023.98;
     const matchMediaSlider = window.matchMedia(`(min-width: ${responsiveBreakpoint}px)`);
     let extraSlider;
 
-    function responsiveInit() {
+    function responsiveSliders() {
       if (window.innerWidth < responsiveBreakpoint) {
         if (extraSlider) {
           extraSlider.destroy(true, true);
@@ -15238,7 +15238,7 @@ window.addEventListener("load", function () {
       }
     }
 
-    responsiveInit();
+    responsiveSliders();
     matchMediaSlider.addEventListener("change", () => {
       responsiveSliders();
     });
