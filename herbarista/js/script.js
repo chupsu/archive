@@ -14933,6 +14933,60 @@ window.addEventListener("load", function () {
     element.style.boxSizing = "content-box";
   };
 
+  const phoneMask = () => {
+    let inputs = document.querySelectorAll("input[type='tel']");
+
+    inputs.forEach((input) => {
+      input.addEventListener("input", mask);
+      input.addEventListener("focus", mask);
+      input.addEventListener("blur", mask);
+
+      /***/
+      function mask(event) {
+        let blank = "+_ (___) ___-__-__";
+
+        let inputValueLength = 0;
+        let inputValue = input.value.replace(/\D/g, "").replace(/^8/, "7");
+
+        input.value = blank.replace(/./g, function (char) {
+          if (/[_\d]/.test(char) && inputValueLength < inputValue.length)
+            return inputValue.charAt(inputValueLength++);
+
+          return inputValueLength >= inputValue.length ? "" : char;
+        });
+
+        if (event.type == "blur") {
+          if (input.value.length == 2) input.value = "";
+        } else {
+          setCursorPosition(input, input.value.length);
+        }
+      }
+
+      /***/
+      function setCursorPosition(elem, pos) {
+        elem.focus();
+
+        if (elem.setSelectionRange) {
+          elem.setSelectionRange(pos, pos);
+          return;
+        }
+
+        if (elem.createTextRange) {
+          let range = elem.createTextRange();
+          range.collapse(true);
+          range.moveEnd("character", pos);
+          range.moveStart("character", pos);
+          range.select();
+          return;
+        }
+      }
+    });
+  };
+
+  if (document.querySelector("input[type='tel']")) {
+    phoneMask();
+  }
+
   const adaptiveFix = () => {
     document.documentElement.style.setProperty("--height-header", `${HEADER.offsetHeight}px`);
     document.documentElement.style.setProperty("--width-page", `${document.body.offsetWidth}px`);
@@ -15657,6 +15711,12 @@ window.addEventListener("load", function () {
     dataAction(targetElement, "search");
     dataAction(targetElement, "filters");
 
+    if (targetElement.closest(".search")) {
+      document.querySelector(".search").classList.add("_is-focus");
+    } else {
+      document.querySelector(".search").classList.remove("_is-focus");
+    }
+
     if (
       targetElement.closest(".select_sort .select__title") ||
       targetElement.closest(".filter-choice__btn")
@@ -15681,9 +15741,9 @@ window.addEventListener("load", function () {
     }
   }
 
-  window.onscroll = function () {
+  window.addEventListener("scroll", () => {
     document.documentElement.classList.toggle("_is-scroll", document.documentElement.scrollTop > 50);
-  };
+  });
 
   window.addEventListener("resize", () => {
     adaptiveFix();
