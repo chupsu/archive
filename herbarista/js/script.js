@@ -351,7 +351,7 @@ function spollers() {
         }
       }
       // Закрытие при клике вне спойлера
-      if (!el.closest("[data-spollers]")) {
+      if (!el.closest("[data-spollers]") || el.closest(".select__title")) {
         const spollersClose = document.querySelectorAll("[data-spoller-close]");
         if (spollersClose.length) {
           spollersClose.forEach((spollerClose) => {
@@ -15123,15 +15123,19 @@ window.addEventListener("load", function () {
     specsCol();
   }
 
-  // const textArea = document.getElementsByTagName("textarea");
-  // for (let i = 0; i < textArea.length; i++) {
-  //   textArea[i].setAttribute("style", "height:" + textArea[i].scrollHeight + "px;overflow-y:hidden;");
-  //   textArea[i].addEventListener("input", OnInput, false);
-  // }
-  // function OnInput() {
-  //   this.style.height = "auto";
-  //   this.style.height = this.scrollHeight + "px";
-  // }
+  if (document.querySelector("textarea")) {
+    const textAreas = document.querySelectorAll("textarea");
+
+    textAreas.forEach((textArea) => {
+      textArea.style.overflow = "hidden";
+
+      textArea.addEventListener("input", (e) => {
+        e.target.value.length
+          ? (textArea.style.height = textArea.scrollHeight + "px")
+          : (textArea.style.height = "");
+      });
+    });
+  }
 
   if (document.querySelector(".welcome-slider")) {
     document.querySelector(".welcome-slider").classList.add("_is-init");
@@ -15691,7 +15695,7 @@ window.addEventListener("load", function () {
 
     //   Menu
     if (document.documentElement.classList.contains("_is-menu-open")) {
-      if (!targetElement.closest(".menu") || targetElement.closest(".menu__link")) {
+      if (!targetElement.closest(".menu")) {
         (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
       }
     }
