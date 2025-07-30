@@ -995,22 +995,17 @@ da.init();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 // Модуль попапов
-// (c) Фрилансер по жизни, Хмурый Кот
-// Документация по работе в шаблоне: https://template.fls.guru/template-docs/funkcional-popup.html
-// Сниппет (HTML): pl
 
-// Подключение функционала "Чертогов Фрилансера"
 
 
 // Класс Popup
 class Popup {
   constructor(options) {
     let config = {
-      logging: true,
       init: true,
       // Для кнопок
       attributeOpenButton: "data-popup", // Атрибут для кнопки, которая вызывает попап
-      attributeCloseButton: "data-close", // Атрибут для кнопки, которая закрывает попап
+      attributeCloseButton: "data-popup-close", // Атрибут для кнопки, которая закрывает попап
       // Для сторонних объектов
       fixElementSelector: "[data-lp]", // Атрибут для элементов с левым паддингом (которые fixed)
       // Для объекта попапа
@@ -1022,8 +1017,8 @@ class Popup {
         popup: "popup",
         popupWrapper: "popup",
         popupContent: "popup__body",
-        popupActive: "is-open", // Добавляется для попапа, когда он открывается
-        bodyActive: "is-popup-open", // Добавляется для боди, когда попап открыт
+        popupActive: "_is-open", // Добавляется для попапа, когда он открывается
+        bodyActive: "_is-popup-open", // Добавляется для боди, когда попап открыт
       },
       focusCatch: true, // Фокус внутри попапа зациклен
       closeEsc: true, // Закрытие по ESC
@@ -1077,7 +1072,6 @@ class Popup {
       "[contenteditable]",
       '[tabindex]:not([tabindex^="-"])',
     ];
-    //this.options = Object.assign(config, options);
     this.options = {
       ...config,
       ...options,
@@ -1098,7 +1092,6 @@ class Popup {
     this.options.init ? this.initPopups() : null;
   }
   initPopups() {
-    this.popupLogging(`Проснулся`);
     this.eventsPopup();
   }
   eventsPopup() {
@@ -1107,19 +1100,13 @@ class Popup {
       "click",
       function (e) {
         // Клик по кнопке "открыть"
-        const buttonOpen = e.target.closest(
-          `[${this.options.attributeOpenButton}]`
-        );
+        const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
         if (buttonOpen) {
           e.preventDefault();
-          this._dataValue = buttonOpen.getAttribute(
-            this.options.attributeOpenButton
-          )
+          this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton)
             ? buttonOpen.getAttribute(this.options.attributeOpenButton)
             : "error";
-          this.youTubeCode = buttonOpen.getAttribute(
-            this.options.youtubeAttribute
-          )
+          this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute)
             ? buttonOpen.getAttribute(this.options.youtubeAttribute)
             : null;
           if (this._dataValue !== "error") {
@@ -1128,22 +1115,13 @@ class Popup {
             this._selectorOpen = true;
             this.open();
             return;
-          } else
-            this.popupLogging(
-              `Ой ой, не заполнен атрибут у ${buttonOpen.classList}`
-            );
+          }
 
           return;
         }
         // Закрытие на пустом месте (popup__wrapper) и кнопки закрытия (popup__close) для закрытия
-        const buttonClose = e.target.closest(
-          `[${this.options.attributeCloseButton}]`
-        );
-        if (
-          buttonClose ||
-          (!e.target.closest(`.${this.options.classes.popupContent}`) &&
-            this.isOpen)
-        ) {
+        const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
+        if (buttonClose || (!e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen)) {
           e.preventDefault();
           this.close();
           return;
@@ -1154,12 +1132,7 @@ class Popup {
     document.addEventListener(
       "keydown",
       function (e) {
-        if (
-          this.options.closeEsc &&
-          e.which == 27 &&
-          e.code === "Escape" &&
-          this.isOpen
-        ) {
+        if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
           e.preventDefault();
           this.close();
           return;
@@ -1198,16 +1171,10 @@ class Popup {
   open(selectorValue) {
     if (_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLockStatus) {
       // Если перед открытием попапа был режим lock
-      this.bodyLock = document.documentElement.classList.contains("lock")
-        ? true
-        : false;
+      this.bodyLock = document.documentElement.classList.contains("_is-lock") ? true : false;
 
       // Если ввести значение селектора (селектор настраивается в options)
-      if (
-        selectorValue &&
-        typeof selectorValue === "string" &&
-        selectorValue.trim() !== ""
-      ) {
+      if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") {
         this.targetOpen.selector = selectorValue;
         this._selectorOpen = true;
       }
@@ -1215,13 +1182,10 @@ class Popup {
         this._reopen = true;
         this.close();
       }
-      if (!this._selectorOpen)
-        this.targetOpen.selector = this.lastClosed.selector;
+      if (!this._selectorOpen) this.targetOpen.selector = this.lastClosed.selector;
       if (!this._reopen) this.previousActiveElement = document.activeElement;
 
-      this.targetOpen.element = document.querySelector(
-        this.targetOpen.selector
-      );
+      this.targetOpen.element = document.querySelector(this.targetOpen.selector);
 
       if (this.targetOpen.element) {
         // YouTube
@@ -1236,11 +1200,7 @@ class Popup {
 
           iframe.setAttribute("src", urlVideo);
 
-          if (
-            !this.targetOpen.element.querySelector(
-              `[${this.options.youtubePlaceAttribute}]`
-            )
-          ) {
+          if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
             const youtubePlace = this.targetOpen.element
               .querySelector(".popup__text")
               .setAttribute(`${this.options.youtubePlaceAttribute}`, "");
@@ -1257,7 +1217,7 @@ class Popup {
 
         // До открытия
         this.options.on.beforeOpen(this);
-        // Создаем свое событие после открытия попапа
+        // Создаем свое событие перед открытием попапа
         document.dispatchEvent(
           new CustomEvent("beforePopupOpen", {
             detail: {
@@ -1297,19 +1257,11 @@ class Popup {
             },
           })
         );
-        this.popupLogging(`Открыл попап`);
-      } else
-        this.popupLogging(
-          `Ой ой, такого попапа нет.Проверьте корректность ввода. `
-        );
+      }
     }
   }
   close(selectorValue) {
-    if (
-      selectorValue &&
-      typeof selectorValue === "string" &&
-      selectorValue.trim() !== ""
-    ) {
+    if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") {
       this.previousOpen.selector = selectorValue;
     }
     if (!this.isOpen || !_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLockStatus) {
@@ -1328,24 +1280,14 @@ class Popup {
 
     // YouTube
     if (this.youTubeCode) {
-      if (
-        this.targetOpen.element.querySelector(
-          `[${this.options.youtubePlaceAttribute}]`
-        )
-      )
-        this.targetOpen.element.querySelector(
-          `[${this.options.youtubePlaceAttribute}]`
-        ).innerHTML = "";
+      if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
+        this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = "";
     }
-    this.previousOpen.element.classList.remove(
-      this.options.classes.popupActive
-    );
+    this.previousOpen.element.classList.remove(this.options.classes.popupActive);
     // aria-hidden
     this.previousOpen.element.setAttribute("aria-hidden", "true");
     if (!this._reopen) {
-      document.documentElement.classList.remove(
-        this.options.classes.bodyActive
-      );
+      document.documentElement.classList.remove(this.options.classes.bodyActive);
       !this.bodyLock ? (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyUnlock)() : null;
       this.isOpen = false;
     }
@@ -1369,8 +1311,6 @@ class Popup {
     setTimeout(() => {
       this._focusTrap();
     }, 50);
-
-    this.popupLogging(`Закрыл попап`);
   }
   // Получение хэша
   _getHash() {
@@ -1381,25 +1321,16 @@ class Popup {
     }
   }
   _openToHash() {
-    let classInHash = document.querySelector(
-      `.${window.location.hash.replace("#", "")}`
-    )
+    let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`)
       ? `.${window.location.hash.replace("#", "")}`
       : document.querySelector(`${window.location.hash}`)
       ? `${window.location.hash}`
       : null;
 
-    const buttons = document.querySelector(
-      `[${this.options.attributeOpenButton} = "${classInHash}"]`
-    )
-      ? document.querySelector(
-          `[${this.options.attributeOpenButton} = "${classInHash}"]`
-        )
+    const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`)
+      ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`)
       : document.querySelector(
-          `[${this.options.attributeOpenButton} = "${classInHash.replace(
-            ".",
-            "#"
-          )}"]`
+          `[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`
         );
     if (buttons && classInHash) this.open(classInHash);
   }
@@ -1432,12 +1363,8 @@ class Popup {
       focusable[0].focus();
     }
   }
-  // Функция вывода в консоль
-  popupLogging(message) {
-    // this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
-  }
 }
-// Запускаем и добавляем в объект модулей
+// Запускаем
 new Popup({});
 
 
