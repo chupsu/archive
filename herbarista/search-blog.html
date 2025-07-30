@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Личные данные</title>
+    <title>Результаты поиска</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -851,7 +851,7 @@
       </header>
 
       <main class="page">
-        <section class="lc">
+        <section class="search-page">
           <div class="page-head">
             <div class="container">
               <div class="page-head__body page-head__body_border">
@@ -859,131 +859,110 @@
                   <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link" href="./index.html">Главная</a>
                   </li>
-                  
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./lc.html">Профиль</a>
-                  </li>
                    
                   <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Личные данные</span>
+                    <span class="breadcrumbs__link">Результаты поиска</span>
                   </li>
                 </ul>
+                <div class="cursive-title cursive-title_right cursive-title_shadow" aria-hidden="true">
+                  <span>Поиск</span>
+                </div>
                 <div class="page-head__main">
-                  <h1 class="page-head__title _h3">Личные данные</h1>
-                  <a class="page-head__back icon-arr-left" href="./lc.html">
-                    <span class="_seo">Назад</span>
-                  </a>
+                  <h1 class="page-head__title _h2">Результаты поиска</h1>
                 </div>
               </div>
             </div>
           </div>
           <div class="container">
-            <div class="lc__body">
-              <div class="lc__aside">
-                <!-- заглушка для пк версии -->
-                <style>
-                  @media (max-width: 1023.98px) {
-                    .lc__aside {
-                      display: none;
-                    }
-                  }
-                </style>
-                <div class="dashboard">
-                  <div class="dashboard__box">
-                    <div class="dashboard-head">
-                      <a class="dashboard-head__link" href="./lc.html">
-                        <span class="_seo">Перейти в личный кабинет</span>
-                      </a>
-                      <div class="dashboard-head__avatar _h3">
-                        <span>ТА</span>
-                      </div>
-                      <dl class="dashboard-head__list">
-                        <dt class="dashboard-head__name">Теплякова Анастасия</dt>
-                        <dd class="dashboard-head__desc">8 000 999 22 00</dd>
-                        <dd class="dashboard-head__desc">namelongemailaddress@yandex.ru</dd>
-                      </dl>
-                    </div>
-                  </div>
-                  <div class="dashboard__box">
-                    <div class="dashboard-bonus">
-                      <div class="dashboard-bonus__desc">Ваш баланс бонусов</div>
-                      <div class="dashboard-bonus__num _h3">200 000</div>
-                      <a class="dashboard-bonus__link" href="#">Подробнее</a>
-                    </div>
-                  </div>
-                  <div class="dashboard__box">
-                    <ul class="dashboard__list">
-                      <li class="dashboard__item">
-                        <a class="dashboard__link icon-receipt" href="./history.html">
-                          История заказов
-                        </a>
-                      </li>
-                      <li class="dashboard__item">
-                        <a class="dashboard__link icon-users" href="./profile.html">
-                          Профиль клиента
-                        </a>
-                      </li>
-                      <li class="dashboard__item">
-                        <span
-                          class="dashboard__link dashboard__link_active icon-setting"
-                          href="./lc-data.html"
-                        >
-                          Личные данные
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="dashboard__box">
-                    <ul class="dashboard__list">
-                      <li class="dashboard__item">
-                        <a class="dashboard__link dashboard__link_exit" href="./auth-login.html">
-                          Выход
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+            <div class="search-page__body">
+              <div class="search-page__box">
+                <div class="search-page__head">
+                  <h3 class="search-page__title _h3">Блог</h3>
                 </div>
-              </div>
-              <div class="lc__content">
-                <div class="input-fields input-fields_data">
-                  <div class="input-fields__box">
-                    <div class="input-fields__head">
-                      <h3 class="input-fields__title">Изменить данные</h3>
-                    </div>
-                    <div class="input-fields__grid">
-                      <div class="input-fields__cell input-fields__cell_large">
-                        <label class="input">
-                          <!-- input::placeholder=" " должен быть не пустым -->
-                          <input class="input__body" type="text" placeholder=" " required>
-                          <span class="input__placeholder">ФИО*</span>
-                        </label>
+                <div class="search-page__main">
+                  <div class="search-page__items search-page__items_blog">
+                    <article class="article-search-card">
+                      <a class="article-search-card__link" href="./article.html">
+                        <span class="_seo"></span>
+                      </a>
+                      <div class="article-search-card__head">
+                        <h3 class="article-search-card__title">
+                          Authentic grenadine/Гренадин -Старинный рецепт
+                        </h3>
                       </div>
-                      <div class="input-fields__cell input-fields__cell_medium">
-                        <label class="input">
-                          <!-- input::placeholder=" " должен быть не пустым -->
-                          <input class="input__body" type="email" placeholder=" " required>
-                          <span class="input__placeholder">Электронная почта*</span>
-                        </label>
+                      <div class="article-search-card__content">
+                        <p>
+                          Продукт поставляют в бутылках объемом 1 литр &mdash;
+                          <b>удобн</b>ая тара для работы ресторанов и других заведений.
+                        </p>
                       </div>
-                      <div class="input-fields__cell input-fields__cell_medium">
-                        <label class="input">
-                          <!-- input::placeholder=" " должен быть не пустым -->
-                          <input class="input__body" type="tel" placeholder=" ">
-                          <span class="input__placeholder">Ваш телефон</span>
-                        </label>
+                    </article>
+                    <article class="article-search-card">
+                      <a class="article-search-card__link" href="./article.html">
+                        <span class="_seo"></span>
+                      </a>
+                      <div class="article-search-card__head">
+                        <h3 class="article-search-card__title">
+                          Пари-Брест с кокосовым кастардом и джемом из ананаса
+                        </h3>
                       </div>
-                    </div>
+                      <div class="article-search-card__content">
+                        <p>
+                          <b>Сироп &laquo;Карамель</b>&raquo; &mdash; один из основных
+                          инструментов бармена и бариста, так что в кофейне или в баре сегодня
+                          это незаменимый товар. <br>
+                          Сироп со вкусом карамели в точности передает все оттенки вкуса
+                          одноименной сладости. Мягкий вкус сгущенного молока в сочетании
+                          с легкими нотами орехов, ванильной сладостью и послевкусием
+                          ириски &mdash; этот вкус знаком всем, кто любит десерты и сладости.
+                          <br>
+                          Продукт поставляют в бутылках объемом 1 литр &mdash; удобная тара
+                          для работы ресторанов и других заведений.
+                        </p>
+                      </div>
+                    </article>
+                    <article class="article-search-card">
+                      <a class="article-search-card__link" href="./article.html">
+                        <span class="_seo"></span>
+                      </a>
+                      <div class="article-search-card__head">
+                        <h3 class="article-search-card__title">Пшёная каша с тыквой</h3>
+                      </div>
+                      <div class="article-search-card__content">
+                        <p>
+                          Это один из самых известных алкогольных напитков в мире. Коктейль
+                          Кровавая Мэри на основе водки и томатного сока
+                          <b>официально</b> признан Международной ассоциацией барменов современной
+                          классикой (1). Между тем, вариантов исполнения этого напитка &mdash;
+                          множество. Не говоря уже об авторских рецептах, которых за почти
+                          вековую историю Кровавой Мэри скопилось достаточно.
+                        </p>
+                      </div>
+                    </article>
                   </div>
-                  <div class="input-fields__actions">
-                    <button class="input-fields__btn btn btn_small-extra btn_main" type="button">
-                      Сохранить
-                    </button>
-                    <button
-                      class="input-fields__btn btn btn_small-extra btn_shadow btn_cancel"
-                      data-popup="#remove"
-                    >
-                      Удалить профиль
-                    </button>
+                  <div class="search-page__action">
+                    <nav class="blog__pagination pagination">
+                      <ul class="pagination__list">
+                        <li class="pagination__item pagination__item_prev pagination__item_disabled">
+                          <a href="#"><span class="_seo">Предыдущая страница</span></a>
+                        </li>
+                        <li class="pagination__item pagination__item_active">
+                          <span>1</span>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="#">2</a>
+                        </li>
+                        <li class="pagination__item">
+                          <span>...</span>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="#">5</a>
+                        </li>
+                        <li class="pagination__item pagination__item_next">
+                          <a href="#"><span class="_seo">Следующая страница</span></a>
+                        </li>
+                      </ul>
+                    </nav>
                   </div>
                 </div>
               </div>
@@ -1293,30 +1272,6 @@
           });
         })();
       </script>
-    </div>
-
-    <div class="popup" id="remove">
-      <div class="popup__body">
-        <button class="popup__close icon-cross" type="button" data-popup-close>
-          <span class="_seo">Закрыть</span>
-        </button>
-        <div class="popup__inner">
-          <div class="popup__content popup__content_small">
-            <div class="popup__head popup__head_center">
-              <h4 class="popup__title _h2">Удаление профиля</h4>
-              <p class="popup__text popup__text_clear">
-                Вы уверены, что хотите удалить профиль? Все данные будут утеряны.
-              </p>
-            </div>
-            <div class="popup__main">
-              <div class="popup__actions">
-                <button class="popup__btn btn btn_normal btn_main" type="button" data-popup-close>Нет</button>
-                <a class="popup__btn btn btn_normal btn_shadow btn_cancel" href="#">Да</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </body>
 </html>
