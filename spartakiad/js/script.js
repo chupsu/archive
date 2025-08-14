@@ -12577,6 +12577,10 @@ __webpack_require__.r(__webpack_exports__);
 // import Masonry from "masonry-layout";
 // import AirDatepicker from "air-datepicker";
 
+window.Swiper = swiper__WEBPACK_IMPORTED_MODULE_4__["default"];
+// window.Masonry = Masonry;
+// window.AirDatepicker = AirDatepicker;
+
 window.addEventListener("load", function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuInit)();
@@ -12834,7 +12838,7 @@ window.addEventListener("load", function () {
     promoSliderBody.classList.add("_is-init");
 
     new swiper__WEBPACK_IMPORTED_MODULE_4__["default"](promoSliderBody, {
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.FreeMode],
+      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_5__.FreeMode, swiper_modules__WEBPACK_IMPORTED_MODULE_5__.Navigation],
       slidesPerView: "auto",
       spaceBetween:
         gapNormalMin +
@@ -12849,6 +12853,12 @@ window.addEventListener("load", function () {
       slideActiveClass: "promo-slider__item_active",
       slidePrevClass: "promo-slider__item_prev",
       slideNextClass: "promo-slider__item_next",
+      navigation: {
+        prevEl: ".promo-slider__btn_prev",
+        nextEl: ".promo-slider__btn_next",
+        disabledClass: "promo-slider__btn_disabled",
+        lockClass: "_is-lock",
+      },
       on: {
         init: (swiper) => {
           swiper.el.classList.toggle("_is-lock", swiper.isLocked);
