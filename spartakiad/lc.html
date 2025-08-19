@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f1efe9">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="header header_lc" data-lp>
+        <div class="container">
+          <div class="header__body">
+             
+            <a class="logo logo_header logo_h-fix logo_h-responsive" href="./index.html#wrapper">
+              <picture>
+                <source srcset="./img/content/logo-4.svg" media="(max-width: 767px)">
+                <img class="logo__img" src="./img/content/logo-1.svg" alt="Спартакиада Моспром">
+              </picture>
+            </a>
+            
+            <a class="logo logo_header logo_h-scroll" href="./index.html#wrapper">
+              <img class="logo__img" src="./img/content/logo-2.svg" alt="Спартакиада Моспром">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn" type="button" title="Меню сайта" data-menu>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.01562" y="4" width="24.9844" height="4" rx="1" fill="currentColor"/>
+                  <rect x="1.01562" y="11" width="18.5156" height="4" rx="1" fill="currentColor"/>
+                  <rect x="1.01562" y="18" width="24.9844" height="4" rx="1" fill="currentColor"/>
+                </svg>
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5.58594" y="2.75244" width="24.9844" height="4" rx="1" transform="rotate(45 5.58594 2.75244)" fill="currentColor"/>
+                  <rect width="24.9844" height="4" rx="1" transform="matrix(-0.707107 0.707107 0.707107 0.707107 20.4219 2.75244)" fill="currentColor"/>
+                </svg>
+                <span class="_seo">Меню сайта</span>
+              </button>
+              <div class="menu__dropdown">
+                <div class="menu__body">
+                  <div class="menu__main">
+                    <div class="menu__box">
+                      <ul class="menu__list">
+                        <li class="menu__item">
+                          <a class="menu__link" href="./index.html#category">Виды спорта</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="./history.html">Участники</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Расписание</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Вопросы</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="menu__box">
+                      <ul class="menu__list">
+                        <li class="menu__item">
+                          <a class="menu__link" href="#">Новости</a>
+                        </li>
+                        <li class="menu__item">
+                          <a class="menu__link" href="./gallery.html">Галерея</a>
+                        </li>
+                        <li class="menu__item menu__item_pc">
+                          <a class="menu__link menu__link_accent" href="./lc.html">
+                            Подать заявку/Войти в ЛК
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="menu__extra">
+                    <a class="btn btn_medium btn_shadow" href="./lc.html">Личный кабинет</a>
+                    <a class="btn btn_medium btn_cta-accent" href="#">Подать заявку</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <div class="header__action">
+              <a class="header__link" href="./lc.html">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8.16406" y="2.37988" width="9.66797" height="9.66797" rx="4.83398" fill="currentColor"/>
+                  <rect x="2.53125" y="16.2203" width="20.9375" height="9.77966" rx="2" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <!-- отдельная страница только с боковой панелью для устройств с экраном менее 1024рх -->
+        <section class="lc lc_dashboard-only">
+          <div class="page-head page-head_gap-medium">
+            <div class="container">
+              <div class="page-head__body" data-position-container>
+                <div class="page-head__main">
+                  <div class="page-head__breadcrumbs">
+                    <ul class="r-breadcrumbs">
+                      <li class="r-breadcrumbs__item">
+                        <a class="r-breadcrumbs__link" href="./index.html">Главная</a>
+                      </li>
+                      
+                      <li class="r-breadcrumbs__item">
+                        <span class="r-breadcrumbs__link">Личный кабинет</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lc__wrapper">
+            <div class="container">
+              <div class="lc__body">
+                <div class="lc__aside">
+                  <div class="dashboard">
+                    <div class="dashboard__main">
+                      <div class="dashboard__head">
+                        <figure class="dashboard__media">
+                          <picture><source srcset="./img/content/logo/team-3.webp" type="image/webp"><img class="dashboard__img" src="./img/content/logo/team-3.png" alt="Изображение"></picture>
+                        </figure>
+                        <a class="dashboard__settings icon-setting" href="./lc-about-edit.html">
+                          <span class="_seo">Редактировать профиль</span>
+                        </a>
+                      </div>
+                      <div class="dashboard__title">Длинноеназваниекоманды в несколько строк</div>
+                    </div>
+                    <ul class="dashboard__list">
+                      <li class="dashboard__item">
+                        <a class="dashboard__link icon-arr-right" href="./lc-about.html">
+                          О компании
+                        </a>
+                      </li>
+                      <li class="dashboard__item">
+                        <a class="dashboard__link icon-arr-right" href="./lc-members.html">
+                          Участники
+                        </a>
+                      </li>
+                      <li class="dashboard__item">
+                        <a class="dashboard__link icon-arr-right" href="./lc-teams.html">Команды</a>
+                      </li>
+                      <li class="dashboard__item">
+                        <a class="dashboard__link icon-arr-right" href="./lc-orders.html">
+                          Заявка на участие
+                        </a>
+                      </li>
+                      <li class="dashboard__item">
+                        <a class="dashboard__link icon-arr-right" href="./lc-approved.html">Допуск</a>
+                      </li>
+                      <li class="dashboard__item">
+                        <a class="dashboard__link dashboard__link_accent" href="#">Выход</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer" data-watch>
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__box footer__box_logo">
+              <a class="logo logo_footer" href="./index.html#wrapper">
+                <img class="logo__img" src="./img/content/logo-3.svg" alt="Спартакиада Моспром">
+              </a>
+            </div>
+            <div class="footer__box footer__box_contacts">
+              <div class="footer-contacts">
+                <div class="footer-contacts__text">Служба поддержки участников</div>
+                <ul class="footer-contacts__list">
+                  <li class="footer-contacts__item">
+                    <a class="footer-contacts__link footer-contacts__link_large" href="tel:+74957441145">
+                      +7 495 744 11 45
+                    </a>
+                  </li>
+                  <li class="footer-contacts__item">
+                    <a class="footer-contacts__link" href="mailto:info@spartakiadamosprom.ru" target="_blank">
+                      info@spartakiadamosprom.ru
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__box footer__box_nav">
+              <ul class="footer-nav">
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#">Виды спорта</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="./history.html">Участники</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#">Расписание</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#">Вопросы</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#">Полезное</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="./gallery.html">Галерея</a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#">Войти</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__box footer__box_social">
+              <ul class="social">
+                <li class="social__item">
+                  <a class="social__link" href="https://t.me/Spartakiada_Mosprom" target="_blank">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.57879 19.3195C7.63485 19.2915 7.69093 19.2649 7.74558 19.2396C8.69573 18.7996 9.65849 18.3876 10.6198 17.9756C10.6717 17.9756 10.7586 17.9153 10.8076 17.8957C10.8819 17.8635 10.9562 17.8327 11.0304 17.8004C11.1734 17.7388 11.3163 17.6785 11.4579 17.6168C11.7438 17.4949 12.0282 17.373 12.3141 17.2511L14.0252 16.5181C15.1659 16.0305 16.3081 15.5414 17.4488 15.0537C18.5896 14.566 19.7317 14.0769 20.8724 13.5892C22.0132 13.1015 23.1553 12.6125 24.296 12.1248C25.4368 11.6371 26.5789 11.148 27.7197 10.6603C27.9733 10.551 28.248 10.3884 28.5199 10.3408C28.7483 10.3002 28.9711 10.2217 29.2009 10.1782C29.6367 10.0956 30.1174 10.0619 30.535 10.2427C30.6794 10.3058 30.8125 10.3941 30.9232 10.5048C31.453 11.0289 31.3787 11.8893 31.2666 12.6265C30.486 17.764 29.7054 22.9029 28.9234 28.0404C28.8169 28.7453 28.6712 29.5189 28.1148 29.9645C27.644 30.3415 26.9741 30.3835 26.3925 30.2238C25.8109 30.0626 25.298 29.7249 24.7949 29.3928C22.7083 28.011 20.6202 26.6292 18.5335 25.2474C18.0374 24.9195 17.4853 24.4907 17.4909 23.8951C17.4937 23.5363 17.7081 23.2168 17.9267 22.9323C19.7401 20.5668 22.3565 18.9412 24.303 16.6849C24.5777 16.3668 24.7935 15.7922 24.4166 15.6086C24.1923 15.4993 23.9345 15.6479 23.7299 15.7894C21.1569 17.5762 18.5854 19.3644 16.0124 21.1512C15.173 21.7341 14.2929 22.3339 13.2811 22.4769C12.3758 22.6058 11.4649 22.3535 10.589 22.0957C9.85469 21.8799 9.12173 21.6585 8.39161 21.43C8.00342 21.3095 7.60262 21.1792 7.30272 20.9059C7.00282 20.6326 6.83047 20.173 7.01125 19.8086C7.12477 19.5802 7.34479 19.4358 7.57602 19.3181L7.57879 19.3195Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="https://ok.ru/group/68834660843577" target="_blank">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M27.2907 22.9188C27.8829 22.3405 27.9674 21.5145 27.4599 20.6884C27.0369 20.0276 26.2755 19.6972 25.4296 19.8624C25.0912 19.945 24.7528 20.1102 24.4144 20.358C21.7919 22.0927 18.2389 22.0101 15.6164 20.2754C15.4472 20.1928 15.278 20.1102 15.1089 20.0276C14.1783 19.6145 13.2478 19.7798 12.7402 20.6058C12.148 21.4319 12.2326 22.3406 12.994 23.084C13.1631 23.2492 13.3323 23.3318 13.4169 23.497L13.5015 23.5796C14.6859 24.4883 16.124 25.0666 17.9851 25.3144L16.8854 26.3883C15.9548 27.2969 14.9397 28.2882 14.0091 29.1969C13.7553 29.4447 13.4169 29.8577 13.4169 30.436C13.4169 31.1794 13.8399 31.9229 14.6013 32.2533C14.8551 32.4185 15.1089 32.4185 15.3626 32.4185C15.7856 32.4185 16.2932 32.2533 16.6316 31.8403C17.9005 30.6012 18.9157 29.6099 19.9308 28.6186C20.0154 28.536 20.0154 28.536 20.0154 28.536C20.0154 28.536 20.1 28.536 20.1 28.6186C20.7768 29.3621 21.5382 30.0229 22.2149 30.7664C22.5533 31.0968 22.8917 31.4272 23.2301 31.7577C23.6531 32.1707 23.9914 32.3359 24.499 32.3359C25.2604 32.4185 26.1063 31.9229 26.4447 31.1794C26.7831 30.5186 26.6139 29.6925 26.0217 29.1969C25.1758 28.3708 24.3298 27.4621 23.3993 26.6361L21.9611 25.2318C22.7225 25.1492 23.5685 24.984 24.3298 24.6535C25.5988 24.2405 26.5293 23.6622 27.2907 22.9188Z" fill="currentColor"/>
+                      <path d="M20.0154 20.6058C23.6531 20.6058 26.6139 17.7972 26.6139 14.2451C26.6139 12.5104 25.9371 10.8583 24.6682 9.61918C23.3993 8.38009 21.7919 7.71924 20.1 7.71924C16.4624 7.71924 13.5861 10.6105 13.5015 14.0799C13.5015 15.8146 14.1783 17.3842 15.4472 18.6233C16.6316 19.945 18.2389 20.6058 20.0154 20.6058ZM18.1543 12.3452C18.6619 11.8496 19.3387 11.6017 20.0154 11.6017C21.5382 11.6017 22.6379 12.7582 22.6379 14.1625C22.6379 15.6494 21.4536 16.7233 20.0154 16.7233C18.4927 16.7233 17.393 15.5668 17.393 14.1625C17.393 13.5017 17.6467 12.8408 18.1543 12.3452Z" fill="currentColor"/>
+                      <path d="M27.2907 22.9188C27.8829 22.3405 27.9674 21.5145 27.4599 20.6884C27.0369 20.0276 26.2755 19.6972 25.4296 19.8624C25.0912 19.945 24.7528 20.1102 24.4144 20.358C21.7919 22.0927 18.2389 22.0101 15.6164 20.2754C15.4472 20.1928 15.278 20.1102 15.1089 20.0276C14.1783 19.6145 13.2478 19.7798 12.7402 20.6058C12.148 21.4319 12.2326 22.3406 12.994 23.084C13.1631 23.2492 13.3323 23.3318 13.4169 23.497L13.5015 23.5796C14.6859 24.4883 16.124 25.0666 17.9851 25.3144L16.8854 26.3883C15.9548 27.2969 14.9397 28.2882 14.0091 29.1969C13.7553 29.4447 13.4169 29.8577 13.4169 30.436C13.4169 31.1794 13.8399 31.9229 14.6013 32.2533C14.8551 32.4185 15.1089 32.4185 15.3626 32.4185C15.7856 32.4185 16.2932 32.2533 16.6316 31.8403C17.9005 30.6012 18.9157 29.6099 19.9308 28.6186C20.0154 28.536 20.0154 28.536 20.0154 28.536C20.0154 28.536 20.1 28.536 20.1 28.6186C20.7768 29.3621 21.5382 30.0229 22.2149 30.7664C22.5533 31.0968 22.8917 31.4272 23.2301 31.7577C23.6531 32.1707 23.9914 32.3359 24.499 32.3359C25.2604 32.4185 26.1063 31.9229 26.4447 31.1794C26.7831 30.5186 26.6139 29.6925 26.0217 29.1969C25.1758 28.3708 24.3298 27.4621 23.3993 26.6361L21.9611 25.2318C22.7225 25.1492 23.5685 24.984 24.3298 24.6535C25.5988 24.2405 26.5293 23.6622 27.2907 22.9188Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="https://vk.com/mospromsport" target="_blank">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21.1754 27.7871C12.7341 27.7871 7.91937 21.9925 7.71875 12.3501H11.9471C12.086 19.4273 15.2032 22.4251 17.6724 23.0432V12.3501H21.6538V18.4538C24.092 18.1911 26.6537 15.4097 27.5179 12.3501H31.4994C31.1737 13.9369 30.5246 15.4393 29.5926 16.7634C28.6606 18.0876 27.4657 19.2048 26.0828 20.0454C27.6265 20.8135 28.9899 21.9007 30.0832 23.2351C31.1765 24.5696 31.9748 26.1211 32.4253 27.7871H28.0426C27.6382 26.34 26.8162 25.0447 25.6797 24.0633C24.5432 23.082 23.1427 22.4584 21.6538 22.2706V27.7871H21.1754V27.7871Z" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <a class="footer__social-extra" href="https://www.mos.ru/dipp/">
+                <span class="_seo">Департамент инвестиционной и промышленной политики города Москвы</span>
+                <svg width="36" height="44" viewBox="0 0 36 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M27.8052 0V3.19115H30.5922L18.0144 13.1304L9.78894 6.6625L4.75781 10.6164V14.6871L9.78894 10.7254L18.0144 17.1933L32.8363 5.48722V8.26586H35.9987V0H27.8052Z" fill="white"/>
+                  <path d="M32.8061 33.3748H32.8301C32.8301 35.3673 31.169 37.0018 29.0448 37.2431L25.1476 35.1027L24.1494 37.3053C23.6782 37.3365 23.2071 37.3987 22.7439 37.4766V37.0096L23.3508 37.352V31.4756L19.3499 32.4486V38.5818C19.0304 38.7375 18.711 38.9087 18.4075 39.0955V31.5535L19.6134 31.2499V23.599L13.8715 25.4592L13.8316 32.1372L17.2017 33.9196V38.8542C16.9062 38.6908 16.6027 38.5351 16.2992 38.395V34.5967L8.85638 30.7674L3.19437 27.8486V3.19115H26.2417V0H0V33.3748C0 37.3053 3.35408 40.4731 7.49079 40.4731H11.0046C15.4927 40.4731 17.9843 43.5008 17.9843 43.5008C17.9843 43.5008 20.4759 40.4731 24.964 40.4731H28.4778C32.6145 40.4731 35.9686 37.282 35.9686 33.3748V9.85365H32.8061V33.3826V33.3748ZM3.18638 33.3748V30.4405L8.84839 33.3592V34.5578L10.6772 33.476V37.282H9.75879V35.1104L6.37276 37.1341C4.54398 36.6827 3.18638 35.1727 3.18638 33.3748Z" fill="white"/>
+                  <path d="M8.96875 29.7635L12.7381 31.7249L12.8259 27.1561L8.96875 25.0312V29.7635Z" fill="white"/>
+                  <path d="M8.89388 21.988C8.79006 22.0736 8.67826 22.1592 8.57444 22.2449C8.47062 22.3305 8.3668 22.4239 8.27097 22.5095C8.16716 22.6029 8.07133 22.6963 7.9755 22.7897C7.87966 22.8831 7.78383 22.9765 7.688 23.0777C7.59217 23.1711 7.50433 23.2723 7.41648 23.3734C7.33662 23.4591 7.0651 23.7548 6.94531 23.8949L9.02964 25.0469C9.42095 24.5954 9.85218 24.1751 10.3313 23.8015C10.8185 23.4201 11.3456 23.0777 11.9126 22.7819C12.4875 22.4861 13.0705 22.2526 13.6695 22.0814C14.2844 21.9024 14.8993 21.7856 15.5222 21.7312C16.1531 21.6767 16.7919 21.6767 17.4148 21.7389C18.0457 21.8012 18.6686 21.9257 19.2756 22.1125C19.8825 22.2916 20.4655 22.5328 21.0245 22.8286C21.5755 23.1166 22.1026 23.4668 22.5977 23.8638C23.0769 24.253 23.5241 24.6888 23.9234 25.1714C24.3147 25.6462 24.6661 26.1599 24.9695 26.7125C25.273 27.2729 25.5126 27.8411 25.6882 28.4248C25.8719 29.0241 25.9917 29.6312 26.0476 30.2305C26.1035 30.8454 26.1035 31.4681 26.0396 32.0752C25.9757 32.69 25.848 33.2971 25.6563 33.8887C25.6084 34.0366 25.5605 34.1844 25.5046 34.3323L27.549 35.4531C27.5649 35.4064 27.5889 35.3597 27.6049 35.313C27.6528 35.1885 27.7007 35.064 27.7486 34.9394C27.7965 34.8149 27.8365 34.6904 27.8764 34.558C27.9163 34.4335 27.9562 34.3012 27.9882 34.1767C28.0281 34.0521 28.0601 33.9198 28.092 33.7875C28.124 33.6552 28.1559 33.5306 28.1799 33.3983C28.2038 33.2738 28.2278 33.1415 28.2517 33.0092L29.6333 32.8768H29.6493V32.8691V32.8535L29.7451 30.3395V30.3239H29.7291L28.3635 30.0904C28.3555 29.9581 28.3396 29.8336 28.3236 29.7013C28.3076 29.5689 28.2917 29.4366 28.2677 29.3121C28.2437 29.1798 28.2198 29.0475 28.1958 28.9151C28.1719 28.7828 28.1399 28.6505 28.116 28.526C28.084 28.3937 28.0521 28.2691 28.0201 28.1368C27.9882 28.0045 27.9483 27.88 27.9083 27.7554C27.8684 27.6309 27.8285 27.4986 27.7885 27.3741C27.7486 27.2495 27.7007 27.125 27.6528 27.0005L28.7788 26.2143H28.7948V26.2066V26.191L27.5889 23.965V23.9494H27.5809H27.5649L26.2792 24.4086C26.1993 24.2997 26.1195 24.1907 26.0396 24.0895C25.9598 23.9805 25.8719 23.8794 25.7921 23.7782C25.7042 23.677 25.6164 23.5758 25.5285 23.4668C25.4407 23.3657 25.3449 23.2645 25.257 23.1711C25.1612 23.0699 25.0733 22.9765 24.9775 22.8831C24.8817 22.7897 24.7858 22.6963 24.682 22.6029C24.5862 22.5095 24.4824 22.4239 24.3786 22.3305C24.2747 22.2449 24.1709 22.1592 24.0671 22.0736L24.6341 20.8517V20.8361L24.6181 20.8283L22.43 19.4896H22.414V19.4818L22.406 19.4974L21.5276 20.517C21.4078 20.4625 21.28 20.408 21.1602 20.3535C21.0325 20.299 20.9047 20.2523 20.7769 20.2056C20.6491 20.1589 20.5214 20.1122 20.3936 20.0655C20.2658 20.0188 20.1301 19.9799 20.0023 19.941C19.8745 19.9021 19.7387 19.8632 19.611 19.832C19.4752 19.7931 19.3474 19.762 19.2117 19.7309C19.0759 19.6997 18.9481 19.6686 18.8124 19.6452C18.6766 19.6219 18.5488 19.5985 18.4131 19.5752L18.2773 18.252V18.2365H18.2614L15.6819 18.1431H15.6659V18.1508V18.1664L15.4264 19.474C15.2906 19.4818 15.1548 19.4974 15.0271 19.5129C14.8913 19.5285 14.7555 19.5441 14.6198 19.5674C14.484 19.5908 14.3483 19.6141 14.2125 19.6375C14.0767 19.6608 13.941 19.6919 13.8132 19.7231C13.6774 19.7542 13.5497 19.7853 13.4139 19.8165C13.2781 19.8476 13.1504 19.8865 13.0146 19.9254C12.8868 19.9644 12.7511 20.0033 12.6233 20.05C12.4955 20.0889 12.3677 20.1356 12.24 20.1823L11.4414 19.1004V19.0848H11.4334L11.4174 19.0926L9.13345 20.2679H9.11748V20.2757V20.2913L9.58066 21.5366C9.46886 21.6144 9.35706 21.6922 9.25324 21.7701C9.14144 21.8479 9.03762 21.9335 8.9338 22.0114L8.89388 21.988Z" fill="white"/>
+                </svg>
+              </a>
+            </div>
+            <div class="footer__box footer__box_info">
+              <ul class="footer-info">
+                <li class="footer-info__item">
+                  <a class="footer-info__link" href="#" target="_blank">
+                    Положение о Спартакиаде &laquo;МОСПРОМ&raquo; 2025
+                  </a>
+                </li>
+                <li class="footer-info__item">
+                  <a class="footer-info__link" href="#" target="_blank">
+                    Политика обработки и распространения персональных данных
+                  </a>
+                </li>
+                <li class="footer-info__item">
+                  <a class="footer-info__link" href="#" target="_blank">
+                    Согласие родителей на участие несовершеннолетнего в соревнованиях
+                  </a>
+                </li>
+                <li class="footer-info__item">&copy; 2025, Москва, Спартакиада &laquo;МОСПРОМ&raquo;</li>
+              </ul>
+            </div>
+            <div class="footer__box footer__box_action">
+              <a class="footer__btn footer__btn_up btn btn_small btn_neutral" href="#wrapper">Наверх</a>
+              
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="page-lines">
+      <span class="page-lines__side page-lines__side_left"></span>
+      <span class="page-lines__side page-lines__side_right"></span>
+      <span class="page-lines__top page-lines__top_left"><span></span></span>
+      <span class="page-lines__top page-lines__top_right"><span></span></span>
+    </div>
+
+    <div class="popup" id="video-player">
+      <div class="popup__wrapper">
+        <div class="popup__body">
+          <button class="popup__close" type="button" data-popup-close>
+            <span class="_seo">Закрыть окно</span>
+            <svg aria-hidden="true">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__scroll">
+              <div class="popup__video" data-popup-video-place></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg class="_seo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none">
+      <symbol fill="none" viewBox="0 0 22 22" id="icon-arr-down" xmlns="http://www.w3.org/2000/svg">
+        <path d="m3.556 3.82 7.443 14.243L18.443 3.82h3.524l-7.479 14.31H7.51L.03 3.82h3.525Z" fill="currentColor" />
+      </symbol>
+      <symbol fill="none" viewBox="0 0 68 68" id="icon-arrow-left" xmlns="http://www.w3.org/2000/svg">
+        <path d="M68 30.073H0v7.912h68zM31.844 4.453-.002 21.245v7.912l31.846-16.792V4.453ZM31.844 63.603-.002 46.813V38.9l31.846 16.792v7.911Z" fill="currentColor" />
+      </symbol>
+      <symbol fill="none" viewBox="0 0 68 68" id="icon-arrow-right" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30.073h68v7.912H0zM36.156 4.453l31.846 16.792v7.912L36.156 12.365V4.453ZM36.156 63.603l31.846-16.791V38.9L36.156 55.692v7.911Z" fill="currentColor" />
+      </symbol>
+      <symbol fill="none" viewBox="0 0 36 36" id="icon-close" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.253 29.511 7.02 27.278 27.298 7l2.233 2.233L9.253 29.511Z" fill="currentColor" />
+        <path d="m27.434 29.511 2.234-2.233L9.389 7 7.156 9.233l20.279 20.278Z" fill="currentColor" />
+      </symbol>
+      <symbol fill="none" viewBox="0 0 36 36" id="icon-play" xmlns="http://www.w3.org/2000/svg">
+        <path d="m26.75 18-14 8V10l14 8Z" fill="currentColor" />
+      </symbol>
+      <symbol fill="none" viewBox="0 0 37 37" id="icon-resize" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32.0149 30.78L21.3359 20.1011L20.0934 21.3436L30.7724 32.0225L32.0149 30.78Z" fill="currentColor" />
+        <path d="M31.0394 21.7554L33.4034 29.3935L32.1609 30.636L29.7969 22.9979L31.0394 21.7554Z" fill="currentColor" />
+        <path d="M21.75 31.0447L29.3881 33.4088L30.6306 32.1663L22.9925 29.8022L21.75 31.0447Z" fill="currentColor" />
+        <path d="M4.01637 5.24928L14.6953 15.9282L15.9378 14.6857L5.25888 4.00678L4.01637 5.24928Z" fill="currentColor" />
+        <path d="M4.98908 14.2737L2.625 6.63558L3.8675 5.39307L6.23159 13.0312L4.98908 14.2737Z" fill="currentColor" />
+        <path d="M14.279 4.98421L6.64095 2.62012L5.39844 3.86263L13.0365 6.22671L14.279 4.98421Z" fill="currentColor" />
+      </symbol>
+    </svg>
+
+    <div class="popup" id="gallery-popup">
+      <div class="popup__wrapper">
+        <div class="popup__body">
+          <button class="popup__close" type="button" data-popup-close>
+            <span class="_seo">Закрыть окно</span>
+            <svg aria-hidden="true">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <div class="popup__scroll">
+              <div class="gallery-popup-slider">
+                <div class="gallery-popup-slider__items">
+                  <div class="gallery-popup-slider__item"></div>
+                </div>
+                <div class="gallery-popup-slider__actions">
+                  <button class="gallery-popup-slider__btn gallery-popup-slider__btn_prev" type="button">
+                    <span class="_seo">Предыдущий слайд</span>
+                    <svg class="gallery-popup-slider__btn-icon" aria-hidden="true">
+                      <use xlink:href="#icon-arrow-left"></use>
+                    </svg>
+                  </button>
+                  <button class="gallery-popup-slider__btn gallery-popup-slider__btn_next" type="button">
+                    <span class="_seo">Следующий слайд</span>
+                    <svg class="gallery-popup-slider__btn-icon" aria-hidden="true">
+                      <use xlink:href="#icon-arrow-right"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
