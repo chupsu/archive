@@ -12859,6 +12859,7 @@ window.addEventListener("load", function () {
       dateFormat: "d MMMM",
       showOtherMonths: false,
       toggleSelected: false,
+      autoClose:true,
       navTitles: {
         days: "MMMM yyyy",
         months: "yyyy",

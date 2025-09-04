@@ -13060,9 +13060,15 @@ window.addEventListener("load", function () {
     galleryPopupSliderItemsBody.innerHTML = galleryPopupSliderItems;
 
     if (targetElement && galleryPopupSlider) {
+      let targetIndex = 0;
+      let el = targetElement.closest("li");
+      while ((el = el.previousElementSibling)) {
+        targetIndex++;
+      }
+
       galleryPopupSlider.update();
       galleryPopupSlider.updateSlides();
-      galleryPopupSlider.slideTo(targetElement.dataset.imageId - 1, 10, true);
+      galleryPopupSlider.slideTo(targetIndex, 10, true);
     }
   };
 

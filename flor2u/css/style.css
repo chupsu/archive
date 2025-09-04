@@ -2359,12 +2359,12 @@ textarea.input__body {
 .type-info__title {
   display: inline-flex;
   align-items: center;
-  color: var(--color-main);
+  color: var(--color-primary-hover);
   cursor: pointer;
 }
 .type-info__title:focus-visible {
   outline: 0;
-  color: var(--color-link-hover);
+  color: var(--color-primary-active);
 }
 .cart-item .type-info__title {
   font-weight: 600;
@@ -3443,6 +3443,9 @@ textarea.input__body {
   padding-top: 24px;
   border-top: 1px solid var(--color-border);
 }
+.cart__footer {
+  border-top: 1px solid var(--color-border);
+}
 .cart__extra-mobile {
   min-width: 0;
 }
@@ -3546,7 +3549,8 @@ textarea.input__body {
   font-size: var(--text-normal);
 }
 .cart-item__footer {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 20px 32px;
 }
 .cart-item__cost {
@@ -3667,21 +3671,22 @@ textarea.input__body {
   gap: var(--gap-medium);
   padding: 16px 0;
   font-size: var(--text-medium);
-  border-top: 1px solid var(--color-border);
+}
+.cart-result__extra:not(:last-child) {
+  border-bottom: 3px solid var(--color-border);
 }
 .cart-result__body {
   display: flex;
   flex-direction: column;
   gap: 12px 32px;
   padding-top: 8px;
-  border-top: 3px solid var(--color-border);
 }
 .cart-result__info {
   display: flex;
   align-items: center;
   padding: 8px 16px;
   font-size: var(--text-small);
-  color: var(--color-link);
+  color: var(--color-primary-hover);
   background-color: var(--color-primary-light);
   border-radius: var(--radius-normal);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -3733,7 +3738,6 @@ textarea.input__body {
 .order-auth-form__agree {
   padding: 0 var(--gap-normal);
   margin: 0 auto;
-  text-wrap: balance;
   text-align: center;
   font-size: var(--text-small);
   color: var(--color-shadow-dark);
@@ -4156,7 +4160,6 @@ textarea.input__body {
     align-self: center;
   }
   .cart-item__footer {
-    display: flex;
     flex-direction: row-reverse;
     align-items: flex-end;
     justify-content: space-between;
@@ -5056,8 +5059,10 @@ textarea.input__body {
   .product-type__input:not(:checked):hover ~ .product-type__btn {
     background-color: var(--color-shadow-light);
   }
-  .product-about__btn:not(:active):hover,
   .type-info__title:not(:active):hover {
+    color: var(--color-primary-active);
+  }
+  .product-about__btn:not(:active):hover {
     color: var(--color-link-hover);
   }
   .icon-spollers__btn:not(.icon-spollers__btn._spoller-active):not(:active):hover,
