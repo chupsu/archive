@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Заказ №1234567 от 27 февраля 2025</title>
+    <title>Доставка</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -851,7 +851,7 @@
       </header>
 
       <main class="page">
-        <section class="lc">
+        <section class="delivery">
           <div class="page-head">
             <div class="container">
               <div class="page-head__body page-head__body_border">
@@ -859,353 +859,421 @@
                   <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link" href="./index.html">Главная</a>
                   </li>
-                  
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./lc.html">Профиль</a>
-                  </li>
                    
                   <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./history.html">История заказов</a>
-                  </li>
-                  
-                  <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Заказ №1234567 от 27 февраля 2025</span>
+                    <span class="breadcrumbs__link">Доставка</span>
                   </li>
                 </ul>
                 <div class="page-head__main">
-                  <h1 class="page-head__title _h3">Заказ №1234567 от 27 февраля 2025</h1>
-                  <a class="page-head__back page-head__back_btn icon-arr-left" href="./history.html">
-                    <span class="_seo">Назад</span>
-                  </a>
+                  <h1 class="page-head__title _h3">Доставка</h1>
+                </div>
+                <div class="page-head__actions">
+                  <ul class="page-action" data-filtering-nav>
+                    <li class="page-action__item">
+                      <button
+                        class="page-action__btn _is-active"
+                        type="button"
+                        data-filtering-btn="filter-name-1"
+                      >
+                        Доставка
+                      </button>
+                    </li>
+                    <li class="page-action__item">
+                      <button class="page-action__btn" type="button" data-filtering-btn="filter-name-2">
+                        Самовывоз
+                      </button>
+                    </li>
+                    <li class="page-action__item">
+                      <button class="page-action__btn" type="button" data-filtering-btn="filter-name-3">
+                        Оплата
+                      </button>
+                    </li>
+                    <li class="page-action__item">
+                      <button class="page-action__btn" type="button" data-filtering-btn="filter-name-4">
+                        Маркетплейсы
+                      </button>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
           <div class="container">
-            <div class="lc__body">
-              <div class="lc__aside">
-                <!-- заглушка для пк версии -->
-                <style>
-                  @media (max-width: 1023.98px) {
-                    .lc__aside {
-                      display: none;
-                    }
-                  }
-                </style>
-                <div class="dashboard">
-                  <div class="dashboard__box">
-                    <div class="dashboard-head">
-                      <a class="dashboard-head__link" href="./lc.html">
-                        <span class="_seo">Перейти в личный кабинет</span>
-                      </a>
-                      <div class="dashboard-head__avatar _h3">
-                        <span>ТА</span>
+            <div class="delivery__body">
+              <div class="delivery__box" data-filtering-item="filter-name-1">
+                <div class="delivery__content">
+                  <div class="delivery-info _mb">
+                    <div class="delivery-info__box">
+                      <h3>Москва и МО</h3>
+                      <br>
+                      Доставка курьером по Москве <b>в пределах МКАД+5 км</b>:
+                      <br>
+                      <br>
+                      <b>&mdash; Доставка 300 рублей</b> при заказе
+                      от 6 до 11 бутылок по 700 мл.
+                      <br>
+                      <b>&mdash; Бесплатная доставка</b> при заказе от 12 бутылок
+                      по 700 мл.
+                      <br>
+                      <br>
+                      <b>Доставка за МКАД:</b>
+                      <br>
+                      <br>
+                      <b>&mdash; От 5 до 15 км за МКАД:</b>
+                      <br>
+                      <ul>
+                        <li>бесплатная доставка при заказе от 8.000 рублей;</li>
+                        <li>
+                          при сумме заказа менее 8.000 рублей &mdash; доставка 800 рублей.
+                        </li>
+                      </ul>
+                      <br>
+                      <b>&mdash; От 15 до 50 км за МКАД:</b>
+                      <br>
+                      <ul>
+                        <li>бесплатная доставка при заказе от 10.000 рублей;</li>
+                        <li>
+                          при сумме заказа менее 10.000 рублей &mdash; 60 рублей за каждый
+                          километр.
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="delivery-info__box">
+                      <h3>По территории РФ</h3>
+                      <br>
+                      <b><span>Срок доставки составляет от 3 дней.</span></b>
+                      <br>
+                      <br>
+                      Стоимость рассчитывается с помощью калькулятора, в тоже время
+                      вы можете связаться с нашим менеджером для запроса особых условий,
+                      дополнительной упаковки или обрешётки на сиропы.
+                      <br>
+                      <br>
+                      При доставке компанией СДЭК оплата производится при получении товара!
+                    </div>
+                  </div>
+                  <div class="data-card-grid _mb">
+                    <article class="data-card data-card_light">
+                      <div class="data-card__head">
+                        <h4 class="data-card__title">для заказов</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.3596 8.27L22.0696 5.5C21.6496 2.48 20.2796 1.25 17.3497 1.25H14.9896H13.5097H10.4697H8.98965H6.58965C3.64965 1.25 2.28965 2.48 1.85965 5.53L1.58965 8.28C1.48965 9.35 1.77965 10.39 2.40965 11.2C3.16965 12.19 4.33965 12.75 5.63965 12.75C6.89965 12.75 8.10965 12.12 8.86965 11.11C9.54965 12.12 10.7097 12.75 11.9997 12.75C13.2896 12.75 14.4197 12.15 15.1096 11.15C15.8797 12.14 17.0696 12.75 18.3096 12.75C19.6396 12.75 20.8396 12.16 21.5896 11.12C22.1896 10.32 22.4597 9.31 22.3596 8.27Z" fill="#292D32"/>
+                        <path d="M11.3472 16.6602C10.0772 16.7902 9.11719 17.8702 9.11719 19.1502V21.8902C9.11719 22.1602 9.33719 22.3802 9.60719 22.3802H14.3772C14.6472 22.3802 14.8672 22.1602 14.8672 21.8902V19.5002C14.8772 17.4102 13.6472 16.4202 11.3472 16.6602Z" fill="#292D32"/>
+                        <path d="M21.3728 14.4001V17.3801C21.3728 20.1401 19.1328 22.3801 16.3728 22.3801C16.1028 22.3801 15.8828 22.1601 15.8828 21.8901V19.5001C15.8828 18.2201 15.4928 17.2201 14.7328 16.5401C14.0628 15.9301 13.1528 15.6301 12.0228 15.6301C11.7728 15.6301 11.5228 15.6401 11.2528 15.6701C9.47281 15.8501 8.12281 17.3501 8.12281 19.1501V21.8901C8.12281 22.1601 7.90281 22.3801 7.63281 22.3801C4.87281 22.3801 2.63281 20.1401 2.63281 17.3801V14.4201C2.63281 13.7201 3.32281 13.2501 3.97281 13.4801C4.24281 13.5701 4.51281 13.6401 4.79281 13.6801C4.91281 13.7001 5.04281 13.7201 5.16281 13.7201C5.32281 13.7401 5.48281 13.7501 5.64281 13.7501C6.80281 13.7501 7.94281 13.3201 8.84281 12.5801C9.70281 13.3201 10.8228 13.7501 12.0028 13.7501C13.1928 13.7501 14.2928 13.3401 15.1528 12.6001C16.0528 13.3301 17.1728 13.7501 18.3128 13.7501C18.4928 13.7501 18.6728 13.7401 18.8428 13.7201C18.9628 13.7101 19.0728 13.7001 19.1828 13.6801C19.4928 13.6401 19.7728 13.5501 20.0528 13.4601C20.7028 13.2401 21.3728 13.7201 21.3728 14.4001Z" fill="#292D32"/>
+                      </svg>
                       </div>
-                      <dl class="dashboard-head__list">
-                        <dt class="dashboard-head__name">Теплякова Анастасия</dt>
-                        <dd class="dashboard-head__desc">8 000 999 22 00</dd>
-                        <dd class="dashboard-head__desc">namelongemailaddress@yandex.ru</dd>
-                      </dl>
+                      <div class="data-card__content">
+                        <div class="data-card__text data-card__text_shadow">
+                          <p>Режим работы с 9:00-18:00 (с понедельника по пятницу)</p>
+                        </div>
+                      </div>
+                      <div class="data-card__footer">
+                        <ul class="data-list">
+                          <li class="data-list__item">
+                            <a class="data-list__link data-list__link_main" href="tel:8 800 123 8004">
+                              8 800 123 8004
+                            </a>
+                          </li>
+                          <li class="data-list__item">
+                            <a
+                              class="data-list__link"
+                              href="mailto:zakaz@herbarista.store"
+                              target="_blank"
+                            >
+                              zakaz@herbarista.store
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </article>
+                    <article class="data-card data-card_light">
+                      <div class="data-card__head">
+                        <h4 class="data-card__title">Самовывоз</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2.92V11.23C14 12.25 13.17 13.08 12.15 13.08H3C2.45 13.08 2 12.63 2 12.08V5.69C2 3.65 3.65 2 5.69 2H13.07C13.59 2 14 2.41 14 2.92Z" fill="#292D32"/>
+                        <path d="M21.5 15.5C21.78 15.5 22 15.72 22 16V17C22 18.66 20.66 20 19 20C19 18.35 17.65 17 16 17C14.35 17 13 18.35 13 20H11C11 18.35 9.65 17 8 17C6.35 17 5 18.35 5 20C3.34 20 2 18.66 2 17V15C2 14.45 2.45 14 3 14H12.5C13.88 14 15 12.88 15 11.5V6C15 5.45 15.45 5 16 5H16.84C17.56 5 18.22 5.39 18.58 6.01L19.22 7.13C19.31 7.29 19.19 7.5 19 7.5C17.62 7.5 16.5 8.62 16.5 10V13C16.5 14.38 17.62 15.5 19 15.5H21.5Z" fill="#292D32"/>
+                        <path d="M8 22C9.10457 22 10 21.1046 10 20C10 18.8954 9.10457 18 8 18C6.89543 18 6 18.8954 6 20C6 21.1046 6.89543 22 8 22Z" fill="#292D32"/>
+                        <path d="M16 22C17.1046 22 18 21.1046 18 20C18 18.8954 17.1046 18 16 18C14.8954 18 14 18.8954 14 20C14 21.1046 14.8954 22 16 22Z" fill="#292D32"/>
+                        <path d="M22 12.53V14H19C18.45 14 18 13.55 18 13V10C18 9.45 18.45 9 19 9H20.29L21.74 11.54C21.91 11.84 22 12.18 22 12.53Z" fill="#292D32"/>
+                      </svg>
+                      </div>
+                      <div class="data-card__content">
+                        <div class="data-card__text data-card__text_shadow">
+                          <p>630126, г. Новосибирск , ул. Выборная 201в</p>
+                        </div>
+                      </div>
+                      <div class="data-card__footer">
+                        <ul class="data-list">
+                          <li class="data-list__item">
+                            <a class="data-list__link data-list__link_main" href="tel:8 800 123 8004">
+                              8 800 123 8004
+                            </a>
+                          </li>
+                          <li class="data-list__item">
+                            <a
+                              class="data-list__link"
+                              href="mailto:zakaz@herbarista.store"
+                              target="_blank"
+                            >
+                              zakaz@herbarista.store
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </article>
+                    <article class="data-card data-card_light">
+                      <div class="data-card__head">
+                        <h4 class="data-card__title">Руководитель подразделения</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.0871 6.97953C20.2371 6.03953 18.8171 5.56953 16.7571 5.56953H16.5171V5.52953C16.5171 3.84953 16.5171 1.76953 12.7571 1.76953H11.2371C7.47711 1.76953 7.47711 3.85953 7.47711 5.52953V5.57953H7.23711C5.16711 5.57953 3.75711 6.04953 2.90711 6.98953C1.91711 8.08953 1.94711 9.56953 2.04711 10.5795L2.05711 10.6495L2.13456 11.4628C2.14883 11.6126 2.22949 11.7479 2.35538 11.8303C2.59519 11.9872 2.99653 12.2459 3.23711 12.3795C3.37711 12.4695 3.52711 12.5495 3.67711 12.6295C5.38711 13.5695 7.26711 14.1995 9.17711 14.5095C9.26711 15.4495 9.67711 16.5495 11.8671 16.5495C14.0571 16.5495 14.4871 15.4595 14.5571 14.4895C16.5971 14.1595 18.5671 13.4495 20.3471 12.4095C20.4071 12.3795 20.4471 12.3495 20.4971 12.3195C20.8938 12.0953 21.3054 11.819 21.6806 11.5484C21.7936 11.4668 21.8659 11.3408 21.8812 11.2023L21.8971 11.0595L21.9471 10.5895C21.9571 10.5295 21.9571 10.4795 21.9671 10.4095C22.0471 9.39953 22.0271 8.01953 21.0871 6.97953ZM13.0871 13.8295C13.0871 14.8895 13.0871 15.0495 11.8571 15.0495C10.6271 15.0495 10.6271 14.8595 10.6271 13.8395V12.5795H13.0871V13.8295ZM8.90711 5.56953V5.52953C8.90711 3.82953 8.90711 3.19953 11.2371 3.19953H12.7571C15.0871 3.19953 15.0871 3.83953 15.0871 5.52953V5.57953H8.90711V5.56953Z" fill="#292D32"/>
+                        <path d="M20.8772 13.7349C21.2308 13.5666 21.6381 13.8469 21.6027 14.2369L21.2438 18.1907C21.0338 20.1907 20.2138 22.2307 15.8138 22.2307H8.19375C3.79375 22.2307 2.97375 20.1907 2.76375 18.2007L2.42304 14.4529C2.388 14.0674 2.78595 13.7874 3.13859 13.947C4.27801 14.4625 6.38115 15.3771 7.68032 15.7174C7.84463 15.7604 7.97752 15.878 8.04946 16.0319C8.65643 17.33 9.97286 18.0207 11.8737 18.0207C13.7559 18.0207 15.0889 17.3034 15.6979 16.0021C15.7699 15.8481 15.903 15.7305 16.0674 15.6873C17.4469 15.3243 19.6855 14.3019 20.8772 13.7349Z" fill="#292D32"/>
+                      </svg>
+                      </div>
+                      <div class="data-card__content"></div>
+                      <div class="data-card__footer">
+                        <ul class="data-list">
+                          <li class="data-list__item">
+                            <a class="data-list__link data-list__link_main" href="tel:8 800 123 8004">
+                              8 800 123 8004
+                            </a>
+                          </li>
+                          <li class="data-list__item">
+                            <a
+                              class="data-list__link"
+                              href="mailto:zakaz@herbarista.store"
+                              target="_blank"
+                            >
+                              zakaz@herbarista.store
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </article>
+                  </div>
+                  <section class="delivery__promo about-promo about-promo_light _center">
+                    <div class="container">
+                      <div class="about-promo__body about-promo__body_light">
+                        <div class="about-promo__head">
+                          <h2 class="about-promo__title _h1">
+                            Вы можете выбрать любую тк для доставки
+                          </h2>
+                          <div class="about-promo__text _wysiwyg">
+                            <p>
+                              Наш интернет-магазин предлагает широкий ассортимент товаров для барменов,
+                              бариста, поваров и всех, кто ценит качество и удобство
+                              на кухне или в заведении. Мы гордимся тем, что можем
+                              удовлетворить самые разнообразные потребности наших клиентов, предоставляя
+                              продукцию высокого качества от проверенных производителей.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="about-promo__content about-promo__content_slider-col-5">
+                          <div class="default-slider">
+                            <div class="default-slider__items">
+                              <div class="default-slider__item">
+                                <!-- если нужна ссылка -->
+                                <a class="partner" href="#" target="_blank">
+                                  <img class="partner__img" src="./img/content/logo/logo-7.svg" alt="Изображение">
+                                </a>
+                              </div>
+                              <div class="default-slider__item">
+                                <!-- если нужна ссылка -->
+                                <a class="partner" href="#" target="_blank">
+                                  <picture><source srcset="./img/content/logo/logo-1.webp" type="image/webp"><img class="partner__img" src="./img/content/logo/logo-1.png" alt="Изображение"></picture>
+                                </a>
+                              </div>
+                              <div class="default-slider__item">
+                                <figure class="partner">
+                                  <img class="partner__img" src="./img/content/logo/logo-4.svg" alt="Изображение">
+                                </figure>
+                              </div>
+                              <div class="default-slider__item">
+                                <figure class="partner">
+                                  <img class="partner__img" src="./img/content/logo/logo-5.svg" alt="Изображение">
+                                </figure>
+                              </div>
+                              <div class="default-slider__item">
+                                <figure class="partner">
+                                  <img class="partner__img" src="./img/content/logo/logo-6.svg" alt="Изображение">
+                                </figure>
+                              </div>
+                            </div>
+                            <div class="default-slider__actions" data-slider-nav>
+                              <button
+                                class="default-slider__btn default-slider__btn_prev icon-arr-left"
+                                data-slider-btn="prev"
+                                type="button"
+                              >
+                                <span class="_seo">Предыдущий слайд</span>
+                              </button>
+                              <div class="default-slider__pagination" data-slider-pagination></div>
+                              <button
+                                class="default-slider__btn default-slider__btn_next icon-arr-right"
+                                data-slider-btn="next"
+                                type="button"
+                              >
+                                <span class="_seo">Следующий слайд</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <div class="delivery__box" data-filtering-item="filter-name-2" hidden>
+                <div class="geo-cards">
+                  <div class="geo-cards__row">
+                    <div class="geo-cards__content">
+                      <h3 class="geo-cards__title">Москва и МО</h3>
+                      <div class="geo-cards__text">
+                        <p>141101 Московская область, город Щелково, ул. Хотовская, д.34, стр.2</p>
+                      </div>
+                      <div class="geo-cards__footer">
+                        <dl class="geo-cards-info">
+                          <div class="geo-cards-info__item">
+                            <dt class="geo-cards-info__name">Склад</dt>
+                            <dd class="geo-cards-info__desc">
+                              <a href="tel:+79260710387">+7 926 071 03 87</a>
+                            </dd>
+                          </div>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="geo-cards__map">
+                      <iframe
+                        src="https://yandex.ru/map-widget/v1/?ll=38.012481%2C55.903469&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNDQzMDU0MjQxEmfQoNC-0YHRgdC40Y8sINCc0L7RgdC60L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQqdGR0LvQutC-0LLQviwg0KXQvtGC0L7QstGB0LrQsNGPINGD0LvQuNGG0LAsIDM00YEyIgoNyQwYQhUnnV9C&utm_source=ntp_chrome&z=14"
+                        allowfullscreen="true"
+                      ></iframe>
                     </div>
                   </div>
-                  <div class="dashboard__box">
-                    <div class="dashboard-bonus">
-                      <div class="dashboard-bonus__desc">Ваш баланс бонусов</div>
-                      <div class="dashboard-bonus__num _h3">200 000</div>
-                      <a class="dashboard-bonus__link" href="#">Подробнее</a>
+                  <div class="geo-cards__row">
+                    <div class="geo-cards__content">
+                      <h3 class="geo-cards__title">Новосибирск</h3>
+                      <div class="geo-cards__text"><p>630126, г. Новосибирск , ул. Выборная 201в</p></div>
+                      <div class="geo-cards__footer">
+                        <dl class="geo-cards-info">
+                          <div class="geo-cards-info__item">
+                            <dt class="geo-cards-info__name">Склад</dt>
+                            <dd class="geo-cards-info__desc">
+                              <a href="tel:+79254331617">+7 925 433 16 17</a>
+                            </dd>
+                          </div>
+                        </dl>
+                      </div>
                     </div>
-                  </div>
-                  <div class="dashboard__box">
-                    <ul class="dashboard__list">
-                      <li class="dashboard__item">
-                        <a
-                          class="dashboard__link dashboard__link_active icon-receipt"
-                          href="./history.html"
-                        >
-                          История заказов
-                        </a>
-                      </li>
-                      <li class="dashboard__item">
-                        <a class="dashboard__link icon-users" href="./profile.html">
-                          Профиль клиента
-                        </a>
-                      </li>
-                      <li class="dashboard__item">
-                        <a class="dashboard__link icon-setting" href="./lc-data.html">
-                          Личные данные
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="dashboard__box">
-                    <ul class="dashboard__list">
-                      <li class="dashboard__item">
-                        <a class="dashboard__link dashboard__link_exit" href="./auth-login.html">
-                          Выход
-                        </a>
-                      </li>
-                    </ul>
+                    <div class="geo-cards__map">
+                      <iframe
+                        src="https://yandex.ru/map-widget/v1/?ll=83.054890%2C55.002873&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNjI4MDMxODI5EkjQoNC-0YHRgdC40Y8sINCd0L7QstC-0YHQuNCx0LjRgNGB0LosINCS0YvQsdC-0YDQvdCw0Y8g0YPQu9C40YbQsCwgMjAx0JIiCg0bHKZCFfICXEI%2C&utm_source=ntp_chrome&z=14"
+                        allowfullscreen="true"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="lc__content">
-                <div class="order">
-                  <div class="order__main">
-                    <div class="order__box">
-                      <div class="order__head">
-                        <h3 class="order__title">Покупатель</h3>
-                      </div>
-                      <div class="order__content">
-                        <div class="order__item">
-                          <dl class="order-info">
-                            <div class="order-info__item">
-                              <dt class="order-info__name">ФИО</dt>
-                              <dd class="order-info__desc">Теплякова Анастасия Андреевна</dd>
-                            </div>
-                            <div class="order-info__item">
-                              <dt class="order-info__name">E-mail</dt>
-                              <dd class="order-info__desc">coinboxdez@gmail.com</dd>
-                            </div>
-                            <div class="order-info__item">
-                              <dt class="order-info__name">Телефон</dt>
-                              <dd class="order-info__desc">8 916 102 18 00</dd>
-                            </div>
-                          </dl>
-                        </div>
-                        <div class="order__item">
-                          <dl class="order-info">
-                            <div class="order-info__item">
-                              <dt class="order-info__name">Индекс</dt>
-                              <dd class="order-info__desc">101000</dd>
-                            </div>
-                            <div class="order-info__item">
-                              <dt class="order-info__name">Местоположение</dt>
-                              <dd class="order-info__desc">Россия, Москва</dd>
-                            </div>
-                            <div class="order-info__item">
-                              <dt class="order-info__name">Адрес доставки</dt>
-                              <dd class="order-info__desc">
-                                Москва ул. Красная площадь д 11 к2 кв 345 ул. Красная площадь д 11 к2 кв
-                                345 Москва ул. Площадь д 11 к2 кв 345
-                              </dd>
-                            </div>
-                          </dl>
-                        </div>
-                      </div>
-                      <div class="order__footer">
-                        <a class="order__link btn btn_small-extra btn_shadow" href="#">Подробнее</a>
-                      </div>
-                    </div>
-                    <div class="order__box">
-                      <div class="order__head">
-                        <h3 class="order__title">Способ оплаты</h3>
-                        <div class="order__status order__status_warning">Не оплачено</div>
-                        <!-- <div class="order__status order__status_accent">В наличии</div>
-                        <div class="order__status order__status_neutral">Цена за одну булылку</div>
-                        <div class="order__status order__status_negative">Нет в наличии</div>
-                        <div class="order__status order__status_accent">Наличие уточняйте</div>
-                        <div class="order__status order__status_warning">Остаток</div>
-                        <div class="order__status order__status_warning">Ожидает оплату</div>
-                        <div class="order__status order__status_negative">Отменено</div>
-                        <div class="order__status order__status_warning">Не отгружено</div>
-                        <div class="order__status order__status_accent">Оплачено</div>
-                        <div class="order__status order__status_accent">У курьера</div>
-                        <div class="order__status order__status_accent">Получено</div> -->
-                      </div>
-                      <div class="order__content">
-                        <dl class="order-info">
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Статус доставки</dt>
-                            <dd class="order-info__desc">У курьера</dd>
-                          </div>
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Курьерская служба</dt>
-                            <dd class="order-info__desc">СДЕК</dd>
-                          </div>
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Адрес доставки</dt>
-                            <dd class="order-info__desc">Москва ул. Красная площадь д 11 к2 кв 345</dd>
-                          </div>
-                        </dl>
-                      </div>
-                      <div class="order__footer">
-                        <button class="order__btn btn btn_small-extra btn_shadow" type="button">
-                          Редактировать
-                        </button>
-                      </div>
-                    </div>
-                    <div class="order__box">
-                      <div class="order__head">
-                        <h3 class="order__title">Способ доставки</h3>
-                        <div class="order__status order__status_warning">Не отгружено</div>
-                        <!-- <div class="order__status order__status_accent">В наличии</div>
-                        <div class="order__status order__status_neutral">Цена за одну булылку</div>
-                        <div class="order__status order__status_negative">Нет в наличии</div>
-                        <div class="order__status order__status_accent">Наличие уточняйте</div>
-                        <div class="order__status order__status_warning">Остаток</div>
-                        <div class="order__status order__status_warning">Ожидает оплату</div>
-                        <div class="order__status order__status_negative">Отменено</div>
-                        <div class="order__status order__status_warning">Не оплачено</div>
-                        <div class="order__status order__status_accent">Оплачено</div>
-                        <div class="order__status order__status_accent">У курьера</div>
-                        <div class="order__status order__status_accent">Получено</div> -->
-                      </div>
-                      <div class="order__content">
-                        <dl class="order-info">
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Статус доставки</dt>
-                            <dd class="order-info__desc">У курьера</dd>
-                          </div>
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Курьерская служба</dt>
-                            <dd class="order-info__desc">СДЕК</dd>
-                          </div>
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Адрес доставки</dt>
-                            <dd class="order-info__desc">Москва ул. Красная площадь д 11 к2 кв 345</dd>
-                          </div>
-                        </dl>
-                      </div>
-                    </div>
-                    <div class="order__box">
-                      <div class="order__head">
-                        <h3 class="order__title">Список покупок</h3>
-                      </div>
-                      <div class="order__content">
-                        <div class="order__item">
-                          <article class="ordered-product-card">
-                            <a class="ordered-product-card__link" href="./product.html">
-                              <span class="_seo">Заголовок продукта</span>
-                            </a>
-                            <div class="ordered-product-card__main">
-                              <figure class="ordered-product-card__media">
-                                <picture><source srcset="./img/content/pic/product-3.webp" type="image/webp"><img class="ordered-product-card__img" src="./img/content/pic/product-3.png" alt="Изображение"></picture>
-                              </figure>
-                              <div class="ordered-product-card__content">
-                                <div class="ordered-product-card__code">12356978</div>
-                                <h4 class="ordered-product-card__title">
-                                  Темпер JoeFrex D58 Galaxy желтый классический Темпер JoeFrex D58 Galaxy
-                                  желтый классическийТемпер JoeFrex D58 Galaxy желтый классический
-                                </h4>
-                                <div class="ordered-product-card__extra">1000 мл</div>
-                              </div>
-                            </div>
-                            <div class="ordered-product-card__cost">
-                              <div class="ordered-product-card__count">10 799 ₽ <span>х 6 шт</span></div>
-                              <div class="ordered-product-card__price">10 799 ₽</div>
-                            </div>
-                          </article>
-                        </div>
-                        <div class="order__item">
-                          <article class="ordered-product-card">
-                            <a class="ordered-product-card__link" href="./product.html">
-                              <span class="_seo">Заголовок продукта</span>
-                            </a>
-                            <div class="ordered-product-card__main">
-                              <figure class="ordered-product-card__media">
-                                <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="ordered-product-card__img" src="./img/content/pic/product-4.png" alt="Изображение"></picture>
-                              </figure>
-                              <div class="ordered-product-card__content">
-                                <div class="ordered-product-card__code">12356978</div>
-                                <h4 class="ordered-product-card__title">Темпер JoeFrex D58</h4>
-                                <div class="ordered-product-card__extra">1000 мл</div>
-                              </div>
-                            </div>
-                            <div class="ordered-product-card__cost">
-                              <div class="ordered-product-card__price">1 000 000 ₽</div>
-                            </div>
-                          </article>
-                        </div>
-                        <div class="order__item">
-                          <article class="ordered-product-card">
-                            <a class="ordered-product-card__link" href="./product.html">
-                              <span class="_seo">Заголовок продукта</span>
-                            </a>
-                            <div class="ordered-product-card__main">
-                              <figure class="ordered-product-card__media">
-                                <picture><source srcset="./img/content/pic/product-7.webp" type="image/webp"><img class="ordered-product-card__img" src="./img/content/pic/product-7.png" alt="Изображение"></picture>
-                              </figure>
-                              <div class="ordered-product-card__content">
-                                <div class="ordered-product-card__code">12356978</div>
-                                <h4 class="ordered-product-card__title">
-                                  Темпер JoeFrex D58 Galaxy желтый классический
-                                </h4>
-                                <div class="ordered-product-card__extra">1000 мл</div>
-                              </div>
-                            </div>
-                            <div class="ordered-product-card__cost">
-                              <div class="ordered-product-card__count">
-                                210 799 ₽ <span>х 12 шт</span>
-                              </div>
-                              <div class="ordered-product-card__price">2 400 799 ₽</div>
-                            </div>
-                          </article>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="order__checkout">
-                    <div class="order-checkout">
-                      <div class="order-checkout__head">
-                        <div class="order-checkout__title">Итого</div>
-                        <div class="order-checkout__price">1 000 000 ₽</div>
-                        <div class="order-checkout__status order-checkout__status_warning">
-                          Ожидает оплату
-                        </div>
-                        <!-- <div class="order-checkout__status order-checkout__status_accent">В наличии</div>
-                        <div class="order-checkout__status order-checkout__status_neutral">Цена за одну булылку</div>
-                        <div class="order-checkout__status order-checkout__status_negative">Нет в наличии</div>
-                        <div class="order-checkout__status order-checkout__status_accent">Наличие уточняйте</div>
-                        <div class="order-checkout__status order-checkout__status_warning">Остаток</div>
-                        <div class="order-checkout__status order-checkout__status_negative">Отменено</div>
-                        <div class="order-checkout__status order-checkout__status_warning">Не оплачено</div>
-                        <div class="order-checkout__status order-checkout__status_warning">Не отгружено</div>
-                        <div class="order-checkout__status order-checkout__status_accent">Оплачено</div>
-                        <div class="order-checkout__status order-checkout__status_accent">У курьера</div>
-                        <div class="order-checkout__status order-checkout__status_accent">Получено</div> -->
-                      </div>
-                      <div class="order-checkout__info">
-                        <dl class="order-checkout-info__list">
-                          <div class="order-checkout-info__item">
-                            <dt class="order-checkout-info__name">Ваш заказ</dt>
-                            <dd class="order-checkout-info__desc">5 товаров</dd>
-                          </div>
-                          <div class="order-checkout-info__item">
-                            <dt class="order-checkout-info__name">Товары на сумму</dt>
-                            <dd class="order-checkout-info__desc">100 000 ₽</dd>
-                          </div>
-                          <div class="order-checkout-info__item">
-                            <dt class="order-checkout-info__name">Доставка</dt>
-                            <dd
-                              class="order-checkout-info__desc order-checkout-info__desc_mark icon-info-round"
-                            >
-                              Бесплатно
-                            </dd>
-                          </div>
-                          <div class="order-checkout-info__item">
-                            <dt class="order-checkout-info__name">Скидка</dt>
-                            <dd class="order-checkout-info__desc order-checkout-info__desc_accent">
-                              -100 000 ₽
-                            </dd>
-                          </div>
-                        </dl>
-                      </div>
-                      <div class="order-checkout__actions">
-                        <a class="order-checkout__btn btn btn_normal btn_neutral" href="#">
-                          Повторить заказ
-                        </a>
-                        <a class="order-checkout__btn btn btn_normal btn_neutral btn_cancel" href="#">
-                          Отменить заказ
-                        </a>
-                      </div>
-                      <div class="order-checkout__extra">
-                        <div class="order-checkout__notify icon-info-round">
-                          Доставка осуществляется только по Москве и МО
-                        </div>
-                      </div>
-                    </div>
+              <div class="delivery__box" data-filtering-item="filter-name-3" hidden>
+                <div class="delivery__content _mb">
+                  <div class="delivery__text _wysiwyg">
+                    <p>
+                      Для принятия онлайн-платежей мы используем надежный эквайринг
+                      от Сбербанка &mdash; без комиссии, утечки данных и без сохранения
+                      данных вашей карты.
+                    </p>
                   </div>
                 </div>
+                <div class="data-card-grid">
+                  <article class="data-card data-card_light">
+                    <div class="data-card__head">
+                      <h4 class="data-card__title">Без комиссии</h4>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.3596 8.27L22.0696 5.5C21.6496 2.48 20.2796 1.25 17.3497 1.25H14.9896H13.5097H10.4697H8.98965H6.58965C3.64965 1.25 2.28965 2.48 1.85965 5.53L1.58965 8.28C1.48965 9.35 1.77965 10.39 2.40965 11.2C3.16965 12.19 4.33965 12.75 5.63965 12.75C6.89965 12.75 8.10965 12.12 8.86965 11.11C9.54965 12.12 10.7097 12.75 11.9997 12.75C13.2896 12.75 14.4197 12.15 15.1096 11.15C15.8797 12.14 17.0696 12.75 18.3096 12.75C19.6396 12.75 20.8396 12.16 21.5896 11.12C22.1896 10.32 22.4597 9.31 22.3596 8.27Z" fill="#292D32"/>
+                        <path d="M11.3472 16.6602C10.0772 16.7902 9.11719 17.8702 9.11719 19.1502V21.8902C9.11719 22.1602 9.33719 22.3802 9.60719 22.3802H14.3772C14.6472 22.3802 14.8672 22.1602 14.8672 21.8902V19.5002C14.8772 17.4102 13.6472 16.4202 11.3472 16.6602Z" fill="#292D32"/>
+                        <path d="M21.3728 14.4001V17.3801C21.3728 20.1401 19.1328 22.3801 16.3728 22.3801C16.1028 22.3801 15.8828 22.1601 15.8828 21.8901V19.5001C15.8828 18.2201 15.4928 17.2201 14.7328 16.5401C14.0628 15.9301 13.1528 15.6301 12.0228 15.6301C11.7728 15.6301 11.5228 15.6401 11.2528 15.6701C9.47281 15.8501 8.12281 17.3501 8.12281 19.1501V21.8901C8.12281 22.1601 7.90281 22.3801 7.63281 22.3801C4.87281 22.3801 2.63281 20.1401 2.63281 17.3801V14.4201C2.63281 13.7201 3.32281 13.2501 3.97281 13.4801C4.24281 13.5701 4.51281 13.6401 4.79281 13.6801C4.91281 13.7001 5.04281 13.7201 5.16281 13.7201C5.32281 13.7401 5.48281 13.7501 5.64281 13.7501C6.80281 13.7501 7.94281 13.3201 8.84281 12.5801C9.70281 13.3201 10.8228 13.7501 12.0028 13.7501C13.1928 13.7501 14.2928 13.3401 15.1528 12.6001C16.0528 13.3301 17.1728 13.7501 18.3128 13.7501C18.4928 13.7501 18.6728 13.7401 18.8428 13.7201C18.9628 13.7101 19.0728 13.7001 19.1828 13.6801C19.4928 13.6401 19.7728 13.5501 20.0528 13.4601C20.7028 13.2401 21.3728 13.7201 21.3728 14.4001Z" fill="#292D32"/>
+                      </svg>
+                    </div>
+                    <div class="data-card__footer">
+                      <div class="data-card__text">
+                        <p>Онлайн оплата любой картой без комиссии</p>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="data-card data-card_light">
+                    <div class="data-card__head">
+                      <h4 class="data-card__title">Без наценки</h4>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2.92V11.23C14 12.25 13.17 13.08 12.15 13.08H3C2.45 13.08 2 12.63 2 12.08V5.69C2 3.65 3.65 2 5.69 2H13.07C13.59 2 14 2.41 14 2.92Z" fill="#292D32"/>
+                        <path d="M21.5 15.5C21.78 15.5 22 15.72 22 16V17C22 18.66 20.66 20 19 20C19 18.35 17.65 17 16 17C14.35 17 13 18.35 13 20H11C11 18.35 9.65 17 8 17C6.35 17 5 18.35 5 20C3.34 20 2 18.66 2 17V15C2 14.45 2.45 14 3 14H12.5C13.88 14 15 12.88 15 11.5V6C15 5.45 15.45 5 16 5H16.84C17.56 5 18.22 5.39 18.58 6.01L19.22 7.13C19.31 7.29 19.19 7.5 19 7.5C17.62 7.5 16.5 8.62 16.5 10V13C16.5 14.38 17.62 15.5 19 15.5H21.5Z" fill="#292D32"/>
+                        <path d="M8 22C9.10457 22 10 21.1046 10 20C10 18.8954 9.10457 18 8 18C6.89543 18 6 18.8954 6 20C6 21.1046 6.89543 22 8 22Z" fill="#292D32"/>
+                        <path d="M16 22C17.1046 22 18 21.1046 18 20C18 18.8954 17.1046 18 16 18C14.8954 18 14 18.8954 14 20C14 21.1046 14.8954 22 16 22Z" fill="#292D32"/>
+                        <path d="M22 12.53V14H19C18.45 14 18 13.55 18 13V10C18 9.45 18.45 9 19 9H20.29L21.74 11.54C21.91 11.84 22 12.18 22 12.53Z" fill="#292D32"/>
+                      </svg>
+                    </div>
+                    <div class="data-card__footer">
+                      <div class="data-card__text">
+                        <p>Оплата по счёту без наценки</p>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="data-card data-card_light">
+                    <div class="data-card__head">
+                      <h4 class="data-card__title">Оплата наличными</h4>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2.92V11.23C14 12.25 13.17 13.08 12.15 13.08H3C2.45 13.08 2 12.63 2 12.08V5.69C2 3.65 3.65 2 5.69 2H13.07C13.59 2 14 2.41 14 2.92Z" fill="#292D32"/>
+                        <path d="M21.5 15.5C21.78 15.5 22 15.72 22 16V17C22 18.66 20.66 20 19 20C19 18.35 17.65 17 16 17C14.35 17 13 18.35 13 20H11C11 18.35 9.65 17 8 17C6.35 17 5 18.35 5 20C3.34 20 2 18.66 2 17V15C2 14.45 2.45 14 3 14H12.5C13.88 14 15 12.88 15 11.5V6C15 5.45 15.45 5 16 5H16.84C17.56 5 18.22 5.39 18.58 6.01L19.22 7.13C19.31 7.29 19.19 7.5 19 7.5C17.62 7.5 16.5 8.62 16.5 10V13C16.5 14.38 17.62 15.5 19 15.5H21.5Z" fill="#292D32"/>
+                        <path d="M8 22C9.10457 22 10 21.1046 10 20C10 18.8954 9.10457 18 8 18C6.89543 18 6 18.8954 6 20C6 21.1046 6.89543 22 8 22Z" fill="#292D32"/>
+                        <path d="M16 22C17.1046 22 18 21.1046 18 20C18 18.8954 17.1046 18 16 18C14.8954 18 14 18.8954 14 20C14 21.1046 14.8954 22 16 22Z" fill="#292D32"/>
+                        <path d="M22 12.53V14H19C18.45 14 18 13.55 18 13V10C18 9.45 18.45 9 19 9H20.29L21.74 11.54C21.91 11.84 22 12.18 22 12.53Z" fill="#292D32"/>
+                      </svg>
+                    </div>
+                    <div class="data-card__footer">
+                      <div class="data-card__text">
+                        <p>Оплата при получении наличными или картой при любой сумме заказа</p>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="data-card data-card_light">
+                    <div class="data-card__head">
+                      <h4 class="data-card__title">Возврат</h4>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2.92V11.23C14 12.25 13.17 13.08 12.15 13.08H3C2.45 13.08 2 12.63 2 12.08V5.69C2 3.65 3.65 2 5.69 2H13.07C13.59 2 14 2.41 14 2.92Z" fill="#292D32"/>
+                        <path d="M21.5 15.5C21.78 15.5 22 15.72 22 16V17C22 18.66 20.66 20 19 20C19 18.35 17.65 17 16 17C14.35 17 13 18.35 13 20H11C11 18.35 9.65 17 8 17C6.35 17 5 18.35 5 20C3.34 20 2 18.66 2 17V15C2 14.45 2.45 14 3 14H12.5C13.88 14 15 12.88 15 11.5V6C15 5.45 15.45 5 16 5H16.84C17.56 5 18.22 5.39 18.58 6.01L19.22 7.13C19.31 7.29 19.19 7.5 19 7.5C17.62 7.5 16.5 8.62 16.5 10V13C16.5 14.38 17.62 15.5 19 15.5H21.5Z" fill="#292D32"/>
+                        <path d="M8 22C9.10457 22 10 21.1046 10 20C10 18.8954 9.10457 18 8 18C6.89543 18 6 18.8954 6 20C6 21.1046 6.89543 22 8 22Z" fill="#292D32"/>
+                        <path d="M16 22C17.1046 22 18 21.1046 18 20C18 18.8954 17.1046 18 16 18C14.8954 18 14 18.8954 14 20C14 21.1046 14.8954 22 16 22Z" fill="#292D32"/>
+                        <path d="M22 12.53V14H19C18.45 14 18 13.55 18 13V10C18 9.45 18.45 9 19 9H20.29L21.74 11.54C21.91 11.84 22 12.18 22 12.53Z" fill="#292D32"/>
+                      </svg>
+                    </div>
+                    <div class="data-card__footer">
+                      <div class="data-card__text">
+                        <p>
+                          Возврат денежных средств осуществляется менеджером по вашему запросу.
+                          <br>
+                          Максимальный срок возврата с момента его осуществления
+                          менеджером &mdash; 3 рабочих дня
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="delivery__box" data-filtering-item="filter-name-4" hidden>
+                <ul class="markets">
+                  <li class="markets__item">
+                    <a class="markets__link" href="https://www.ozon.ru/" target="_blank">
+                      <img class="markets__img" src="./img/content/logo/logo-4.svg" alt="Озон">
+                    </a>
+                  </li>
+                  <li class="markets__item">
+                    <a class="markets__link" href="https://www.wildberries.ru/" target="_blank">
+                      <img class="markets__img" src="./img/content/logo/logo-5.svg" alt="Вайлдберрис">
+                    </a>
+                  </li>
+                  <li class="markets__item">
+                    <a class="markets__link" href="https://market.yandex.ru/" target="_blank">
+                      <img class="markets__img" src="./img/content/logo/logo-6.svg" alt="Яндекс Маркет">
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

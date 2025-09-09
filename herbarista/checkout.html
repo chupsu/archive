@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
-    <title>Заказ №1234567 от 27 февраля 2025</title>
+    <title>Оформление заказа</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/script.min.js" defer></script>
   </head>
@@ -851,30 +851,26 @@
       </header>
 
       <main class="page">
-        <section class="lc">
+        <section class="cart">
           <div class="page-head">
             <div class="container">
-              <div class="page-head__body page-head__body_border">
+              <div class="page-head__body">
                 <ul class="breadcrumbs">
                   <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link" href="./index.html">Главная</a>
                   </li>
                   
                   <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./lc.html">Профиль</a>
+                    <a class="breadcrumbs__link" href="./cart.html">Корзина</a>
                   </li>
                    
                   <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./history.html">История заказов</a>
-                  </li>
-                  
-                  <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Заказ №1234567 от 27 февраля 2025</span>
+                    <span class="breadcrumbs__link">Оформление заказа</span>
                   </li>
                 </ul>
                 <div class="page-head__main">
-                  <h1 class="page-head__title _h3">Заказ №1234567 от 27 февраля 2025</h1>
-                  <a class="page-head__back page-head__back_btn icon-arr-left" href="./history.html">
+                  <h1 class="page-head__title _h3">Оформление заказа</h1>
+                  <a class="page-head__back page-head__back_btn icon-arr-left" href="./cart.html">
                     <span class="_seo">Назад</span>
                   </a>
                 </div>
@@ -882,326 +878,434 @@
             </div>
           </div>
           <div class="container">
-            <div class="lc__body">
-              <div class="lc__aside">
-                <!-- заглушка для пк версии -->
-                <style>
-                  @media (max-width: 1023.98px) {
-                    .lc__aside {
-                      display: none;
-                    }
-                  }
-                </style>
-                <div class="dashboard">
-                  <div class="dashboard__box">
-                    <div class="dashboard-head">
-                      <a class="dashboard-head__link" href="./lc.html">
-                        <span class="_seo">Перейти в личный кабинет</span>
-                      </a>
-                      <div class="dashboard-head__avatar _h3">
-                        <span>ТА</span>
+            <div class="cabinet-extra" data-delay="5000">
+              <div class="cabinet-extra__items">
+                <article class="cabinet-extra__item">
+                  <a class="cabinet-extra__link" href="#1">
+                    <span class="_seo">Открыть предложение</span>
+                  </a>
+                  <figure class="cabinet-extra__media">
+                    <picture><source srcset="./img/content/pic/extra-1.webp" type="image/webp"><img class="cabinet-extra__img" src="./img/content/pic/extra-1.jpg" alt="Изображение"></picture>
+                  </figure>
+                  <div class="cabinet-extra__content">
+                    <h2 class="cabinet-extra__title _h1">Летние скидки</h2>
+                    <p class="cabinet-extra__text">Скидки до 20%</p>
+                  </div>
+                </article>
+                <article class="cabinet-extra__item">
+                  <a class="cabinet-extra__link" href="#2">
+                    <span class="_seo">Открыть предложение</span>
+                  </a>
+                  <figure class="cabinet-extra__media">
+                    <picture><source srcset="./img/content/pic/extra-2.webp" type="image/webp"><img class="cabinet-extra__img" src="./img/content/pic/extra-2.jpg" alt="Изображение"></picture>
+                  </figure>
+                  <div class="cabinet-extra__content">
+                    <h2 class="cabinet-extra__title _h1">Финальные скидки</h2>
+                    <p class="cabinet-extra__text">Скидки до 50%</p>
+                  </div>
+                </article>
+              </div>
+              <div class="cabinet-extra__actions">
+                <button
+                  class="cabinet-extra__btn cabinet-extra__btn_prev btn btn_main btn_icon icon-arr-left"
+                  type="button"
+                >
+                  <span class="_seo">Предыдущий слайд</span>
+                </button>
+                <button
+                  class="cabinet-extra__btn cabinet-extra__btn_next btn btn_main btn_icon icon-arr-right"
+                  type="button"
+                >
+                  <span class="_seo">Следующий слайд</span>
+                </button>
+              </div>
+              <button class="cabinet-extra__close btn btn_small-extra btn_icon icon-cross" type="button">
+                <span class="_seo">Закрыть</span>
+              </button>
+            </div>
+            <div class="cart__body">
+              <div class="cart__main">
+                <div class="ordering">
+                  <div class="ordering__box">
+                    <div class="ordering__heading">
+                      <h3 class="ordering__title _h3">Покупатель</h3>
+                    </div>
+                    <div class="ordering__content">
+                      <div class="tabs" data-tabs>
+                        <div class="tabs__head">
+                          <nav class="tabs__navigation" data-tabs-titles>
+                            <button class="tabs__btn btn _tab-active" type="button">
+                              Физическое лицо
+                            </button>
+                            <button class="tabs__btn btn" type="button">Юридическое лицо</button>
+                          </nav>
+                        </div>
+                        <div class="tabs__content" data-tabs-body>
+                          <div class="tabs__body" hidden>
+                            <div class="input-fields">
+                              <div class="input-fields__box">
+                                <div class="input-fields__grid">
+                                  <div class="input-fields__cell input-fields__cell_large">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">ФИО*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_medium">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="email" placeholder=" " required>
+                                      <span class="input__placeholder">Электронная почта*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_medium">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="tel" placeholder=" ">
+                                      <span class="input__placeholder">Ваш телефон</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs__body" hidden>
+                            <div class="input-fields">
+                              <div class="input-fields__box">
+                                <div class="input-fields__grid">
+                                  <div class="input-fields__cell input-fields__cell_large">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">Название компании*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">Контактное лицо*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="email" placeholder=" " required>
+                                      <span class="input__placeholder">Электронная почта*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="tel" placeholder=" ">
+                                      <span class="input__placeholder">Телефон</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" ">
+                                      <span class="input__placeholder">ИНН</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" ">
+                                      <span class="input__placeholder">КПП</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">ОГРН*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">Банк*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">Р/С*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">К/С*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_large">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" ">
+                                      <span class="input__placeholder">Юридический адрес</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <dl class="dashboard-head__list">
-                        <dt class="dashboard-head__name">Теплякова Анастасия</dt>
-                        <dd class="dashboard-head__desc">8 000 999 22 00</dd>
-                        <dd class="dashboard-head__desc">namelongemailaddress@yandex.ru</dd>
-                      </dl>
                     </div>
                   </div>
-                  <div class="dashboard__box">
-                    <div class="dashboard-bonus">
-                      <div class="dashboard-bonus__desc">Ваш баланс бонусов</div>
-                      <div class="dashboard-bonus__num _h3">200 000</div>
-                      <a class="dashboard-bonus__link" href="#">Подробнее</a>
+                  <div class="ordering__box">
+                    <div class="ordering__heading">
+                      <h3 class="ordering__title _h3">Доставка</h3>
+                    </div>
+                    <div class="ordering__content">
+                      <div class="tabs" data-tabs>
+                        <div class="tabs__head">
+                          <nav class="tabs__navigation" data-tabs-titles>
+                            <button class="tabs__btn btn _tab-active" type="button">Курьером</button>
+                            <button class="tabs__btn btn" type="button">Самовывоз</button>
+                          </nav>
+                        </div>
+                        <div class="tabs__content" data-tabs-body>
+                          <div class="tabs__body" hidden>
+                            <div class="input-fields">
+                              <div class="input-fields__box">
+                                <div class="input-fields__grid">
+                                  <div class="input-fields__cell input-fields__cell_medium">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" ">
+                                      <span class="input__placeholder">Имя принимающего</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_medium">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="tel" placeholder=" ">
+                                      <span class="input__placeholder">Телефон</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">Город*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">Улица*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_normal">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">Дом*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_small">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" " required>
+                                      <span class="input__placeholder">Квартира/офис*</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_small">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" ">
+                                      <span class="input__placeholder">Этаж</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_small">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" ">
+                                      <span class="input__placeholder">Подъезд</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_small">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="text" placeholder=" ">
+                                      <span class="input__placeholder">Домофон</span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_large">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <textarea class="input__body" placeholder=" " rows="1"></textarea>
+                                      <span class="input__placeholder">Комментарий к доставке</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs__body" hidden>
+                            <div class="geo-cards">
+                              <div class="geo-cards__row">
+                                <div class="geo-cards__content">
+                                  <h3 class="geo-cards__title">Москва и МО</h3>
+                                  <div class="geo-cards__text">
+                                    <p>
+                                      141101 Московская область, город Щелково, ул. Хотовская, д.34, стр.2
+                                    </p>
+                                  </div>
+                                  <div class="geo-cards__footer">
+                                    <dl class="geo-cards-info">
+                                      <div class="geo-cards-info__item">
+                                        <dt class="geo-cards-info__name">Склад</dt>
+                                        <dd class="geo-cards-info__desc">
+                                          <a href="tel:+79260710387">+7 926 071 03 87</a>
+                                        </dd>
+                                      </div>
+                                    </dl>
+                                  </div>
+                                </div>
+                                <div class="geo-cards__map">
+                                  <iframe
+                                    src="https://yandex.ru/map-widget/v1/?ll=38.012481%2C55.903469&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNDQzMDU0MjQxEmfQoNC-0YHRgdC40Y8sINCc0L7RgdC60L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQqdGR0LvQutC-0LLQviwg0KXQvtGC0L7QstGB0LrQsNGPINGD0LvQuNGG0LAsIDM00YEyIgoNyQwYQhUnnV9C&utm_source=ntp_chrome&z=14"
+                                    allowfullscreen="true"
+                                  ></iframe>
+                                </div>
+                              </div>
+                              <div class="geo-cards__row">
+                                <div class="geo-cards__content">
+                                  <h3 class="geo-cards__title">Новосибирск</h3>
+                                  <div class="geo-cards__text">
+                                    <p>630126, г. Новосибирск , ул. Выборная 201в</p>
+                                  </div>
+                                  <div class="geo-cards__footer">
+                                    <dl class="geo-cards-info">
+                                      <div class="geo-cards-info__item">
+                                        <dt class="geo-cards-info__name">Склад</dt>
+                                        <dd class="geo-cards-info__desc">
+                                          <a href="tel:+79254331617">+7 925 433 16 17</a>
+                                        </dd>
+                                      </div>
+                                    </dl>
+                                  </div>
+                                </div>
+                                <div class="geo-cards__map">
+                                  <iframe
+                                    src="https://yandex.ru/map-widget/v1/?ll=83.054890%2C55.002873&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNjI4MDMxODI5EkjQoNC-0YHRgdC40Y8sINCd0L7QstC-0YHQuNCx0LjRgNGB0LosINCS0YvQsdC-0YDQvdCw0Y8g0YPQu9C40YbQsCwgMjAx0JIiCg0bHKZCFfICXEI%2C&utm_source=ntp_chrome&z=14"
+                                    allowfullscreen="true"
+                                  ></iframe>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="dashboard__box">
-                    <ul class="dashboard__list">
-                      <li class="dashboard__item">
-                        <a
-                          class="dashboard__link dashboard__link_active icon-receipt"
-                          href="./history.html"
-                        >
-                          История заказов
-                        </a>
-                      </li>
-                      <li class="dashboard__item">
-                        <a class="dashboard__link icon-users" href="./profile.html">
-                          Профиль клиента
-                        </a>
-                      </li>
-                      <li class="dashboard__item">
-                        <a class="dashboard__link icon-setting" href="./lc-data.html">
-                          Личные данные
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="ordering__box">
+                    <div class="ordering__heading">
+                      <h3 class="ordering__title _h3">Способы оплаты</h3>
+                    </div>
+                    <div class="ordering__content"></div>
                   </div>
-                  <div class="dashboard__box">
-                    <ul class="dashboard__list">
-                      <li class="dashboard__item">
-                        <a class="dashboard__link dashboard__link_exit" href="./auth-login.html">
-                          Выход
-                        </a>
-                      </li>
-                    </ul>
+                  <div class="ordering__box">
+                    <div class="ordering__heading">
+                      <h3 class="ordering__title _h3">Комментарий</h3>
+                    </div>
+                    <div class="ordering__content">
+                      <div class="input-fields">
+                        <div class="input-fields__box">
+                          <div class="input-fields__grid">
+                            <div class="input-fields__cell input-fields__cell_large">
+                              <label class="input">
+                                <!-- input::placeholder=" " должен быть не пустым -->
+                                <textarea class="input__body" placeholder=" " rows="1"></textarea>
+                                <span class="input__placeholder">Комментарий к заказу</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="lc__content">
-                <div class="order">
-                  <div class="order__main">
-                    <div class="order__box">
-                      <div class="order__head">
-                        <h3 class="order__title">Покупатель</h3>
-                      </div>
-                      <div class="order__content">
-                        <div class="order__item">
-                          <dl class="order-info">
-                            <div class="order-info__item">
-                              <dt class="order-info__name">ФИО</dt>
-                              <dd class="order-info__desc">Теплякова Анастасия Андреевна</dd>
-                            </div>
-                            <div class="order-info__item">
-                              <dt class="order-info__name">E-mail</dt>
-                              <dd class="order-info__desc">coinboxdez@gmail.com</dd>
-                            </div>
-                            <div class="order-info__item">
-                              <dt class="order-info__name">Телефон</dt>
-                              <dd class="order-info__desc">8 916 102 18 00</dd>
-                            </div>
-                          </dl>
-                        </div>
-                        <div class="order__item">
-                          <dl class="order-info">
-                            <div class="order-info__item">
-                              <dt class="order-info__name">Индекс</dt>
-                              <dd class="order-info__desc">101000</dd>
-                            </div>
-                            <div class="order-info__item">
-                              <dt class="order-info__name">Местоположение</dt>
-                              <dd class="order-info__desc">Россия, Москва</dd>
-                            </div>
-                            <div class="order-info__item">
-                              <dt class="order-info__name">Адрес доставки</dt>
-                              <dd class="order-info__desc">
-                                Москва ул. Красная площадь д 11 к2 кв 345 ул. Красная площадь д 11 к2 кв
-                                345 Москва ул. Площадь д 11 к2 кв 345
-                              </dd>
-                            </div>
-                          </dl>
-                        </div>
-                      </div>
-                      <div class="order__footer">
-                        <a class="order__link btn btn_small-extra btn_shadow" href="#">Подробнее</a>
-                      </div>
-                    </div>
-                    <div class="order__box">
-                      <div class="order__head">
-                        <h3 class="order__title">Способ оплаты</h3>
-                        <div class="order__status order__status_warning">Не оплачено</div>
-                        <!-- <div class="order__status order__status_accent">В наличии</div>
-                        <div class="order__status order__status_neutral">Цена за одну булылку</div>
-                        <div class="order__status order__status_negative">Нет в наличии</div>
-                        <div class="order__status order__status_accent">Наличие уточняйте</div>
-                        <div class="order__status order__status_warning">Остаток</div>
-                        <div class="order__status order__status_warning">Ожидает оплату</div>
-                        <div class="order__status order__status_negative">Отменено</div>
-                        <div class="order__status order__status_warning">Не отгружено</div>
-                        <div class="order__status order__status_accent">Оплачено</div>
-                        <div class="order__status order__status_accent">У курьера</div>
-                        <div class="order__status order__status_accent">Получено</div> -->
-                      </div>
-                      <div class="order__content">
-                        <dl class="order-info">
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Статус доставки</dt>
-                            <dd class="order-info__desc">У курьера</dd>
-                          </div>
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Курьерская служба</dt>
-                            <dd class="order-info__desc">СДЕК</dd>
-                          </div>
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Адрес доставки</dt>
-                            <dd class="order-info__desc">Москва ул. Красная площадь д 11 к2 кв 345</dd>
-                          </div>
-                        </dl>
-                      </div>
-                      <div class="order__footer">
-                        <button class="order__btn btn btn_small-extra btn_shadow" type="button">
-                          Редактировать
-                        </button>
-                      </div>
-                    </div>
-                    <div class="order__box">
-                      <div class="order__head">
-                        <h3 class="order__title">Способ доставки</h3>
-                        <div class="order__status order__status_warning">Не отгружено</div>
-                        <!-- <div class="order__status order__status_accent">В наличии</div>
-                        <div class="order__status order__status_neutral">Цена за одну булылку</div>
-                        <div class="order__status order__status_negative">Нет в наличии</div>
-                        <div class="order__status order__status_accent">Наличие уточняйте</div>
-                        <div class="order__status order__status_warning">Остаток</div>
-                        <div class="order__status order__status_warning">Ожидает оплату</div>
-                        <div class="order__status order__status_negative">Отменено</div>
-                        <div class="order__status order__status_warning">Не оплачено</div>
-                        <div class="order__status order__status_accent">Оплачено</div>
-                        <div class="order__status order__status_accent">У курьера</div>
-                        <div class="order__status order__status_accent">Получено</div> -->
-                      </div>
-                      <div class="order__content">
-                        <dl class="order-info">
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Статус доставки</dt>
-                            <dd class="order-info__desc">У курьера</dd>
-                          </div>
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Курьерская служба</dt>
-                            <dd class="order-info__desc">СДЕК</dd>
-                          </div>
-                          <div class="order-info__item">
-                            <dt class="order-info__name">Адрес доставки</dt>
-                            <dd class="order-info__desc">Москва ул. Красная площадь д 11 к2 кв 345</dd>
-                          </div>
-                        </dl>
-                      </div>
-                    </div>
-                    <div class="order__box">
-                      <div class="order__head">
-                        <h3 class="order__title">Список покупок</h3>
-                      </div>
-                      <div class="order__content">
-                        <div class="order__item">
-                          <article class="ordered-product-card">
-                            <a class="ordered-product-card__link" href="./product.html">
-                              <span class="_seo">Заголовок продукта</span>
-                            </a>
-                            <div class="ordered-product-card__main">
-                              <figure class="ordered-product-card__media">
-                                <picture><source srcset="./img/content/pic/product-3.webp" type="image/webp"><img class="ordered-product-card__img" src="./img/content/pic/product-3.png" alt="Изображение"></picture>
-                              </figure>
-                              <div class="ordered-product-card__content">
-                                <div class="ordered-product-card__code">12356978</div>
-                                <h4 class="ordered-product-card__title">
-                                  Темпер JoeFrex D58 Galaxy желтый классический Темпер JoeFrex D58 Galaxy
-                                  желтый классическийТемпер JoeFrex D58 Galaxy желтый классический
-                                </h4>
-                                <div class="ordered-product-card__extra">1000 мл</div>
-                              </div>
-                            </div>
-                            <div class="ordered-product-card__cost">
-                              <div class="ordered-product-card__count">10 799 ₽ <span>х 6 шт</span></div>
-                              <div class="ordered-product-card__price">10 799 ₽</div>
-                            </div>
-                          </article>
-                        </div>
-                        <div class="order__item">
-                          <article class="ordered-product-card">
-                            <a class="ordered-product-card__link" href="./product.html">
-                              <span class="_seo">Заголовок продукта</span>
-                            </a>
-                            <div class="ordered-product-card__main">
-                              <figure class="ordered-product-card__media">
-                                <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="ordered-product-card__img" src="./img/content/pic/product-4.png" alt="Изображение"></picture>
-                              </figure>
-                              <div class="ordered-product-card__content">
-                                <div class="ordered-product-card__code">12356978</div>
-                                <h4 class="ordered-product-card__title">Темпер JoeFrex D58</h4>
-                                <div class="ordered-product-card__extra">1000 мл</div>
-                              </div>
-                            </div>
-                            <div class="ordered-product-card__cost">
-                              <div class="ordered-product-card__price">1 000 000 ₽</div>
-                            </div>
-                          </article>
-                        </div>
-                        <div class="order__item">
-                          <article class="ordered-product-card">
-                            <a class="ordered-product-card__link" href="./product.html">
-                              <span class="_seo">Заголовок продукта</span>
-                            </a>
-                            <div class="ordered-product-card__main">
-                              <figure class="ordered-product-card__media">
-                                <picture><source srcset="./img/content/pic/product-7.webp" type="image/webp"><img class="ordered-product-card__img" src="./img/content/pic/product-7.png" alt="Изображение"></picture>
-                              </figure>
-                              <div class="ordered-product-card__content">
-                                <div class="ordered-product-card__code">12356978</div>
-                                <h4 class="ordered-product-card__title">
-                                  Темпер JoeFrex D58 Galaxy желтый классический
-                                </h4>
-                                <div class="ordered-product-card__extra">1000 мл</div>
-                              </div>
-                            </div>
-                            <div class="ordered-product-card__cost">
-                              <div class="ordered-product-card__count">
-                                210 799 ₽ <span>х 12 шт</span>
-                              </div>
-                              <div class="ordered-product-card__price">2 400 799 ₽</div>
-                            </div>
-                          </article>
-                        </div>
-                      </div>
+              <div class="cart__aside">
+                <div class="summary-checkout">
+                  <div class="summary-checkout__box">
+                    <div class="summary-checkout__head">
+                      <div class="summary-checkout__title">Итого <span>к оплате</span></div>
+                      <div class="summary-checkout__price _h2">1 000 000 ₽</div>
                     </div>
                   </div>
-                  <div class="order__checkout">
-                    <div class="order-checkout">
-                      <div class="order-checkout__head">
-                        <div class="order-checkout__title">Итого</div>
-                        <div class="order-checkout__price">1 000 000 ₽</div>
-                        <div class="order-checkout__status order-checkout__status_warning">
-                          Ожидает оплату
+                  <div class="summary-checkout__box">
+                    <div class="order-checkout-info">
+                      <dl class="order-checkout-info__list">
+                        <div class="order-checkout-info__item">
+                          <dt class="order-checkout-info__name">Ваш заказ</dt>
+                          <dd class="order-checkout-info__desc">5 товаров</dd>
                         </div>
-                        <!-- <div class="order-checkout__status order-checkout__status_accent">В наличии</div>
-                        <div class="order-checkout__status order-checkout__status_neutral">Цена за одну булылку</div>
-                        <div class="order-checkout__status order-checkout__status_negative">Нет в наличии</div>
-                        <div class="order-checkout__status order-checkout__status_accent">Наличие уточняйте</div>
-                        <div class="order-checkout__status order-checkout__status_warning">Остаток</div>
-                        <div class="order-checkout__status order-checkout__status_negative">Отменено</div>
-                        <div class="order-checkout__status order-checkout__status_warning">Не оплачено</div>
-                        <div class="order-checkout__status order-checkout__status_warning">Не отгружено</div>
-                        <div class="order-checkout__status order-checkout__status_accent">Оплачено</div>
-                        <div class="order-checkout__status order-checkout__status_accent">У курьера</div>
-                        <div class="order-checkout__status order-checkout__status_accent">Получено</div> -->
-                      </div>
-                      <div class="order-checkout__info">
-                        <dl class="order-checkout-info__list">
-                          <div class="order-checkout-info__item">
-                            <dt class="order-checkout-info__name">Ваш заказ</dt>
-                            <dd class="order-checkout-info__desc">5 товаров</dd>
-                          </div>
-                          <div class="order-checkout-info__item">
-                            <dt class="order-checkout-info__name">Товары на сумму</dt>
-                            <dd class="order-checkout-info__desc">100 000 ₽</dd>
-                          </div>
-                          <div class="order-checkout-info__item">
-                            <dt class="order-checkout-info__name">Доставка</dt>
-                            <dd
-                              class="order-checkout-info__desc order-checkout-info__desc_mark icon-info-round"
-                            >
-                              Бесплатно
-                            </dd>
-                          </div>
-                          <div class="order-checkout-info__item">
-                            <dt class="order-checkout-info__name">Скидка</dt>
-                            <dd class="order-checkout-info__desc order-checkout-info__desc_accent">
-                              -100 000 ₽
-                            </dd>
-                          </div>
-                        </dl>
-                      </div>
-                      <div class="order-checkout__actions">
-                        <a class="order-checkout__btn btn btn_normal btn_neutral" href="#">
-                          Повторить заказ
-                        </a>
-                        <a class="order-checkout__btn btn btn_normal btn_neutral btn_cancel" href="#">
-                          Отменить заказ
-                        </a>
-                      </div>
-                      <div class="order-checkout__extra">
-                        <div class="order-checkout__notify icon-info-round">
-                          Доставка осуществляется только по Москве и МО
+                        <div class="order-checkout-info__item">
+                          <dt class="order-checkout-info__name">Товары на сумму</dt>
+                          <dd class="order-checkout-info__desc">100 000 ₽</dd>
                         </div>
+                        <div class="order-checkout-info__item">
+                          <dt class="order-checkout-info__name">Доставка</dt>
+                          <dd
+                            class="order-checkout-info__desc order-checkout-info__desc_mark icon-info-round"
+                          >
+                            Бесплатно
+                          </dd>
+                        </div>
+                        <div class="order-checkout-info__item">
+                          <dt class="order-checkout-info__name">Скидка</dt>
+                          <dd class="order-checkout-info__desc order-checkout-info__desc_accent">
+                            -100 000 ₽
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="summary-checkout__box">
+                    <div class="summary-checkout__actions">
+                      <div class="input-action">
+                        <label class="input">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body input__body_neutral" type="text" placeholder=" " required readonly value="0">
+                          <span class="input__placeholder">Ваш баланс бонусов</span>
+                        </label>
+                        <button class="input-action__btn" type="button" data-popup="#bonus-form" disabled>
+                          Списать
+                        </button>
+                      </div>
+                      <div class="input-action">
+                        <label class="input">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body input__body_neutral" type="text" placeholder=" " required>
+                          <span class="input__placeholder">Промокод</span>
+                        </label>
+                        <button class="input-action__btn" type="button">Применить</button>
+                      </div>
+                      <button class="summary-checkout__btn btn btn_normal btn_main" type="submit">
+                        Оплатить
+                      </button>
+                      <div class="summary-checkout__extra">
+                        <label class="checkbox">
+                          <input class="checkbox__input" type="checkbox">
+                          <span class="checkbox__icon checkbox__icon_neutral icon-check"></span>
+                          <span class="checkbox__body">
+                            Согласен с условиями
+                            <a href="./" target="_blank">обработки данных</a>,
+                            <a href="./" target="_blank">пользовательского соглашения</a>
+                            и <a href="./" target="_blank">оферты</a>
+                          </span>
+                        </label>
                       </div>
                     </div>
                   </div>
