@@ -925,6 +925,10 @@
             </div>
             <div class="cart__body">
               <div class="cart__main">
+                <div class="cart__notify icon-check">
+                  Вы заказывали в нашем интернет-магазине, поэтому мы заполнили все данные
+                  автоматически. Если все заполнено верно, нажмите кнопку &laquo;Оплатить заказ&raquo;.
+                </div>
                 <div class="ordering">
                   <div class="ordering__box">
                     <div class="ordering__heading">
@@ -934,14 +938,16 @@
                       <div class="tabs" data-tabs>
                         <div class="tabs__head">
                           <nav class="tabs__navigation" data-tabs-titles>
-                            <button class="tabs__btn btn _tab-active" type="button">
+                            <button class="tabs__btn btn btn_normal _tab-active" type="button">
                               Физическое лицо
                             </button>
-                            <button class="tabs__btn btn" type="button">Юридическое лицо</button>
+                            <button class="tabs__btn btn btn_normal" type="button">
+                              Юридическое лицо
+                            </button>
                           </nav>
                         </div>
                         <div class="tabs__content" data-tabs-body>
-                          <div class="tabs__body" hidden>
+                          <div class="tabs__body tabs__body_checkout">
                             <div class="input-fields">
                               <div class="input-fields__box">
                                 <div class="input-fields__grid">
@@ -970,7 +976,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="tabs__body" hidden>
+                          <div class="tabs__body tabs__body_checkout" hidden>
                             <div class="input-fields">
                               <div class="input-fields__box">
                                 <div class="input-fields__grid">
@@ -1067,12 +1073,67 @@
                       <div class="tabs" data-tabs>
                         <div class="tabs__head">
                           <nav class="tabs__navigation" data-tabs-titles>
-                            <button class="tabs__btn btn _tab-active" type="button">Курьером</button>
-                            <button class="tabs__btn btn" type="button">Самовывоз</button>
+                            <button class="tabs__btn btn btn_normal _tab-active" type="button">
+                              Курьером
+                            </button>
+                            <button class="tabs__btn btn btn_normal" type="button">Самовывоз</button>
                           </nav>
                         </div>
                         <div class="tabs__content" data-tabs-body>
-                          <div class="tabs__body" hidden>
+                          <div class="tabs__body tabs__body_checkout">
+                            <div class="checkout-choice">
+                              <label class="delivery-choice">
+                                <input class="delivery-choice__input" type="radio" name="delivery-choice" checked>
+                                <span class="delivery-choice__card">
+                                  <span class="delivery-choice__icon icon-check"></span>
+                                  <span class="delivery-choice__media">
+                                    <img class="delivery-choice__img" src="./img/content/pay/pay-9.svg" alt="Изображение">
+                                  </span>
+                                  <span class="delivery-choice__info">
+                                    <span class="delivery-choice__text">1-3 марта</span>
+                                    <span class="delivery-choice__text delivery-choice__text_shadow">
+                                      1-2 рабочих дня
+                                    </span>
+                                  </span>
+                                  <span class="delivery-choice__cost">592 ₽</span>
+                                </span>
+                              </label>
+                              <label class="delivery-choice">
+                                <input class="delivery-choice__input" type="radio" name="delivery-choice" checked>
+                                <span class="delivery-choice__card">
+                                  <span class="delivery-choice__icon icon-check"></span>
+                                  <span class="delivery-choice__media">
+                                    <img class="delivery-choice__img" src="./img/content/pay/pay-10.svg" alt="Изображение">
+                                  </span>
+                                  <span class="delivery-choice__info">
+                                    <span class="delivery-choice__text">1-3 марта</span>
+                                    <span class="delivery-choice__text delivery-choice__text_shadow">
+                                      1-2 рабочих дня
+                                    </span>
+                                  </span>
+                                  <span class="delivery-choice__cost">2 159 ₽</span>
+                                </span>
+                              </label>
+                              <label class="delivery-choice">
+                                <input class="delivery-choice__input" type="radio" name="delivery-choice" checked>
+                                <span class="delivery-choice__card">
+                                  <span class="delivery-choice__icon icon-check"></span>
+                                  <span class="delivery-choice__media">
+                                    <img class="delivery-choice__img" src="./img/content/pay/pay-11.svg" alt="Изображение">
+                                  </span>
+                                  <span class="delivery-choice__info">
+                                    <span class="delivery-choice__text">1-3 марта</span>
+                                    <span class="delivery-choice__text delivery-choice__text_shadow">
+                                      1-2 рабочих дня
+                                    </span>
+                                  </span>
+                                  <span class="delivery-choice__cost">159 ₽</span>
+                                  <span class="delivery-choice__extra icon-info-round"
+                                    >Доставка курьером и в пункты выдачи Яндекс маркет
+                                  </span>
+                                </span>
+                              </label>
+                            </div>
                             <div class="input-fields">
                               <div class="input-fields__box">
                                 <div class="input-fields__grid">
@@ -1150,7 +1211,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="tabs__body" hidden>
+                          <div class="tabs__body tabs__body_checkout" hidden>
                             <div class="geo-cards">
                               <div class="geo-cards__row">
                                 <div class="geo-cards__content">
@@ -1210,7 +1271,70 @@
                     <div class="ordering__heading">
                       <h3 class="ordering__title _h3">Способы оплаты</h3>
                     </div>
-                    <div class="ordering__content"></div>
+                    <div class="ordering__content">
+                      <div class="checkout-choice checkout-choice_grid">
+                        <label class="pay-choice">
+                          <input class="pay-choice__input" type="radio" name="pay-choice" checked>
+                          <span class="pay-choice__card">
+                            <span class="pay-choice__head">
+                              <span class="pay-choice__icon icon-check"></span>
+                              <span class="pay-choice__media">
+                                <img class="pay-choice__img" src="./img/content/pay/pay-4.svg" alt="Изображение">
+                              </span>
+                            </span>
+                            <span class="pay-choice__text">Банковская карта</span>
+                          </span>
+                        </label>
+                        <label class="pay-choice">
+                          <input class="pay-choice__input" type="radio" name="pay-choice">
+                          <span class="pay-choice__card">
+                            <span class="pay-choice__head">
+                              <span class="pay-choice__icon icon-check"></span>
+                              <span class="pay-choice__media">
+                                <img class="pay-choice__img" src="./img/content/pay/pay-5.svg" alt="Изображение">
+                              </span>
+                            </span>
+                            <span class="pay-choice__text">Оплата через СПБ</span>
+                          </span>
+                        </label>
+                        <label class="pay-choice">
+                          <input class="pay-choice__input" type="radio" name="pay-choice">
+                          <span class="pay-choice__card">
+                            <span class="pay-choice__head">
+                              <span class="pay-choice__icon icon-check"></span>
+                              <span class="pay-choice__media">
+                                <img class="pay-choice__img" src="./img/content/pay/pay-6.svg" alt="Изображение">
+                              </span>
+                            </span>
+                            <span class="pay-choice__text">Электронный кошелек</span>
+                          </span>
+                        </label>
+                        <label class="pay-choice">
+                          <input class="pay-choice__input" type="radio" name="pay-choice">
+                          <span class="pay-choice__card">
+                            <span class="pay-choice__head">
+                              <span class="pay-choice__icon icon-check"></span>
+                              <span class="pay-choice__media">
+                                <img class="pay-choice__img" src="./img/content/pay/pay-7.svg" alt="Изображение">
+                              </span>
+                            </span>
+                            <span class="pay-choice__text">Оплата при доставке</span>
+                          </span>
+                        </label>
+                        <label class="pay-choice">
+                          <input class="pay-choice__input" type="radio" name="pay-choice">
+                          <span class="pay-choice__card">
+                            <span class="pay-choice__head">
+                              <span class="pay-choice__icon icon-check"></span>
+                              <span class="pay-choice__media">
+                                <img class="pay-choice__img" src="./img/content/pay/pay-8.svg" alt="Изображение">
+                              </span>
+                            </span>
+                            <span class="pay-choice__text">Оплата по выставленному счету</span>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
                   </div>
                   <div class="ordering__box">
                     <div class="ordering__heading">
