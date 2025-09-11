@@ -14894,10 +14894,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import tippy from "tippy.js";
-// import Masonry from "masonry-layout";
-// import AirDatepicker from "air-datepicker";
-
 window.Swiper = swiper_bundle__WEBPACK_IMPORTED_MODULE_5__["default"];
 window.noUiSlider = nouislider__WEBPACK_IMPORTED_MODULE_6__["default"];
 
@@ -14935,8 +14931,6 @@ window.addEventListener("load", function () {
     );
   }
   disableIOSTextFieldZoom();
-
-  // tippy("[data-tippy-content]", { maxWidth: 230 });
 
   const HEADER = document.querySelector(".header");
   const USER_BAR = document.querySelector(".user-bar");
@@ -15673,95 +15667,129 @@ window.addEventListener("load", function () {
     const rangeElements = document.querySelectorAll("[data-range]");
 
     rangeElements.forEach((rangeElement) => {
-      const rangeMinInput = rangeElement.querySelector("[data-range-min]");
-      const rangeMinValue = Number(rangeMinInput.getAttribute("data-range-min"));
-      const rangeMaxInput = rangeElement.querySelector("[data-range-max]");
-      const rangeMaxValue = Number(rangeMaxInput.getAttribute("data-range-max"));
-      const rangeInputs = [rangeMinInput, rangeMaxInput];
+      const rangeOneSlider = rangeElement.dataset.range == "one";
       const rangeSlider = rangeElement.querySelector("[data-range-body]");
 
-      nouislider__WEBPACK_IMPORTED_MODULE_6__["default"].create(rangeSlider, {
-        start: [rangeMinValue, rangeMaxValue],
-        connect: true,
-        range: {
-          min: rangeMinValue,
-          max: rangeMaxValue,
-        },
-        format: {
-          from: function (value) {
-            return parseInt(value);
-          },
-          to: function (value) {
-            return parseInt(value);
-          },
-        },
-      });
+      if (rangeOneSlider) {
+        const rangeOneInput = rangeElement.querySelector("[data-range-input]");
+        const rangeOneMinValue = Number(rangeOneInput.getAttribute("data-range-min"));
+        const rangeOneMaxValue = Number(rangeOneInput.getAttribute("data-range-max"));
+        const rangeSetValueBtn = rangeElement.querySelector("[data-range-set]");
 
-      rangeSlider.noUiSlider.on("update", function (values, i) {
-        rangeInputs[i].value = values[i];
-      });
-
-      // Listen to keydown events on the input field.
-      rangeInputs.forEach((input, i) => {
-        input.addEventListener("change", function () {
-          rangeSlider.noUiSlider.setHandle(i, input.value);
+        nouislider__WEBPACK_IMPORTED_MODULE_6__["default"].create(rangeSlider, {
+          start: rangeOneMinValue,
+          step: 1,
+          range: {
+            min: rangeOneMinValue,
+            max: rangeOneMaxValue,
+          },
+          format: {
+            from: function (value) {
+              return parseInt(value);
+            },
+            to: function (value) {
+              return parseInt(value);
+            },
+          },
         });
 
-        input.addEventListener("keydown", function (e) {
-          let values = rangeSlider.noUiSlider.get();
-          let value = Number(values[i]);
-
-          // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
-          let steps = rangeSlider.noUiSlider.steps();
-
-          // [down, up]
-          let step = steps[i];
-
-          let position;
-
-          // 13 is enter,
-          // 37 is key left,
-          // 38 is key up,
-          // 39 is key right.
-          // 40 is key down.
-          switch (e.which) {
-            case 13:
-              rangeSlider.noUiSlider.setHandle(i, input.value);
-              break;
-
-            case 38:
-            case 39:
-              // Get step to go increase slider value (up)
-              position = step[1];
-
-              // false = no step is set
-              if (position === false) {
-                position = 1;
-              }
-
-              // null = edge of slider
-              if (position !== null) {
-                rangeSlider.noUiSlider.setHandle(i, value + position);
-              }
-
-              break;
-
-            case 37:
-            case 40:
-              position = step[0];
-
-              if (position === false) {
-                position = 1;
-              }
-
-              if (position !== null) {
-                rangeSlider.noUiSlider.setHandle(i, value - position);
-              }
-
-              break;
-          }
+        rangeSlider.noUiSlider.on("update", function (values, handle) {
+          rangeOneInput.value = values[handle];
         });
-      });
+
+        rangeSetValueBtn.addEventListener("click", () => {
+          rangeSlider.noUiSlider.set(rangeOneMaxValue);
+        });
+      } else {
+        const rangeMinInput = rangeElement.querySelector("[data-range-min]");
+        const rangeMinValue = Number(rangeMinInput.getAttribute("data-range-min"));
+        const rangeMaxInput = rangeElement.querySelector("[data-range-max]");
+        const rangeMaxValue = Number(rangeMaxInput.getAttribute("data-range-max"));
+        const rangeInputs = [rangeMinInput, rangeMaxInput];
+
+        nouislider__WEBPACK_IMPORTED_MODULE_6__["default"].create(rangeSlider, {
+          start: [rangeMinValue, rangeMaxValue],
+          connect: true,
+          range: {
+            min: rangeMinValue,
+            max: rangeMaxValue,
+          },
+          format: {
+            from: function (value) {
+              return parseInt(value);
+            },
+            to: function (value) {
+              return parseInt(value);
+            },
+          },
+        });
+
+        rangeSlider.noUiSlider.on("update", function (values, i) {
+          rangeInputs[i].value = values[i];
+        });
+
+        // Listen to keydown events on the input field.
+        rangeInputs.forEach((input, i) => {
+          input.addEventListener("change", function () {
+            rangeSlider.noUiSlider.setHandle(i, input.value);
+          });
+
+          input.addEventListener("keydown", function (e) {
+            let values = rangeSlider.noUiSlider.get();
+            let value = Number(values[i]);
+
+            // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
+            let steps = rangeSlider.noUiSlider.steps();
+
+            // [down, up]
+            let step = steps[i];
+
+            let position;
+
+            // 13 is enter,
+            // 37 is key left,
+            // 38 is key up,
+            // 39 is key right.
+            // 40 is key down.
+            switch (e.which) {
+              case 13:
+                rangeSlider.noUiSlider.setHandle(i, input.value);
+                break;
+
+              case 38:
+              case 39:
+                // Get step to go increase slider value (up)
+                position = step[1];
+
+                // false = no step is set
+                if (position === false) {
+                  position = 1;
+                }
+
+                // null = edge of slider
+                if (position !== null) {
+                  rangeSlider.noUiSlider.setHandle(i, value + position);
+                }
+
+                break;
+
+              case 37:
+              case 40:
+                position = step[0];
+
+                if (position === false) {
+                  position = 1;
+                }
+
+                if (position !== null) {
+                  rangeSlider.noUiSlider.setHandle(i, value - position);
+                }
+
+                break;
+            }
+          });
+        });
+      }
     });
   };
 
