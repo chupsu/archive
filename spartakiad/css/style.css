@@ -5221,7 +5221,7 @@ input.r-input__body {
     margin-bottom: 96px;
   }
   .stand-list__item svg {
-    width: 70px;
+    width: 68px;
   }
   .join__body {
     padding-top: 120px;
@@ -5833,7 +5833,7 @@ input.r-input__body {
     margin-bottom: 22px;
   }
   .stand-list__item svg {
-    width: 15px;
+    width: 14px;
   }
   .join__body {
     padding-top: 54px;
@@ -6191,7 +6191,7 @@ input.r-input__body {
     margin-bottom: clamp( 48px , -0.0245px + 2.5vw , 96px );
   }
   .stand-list__item svg {
-    width: clamp( 35px , -0.0178645833px + 1.8229166667vw , 70px );
+    width: clamp( 34px , -0.0173541667px + 1.7708333333vw , 68px );
   }
   .join__body {
     padding-top: clamp( 60px , -0.030625px + 3.125vw , 120px );
@@ -6495,12 +6495,12 @@ input.r-input__body {
   }
   .stand__body {
     padding-top: clamp( 44px , 25.350008673px + 2.4284475282vw , 72px );
-    padding-right: clamp( 30px , -86.5624457936px + 15.1777970512vw , 205px );
+    padding-right: clamp( 26px , -93.2267302689px + 15.5247181266vw , 205px );
     padding-bottom: clamp( 34px , 20.6785776236px + 1.7346053773vw , 54px );
-    padding-left: clamp( 140px , -29.1820641804px + 22.0294882914vw , 394px );
+    padding-left: clamp( 146px , -19.1856374675px + 21.5091066782vw , 394px );
   }
   .stand-list__item {
-    font-size: clamp( 14px , 6.0071465742px + 1.0407632264vw , 26px );
+    font-size: clamp( 10px , -0.6571379011px + 1.3876843018vw , 26px );
   }
   .stand-list__item:not(:last-child) {
     margin-bottom: clamp( 24px , 8.0142931483px + 2.0815264527vw , 48px );
@@ -6625,7 +6625,7 @@ input.r-input__body {
     margin-top: clamp( 20px , 14.4653939782px + 1.5374759769vw , 44px );
   }
   .stand-list__item svg {
-    width: clamp( 15px , 10.3878283152px + 1.2812299808vw , 35px );
+    width: clamp( 14px , 9.3878283152px + 1.2812299808vw , 34px );
   }
   .join__body {
     padding-top: clamp( 54px , 52.6163484946px + 0.3843689942vw , 60px );
