@@ -972,7 +972,53 @@
                                       <span class="input__placeholder">Ваш телефон</span>
                                     </label>
                                   </div>
+                                  <div class="input-fields__cell input-fields__cell_large">
+                                    <label class="profile-card">
+                                      <input class="profile-card__input" type="radio" name="checkout-profile" checked>
+                                      <span class="profile-card__head">
+                                        <span class="profile-card__title">
+                                          <span class="profile-card__icon icon-check"></span>
+                                          Название профиля
+                                        </span>
+                                      </span>
+                                      <span class="profile-card__list">
+                                        <span class="profile-card__item">Теплякова Анастасия</span>
+                                        <span class="profile-card__item">8 000 999 22 00</span>
+                                        <span class="profile-card__item">info@mail.ru</span>
+                                        <span class="profile-card__item">
+                                          Красная площадь, д1. подьезд 10
+                                        </span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="input-fields__cell input-fields__cell_large">
+                                    <label class="profile-card">
+                                      <input class="profile-card__input" type="radio" name="checkout-profile">
+                                      <span class="profile-card__head">
+                                        <span class="profile-card__title">
+                                          <span class="profile-card__icon icon-check"></span>
+                                          Название профиля
+                                        </span>
+                                      </span>
+                                      <span class="profile-card__list">
+                                        <span class="profile-card__item">Теплякова Анастасия</span>
+                                        <span class="profile-card__item">8 000 999 22 00</span>
+                                        <span class="profile-card__item">info@mail.ru</span>
+                                        <span class="profile-card__item">
+                                          Красная площадь, д1. подьезд 10
+                                        </span>
+                                      </span>
+                                    </label>
+                                  </div>
                                 </div>
+                              </div>
+                              <div class="input-fields__actions">
+                                <button
+                                  class="input-fields__btn btn btn_normal btn_main icon-plus"
+                                  type="button"
+                                >
+                                  Добавить профиль
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -1622,6 +1668,64 @@
           });
         })();
       </script>
+      <!-- скрипт кол-ва -->
+      <!-- <script>
+        const initQuantity = () => {
+          const quantities = document.querySelectorAll("[data-quantity]");
+
+          quantities.forEach((quantity) => {
+            const quantityInput = quantity.querySelector("[data-quantity-value]");
+            const quantityMin = parseInt(quantityInput.dataset.quantityMin);
+            const quantityMax = parseInt(quantityInput.dataset.quantityMax);
+
+            const setQuantityValue = (value) => {
+              if (value > quantityMax) {
+                value = quantityMax;
+              }
+              if (value < quantityMin) {
+                value = quantityMin;
+
+                if (quantity.parentElement.closest(".added")) {
+                  quantity.parentElement.classList.remove("added");
+                  quantity.parentElement.querySelector("[data-buy]")?.focus();
+                }
+              }
+
+              quantityInput.value = value;
+            };
+
+            quantity.addEventListener("click", (e) => {
+              const targetElement = e.target;
+              let quantityValue = parseInt(quantityInput.value);
+
+              if (targetElement.closest("[data-quantity-button]")) {
+                e.preventDefault();
+
+                if (targetElement.dataset.quantityButton == "plus") {
+                  quantityValue++;
+                }
+                if (targetElement.dataset.quantityButton == "minus") {
+                  quantityValue--;
+                }
+
+                setQuantityValue(quantityValue);
+              }
+            });
+
+            quantityInput.addEventListener("input", (e) => {
+              e.target.value = e.target.value.replace(/[^\d.]/g, "");
+
+              setQuantityValue(e.target.value);
+            });
+          });
+        };
+
+        if (targetElement.closest("[data-buy]")) {
+          const parentElem = targetElement.parentElement;
+
+          parentElem.classList.add("added");
+        }
+      </script> -->
     </div>
 
     <div class="popup" id="callback">

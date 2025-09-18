@@ -1104,6 +1104,64 @@
           });
         })();
       </script>
+      <!-- скрипт кол-ва -->
+      <!-- <script>
+        const initQuantity = () => {
+          const quantities = document.querySelectorAll("[data-quantity]");
+
+          quantities.forEach((quantity) => {
+            const quantityInput = quantity.querySelector("[data-quantity-value]");
+            const quantityMin = parseInt(quantityInput.dataset.quantityMin);
+            const quantityMax = parseInt(quantityInput.dataset.quantityMax);
+
+            const setQuantityValue = (value) => {
+              if (value > quantityMax) {
+                value = quantityMax;
+              }
+              if (value < quantityMin) {
+                value = quantityMin;
+
+                if (quantity.parentElement.closest(".added")) {
+                  quantity.parentElement.classList.remove("added");
+                  quantity.parentElement.querySelector("[data-buy]")?.focus();
+                }
+              }
+
+              quantityInput.value = value;
+            };
+
+            quantity.addEventListener("click", (e) => {
+              const targetElement = e.target;
+              let quantityValue = parseInt(quantityInput.value);
+
+              if (targetElement.closest("[data-quantity-button]")) {
+                e.preventDefault();
+
+                if (targetElement.dataset.quantityButton == "plus") {
+                  quantityValue++;
+                }
+                if (targetElement.dataset.quantityButton == "minus") {
+                  quantityValue--;
+                }
+
+                setQuantityValue(quantityValue);
+              }
+            });
+
+            quantityInput.addEventListener("input", (e) => {
+              e.target.value = e.target.value.replace(/[^\d.]/g, "");
+
+              setQuantityValue(e.target.value);
+            });
+          });
+        };
+
+        if (targetElement.closest("[data-buy]")) {
+          const parentElem = targetElement.parentElement;
+
+          parentElem.classList.add("added");
+        }
+      </script> -->
     </div>
 
     <div class="popup" id="callback">
