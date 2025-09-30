@@ -2029,6 +2029,9 @@ textarea.inputs__body ~ .inputs__label {
 .branch-head__body {
   padding-top: 24px;
 }
+.container:first-child .branch-head__body {
+  padding-top: 0;
+}
 .branch-head__title:not(:last-child) {
   margin-bottom: 16px;
 }
@@ -2102,6 +2105,15 @@ textarea.inputs__body ~ .inputs__label {
   align-items: flex-start;
   padding: 16px;
   background-color: var(--color-light);
+}
+.num-stats-slider__item_text .num-stats-slider__name {
+  white-space: initial;
+}
+.num-stats-slider__item_text .num-stats-slider__desc {
+  display: initial!important;
+  -webkit-line-clamp: initial!important;
+  -webkit-box-orient: initial!important;
+  overflow: initial!important;
 }
 .num-stats-slider__icon {
   flex-shrink: 0;
@@ -3047,6 +3059,12 @@ textarea.inputs__body ~ .inputs__label {
     max-width: 100%;
     aspect-ratio: 43/46 auto;
     padding: 2.68%;
+  }
+  .num-stats-slider__item_text {
+    justify-content: flex-start;
+  }
+  .num-stats-slider__item_text .num-stats-slider__icon {
+    margin: 0 0 48px;
   }
   .num-stats-slider__icon {
     width: 23.95%;
