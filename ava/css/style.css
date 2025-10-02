@@ -2988,15 +2988,15 @@ textarea.inputs__body ~ .inputs__label {
   .branch-head__title {
     max-width: 72%;
   }
+  .heading-box {
+    display: flex;
+    align-items: flex-start;
+  }
   .heading-box:not(:last-child) {
     padding-bottom: 48px;
   }
   .slider-init:not(.slider-lock) .heading-box:not(:last-child) {
     padding-bottom: 36px;
-  }
-  .heading-box {
-    display: flex;
-    align-items: flex-start;
   }
   .heading-box__title {
     flex-shrink: 0;
