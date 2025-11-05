@@ -1714,25 +1714,22 @@ body {
   position: relative;
 }
 .partners-slider__wrapper {
-  width: 100%;
-  padding-bottom: 1px;
+  width: calc(100% + 2 * var(--gap-normal));
+  padding: var(--gap-normal);
+  margin: calc(-1 * var(--gap-normal));
 }
 .partners-slider__items {
   position: relative;
   display: flex;
   width: 100%;
+  padding-bottom: 1px;
   will-change: transform;
 }
 .partners-slider__item {
   position: relative;
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
   width: 150px;
   margin-right: var(--gap-normal);
-  background-color: var(--color-shadow-200);
-  border-radius: var(--radius-normal);
-  overflow: hidden;
 }
 ._is-init .partners-slider__item {
   margin-right: 0;
@@ -1746,9 +1743,12 @@ body {
   background-color: var(--color-neutral);
   border: 1px solid var(--color-shadow-300);
   border-radius: var(--radius-normal);
+  overflow: hidden;
 }
 .partners-slider__link:focus-visible {
   outline: 0;
+  border-color: transparent;
+  box-shadow: var(--shadow-large);
 }
 .partners-slider__img {
   aspect-ratio: 13/5;
@@ -1989,9 +1989,6 @@ body {
   border-radius: var(--radius-normal);
   overflow: hidden;
 }
-.product-card:focus-within {
-  box-shadow: var(--shadow-large);
-}
 .product-card__link {
   position: absolute;
   z-index: 1;
@@ -2012,7 +2009,7 @@ body {
   height: 100%;
 }
 .product-card__media {
-  margin-bottom: -24.4%;
+  margin-bottom: -15%;
   overflow: hidden;
 }
 .product-card__img {
@@ -2059,13 +2056,14 @@ body {
   aspect-ratio: 1/1;
   width: 24px;
   font-size: 14px;
+  color: var(--color-main);
   background-color: var(--color-neutral);
   border: none;
   border-radius: 50%;
 }
 .product-card__favourite:focus-visible {
   outline: 0;
-  background-color: var(--color-shadow-300);
+  background-color: var(--color-shadow-200);
   opacity: 1!important;
 }
 .product-card__footer {
@@ -2457,9 +2455,6 @@ body {
   }
   .subscribe__text {
     text-align: left;
-  }
-  .product-card__media {
-    margin-bottom: -15.4%;
   }
   .product-card__content {
     padding: 12px 11px 15px;
@@ -3204,6 +3199,10 @@ body {
   }
   .promo-card__link:not(:active):hover ~ * .promo-card__img {
     transform: scale(1.04);
+  }
+  .partners-slider__link:not(:active):hover {
+    border-color: transparent;
+    box-shadow: var(--shadow-large);
   }
   .partners-slider__page-link:not(:active):hover {
     color: var(--color-accent-dark);
