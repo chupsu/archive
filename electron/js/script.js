@@ -924,7 +924,6 @@ const phoneMask = () => {
   const TEMPLATE = "+_ (___) ___ __ __";
 
   const setCursorPosition = (elem, pos) => {
-    elem.focus();
     if (elem.setSelectionRange) {
       elem.setSelectionRange(pos, pos);
     } else if (elem.createTextRange) {
@@ -15035,19 +15034,19 @@ window.addEventListener("load", function () {
     initQuantity();
   }
 
-  if (document.querySelector("textarea")) {
-    const textAreas = document.querySelectorAll("textarea");
+  // if (document.querySelector("textarea")) {
+  //   const textAreas = document.querySelectorAll("textarea");
 
-    textAreas.forEach((textArea) => {
-      textArea.style.overflow = "hidden";
+  //   textAreas.forEach((textArea) => {
+  //     textArea.style.overflow = "hidden";
 
-      textArea.addEventListener("input", (e) => {
-        e.target.value.length
-          ? (textArea.style.height = textArea.scrollHeight + "px")
-          : (textArea.style.height = "");
-      });
-    });
-  }
+  //     textArea.addEventListener("input", (e) => {
+  //       e.target.value.length
+  //         ? (textArea.style.height = textArea.scrollHeight + "px")
+  //         : (textArea.style.height = "");
+  //     });
+  //   });
+  // }
 
   if (document.querySelector(".welcome__slider")) {
     new swiper_bundle__WEBPACK_IMPORTED_MODULE_5__["default"](".welcome__slider", {
