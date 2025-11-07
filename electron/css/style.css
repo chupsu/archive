@@ -643,6 +643,7 @@ body {
   justify-content: center;
   min-height: var(--height-btn);
   padding: calc(0.2 * var(--height-btn)) var(--height-btn);
+  font-weight: 500;
   text-align: center;
   white-space: nowrap;
   -webkit-user-select: none;
@@ -1184,9 +1185,10 @@ input[type=radio] ~ .checkbox__icon {
 .cookies {
   --width-cookies: 464px;
   position: fixed;
-  top: 50%;
+  z-index: 20;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   gap: 15px;
