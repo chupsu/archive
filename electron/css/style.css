@@ -919,7 +919,7 @@ textarea.input__body ~ .input__placeholder {
   justify-content: center;
   padding: 20px;
   font-weight: 400;
-  font-size: var(--16px);
+  font-size: 16px;
   line-height: 1;
   color: var(--color-neutral);
   background-color: var(--color-accent);
@@ -1196,7 +1196,6 @@ input[type=radio] ~ .checkbox__icon {
   background-color: var(--color-neutral);
   border-radius: var(--radius-normal);
   box-shadow: var(--shadow-large);
-  display: none;
 }
 .cookies__text {
   font-size: var(--text-normal);
