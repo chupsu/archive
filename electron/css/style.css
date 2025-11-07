@@ -1186,7 +1186,7 @@ input[type=radio] ~ .checkbox__icon {
   --width-cookies: 464px;
   position: fixed;
   z-index: 20;
-  bottom: 0;
+  bottom: calc(var(--height-userbar) + 3 * var(--gap-normal));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1937,6 +1937,9 @@ input[type=radio] ~ .checkbox__icon {
 }
 .relation-slider__page-link::after {
   content: attr(data-text-mob);
+}
+.relation-slider__link {
+  color: var(--color-accent);
 }
 .relation-slider__controls {
   display: flex;
