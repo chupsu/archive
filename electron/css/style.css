@@ -1901,6 +1901,9 @@ input[type=radio] ~ .checkbox__icon {
 .relation-slider {
   position: relative;
 }
+.relation-slider__wrapper {
+  width: 100%;
+}
 .relation-slider__items {
   position: relative;
   display: flex;
@@ -2035,9 +2038,7 @@ input[type=radio] ~ .checkbox__icon {
   position: relative;
 }
 .partners-slider__wrapper {
-  width: calc(100% + 2 * var(--gap-normal));
-  padding: var(--gap-normal);
-  margin: calc(-1 * var(--gap-normal));
+  width: 100%;
 }
 .partners-slider__items {
   position: relative;
@@ -2784,6 +2785,9 @@ input[type=radio] ~ .checkbox__icon {
     line-height: 1;
   }
   .partners-slider__wrapper {
+    width: calc(100% + 2 * var(--gap-normal));
+    padding: var(--gap-normal);
+    margin: calc(-1 * var(--gap-normal));
     overflow: hidden;
   }
   .partners-slider__item {
@@ -2793,6 +2797,7 @@ input[type=radio] ~ .checkbox__icon {
     padding: 12px 18px;
   }
   .partners-slider__actions {
+    bottom: calc(100% - var(--gap-normal));
     min-height: var(--h-40);
   }
   .news__head {
@@ -2820,6 +2825,9 @@ input[type=radio] ~ .checkbox__icon {
   }
   .subscribe__text {
     text-align: left;
+  }
+  .subscribe__btn {
+    min-width: 25.6%;
   }
   .product-card__content {
     padding: 12px 11px 15px;
@@ -3482,7 +3490,7 @@ input[type=radio] ~ .checkbox__icon {
   }
   .relation-slider__page-link {
     position: absolute;
-    bottom: calc(100% - var(--gap-normal));
+    bottom: 100%;
     right: 0;
     display: flex;
     align-items: center;
@@ -3490,6 +3498,7 @@ input[type=radio] ~ .checkbox__icon {
     margin-bottom: var(--gap-section-medium);
   }
   .partners-slider__controls,
+  .promo-slider__actions,
   .relation-slider__controls {
     display: none;
   }
