@@ -2213,7 +2213,9 @@
                 <p class="subscribe__text">
                   Подпишитесь на рассылку и будьте в курсе лучших предложений
                 </p>
-                <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe">Подписаться</button>
+                <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe-form">
+                  Подписаться
+                </button>
               </div>
             </div>
           </div>
@@ -2328,7 +2330,11 @@
                     </a>
                   </li>
                   <li class="footer-contacts__item footer-contacts__item_single">
-                    <button class="footer-contacts__btn btn btn_accent" type="button" data-popup="#callback">
+                    <button
+                      class="footer-contacts__btn btn btn_accent"
+                      type="button"
+                      data-popup="#callback-form"
+                    >
                       Обратная связь
                     </button>
                   </li>
@@ -2370,7 +2376,7 @@
       </script>
     </div>
 
-    <div class="popup" id="callback">
+    <div class="popup" id="callback-form">
       <div class="popup__body popup__body_normal">
         <button class="popup__close icon-close" type="button" title="Закрыть окно" data-popup-close>
           <span class="_seo">Закрыть окно</span>
@@ -2443,6 +2449,60 @@
                 </div>
                 <div class="user-form__box user-form__box_action">
                   <button class="user-form__btn btn btn_main" type="submit">Отправить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="subscribe-form">
+      <div class="popup__body popup__body_small">
+        <button class="popup__close icon-close" type="button" title="Закрыть окно" data-popup-close>
+          <span class="_seo">Закрыть окно</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__head">
+            <h3 class="popup__title _h3">Подписка на рассылку</h3>
+          </div>
+          <div class="popup__content">
+            <div class="user-form">
+              <div class="user-form__body">
+                <div class="user-form__box user-form__box_main">
+                  <div class="input-fields">
+                    <div class="input-fields__cell">
+                      <label class="input">
+                        <!-- input::placeholder=" " должен быть не пустым -->
+                        <input class="input__body" type="email" placeholder=" " required>
+                        <span class="input__placeholder">E-mail*</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="user-form__box user-form__box_action">
+                  <button class="user-form__btn btn btn_main" type="submit">Подписаться</button>
+                </div>
+                <div class="user-form__box user-form__box_agree">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox">
+                    <span class="checkbox__icon icon-check"></span>
+                    <span class="checkbox__body checkbox__body_small">
+                      Я согласен с обработкой персональных данных и ознакомлен
+                      <a href="./policy.html">с политикой по обработке персональных данных</a>
+                    </span>
+                  </label>
+                </div>
+                <div class="user-form__box user-form__box_agree">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox">
+                    <span class="checkbox__icon icon-check"></span>
+                    <span class="checkbox__body checkbox__body_small">
+                      Я даю своё согласие на получение рекламных и информационных материалов,
+                      а также сообщений от Электрон Комплекта на указанные мной в форме
+                      адрес электронной почты (email)
+                    </span>
+                  </label>
                 </div>
               </div>
             </div>

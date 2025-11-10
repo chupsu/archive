@@ -2801,6 +2801,9 @@ input[type=radio] ~ .checkbox__icon {
   .slider-pagination {
     gap: 8px;
   }
+  .popup__body_small {
+    max-width: 414px;
+  }
   .cookies {
     flex-direction: row;
     align-items: center;
