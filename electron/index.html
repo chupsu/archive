@@ -17,7 +17,7 @@
 
   <body>
     <div class="wrapper" id="wrapper">
-      <header class="header" data-lp>
+      <header class="header " data-lp>
         <div class="header__top">
           <div class="container">
             <nav class="menu" data-da=".header__main,1023,last">
@@ -28,7 +28,7 @@
                 <div class="menu__main">
                   <ul class="menu__list">
                     <li class="menu__item menu__item_mob">
-                      <a class="menu__link icon-right" href="./catalog.html">Каталог</a>
+                      <a class="menu__link icon-right" href="./production.html">Каталог</a>
                     </li>
                     <li class="menu__item">
                       <a class="menu__link" href="./about.html">О компании</a>
@@ -92,7 +92,7 @@
               <a class="logo logo_header" href="./index.html#wrapper">
                 <img class="logo__img" src="./img/content/logo.svg" alt="logo">
               </a>
-              <a class="header__btn btn btn_main icon-grid" href="./catalog.html">Каталог</a>
+              <a class="header__btn btn btn_main icon-grid" href="./production.html">Каталог</a>
               <div class="header__search">
                 <div class="search">
                   <button class="search__menu icon-search" type="button" title="Поиск" data-search>
@@ -2213,9 +2213,7 @@
                 <p class="subscribe__text">
                   Подпишитесь на рассылку и будьте в курсе лучших предложений
                 </p>
-                <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe">
-                  Подписаться
-                </button>
+                <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe">Подписаться</button>
               </div>
             </div>
           </div>
@@ -2265,19 +2263,19 @@
                   <h3 class="footer__title">О компании</h3>
                   <ul class="footer-nav">
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">О нас</a>
+                      <a class="footer-nav__link" href="./production.html">О нас</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Производители</a>
+                      <a class="footer-nav__link" href="./production.html">Производители</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Вакансии</a>
+                      <a class="footer-nav__link" href="./production.html">Вакансии</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Реквизиты</a>
+                      <a class="footer-nav__link" href="./production.html">Реквизиты</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Контакты</a>
+                      <a class="footer-nav__link" href="./production.html">Контакты</a>
                     </li>
                   </ul>
                 </div>
@@ -2285,19 +2283,19 @@
                   <h3 class="footer__title">Покупателям</h3>
                   <ul class="footer-nav">
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Каталог</a>
+                      <a class="footer-nav__link" href="./production.html">Каталог</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Новости</a>
+                      <a class="footer-nav__link" href="./">Новости</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Доставка</a>
+                      <a class="footer-nav__link" href="./">Доставка</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Оплата</a>
+                      <a class="footer-nav__link" href="./">Оплата</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Карта сайта</a>
+                      <a class="footer-nav__link" href="./">Карта сайта</a>
                     </li>
                   </ul>
                 </div>
@@ -2305,13 +2303,13 @@
                   <h3 class="footer__title">Документы</h3>
                   <ul class="footer-nav">
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Политика обработки персональных данных</a>
+                      <a class="footer-nav__link" href="./">Политика обработки персональных данных</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Пользовательское соглашение</a>
+                      <a class="footer-nav__link" href="./">Пользовательское соглашение</a>
                     </li>
                     <li class="footer-nav__item">
-                      <a class="footer-nav__link" href="#">Политика Cookie</a>
+                      <a class="footer-nav__link" href="./">Политика Cookie</a>
                     </li>
                   </ul>
                 </div>
@@ -2362,6 +2360,10 @@
                 e.target.querySelector("._seo").innerText = "Добавить в избранное";
                 e.target.setAttribute("title", "Добавить в избранное");
               }
+            }
+
+            if (e.target.closest(".product-card__buy")) {
+              e.target.parentElement.classList.toggle("added");
             }
           });
         })();
@@ -2467,6 +2469,12 @@
           });
         })();
       </script>
+      <!-- Удалить стиль при интеграции! -->
+      <style>
+        .cookies {
+          display: none;
+        }
+      </style>
     </div>
   </body>
 </html>
