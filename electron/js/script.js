@@ -15048,6 +15048,48 @@ window.addEventListener("load", function () {
   //   });
   // }
 
+  const productTypes = () => {
+    const typelists = document.querySelectorAll(".product-types");
+
+    typelists.forEach((typeList) => {
+      const types = typeList.querySelectorAll(".product-types__item");
+
+      if (types.length > 3) {
+        const typeListItem = document.createElement("li");
+        const typeMoreBtn = document.createElement("button");
+        const typeMoreDropdown = document.createElement("div");
+        const typeListMore = document.createElement("ul");
+
+        typeMoreBtn.classList.add("product-types__more");
+        typeMoreBtn.classList.add("icon-more");
+        typeMoreBtn.setAttribute("type", "button");
+        typeMoreBtn.setAttribute("title", "Раскрыть все");
+
+        typeListMore.classList.add("product-types");
+        typeListMore.classList.add("product-types_other");
+
+        typeMoreDropdown.classList.add("product-types__dropdown");
+        typeMoreDropdown.append(typeListMore);
+
+        typeListItem.classList.add("product-types__item");
+        typeListItem.append(typeMoreBtn);
+        typeListItem.append(typeMoreDropdown);
+
+        types.forEach((type, i) => {
+          if (i > 1) {
+            typeListMore.append(type);
+          }
+        });
+
+        typeList.append(typeListItem);
+      }
+    });
+  };
+
+  if (document.querySelector(".product-types")) {
+    productTypes();
+  }
+
   if (document.querySelector(".welcome__slider")) {
     new swiper_bundle__WEBPACK_IMPORTED_MODULE_5__["default"](".welcome__slider", {
       slidesPerView: 1,
@@ -15375,6 +15417,10 @@ window.addEventListener("load", function () {
     //   Menu
     if (!targetElement.closest("[data-menu]") || targetElement.closest(".menu__link")) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+    }
+
+    if (targetElement.closest(".product-types__more")) {
+      targetElement.parentElement.closest(".product-types").classList.toggle("_is-active");
     }
 
     dataAction(targetElement, "search");
