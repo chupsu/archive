@@ -14826,6 +14826,12 @@ window.addEventListener("load", function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
   // scroll.pageNavigation();
 
+  // const showAllLists = document.querySelectorAll("[data-show-all]");
+  // showAllLists.forEach((showAllList) => {
+  //   const types = Array.from(showAllList.children);
+  //   const showAllButtonListItem = types[0].cloneNode(false);
+  // });
+
   const disableIOSTextFieldZoom = () => {
     if (!isIOS()) {
       return;
@@ -14854,31 +14860,36 @@ window.addEventListener("load", function () {
   }
   disableIOSTextFieldZoom();
 
-  // const setCatalogViewType = () => {
-  //   const catalogTypeButtons = document.querySelectorAll(".view-type__btn");
-  //   let catalogType;
+  const setViewType = () => {
+    const viewTypesGroupAll = document.querySelectorAll("[data-view-types]");
 
-  //   if (window.innerWidth < 1024 || !window.localStorage.getItem("catalog-view-type")) {
-  //     catalogType = "grid";
-  //     window.localStorage.setItem("catalog-view-type", "grid");
-  //   } else {
-  //     catalogType = window.localStorage.getItem("catalog-view-type");
-  //   }
+    viewTypesGroupAll.forEach((viewTypesGroup) => {
+      const viewTypes = viewTypesGroup.dataset.viewTypes;
+      const viewTypeBtns = viewTypesGroup.querySelectorAll("[data-view-type]");
+      let viewTypeActive;
 
-  //   document.documentElement.dataset.catalogType = catalogType;
+      if (!window.localStorage.getItem(`${viewTypes}-view-type`)) {
+        viewTypeActive = `${viewTypeBtns[0].dataset.viewType}`;
+        window.localStorage.setItem(`${viewTypes}-view-type`, `${viewTypeBtns[0].dataset.viewType}`);
+      } else {
+        viewTypeActive = window.localStorage.getItem(`${viewTypes}-view-type`);
+      }
 
-  //   catalogTypeButtons.forEach((btn) => {
-  //     btn.classList.remove("view-type__btn_active");
+      document.documentElement.setAttribute(`data-${viewTypes}-view`, viewTypeActive);
 
-  //     if (btn.dataset.catalogType == catalogType) {
-  //       btn.classList.add("view-type__btn_active");
-  //     }
-  //   });
-  // };
+      viewTypeBtns.forEach((btn) => {
+        btn.classList.remove("_is-active");
 
-  // if (document.querySelector(".view-type__btn")) {
-  //   setCatalogViewType();
-  // }
+        if (btn.dataset.viewType == viewTypeActive) {
+          btn.classList.add("_is-active");
+        }
+      });
+    });
+  };
+
+  if (document.querySelector("[data-view-types]")) {
+    setViewType();
+  }
 
   // tippy("[data-tippy-content]", { maxWidth: 230 });
   // new WOW({ offset: 200 }).init();
@@ -14939,18 +14950,6 @@ window.addEventListener("load", function () {
   //   const { width } = range.getBoundingClientRect();
   //   element.style.width = width + "px";
   //   element.style.boxSizing = "content-box";
-  // };
-
-  // const popoverAction = (target, attr) => {
-  //   if (target.closest(`[data-${attr}]`)) {
-  //     document.documentElement.classList.toggle(`_is-${attr}-open`);
-  //   }
-  //   if (
-  //     document.documentElement.closest(`._is-${attr}-open`) &&
-  //     !target.closest(`[data-${attr}-wrapper]`)
-  //   ) {
-  //     document.documentElement.classList.remove(`_is-${attr}-open`);
-  //   }
   // };
 
   const adaptiveFix = () => {
@@ -15425,11 +15424,14 @@ window.addEventListener("load", function () {
 
     dataAction(targetElement, "search");
     dataAction(targetElement, "filters");
+    dataAction(targetElement, "filter-sort");
 
-    // if (targetElement.closest(".view-type__btn")) {
-    //   window.localStorage.setItem("catalog-view-type", targetElement.dataset.catalogType);
-    //   setCatalogViewType();
-    // }
+    //   View Type
+    if (targetElement.closest("[data-view-type]")) {
+      const viewTypes = targetElement.parentElement.closest("[data-view-types]").dataset.viewTypes;
+      window.localStorage.setItem(`${viewTypes}-view-type`, targetElement.dataset.viewType);
+      setViewType();
+    }
 
     //   Show / Hide Password
     if (targetElement.closest('[class*="__viewpass"]')) {
