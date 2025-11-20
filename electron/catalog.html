@@ -201,7 +201,9 @@
                       <picture><source srcset="./img/content/pic/product-1.webp" type="image/webp"><img class="category-card__img" src="./img/content/pic/product-1.jpg" alt="Изображение"></picture>
                     </figure>
                     <span class="category-card__content">
-                      <span class="category-card__titie">Дымоуловители для паяльных работ</span>
+                      <span class="category-card__titie" data-adaptive-width>
+                        Дымоуловители для паяльных работ
+                      </span>
                       <span class="category-card__amount">Товаров 270</span>
                     </span>
                   </a>
@@ -212,7 +214,9 @@
                       <picture><source srcset="./img/content/pic/product-3.webp" type="image/webp"><img class="category-card__img" src="./img/content/pic/product-3.jpg" alt="Изображение"></picture>
                     </figure>
                     <span class="category-card__content">
-                      <span class="category-card__titie">Дымоулавливающие насадки</span>
+                      <span class="category-card__titie" data-adaptive-width>
+                        Дымоулавливающие насадки
+                      </span>
                     </span>
                   </a>
                 </li>
@@ -222,9 +226,9 @@
                       <picture><source srcset="./img/content/pic/product-2.webp" type="image/webp"><img class="category-card__img" src="./img/content/pic/product-2.jpg" alt="Изображение"></picture>
                     </figure>
                     <span class="category-card__content">
-                      <span class="category-card__titie"
-                        >Аксессуары и комплектующие дымоуловителей</span
-                      >
+                      <span class="category-card__titie" data-adaptive-width>
+                        Аксессуары и комплектующие дымоуловителей
+                      </span>
                       <span class="category-card__amount">Товаров 15</span>
                     </span>
                   </a>
@@ -235,7 +239,9 @@
                       <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="category-card__img" src="./img/content/pic/product-4.jpg" alt="Изображение"></picture>
                     </figure>
                     <span class="category-card__content">
-                      <span class="category-card__titie">Фильтры для дымоуловителей</span>
+                      <span class="category-card__titie" data-adaptive-width>
+                        Фильтры для дымоуловителей
+                      </span>
                       <span class="category-card__amount">Товаров 270</span>
                     </span>
                   </a>
@@ -246,7 +252,7 @@
                       <picture><source srcset="./img/content/pic/product-5.webp" type="image/webp"><img class="category-card__img" src="./img/content/pic/product-5.jpg" alt="Изображение"></picture>
                     </figure>
                     <span class="category-card__content">
-                      <span class="category-card__titie">
+                      <span class="category-card__titie" data-adaptive-width>
                         Дымоуловители для лазерных резчиков, граверов и 3D принтеров
                       </span>
                     </span>
@@ -255,7 +261,9 @@
                 <li class="category-list__item">
                   <a class="category-card category-card_small icon-right" href="./catalog.html">
                     <span class="category-card__content">
-                      <span class="category-card__titie">Промышленные пылесосы DUST-PRO</span>
+                      <span class="category-card__titie" data-adaptive-width>
+                        Промышленные пылесосы DUST-PRO
+                      </span>
                       <span class="category-card__amount">Товаров 270</span>
                     </span>
                   </a>
@@ -266,7 +274,7 @@
                       <picture><source srcset="./img/content/pic/product-6.webp" type="image/webp"><img class="category-card__img" src="./img/content/pic/product-6.jpg" alt="Изображение"></picture>
                     </figure>
                     <span class="category-card__content">
-                      <span class="category-card__titie">
+                      <span class="category-card__titie" data-adaptive-width>
                         Фильтровентиляционные системы для работы с клеями и растворителями
                       </span>
                       <span class="category-card__amount">Товаров 8301</span>
@@ -287,29 +295,31 @@
                     <span aria-hidden="true">Сортировать</span>
                   </button>
                   <div class="filter-sort__dropdown">
-                    <div class="filter-sort__head">
-                      <button class="filter-sort__close icon-left" type="button" data-filter-sort>
-                        <span class="_seo">Закрыть окно</span>
-                        <span aria-hidden="true">Сортировка</span>
-                      </button>
-                    </div>
                     <div class="filter-sort__body">
-                      <select
-                        data-class-modifier="filter-sort"
-                        data-pseudo-label="Сортировать"
-                        data-list-title="Показывать сначала"
-                        data-show-selected
-                      >
-                        <option value="Популярные" selected>Популярные</option>
-                        <option value="По возрастанию цены">По возрастанию цены</option>
-                        <option value="По убыванию цены">По убыванию цены</option>
-                      </select>
+                      <div class="filter-sort__head">
+                        <button class="filter-sort__close _h2 icon-left" type="button" data-filter-sort>
+                          <span class="_seo">Закрыть окно</span>
+                          <span aria-hidden="true">Сортировка</span>
+                        </button>
+                      </div>
+                      <div class="filter-sort__main">
+                        <select
+                          data-class-modifier="filter-sort"
+                          data-pseudo-label="Сортировать"
+                          data-list-label="Показывать сначала"
+                          data-show-selected
+                        >
+                          <option value="Популярные" selected>Популярные</option>
+                          <option value="По возрастанию цены">По возрастанию цены</option>
+                          <option value="По убыванию цены">По убыванию цены</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="catalog__view">
-                <div class="catalog-view" data-da=".filters__body,767,1">
+                <div class="catalog-view" data-da=".filters__form,767,first">
                   <div class="catalog-view__title">Вид каталога</div>
                   <ul class="catalog-view__list" data-view-types="catalog">
                     <li class="catalog-view__item">
@@ -337,21 +347,247 @@
                   </p>
                 </div>
                 <div class="filters" data-da=".catalog__action,767,first">
-                  <button class="filters__btn icon-filter" type="button" data-filters>
+                  <button class="filters__menu icon-filter" type="button" data-filters>
                     <span class="_seo">Открыть фильтры</span>
-                    <span class="filters__btn-text" aria-hidden="true">Фильтр</span>
-                    <span class="_seo">Применено фильтров:</span><span class="filters__btn-count">7</span>
+                    <span class="filters__menu-text" aria-hidden="true">Фильтр</span>
+                    <span class="_seo">Применено фильтров:</span
+                    ><span class="filters__menu-count">7</span>
                   </button>
                   <div class="filters__dropdown">
                     <div class="filters__body">
-                      <div class="filters__head">
-                        <button class="filters__close icon-left" type="button" data-filters>
-                          <span class="_seo">Закрыть фильтры</span>
-                          <span aria-hidden="true">Фильтр</span>
-                        </button>
-                      </div>
-                      <form class="filter" action="#">
-                        <div class="filters__title icon-down">Специальные предложения</div>
+                      <form class="filters__form" action="#">
+                        <div class="filters__head">
+                          <button class="filters__close _h2 icon-left" type="button" data-filters>
+                            <span class="_seo">Закрыть фильтры</span>
+                            <span aria-hidden="true">Фильтр</span>
+                          </button>
+                          <button class="filters__reset" type="reset">
+                            Сбросить все
+                            <span class="_seo">фильтры</span>
+                          </button>
+                        </div>
+                        <div class="filters__main" data-spollers data-spollers-speed="0">
+                          <div class="filters__box">
+                            <details class="filter-choice">
+                              <summary class="filter-choice__btn icon-down">
+                                <span>Цена</span>
+                              </summary>
+                              <div class="filter-choice__dropdown">
+                                <div class="filter-choice__body">
+                                  <div class="range" data-range>
+                                    <div class="range__inputs">
+                                      <label class="input">
+                                        <!-- input::placeholder=" " должен быть не пустым -->
+                                        <input class="input__body" type="number" placeholder=" " data-range-min="0">
+                                        <span class="input__placeholder">От</span>
+                                      </label>
+                                      <label class="input">
+                                        <!-- input::placeholder=" " должен быть не пустым -->
+                                        <input class="input__body" type="number" placeholder=" " data-range-max="29698207">
+                                        <span class="input__placeholder">До</span>
+                                      </label>
+                                    </div>
+                                    <div class="range__main">
+                                      <div class="range__body" data-range-body></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </details>
+                          </div>
+                          <div class="filters__box">
+                            <details class="filter-choice">
+                              <summary class="filter-choice__btn icon-down">
+                                <span>Бренд</span>
+                              </summary>
+                              <div class="filter-choice__dropdown">
+                                <div class="filter-choice__body">
+                                  <div class="filter-choice__head">
+                                    <label class="input">
+                                      <!-- input::placeholder=" " должен быть не пустым -->
+                                      <input class="input__body" type="search" placeholder=" ">
+                                      <span class="input__placeholder">Поиск</span>
+                                    </label>
+                                  </div>
+                                  <div class="filter-choice__scroll">
+                                    <div class="filter-choice__list">
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">AirZero</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">BAMBI</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Bernstein</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">BINDER</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Bokar</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">California Air Tools</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Cleantek</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">CODYSON</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">CT Brand</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">GRITTO TECHNOLOGY</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">GWS</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">HotMarker</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">INSPECTIS</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">ITECO TRADING S.R.L.</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">JeKen</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">JUN-AIR</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Proskit</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">REMEZA</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Viking</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Vision Engineering Ltd</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Zonglen</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Град ТМ</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">КЕДР</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Микромед</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">ПСБ-Галс</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Сапфир</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">ХимСоник</span>
+                                        <span class="checkbox__extra">128</span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <div class="filter-choice__footer">
+                                    <button class="filter-choice__reset" type="button">Сбросить</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </details>
+                          </div>
+                          <div class="filters__action">
+                            <button class="filters__btn btn btn_shadow btn_link" type="reset">
+                              Сбросить фильтр
+                            </button>
+                          </div>
+                        </div>
                       </form>
                     </div>
                   </div>
@@ -2107,10 +2343,10 @@
                   </div>
                 </div>
                 <div class="user-form__box user-form__box_agree">
-                  <label class="checkbox">
+                  <label class="checkbox checkbox_small">
                     <input class="checkbox__input" type="checkbox">
                     <span class="checkbox__icon icon-check"></span>
-                    <span class="checkbox__body checkbox__body_small">
+                    <span class="checkbox__body">
                       Я согласен с обработкой персональных данных и ознакомлен
                       <a href="./policy.html">с политикой по обработке персональных данных</a>
                     </span>
@@ -2153,20 +2389,20 @@
                   <button class="user-form__btn btn btn_main" type="submit">Подписаться</button>
                 </div>
                 <div class="user-form__box user-form__box_agree">
-                  <label class="checkbox">
+                  <label class="checkbox checkbox_small">
                     <input class="checkbox__input" type="checkbox">
                     <span class="checkbox__icon icon-check"></span>
-                    <span class="checkbox__body checkbox__body_small">
+                    <span class="checkbox__body">
                       Я согласен с обработкой персональных данных и ознакомлен
                       <a href="./policy.html">с политикой по обработке персональных данных</a>
                     </span>
                   </label>
                 </div>
                 <div class="user-form__box user-form__box_agree">
-                  <label class="checkbox">
+                  <label class="checkbox checkbox_small">
                     <input class="checkbox__input" type="checkbox">
                     <span class="checkbox__icon icon-check"></span>
-                    <span class="checkbox__body checkbox__body_small">
+                    <span class="checkbox__body">
                       Я даю своё согласие на получение рекламных и информационных материалов,
                       а также сообщений от Электрон Комплекта на указанные мной в форме
                       адрес электронной почты (email)

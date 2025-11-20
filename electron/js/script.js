@@ -916,62 +916,6 @@ da.init();
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   phoneMask: () => (/* binding */ phoneMask)
-/* harmony export */ });
-const phoneMask = () => {
-  const inputs = document.querySelectorAll("input[type='tel']");
-  const TEMPLATE = "+_ (___) ___ __ __";
-
-  const setCursorPosition = (elem, pos) => {
-    if (elem.setSelectionRange) {
-      elem.setSelectionRange(pos, pos);
-    } else if (elem.createTextRange) {
-      const range = elem.createTextRange();
-      range.collapse(true);
-      range.moveEnd("character", pos);
-      range.moveStart("character", pos);
-      range.select();
-    }
-  };
-
-  const applyMask = (value) => {
-    let numeric = value.replace(/\D/g, "").replace(/^8/, "7");
-    let i = 0;
-
-    return TEMPLATE.replace(/./g, (char) => {
-      if (/[_\d]/.test(char) && i < numeric.length) {
-        return numeric.charAt(i++);
-      }
-      return i >= numeric.length ? "" : char;
-    });
-  };
-
-  const handleEvent = (event) => {
-    const input = event.target;
-    const maskedValue = applyMask(input.value);
-    input.value = maskedValue;
-
-    if (event.type === "blur" && maskedValue.length <= 2) {
-      input.value = "";
-    } else {
-      setCursorPosition(input, input.value.length);
-    }
-  };
-
-  inputs.forEach((input) => {
-    ["input", "focus", "blur"].forEach((eventType) => {
-      input.addEventListener(eventType, handleEvent);
-    });
-  });
-};
-
-
-/***/ }),
-/* 4 */
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 // Модуль попапов
 
@@ -1348,7 +1292,7 @@ new Popup({});
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1416,6 +1360,7 @@ class SelectConstructor {
       classSelectCheckBox: "_select-checkbox", // Стиль чекбокса
       classSelectOptionSelected: "_select-selected", // Выбранный пункт
       classSelectPseudoLabel: "_select-pseudo-label", // Псевдо-лейбл
+      classSelectListTitle: "select__list-label",
     };
     this._this = this;
     // Запуск инициализации
@@ -1820,6 +1765,12 @@ class SelectConstructor {
       selectOptionsHTML += `<div ${selectOptionsScroll} ${
         selectOptionsScroll ? `style="max-height: ${customMaxHeightValue}px"` : ""
       } class="${this.selectClasses.classSelectOptionsScroll}">`;
+
+      // выводим data-list-label, если указано
+      if (originalSelect.dataset.listLabel) {
+        selectOptionsHTML += `<div class="${this.selectClasses.classSelectListTitle}">${originalSelect.dataset.listLabel}</div>`;
+      }
+
       selectOptions.forEach((selectOption) => {
         // Получаем конструкцию конкретного элемента списка
         selectOptionsHTML += this.getOption(selectOption, originalSelect);
@@ -2069,6 +2020,62 @@ class SelectConstructor {
 }
 
 new SelectConstructor({});
+
+
+/***/ }),
+/* 5 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   phoneMask: () => (/* binding */ phoneMask)
+/* harmony export */ });
+const phoneMask = () => {
+  const inputs = document.querySelectorAll("input[type='tel']");
+  const TEMPLATE = "+_ (___) ___ __ __";
+
+  const setCursorPosition = (elem, pos) => {
+    if (elem.setSelectionRange) {
+      elem.setSelectionRange(pos, pos);
+    } else if (elem.createTextRange) {
+      const range = elem.createTextRange();
+      range.collapse(true);
+      range.moveEnd("character", pos);
+      range.moveStart("character", pos);
+      range.select();
+    }
+  };
+
+  const applyMask = (value) => {
+    let numeric = value.replace(/\D/g, "").replace(/^8/, "7");
+    let i = 0;
+
+    return TEMPLATE.replace(/./g, (char) => {
+      if (/[_\d]/.test(char) && i < numeric.length) {
+        return numeric.charAt(i++);
+      }
+      return i >= numeric.length ? "" : char;
+    });
+  };
+
+  const handleEvent = (event) => {
+    const input = event.target;
+    const maskedValue = applyMask(input.value);
+    input.value = maskedValue;
+
+    if (event.type === "blur" && maskedValue.length <= 2) {
+      input.value = "";
+    } else {
+      setCursorPosition(input, input.value.length);
+    }
+  };
+
+  inputs.forEach((input) => {
+    ["input", "focus", "blur"].forEach((eventType) => {
+      input.addEventListener(eventType, handleEvent);
+    });
+  });
+};
 
 
 /***/ }),
@@ -14784,35 +14791,24 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _module_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _module_dynamic_adapt_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _module_phone_mask_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _module_popup_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _module_select_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _module_popup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _module_select_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _module_phone_mask_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var nouislider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(39);
 
 
-
 // import * as video from "./module/video.js";
 
-// import "./module/dynamic_adapt.js";
 
 
 
 
-// import tippy from "tippy.js";
+
+
 
 // import Masonry from "masonry-layout";
 // import AirDatepicker from "air-datepicker";
-
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-// import {
-//   gsap,
-//   ScrollTrigger,
-//   ScrollToPlugin,
-//   ScrollSmoother,
-// } from "./module/gsap/all.js";
-// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
 window.Swiper = swiper_bundle__WEBPACK_IMPORTED_MODULE_5__["default"];
 window.noUiSlider = nouislider__WEBPACK_IMPORTED_MODULE_6__["default"];
@@ -14824,7 +14820,6 @@ window.addEventListener("load", function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuInit)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
-  // scroll.pageNavigation();
 
   // const showAllLists = document.querySelectorAll("[data-show-all]");
   // showAllLists.forEach((showAllList) => {
@@ -14892,28 +14887,13 @@ window.addEventListener("load", function () {
   }
 
   // tippy("[data-tippy-content]", { maxWidth: 230 });
-  // new WOW({ offset: 200 }).init();
-
-  // let smoother = ScrollSmoother.create({
-  //   smooth: 2,
-  //   smoothTouch: 2,
-  //   normalizeScroll: true,
-  // });
-
-  // Lottie.loadAnimation({
-  //   container: document.querySelector(".__img-box"),
-  //   renderer: "svg",
-  //   loop: true,
-  //   autoplay: true,
-  //   path: "./file.json",
-  // });
 
   // if (document.querySelector(".video")) {
   //   video.findVideos();
   // }
 
   if (document.querySelector("input[type='tel']")) {
-    (0,_module_phone_mask_js__WEBPACK_IMPORTED_MODULE_2__.phoneMask)();
+    (0,_module_phone_mask_js__WEBPACK_IMPORTED_MODULE_4__.phoneMask)();
   }
 
   const HEADER = document.querySelector(".header");
@@ -14941,16 +14921,16 @@ window.addEventListener("load", function () {
   // };
   // gapNormal = parseInt(cssValue("--gap-normal"), 10);
 
-  // const wrappedTextWidrh = (element) => {
-  //   const { firstChild, lastChild } = element;
-  //   if (!element || !firstChild || !lastChild) return;
-  //   const range = document.createRange();
-  //   range.setStartBefore(firstChild);
-  //   range.setEndAfter(lastChild);
-  //   const { width } = range.getBoundingClientRect();
-  //   element.style.width = width + "px";
-  //   element.style.boxSizing = "content-box";
-  // };
+  const wrappedTextWidrh = (element) => {
+    const { firstChild, lastChild } = element;
+    if (!element || !firstChild || !lastChild) return;
+    const range = document.createRange();
+    range.setStartBefore(firstChild);
+    range.setEndAfter(lastChild);
+    const { width } = range.getBoundingClientRect();
+    element.style.width = width + "px";
+    element.style.boxSizing = "content-box";
+  };
 
   const adaptiveFix = () => {
     document.documentElement.style.setProperty("--height-header", `${HEADER.offsetHeight}px`);
@@ -14966,12 +14946,12 @@ window.addEventListener("load", function () {
 
     //   if (window.innerWidth < 576) {
     //   }
-    // if (document.querySelector("[data-adaptive-width]")) {
-    //   document.querySelectorAll("[data-adaptive-width]").forEach((el) => {
-    //     el.style.width = "";
-    //     wrappedTextWidrh(el);
-    //   });
-    // }
+    if (document.querySelector("[data-adaptive-width]")) {
+      document.querySelectorAll("[data-adaptive-width]").forEach((el) => {
+        el.style.width = "";
+        wrappedTextWidrh(el);
+      });
+    }
   };
   adaptiveFix();
 
@@ -15031,6 +15011,143 @@ window.addEventListener("load", function () {
 
   if (document.querySelector("[data-quantity]")) {
     initQuantity();
+  }
+
+  const rangeInit = () => {
+    const rangeElements = document.querySelectorAll("[data-range]");
+
+    rangeElements.forEach((rangeElement) => {
+      const rangeOneSlider = rangeElement.dataset.range == "one";
+      const rangeSlider = rangeElement.querySelector("[data-range-body]");
+
+      if (rangeOneSlider) {
+        const rangeOneInput = rangeElement.querySelector("[data-range-input]");
+        const rangeOneMinValue = Number(rangeOneInput.getAttribute("data-range-min"));
+        const rangeOneMaxValue = Number(rangeOneInput.getAttribute("data-range-max"));
+        const rangeSetValueBtn = rangeElement.querySelector("[data-range-set]");
+
+        nouislider__WEBPACK_IMPORTED_MODULE_6__["default"].create(rangeSlider, {
+          start: rangeOneMinValue,
+          step: 1,
+          range: {
+            min: rangeOneMinValue,
+            max: rangeOneMaxValue,
+          },
+          format: {
+            from: function (value) {
+              return parseInt(value);
+            },
+            to: function (value) {
+              return parseInt(value);
+            },
+          },
+        });
+
+        rangeSlider.noUiSlider.on("update", function (values, handle) {
+          rangeOneInput.value = values[handle];
+        });
+
+        if (rangeSetValueBtn) {
+          rangeSetValueBtn.addEventListener("click", () => {
+            rangeSlider.noUiSlider.set(rangeOneMaxValue);
+          });
+        }
+      } else {
+        const rangeMinInput = rangeElement.querySelector("[data-range-min]");
+        const rangeMinValue = Number(rangeMinInput.getAttribute("data-range-min"));
+        const rangeMaxInput = rangeElement.querySelector("[data-range-max]");
+        const rangeMaxValue = Number(rangeMaxInput.getAttribute("data-range-max"));
+        const rangeInputs = [rangeMinInput, rangeMaxInput];
+
+        nouislider__WEBPACK_IMPORTED_MODULE_6__["default"].create(rangeSlider, {
+          start: [rangeMinValue, rangeMaxValue],
+          connect: true,
+          margin: 10,
+          range: {
+            min: rangeMinValue,
+            max: rangeMaxValue,
+          },
+          format: {
+            from: function (value) {
+              return parseInt(value);
+            },
+            to: function (value) {
+              return parseInt(value);
+            },
+          },
+        });
+
+        rangeSlider.noUiSlider.on("update", function (values, i) {
+          rangeInputs[i].value = values[i];
+        });
+
+        // Listen to keydown events on the input field.
+        rangeInputs.forEach((input, i) => {
+          input.addEventListener("change", function () {
+            rangeSlider.noUiSlider.setHandle(i, input.value);
+          });
+
+          input.addEventListener("keydown", function (e) {
+            let values = rangeSlider.noUiSlider.get();
+            let value = Number(values[i]);
+
+            // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
+            let steps = rangeSlider.noUiSlider.steps();
+
+            // [down, up]
+            let step = steps[i];
+
+            let position;
+
+            // 13 is enter,
+            // 37 is key left,
+            // 38 is key up,
+            // 39 is key right.
+            // 40 is key down.
+            switch (e.which) {
+              case 13:
+                rangeSlider.noUiSlider.setHandle(i, input.value);
+                break;
+
+              case 38:
+              case 39:
+                // Get step to go increase slider value (up)
+                position = step[1];
+
+                // false = no step is set
+                if (position === false) {
+                  position = 1;
+                }
+
+                // null = edge of slider
+                if (position !== null) {
+                  rangeSlider.noUiSlider.setHandle(i, value + position);
+                }
+
+                break;
+
+              case 37:
+              case 40:
+                position = step[0];
+
+                if (position === false) {
+                  position = 1;
+                }
+
+                if (position !== null) {
+                  rangeSlider.noUiSlider.setHandle(i, value - position);
+                }
+
+                break;
+            }
+          });
+        });
+      }
+    });
+  };
+
+  if (document.querySelector("[data-range]")) {
+    rangeInit();
   }
 
   // if (document.querySelector("textarea")) {
