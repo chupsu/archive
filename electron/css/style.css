@@ -66,6 +66,8 @@
 .new-card__link,
 .news__filter,
 .noUi-handle,
+.pagination__item a,
+.pagination__item span,
 .partners-slider__link,
 .partners-slider__page-link,
 .popup,
@@ -641,6 +643,18 @@ body {
 }
 ._mb-md {
   margin-bottom: var(--gap-section-medium);
+}
+._mb-sm {
+  margin-bottom: var(--gap-section-small);
+}
+._mt-lg {
+  margin-top: var(--gap-section-large);
+}
+._mt-md {
+  margin-top: var(--gap-section-medium);
+}
+._mt-sm {
+  margin-top: var(--gap-section-small);
 }
 .section__head {
   display: flex;
@@ -1620,6 +1634,97 @@ input[type=radio] ~ .checkbox__icon {
 }
 .breadcrumbs__link {
   color: inherit;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.pagination__item {
+  flex-shrink: 0;
+}
+.pagination__item a,
+.pagination__item span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-weight: 500;
+  font-size: var(--text-medium);
+  color: var(--color-main);
+  background-color: var(--color-shadow-200);
+  border: none;
+  border-radius: 14px;
+}
+.pagination__item_skip a,
+.pagination__item_skip span {
+  color: var(--color-accent);
+  background-color: transparent;
+  pointer-events: none;
+}
+.pagination__item_current a,
+.pagination__item_current span {
+  color: var(--color-neutral);
+  background-color: var(--color-accent);
+  pointer-events: none;
+}
+.pagination__item_first a::after,
+.pagination__item_first span::after,
+.pagination__item_last a::after,
+.pagination__item_last span::after,
+.pagination__item_next a::after,
+.pagination__item_next span::after,
+.pagination__item_prev a::after,
+.pagination__item_prev span::after {
+  font-family: "icons"!important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  pointer-events: none;
+  font-size: var(--text-smallest);
+}
+.pagination__item_first a::after,
+.pagination__item_first span::after {
+  content: "\e911";
+}
+.pagination__item_last a::after,
+.pagination__item_last span::after {
+  content: "\e912";
+}
+.pagination__item_prev a::after,
+.pagination__item_prev span::after {
+  content: "\e901";
+}
+.pagination__item_next a::after,
+.pagination__item_next span::after {
+  content: "\e909";
+}
+.pagination__item_disabled a,
+.pagination__item_disabled span {
+  color: var(--color-shadow-500);
+  pointer-events: none;
+}
+.pagination__item:not(.pagination__item_active):not(.pagination__item_disabled) a:focus-visible {
+  outline: 0;
+  background-color: var(--color-shadow-300);
+}
+.pagination__item:not(.pagination__item_active):not(.pagination__item_disabled) a:active {
+  background-color: var(--color-shadow-400);
 }
 .popup {
   position: fixed;
@@ -3085,6 +3190,11 @@ input[type=radio] ~ .checkbox__icon {
 }
 [data-catalog-view=list] .catalog__grid {
   grid-template-columns: 1fr;
+}
+.catalog__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-normal-extra);
 }
 .category-nav {
   display: flex;
@@ -4890,6 +5000,11 @@ input[type=radio] ~ .checkbox__icon {
   .catalog__grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+  .catalog__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   .filter-choice__btn {
     font-size: var(--text-large);
   }
@@ -5065,7 +5180,8 @@ input[type=radio] ~ .checkbox__icon {
   }
 }
 @media (max-width: 1279.98px) {
-  .catalog__nav {
+  .catalog__nav,
+  .catalog__pagination {
     display: none;
   }
 }
@@ -5436,6 +5552,7 @@ input[type=radio] ~ .checkbox__icon {
   .breadcrumbs__item:not(:last-child) .breadcrumbs__link:not(:active):hover {
     color: var(--color-accent-dark);
   }
+  .pagination__item:not(.pagination__item_active):not(.pagination__item_disabled) a:not(:active):hover,
   .popup__close:not(:active):hover {
     background-color: var(--color-shadow-300);
   }
