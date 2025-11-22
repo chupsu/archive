@@ -20260,7 +20260,13 @@ window.addEventListener("load", function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
 
-  (0,tippy_js__WEBPACK_IMPORTED_MODULE_10__["default"])("[data-tippy-content]", { maxWidth: 230 });
+  (0,tippy_js__WEBPACK_IMPORTED_MODULE_10__["default"])("[data-tippy-content]", {
+    allowHTML: true,
+    maxWidth: 260,
+    arrow: false,
+    placement: "top-start",
+    trigger: "mouseenter click",
+  });
 
   // if (document.querySelector(".video")) {
   //   video.findVideos();

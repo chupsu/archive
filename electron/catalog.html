@@ -589,6 +589,88 @@
                               </div>
                             </details>
                           </div>
+                          <div class="filters__box">
+                            <details class="filter-choice">
+                              <summary class="filter-choice__btn icon-down">
+                                <span>Мощность, Вт</span>
+                              </summary>
+                              <div class="filter-choice__dropdown">
+                                <div class="filter-choice__body">
+                                  <div class="range" data-range>
+                                    <div class="range__inputs">
+                                      <label class="input">
+                                        <!-- input::placeholder=" " должен быть не пустым -->
+                                        <input class="input__body" type="number" placeholder=" " data-range-min="15">
+                                        <span class="input__placeholder">От</span>
+                                      </label>
+                                      <label class="input">
+                                        <!-- input::placeholder=" " должен быть не пустым -->
+                                        <input class="input__body" type="number" placeholder=" " data-range-max="500">
+                                        <span class="input__placeholder">До</span>
+                                      </label>
+                                    </div>
+                                    <div class="range__main">
+                                      <div class="range__body" data-range-body></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </details>
+                          </div>
+                          <div class="filters__box">
+                            <details class="filter-choice">
+                              <summary class="filter-choice__btn icon-down">
+                                <span>
+                                  Дополнительные возможности <span
+                                    data-tippy-content="<div><strong>Название пояснялки</strong><br><br>Выплывающая пояснялка для тех категорий, где есть надобность в пояснительной выплывашке. текста может быть достаточно много.<br>Выплывающая пояснялка для тех категорий, где есть надобность в пояснительной выплывашке. текста может быть достаточно много. Выплывающая пояснялка для тех категорий, где есть надобность в пояснительной выплывашке. текста может быть достаточно много.<br>Выплывающая пояснялка для тех категорий, где есть надобность в пояснительной выплывашке. текста может быть достаточно много.</div>"
+                                  ></span>
+                                </span>
+                              </summary>
+                              <div class="filter-choice__dropdown">
+                                <div class="filter-choice__body">
+                                  <div class="filter-choice__scroll">
+                                    <div class="filter-choice__list">
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Подача припоя</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Бессвинцовая пайка</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Работа в азотной среде</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Прозвонка электроцепей</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Разъем RJ12</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">USB-интерфейс</span>
+                                      </label>
+                                      <label class="checkbox checkbox_medium">
+                                        <input class="checkbox__input" type="checkbox">
+                                        <span class="checkbox__icon icon-check"></span>
+                                        <span class="checkbox__body">Дымоуловитель</span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </details>
+                          </div>
                           <div class="filters__action">
                             <button class="filters__btn btn btn_shadow btn_link btn_narrow" type="reset">
                               Сбросить фильтр
@@ -2349,28 +2431,28 @@
                       </select>
                     </div>
                     <div class="input-fields__cell">
-                      <label class="input">
+                      <label class="input input_medium">
                         <!-- input::placeholder=" " должен быть не пустым -->
                         <input class="input__body" type="text" placeholder=" " required>
                         <span class="input__placeholder">Ваше имя*</span>
                       </label>
                     </div>
                     <div class="input-fields__cell">
-                      <label class="input">
+                      <label class="input input_medium">
                         <!-- input::placeholder=" " должен быть не пустым -->
                         <input class="input__body" type="tel" placeholder=" " required>
                         <span class="input__placeholder">Телефон*</span>
                       </label>
                     </div>
                     <div class="input-fields__cell">
-                      <label class="input">
+                      <label class="input input_medium">
                         <!-- input::placeholder=" " должен быть не пустым -->
                         <input class="input__body" type="email" placeholder=" " required>
                         <span class="input__placeholder">E-mail*</span>
                       </label>
                     </div>
                     <div class="input-fields__cell">
-                      <label class="input">
+                      <label class="input input_medium">
                         <!-- input::placeholder=" " должен быть не пустым -->
                         <textarea class="input__body" placeholder=" "></textarea>
                         <span class="input__placeholder">Комментарий</span>
@@ -2419,7 +2501,7 @@
                 <div class="user-form__box user-form__box_main">
                   <div class="input-fields">
                     <div class="input-fields__cell">
-                      <label class="input">
+                      <label class="input input_medium">
                         <!-- input::placeholder=" " должен быть не пустым -->
                         <input class="input__body" type="email" placeholder=" " required>
                         <span class="input__placeholder">E-mail*</span>
