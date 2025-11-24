@@ -20259,6 +20259,10 @@ window.addEventListener("load", function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuInit)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
+  (0,_module_phone_mask_js__WEBPACK_IMPORTED_MODULE_4__.phoneMask)();
+  (0,_module_quantity_js__WEBPACK_IMPORTED_MODULE_6__.quantityInit)();
+  (0,_module_range_js__WEBPACK_IMPORTED_MODULE_7__.rangeInit)();
+  (0,_module_viewType_js__WEBPACK_IMPORTED_MODULE_5__.setViewType)();
 
   (0,tippy_js__WEBPACK_IMPORTED_MODULE_10__["default"])("[data-tippy-content]", {
     allowHTML: true,
@@ -20266,27 +20270,14 @@ window.addEventListener("load", function () {
     arrow: false,
     placement: "top-start",
     trigger: "mouseenter click",
+    onShow(instance) {
+      instance.setProps({ maxWidth: window.innerWidth > 2239 ? 336 : 260 });
+    },
   });
 
   // if (document.querySelector(".video")) {
   //   video.findVideos();
   // }
-
-  if (document.querySelector("input[type='tel']")) {
-    (0,_module_phone_mask_js__WEBPACK_IMPORTED_MODULE_4__.phoneMask)();
-  }
-
-  if (document.querySelector("[data-quantity]")) {
-    (0,_module_quantity_js__WEBPACK_IMPORTED_MODULE_6__.quantityInit)();
-  }
-
-  if (document.querySelector("[data-range]")) {
-    (0,_module_range_js__WEBPACK_IMPORTED_MODULE_7__.rangeInit)();
-  }
-
-  if (document.querySelector("[data-view-types]")) {
-    (0,_module_viewType_js__WEBPACK_IMPORTED_MODULE_5__.setViewType)();
-  }
 
   const HEADER = document.querySelector(".header");
   const HEADER_TOP = document.querySelector(".header__top");
@@ -20396,13 +20387,8 @@ window.addEventListener("load", function () {
 
     //   if (window.innerWidth < 576) {
     //   }
-    if (document.querySelector("[data-adaptive-width]")) {
-      wrappedTextWidth();
-    }
-
-    if (document.querySelector("[data-show-all]")) {
-      showAllInit();
-    }
+    wrappedTextWidth();
+    showAllInit();
   };
   adaptiveFix();
 
@@ -20466,10 +20452,7 @@ window.addEventListener("load", function () {
       }
     });
   };
-
-  if (document.querySelector(".product-types")) {
-    productTypes();
-  }
+  productTypes();
 
   if (document.querySelector(".welcome__slider")) {
     new swiper_bundle__WEBPACK_IMPORTED_MODULE_8__["default"](".welcome__slider", {
@@ -20499,9 +20482,6 @@ window.addEventListener("load", function () {
         lockClass: "slider-pagination_lock",
         bulletClass: "slider-pagination__bullet",
         bulletActiveClass: "slider-pagination__bullet_active",
-      },
-      breakpoints: {
-        480: {},
       },
       on: {
         init: (swiper) => {
@@ -20541,6 +20521,9 @@ window.addEventListener("load", function () {
           },
           1280: {
             spaceBetween: 10,
+          },
+          2240: {
+            spaceBetween: 14,
           },
         },
         on: {
@@ -20586,6 +20569,9 @@ window.addEventListener("load", function () {
           },
           1280: {
             spaceBetween: 10,
+          },
+          2240: {
+            spaceBetween: 14,
           },
         },
         on: {
@@ -20641,6 +20627,9 @@ window.addEventListener("load", function () {
               1280: {
                 spaceBetween: 10,
               },
+              2240: {
+                spaceBetween: 14,
+              },
             },
             on: {
               init: (swiper) => {
@@ -20692,6 +20681,9 @@ window.addEventListener("load", function () {
           1280: {
             spaceBetween: 12,
           },
+          2240: {
+            spaceBetween: 18,
+          },
         },
         on: {
           init: (swiper) => {
@@ -20732,6 +20724,9 @@ window.addEventListener("load", function () {
           },
           1280: {
             spaceBetween: 10,
+          },
+          2240: {
+            spaceBetween: 14,
           },
         },
         on: {
@@ -20825,8 +20820,10 @@ window.addEventListener("load", function () {
     document.documentElement.classList.toggle("_is-scroll", document.documentElement.scrollTop > 56);
   });
 
+  let resizeTimeout;
   window.addEventListener("resize", () => {
-    adaptiveFix();
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(adaptiveFix, 201); // задержка 120–200 мс оптимальна
   });
 });
 
