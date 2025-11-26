@@ -1506,10 +1506,16 @@ class SelectConstructor {
     const selectItem = originalSelect.parentElement;
     // Добавляем ID селекта
     selectItem.dataset.id = originalSelect.dataset.id;
-    // Получаем класс оригинального селекта, создаем модификатор и добавляем его
-    originalSelect.dataset.classModifier
-      ? selectItem.classList.add(`select_${originalSelect.dataset.classModifier}`)
-      : null;
+    // Получаем класс оригинального селекта, создаем модификаторы и добавляем их
+    if (originalSelect.dataset.classModifier) {
+      const modifiers = originalSelect.dataset.classModifier.split(/\s+/);
+
+      modifiers.forEach((mod) => {
+        if (mod.trim()) {
+          selectItem.classList.add(`select_${mod.trim()}`);
+        }
+      });
+    }
     // Если множественный выбор, добавляем класс
     originalSelect.multiple
       ? selectItem.classList.add(this.selectClasses.classSelectMultiple)
@@ -2254,7 +2260,6 @@ const rangeInit = () => {
       noUiSlider.create(rangeSlider, {
         start: [rangeMinValue, rangeMaxValue],
         connect: true,
-        margin: 10,
         range: {
           min: rangeMinValue,
           max: rangeMaxValue,
