@@ -15,6 +15,7 @@
     <script src="./js/swiper.min.js" defer></script>
     <script src="./js/nouislider.min.js" defer></script>
     <script src="./js/tippy.js.min.js" defer></script>
+    <script src="./js/clipboard.min.js" defer></script>
     <script src="./js/script.min.js" defer></script>
   </head>
 
@@ -160,7 +161,7 @@
 
       <main class="page">
         <section class="category _mb-lg">
-          <div class="page-head">
+          <div class="page-head page-head_border">
             <div class="container">
               <div class="page-head__body">
                 <ul class="breadcrumbs">
@@ -424,7 +425,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -505,7 +506,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -622,7 +623,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -693,7 +694,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -745,7 +746,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -808,7 +809,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -889,7 +890,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -1006,7 +1007,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -1077,7 +1078,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -1129,7 +1130,7 @@
                                     </button>
                                   </div>
                                 </div>
-                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину">
+                                <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
                                   <span class="_seo">Добавить в корзину</span>
                                 </button>
                               </div>
@@ -1251,14 +1252,14 @@
               <p class="subscribe__text">
                 Подпишитесь на рассылку и будьте в курсе лучших предложений
               </p>
-              <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe-form">
+              <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe-popup">
                 Подписаться
               </button>
             </div>
           </div>
         </section>
       </main>
-      <footer class="footer">
+      <footer class="footer" data-watch>
         <div class="container">
           <div class="footer__body">
             <div class="footer__main">
@@ -1370,7 +1371,7 @@
                     <button
                       class="footer-contacts__btn btn btn_accent"
                       type="button"
-                      data-popup="#callback-form"
+                      data-popup="#callback-popup"
                     >
                       Обратная связь
                     </button>
@@ -1391,29 +1392,37 @@
       <!-- При интеграции переместить скрипт в функционал "Избранное"! -->
       <script>
         (() => {
-          "use strict";
-          document.addEventListener("click", (e) => {
-            if (e.target.closest("[data-favourites]")) {
-              e.target.classList.toggle("_is-active");
+          'use strict';
+          document.addEventListener('click', (e) => {
+            if (e.target.closest('[data-favourites]')) {
+              e.target.classList.toggle('_is-active');
 
-              if (e.target.classList.contains("_is-active")) {
-                e.target.querySelector("._seo").innerText = "Удалить из избранного";
-                e.target.setAttribute("title", "Удалить из избранного");
+              if (e.target.classList.contains('_is-active')) {
+                e.target.querySelector('._seo').innerText = 'Удалить из избранного';
+                e.target.setAttribute('title', 'Удалить из избранного');
               } else {
-                e.target.querySelector("._seo").innerText = "Добавить в избранное";
-                e.target.setAttribute("title", "Добавить в избранное");
+                e.target.querySelector('._seo').innerText = 'Добавить в избранное';
+                e.target.setAttribute('title', 'Добавить в избранное');
               }
             }
+          });
+        })();
+      </script>
 
-            if (e.target.closest(".product-card__buy")) {
-              e.target.parentElement.classList.toggle("added");
+      <!-- При интеграции удалить скрипт и атрибуты data-buy -->
+      <script>
+        (() => {
+          'use strict';
+          document.addEventListener('click', (e) => {
+            if (e.target.closest('[data-buy]')) {
+              e.target.parentElement.classList.toggle('added');
             }
           });
         })();
       </script>
     </div>
 
-    <div class="popup" id="callback-form">
+    <div class="popup" id="callback-popup">
       <div class="popup__body popup__body_normal">
         <button class="popup__close icon-close" type="button" title="Закрыть окно" data-popup-close>
           <span class="_seo">Закрыть окно</span>
@@ -1482,8 +1491,10 @@
                     <input class="checkbox__input" type="checkbox">
                     <span class="checkbox__icon icon-check"></span>
                     <span class="checkbox__body">
-                      Я согласен с обработкой персональных данных и ознакомлен
-                      <a href="./policy.html">с политикой по обработке персональных данных</a>
+                      Я согласен с обработкой персональных данных и ознакомлен с <a
+                        href="./policy.html"
+                        >политикой по обработке персональных данных</a
+                      >
                     </span>
                   </label>
                 </div>
@@ -1497,7 +1508,7 @@
       </div>
     </div>
 
-    <div class="popup" id="subscribe-form">
+    <div class="popup" id="subscribe-popup">
       <div class="popup__body popup__body_small">
         <button class="popup__close icon-close" type="button" title="Закрыть окно" data-popup-close>
           <span class="_seo">Закрыть окно</span>
@@ -1528,8 +1539,10 @@
                     <input class="checkbox__input" type="checkbox">
                     <span class="checkbox__icon icon-check"></span>
                     <span class="checkbox__body">
-                      Я согласен с обработкой персональных данных и ознакомлен
-                      <a href="./policy.html">с политикой по обработке персональных данных</a>
+                      Я согласен с обработкой персональных данных и ознакомлен с <a
+                        href="./policy.html"
+                        >политикой по обработке персональных данных</a
+                      >
                     </span>
                   </label>
                 </div>
@@ -1560,15 +1573,17 @@
         Хорошо
         <span class="_seo">, принять файлы cookies</span>
       </button>
+
       <!-- Удалить скрипт при интеграции! -->
       <script>
         (() => {
-          "use strict";
-          document.querySelector(".cookies__btn").addEventListener("click", (e) => {
+          'use strict';
+          document.querySelector('.cookies__btn').addEventListener('click', (e) => {
             e.target.parentElement.remove();
           });
         })();
       </script>
+
       <!-- Удалить стиль при интеграции! -->
       <style>
         .cookies {
