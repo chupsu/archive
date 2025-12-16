@@ -22166,9 +22166,9 @@ window.addEventListener('load', function () {
 
     //   Show / Hide Password
     if (targetElement.closest('[class*="__viewpass"]')) {
-      let inputType = targetElement.classList.contains('active') ? 'password' : 'text';
+      let inputType = targetElement.classList.contains('_is-active') ? 'password' : 'text';
       targetElement.parentElement.querySelector('input').setAttribute('type', inputType);
-      targetElement.classList.toggle('active');
+      targetElement.classList.toggle('_is-active');
     }
   });
 
