@@ -22094,6 +22094,45 @@ window.addEventListener('load', function () {
   //   });
   // }
 
+  const inputsActions = () => {
+    const inputs = document.querySelectorAll('.input');
+
+    inputs.forEach((inputBody) => {
+      const inputBtn = inputBody.querySelector('.input__btn');
+
+      if (inputBtn) {
+        const input = inputBody.querySelector('.input__body');
+        const inputBtnType = inputBtn.dataset.input;
+
+        inputBody.classList.add('input_btn');
+
+        if (inputBtnType == 'reset') {
+          input.addEventListener('input', (e) => {
+            inputBody.classList.toggle('_is-fill', e.target.value.length);
+          });
+        }
+
+        inputBody.addEventListener('click', (e) => {
+          const targetElement = e.target;
+
+          if (targetElement === inputBtn) {
+            if (inputBtnType == 'reset') {
+              input.focus();
+              input.value = '';
+              inputBody.classList.remove('_is-fill');
+            }
+
+            if (inputBtnType == 'password') {
+              input.setAttribute('type', input.type == 'password' ? 'text' : 'password');
+              targetElement.classList.toggle('_is-active');
+            }
+          }
+        });
+      }
+    });
+  };
+  inputsActions();
+
   const productTypes = () => {
     const typelists = document.querySelectorAll('.product-types');
 
@@ -22162,13 +22201,6 @@ window.addEventListener('load', function () {
     //   Product Specs
     if (targetElement.closest('[data-tab-id]')) {
       document.querySelector(targetElement.dataset.tabId).click();
-    }
-
-    //   Show / Hide Password
-    if (targetElement.closest('[class*="__viewpass"]')) {
-      let inputType = targetElement.classList.contains('_is-active') ? 'password' : 'text';
-      targetElement.parentElement.querySelector('input').setAttribute('type', inputType);
-      targetElement.classList.toggle('_is-active');
     }
   });
 

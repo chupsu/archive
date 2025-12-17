@@ -193,85 +193,154 @@
                     <div class="user-form__box user-form__box_main">
                       <div class="input-fields">
                         <div class="input-fields__cell">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="text" placeholder=" " required>
-                            <span class="input__placeholder">Название компании*</span>
-                          </label>
-                        </div>
-                        <div class="input-fields__cell">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="text" placeholder=" " required>
-                            <span class="input__placeholder">Юридический адрес*</span>
-                          </label>
-                        </div>
-                        <div class="input-fields__cell">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="text" placeholder=" " required>
-                            <span class="input__placeholder">Фактический адрес*</span>
-                          </label>
-                        </div>
-                        <div class="input-fields__cell">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="text" placeholder=" " required>
-                            <span class="input__placeholder">Банк*</span>
-                          </label>
-                        </div>
-                        <div class="input-fields__cell input-fields__cell_medium">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="number" placeholder=" " required>
-                            <span class="input__placeholder">КПП</span>
-                          </label>
-                        </div>
-                        <div class="input-fields__cell input-fields__cell_medium">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="number" placeholder=" " required>
-                            <span class="input__placeholder">Р/С*</span>
-                          </label>
-                        </div>
-                        <div class="input-fields__cell input-fields__cell_medium">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="number" placeholder=" " required>
-                            <span class="input__placeholder">К/С*</span>
-                          </label>
-                        </div>
-                        <div class="input-fields__cell input-fields__cell_medium">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="number" placeholder=" " required>
-                            <span class="input__placeholder">БИК*</span>
-                          </label>
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="number" placeholder=" ">
+                              <span class="input__placeholder">ИНН</span>
+                            </label>
+                          </div>
+                          <div class="input input_medium _processing">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="number" placeholder=" " disabled value='123456789102'>
+                              <span class="input__placeholder">ИНН</span>
+                            </label>
+                            <div class="input__status">Поиск информации о компании...</div>
+                          </div>
+                          <div class="input input_medium _success">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="number" placeholder=" " disabled value='123456789102'>
+                              <span class="input__placeholder">ИНН</span>
+                            </label>
+                            <div class="input__status">
+                              Перед регистрацией проверьте правильность введенных данных.
+                            </div>
+                          </div>
+                          <div class="input input_medium _error">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="number" placeholder=" " value='123456789102'>
+                              <span class="input__placeholder">ИНН</span>
+                            </label>
+                            <div class="input__status">
+                              Компания с таким ИНН не найдена. Введите данные вручную
+                            </div>
+                          </div>
                         </div>
                       </div>
+                    </div>
+                    <div class="user-form__box user-form__box_content">
+                      <h3 class="user-form__title _h6">Данные о компании</h3>
                     </div>
                     <div class="user-form__box user-form__box_main">
                       <div class="input-fields">
                         <div class="input-fields__cell">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="text" placeholder=" " required>
-                            <span class="input__placeholder">Контактное лицо*</span>
-                          </label>
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="text" placeholder=" " required>
+                              <span class="input__placeholder">Название компании*</span>
+                            </label>
+                          </div>
                         </div>
                         <div class="input-fields__cell">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="email" placeholder=" " required>
-                            <span class="input__placeholder">E-mail*</span>
-                          </label>
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="text" placeholder=" " required>
+                              <span class="input__placeholder">Юридический адрес*</span>
+                            </label>
+                          </div>
                         </div>
                         <div class="input-fields__cell">
-                          <label class="input input_medium">
-                            <!-- input::placeholder=" " должен быть не пустым -->
-                            <input class="input__body" type="tel" placeholder=" " required>
-                            <span class="input__placeholder">Телефон*</span>
-                          </label>
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="text" placeholder=" " required>
+                              <span class="input__placeholder">Фактический адрес*</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="input-fields__cell">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="text" placeholder=" " required>
+                              <span class="input__placeholder">Банк*</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="input-fields__cell input-fields__cell_medium">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="number" placeholder=" ">
+                              <span class="input__placeholder">КПП</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="input-fields__cell input-fields__cell_medium">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="number" placeholder=" " required>
+                              <span class="input__placeholder">Р/С*</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="input-fields__cell input-fields__cell_medium">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="number" placeholder=" " required>
+                              <span class="input__placeholder">К/С*</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="input-fields__cell input-fields__cell_medium">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="number" placeholder=" " required>
+                              <span class="input__placeholder">БИК*</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="user-form__box user-form__box_content">
+                      <h3 class="user-form__title _h6">Контактная информация</h3>
+                    </div>
+                    <div class="user-form__box user-form__box_main">
+                      <div class="input-fields">
+                        <div class="input-fields__cell">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="text" placeholder=" " required>
+                              <span class="input__placeholder">Контактное лицо*</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="input-fields__cell">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="tel" placeholder=" ">
+                              <span class="input__placeholder">Телефон</span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="input-fields__cell">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="email" placeholder=" " required>
+                              <span class="input__placeholder">E-mail*</span>
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -489,32 +558,40 @@
                       </select>
                     </div>
                     <div class="input-fields__cell">
-                      <label class="input input_medium">
-                        <!-- input::placeholder=" " должен быть не пустым -->
-                        <input class="input__body" type="text" placeholder=" " required>
-                        <span class="input__placeholder">Ваше имя*</span>
-                      </label>
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body" type="text" placeholder=" " required>
+                          <span class="input__placeholder">Ваше имя*</span>
+                        </label>
+                      </div>
                     </div>
                     <div class="input-fields__cell">
-                      <label class="input input_medium">
-                        <!-- input::placeholder=" " должен быть не пустым -->
-                        <input class="input__body" type="tel" placeholder=" " required>
-                        <span class="input__placeholder">Телефон*</span>
-                      </label>
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body" type="tel" placeholder=" " required>
+                          <span class="input__placeholder">Телефон*</span>
+                        </label>
+                      </div>
                     </div>
                     <div class="input-fields__cell">
-                      <label class="input input_medium">
-                        <!-- input::placeholder=" " должен быть не пустым -->
-                        <input class="input__body" type="email" placeholder=" " required>
-                        <span class="input__placeholder">E-mail*</span>
-                      </label>
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body" type="email" placeholder=" " required>
+                          <span class="input__placeholder">E-mail*</span>
+                        </label>
+                      </div>
                     </div>
                     <div class="input-fields__cell">
-                      <label class="input input_medium">
-                        <!-- input::placeholder=" " должен быть не пустым -->
-                        <textarea class="input__body" placeholder=" "></textarea>
-                        <span class="input__placeholder">Комментарий</span>
-                      </label>
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <textarea class="input__body" placeholder=" "></textarea>
+                          <span class="input__placeholder">Комментарий</span>
+                        </label>
+                      </div>
                     </div>
                     <div class="input-fields__cell">
                       <label class="upload-file">
@@ -561,11 +638,13 @@
                 <div class="user-form__box user-form__box_main">
                   <div class="input-fields">
                     <div class="input-fields__cell">
-                      <label class="input input_medium">
-                        <!-- input::placeholder=" " должен быть не пустым -->
-                        <input class="input__body" type="email" placeholder=" " required>
-                        <span class="input__placeholder">E-mail*</span>
-                      </label>
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body" type="email" placeholder=" " required>
+                          <span class="input__placeholder">E-mail*</span>
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
