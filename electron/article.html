@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="./img/content/favicon.svg">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/content/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="./img/content/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/content/touch-icon-iphone-retina.png">
+    <title>Обзор паяльного оборудования, используемого для монтажа, демонтажа печатных плат</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/swiper.min.js" defer></script>
+    <script src="./js/nouislider.min.js" defer></script>
+    <script src="./js/tippy_js.min.js" defer></script>
+    <script src="./js/clipboard.min.js" defer></script>
+    <script src="./js/masonry_layout.min.js" defer></script>
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="header header_border" data-lp>
+        <div class="header__top">
+          <div class="container">
+            <nav class="menu" data-da=".header__main,1023,last">
+              <button class="menu__btn icon-menu" type="button" data-menu>
+                <span class="_seo">Меню сайта</span>
+              </button>
+              <div class="menu__body">
+                <div class="menu__main">
+                  <ul class="menu__list">
+                    <li class="menu__item menu__item_mob">
+                      <a class="menu__link icon-right" href="./production.html">Каталог</a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link" href="./about.html">О компании</a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link" href="./partners.html">Производители</a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link" href="./development.html">Доставка</a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link" href="./pay.html">Оплата</a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link" href="./contacts.html">Вакансии</a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link" href="./contacts.html">Контакты</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="menu__contacts">
+                  <ul class="header-contacts">
+                    <li class="header-contacts__item">
+                      <a class="header-contacts__link header-contacts__link_accent" href="tel:+74956460667">
+                        +7 (495) 646 06 67
+                      </a>
+                    </li>
+                    <li class="header-contacts__item">
+                      <a class="header-contacts__link" href="mailto:sale@elkomplect.ru" target="_blank">
+                        sale@elkomplect.ru
+                      </a>
+                    </li>
+                    <li class="header-contacts__item">
+                      <ul class="social social_dark social_smallest">
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank" rel="nofollow noopener">
+                            <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M22.6539 10.0027L20.2021 22.1075C20.2021 22.1075 19.859 22.9467 18.9167 22.5442L13.2597 18.2965L13.2335 18.284C13.9976 17.6121 19.9229 12.3947 20.1819 12.1582C20.5828 11.7919 20.3339 11.5738 19.8684 11.8505L11.116 17.2939L7.73931 16.1812C7.73931 16.1812 7.20792 15.9961 7.1568 15.5936C7.10501 15.1905 7.7568 14.9724 7.7568 14.9724L21.5225 9.68386C21.5225 9.68386 22.6539 9.19703 22.6539 10.0027V10.0027Z" fill="white" />
+                            </svg>
+                          </a>
+                        </li>
+                        <li class="social__item">
+                          <a class="social__link" href="#" target="_blank" rel="nofollow noopener">
+                            <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M16.2611 20.9252C10.4357 20.9252 7.11305 16.8524 6.97461 10.0752H9.8926C9.98844 15.0495 12.1397 17.1565 13.8436 17.5909V10.0752H16.5912V14.3652C18.2738 14.1806 20.0417 12.2256 20.638 10.0752H23.3856C23.1609 11.1905 22.7129 12.2465 22.0698 13.1771C21.4266 14.1078 20.602 14.8931 19.6476 15.4839C20.7129 16.0237 21.6539 16.7879 22.4084 17.7258C23.1628 18.6637 23.7137 19.7542 24.0246 20.9252H21.0001C20.721 19.9081 20.1538 18.9976 19.3695 18.3079C18.5852 17.6181 17.6187 17.1798 16.5912 17.0479V20.9252H16.2611Z" fill="white" />
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="container">
+          <div class="header__body">
+            <div class="header__main">
+              <a class="logo logo_header" href="./index.html#wrapper">
+                <img class="logo__img" src="./img/content/logo.svg" alt="logo">
+              </a>
+              <a class="header__btn btn btn_main icon-grid" href="./production.html">Каталог</a>
+              <div class="header__search">
+                <div class="search">
+                  <button class="search__menu icon-search" type="button" title="Поиск" data-search>
+                    <span class="_seo">Поиск</span>
+                  </button>
+                  <div class="search__dropdown">
+                    <div class="search__body">
+                      <form class="search__form" action="#">
+                        <div class="search__main">
+                          <input class="search__input" type="search" placeholder="Найти">
+                          <button class="search__btn search__btn_submit icon-search" type="submit">
+                            <span class="_seo">Искать</span>
+                          </button>
+                        </div>
+                        <div class="search__action">
+                          <!-- <button
+                            class="search__btn search__btn_close icon-arr-left"
+                            type="button"
+                            title="Закрыть поиск"
+                            data-search
+                          >
+                            <span class="_seo">Закрыть поиск</span>
+                          </button>
+                          <button
+                            class="search__btn search__btn_reset icon-cross"
+                            type="button"
+                            title="Очистить"
+                          >
+                            <span class="_seo">Очистить</span>
+                          </button> -->
+                          <select data-class-modifier="search" data-show-selected data-speed="0">
+                            <option value="Искать везде" selected>Искать везде</option>
+                            <option value="Каталог">В каталоге</option>
+                            <option value="Блог">В блоге</option>
+                          </select>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header__bar user-bar">
+              <a class="user-bar__link user-bar__link_catalog icon-grid" href="./production.html">
+                <span class="user-bar__label">Каталог</span>
+              </a>
+              <a class="user-bar__link icon-fav-fill" href="./favorite.html">
+                <span class="user-bar__label">Избранное</span>
+              </a>
+              <a class="user-bar__link icon-cart-fill" href="./cart.html">
+                <span class="user-bar__label">Корзина</span>
+                <span class="user-bar__counter">99</span>
+              </a>
+              <a class="user-bar__link user-bar__link_lc icon-user-fill" href="./lc.html">
+                <span class="user-bar__label logged">OOO Наименование</span>
+                <!-- <span class="user-bar__label">Вход</span> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <div class="article">
+          <div class="page-head">
+            <div class="container">
+              <div class="page-head__body">
+                <ul class="breadcrumbs">
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                  </li>
+                  
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="./blog.html">Новости</a>
+                  </li>
+                   
+                  <li class="breadcrumbs__item">
+                    <span class="breadcrumbs__link">Обзор паяльного оборудования, используемого для монтажа, демонтажа печатных плат</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="article__body">
+              <article class="_wysiwyg">
+                <time datetime="2026-06-26 19:00">14.04.2026</time>
+                <h1>Обзор паяльного оборудования, используемого для монтажа, демонтажа печатных плат</h1>
+                <p>
+                  <span style="color: var(--color-shadow-600)">
+                    Развитие радиоэлектроники тесно связано с расширением возможностей инструментов,
+                    используемых для монтажа, демонтажа электронных плат и других элементов
+                    электронной индустрии. <a href="#">Паяльное оборудование</a> &mdash; основной
+                    компонент системы, способствующий ее дальнейшему развитию и переоснащению.
+                  </span>
+                </p>
+                <picture><source srcset="./img/content/pic/article-3.webp" type="image/webp"><img  src="./img/content/pic/article-3.jpg" alt="Изображение"></picture>
+                <h2>В чем особенности профессионального паяльного оборудования?</h2>
+                <p>
+                  Основные критерии профессионального оборудования для пайки, сделавшее его незаменимым
+                  в сфере мелкосерийного производства и обслуживания электроники: абсолютная
+                  надежность, безопасность, универсальность, эргономичность, высокий класс точности.
+                </p>
+                <p>
+                  Наиболее востребованное из них: паяльные станции, дозирующие системы, паяльники
+                  и термопинцеты, термофены, системы очистки воздуха, другой вспомогательный
+                  инструментарий, расходные материалы.
+                </p>
+                <p>
+                  Выполнение каждой задачи требует подбора своего инструмента. Например, выбирая между
+                  паяльной станцией и паяльником, стоит учитывать, что в станции есть
+                  возможность регулировки температуры нагрева и большой температурный диапазон, что
+                  обеспечивает возможность настраивать оборудование на выполнение определенной
+                  функции. Однако использовать станцию для пайки можно только стационарно.
+                </p>
+                <p>
+                  Другим не менее востребованным оборудованием является термофен. С его помощью
+                  можно работать с мельчайшими SMD-компонентами. Нагнетаемый горячий воздух позволяет
+                  равномерно прогреть необходимые участки пайки, фокусируя струю из насадки
+                  на нужных элементах. В отдельных случаях, при выпайке SMD компонентов удобно
+                  воспользоваться еще одним из инструментария &mdash; термопинцетом.
+                </p>
+                <p>
+                  Какой из перечня <a href="#">инструментов</a> выбрать &mdash; зависит
+                  от уровня сложности и вида проводимых работ по монтажу печатных плат. При
+                  этом учитываются не только стоимостные показатели, но и комплектация,
+                  технические характеристики, класс точности при настройке и регулировке, время
+                  нагрева.
+                </p>
+                <p>
+                  В числе мировых лидеров, более полувека занимающихся разработкой
+                  и производством паяльного оборудования и другого вспомогательного инструмента
+                  такие компании, как Hakko (Япония), Weller, ERSA, Pro&rsquo;skit (Тайвань), JBC
+                  (Испания), Термопро (Россия). Уникальные технологии производства сделали продукцию этих
+                  брендов самыми авторитетными и востребованными на рынке инструмента,
+                  используемого для пайки.
+                </p>
+                <p>
+                  Выбирая между продукцией того или иного бренда, стоит знать, в чем их отличия
+                  и какие из характеристик делают наиболее оптимальным их использование.
+                </p>
+                <h2>Основные характеристики станции</h2>
+                <div class="table">
+                  <table style="min-width: 500px">
+                    <colgroup>
+                      <col style="min-width: 24px" />
+                      <col style="width: 50%" />
+                      <col style="width: 50%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Наименование</th>
+                        <th>Параметр</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Пиковая мощность</td>
+                        <td>100 Вт</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Диапазон температур</td>
+                        <td>100 - 450 ºC, погрешность ±1,5°С</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Гарантия</td>
+                        <td>3 года</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h2>
+                  Важные нюансы, которые обеспечивают оборудованию Hakko лидирующие позиции среди других
+                  брендов:
+                </h2>
+                <p>
+                  Один из самых широких ассортиментов инструментария для пайки. Немецкая компания
+                  ERSA включает профессиональное оборудование, используемое в производственных
+                  циклах, и выпускает устройства для обслуживания радиоэлектронной
+                  и компьютерной техники.
+                </p>
+                <br>
+                <p>
+                  Сравнивая основные рабочие характеристики устройств, следует выделить следующие моменты:
+                </p>
+                <ul>
+                  <li>
+                    Быстрый выход на рабочий режим. Нагревание до 350 градусов происходит
+                    за 10 секунд.
+                  </li>
+                  <li>Удобство настройки и управления за счет русификации меню.</li>
+                  <li>
+                    Поддержка температуры в заданном диапазоне
+                    от 50&deg; до 450&deg; С, возможность калибровки.
+                  </li>
+                  <li>Демократичная цена.</li>
+                  <li>Исполнение по стандарту ESD с антистатической защитой.</li>
+                </ul>
+                <p>
+                  В качестве примера паяльного инструмента, используемого в мастерских
+                  по ремонту компьютерной техники, служит станция <a href="#">0IRHR100A-HP Ersa</a>.
+                </p>
+                <blockquote>
+                  <h2>Оборудование Hakko</h2>
+                  <p>
+                    Продукция японского концерна Hakko отличается высоким качеством производства,
+                    передовыми технологиями, что в соединении с разумной ценовой политикой
+                    и низкой себестоимостью обеспечило ему лидерство на мировом рынке
+                    электроинструмента и паяльных устройств.
+                  </p>
+                </blockquote>
+                <h2>
+                  Важные нюансы, которые обеспечивают оборудованию Hakko лидирующие позиции среди других
+                  брендов:
+                </h2>
+                <p>
+                  Один из самых широких ассортиментов инструментария для пайки. Немецкая компания
+                  ERSA включает профессиональное оборудование, используемое в производственных
+                  циклах, и выпускает устройства для обслуживания радиоэлектронной
+                  и компьютерной техники.
+                </p>
+                <p>
+                  Сравнивая основные рабочие характеристики устройств, следует выделить следующие моменты:
+                </p>
+                <ol>
+                  <li>
+                    Быстрый выход на рабочий режим. Нагревание до 350 градусов происходит
+                    за 10 секунд.
+                  </li>
+                  <li>Удобство настройки и управления за счет русификации меню.</li>
+                  <li>
+                    Поддержка температуры в заданном диапазоне
+                    от 50&deg; до 450&deg; С, возможность калибровки.
+                  </li>
+                  <li>Демократичная цена.</li>
+                  <li>Исполнение по стандарту ESD с антистатической защитой.</li>
+                </ol>
+                <p>
+                  В качестве примера паяльного инструмента, используемого в мастерских
+                  по ремонту компьютерной техники, служит станция 0IRHR100A-HP Ersa.
+                </p>
+              </article>
+              <div class="article__footer">
+                <div class="article__heading"><div class="article__suptitle">Теги</div></div>
+                <ul class="tags-list" data-show-all="default=5,1279.98=9">
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#"> Abeba </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      esd-аудит
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      антистатические кеды
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      антистатические металлизированные пакеты
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      антистатический пол
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      вытяжка для пайки купить
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      обувь абеба
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      спецобувь
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      цифровой микроскоп
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      ЭСР-аудит
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#"> Abeba </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      esd-аудит
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      антистатические кеды
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      антистатические металлизированные пакеты
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      антистатический пол
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      вытяжка для пайки купить
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      обувь абеба
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      спецобувь
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      цифровой микроскоп
+                    </a>
+                  </li>
+                  <li class="tags-list__item">
+                    <a class="tags-list__link btn btn_shadow btn_narrow btn_small" href="#">
+                      ЭСР-аудит
+                    </a>
+                  </li>
+                  <!-- li с кнопкой обязательно добавляем в конец -->
+                  <li class="tags-list__item tags-list__item_toggle" hidden>
+                    <button
+                      class="tags-list__btn btn btn_shadow btn_link btn_narrow btn_small"
+                      type="button"
+                      data-text-show="Показать все"
+                      data-text-hide="Скрыть"
+                      data-show-all-btn
+                    ></button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news">
+          <div class="container">
+            <div class="news__body">
+              <div class="news-slider _mb-lg" data-slider="false">
+                <div class="news-slider__items">
+                  <div class="news-slider__item">
+                    <article class="new-card">
+                      <a class="new-card__link" href="./article.html"></a>
+                      <div class="new-card__body">
+                        <div class="new-card__content">
+                          <div class="new-card__head">
+                            <time class="new-card__date" datetime="2025-05-25 19:00">14.04.2026</time>
+                            <h3 class="new-card__title">
+                              Международная выставка электроники: компоненты и технологии, материалы
+                              и оборудование, встраиваемые системы и конечные решения
+                            </h3>
+                          </div>
+                          <div class="new-card__footer">
+                            <p class="new-card__text">
+                              ExpoElectronica &mdash; крупнейшая по количеству участников
+                              и посетителей в России и ЕАЭС международная выставка
+                              электроники, которая представляет всю цепочку производства
+                              от изготовления компонентов до разработки и сборки конечных
+                              электронных систем.
+                            </p>
+                            <span class="new-card__btn btn btn_shadow" aria-hidden="true">Читать</span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="news-slider__item">
+                    <article class="new-card">
+                      <a class="new-card__link" href="./article.html"></a>
+                      <div class="new-card__body">
+                        <div class="new-card__content">
+                          <div class="new-card__head">
+                            <time class="new-card__date" datetime="2025-05-25 19:00">14.04.2026</time>
+                            <h3 class="new-card__title">
+                              Надёжное лабораторное оборудование для вашего бизнеса
+                            </h3>
+                          </div>
+                          <div class="new-card__footer">
+                            <p class="new-card__text">
+                              Современное и качественное лабораторное оборудование от ведущих
+                              производителей.
+                            </p>
+                            <span class="new-card__btn btn btn_shadow" aria-hidden="true">Читать</span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="news-slider__item">
+                    <article class="new-card">
+                      <a class="new-card__link" href="./article.html"></a>
+                      <div class="new-card__body">
+                        <div class="new-card__content">
+                          <div class="new-card__head">
+                            <time class="new-card__date" datetime="2025-05-25 19:00">14.04.2026</time>
+                            <h3 class="new-card__title">
+                              Промышленная мебель для эффективной организации рабочих мест
+                            </h3>
+                          </div>
+                          <div class="new-card__footer">
+                            <p class="new-card__text">
+                              Компания Электрон-комплект предлагает широкий выбор промышленной
+                              мебели &mdash; от слесарных верстаков до полностью
+                              укомплектованных рабочих мест, учитывающей специфику технологических
+                              процессов и нагрузку.
+                            </p>
+                            <span class="new-card__btn btn btn_shadow" aria-hidden="true">Читать</span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <div class="subscribe">
+                <figure class="subscribe__media">
+                  <img class="subscribe__img" src="./img/content/subscribe.svg" alt="Изображение">
+                </figure>
+                <p class="subscribe__text">
+                  Подпишитесь на рассылку и будьте в курсе лучших предложений
+                </p>
+                <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe-popup">
+                  Подписаться
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer" data-watch>
+        <div class="container">
+          <div class="footer__body">
+            <div class="footer__main">
+              <div class="footer__box footer__box_head">
+                <a class="logo logo_footer" href="./index.html#wrapper">
+                  <img class="logo__img" src="./img/content/logo-light.svg" alt="logo">
+                </a>
+                <ul class="footer__list">
+                  <li class="footer__info">
+                    Время работы: <br>
+                    Пн&mdash;Чт: 09:00&ndash;18:00; Пт: 09:00&ndash;17:00
+                  </li>
+                  <li class="footer__info">Москва, Харьковский проезд д.2</li>
+                </ul>
+                <ul class="social">
+                  <li class="social__item">
+                    <a class="social__link" href="#" target="_blank" rel="nofollow noopener">
+                      <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.2611 20.9252C10.4357 20.9252 7.11305 16.8524 6.97461 10.0752H9.8926C9.98844 15.0495 12.1397 17.1565 13.8436 17.5909V10.0752H16.5912V14.3652C18.2738 14.1806 20.0417 12.2256 20.638 10.0752H23.3856C23.1609 11.1905 22.7129 12.2465 22.0698 13.1771C21.4266 14.1078 20.602 14.8931 19.6476 15.4839C20.7129 16.0237 21.6539 16.7879 22.4084 17.7258C23.1628 18.6637 23.7137 19.7542 24.0246 20.9252H21.0001C20.721 19.9081 20.1538 18.9976 19.3695 18.3079C18.5852 17.6181 17.6187 17.1798 16.5912 17.0479V20.9252H16.2611Z" fill="white" />
+                  </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="#" target="_blank" rel="nofollow noopener">
+                      <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.9946 16.9946C15.7768 18.2513 15.6882 19.8179 15.583 23.25C18.7827 23.25 20.9914 23.2389 22.1318 22.1318C23.2389 20.9914 23.25 18.6775 23.25 15.583C19.8179 15.6937 18.2513 15.7768 16.9946 16.9946ZM7.75 15.583C7.75 18.6775 7.76107 20.9914 8.86821 22.1318C10.0086 23.2389 12.2173 23.25 15.417 23.25C15.3063 19.8179 15.2232 18.2513 14.0054 16.9946C12.7487 15.7768 11.1821 15.6882 7.75 15.583ZM15.417 7.75C12.2229 7.75 10.0086 7.76107 8.86821 8.86821C7.76107 10.0086 7.75 12.3225 7.75 15.417C11.1821 15.3063 12.7487 15.2232 14.0054 14.0054C15.2232 12.7487 15.3118 11.1821 15.417 7.75ZM16.9946 14.0054C15.7768 12.7487 15.6882 11.1821 15.583 7.75C18.7827 7.75 20.9914 7.76107 22.1318 8.86821C23.2389 10.0086 23.25 12.3225 23.25 15.417C19.8179 15.3063 18.2513 15.2232 16.9946 14.0054Z" fill="white" />
+                  </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="#" target="_blank" rel="nofollow noopener">
+                      <svg viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.6539 10.0027L20.2021 22.1075C20.2021 22.1075 19.859 22.9467 18.9167 22.5442L13.2597 18.2965L13.2335 18.284C13.9976 17.6121 19.9229 12.3947 20.1819 12.1582C20.5828 11.7919 20.3339 11.5738 19.8684 11.8505L11.116 17.2939L7.73931 16.1812C7.73931 16.1812 7.20792 15.9961 7.1568 15.5936C7.10501 15.1905 7.7568 14.9724 7.7568 14.9724L21.5225 9.68386C21.5225 9.68386 22.6539 9.19703 22.6539 10.0027V10.0027Z" fill="white" />
+                  </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box footer__box_menu">
+                <div class="footer__menu">
+                  <h3 class="footer__title">О компании</h3>
+                  <ul class="footer-nav">
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./about.html">О нас</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./partners.html">Производители</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Вакансии</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Реквизиты</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./contacts.html">Контакты</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer__menu">
+                  <h3 class="footer__title">Покупателям</h3>
+                  <ul class="footer-nav">
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./production.html">Каталог</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./blog.html">Новости</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./delivery.html">Доставка</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./pay.html">Оплата</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Карта сайта</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer__menu footer__menu_custom">
+                  <h3 class="footer__title">Документы</h3>
+                  <ul class="footer-nav">
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Политика обработки персональных данных</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Пользовательское соглашение</a>
+                    </li>
+                    <li class="footer-nav__item">
+                      <a class="footer-nav__link" href="./">Политика Cookie</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer__box footer__box_contacts">
+                <h3 class="footer__title">Контакты</h3>
+                <ul class="footer-contacts">
+                  <li class="footer-contacts__item">
+                    <a class="footer-contacts__link footer-contacts__link_accent" href="tel:+74956460667">
+                      +7 (495) 646 06 67
+                    </a>
+                  </li>
+                  <li class="footer-contacts__item">
+                    <a class="footer-contacts__link" href="mailto:sale@elkomplect.ru" target="_blank">
+                      sale@elkomplect.ru
+                    </a>
+                  </li>
+                  <li class="footer-contacts__item footer-contacts__item_single">
+                    <button
+                      class="footer-contacts__btn btn btn_accent"
+                      type="button"
+                      data-popup="#callback-popup"
+                    >
+                      Обратная связь
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__extra">
+              <p class="footer__copy">
+                Информация на сайте носит справочный характер и не является публичной офертой
+              </p>
+              <p class="footer__copy">elkomplect.ru &copy; 2025</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- При интеграции переместить скрипт в функционал "Избранное"! -->
+      <script>
+        (() => {
+          'use strict';
+          document.addEventListener('click', (e) => {
+            if (e.target.closest('[data-favourites]')) {
+              e.target.classList.toggle('_is-active');
+
+              if (e.target.classList.contains('_is-active')) {
+                e.target.querySelector('._seo').innerText = 'Удалить из избранного';
+                e.target.setAttribute('title', 'Удалить из избранного');
+              } else {
+                e.target.querySelector('._seo').innerText = 'Добавить в избранное';
+                e.target.setAttribute('title', 'Добавить в избранное');
+              }
+            }
+          });
+        })();
+      </script>
+
+      <!-- При интеграции удалить скрипт и атрибуты data-buy -->
+      <script>
+        (() => {
+          'use strict';
+          document.addEventListener('click', (e) => {
+            if (e.target.closest('[data-buy]')) {
+              e.target.parentElement.classList.toggle('added');
+            }
+          });
+        })();
+      </script>
+    </div>
+
+    <div class="popup" id="callback-popup">
+      <div class="popup__body popup__body_normal">
+        <button class="popup__close icon-close" type="button" title="Закрыть окно" data-popup-close>
+          <span class="_seo">Закрыть окно</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__head">
+            <h3 class="popup__title _h3">Найдем решение любого вопроса</h3>
+          </div>
+          <div class="popup__content">
+            <div class="user-form">
+              <div class="user-form__body">
+                <div class="user-form__box user-form__box_main">
+                  <div class="input-fields">
+                    <div class="input-fields__cell">
+                      <select
+                        data-class-modifier="input input-medium"
+                        data-pseudo-label="Выберите тему вопроса"
+                        data-show-selected
+                      >
+                        <option value="" selected>Выберите тему вопроса</option>
+                        <option value="Получить обратный звонок">Получить обратный звонок</option>
+                        <option value="Направить КП для расчета ">Направить КП для расчета</option>
+                        <option value="Приглашения для участия в тендере">
+                          Приглашения для участия в тендере
+                        </option>
+                      </select>
+                    </div>
+                    <div class="input-fields__cell">
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body" type="text" placeholder=" " required>
+                          <span class="input__placeholder">Ваше имя*</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input-fields__cell">
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body" type="tel" placeholder=" " required>
+                          <span class="input__placeholder">Телефон*</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input-fields__cell">
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body" type="email" placeholder=" " required>
+                          <span class="input__placeholder">E-mail*</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input-fields__cell">
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <textarea class="input__body" placeholder=" "></textarea>
+                          <span class="input__placeholder">Комментарий</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input-fields__cell">
+                      <label class="upload-file">
+                        <input class="upload-file__input" type="file">
+                        <span class="upload-file__btn icon-plus">Добавить файл</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="user-form__box user-form__box_agree">
+                  <label class="checkbox checkbox_small">
+                    <input class="checkbox__input" type="checkbox">
+                    <span class="checkbox__icon icon-check"></span>
+                    <span class="checkbox__body">
+                      Я согласен с обработкой персональных данных и ознакомлен с <a
+                        href="./policy.html"
+                        >политикой по обработке персональных данных</a
+                      >
+                    </span>
+                  </label>
+                </div>
+                <div class="user-form__box user-form__box_action">
+                  <button class="user-form__btn btn btn_main" type="submit">Отправить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="subscribe-popup">
+      <div class="popup__body popup__body_small">
+        <button class="popup__close icon-close" type="button" title="Закрыть окно" data-popup-close>
+          <span class="_seo">Закрыть окно</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__head">
+            <h3 class="popup__title _h3">Подписка на рассылку</h3>
+          </div>
+          <div class="popup__content">
+            <div class="user-form">
+              <div class="user-form__body">
+                <div class="user-form__box user-form__box_main">
+                  <div class="input-fields">
+                    <div class="input-fields__cell">
+                      <div class="input input_medium">
+                        <label class="input__main">
+                          <!-- input::placeholder=" " должен быть не пустым -->
+                          <input class="input__body" type="email" placeholder=" " required>
+                          <span class="input__placeholder">E-mail*</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="user-form__box user-form__box_action">
+                  <button class="user-form__btn btn btn_main" type="submit">Подписаться</button>
+                </div>
+                <div class="user-form__box user-form__box_agree">
+                  <label class="checkbox checkbox_small">
+                    <input class="checkbox__input" type="checkbox">
+                    <span class="checkbox__icon icon-check"></span>
+                    <span class="checkbox__body">
+                      Я согласен с обработкой персональных данных и ознакомлен с <a
+                        href="./policy.html"
+                        >политикой по обработке персональных данных</a
+                      >
+                    </span>
+                  </label>
+                </div>
+                <div class="user-form__box user-form__box_agree">
+                  <label class="checkbox checkbox_small">
+                    <input class="checkbox__input" type="checkbox">
+                    <span class="checkbox__icon icon-check"></span>
+                    <span class="checkbox__body">
+                      Я даю своё согласие на получение рекламных и информационных материалов,
+                      а также сообщений от Электрон Комплекта на указанные мной в форме
+                      адрес электронной почты (email)
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookies">
+      <p class="cookies__text">
+        Продолжая использовать сайт, Вы соглашаетесь на использование
+        <a href="./cookie.html">файлов cookie</a>
+      </p>
+      <button class="cookies__btn btn btn_main" type="button">
+        Хорошо
+        <span class="_seo">, принять файлы cookies</span>
+      </button>
+
+      <!-- Удалить скрипт при интеграции! -->
+      <script>
+        (() => {
+          'use strict';
+          document.querySelector('.cookies__btn').addEventListener('click', (e) => {
+            e.target.parentElement.remove();
+          });
+        })();
+      </script>
+
+      <!-- Удалить стиль при интеграции! -->
+      <style>
+        .cookies {
+          display: none;
+        }
+      </style>
+    </div>
+  </body>
+</html>
