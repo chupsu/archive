@@ -7,7 +7,7 @@
     <link rel="icon" href="./img/content/favicon.svg" type="image/svg+xml">
     <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
     <link rel="apple-touch-icon" href="./img/content/apple-touch-icon.png" sizes="180x180">
-    <title>Что-то пошло не так</title>
+    <title>История заказов</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/swiper.min.js" defer></script>
     <script src="./js/nouislider.min.js" defer></script>
@@ -157,40 +157,107 @@
         </div>
       </header>
 
-      <main class="page">
-        <section class="auth">
-          <div class="page-head">
+      <main class="page page_shadow-pc">
+        <div class="lc">
+          <div class="page-head page-head_border">
             <div class="container">
               <div class="page-head__body">
                 <ul class="breadcrumbs">
                   <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link" href="./index.html">Главная</a>
                   </li>
+                  
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="./lc.html">Личный кабинет</a>
+                  </li>
                    
                   <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Регистрация</span>
+                    <span class="breadcrumbs__link">История заказов</span>
                   </li>
                 </ul>
+                <div class="page-head__main">
+                  <h1 class="page-head__title _h1">История заказов</h1>
+                  <a class="page-head__back icon-left" href="./lc.html">
+                    <span class="_seo">Назад</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
           <div class="container">
-            <div class="auth__body auth__body_small">
-              <div class="auth__content">
-                <figure class="auth__media">
-                  <img class="auth__img" src="./img/content/logo/logo-2.svg" alt="Изображение">
-                </figure>
-                <h1 class="auth__title _h2">Что-то пошло не так</h1>
-                <p class="auth__text">
-                  Произошла ошибка. Возможной причиной может быть нестабильное интернет-соединение или
-                  временные неполадки при подключении к сайту. Пожалуйста, обновите страницу
-                  и попробуйте повторить действие.
-                </p>
-                <a class="auth__btn btn btn_main" href="./registration.html">Обновить страницу</a>
+            <div class="lc__body">
+              <aside class="lc__aside">
+                <div class="aside">
+                  <div class="aside__head">
+                    <div class="aside__title">OOO Наименование компании</div>
+                    <ul class="aside__info">
+                      <li class="aside__info-item">8 000 999 22 00</li>
+                      <li class="aside__info-item">infoinfoinfo@mail.ru</li>
+                    </ul>
+                  </div>
+                  <div class="aside__nav">
+                    <div class="aside__box">
+                      <div class="aside__subtitle">Товары</div>
+                      <ul class="aside-nav">
+                        <li class="aside-nav__item">
+                          <a class="aside-nav__link icon-right" href="./favorite.html">
+                            <span class="aside-nav__link-name icon-fav">Избранное</span>
+                            <span class="aside-nav__link-status">135</span>
+                          </a>
+                        </li>
+                        <li class="aside-nav__item">
+                          <a
+                            class="aside-nav__link aside-nav__link_active icon-right"
+                            href="./history.html"
+                          >
+                            <span class="aside-nav__link-name icon-cart">История заказов</span>
+                            <span class="aside-nav__link-status">7</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="aside__box">
+                      <div class="aside__subtitle">Профиль</div>
+                      <ul class="aside-nav">
+                        <li class="aside-nav__item">
+                          <a class="aside-nav__link icon-right" href="./settings.html">
+                            <span class="aside-nav__link-name icon-settings">Редактировать профиль</span>
+                          </a>
+                        </li>
+                        <li class="aside-nav__item">
+                          <a class="aside-nav__link icon-right" href="./security.html">
+                            <span class="aside-nav__link-name icon-security">Безопасность</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="aside__footer">
+                    <a class="aside__btn" href="./login.html">Выход</a>
+                  </div>
+                </div>
+              </aside>
+              <div class="lc__main">
+                <div class="lc__box">
+                  <div class="lc__heading lc__heading_pc">
+                    <div class="lc__title _h2">История заказов</div>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="subscribe">
+              <figure class="subscribe__media">
+                <img class="subscribe__img" src="./img/content/subscribe.svg" alt="Изображение">
+              </figure>
+              <p class="subscribe__text">
+                Подпишитесь на рассылку и будьте в курсе лучших предложений
+              </p>
+              <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe-popup">
+                Подписаться
+              </button>
+            </div>
           </div>
-        </section>
+        </div>
       </main>
       <footer class="footer" data-watch>
         <div class="container">

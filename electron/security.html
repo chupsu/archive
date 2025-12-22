@@ -7,7 +7,7 @@
     <link rel="icon" href="./img/content/favicon.svg" type="image/svg+xml">
     <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
     <link rel="apple-touch-icon" href="./img/content/apple-touch-icon.png" sizes="180x180">
-    <title>Что-то пошло не так</title>
+    <title>Безопасность</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/swiper.min.js" defer></script>
     <script src="./js/nouislider.min.js" defer></script>
@@ -157,40 +157,213 @@
         </div>
       </header>
 
-      <main class="page">
-        <section class="auth">
-          <div class="page-head">
+      <main class="page page_shadow-pc">
+        <div class="lc">
+          <div class="page-head page-head_border">
             <div class="container">
               <div class="page-head__body">
                 <ul class="breadcrumbs">
                   <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link" href="./index.html">Главная</a>
                   </li>
+                  
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="./lc.html">Личный кабинет</a>
+                  </li>
                    
                   <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Регистрация</span>
+                    <span class="breadcrumbs__link">Безопасность</span>
                   </li>
                 </ul>
+                <div class="page-head__main">
+                  <h1 class="page-head__title _h1">Безопасность</h1>
+                  <a class="page-head__back icon-left" href="./lc.html">
+                    <span class="_seo">Назад</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
           <div class="container">
-            <div class="auth__body auth__body_small">
-              <div class="auth__content">
-                <figure class="auth__media">
-                  <img class="auth__img" src="./img/content/logo/logo-2.svg" alt="Изображение">
-                </figure>
-                <h1 class="auth__title _h2">Что-то пошло не так</h1>
-                <p class="auth__text">
-                  Произошла ошибка. Возможной причиной может быть нестабильное интернет-соединение или
-                  временные неполадки при подключении к сайту. Пожалуйста, обновите страницу
-                  и попробуйте повторить действие.
-                </p>
-                <a class="auth__btn btn btn_main" href="./registration.html">Обновить страницу</a>
+            <div class="lc__body">
+              <aside class="lc__aside">
+                <div class="aside">
+                  <div class="aside__head">
+                    <div class="aside__title">OOO Наименование компании</div>
+                    <ul class="aside__info">
+                      <li class="aside__info-item">8 000 999 22 00</li>
+                      <li class="aside__info-item">infoinfoinfo@mail.ru</li>
+                    </ul>
+                  </div>
+                  <div class="aside__nav">
+                    <div class="aside__box">
+                      <div class="aside__subtitle">Товары</div>
+                      <ul class="aside-nav">
+                        <li class="aside-nav__item">
+                          <a class="aside-nav__link icon-right" href="./favorite.html">
+                            <span class="aside-nav__link-name icon-fav">Избранное</span>
+                            <span class="aside-nav__link-status">135</span>
+                          </a>
+                        </li>
+                        <li class="aside-nav__item">
+                          <a class="aside-nav__link icon-right" href="./history.html">
+                            <span class="aside-nav__link-name icon-cart">История заказов</span>
+                            <span class="aside-nav__link-status">7</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="aside__box">
+                      <div class="aside__subtitle">Профиль</div>
+                      <ul class="aside-nav">
+                        <li class="aside-nav__item">
+                          <a class="aside-nav__link icon-right" href="./settings.html">
+                            <span class="aside-nav__link-name icon-settings">Редактировать профиль</span>
+                          </a>
+                        </li>
+                        <li class="aside-nav__item">
+                          <a
+                            class="aside-nav__link aside-nav__link_active icon-right"
+                            href="./security.html"
+                          >
+                            <span class="aside-nav__link-name icon-security">Безопасность</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="aside__footer">
+                    <a class="aside__btn" href="./login.html">Выход</a>
+                  </div>
+                </div>
+              </aside>
+              <div class="lc__main">
+                <div class="lc__box">
+                  <div class="lc__heading lc__heading_pc">
+                    <div class="lc__title _h2">Безопасность</div>
+                  </div>
+                  <div class="settings settings_small">
+                    <div class="settings__main">
+                      <div class="settings__box">
+                        <div class="settings__head">
+                          <div class="settings__title _h5">Смена почты (логина)</div>
+                        </div>
+                        <div class="settings__content">
+                          <div class="input-fields">
+                            <div class="input-fields__cell">
+                              <div class="input input_medium">
+                                <label class="input__main">
+                                  <!-- input::placeholder=" " должен быть не пустым -->
+                                  <input class="input__body" type="email" placeholder=" " required value='info@info.ru'>
+                                  <span class="input__placeholder">E-mail*</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- settings-notify_success settings-notify_alert settings-notify_warning -->
+                          <div class="settings-notify settings-notify_warning">
+                            <div class="settings-notify__content icon-info">
+                              <p class="settings-notify__text">
+                                Ваш e-mail: не подтвержден.
+                                <br>
+                                Вы не сможете входить в личный кабинет с его помощью.
+                              </p>
+                            </div>
+                            <div class="settings-notify__action">
+                              <button
+                                class="settings-notify__btn btn btn_neutral btn_narrow"
+                                type="button"
+                              >
+                                Подтвердить
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="settings__actions">
+                          <button class="settings__btn btn btn_main" type="button">Сохранить</button>
+                        </div>
+                      </div>
+                      <div class="settings__box">
+                        <div class="settings__head">
+                          <div class="settings__title _h5">Смена пароля</div>
+                        </div>
+                        <div class="settings__content">
+                          <div class="input-fields">
+                            <div class="input-fields__cell input-fields__cell_medium">
+                              <div class="input input_medium">
+                                <label class="input__main">
+                                  <!-- input::placeholder=" " должен быть не пустым -->
+                                  <input class="input__body" type="password" placeholder=" " required>
+                                  <span class="input__placeholder">Старый пароль*</span>
+                                </label>
+                                <div class="input__actions">
+                                  <button
+                                    class="input__btn icon-eye-close"
+                                    type="button"
+                                    data-input="password"
+                                  ></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="input-fields__cell input-fields__cell_medium">
+                              <div class="input input_medium">
+                                <label class="input__main">
+                                  <!-- input::placeholder=" " должен быть не пустым -->
+                                  <input class="input__body" type="password" placeholder=" " required>
+                                  <span class="input__placeholder">Новый пароль*</span>
+                                </label>
+                                <div class="input__actions">
+                                  <button
+                                    class="input__btn icon-eye-close"
+                                    type="button"
+                                    data-input="password"
+                                  ></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="settings__content">
+                          <p class="settings__text">
+                            Пароль может содержать от 6 до 50 символов: латинские
+                            буквы, цифры и спецсимволы
+                          </p>
+                          <p class="settings__text">
+                            После смены пароля все сеансы, кроме текущего, будут завершены. На других
+                            устройствах нужно будет заново авторизоваться.
+                          </p>
+                        </div>
+                        <div class="settings__actions">
+                          <button class="settings__btn btn btn_main" type="button">Сохранить</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="settings__actions">
+                      <button
+                        class="settings__btn settings__btn_remove btn"
+                        type="button"
+                        data-popup="#remove-popup"
+                      >
+                        Удалить профиль
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="subscribe">
+              <figure class="subscribe__media">
+                <img class="subscribe__img" src="./img/content/subscribe.svg" alt="Изображение">
+              </figure>
+              <p class="subscribe__text">
+                Подпишитесь на рассылку и будьте в курсе лучших предложений
+              </p>
+              <button class="subscribe__btn btn btn_main" type="button" data-popup="#subscribe-popup">
+                Подписаться
+              </button>
+            </div>
           </div>
-        </section>
+        </div>
       </main>
       <footer class="footer" data-watch>
         <div class="container">
@@ -353,6 +526,43 @@
           });
         })();
       </script>
+    </div>
+
+    <div class="popup" id="remove-popup">
+      <div class="popup__body popup__body_small">
+        <button class="popup__close icon-close" type="button" title="Закрыть окно" data-popup-close>
+          <span class="_seo">Закрыть окно</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__head">
+            <h3 class="popup__title _h3">Удалить аккаунт</h3>
+          </div>
+          <div class="popup__content">
+            <div class="user-form">
+              <div class="user-form__body">
+                <div class="user-form__box">
+                  <p class="user-form__text">
+                    Все Ваши данные будут удалены. Вы не сможете посмотреть заказы
+                    и воспользоваться возможностями личного кабинета. Продолжить?
+                  </p>
+                </div>
+                <div class="user-form__box user-form__box_action">
+                  <button
+                    class="user-form__btn user-form__btn_narrow btn btn_main"
+                    type="button"
+                    data-popup-close
+                  >
+                    Отменить
+                  </button>
+                  <button class="user-form__btn user-form__btn_narrow btn btn_shadow" type="submit">
+                    Да
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="popup" id="callback-popup">
