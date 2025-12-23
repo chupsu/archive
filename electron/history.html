@@ -242,6 +242,458 @@
                   <div class="lc__heading lc__heading_pc">
                     <div class="lc__title _h2">История заказов</div>
                   </div>
+                  <div class="history">
+                    <div class="history__filters">
+                      <div class="filters">
+                        <button class="filters__menu icon-filter" type="button" data-filters>
+                          <span class="_seo">Открыть фильтры</span>
+                          <span class="filters__menu-text" aria-hidden="true">Фильтр</span>
+                          <span class="_seo">Применено фильтров:</span>
+                          <span class="filters__menu-count">7</span>
+                        </button>
+                        <div class="filters__dropdown">
+                          <div class="filters__body">
+                            <form class="filters__form" action="#">
+                              <div class="filters__head">
+                                <button class="filters__close _h2 icon-left" type="button" data-filters>
+                                  <span class="_seo">Закрыть фильтры</span>
+                                  <span aria-hidden="true">Фильтр</span>
+                                </button>
+                              </div>
+                              <div class="filters__main filters__main_row">
+                                <div class="filters__box filters__box_select">
+                                  <select
+                                    data-class-modifier="btn-sort"
+                                    data-pseudo-label="Любой статус заказа"
+                                    data-list-label="Любой статус заказа"
+                                    data-show-selected
+                                  >
+                                    <option value="">Любой статус заказа</option>
+                                    <option value="Ожидание заказа">Ожидание заказа</option>
+                                    <option value="Оплачен">Оплачен</option>
+                                    <option value="Не оплачен">Не оплачен</option>
+                                  </select>
+                                </div>
+                                <div class="filters__box filters__box_select">
+                                  <select
+                                    data-class-modifier="btn-sort"
+                                    data-pseudo-label="Любой статус оплаты"
+                                    data-list-label="Любой статус оплаты"
+                                    data-show-selected
+                                  >
+                                    <option value="">Любой статус оплаты</option>
+                                    <option value="Ожидание оплаты">Ожидание оплаты</option>
+                                    <option value="Оплачено">Оплачено</option>
+                                    <option value="Не оплачено">Не оплачено</option>
+                                  </select>
+                                </div>
+                                <div class="filters__box filters__box_select">
+                                  <select
+                                    data-class-modifier="btn-sort"
+                                    data-pseudo-label="Период времени"
+                                    data-list-label="Период времени"
+                                    data-show-selected
+                                  >
+                                    <option value="">Период времени</option>
+                                    <option
+                                      value="Очень длинный пункт выбора фильтрации для демонстрации контроля контента при переполнении"
+                                    >
+                                      Очень длинный пункт выбора фильтрации для демонстрации контроля
+                                      контента при переполнении
+                                    </option>
+                                    <option value="За сегодня">За сегодня</option>
+                                    <option value="За вчера">За вчера</option>
+                                    <option value="За последние 7 дней">За последние 7 дней</option>
+                                    <option value="За текущую неделю">За текущую неделю</option>
+                                    <option value="За прошлую неделю">За прошлую неделю</option>
+                                    <option value="За последний месяц">За последний месяц</option>
+                                    <option value="За текущий месяц">За текущий месяц</option>
+                                    <option value="За прошлый месяц">За прошлый месяц</option>
+                                    <option value="За последние 3 месяца">За последние 3 месяца</option>
+                                    <option value="За последние 6 месяцев">За последние 6 месяцев</option>
+                                    <option value="За последний год">За последний год</option>
+                                    <option value="За текущий год">За текущий год</option>
+                                    <option value="За прошлый год">За прошлый год</option>
+                                    <option value="За всё время">За всё время</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="history__main">
+                      <div class="history__items">
+                        <article class="order-card">
+                          <div class="order-card__main">
+                            <div class="order-card__head">
+                              <a class="order-card__link" href="./order.html">
+                                <span class="_seo">Открыть заказ</span>
+                              </a>
+                              <div class="order-card__heading">
+                                <h4 class="order-card__title">Заказ №123456789101112</h4>
+                                <time class="order-card__date" datetime="2026-06-26 19:00">
+                                  от 19 января 2026
+                                </time>
+                              </div>
+                              <div class="order-card__info">
+                                <div class="order-card__price _h4">97 223 799 ₽</div>
+                                <div class="order-card__status"></div>
+                              </div>
+                            </div>
+                            <div class="order-card__data">
+                              <dl class="data-list">
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Статус доставки</dt>
+                                  <dd class="data-list__desc">Подготовка</dd>
+                                </div>
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Курьерская служба</dt>
+                                  <dd class="data-list__desc">СДЕК</dd>
+                                </div>
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Адрес доставки:</dt>
+                                  <dd class="data-list__desc">
+                                    Москва ул. Красная площадь д 11 к2 кв 345
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                            <div class="order-card__extra">
+                              <ul class="order-previews" data-show-all="default=3,1023.99=5,1599.99=6">
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-1.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-1.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-2.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-2.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-3.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-3.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-4.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-5.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-5.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-1.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-1.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-2.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-2.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-3.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-3.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-4.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-5.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-5.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <!-- li с кнопкой обязательно добавляем в конец -->
+                                <li class="order-previews__item order-previews__item_toggle" hidden>
+                                  <button
+                                    class="order-previews__btn"
+                                    type="button"
+                                    data-text-show="count"
+                                    data-text-hide="count"
+                                    data-show-all-btn
+                                  ></button>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="order-card__action">
+                            <a
+                              class="order-card__btn order-card__btn_head btn btn_main btn_small btn_narrow"
+                              href="#"
+                              download
+                            >
+                              Скачать накладную
+                            </a>
+                            <a
+                              class="order-card__btn btn btn_shadow btn_small btn_narrow"
+                              href="./ordering.html"
+                            >
+                              Повторить заказ
+                            </a>
+                            <a
+                              class="order-card__btn btn btn_shadow btn_warning btn_small btn_narrow"
+                              href="#"
+                            >
+                              Отменить заказ
+                            </a>
+                          </div>
+                        </article>
+                        <article class="order-card">
+                          <div class="order-card__main">
+                            <div class="order-card__head">
+                              <a class="order-card__link" href="./order.html">
+                                <span class="_seo">Открыть заказ</span>
+                              </a>
+                              <div class="order-card__heading">
+                                <h4 class="order-card__title">Заказ №123456789101112</h4>
+                                <time class="order-card__date" datetime="2026-06-26 19:00">
+                                  от 19 января 2026
+                                </time>
+                              </div>
+                              <div class="order-card__info">
+                                <div class="order-card__price _h4">53 211 ₽</div>
+                                <div class="order-card__status"></div>
+                              </div>
+                            </div>
+                            <div class="order-card__data">
+                              <dl class="data-list">
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Статус доставки</dt>
+                                  <dd class="data-list__desc">Подготовка</dd>
+                                </div>
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Курьерская служба</dt>
+                                  <dd class="data-list__desc">СДЕК</dd>
+                                </div>
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Адрес доставки:</dt>
+                                  <dd class="data-list__desc">
+                                    Москва ул. Красная площадь д 11 к2 кв 345
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                            <div class="order-card__extra">
+                              <ul class="order-previews" data-show-all="default=3,1023.99=5,1599.99=6">
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-5.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-5.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-4.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <!-- li с кнопкой обязательно добавляем в конец -->
+                                <li class="order-previews__item order-previews__item_toggle" hidden>
+                                  <button
+                                    class="order-previews__btn"
+                                    type="button"
+                                    data-text-show="count"
+                                    data-text-hide="count"
+                                    data-show-all-btn
+                                  ></button>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="order-card__action">
+                            <a
+                              class="order-card__btn order-card__btn_head btn btn_main btn_small btn_narrow"
+                              href="#"
+                              download
+                            >
+                              Скачать накладную
+                            </a>
+                            <a
+                              class="order-card__btn btn btn_shadow btn_small btn_narrow"
+                              href="./ordering.html"
+                            >
+                              Повторить заказ
+                            </a>
+                            <a
+                              class="order-card__btn btn btn_shadow btn_warning btn_small btn_narrow"
+                              href="#"
+                            >
+                              Отменить заказ
+                            </a>
+                          </div>
+                        </article>
+                        <article class="order-card">
+                          <div class="order-card__main">
+                            <div class="order-card__head">
+                              <a class="order-card__link" href="./order.html">
+                                <span class="_seo">Открыть заказ</span>
+                              </a>
+                              <div class="order-card__heading">
+                                <h4 class="order-card__title">Заказ №1234567</h4>
+                                <time class="order-card__date" datetime="2026-06-26 19:00">
+                                  от 19 января 2026
+                                </time>
+                              </div>
+                              <div class="order-card__info">
+                                <div class="order-card__price _h4">122 736 ₽</div>
+                                <div class="order-card__status"></div>
+                              </div>
+                            </div>
+                            <div class="order-card__data">
+                              <dl class="data-list">
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Статус доставки</dt>
+                                  <dd class="data-list__desc">Подготовка</dd>
+                                </div>
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Курьерская служба</dt>
+                                  <dd class="data-list__desc">СДЕК</dd>
+                                </div>
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Адрес доставки:</dt>
+                                  <dd class="data-list__desc">
+                                    Москва ул. Красная площадь д 11 к2 кв 345
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                            <div class="order-card__extra">
+                              <ul class="order-previews" data-show-all="default=3,1023.99=5,1599.99=6">
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-2.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-2.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-1.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-1.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-4.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-3.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-3.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <!-- li с кнопкой обязательно добавляем в конец -->
+                                <li class="order-previews__item order-previews__item_toggle" hidden>
+                                  <button
+                                    class="order-previews__btn"
+                                    type="button"
+                                    data-text-show="count"
+                                    data-text-hide="count"
+                                    data-show-all-btn
+                                  ></button>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="order-card__action">
+                            <a
+                              class="order-card__btn order-card__btn_head btn btn_main btn_small btn_narrow"
+                              href="#"
+                              download
+                            >
+                              Скачать накладную
+                            </a>
+                            <a
+                              class="order-card__btn btn btn_shadow btn_small btn_narrow"
+                              href="./ordering.html"
+                            >
+                              Повторить заказ
+                            </a>
+                          </div>
+                        </article>
+                        <article class="order-card">
+                          <div class="order-card__main">
+                            <div class="order-card__head">
+                              <a class="order-card__link" href="./order.html">
+                                <span class="_seo">Открыть заказ</span>
+                              </a>
+                              <div class="order-card__heading">
+                                <h4 class="order-card__title">Заказ №1234567</h4>
+                                <time class="order-card__date" datetime="2026-06-26 19:00">
+                                  от 19 января 2026
+                                </time>
+                              </div>
+                              <div class="order-card__info">
+                                <div class="order-card__price _h4">255 ₽</div>
+                                <div class="order-card__status"></div>
+                              </div>
+                            </div>
+                            <div class="order-card__data">
+                              <dl class="data-list">
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Статус доставки</dt>
+                                  <dd class="data-list__desc">Подготовка</dd>
+                                </div>
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Курьерская служба</dt>
+                                  <dd class="data-list__desc">СДЕК</dd>
+                                </div>
+                                <div class="data-list__item">
+                                  <dt class="data-list__name">Адрес доставки:</dt>
+                                  <dd class="data-list__desc">
+                                    Москва ул. Красная площадь д 11 к2 кв 345
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                            <div class="order-card__extra">
+                              <ul class="order-previews" data-show-all="default=3,1023.99=5,1599.99=6">
+                                <li class="order-previews__item">
+                                  <a class="order-previews__link" href="./product.html">
+                                    <picture><source srcset="./img/content/pic/product-5.webp" type="image/webp"><img class="order-previews__img" src="./img/content/pic/product-5.jpg" alt="Изображение"></picture>
+                                  </a>
+                                </li>
+                                <!-- li с кнопкой обязательно добавляем в конец -->
+                                <li class="order-previews__item order-previews__item_toggle" hidden>
+                                  <button
+                                    class="order-previews__btn"
+                                    type="button"
+                                    data-text-show="count"
+                                    data-text-hide="count"
+                                    data-show-all-btn
+                                  ></button>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="order-card__action">
+                            <a
+                              class="order-card__btn order-card__btn_head btn btn_main btn_small btn_narrow"
+                              href="#"
+                              download
+                            >
+                              Скачать накладную
+                            </a>
+                            <a
+                              class="order-card__btn btn btn_shadow btn_small btn_narrow"
+                              href="./ordering.html"
+                            >
+                              Повторить заказ
+                            </a>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="history__actions">
+                        <button class="history__btn btn btn_shadow" type="button">
+                          Показать еще 20 товаров
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
