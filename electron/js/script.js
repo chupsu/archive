@@ -1535,8 +1535,11 @@ class SelectConstructor {
             this.optionAction(selectItem, originalSelect, optionItem);
           } else if (targetElement.closest(this.getSelectClass(this.selectClasses.classSelectTitle))) {
             // Обработка клика на заголовок селекта
-            this.selectsСlose();
-            this.selectAction(selectItem);
+            if (selectItem.closest(`.${this.selectClasses.classSelectOpen}`)) {
+              this.selectsСlose();
+            } else {
+              this.selectAction(selectItem);
+            }
           } else if (targetElement.closest(this.getSelectClass(this.selectClasses.classSelectOption))) {
             // Обработка клика на элемент селекта
             const optionItem = targetElement.closest(
