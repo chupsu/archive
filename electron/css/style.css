@@ -65,6 +65,7 @@
 .filtered__btn_reset,
 .footer-contacts__link,
 .footer-nav__link,
+.geo-data__desc a,
 .h-categories-slider__img,
 .h-categories-slider__link::after,
 .h-categories-slider__link::before,
@@ -74,6 +75,7 @@
 .input__body,
 .input__btn,
 .lc-nav__link,
+.list-props__item a,
 .menu__btn,
 .menu__link,
 .new-card__link,
@@ -100,7 +102,6 @@
 .product-docs__link,
 .product-info__link,
 .product-order-option__btn,
-.product-props__item a,
 .product-types__more,
 .product-user-options__btn,
 .production-list__link,
@@ -142,16 +143,17 @@
 .filter-choice__reset,
 .footer-contacts__link,
 .footer-nav__link,
+.geo-data__desc a,
 .h-categories-slider__page-link,
 .header-contacts__link,
 .lc-nav__link,
+.list-props__item a,
 .menu__link,
 .order__link,
 .partners-list__link,
 .partners-slider__page-link,
 .product-docs__link,
 .product-info__link,
-.product-props__item a,
 .production-list__link,
 .production__link,
 .relation-slider__page-link,
@@ -173,16 +175,17 @@
 .filter-choice__reset:focus-visible,
 .footer-contacts__link:focus-visible,
 .footer-nav__link:focus-visible,
+.geo-data__desc a:focus-visible,
 .h-categories-slider__page-link:focus-visible,
 .header-contacts__link:focus-visible,
 .lc-nav__link:focus-visible,
+.list-props__item a:focus-visible,
 .menu__link:focus-visible,
 .order__link:focus-visible,
 .partners-list__link:focus-visible,
 .partners-slider__page-link:focus-visible,
 .product-docs__link:focus-visible,
 .product-info__link:focus-visible,
-.product-props__item a:focus-visible,
 .production-list__link:focus-visible,
 .production__link:focus-visible,
 .relation-slider__page-link:focus-visible,
@@ -205,16 +208,17 @@
 .filter-choice__reset:active,
 .footer-contacts__link:active,
 .footer-nav__link:active,
+.geo-data__desc a:active,
 .h-categories-slider__page-link:active,
 .header-contacts__link:active,
 .lc-nav__link:active,
+.list-props__item a:active,
 .menu__link:active,
 .order__link:active,
 .partners-list__link:active,
 .partners-slider__page-link:active,
 .product-docs__link:active,
 .product-info__link:active,
-.product-props__item a:active,
 .production-list__link:active,
 .production__link:active,
 .relation-slider__page-link:active,
@@ -248,13 +252,19 @@
 .filter-choice__body > *,
 .filter-choice__list > *,
 .filters__main_column > *,
+.geo-card > *,
+.geo__body > *,
+.geo__item > *,
+.geo__list > *,
 .history > *,
 .history__items > *,
 .history__main > *,
+.info-cards__item > *,
 .lc-nav__link > *,
 .lc__body > *,
 .lc__box > *,
 .lc__main > *,
+.list-props__item > *,
 .new-card__body > *,
 .new-card__content > *,
 .new-card__footer > *,
@@ -287,7 +297,6 @@
 .product-order-option__cost > *,
 .product-order__footer > *,
 .product-order__head > *,
-.product-props__item > *,
 .product__main > *,
 .production__grid > *,
 .purchased-card > *,
@@ -853,7 +862,9 @@ html._is-lock {
 ._h5,
 ._h6,
 ._wysiwyg h1,
-._wysiwyg h2 {
+._wysiwyg h2,
+._wysiwyg h3,
+.geo-data__desc a {
   font-weight: 600;
   line-height: 1;
 }
@@ -864,7 +875,9 @@ html._is-lock {
 ._h5 b,
 ._h6 b,
 ._wysiwyg h1 b,
-._wysiwyg h2 b {
+._wysiwyg h2 b,
+._wysiwyg h3 b,
+.geo-data__desc a b {
   font-weight: inherit;
   color: var(--color-accent);
 }
@@ -880,14 +893,16 @@ html._is-lock {
 ._h3 {
   font-size: var(--title-3);
 }
-._h4 {
+._h4,
+._wysiwyg h2 {
   font-size: var(--title-4);
 }
-._h5 {
+._h5,
+.geo-data__desc a {
   font-size: var(--title-5);
 }
 ._h6,
-._wysiwyg h2 {
+._wysiwyg h3 {
   font-size: var(--title-6);
 }
 ._mb {
@@ -2124,6 +2139,9 @@ input[type=radio] ~ .checkbox__icon::before {
   margin-top: var(--article-gap);
   margin-bottom: var(--article-gap);
 }
+._wysiwyg b {
+  font-weight: 600;
+}
 ._wysiwyg time {
   display: block;
   font-size: var(--text-normal);
@@ -3322,7 +3340,7 @@ input[type=radio] ~ .checkbox__icon::before {
   content: "\e90d";
 }
 .category__body {
-  padding-top: 24px;
+  padding-top: var(--gap-section-small);
 }
 .category__list {
   display: grid;
@@ -3427,9 +3445,6 @@ input[type=radio] ~ .checkbox__icon::before {
   max-width: 25em;
   font-size: var(--text-normal);
   line-height: 1;
-}
-.catalog__body {
-  padding-top: var(--gap-section-small);
 }
 .catalog__categories {
   margin-bottom: var(--gap-section-small);
@@ -4273,14 +4288,15 @@ input[type=radio] ~ .checkbox__icon::before {
 .product-user-options__btn:active {
   background-color: var(--color-shadow-400);
 }
-.product-props {
+.list-props {
   --color-border: var(--color-shadow-200);
   margin-top: -10px;
 }
-.data-props .product-props {
+.data-props .list-props,
+.requisites__data .list-props {
   --color-border: var(--color-shadow-300);
 }
-.product-props__item {
+.list-props__item {
   display: grid;
   grid-template-columns: 14fr 19fr;
   gap: var(--gap-normal-extra);
@@ -4289,14 +4305,17 @@ input[type=radio] ~ .checkbox__icon::before {
   padding: 10px 0;
   border-bottom: 1px solid var(--color-border);
 }
-.product-props__name {
+.list-props__name {
   font-size: var(--text-small);
   line-height: 1.1;
   color: var(--color-shadow-700);
 }
-.product-props__desc {
+.list-props__desc {
   font-size: var(--text-normal);
   line-height: 1;
+}
+.requisites__data .list-props__desc {
+  text-align: right;
 }
 .product-choice {
   display: flex;
@@ -4611,7 +4630,7 @@ input[type=radio] ~ .checkbox__icon::before {
   border-radius: var(--radius-normal);
 }
 .partners__body {
-  padding-top: 24px;
+  padding-top: var(--gap-section-small);
 }
 .partners__actions {
   display: flex;
@@ -4725,7 +4744,6 @@ input[type=radio] ~ .checkbox__icon::before {
   display: grid;
   gap: var(--gap-normal) var(--gap-section-medium);
   align-content: start;
-  padding-top: 24px;
 }
 .cart__main {
   display: grid;
@@ -5900,6 +5918,149 @@ input[type=radio] ~ .cart-extra__icon {
 .purchased-props__desc {
   display: inline;
 }
+.geo__body,
+.geo__item,
+.geo__list {
+  display: grid;
+  gap: var(--gap-section-large);
+  align-content: start;
+}
+.geo__map {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 200px;
+  padding: 22px;
+  overflow: hidden;
+  border-radius: var(--radius-large);
+}
+.geo__map .map {
+  position: absolute;
+  inset: 0;
+}
+.geo__btn {
+  position: relative;
+  width: 100%;
+}
+.geo-card {
+  display: grid;
+  gap: var(--gap-normal-extra);
+  align-content: start;
+}
+.geo-card__head {
+  display: flex;
+  gap: var(--gap-section-smallest);
+  align-items: center;
+  justify-content: space-between;
+}
+.geo-card__label {
+  flex-shrink: 0;
+  max-width: 40%;
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-shadow-500);
+  text-align: right;
+}
+.geo-card__desc {
+  font-size: var(--text-medium);
+}
+.geo-data {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  overflow: hidden;
+}
+.geo-data__item {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 40%;
+}
+.geo-data__name {
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-shadow-500);
+}
+.geo-data__desc {
+  font-size: var(--text-medium);
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+.geo-data__desc a {
+  color: var(--color-main);
+}
+.requisites__head {
+  margin-bottom: var(--gap-section-medium);
+}
+.requisites__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.requisites__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  order: 1;
+  margin-top: auto;
+}
+.requisites__notify {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  font-size: var(--text-small);
+  line-height: 1.1;
+  color: var(--color-shadow-700);
+  background-color: var(--color-success-100);
+  border-radius: 20px;
+}
+.requisites__notify::before {
+  flex-shrink: 0;
+  font-size: calc(2 * var(--text-small));
+}
+.requisites__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-normal);
+}
+.info-block__content:not(:last-child) {
+  margin-bottom: var(--gap-section-large);
+}
+.info-block__head:not(:last-child) {
+  margin-bottom: var(--gap-section-medium);
+}
+.info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.info-cards__item {
+  display: grid;
+  flex-grow: 1;
+  gap: 14px;
+  align-content: start;
+  width: 100%;
+  padding: 22px;
+  background-color: var(--color-shadow-200);
+  border-radius: var(--radius-medium);
+}
+.info-cards__media {
+  flex-shrink: 0;
+  width: calc(2 * var(--text-small));
+}
+.info-cards__img {
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.info-cards__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-normal);
+}
 @media (min-width: 479.98px) {
   :root {
     --title-1: 28px;
@@ -5908,7 +6069,7 @@ input[type=radio] ~ .cart-extra__icon {
     --title-5: 18px;
   }
   ._h6,
-  ._wysiwyg h2 {
+  ._wysiwyg h3 {
     line-height: 1.1;
   }
   .input-fields__cell_medium {
@@ -6058,6 +6219,11 @@ input[type=radio] ~ .cart-extra__icon {
   .data-list {
     gap: 14px 32px;
   }
+  .info-cards__item {
+    gap: 18px;
+    padding: 26px;
+    border-radius: var(--radius-large);
+  }
 }
 @media (min-width: 575.98px) {
   :root {
@@ -6169,6 +6335,7 @@ input[type=radio] ~ .cart-extra__icon {
     --gap-section-large: 36px;
     --gap-section-medium: 30px;
     --gap-section-smallest: 22px;
+    --gap-normal-extra: 8px;
   }
   body,
   html {
@@ -6178,7 +6345,7 @@ input[type=radio] ~ .cart-extra__icon {
     background-color: var(--color-shadow-200);
   }
   ._h6,
-  ._wysiwyg h2 {
+  ._wysiwyg h3 {
     line-height: 1.2;
   }
   .section__head_slider {
@@ -6468,9 +6635,6 @@ input[type=radio] ~ .cart-extra__icon {
   .category-list {
     flex-flow: row wrap;
   }
-  .catalog__body {
-    padding-top: 0;
-  }
   .catalog__head {
     position: relative;
     z-index: 1;
@@ -6595,7 +6759,7 @@ input[type=radio] ~ .cart-extra__icon {
     z-index: 1;
     margin-bottom: 24px;
   }
-  .product-props__item {
+  .list-props__item {
     grid-template-columns: 1fr 1fr;
   }
   .product-data__body {
@@ -6632,7 +6796,6 @@ input[type=radio] ~ .cart-extra__icon {
   .cart__body {
     position: relative;
     grid-template-columns: 1fr 34%;
-    padding-top: 0;
   }
   .cart__order {
     position: sticky;
@@ -6835,6 +6998,67 @@ input[type=radio] ~ .cart-extra__icon {
     padding-top: 12px;
     margin-top: 12px;
     border-color: var(--color-shadow-300);
+  }
+  .geo__list {
+    gap: 6px;
+  }
+  .geo__item {
+    position: relative;
+    padding: var(--gap-small);
+    overflow: hidden;
+    background-color: var(--color-shadow-200);
+    border-radius: var(--radius-large);
+  }
+  .geo__content {
+    position: relative;
+    z-index: 1;
+    width: 36.7%;
+    min-width: 350px;
+    height: 100%;
+    min-height: 200px;
+  }
+  .geo__map {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .geo__btn {
+    width: auto;
+  }
+  .geo-card {
+    padding: 22px;
+    background-color: var(--color-neutral);
+    border-radius: var(--radius-medium);
+  }
+  .requisites__body {
+    display: flex;
+    gap: var(--gap-section-large);
+    justify-content: space-between;
+  }
+  .requisites__content {
+    flex-shrink: 0;
+    width: 34.2%;
+    min-width: 340px;
+  }
+  .requisites__data-mob {
+    display: none;
+  }
+  .requisites__data {
+    width: calc(50% - 0.5 * var(--gap-normal));
+    margin-left: auto;
+  }
+  .info-cards {
+    gap: var(--gap-normal);
+  }
+  .info-cards_low {
+    align-items: flex-start;
+  }
+  .info-cards__item {
+    gap: 22px;
+    width: 40%;
+    max-width: calc(50% - 0.5 * var(--gap-normal));
+    padding: 30px;
   }
 }
 @media (min-width: 1023.98px) {
@@ -7253,13 +7477,13 @@ input[type=radio] ~ .cart-extra__icon {
   .product-user-options_right {
     margin-bottom: 30px;
   }
-  .product-props_col-2 {
+  .list-props_col-2 {
     -moz-column-count: 2;
     column-count: 2;
     -moz-column-gap: var(--gap-section-medium);
     column-gap: var(--gap-section-medium);
   }
-  .product-props_col-2 > * {
+  .list-props_col-2 > * {
     -moz-column-break-inside: avoid;
     break-inside: avoid;
   }
@@ -7420,6 +7644,30 @@ input[type=radio] ~ .cart-extra__icon {
   .purchased-card__count {
     font-weight: 500;
   }
+  .geo-card {
+    padding: 26px;
+  }
+  .geo-data {
+    gap: 9px 24px;
+  }
+  .requisites__content {
+    gap: var(--gap-section-small);
+  }
+  .requisites__footer {
+    gap: var(--gap-section-small);
+    align-items: flex-start;
+  }
+  .requisites__notify {
+    flex-direction: row;
+    align-items: center;
+    max-width: 434px;
+  }
+  .requisites__actions {
+    align-items: flex-start;
+  }
+  .info-cards__item {
+    width: 30px;
+  }
 }
 @media (min-width: 1023.98px) and (any-hover: hover) {
   ._is-scroll .user-bar__link:not(.user-bar__link_lc):not(:active):hover {
@@ -7452,7 +7700,7 @@ input[type=radio] ~ .cart-extra__icon {
     --title-3: 24px;
   }
   ._h6,
-  ._wysiwyg h2 {
+  ._wysiwyg h3 {
     line-height: 1.3;
   }
   .input-fields_wide {
@@ -7700,7 +7948,7 @@ input[type=radio] ~ .cart-extra__icon {
     font-size: var(--text-larger);
     border-radius: var(--radius-14);
   }
-  .product-props__name {
+  .list-props__name {
     font-size: var(--text-normal);
     line-height: 1;
   }
@@ -7987,6 +8235,21 @@ input[type=radio] ~ .cart-extra__icon {
     align-self: flex-start;
     width: var(--width-aside);
   }
+  .geo__content {
+    min-height: 250px;
+  }
+  .geo-card {
+    padding: 32px;
+  }
+  .geo-card__label,
+  .geo-data__name {
+    font-size: var(--text-normal);
+  }
+  .info-cards__item {
+    gap: 28px;
+    width: 22%;
+    padding: 34px;
+  }
 }
 @media (min-width: 1599.98px) {
   :root {
@@ -8187,6 +8450,9 @@ input[type=radio] ~ .cart-extra__icon {
   .order__item {
     gap: 26px;
     padding: 26px;
+  }
+  .geo-data {
+    gap: 12px 40px;
   }
 }
 @media (min-width: 2239.98px) {
@@ -8700,10 +8966,10 @@ input[type=radio] ~ .cart-extra__icon {
   .product-user-options_right {
     margin-bottom: 50px;
   }
-  .product-props {
+  .list-props {
     margin-top: -14px;
   }
-  .product-props__item {
+  .list-props__item {
     padding: 14px 0;
   }
   .product-choice {
@@ -8979,6 +9245,31 @@ input[type=radio] ~ .cart-extra__icon {
     gap: 28px;
     min-width: 196px;
   }
+  .geo__list {
+    gap: 8px;
+  }
+  .geo__content {
+    min-height: 354px;
+  }
+  .geo__map {
+    padding: 32px;
+  }
+  .geo-card {
+    padding: 46px;
+  }
+  .geo-data__item {
+    gap: 6px;
+  }
+  .requisites__notify {
+    gap: 28px;
+    max-width: 608px;
+    padding: 28px;
+    border-radius: var(--radius-normal);
+  }
+  .info-cards__item {
+    gap: 38px;
+    padding: 48px;
+  }
 }
 @media (max-width: 1599.98px) {
   .product-thumbs__btn {
@@ -8999,7 +9290,7 @@ input[type=radio] ~ .cart-extra__icon {
   .breadcrumbs_btn {
     display: none;
   }
-  ._wysiwyg h2 {
+  ._wysiwyg h3 {
     font-size: var(--text-large);
   }
   ._wysiwyg time {
@@ -9242,8 +9533,13 @@ input[type=radio] ~ .cart-extra__icon {
     background-color: transparent!important;
     border-radius: 0;
   }
-  .catalog__info-result,
   .production__menu {
+    display: none;
+  }
+  .catalog:first-child .catalog__body {
+    padding-top: var(--gap-section-small);
+  }
+  .catalog__info-result {
     display: none;
   }
   .catalog__action {
@@ -9363,6 +9659,9 @@ input[type=radio] ~ .cart-extra__icon {
   .partners__types {
     width: 100%;
   }
+  .cart:first-child .cart__body {
+    padding-top: var(--gap-section-small);
+  }
   .cart-card__price {
     font-weight: 800;
   }
@@ -9389,6 +9688,15 @@ input[type=radio] ~ .cart-extra__icon {
     padding-top: 16px;
     border-top: 1px solid var(--color-shadow-300);
   }
+  .geo:first-child .geo__body {
+    padding-top: var(--gap-section-small);
+  }
+  .requisites__notify {
+    order: 1;
+  }
+  .info-block:first-child .info__body {
+    padding-top: var(--gap-section-small);
+  }
 }
 @media (max-width: 575.98px) {
   ._wysiwyg .table {
@@ -9404,6 +9712,9 @@ input[type=radio] ~ .cart-extra__icon {
   }
   .special__body {
     margin: 0 var(--padding-page-offset);
+  }
+  .info-cards__btn {
+    flex-grow: 1;
   }
 }
 @media (max-width: 479.98px) {
@@ -9506,16 +9817,17 @@ input[type=radio] ~ .cart-extra__icon {
   .filter-choice__reset:not(:active):hover,
   .footer-contacts__link:not(:active):hover,
   .footer-nav__link:not(:active):hover,
+  .geo-data__desc a:not(:active):hover,
   .h-categories-slider__page-link:not(:active):hover,
   .header-contacts__link:not(:active):hover,
   .lc-nav__link:not(:active):hover,
+  .list-props__item a:not(:active):hover,
   .menu__link:not(:active):hover,
   .order__link:not(:active):hover,
   .partners-list__link:not(:active):hover,
   .partners-slider__page-link:not(:active):hover,
   .product-docs__link:not(:active):hover,
   .product-info__link:not(:active):hover,
-  .product-props__item a:not(:active):hover,
   .production-list__link:not(:active):hover,
   .production__link:not(:active):hover,
   .relation-slider__page-link:not(:active):hover,

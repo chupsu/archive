@@ -2837,6 +2837,9 @@ const slidersInit = (
           bulletActiveClass: 'slider-pagination__bullet_active',
         },
         breakpoints: {
+          768: {
+            spaceBetween: 8,
+          },
           1024: {
             spaceBetween: 10,
           },

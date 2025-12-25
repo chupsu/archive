@@ -7,7 +7,7 @@
     <link rel="icon" href="./img/content/favicon.svg" type="image/svg+xml">
     <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
     <link rel="apple-touch-icon" href="./img/content/apple-touch-icon.png" sizes="180x180">
-    <title>Редактировать профиль</title>
+    <title>Контакты</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/swiper.min.js" defer></script>
     <script src="./js/nouislider.min.js" defer></script>
@@ -157,8 +157,8 @@
         </div>
       </header>
 
-      <main class="page page_shadow-pc">
-        <div class="lc">
+      <main class="page">
+        <section class="geo _mb">
           <div class="page-head page-head_border">
             <div class="container">
               <div class="page-head__body">
@@ -166,276 +166,414 @@
                   <li class="breadcrumbs__item">
                     <a class="breadcrumbs__link" href="./index.html">Главная</a>
                   </li>
-                  
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./lc.html">Личный кабинет</a>
-                  </li>
                    
                   <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Редактировать профиль</span>
+                    <span class="breadcrumbs__link">Контакты</span>
                   </li>
                 </ul>
                 <div class="page-head__main">
-                  <h1 class="page-head__title _h1">Редактировать профиль</h1>
-                  <a class="page-head__back icon-left" href="./lc.html">
-                    <span class="_seo">Назад</span>
-                  </a>
+                  <h1 class="page-head__title _h1">Офисы</h1>
                 </div>
               </div>
             </div>
           </div>
           <div class="container">
-            <div class="lc__body">
-              <aside class="lc__aside">
-                <div class="aside">
-                  <div class="aside__head">
-                    <div class="aside__title">OOO Наименование компании</div>
-                    <ul class="aside__info">
-                      <li class="aside__info-item">8 000 999 22 00</li>
-                      <li class="aside__info-item">infoinfoinfo@mail.ru</li>
-                    </ul>
-                  </div>
-                  <div class="aside__nav">
-                    <div class="aside__box">
-                      <div class="aside__subtitle">Товары</div>
-                      <ul class="aside-nav">
-                        <li class="aside-nav__item">
-                          <a class="aside-nav__link icon-right" href="./favorite.html">
-                            <span class="aside-nav__link-name icon-fav">Избранное</span>
-                            <span class="aside-nav__link-status">135</span>
-                          </a>
-                        </li>
-                        <li class="aside-nav__item">
-                          <a class="aside-nav__link icon-right" href="./history.html">
-                            <span class="aside-nav__link-name icon-cart">История заказов</span>
-                            <span class="aside-nav__link-status">7</span>
-                          </a>
-                        </li>
-                      </ul>
+            <div class="geo__body">
+              <div class="geo__list">
+                <div class="geo__item">
+                  <div class="geo__content geo-card">
+                    <div class="geo-card__head">
+                      <div class="geo-card__title _h2">Москва</div>
+                      <div class="geo-card__label">Филиал №1</div>
                     </div>
-                    <div class="aside__box">
-                      <div class="aside__subtitle">Профиль</div>
-                      <ul class="aside-nav">
-                        <li class="aside-nav__item">
-                          <a
-                            class="aside-nav__link aside-nav__link_active icon-right"
-                            href="./settings.html"
-                          >
-                            <span class="aside-nav__link-name icon-settings">Редактировать профиль</span>
-                          </a>
-                        </li>
-                        <li class="aside-nav__item">
-                          <a class="aside-nav__link icon-right" href="./security.html">
-                            <span class="aside-nav__link-name icon-security">Безопасность</span>
-                          </a>
-                        </li>
-                      </ul>
+                    <div class="geo-card__desc">Москва ул. Красная площадь д 11 к2 кв 345</div>
+                    <div class="geo-card__data">
+                      <dl class="geo-data">
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">Телефон</dt>
+                          <dd class="geo-data__desc">
+                            <a href="tel:+74956460667">+7 (495) 646 06 67</a>
+                          </dd>
+                        </div>
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">Почта</dt>
+                          <dd class="geo-data__desc">
+                            <a href="mailto:sale@elkomplect.ru">sale@elkomplect.ru</a>
+                          </dd>
+                        </div>
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">График работы</dt>
+                          <dd class="geo-data__desc">
+                            Пн–Чт: с 9:00 до 18:00 <br>
+                            Пт: с 9:00 до 17:00
+                          </dd>
+                        </div>
+                      </dl>
                     </div>
                   </div>
-                  <div class="aside__footer">
-                    <a class="aside__btn" href="./login.html">Выход</a>
+                  <div class="geo__map">
+                    <div class="map" id="map1"></div>
+                    <a class="geo__btn btn btn_accent" href="#">Проложить маршрут на карте</a>
                   </div>
                 </div>
-              </aside>
-              <div class="lc__main">
-                <div class="lc__box">
-                  <div class="lc__heading lc__heading_pc">
-                    <div class="lc__title _h2">Редактировать профиль</div>
+                <div class="geo__item">
+                  <div class="geo__content geo-card">
+                    <div class="geo-card__head">
+                      <div class="geo-card__title _h2">Тула</div>
+                      <div class="geo-card__label">Филиал №2</div>
+                    </div>
+                    <div class="geo-card__desc">Харьковский проезд д. 2, пом. 184</div>
+                    <div class="geo-card__data">
+                      <dl class="geo-data">
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">Руководитель отдела продаж</dt>
+                          <dd class="geo-data__desc">
+                            <a href="tel:+74956460667">+7 (495) 646 06 67</a>
+                          </dd>
+                        </div>
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">Почта</dt>
+                          <dd class="geo-data__desc">
+                            <a href="mailto:longpersonalnamemail@customdomain.ru">
+                              longpersonalnamemail@customdomain.ru
+                            </a>
+                          </dd>
+                        </div>
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">График работы</dt>
+                          <dd class="geo-data__desc">
+                            Пн–Чт: с 9:00 до 18:00 <br>
+                            Пт: с 9:00 до 17:00
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
                   </div>
-                  <div class="settings settings_medium">
-                    <div class="settings__main">
-                      <div class="settings__box">
-                        <div class="settings__head">
-                          <div class="settings__title _h5">Контактная информация</div>
+                  <div class="geo__map">
+                    <div class="map" id="map2"></div>
+                    <a class="geo__btn btn btn_accent" href="#">Проложить маршрут на карте</a>
+                  </div>
+                </div>
+              </div>
+              <div class="geo__head">
+                <h2 class="geo__title _h1">Склады</h2>
+              </div>
+              <div class="geo__list">
+                <div class="geo__item">
+                  <div class="geo__content geo-card">
+                    <div class="geo-card__head">
+                      <div class="geo-card__title _h2">Москва</div>
+                      <div class="geo-card__label">Филиал №1</div>
+                    </div>
+                    <div class="geo-card__desc">Москва ул. Красная площадь д 11 к2 кв 345</div>
+                    <div class="geo-card__data">
+                      <dl class="geo-data">
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">Телефон</dt>
+                          <dd class="geo-data__desc">
+                            <a href="tel:+74956460667">+7 (495) 646 06 67</a>
+                          </dd>
                         </div>
-                        <div class="settings__content">
-                          <div class="input-fields">
-                            <div class="input-fields__cell">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="text" placeholder=" " required value='Анастасия'>
-                                  <span class="input__placeholder">Контактное лицо*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="email" placeholder=" " required value='info@info.ru'>
-                                  <span class="input__placeholder">E-mail*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="tel" placeholder=" " required value='+7 (123) 098 76 54'>
-                                  <span class="input__placeholder">Телефон*</span>
-                                </label>
-                              </div>
-                            </div>
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">График работы</dt>
+                          <dd class="geo-data__desc">
+                            Пн–Чт: с 9:00 до 18:00 <br>
+                            Пт: с 9:00 до 17:00
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="geo__map">
+                    <div class="map" id="map3"></div>
+                    <a class="geo__btn btn btn_accent" href="#">Проложить маршрут на карте</a>
+                  </div>
+                </div>
+                <div class="geo__item">
+                  <div class="geo__content geo-card">
+                    <div class="geo-card__head">
+                      <div class="geo-card__title _h2">Тула</div>
+                      <div class="geo-card__label">Филиал №2</div>
+                    </div>
+                    <div class="geo-card__desc">Харьковский проезд д. 2, пом. 184</div>
+                    <div class="geo-card__data">
+                      <dl class="geo-data">
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">Телефон</dt>
+                          <dd class="geo-data__desc">
+                            <a href="tel:+74956460667">+7 (495) 646 06 67</a>
+                          </dd>
+                        </div>
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">Руководитель отдела продаж</dt>
+                          <dd class="geo-data__desc">
+                            <a href="tel:+74956460667">+7 (495) 646 06 67</a>
+                          </dd>
+                        </div>
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">Почта</dt>
+                          <dd class="geo-data__desc">
+                            <a href="mailto:longpersonalnamemail@customdomain.ru">
+                              longpersonalnamemail@customdomain.ru
+                            </a>
+                          </dd>
+                        </div>
+                        <div class="geo-data__item">
+                          <dt class="geo-data__name">График работы</dt>
+                          <dd class="geo-data__desc">
+                            Пн–Чт: с 9:00 до 18:00 <br>
+                            Пт: с 9:00 до 17:00
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="geo__map">
+                    <div class="map" id="map4"></div>
+                    <a class="geo__btn btn btn_accent" href="#">Проложить маршрут на карте</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script src="https://api-maps.yandex.ru/2.1/?apikey=fe56076b-3bdf-425c-a83d-11dbe30b03b6&lang=ru_RU"></script>
+          <script>
+            ymaps.ready(init);
+
+            function init() {
+              const mapsData = [
+                { id: 'map1', coords: [51.845504, 42.46251], balloon: 'Филиал 1' },
+                { id: 'map2', coords: [55.597938, 37.646642], balloon: 'Филиал 2' },
+                { id: 'map3', coords: [51.845504, 42.46251], balloon: 'Филиал 1' },
+                { id: 'map4', coords: [55.597938, 37.646642], balloon: 'Филиал 2' },
+              ];
+
+              mapsData.forEach((item) => createMap(item));
+            }
+
+            function createMap(item) {
+              const zoom = 16;
+
+              const map = new ymaps.Map(item.id, {
+                center: item.coords,
+                zoom: zoom,
+                controls: [],
+              });
+
+              const placemark = new ymaps.Placemark(
+                item.coords,
+                {
+                  balloonContent: item.balloon,
+                },
+                {
+                  // Указываем, что используем кастомное изображение
+                  iconLayout: 'default#image',
+                  // URL к изображению
+                  iconImageHref: './img/content/logo/logo-2.svg',
+                  // Размер иконки в пикселях [ширина, высота]
+                  iconImageSize: [30, 30],
+                  // Смещение точки привязки
+                  iconImageOffset: [-15, -15],
+                }
+              );
+
+              map.geoObjects.add(placemark);
+
+              // Вызываем смещение сразу после добавления маркера
+              setCenterByPercent(map, item.coords);
+
+              // Дополнительно: на случай, если размеры контейнера ещё не готовы
+              map.events.once('boundschange', () => {
+                setCenterByPercent(map, item.coords);
+              });
+
+              // Пересчёт при ресайзе
+              window.addEventListener('resize', () => {
+                setCenterByPercent(map, item.coords);
+              });
+            }
+
+            // Функция: ставим маркер по процентам контейнера
+            function setCenterByPercent(map, markerCoords) {
+              const isMobile = window.innerWidth <= 767.98;
+
+              const containerSize = map.container.getSize();
+              const width = containerSize[0];
+              const height = containerSize[1];
+
+              const targetPercentX = isMobile ? 0.5 : 0.725; // ПК: 75% справа, моб: 50% по ширине
+              const targetPercentY = isMobile ? 0.35 : 0.4; // ПК: центр по высоте, моб: 30% сверху
+
+              const projection = map.options.get('projection');
+              const zoom = map.getZoom();
+
+              // Маркер в глобальных пикселях
+              const markerPx = projection.toGlobalPixels(markerCoords, zoom);
+
+              // Точка центра карты в глобальных пикселях
+              const centerPx = [
+                markerPx[0] - (targetPercentX - 0.5) * width,
+                markerPx[1] - (targetPercentY - 0.5) * height,
+              ];
+
+              const newCenter = projection.fromGlobalPixels(centerPx, zoom);
+
+              map.setCenter(newCenter, zoom, { duration: 0 });
+            }
+          </script>
+        </section>
+        <section class="requisites _mb">
+          <div class="container">
+            <div class="requisites__head">
+              <h2 class="requisites__title _h2">Наши реквизиты</h2>
+            </div>
+            <div class="requisites__body">
+              <div class="requisites__content">
+                <div class="_wysiwyg">
+                  <p>
+                    Общество с ограниченной ответственностью &laquo;Электрон-комплект&raquo; (ООО
+                    &laquo;Электрон-комплект&raquo;). Сокращенное наименование: ООО &laquo;Элком&raquo;
+                  </p>
+                  <br>
+                  <p>
+                    Телефон/Факс: <a href="tel:+74956460667">+7 (495) 646-06-67</a> <br>
+                    E-mail: <a href="mailto:sale@elkomplect.ru">sale@elkomplect.ru</a> <br>
+                    Skype: <a href="#">elkomplect</a> <br>
+                    Cайт: <a href="#">elkomplect.ru</a>
+                  </p>
+                  <br>
+                  <p>Генеральный директор &mdash; Хворостовский Александр Викторович</p>
+                </div>
+                <div class="requisites__data-mob"></div>
+                <div class="requisites__footer">
+                  <div class="requisites__actions">
+                    <a class="requisites__btn btn btn_main" href="#" download>Скачать реквизиты PDF</a>
+                  </div>
+                </div>
+              </div>
+              <div class="requisites__data" data-da=".requisites__data-mob,767,first">
+                <dl class="list-props">
+                  <div class="list-props__item">
+                    <dt class="list-props__name">ИНН</dt>
+                    <dd class="list-props__desc">7723924550</dd>
+                  </div>
+                  <div class="list-props__item">
+                    <dt class="list-props__name">КПП</dt>
+                    <dd class="list-props__desc">772401001</dd>
+                  </div>
+                  <div class="list-props__item">
+                    <dt class="list-props__name">ОГРН</dt>
+                    <dd class="list-props__desc">514 774 626 46 72</dd>
+                  </div>
+                  <div class="list-props__item">
+                    <dt class="list-props__name">ОКАТО</dt>
+                    <dd class="list-props__desc">45296569000</dd>
+                  </div>
+                  <div class="list-props__item">
+                    <dt class="list-props__name">ОКТМО</dt>
+                    <dd class="list-props__desc">45917000</dd>
+                  </div>
+                  <div class="list-props__item">
+                    <dt class="list-props__name">ОКПО</dt>
+                    <dd class="list-props__desc">11679153</dd>
+                  </div>
+                  <div class="list-props__item">
+                    <dt class="list-props__name">ОГРН</dt>
+                    <dd class="list-props__desc">514 774 626 46 72</dd>
+                  </div>
+                  <div class="list-props__item">
+                    <dt class="list-props__name">ОКВЭД</dt>
+                    <dd class="list-props__desc">
+                      46.69 46.47 46.49 46.65 46.69.2 46.69.5 46.69.9 46.90 52.10 52.24 52.29 77.39.25
+                    </dd>
+                  </div>
+                  <div class="list-props__item">
+                    <dt class="list-props__name">
+                      Адрес юридический/адрес фактический/адрес для почтовых отправлений
+                    </dt>
+                    <dd class="list-props__desc">117546, Москва, Харьковский проезд д. 2, пом. 184</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="handling">
+          <div class="container">
+            <div class="handling__body _mb">
+              <div class="handling__head">
+                <h2 class="handling__title _h1"><b>Найдем решение</b> любого вопроса</h2>
+                <p class="handling__text">Мы всегда готовы помочь в подборе нужных товаров</p>
+              </div>
+              <div class="handling__content">
+                <div class="user-form">
+                  <div class="user-form__body">
+                    <div class="user-form__box user-form__box_main">
+                      <div class="input-fields">
+                        <div class="input-fields__cell">
+                          <select
+                            data-class-modifier="input input-medium"
+                            data-pseudo-label="Выберите тему вопроса"
+                            data-show-selected
+                          >
+                            <option value="" selected>Выберите тему вопроса</option>
+                            <option value="Получить обратный звонок">Получить обратный звонок</option>
+                            <option value="Направить КП для расчета ">Направить КП для расчета</option>
+                            <option value="Приглашения для участия в тендере">
+                              Приглашения для участия в тендере
+                            </option>
+                          </select>
+                        </div>
+                        <div class="input-fields__cell input-fields__cell_medium">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="text" placeholder=" " required>
+                              <span class="input__placeholder">Ваше имя*</span>
+                            </label>
                           </div>
                         </div>
-                      </div>
-                      <div class="settings__box">
-                        <div class="settings__head">
-                          <div class="settings__title _h5">Данные о компании</div>
-                        </div>
-                        <div class="settings__content">
-                          <div class="input-fields">
-                            <div class="input-fields__cell">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="text" placeholder=" " required value='ООО “Наименование компании”'>
-                                  <span class="input__placeholder">Название компании*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="text" placeholder=" " required value='117546, Москва г, Сущевский вал, дом № 2, оф.18'>
-                                  <span class="input__placeholder">Юридический адрес*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="text" placeholder=" " required value='117546, Москва г, Сущевский вал, дом № 2, оф.18'>
-                                  <span class="input__placeholder">Фактический адрес*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="number" placeholder=" " value='123456789102'>
-                                  <span class="input__placeholder">ИНН*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="number" placeholder=" " value='773601001'>
-                                  <span class="input__placeholder">КПП*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="text" placeholder=" " required value='ПАО Сбербанк'>
-                                  <span class="input__placeholder">Банк*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="number" placeholder=" " required value='123690002369700014558'>
-                                  <span class="input__placeholder">Р/С*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="number" placeholder=" " required value='2569863245896000036001'>
-                                  <span class="input__placeholder">К/С*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="number" placeholder=" " required value='044525225'>
-                                  <span class="input__placeholder">БИК*</span>
-                                </label>
-                              </div>
-                            </div>
+                        <div class="input-fields__cell input-fields__cell_medium">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <input class="input__body" type="tel" placeholder=" " required>
+                              <span class="input__placeholder">Телефон*</span>
+                            </label>
                           </div>
                         </div>
-                      </div>
-                      <div class="settings__box">
-                        <div class="settings__head">
-                          <div class="settings__title _h5">Адрес доставки</div>
-                        </div>
-                        <div class="settings__content">
-                          <div class="input-fields">
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="text" placeholder=" " value='Анастасия'>
-                                  <span class="input__placeholder">Имя принимающего</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_medium">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="tel" placeholder=" " value='+7 (123) 098 76 54'>
-                                  <span class="input__placeholder">Телефон</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_small">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="text" placeholder=" " required value='Нижний Новгород'>
-                                  <span class="input__placeholder">Город*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_normal">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="text" placeholder=" " required value='ул. Верхние луга, д.43, к2'>
-                                  <span class="input__placeholder">Адрес*</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell input-fields__cell_smallest">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <input class="input__body" type="number" placeholder=" ">
-                                  <span class="input__placeholder">Офис</span>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="input-fields__cell">
-                              <div class="input input_medium">
-                                <label class="input__main">
-                                  <!-- input::placeholder=" " должен быть не пустым -->
-                                  <textarea class="input__body" placeholder=" "></textarea>
-                                  <span class="input__placeholder">Комментарий к доставке</span>
-                                </label>
-                              </div>
-                            </div>
+                        <div class="input-fields__cell">
+                          <div class="input input_medium">
+                            <label class="input__main">
+                              <!-- input::placeholder=" " должен быть не пустым -->
+                              <textarea class="input__body" placeholder=" "></textarea>
+                              <span class="input__placeholder">Сообщение</span>
+                            </label>
                           </div>
+                        </div>
+                        <div class="input-fields__cell">
+                          <label class="upload-file">
+                            <input class="upload-file__input" type="file">
+                            <span class="upload-file__btn icon-plus">Добавить файл</span>
+                          </label>
                         </div>
                       </div>
                     </div>
-                    <div class="settings__actions">
-                      <button class="settings__btn btn btn_main" type="button">Сохранить</button>
+                    <div class="user-form__box user-form__box_agree">
+                      <label class="checkbox checkbox_small">
+                        <input class="checkbox__input" type="checkbox">
+                        <span class="checkbox__icon icon-check"></span>
+                        <span class="checkbox__body">
+                          Я соглашаюсь с <a href="./policy.html"
+                            >Политикой конфиденциальности</a
+                          >
+                        </span>
+                      </label>
+                    </div>
+                    <div class="user-form__box user-form__box_action">
+                      <button class="user-form__btn user-form__btn_narrow btn btn_main" type="submit">
+                        Отправить
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -453,7 +591,7 @@
               </button>
             </div>
           </div>
-        </div>
+        </section>
       </main>
       <footer class="footer" data-watch>
         <div class="container">
