@@ -7,7 +7,7 @@
     <link rel="icon" href="./img/content/favicon.svg" type="image/svg+xml">
     <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
     <link rel="apple-touch-icon" href="./img/content/apple-touch-icon.png" sizes="180x180">
-    <title>Восстановление пароля</title>
+    <title>Страница не существует</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/swiper.min.js" defer></script>
     <script src="./js/nouislider.min.js" defer></script>
@@ -158,55 +158,20 @@
       </header>
 
       <main class="page">
-        <section class="auth">
-          <div class="page-head">
-            <div class="container">
-              <div class="page-head__body">
-                <ul class="breadcrumbs">
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="./index.html">Главная</a>
-                  </li>
-                   
-                  <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link">Вход</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div class="error-page">
           <div class="container">
-            <div class="auth__body auth__body_small">
-              <div class="auth__content">
-                <figure class="auth__media">
-                  <img class="auth__img" src="./img/content/logo/logo-2.svg" alt="Изображение">
-                </figure>
-                <h1 class="auth__title _h2">Восстановление пароля</h1>
-              </div>
-              <div class="auth__form">
-                <div class="user-form">
-                  <div class="user-form__body">
-                    <div class="user-form__box user-form__box_main">
-                      <div class="input-fields">
-                        <div class="input-fields__cell">
-                          <div class="input input_medium">
-                            <label class="input__main">
-                              <!-- input::placeholder=" " должен быть не пустым -->
-                              <input class="input__body" type="email" placeholder=" " required>
-                              <span class="input__placeholder">E-mail*</span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="user-form__box user-form__box_action">
-                      <button class="user-form__btn btn btn_main" type="submit">Отправить</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="error-page__body">
+              <figure class="error-page__media">
+                <img class="error-page__img" src="./img/content/404.svg" alt="Изображение">
+              </figure>
+              <p class="error-page__text">
+                Запрашиваемая страница не существует. Возможно страница устарела, была удалена или
+                был введен не верный адрес в адресную строку.
+              </p>
+              <a class="error-page__btn btn btn_main" href="./index.html">На главную</a>
             </div>
           </div>
-        </section>
+        </div>
       </main>
       <footer class="footer" data-watch>
         <div class="container">
