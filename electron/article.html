@@ -23,7 +23,7 @@
         <div class="header__top">
           <div class="container">
             <nav class="menu" data-da=".header__main,1023,last">
-              <button class="menu__btn icon-menu" type="button" data-menu>
+              <button class="menu__btn btn btn_main icon-menu" type="button" data-menu>
                 <span class="_seo">Меню сайта</span>
               </button>
               <div class="menu__body">
@@ -97,43 +97,937 @@
               <a class="header__btn btn btn_main icon-grid" href="./production.html">Каталог</a>
               <div class="header__search">
                 <div class="search">
-                  <button class="search__menu icon-search" type="button" title="Поиск" data-search>
+                  <button
+                    class="search__menu btn btn_shadow icon-search"
+                    type="button"
+                    title="Поиск"
+                    data-search
+                  >
                     <span class="_seo">Поиск</span>
                   </button>
                   <div class="search__dropdown">
                     <div class="search__body">
                       <form class="search__form" action="#">
                         <div class="search__main">
-                          <input class="search__input" type="search" placeholder="Найти">
-                          <button class="search__btn search__btn_submit icon-search" type="submit">
-                            <span class="_seo">Искать</span>
-                          </button>
-                        </div>
-                        <div class="search__action">
-                          <!-- <button
-                            class="search__btn search__btn_close icon-arr-left"
-                            type="button"
-                            title="Закрыть поиск"
-                            data-search
-                          >
+                          <div class="search__type" data-da=".search__form,1023,last">
+                            <label class="search-type">
+                              <input class='search-type__input' type="checkbox">
+                              <span class="search-type__btn">
+                                <span class="search-type__text">
+                                  <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.87498 12.9877C3.48553 12.9877 0.726088 10.2492 0.726088 6.88227C0.726088 3.51538 3.48395 0.761224 6.87498 0.761224C7.71761 0.761224 8.52087 0.9316 9.25168 1.23797C9.16663 1.45523 9.1178 1.69126 9.1178 1.93823C9.1178 3.00582 9.99509 3.8702 11.0693 3.8702C11.4315 3.8702 11.7701 3.77173 12.0599 3.60292C12.6679 4.55171 13.0207 5.67713 13.0207 6.88384C13.0207 10.2492 10.2628 12.9893 6.87182 12.9893L6.87498 12.9877ZM12.6144 3.1168C12.8679 2.79167 13.0207 2.38214 13.0207 1.93823C13.0207 0.864387 12.1513 0 11.0693 0C10.5054 0 9.99824 0.239152 9.64229 0.618983C8.79492 0.248531 7.85936 0.0406403 6.8734 0.0406403C3.0839 0.0406403 0 3.10429 0 6.88227C0 10.6603 3.0839 13.7083 6.8734 13.7083C10.6629 13.7083 13.7484 10.6446 13.7484 6.88227C13.7484 5.49113 13.331 4.19845 12.6159 3.1168H12.6144Z" fill="white"/>
+                                    <path d="M6.94615 3.5C5.04825 3.5 3.5 5.02557 3.5 6.92316C3.5 8.82075 5.04982 10.3338 6.94615 10.3338C8.84248 10.3338 10.3923 8.80824 10.3923 6.92316C10.3923 5.03808 8.85665 3.5 6.94615 3.5Z" fill="white"/>
+                                  </svg>
+                                  <span>AI поиск</span>
+                                </span>
+                              </span>
+                              <span class="search-type__desc">Включи умный поиск</span>
+                            </label>
+                          </div>
+                          <button class="search__btn search__btn_close btn icon-left" type="button" data-search>
                             <span class="_seo">Закрыть поиск</span>
                           </button>
-                          <button
-                            class="search__btn search__btn_reset icon-cross"
-                            type="button"
-                            title="Очистить"
-                          >
-                            <span class="_seo">Очистить</span>
-                          </button> -->
-                          <select data-class-modifier="search" data-show-selected data-speed="0">
-                            <option value="Искать везде" selected>Искать везде</option>
-                            <option value="Каталог">В каталоге</option>
-                            <option value="Блог">В блоге</option>
-                          </select>
+                          <div class="search__field">
+                            <input class="search__input" type="search" placeholder="Что ищете">
+                          </div>
+                          <div class="search__action">
+                            <button
+                              class="search__btn search__btn_reset btn btn_neutral btn_link icon-cancel"
+                              type="reset"
+                            >
+                              <span class="_seo">Сбросить поиск</span>
+                            </button>
+                            <button
+                              class="search__btn search__btn_submit btn btn_main icon-search"
+                              type="submit"
+                            >
+                              <span class="_seo">Искать</span>
+                            </button>
+                          </div>
                         </div>
                       </form>
+                      <div class="search__results-dropdown">
+                        <div class="search__results">
+                          <div class="finding">
+                            <div class="finding__box finding__box_pt">
+                              <div class="finding__head">
+                                <div class="finding__title">История поиск</div>
+                                <a class="finding__link" href="#">Очистить</a>
+                              </div>
+                              <ul class="finding-list">
+                                <li class="finding-list__item">
+                                  <a class="finding-list__link icon-time" href="./search.html">
+                                    <span class="finding-list__text">
+                                      Дымоу<span>ловит</span>ели для лазерных резчиков, граверов и 3D принтеров
+                                      для лазерных резчиков, граверов и 3D принтеров
+                                    </span>
+                                  </a>
+                                </li>
+                                <li class="finding-list__item">
+                                  <a class="finding-list__link icon-time" href="./search.html">
+                                    <span class="finding-list__text">Паяльное оборудование</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="finding__box">
+                              <div class="finding__head">
+                                <div class="finding__title">Популярные запросы</div>
+                              </div>
+                              <ul class="finding-list">
+                                <li class="finding-list__item">
+                                  <a class="finding-list__link icon-search" href="./search.html">
+                                    <span class="finding-list__text">Электронные компоненты</span>
+                                  </a>
+                                </li>
+                                <li class="finding-list__item">
+                                  <a class="finding-list__link icon-search" href="./search.html">
+                                    <span class="finding-list__text">Паяльное оборудование</span>
+                                  </a>
+                                </li>
+                                <li class="finding-list__item">
+                                  <a class="finding-list__link icon-search" href="./search.html">
+                                    <span class="finding-list__text">Технологическое оборудование</span>
+                                  </a>
+                                </li>
+                                <li class="finding-list__item">
+                                  <a class="finding-list__link icon-search" href="./search.html">
+                                    <span class="finding-list__text">Паяльное оборудование</span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="finding__box finding__box_pt finding__box_pb finding__box_col-right">
+                              <div class="finding-product">
+                                <div class="finding-product__items">
+                                  <div class="finding-product__item">
+                                    <article class="product-card">
+                                      <a class="product-card__link" href="./product.html"></a>
+                                      <div class="product-card__body">
+                                        <figure class="product-card__media">
+                                          <picture><source srcset="./img/content/pic/product-2.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-2.jpg" alt="Изображение"></picture>
+                                        </figure>
+                                        <div class="product-card__content">
+                                          <div class="product-card__head">
+                                            <ul class="product-status">
+                                              <li class="product-status__item" style="background-color: var(--color-accent)">В наличии</li>
+                                              <li class="product-status__item" style="background-color: var(--color-alert-200)">
+                                                Распродажа
+                                              </li>
+                                              <li class="product-status__item" style="background-color: var(--color-main)">
+                                                Быстрая доставка
+                                              </li>
+                                            </ul>
+                                            <h3 class="product-card__title">
+                                              CRAMOLIN Positiv-Resist. Светочувствительный лак для фотолитографических процессов 200 мл
+                                            </h3>
+                                          </div>
+                                          <div class="product-card__extra">
+                                            <dl class="card-spec">
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Код товара</dt>
+                                                <dd class="card-spec__desc">123456790</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Напряжение на каждый инструмент</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Антистатическая защита</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Точность поддержания заданной температуры</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Напряжение на каждый инструмент</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                            </dl>
+                                            <div class="product-card__action">
+                                              <ul class="product-types product-types_main">
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-1.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-1.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-3.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-1.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-3.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                              </ul>
+                                              <button
+                                                class="product-card__favourite"
+                                                type="button"
+                                                data-favourites
+                                                title="Добавить в избранное"
+                                              >
+                                                <span class="_seo">Добавить в избранное</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                          <div class="product-card__footer">
+                                            <div class="product-card__cost">29 698 207 ₽</div>
+                                            <div class="product-card__order">
+                                              <div class="product-card__quantity">
+                                                <div class="quantity quantity_shadow" data-quantity>
+                                                  <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
+                                                    <span class="_seo">Меньше</span>
+                                                  </button>
+                                                  <div class="quantity__main">
+                                                    <input class="quantity__input" type="text" value="1"
+                                                      data-quantity-value
+                                                      data-quantity-min="1"
+                                                      data-quantity-max="9999"
+                                                    >
+                                                  </div>
+                                                  <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
+                                                    <span class="_seo">Больше</span>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                              <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
+                                                <span class="_seo">Добавить в корзину</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                  <div class="finding-product__item">
+                                    <article class="product-card">
+                                      <a class="product-card__link" href="./product.html"></a>
+                                      <div class="product-card__body">
+                                        <figure class="product-card__media">
+                                          <picture><source srcset="./img/content/pic/product-1.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-1.jpg" alt="Изображение"></picture>
+                                        </figure>
+                                        <div class="product-card__content">
+                                          <div class="product-card__head">
+                                            <ul class="product-status">
+                                              <li class="product-status__item" style="background-color: var(--color-accent)">В наличии</li>
+                                            </ul>
+                                            <h3 class="product-card__title">Hakko FX-888D (70 Вт). Паяльная станция</h3>
+                                          </div>
+                                          <div class="product-card__extra">
+                                            <dl class="card-spec">
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Код товара</dt>
+                                                <dd class="card-spec__desc">123456790</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Точность поддержания заданной температуры</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Антистатическая защита</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                            </dl>
+                                            <div class="product-card__action">
+                                              <button
+                                                class="product-card__favourite"
+                                                type="button"
+                                                data-favourites
+                                                title="Добавить в избранное"
+                                              >
+                                                <span class="_seo">Добавить в избранное</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                          <div class="product-card__footer">
+                                            <div class="product-card__cost">
+                                              <div class="product-card__price">Цена по запросу</div>
+                                            </div>
+                                            <div class="product-card__order">
+                                              <div class="product-card__quantity">
+                                                <div class="quantity quantity_shadow" data-quantity>
+                                                  <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
+                                                    <span class="_seo">Меньше</span>
+                                                  </button>
+                                                  <div class="quantity__main">
+                                                    <input class="quantity__input" type="text" value="1"
+                                                      data-quantity-value
+                                                      data-quantity-min="1"
+                                                      data-quantity-max="9999"
+                                                    >
+                                                  </div>
+                                                  <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
+                                                    <span class="_seo">Больше</span>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                              <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
+                                                <span class="_seo">Добавить в корзину</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                  <div class="finding-product__item">
+                                    <article class="product-card">
+                                      <a class="product-card__link" href="./product.html"></a>
+                                      <div class="product-card__body">
+                                        <figure class="product-card__media">
+                                          <picture><source srcset="./img/content/pic/product-3.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-3.jpg" alt="Изображение"></picture>
+                                        </figure>
+                                        <div class="product-card__content">
+                                          <div class="product-card__head">
+                                            <h3 class="product-card__title">Бюрократ CH-607</h3>
+                                          </div>
+                                          <div class="product-card__extra">
+                                            <div class="product-card__action">
+                                              <ul class="product-types product-types_main">
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-1.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-3.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                              </ul>
+                                              <button
+                                                class="product-card__favourite"
+                                                type="button"
+                                                data-favourites
+                                                title="Добавить в избранное"
+                                              >
+                                                <span class="_seo">Добавить в избранное</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                          <div class="product-card__footer">
+                                            <div class="product-card__cost">108 207 ₽</div>
+                                            <div class="product-card__order">
+                                              <div class="product-card__quantity">
+                                                <div class="quantity quantity_shadow" data-quantity>
+                                                  <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
+                                                    <span class="_seo">Меньше</span>
+                                                  </button>
+                                                  <div class="quantity__main">
+                                                    <input class="quantity__input" type="text" value="1"
+                                                      data-quantity-value
+                                                      data-quantity-min="1"
+                                                      data-quantity-max="9999"
+                                                    >
+                                                  </div>
+                                                  <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
+                                                    <span class="_seo">Больше</span>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                              <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
+                                                <span class="_seo">Добавить в корзину</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                  <div class="finding-product__item">
+                                    <article class="product-card">
+                                      <a class="product-card__link" href="./product.html"></a>
+                                      <div class="product-card__body">
+                                        <figure class="product-card__media">
+                                          <picture><source srcset="./img/content/pic/product-4.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-4.jpg" alt="Изображение"></picture>
+                                        </figure>
+                                        <div class="product-card__content">
+                                          <div class="product-card__head">
+                                            <h3 class="product-card__title">Codyson CD-7810A. Ультразвуковая ванна 750 мл</h3>
+                                          </div>
+                                          <div class="product-card__extra">
+                                            <div class="product-card__action">
+                                              <button
+                                                class="product-card__favourite"
+                                                type="button"
+                                                data-favourites
+                                                title="Добавить в избранное"
+                                              >
+                                                <span class="_seo">Добавить в избранное</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                          <div class="product-card__footer">
+                                            <div class="product-card__cost">207 ₽</div>
+                                            <div class="product-card__order">
+                                              <div class="product-card__quantity">
+                                                <div class="quantity quantity_shadow" data-quantity>
+                                                  <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
+                                                    <span class="_seo">Меньше</span>
+                                                  </button>
+                                                  <div class="quantity__main">
+                                                    <input class="quantity__input" type="text" value="1"
+                                                      data-quantity-value
+                                                      data-quantity-min="1"
+                                                      data-quantity-max="9999"
+                                                    >
+                                                  </div>
+                                                  <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
+                                                    <span class="_seo">Больше</span>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                              <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
+                                                <span class="_seo">Добавить в корзину</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                  <div class="finding-product__item">
+                                    <article class="product-card">
+                                      <a class="product-card__link" href="./product.html"></a>
+                                      <div class="product-card__body">
+                                        <figure class="product-card__media">
+                                          <picture><source srcset="./img/content/pic/product-5.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-5.jpg" alt="Изображение"></picture>
+                                        </figure>
+                                        <div class="product-card__content">
+                                          <div class="product-card__head">
+                                            <ul class="product-status">
+                                              <li class="product-status__item" style="background-color: var(--color-shadow-400)">Остаток</li>
+                                            </ul>
+                                            <h3 class="product-card__title">
+                                              ELK-1403-2. Браслет антистатический металлический, кнопка 10 мм
+                                            </h3>
+                                          </div>
+                                          <div class="product-card__extra">
+                                            <dl class="card-spec">
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Код товара</dt>
+                                                <dd class="card-spec__desc">123456790</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Точность поддержания заданной температуры</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                            </dl>
+                                            <div class="product-card__action">
+                                              <ul class="product-types product-types_main">
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-1.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-3.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                              </ul>
+                                              <button
+                                                class="product-card__favourite"
+                                                type="button"
+                                                data-favourites
+                                                title="Добавить в избранное"
+                                              >
+                                                <span class="_seo">Добавить в избранное</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                          <div class="product-card__footer">
+                                            <div class="product-card__cost">98 207 ₽</div>
+                                            <div class="product-card__order">
+                                              <div class="product-card__quantity">
+                                                <div class="quantity quantity_shadow" data-quantity>
+                                                  <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
+                                                    <span class="_seo">Меньше</span>
+                                                  </button>
+                                                  <div class="quantity__main">
+                                                    <input class="quantity__input" type="text" value="1"
+                                                      data-quantity-value
+                                                      data-quantity-min="1"
+                                                      data-quantity-max="9999"
+                                                    >
+                                                  </div>
+                                                  <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
+                                                    <span class="_seo">Больше</span>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                              <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
+                                                <span class="_seo">Добавить в корзину</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                  <div class="finding-product__item">
+                                    <article class="product-card">
+                                      <a class="product-card__link" href="./product.html"></a>
+                                      <div class="product-card__body">
+                                        <figure class="product-card__media">
+                                          <picture><source srcset="./img/content/pic/product-2.webp" type="image/webp"><img class="product-card__img" src="./img/content/pic/product-2.jpg" alt="Изображение"></picture>
+                                        </figure>
+                                        <div class="product-card__content">
+                                          <div class="product-card__head">
+                                            <ul class="product-status">
+                                              <li class="product-status__item" style="background-color: var(--color-accent)">В наличии</li>
+                                              <li class="product-status__item" style="background-color: var(--color-alert-200)">
+                                                Распродажа
+                                              </li>
+                                              <li class="product-status__item" style="background-color: var(--color-main)">
+                                                Быстрая доставка
+                                              </li>
+                                            </ul>
+                                            <h3 class="product-card__title">
+                                              CRAMOLIN Positiv-Resist. Светочувствительный лак для фотолитографических процессов 200 мл
+                                            </h3>
+                                          </div>
+                                          <div class="product-card__extra">
+                                            <dl class="card-spec">
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Код товара</dt>
+                                                <dd class="card-spec__desc">123456790</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Напряжение на каждый инструмент</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Антистатическая защита</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Точность поддержания заданной температуры</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                              <div class="card-spec__item">
+                                                <dt class="card-spec__name">Напряжение на каждый инструмент</dt>
+                                                <dd class="card-spec__desc">23.5 В</dd>
+                                              </div>
+                                            </dl>
+                                            <div class="product-card__action">
+                                              <ul class="product-types product-types_main">
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-1.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-1.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-3.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-1.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-3.svg" alt="Изображение">
+                                                </li>
+                                                <li class="product-types__item">
+                                                  <img class="product-types__img" src="./img/icons/type-2.svg" alt="Изображение">
+                                                </li>
+                                              </ul>
+                                              <button
+                                                class="product-card__favourite"
+                                                type="button"
+                                                data-favourites
+                                                title="Добавить в избранное"
+                                              >
+                                                <span class="_seo">Добавить в избранное</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                          <div class="product-card__footer">
+                                            <div class="product-card__cost">29 698 207 ₽</div>
+                                            <div class="product-card__order">
+                                              <div class="product-card__quantity">
+                                                <div class="quantity quantity_shadow" data-quantity>
+                                                  <button class="quantity__btn icon-minus" type="button" data-quantity-button="minus">
+                                                    <span class="_seo">Меньше</span>
+                                                  </button>
+                                                  <div class="quantity__main">
+                                                    <input class="quantity__input" type="text" value="1"
+                                                      data-quantity-value
+                                                      data-quantity-min="1"
+                                                      data-quantity-max="9999"
+                                                    >
+                                                  </div>
+                                                  <button class="quantity__btn icon-plus" type="button" data-quantity-button="plus">
+                                                    <span class="_seo">Больше</span>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                              <button class="product-card__buy icon-plus" type="button" title="Добавить в корзину" data-buy>
+                                                <span class="_seo">Добавить в корзину</span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                </div>
+                                <div class="finding-product__actions">
+                                  <a
+                                    class="finding-product__btn btn btn_shadow btn_link"
+                                    href="./search.html"
+                                  >
+                                    Посмотреть все
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="finding__box">
+                              <div class="finding__head finding__head_tall">
+                                <div class="finding__title">Бренды</div>
+                                <a class="finding__link" href="./partners.html">Показать все</a>
+                              </div>
+                              <div class="finding-partner">
+                                <div class="finding-partner__wrapper">
+                                  <ul class="finding-partner__items">
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-1.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-1.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-2.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-2.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-3.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-3.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-4.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-4.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-5.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-5.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-6.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-6.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-7.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-7.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-8.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-8.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                    <li class="finding-partner__item">
+                                      <a class="partner-card" href="./catalog.html?a4tech">
+                                        <picture><source srcset="./img/content/logo/partner-9.webp" type="image/webp"><img class="partner-card__img" src="./img/content/logo/partner-9.png" alt="Название производителя"></picture>
+                                        <span class="_seo">Товары производителя</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="finding__box finding__box_pt finding__box_pb finding__box_shadow">
+                              <div class="finding__head finding__head_tall">
+                                <div class="finding__title">Полезные статьи</div>
+                                <a class="finding__link" href="./blog.html">Показать все</a>
+                              </div>
+                              <div class="finding-blog">
+                                <div class="finding-blog__items">
+                                  <div class="finding-blog__item">
+                                    <article class="small-new-card">
+                                      <a class="small-new-card__link" href="./article.html"></a>
+                                      <div class="small-new-card__body">
+                                        <div class="small-new-card__content">
+                                          <div class="small-new-card__head">
+                                            <time class="small-new-card__date" datetime="2025-05-25 19:00">
+                                              14.04.2026
+                                            </time>
+                                            <h3 class="small-new-card__title _h3">
+                                              Международная выставка электроники: компоненты и технологии,
+                                              материалы и оборудование, встраиваемые системы
+                                              и конечные решения
+                                            </h3>
+                                          </div>
+                                          <div class="small-new-card__footer">
+                                            <p class="small-new-card__text">
+                                              ExpoElectronica &mdash; крупнейшая по количеству
+                                              участников и посетителей в России и ЕАЭС
+                                              международная выставка электроники, которая представляет всю
+                                              цепочку производства от изготовления компонентов
+                                              до разработки и сборки конечных электронных систем.
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                  <div class="finding-blog__item">
+                                    <article class="small-new-card">
+                                      <a class="small-new-card__link" href="./article.html"></a>
+                                      <div class="small-new-card__body">
+                                        <div class="small-new-card__content">
+                                          <div class="small-new-card__head">
+                                            <time class="small-new-card__date" datetime="2025-05-25 19:00">
+                                              14.04.2026
+                                            </time>
+                                            <h3 class="small-new-card__title _h3">
+                                              Надёжное лабораторное оборудование для вашего бизнеса
+                                            </h3>
+                                          </div>
+                                          <div class="small-new-card__footer">
+                                            <p class="small-new-card__text">
+                                              Современное и качественное лабораторное оборудование
+                                              от ведущих производителей.
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                  <div class="finding-blog__item">
+                                    <article class="small-new-card">
+                                      <a class="small-new-card__link" href="./article.html"></a>
+                                      <div class="small-new-card__body">
+                                        <div class="small-new-card__content">
+                                          <div class="small-new-card__head">
+                                            <time class="small-new-card__date" datetime="2025-05-25 19:00">
+                                              14.04.2026
+                                            </time>
+                                            <h3 class="small-new-card__title _h3">
+                                              Промышленная мебель для эффективной организации рабочих мест
+                                            </h3>
+                                          </div>
+                                          <div class="small-new-card__footer">
+                                            <p class="small-new-card__text">
+                                              Компания Электрон-комплект предлагает широкий выбор промышленной
+                                              мебели &mdash; от слесарных верстаков до полностью
+                                              укомплектованных рабочих мест, учитывающей специфику
+                                              технологических процессов и нагрузку.
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                  <div class="finding-blog__item">
+                                    <article class="small-new-card">
+                                      <a class="small-new-card__link" href="./article.html"></a>
+                                      <div class="small-new-card__body">
+                                        <div class="small-new-card__content">
+                                          <div class="small-new-card__head">
+                                            <time class="small-new-card__date" datetime="2025-05-25 19:00">
+                                              14.04.2026
+                                            </time>
+                                            <h3 class="small-new-card__title _h3">
+                                              Надёжное лабораторное оборудование для вашего бизнеса
+                                            </h3>
+                                          </div>
+                                          <div class="small-new-card__footer">
+                                            <p class="small-new-card__text">
+                                              Современное и качественное лабораторное оборудование
+                                              от ведущих производителей.
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </article>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <!-- Example usage: -->
+                  <!-- Search.on('focus', (e) => {console.log(e)}) -->
+                  <!-- Search.on('blur', (e) => {console.log(e)}) -->
+                  <!-- Search.on('input', (e) => {console.log(e)}) -->
+                  <!-- Search.on('click', (e) => {console.log(e)}) -->
+                  <!-- Search.on('reset', () => {console.log('reset')}) -->
+                  <!-- Search.destroy() -->
+                  <script>
+                    window.addEventListener('search:ready', (e) => {
+                      let productSlider;
+                      let partnerSlider;
+                      let blogSlider;
+                      let initSlidersBreakpoint = 1023.98;
+                      let initSlidersMatchMedia = window.matchMedia(`(min-width: ${initSlidersBreakpoint}px)`);
+
+                      Search.on('input', (e) => {
+                        Search.wrapper.classList.toggle('_is-active', !!e.target.value);
+
+                        if (!!e.target.value) {
+                          const productSliderBody = Search.wrapper.querySelector('.finding-product');
+                          const partnerSliderBody = Search.wrapper.querySelector('.finding-partner__wrapper');
+                          const blogSliderBody = Search.wrapper.querySelector('.finding-blog');
+
+                          if (productSlider) {
+                            productSlider.destroy(true, true);
+                          }
+
+                          if (partnerSlider) {
+                            partnerSlider.destroy(true, true);
+                          }
+
+                          if (blogSlider) {
+                            blogSlider.destroy(true, true);
+                          }
+
+                          if (partnerSliderBody) {
+                            partnerSlider = new Swiper(partnerSliderBody, {
+                              slidesPerView: 'auto',
+                              spaceBetween: 8,
+                              resistanceRatio: 0,
+                              wrapperClass: 'finding-partner__items',
+                              slideClass: 'finding-partner__item',
+                              slideActiveClass: 'finding-partner__item_active',
+                              slidePrevClass: 'finding-partner__item_prev',
+                              slideNextClass: 'finding-partner__item_next',
+                              breakpoints: {
+                                2240: {
+                                  spaceBetween: 10,
+                                },
+                              },
+                            });
+                          }
+
+                          function slidersInit() {
+                            if (window.innerWidth < initSlidersBreakpoint) {
+                              if (
+                                productSliderBody &&
+                                !productSliderBody.classList.contains('swiper-initialized')
+                              ) {
+                                productSlider = new Swiper(productSliderBody, {
+                                  slidesPerView: 'auto',
+                                  spaceBetween: 6,
+                                  resistanceRatio: 0,
+                                  observer: true,
+                                  observeParents: true,
+                                  wrapperClass: 'finding-product__items',
+                                  slideClass: 'finding-product__item',
+                                  slideActiveClass: 'finding-product__item_active',
+                                  slidePrevClass: 'finding-product__item_prev',
+                                  slideNextClass: 'finding-product__item_next',
+                                });
+                              }
+
+                              if (blogSliderBody && !blogSliderBody.classList.contains('swiper-initialized')) {
+                                blogSlider = new Swiper(blogSliderBody, {
+                                  slidesPerView: 'auto',
+                                  spaceBetween: 6,
+                                  resistanceRatio: 0,
+                                  observer: true,
+                                  observeParents: true,
+                                  wrapperClass: 'finding-blog__items',
+                                  slideClass: 'finding-blog__item',
+                                  slideActiveClass: 'finding-blog__item_active',
+                                  slidePrevClass: 'finding-blog__item_prev',
+                                  slideNextClass: 'finding-blog__item_next',
+                                });
+                              }
+                            }
+
+                            if (window.innerWidth >= initSlidersBreakpoint) {
+                              if (productSlider) {
+                                productSlider.destroy(true, true);
+                              }
+
+                              if (blogSlider) {
+                                blogSlider.destroy(true, true);
+                              }
+                            }
+                          }
+
+                          slidersInit();
+                          initSlidersMatchMedia.addEventListener('change', () => {
+                            slidersInit();
+                          });
+                        } else {
+                          if (productSlider) {
+                            productSlider.destroy(true, true);
+                          }
+
+                          if (partnerSlider) {
+                            partnerSlider.destroy(true, true);
+                          }
+
+                          if (blogSlider) {
+                            blogSlider.destroy(true, true);
+                          }
+                        }
+                      });
+
+                      Search.on('reset', () => {
+                        Search.wrapper.classList.remove('_is-active');
+
+                        if (productSlider) {
+                          productSlider.destroy(true, true);
+                        }
+
+                        if (partnerSlider) {
+                          partnerSlider.destroy(true, true);
+                        }
+
+                        if (blogSlider) {
+                          blogSlider.destroy(true, true);
+                        }
+                      });
+                    });
+                  </script>
                 </div>
               </div>
             </div>
@@ -467,7 +1361,7 @@
                         <div class="new-card__content">
                           <div class="new-card__head">
                             <time class="new-card__date" datetime="2025-05-25 19:00">14.04.2026</time>
-                            <h3 class="new-card__title">
+                            <h3 class="new-card__title _h3">
                               Международная выставка электроники: компоненты и технологии, материалы
                               и оборудование, встраиваемые системы и конечные решения
                             </h3>
@@ -493,7 +1387,7 @@
                         <div class="new-card__content">
                           <div class="new-card__head">
                             <time class="new-card__date" datetime="2025-05-25 19:00">14.04.2026</time>
-                            <h3 class="new-card__title">
+                            <h3 class="new-card__title _h3">
                               Надёжное лабораторное оборудование для вашего бизнеса
                             </h3>
                           </div>
@@ -515,7 +1409,7 @@
                         <div class="new-card__content">
                           <div class="new-card__head">
                             <time class="new-card__date" datetime="2025-05-25 19:00">14.04.2026</time>
-                            <h3 class="new-card__title">
+                            <h3 class="new-card__title _h3">
                               Промышленная мебель для эффективной организации рабочих мест
                             </h3>
                           </div>

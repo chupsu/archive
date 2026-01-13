@@ -597,12 +597,10 @@ function showMore() {
     if (matchMedia.matches || !matchMedia) {
       if (hiddenHeight < getOriginalHeight(showMoreContent)) {
         _slideUp(showMoreContent, 0, hiddenHeight);
-        console.log('y');
         showMoreButton.hidden = false;
       } else {
         _slideDown(showMoreContent, 0, hiddenHeight);
         showMoreButton.hidden = true;
-        console.log('n');
       }
     } else {
       _slideDown(showMoreContent, 0, hiddenHeight);
@@ -24313,13 +24311,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import AirDatepicker from "air-datepicker";
 
 window.Swiper = swiper_bundle__WEBPACK_IMPORTED_MODULE_11__["default"];
 window.noUiSlider = nouislider__WEBPACK_IMPORTED_MODULE_12__["default"];
 window.ClipboardJS = clipboard__WEBPACK_IMPORTED_MODULE_14__;
 window.Masonry = masonry_layout__WEBPACK_IMPORTED_MODULE_15__;
-// window.AirDatepicker = AirDatepicker;
 
 window.addEventListener('load', function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp)();
@@ -24359,8 +24355,6 @@ window.addEventListener('load', function () {
   const matchMediaMi4 = window.matchMedia(`(min-width: ${$md4}px)`);
   const matchMediaMi5 = window.matchMedia(`(min-width: ${$md5}px)`);
 
-  // matchMediaMi3.addEventListener("change", () => {});
-
   matchMediaMi2.addEventListener('change', () => {
     if (document.documentElement.classList.contains('_is-menu-open')) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
@@ -24373,17 +24367,6 @@ window.addEventListener('load', function () {
   const wrappedTextWidth = () => {
     const wrappedTextBodies = document.querySelectorAll('[data-adaptive-width]');
 
-    // wrappedTextBodies.forEach((element) => {
-    //   element.style.width = "";
-    //   const { firstChild, lastChild } = element;
-    //   if (!element || !firstChild || !lastChild) return;
-    //   const range = document.createRange();
-    //   range.setStartBefore(firstChild);
-    //   range.setEndAfter(lastChild);
-    //   const { width } = range.getBoundingClientRect();
-    //   element.style.width = width == 0 ? "" : width + "px";
-    //   element.style.boxSizing = "content-box";
-    // });
     for (const el of wrappedTextBodies) {
       el.style.boxSizing = 'content-box';
       el.style.width = '';
@@ -24399,10 +24382,12 @@ window.addEventListener('load', function () {
   };
 
   const adaptiveFix = () => {
+    const viewportHeight = window.visualViewport?.height || window.innerHeight;
+
     document.documentElement.style.setProperty('--height-header', `${HEADER.offsetHeight}px`);
     document.documentElement.style.setProperty('--height-header-top', `${HEADER_TOP.offsetHeight}px`);
     document.documentElement.style.setProperty('--width-page', `${window.innerWidth}px`);
-    document.documentElement.style.setProperty('--height-page', `${window.innerHeight}px`);
+    document.documentElement.style.setProperty('--height-page', `${viewportHeight}px`);
     document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 56);
 
     if (window.innerWidth < $md2) {
@@ -24416,28 +24401,123 @@ window.addEventListener('load', function () {
   };
   adaptiveFix();
 
+  function handleResize() {
+    document.documentElement.classList.remove('_is-scroll');
+
+    if (adaptiveFixTimeout) clearTimeout(adaptiveFixTimeout);
+    adaptiveFixTimeout = setTimeout(adaptiveFix, 210);
+  }
+
+  class Search {
+    constructor(wrapper) {
+      if (!wrapper) return;
+
+      this.wrapper = wrapper;
+      this.input = wrapper.querySelector('.search__input');
+      this.form = wrapper.tagName === 'FORM' ? wrapper : wrapper.querySelector('form');
+
+      this.callbacks = {
+        focus: new Set(),
+        blur: new Set(),
+        input: new Set(),
+        click: new Set(),
+        reset: new Set(),
+      };
+
+      this._bindEvents();
+    }
+
+    /* ================= private ================= */
+
+    _emit(type, event) {
+      this.callbacks[type].forEach((cb) => cb(event, this.input?.value));
+    }
+
+    _bindEvents() {
+      this.input?.addEventListener('focus', this._onFocus);
+      this.input?.addEventListener('blur', this._onBlur);
+      this.input?.addEventListener('input', this._onInput);
+
+      this.wrapper.addEventListener('click', this._onClick);
+
+      if (this.form) {
+        this.form.addEventListener('reset', this._onDomReset);
+      }
+    }
+
+    _onFocus = (e) => {
+      this.wrapper.classList.add('_is-focus');
+      this._emit('focus', e);
+    };
+
+    _onBlur = (e) => {
+      this.wrapper.classList.remove('_is-focus');
+      this._emit('blur', e);
+    };
+
+    _onInput = (e) => {
+      this.wrapper.classList.toggle('_is-fill', !!e.target.value);
+      this._emit('input', e);
+    };
+
+    _onClick = (e) => {
+      this._emit('click', e);
+
+      if (!e.target.closest('.search__btn_reset')) return;
+
+      if (this.form) {
+        this.form.reset();
+      } else {
+        this._handleReset(e);
+      }
+    };
+
+    _onDomReset = (e) => {
+      this._handleReset(e);
+    };
+
+    _handleReset(e) {
+      this.input.value = '';
+      this.wrapper.classList.remove('_is-fill');
+      this.input.focus();
+
+      this._emit('reset', e);
+    }
+
+    /* ================= public ================= */
+
+    on(event, callback) {
+      this.callbacks[event]?.add(callback);
+      return () => this.callbacks[event]?.delete(callback);
+    }
+
+    destroy() {
+      this.input?.removeEventListener('focus', this._onFocus);
+      this.input?.removeEventListener('blur', this._onBlur);
+      this.input?.removeEventListener('input', this._onInput);
+      this.wrapper.removeEventListener('click', this._onClick);
+      this.form?.removeEventListener('reset', this._onDomReset);
+    }
+  }
+
+  // const searches = [...document.querySelectorAll('.search')].map(el => new Search(el));
+  const headerSearch = new Search(document.querySelector('.search'));
+  window.Search = headerSearch;
+
+  window.dispatchEvent(new CustomEvent('search:ready', { detail: headerSearch }));
+
   const dataAction = (target, attr) => {
     if (target.closest(`[data-${attr}]`)) {
       document.documentElement.classList.toggle(`_is-${attr}-open`);
+
+      if (attr == 'search' && document.documentElement.closest(`._is-${attr}-open`)) {
+        headerSearch.input.focus();
+      }
     }
     if (document.documentElement.closest(`._is-${attr}-open`) && !target.closest(`.${attr}`)) {
       document.documentElement.classList.remove(`_is-${attr}-open`);
     }
   };
-
-  // if (document.querySelector("textarea")) {
-  //   const textAreas = document.querySelectorAll("textarea");
-
-  //   textAreas.forEach((textArea) => {
-  //     textArea.style.overflow = "hidden";
-
-  //     textArea.addEventListener("input", (e) => {
-  //       e.target.value.length
-  //         ? (textArea.style.height = textArea.scrollHeight + "px")
-  //         : (textArea.style.height = "");
-  //     });
-  //   });
-  // }
 
   const inputsActions = () => {
     const inputs = document.querySelectorAll('.input');
@@ -24589,11 +24669,18 @@ window.addEventListener('load', function () {
     document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 56);
   });
 
-  window.addEventListener('resize', () => {
-    document.documentElement.classList.remove('_is-scroll');
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => {
+      handleResize();
+    });
+  }
 
-    clearTimeout(adaptiveFixTimeout);
-    adaptiveFixTimeout = setTimeout(adaptiveFix, 210);
+  window.addEventListener('resize', () => {
+    handleResize();
+  });
+
+  window.addEventListener('orientationchange', () => {
+    handleResize();
   });
 
   document.documentElement.classList.toggle(
