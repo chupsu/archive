@@ -1085,10 +1085,8 @@ html._is-scroll {
   top: 50%;
   left: 50%;
   z-index: 2;
-  flex-shrink: 0;
   width: 1em;
   height: 1em;
-  border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: loading calc(10 * var(--transition-duration)) linear infinite;
 }
@@ -4104,6 +4102,7 @@ input[type=radio] ~ .checkbox__icon::before {
   display: flex;
   flex-direction: column;
   gap: var(--gap-normal-extra);
+  margin-top: var(--gap-section-small);
 }
 .category-nav {
   display: flex;
