@@ -2461,6 +2461,29 @@ input[type=radio] ~ .checkbox__icon::before {
 .cookies__text {
   font-size: var(--text-normal);
 }
+.callback-action {
+  position: fixed;
+  right: 0;
+  bottom: var(--gap-section-smallest);
+  z-index: var(--z-index-panel);
+  display: none;
+  min-width: calc((var(--width-page) - var(--width-container) - 2 * var(--gap-section-large)) / 2);
+  padding-right: var(--gap-section-smallest);
+}
+._is-footer-scroll .callback-action {
+  display: none!important;
+}
+.callback-action__btn {
+  --height-btn: calc(2 * var(--height-btn-small));
+  min-width: var(--height-btn);
+  padding: 0;
+  overflow: hidden;
+  border-radius: calc(0.29 * var(--height-btn));
+}
+.callback-action__btn svg {
+  width: var(--height-btn);
+  height: var(--height-btn);
+}
 .events-bar {
   display: none;
 }
@@ -3472,7 +3495,7 @@ input[type=radio] ~ .checkbox__icon::before {
   display: flex;
   gap: var(--size-6);
 }
-._is-lock .h-categories-slider__controls {
+._is-init._is-lock .h-categories-slider__controls {
   display: none;
 }
 .special__body {
@@ -3584,7 +3607,7 @@ input[type=radio] ~ .checkbox__icon::before {
   display: flex;
   gap: var(--size-6);
 }
-._is-lock .relation-slider__controls {
+._is-init._is-lock .relation-slider__controls {
   display: none;
 }
 .promo-slider {
@@ -3610,7 +3633,7 @@ input[type=radio] ~ .checkbox__icon::before {
   align-items: center;
   margin-top: var(--gap-section-medium);
 }
-._is-lock .promo-slider__actions {
+._is-init._is-lock .promo-slider__actions {
   display: none;
 }
 .promo-card {
@@ -3714,7 +3737,7 @@ input[type=radio] ~ .checkbox__icon::before {
   display: flex;
   gap: var(--size-6);
 }
-._is-lock .partners-slider__controls {
+._is-init._is-lock .partners-slider__controls {
   display: none;
 }
 .news {
@@ -7286,7 +7309,7 @@ input[type=radio] ~ .cart-extra__icon {
   .special-slider__actions {
     align-items: center;
   }
-  ._is-lock .special-slider__actions,
+  ._is-init._is-lock .special-slider__actions,
   .special-slider__link {
     display: none;
   }
@@ -7953,6 +7976,9 @@ input[type=radio] ~ .cart-extra__icon {
   }
   .cookies {
     --width-cookies: 600px;
+  }
+  .callback-action {
+    display: flex;
   }
   .events-bar {
     position: fixed;
@@ -9381,6 +9407,9 @@ input[type=radio] ~ .cart-extra__icon {
   }
   .popup__inner {
     padding: var(--size-40);
+  }
+  .callback-action__btn {
+    --height-btn: calc(2 * var(--size-44));
   }
   .events-products {
     width: 526px;
