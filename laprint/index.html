@@ -9,7 +9,6 @@
     <link rel="apple-touch-icon" href="./img/content/apple-touch-icon.png" sizes="180x180">
     <title>Ла Принт Хаус</title>
     <link rel="stylesheet" href="./css/style.min.css">
-    <script src="./js/swiper.min.js" defer></script>
     <script src="./js/script.min.js" defer></script>
   </head>
 
@@ -23,22 +22,22 @@
               <div class="menu__body">
                 <ul class="menu__list">
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Цены</a>
+                    <a class="menu__link" href="#prices">Цены</a>
                   </li>
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Скидки</a>
+                    <a class="menu__link" href="#sales">Скидки</a>
                   </li>
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Гарантия</a>
+                    <a class="menu__link" href="#guards">Гарантия</a>
                   </li>
                   <li class="menu__item">
                     <a class="menu__link" href="#craft">Онлайн-конструктор</a>
                   </li>
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Отзывы</a>
+                    <a class="menu__link" href="#reviews">Отзывы</a>
                   </li>
                   <li class="menu__item">
-                    <a class="menu__link" href="#">Контакты</a>
+                    <a class="menu__link" href="#contacts">Контакты</a>
                   </li>
                 </ul>
               </div>
@@ -258,6 +257,180 @@
             </div>
           </div>
         </section>
+        <section class="price _mb">
+          <div class="container">
+            <div class="price__body" data-tabs id="prices">
+              <div class="price__top">
+                <div class="price__head">
+                  <h2 class="price__title _h1">Прайс-лист</h2>
+                  <div class="price__label label label_accent">
+                    гарантия на печать <span><b>1 год</b></span>
+                  </div>
+                </div>
+                <div class="price__actions">
+                  <div class="price__desc">
+                    <h3 class="price__subtitle _h2">наш текстиль</h3>
+                    <p class="price__sublabel label label_contour-dark">цена без учета скидок</p>
+                  </div>
+                  <div class="tabs">
+                    <nav class="tabs__navigation" data-tabs-titles>
+                      <button class="tabs__title btn btn_contour-accent _tab-active" type="button">
+                        футболки
+                      </button>
+                      <button class="tabs__title btn btn_contour-accent" type="button">
+                        другая одежда
+                      </button>
+                      <button class="tabs__title btn btn_contour-accent" type="button">
+                        аксессуары и предметы
+                      </button>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <div class="tabs">
+                <div class="tabs__content" data-tabs-body>
+                  <div class="tabs__body">
+                    <div class="textile">
+                      <div class="textile__card">
+                        <div class="textile__preview">
+                          <figure class="textile__media">
+                            <picture><source srcset="./img/content/img/reglan.webp" type="image/webp"><img class="textile__img" src="./img/content/img/reglan.jpg" alt="Футболка базовая Реглан (черные рукава)"></picture>
+                          </figure>
+                        </div>
+                        <div class="textile__info">
+                          <h3 class="textile__title">
+                            Футболка базовая <span>Реглан (черные рукава)</span>
+                          </h3>
+                          <div class="textile__cost">1 200 ₽</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs__body" hidden>
+                    <div class="textile">
+                      <div class="textile__card" data-tabs>
+                        <div class="textile__preview" data-tabs-body>
+                          <figure class="textile__media">
+                            <picture><source srcset="./img/content/img/textile_zip_front_gray.webp" type="image/webp"><img class="textile__img" src="./img/content/img/textile_zip_front_gray.jpg" alt="Зипка серая спереди"></picture>
+                          </figure>
+                          <figure class="textile__media" hidden>
+                            <picture><source srcset="./img/content/img/textile_zip_back_gray.webp" type="image/webp"><img class="textile__img" src="./img/content/img/textile_zip_back_gray.jpg" alt="Зипка серая со спины"></picture>
+                          </figure>
+                          <figure class="textile__media" hidden>
+                            <picture><source srcset="./img/content/img/textile_zip_front_black.webp" type="image/webp"><img class="textile__img" src="./img/content/img/textile_zip_front_black.jpg" alt="Зипка черная спереди"></picture>
+                          </figure>
+                          <figure class="textile__media" hidden>
+                            <picture><source srcset="./img/content/img/textile_zip_back_black.webp" type="image/webp"><img class="textile__img" src="./img/content/img/textile_zip_back_black.jpg" alt="Зипка черная со спины"></picture>
+                          </figure>
+                        </div>
+                        <div class="textile__info">
+                          <h3 class="textile__title">Худи с молнией <span>(Зипка)</span></h3>
+                          <div class="textile__cost">2 900 ₽</div>
+                        </div>
+                        <nav class="textile__nav" data-tabs-titles>
+                          <button
+                            class="textile__btn _tab-active"
+                            type="button"
+                            style="--color-textile: #afaeae"
+                          >
+                            <span class="_seo">Зипка серая спереди</span>
+                          </button>
+                          <button class="textile__btn" type="button" style="--color-textile: #afaeae">
+                            <span class="_seo">Зипка серая со спины</span>
+                          </button>
+                          <button class="textile__btn" type="button" style="--color-textile: #000">
+                            <span class="_seo">Зипка черная спереди</span>
+                          </button>
+                          <button class="textile__btn" type="button" style="--color-textile: #000">
+                            <span class="_seo">Зипка черная со спины</span>
+                          </button>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs__body" hidden>
+                    <div class="textile">
+                      <div class="textile__card" data-tabs>
+                        <div class="textile__preview" data-tabs-body>
+                          <figure class="textile__media">
+                            <picture><source srcset="./img/content/img/textile_head_blue.webp" type="image/webp"><img class="textile__img" src="./img/content/img/textile_head_blue.jpg" alt="Кепка синяя"></picture>
+                          </figure>
+                          <figure class="textile__media">
+                            <picture><source srcset="./img/content/img/textile_head_gray.webp" type="image/webp"><img class="textile__img" src="./img/content/img/textile_head_gray.jpg" alt="Кепка серая"></picture>
+                          </figure>
+                          <figure class="textile__media">
+                            <picture><source srcset="./img/content/img/textile_head_red.webp" type="image/webp"><img class="textile__img" src="./img/content/img/textile_head_red.jpg" alt="Кепка красная"></picture>
+                          </figure>
+                        </div>
+                        <div class="textile__info">
+                          <h3 class="textile__title">Кепка</h3>
+                          <div class="textile__cost">550 ₽</div>
+                        </div>
+                        <nav class="textile__nav" data-tabs-titles>
+                          <button
+                            class="textile__btn _tab-active"
+                            type="button"
+                            style="--color-textile: #3775a1"
+                          >
+                            <span class="_seo">Кепка синяя</span>
+                          </button>
+                          <button class="textile__btn" type="button" style="--color-textile: #828282">
+                            <span class="_seo">Кепка серая</span>
+                          </button>
+                          <button class="textile__btn" type="button" style="--color-textile: #e8658d">
+                            <span class="_seo">Кепка красная</span>
+                          </button>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="price__body">
+              <div class="price__top">
+                <div class="price__actions">
+                  <div class="price__desc">
+                    <h3 class="price__subtitle _h2">цена печати</h3>
+                    <p class="price__sublabel label label_contour-dark">цена без учета скидок</p>
+                  </div>
+                </div>
+              </div>
+              <ul class="print-price">
+                <li class="print-price__card">
+                  <figure class="print-price__media">
+                    <picture><source srcset="./img/content/img/print-1.webp" type="image/webp"><img class="print-price__img" src="./img/content/img/print-1.png" alt="Размер печати: А3"></picture>
+                  </figure>
+                  <div class="print-price__cost"><span>А3</span>750 ₽</div>
+                </li>
+                <li class="print-price__card">
+                  <figure class="print-price__media">
+                    <picture><source srcset="./img/content/img/print-2.webp" type="image/webp"><img class="print-price__img" src="./img/content/img/print-2.png" alt="Размер печати: А4"></picture>
+                  </figure>
+                  <div class="print-price__cost"><span>А4</span>650 ₽</div>
+                </li>
+                <li class="print-price__card">
+                  <figure class="print-price__media">
+                    <picture><source srcset="./img/content/img/print-3.webp" type="image/webp"><img class="print-price__img" src="./img/content/img/print-3.png" alt="Размер печати: А5"></picture>
+                  </figure>
+                  <div class="print-price__cost"><span>А5</span>600 ₽</div>
+                </li>
+                <li class="print-price__card">
+                  <figure class="print-price__media">
+                    <picture><source srcset="./img/content/img/print-4.webp" type="image/webp"><img class="print-price__img" src="./img/content/img/print-4.png" alt="Размер печати: А6"></picture>
+                  </figure>
+                  <div class="print-price__cost"><span>А6</span>550 ₽</div>
+                </li>
+                <li class="print-price__card">
+                  <figure class="print-price__media">
+                    <picture><source srcset="./img/content/img/print-5.webp" type="image/webp"><img class="print-price__img" src="./img/content/img/print-5.png" alt="Размер печати: А7"></picture>
+                  </figure>
+                  <div class="print-price__cost"><span>А7</span>400 ₽</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
         <section class="how _mb">
           <div class="container">
             <div class="how__body">
@@ -289,7 +462,7 @@
         </section>
         <section class="discounts _mb">
           <div class="container">
-            <div class="discounts__body">
+            <div class="discounts__body" id="sales">
               <div class="discounts__head">
                 <h2 class="discounts__title _h1"><span>Скидки</span></h2>
               </div>
@@ -354,7 +527,7 @@
         </section>
         <section class="guarantee _mb">
           <div class="container">
-            <div class="guarantee__body">
+            <div class="guarantee__body" id="guards">
               <div class="guarantee__head">
                 <h2 class="guarantee__title _h1">Гарантия</h2>
               </div>
@@ -450,12 +623,12 @@
             </div>
           </div>
           <div class="craft__frame" id="craft">
-            <iframe src="https://cosuv.ru/app/40#base=0" frameborder="0"></iframe>
+            <!-- <iframe src="https://cosuv.ru/app/40#base=0" frameborder="0"></iframe> -->
           </div>
         </section>
         <section class="contacts">
           <div class="container">
-            <div class="contacts__body">
+            <div class="contacts__body" id="contacts">
               <div class="contacts__top">
                 <div class="contacts__head">
                   <h2 class="contacts__title _h1"><span>Мы в самом сердце</span> Зеленограда — к438</h2>
@@ -475,7 +648,7 @@
                     </ul>
                     <ul class="contacts-card-chats">
                       <li class="contacts-card-chats__item">
-                        <a class="contacts-card-chats__link" href="#">
+                        <a class="contacts-card-chats__link" href="#" target="_blank">
                           <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M30.2793 42.9258C27.7278 42.9258 26.542 42.5517 24.4809 41.0553C23.1772 42.7388 19.0487 44.0544 18.8687 41.8035C18.8687 40.1138 18.4962 38.6859 18.074 37.1271C17.5712 35.2067 17 33.068 17 29.9691C17 22.568 23.0468 17 30.211 17C37.3815 17 42.9999 22.8423 42.9999 30.0377C43.024 37.1218 37.3327 42.888 30.2793 42.9258ZM30.3849 23.3973C26.8959 23.2165 24.1767 25.6419 23.5745 29.4454C23.0778 32.5941 23.9594 36.4288 24.7106 36.6283C25.0707 36.7156 25.977 35.9798 26.542 35.4124C27.4762 36.0606 28.564 36.4499 29.6958 36.541C33.3109 36.7157 36.4 33.9514 36.6427 30.3245C36.784 26.69 34.0006 23.6115 30.3849 23.4035L30.3849 23.3973Z" fill="url(#paint0_linear_2176_1245)"/>
                           <defs>
@@ -490,7 +663,11 @@
                         </a>
                       </li>
                       <li class="contacts-card-chats__item">
-                        <a class="contacts-card-chats__link" href="#">
+                        <a
+                          class="contacts-card-chats__link"
+                          href="https://t.me/Laprint_house"
+                          target="_blank"
+                        >
                           <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M41.9016 20.7754L38.1324 40.1808C37.9866 40.9433 37.6727 41.5795 37.1045 41.8594C36.5384 42.1382 35.9043 41.9733 35.3174 41.6195L35.2884 41.602L26.9788 34.8947C26.2171 34.2799 26.1623 33.0583 26.8652 32.3653L34.8699 24.4733L23.7329 32.1496C23.3609 32.406 22.9043 32.4713 22.4842 32.328L17.2453 30.5416L17.2439 30.5411C16.8952 30.4243 16.5862 30.2569 16.3611 30.0248C16.1272 29.7836 15.9694 29.4519 16.005 29.0632C16.0387 28.6949 16.2365 28.3883 16.4826 28.1507C16.7319 27.91 17.0704 27.6996 17.481 27.5196L17.4872 27.5169L39.6198 18.1931C40.2632 17.8799 40.986 17.933 41.4854 18.4607C41.9795 18.9828 42.1168 19.8233 41.9016 20.7754Z" fill="url(#paint0_linear_2176_1247)"/>
                           <defs>
