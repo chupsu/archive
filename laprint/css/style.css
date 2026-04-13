@@ -286,6 +286,10 @@ input,
 textarea {
   border-radius: 0;
 }
+.menu__btn,
+iframe {
+  border: none;
+}
 textarea {
   resize: vertical;
 }
@@ -523,7 +527,6 @@ html._is-lock {
   align-items: center;
   justify-content: center;
   outline: 0;
-  border: none;
   border-radius: 1000px;
 }
 .menu__list,

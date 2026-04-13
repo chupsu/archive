@@ -872,6 +872,7 @@ window.addEventListener('load', function () {
   // }
 
   const HEADER = document.querySelector('.header');
+  const craftFrame = document.querySelector('.craft__frame iframe');
   let adaptiveFixTimeout;
   const $md2 = 1023.98;
   const matchMediaMi2 = window.matchMedia(`(min-width: ${$md2}px)`);
@@ -903,6 +904,10 @@ window.addEventListener('load', function () {
     // wrappedTextWidth();
   };
   adaptiveFix();
+
+  if (craftFrame) {
+    craftFrame.setAttribute('src', craftFrame.getAttribute('data-src'));
+  }
 
   //---------- При клике
   document.addEventListener('click', (e) => {
