@@ -623,7 +623,73 @@
             </div>
           </div>
           <div class="craft__frame" id="craft">
-            <!-- <iframe src="https://cosuv.ru/app/40#base=0" frameborder="0"></iframe> -->
+            <iframe src="https://cosuv.ru/app/40#base=0" frameborder="0"></iframe>
+          </div>
+        </section>
+        <section class="reviews _mb">
+          <div class="container">
+            <div class="reviews__body">
+              <div class="reviews__head">
+                <h2 class="reviews__title _h1">Отзывы <span>наших клиентов</span></h2>
+                <div class="reviews__rate">
+                  <iframe
+                    title="Виджет стикер от MyReviews"
+                    id="myReviews__sticker-widget-sticker_2"
+                  ></iframe>
+
+                  <script src="https://myreviews.dev/widget/dist/stickerWidget.js" defer></script>
+                  <script>
+                    (function () {
+                      var reviewsStickerInit = function () {
+                        new window.myReviews.StickerWidget({
+                          uuid: '82161a1d-c0d4-444d-ad69-8f14c16c5192',
+                          name: 'sticker_2',
+                          additionalFrame: 'none',
+                          lang: 'ru',
+                          widgetId: '2',
+                          serviceId: '1',
+                        }).init();
+                      };
+                      if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', function () {
+                          reviewsStickerInit();
+                        });
+                      } else {
+                        reviewsStickerInit();
+                      }
+                    })();
+                  </script>
+                </div>
+              </div>
+              <div class="reviews__frame">
+                <iframe
+                  title="Виджет с отзывами «Карусель» от MyReviews"
+                  id="myReviews__block-widget"
+                ></iframe>
+
+                <script src="https://myreviews.dev/widget/dist/blockWidget.js" defer></script>
+                <script>
+                  (function () {
+                    var reviewsBlockInit = function () {
+                      new window.myReviews.BlockWidget({
+                        uuid: '82161a1d-c0d4-444d-ad69-8f14c16c5192',
+                        name: 'g8069102',
+                        additionalFrame: 'none',
+                        lang: 'ru',
+                        widgetId: '1',
+                      }).init();
+                    };
+                    if (document.readyState === 'loading') {
+                      document.addEventListener('DOMContentLoaded', function () {
+                        reviewsBlockInit();
+                      });
+                    } else {
+                      reviewsBlockInit();
+                    }
+                  })();
+                </script>
+              </div>
+            </div>
           </div>
         </section>
         <section class="contacts">
