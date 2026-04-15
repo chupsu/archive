@@ -1816,7 +1816,7 @@ html._is-lock {
   }
   :root {
     --width-container: 2400px;
-    --height-header: 266px;
+    --height-header: 212px;
     --height-btn: 120px;
     --size-20: 40px;
     --size-30: 60px;
@@ -2128,7 +2128,7 @@ html._is-lock {
   }
   :root {
     --width-container: clamp( 1200px , 0.6371681416px + 62.4674648621vw , 2400px );
-    --height-header: clamp( 133px , 0.070619469px + 6.9234773555vw , 266px );
+    --height-header: clamp( 106px , 0.0562831858px + 5.5179593961vw , 212px );
     --height-btn: clamp( 60px , 0.0318584071px + 3.1233732431vw , 120px );
     --size-20: clamp( 20px , 0.010619469px + 1.0411244144vw , 40px );
     --size-30: clamp( 30px , 0.0159292035px + 1.5616866216vw , 60px );
@@ -2273,7 +2273,7 @@ html._is-lock {
     padding-bottom: clamp( 6px , 5.3077307692px + 0.1923076923vw , 9px );
   }
   :root {
-    --height-header: clamp( 79px , 66.5391538462px + 3.4615384615vw , 133px );
+    --height-header: clamp( 79px , 72.7695769231px + 1.7307692308vw , 106px );
     --height-btn: clamp( 46px , 42.7694102564px + 0.8974358974vw , 60px );
     --size-20: clamp( 10px , 7.6924358974px + 0.641025641vw , 20px );
     --size-30: clamp( 20px , 17.6924358974px + 0.641025641vw , 30px );
