@@ -2511,27 +2511,9 @@ window.ClipboardJS = clipboard__WEBPACK_IMPORTED_MODULE_3__;
 window.addEventListener('load', function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp)();
   // phoneMask();
-
-  // tippy("[data-tippy-content]", {
-  //   allowHTML: true,
-  //   maxWidth: 260,
-  //   arrow: false,
-  //   placement: "top-start",
-  //   trigger: "mouseenter click",
-  //   onShow(instance) {
-  //     instance.setProps({ maxWidth: window.innerWidth > 2240 ? 336 : 260 });
-  //   },
-  // });
-
   // if (document.querySelector("input[type='tel']")) {
   //   phoneMask();
   // }
-  let schedulePicker;
-  const adaptiveFix = () => {
-    document.documentElement.style.setProperty('--width-page', `${window.innerWidth}px`);
-    document.documentElement.style.setProperty('--height-page', `${window.innerHeight}px`);
-  };
-  adaptiveFix();
 
   new clipboard__WEBPACK_IMPORTED_MODULE_3__('[data-clipboard-text]');
 
@@ -2556,6 +2538,204 @@ window.addEventListener('load', function () {
       },
     });
   }
+
+  let schedulePicker;
+  const form = document.querySelector('.reception-form');
+  const inputDate = form.querySelector('#reception-date');
+  const inputMaster = form.querySelector('#reception-master');
+
+  const state = {
+    date: '',
+    time: '',
+    master: '',
+    stepMaster: false,
+    stepDate: false,
+    stepService: false,
+  };
+
+  // Ветвление кнопок в "шагах"
+  const stepConfig = {
+    specialist: {
+      text: () =>
+        state.stepDate && state.stepService
+          ? 'Перейти к подтверждению'
+          : state.stepDate
+            ? 'Выбрать услугу'
+            : 'Выбрать дату',
+
+      next: () => (state.stepDate && state.stepService ? 'details' : state.stepDate ? 'service' : 'date'),
+
+      stateKey: 'stepMaster',
+    },
+    date: {
+      text: () =>
+        state.stepMaster && state.stepService
+          ? 'Перейти к подтверждению'
+          : state.stepMaster
+            ? 'Выбрать услугу'
+            : 'Выбрать специалиста',
+
+      next: () =>
+        state.stepMaster && state.stepService ? 'details' : state.stepMaster ? 'service' : 'specialist',
+
+      stateKey: 'stepDate',
+    },
+    service: {
+      text: () =>
+        state.stepMaster && state.stepDate
+          ? 'Перейти к подтверждению'
+          : state.stepMaster
+            ? 'Выбрать дату'
+            : 'Выбрать специалиста',
+
+      next: () =>
+        state.stepMaster && state.stepDate ? 'details' : state.stepMaster ? 'date' : 'specialist',
+
+      stateKey: 'stepService',
+    },
+  };
+
+  function setState({ date, time, master } = {}) {
+    if (date !== undefined) state.date = date;
+    if (time !== undefined) state.time = time;
+    if (master !== undefined) {
+      state.stepMaster = true;
+      state.master = master;
+    }
+
+    inputDate.value = `${state.date ?? ''} ${state.time ?? ''}`;
+    inputMaster.value = state.master ?? '';
+  }
+
+  function setNextStep(stepName) {
+    const stepEl = document.querySelector(`[data-reception-step="${stepName}"]`);
+    if (!stepEl) return;
+
+    const btn = stepEl.querySelector('.reception-action__btn');
+    const config = stepConfig[stepName];
+    if (!btn || !config) return;
+
+    const isReady = state[config.stateKey];
+
+    // поддержка и строки, и функции
+    const text = typeof config.text === 'function' ? config.text() : config.text;
+    const next = typeof config.next === 'function' ? config.next() : config.next;
+
+    btn.querySelector('span').textContent = text;
+
+    if (isReady) {
+      btn.dataset.receptionStepChoise = next;
+      btn.disabled = false;
+    } else {
+      btn.dataset.receptionStepChoise = '';
+      btn.disabled = true;
+    }
+  }
+
+  function slideToggle(element, duration = 200) {
+    if (element.hidden) {
+      element.hidden = false;
+
+      const height = element.scrollHeight;
+
+      element.style.height = '0px';
+      element.offsetHeight;
+
+      element.style.transition = `height ${duration}ms`;
+      element.style.height = height + 'px';
+
+      setTimeout(() => {
+        element.style.height = 'auto';
+        element.style.transition = '';
+      }, duration);
+    } else {
+      const height = element.scrollHeight;
+
+      element.style.height = height + 'px';
+      element.offsetHeight;
+
+      element.style.transition = `height ${duration}ms`;
+      element.style.height = '0px';
+
+      setTimeout(() => {
+        element.hidden = true;
+        element.style.transition = '';
+      }, duration);
+    }
+  }
+
+  form.addEventListener('change', (e) => {
+    const changedInput = e.target;
+
+    const stepBody = changedInput.closest('[data-reception-step]');
+    const stepName = stepBody.dataset.receptionStep;
+    const actionEl = stepBody.querySelector('.reception-action');
+    const stepNextBtn = actionEl.querySelector('.reception-action__btn');
+    const hasValue = !!stepBody.querySelector('input:checked');
+
+    if (stepName !== 'details' && stepName !== 'success') {
+      if (hasValue && actionEl.hidden) {
+        slideToggle(actionEl);
+      }
+
+      if (!hasValue && !actionEl.hidden) {
+        slideToggle(actionEl);
+      }
+    }
+
+    // обновляем state
+    if (stepName === 'specialist') {
+      state.stepMaster = hasValue;
+      state.stepDate = changedInput
+        .closest('.reception-masters__item')
+        .querySelector('input[data-time]:checked');
+    }
+    if (stepName === 'date') state.stepDate = hasValue;
+    if (stepName === 'service') state.stepService = hasValue;
+
+    // Клик по времени специалисла
+    if (changedInput.hasAttribute('data-time') && changedInput.closest('.reception-masters__item')) {
+      const masterCards = changedInput
+        .closest('[data-reception-step="specialist"]')
+        .querySelectorAll('.reception-masters__item');
+      const masterCard = changedInput.closest('.reception-masters__item');
+      const masterInput = masterCard.querySelector('.reception-master-card__input');
+
+      masterCards.forEach((card) => {
+        card.classList.remove('_is-active');
+      });
+
+      masterCard.classList.add('_is-active');
+      masterInput.checked = true;
+
+      setState({ master: masterInput.dataset.master });
+    }
+
+    // Клик по выбору специалисла
+    if (changedInput.classList.contains('reception-master-card__input')) {
+      const masterCards = changedInput
+        .closest('[data-reception-step="specialist"]')
+        .querySelectorAll('.reception-masters__item');
+      const masterCard = changedInput.closest('.reception-masters__item');
+
+      masterCards.forEach((card) => {
+        card.classList.remove('_is-active');
+      });
+
+      masterCard.classList.add('_is-active');
+
+      setState({ master: changedInput.dataset.master });
+
+      if (masterCard.querySelector('input[data-time]:checked')) {
+        setState({ time: masterCard.querySelector('input[data-time]:checked').dataset.time });
+      } else {
+        setState({ time: '' });
+      }
+    }
+
+    // обновляем кнопку
+    setNextStep(stepName);
+  });
 
   // if (document.querySelector('#schedule')) {
   //   const scheduleInput = document.querySelector('#schedule');
@@ -2639,7 +2819,34 @@ window.addEventListener('load', function () {
         step.hidden = true;
       } else {
         step.hidden = false;
+
+        setNextStep(targetElement.dataset.receptionStepChoise);
       }
+    });
+  };
+
+  const filterAction = (targetElement) => {
+    const container = targetElement.closest('[data-reception-filtering]');
+    const buttons = container.querySelectorAll('[data-reception-filter]');
+    const items = container.querySelectorAll('[data-reception-filtered]');
+
+    // переключаем кнопку
+    targetElement.classList.toggle('_is-active');
+
+    // собираем активные категории
+    const activeFilters = [...buttons]
+      .filter((b) => b.classList.contains('_is-active'))
+      .map((b) => b.dataset.receptionFilter);
+
+    items.forEach((item) => {
+      // если ничего не выбрано — показываем всё
+      if (activeFilters.length === 0) {
+        item.hidden = false;
+        return;
+      }
+
+      // показываем, если категория совпадает с одной из выбранных
+      item.hidden = !activeFilters.includes(item.dataset.receptionFiltered);
     });
   };
 
@@ -2670,31 +2877,14 @@ window.addEventListener('load', function () {
       choiseStep(targetElement.closest('[data-reception-step-choise]'));
     }
 
-    //   Tabs Anchor
-    // if (targetElement.closest('[data-tab-id]')) {
-    //   document.querySelector(targetElement.dataset.tabId).click();
-    // }
+    if (targetElement.closest('[data-reception-filter]')) {
+      filterAction(targetElement);
+    }
+
+    if (targetElement.hasAttribute('data-time')) {
+      setState({ time: targetElement.dataset.time });
+    }
   });
-
-  let adaptiveFixTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(adaptiveFixTimeout);
-    adaptiveFixTimeout = setTimeout(adaptiveFix, 210);
-  });
-
-  //    Scroll Watcher
-  // document.documentElement.classList.toggle(
-  //   '_is-footer-scroll',
-  //   document.querySelector('.footer').closest('._watcher-view')
-  // );
-  // document.addEventListener('watcherCallback', (e) => {
-  //   const watcherElement = e.detail.entry.target;
-
-  //   document.documentElement.classList.toggle(
-  //     '_is-footer-scroll',
-  //     watcherElement.closest('.footer._watcher-view')
-  //   );
-  // });
 });
 
 })();

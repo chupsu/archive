@@ -26,7 +26,11 @@
   clip-path: inset(100%);
 }
 .btn,
+.reception-action__btn,
+.reception-action__desc a,
 .reception-categories__btn,
+.reception-filter__btn,
+.reception-ordering-action__btn,
 .reception-ordering-contacts__copy,
 .reception-ordering__btn,
 .reception-popup,
@@ -40,6 +44,7 @@
   transition-duration: var(--transition-duration);
   transition-property: color,background-color,border-color,opacity,transform;
 }
+.reception-action__main > *,
 .reception-ordering__info > * {
   min-width: 0;
 }
@@ -1114,7 +1119,7 @@ body {
 .reception-popup__close:focus-visible {
   color: var(--color-white);
   outline: 0;
-  background-color: var(--color-dark);
+  background-color: var(--color-grey-dark);
 }
 .reception-popup__inner {
   flex-grow: 1;
@@ -1125,6 +1130,12 @@ body {
 }
 .reception-form button > * {
   pointer-events: none;
+}
+.reception-form textarea {
+  resize: vertical;
+}
+.reception-form [hidden] {
+  display: none!important;
 }
 .reception-form__body {
   height: 100%;
@@ -1146,13 +1157,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 22px var(--padding-side);
+  border-bottom: 1px solid var(--color-dark);
 }
 .reception-form__heading {
   display: flex;
   gap: 20px;
   align-items: center;
-  padding: 22px var(--padding-side);
-  border-bottom: 1px solid var(--color-dark);
 }
 .reception-form__title {
   position: relative;
@@ -1202,6 +1213,124 @@ body {
   width: 100%;
   max-width: 100%;
 }
+.reception-filter {
+  margin-right: calc(-1 * var(--padding-offset));
+  margin-left: calc(-1 * var(--padding-offset));
+  overflow: hidden;
+}
+.reception-filter_heading {
+  --padding-offset: var(--padding-side);
+}
+.reception-filter__body {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  max-width: 100%;
+  padding: 0 var(--padding-offset);
+  overflow: auto;
+  scrollbar-width: none;
+  transform: translate3d(0, 0, 0);
+}
+.reception-filter__body::-webkit-scrollbar {
+  display: none;
+}
+.reception-filter__btn {
+  padding: 9px 23px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-dark);
+  white-space: nowrap;
+  background-color: transparent;
+  border: 1px solid var(--color-dark);
+}
+.reception-filter__btn:focus-visible {
+  outline: 0;
+  background-color: var(--color-grey);
+}
+.reception-filter__btn:active {
+  background-color: var(--color-grey-darkest);
+}
+.reception-filter__btn._is-active {
+  order: -1;
+  color: var(--color-white)!important;
+  background-color: var(--color-dark)!important;
+}
+.reception-action {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  margin-top: -1px;
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+[data-reception-step-choise]:not([data-reception-step-choise=details], ._is-step-active) .reception-action {
+  height: 0;
+}
+.reception-action__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 25px var(--padding-side) 20px;
+  border-top: 1px solid var(--color-dark);
+}
+.reception-action__head {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: space-between;
+}
+.reception-action__info,
+.reception-action__text {
+  font-size: 14px;
+  font-weight: 400;
+}
+.reception-action__text span {
+  color: var(--color-grey-darkest);
+}
+.reception-action__main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.reception-action__main_submit {
+  flex-direction: column-reverse;
+}
+.reception-action__btn {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 30px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  border: none;
+}
+.reception-action__btn:focus-visible {
+  outline: 0;
+  background-color: var(--color-accent-dark);
+}
+.reception-action__btn_center {
+  justify-content: center;
+  text-align: center;
+}
+.reception-action__btn svg {
+  flex-shrink: 0;
+}
+.reception-action__desc {
+  align-self: center;
+  font-size: 12px;
+  font-weight: 300;
+}
+.reception-action__desc a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.reception-action__desc a:focus-visible {
+  color: var(--color-accent-dark);
+  outline: 0;
+}
 .reception-categories__item {
   border-bottom: 1px solid var(--color-dark);
 }
@@ -1247,8 +1376,10 @@ body {
   padding: var(--padding-side);
   border-bottom: 1px solid var(--color-dark);
 }
-.reception-master-card__input:not(:checked):focus-visible ~ .reception-master-card__body,
-.reception-master-card__input:not(:checked):hover ~ .reception-master-card__body {
+.reception-masters__item._is-active {
+  background-color: var(--color-grey);
+}
+.reception-master-card__input:not(:checked) ~ .reception-master-card__body {
   cursor: pointer;
 }
 .reception-master-card__input:checked ~ * .reception-master-card__icon::after {
@@ -1545,6 +1676,9 @@ body {
   align-items: flex-start;
   justify-content: space-between;
 }
+.reception-service-card__input ~ .reception-service-card__content {
+  cursor: pointer;
+}
 .reception-service-card__input:not(:checked):focus-visible ~ .reception-service-card__icon,
 .reception-service-card__input:not(:checked):hover ~ .reception-service-card__icon {
   background-color: var(--color-grey);
@@ -1576,7 +1710,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px 20px;
-  cursor: pointer;
 }
 .reception-service-card__head {
   display: flex;
@@ -1694,9 +1827,6 @@ body {
   outline: 0;
   background-color: var(--color-grey-dark);
 }
-.reception-ordering__btn:active {
-  background-color: var(--color-grey-darkest);
-}
 .reception-ordering__btn svg {
   flex-shrink: 0;
   width: 100%;
@@ -1777,6 +1907,10 @@ body {
   color: var(--color-dark);
   background-color: var(--color-grey);
 }
+.reception-ordering-action__btn:focus-visible {
+  outline: 0;
+  background-color: var(--color-grey-dark);
+}
 .reception-ordering-action__btn_cancel {
   color: var(--color-red);
 }
@@ -1816,9 +1950,6 @@ body {
 .reception-ordering-contacts__copy:focus-visible {
   outline: 0;
   background-color: var(--color-grey-dark);
-}
-.reception-ordering-contacts__copy:active {
-  background-color: var(--color-grey-darkest);
 }
 .reception-ordering-contacts__copy svg {
   flex-shrink: 0;
@@ -1874,7 +2005,7 @@ body {
     color: var(--color-dark);
     background-color: var(--color-grey);
   }
-  .reception-form__heading {
+  .reception-form__head {
     padding: 30px var(--padding-side);
   }
   .reception-form__heading_main {
@@ -1894,6 +2025,11 @@ body {
   .reception-form__subtitle {
     font-size: 18px;
     font-weight: 400;
+  }
+  .reception-action__main_submit {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
   }
   .reception-times__items {
     gap: 14px;
@@ -2018,7 +2154,16 @@ body {
   }
   .reception-popup__close:not(:active):hover {
     color: var(--color-white);
-    background-color: var(--color-dark);
+    background-color: var(--color-grey-dark);
+  }
+  .reception-filter__btn:not(:active):hover {
+    background-color: var(--color-grey);
+  }
+  .reception-action__btn:not(:active):hover {
+    background-color: var(--color-accent-dark);
+  }
+  .reception-action__desc a:not(:active):hover {
+    color: var(--color-accent-dark);
   }
   .reception-categories__btn:not(:active):hover {
     background-color: var(--color-grey);
@@ -2029,6 +2174,7 @@ body {
   .reception-service-card__desc a:not(:active):hover {
     color: var(--color-accent-dark);
   }
+  .reception-ordering-action__btn:not(:active):hover,
   .reception-ordering-contacts__copy:not(:active):hover,
   .reception-ordering__btn:not(:active):hover {
     background-color: var(--color-grey-dark);

@@ -10,7 +10,6 @@
     <!-- <link rel="icon" href="./img/content/favicon-dark.svg" media="(prefers-color-scheme: dark)"> -->
     <title>Главная</title>
     <link rel="stylesheet" href="./css/style.min.css">
-    <script src="./js/swiper.min.js" defer></script>
     <script src="./js/air_datepicker.min.js" defer></script>
     <script src="./js/clipboard.min.js" defer></script>
     <script src="./js/script.min.js" defer></script>
@@ -127,7 +126,7 @@
                   <ul class="reception-masters">
                     <li class="reception-masters__item">
                       <label class="reception-master-card">
-                        <input class="reception-master-card__input" type="radio" name="master">
+                        <input class="reception-master-card__input" type="radio" name="master" data-master='Кузнецова Ирина'>
                         <span class="reception-master-card__body">
                           <span class="reception-master-card__logo"><span>Fa</span></span>
                           <span class="reception-master-card__content">
@@ -140,7 +139,7 @@
                     </li>
                     <li class="reception-masters__item">
                       <label class="reception-master-card">
-                        <input class="reception-master-card__input" type="radio" name="master">
+                        <input class="reception-master-card__input" type="radio" name="master" data-master='Кузнецова Ирина'>
                         <span class="reception-master-card__body">
                           <span class="reception-master-card__logo">
                             <picture><source srcset="https://shan-man.ru/Fabrica/img/content/item-popup-section-image-2.webp" type="image/webp"><img src="https://shan-man.ru/Fabrica/img/content/item-popup-section-image-2.png" alt="Фото специалиста"></picture>
@@ -160,15 +159,15 @@
                         </div>
                         <div class="reception-times__items">
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-1'>
+                            <input class="reception-times__input" type="radio" name='reception-time-1' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-1'>
+                            <input class="reception-times__input" type="radio" name='reception-time-1' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-1'>
+                            <input class="reception-times__input" type="radio" name='reception-time-1' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                         </div>
@@ -176,7 +175,7 @@
                     </li>
                     <li class="reception-masters__item">
                       <label class="reception-master-card">
-                        <input class="reception-master-card__input" type="radio" name="master">
+                        <input class="reception-master-card__input" type="radio" name="master" data-master='Кузнецова Ирина'>
                         <span class="reception-master-card__body">
                           <span class="reception-master-card__logo"><span>ЕИ</span></span>
                           <span class="reception-master-card__content">
@@ -192,35 +191,35 @@
                         </div>
                         <div class="reception-times__items">
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                         </div>
@@ -229,21 +228,37 @@
                         </div>
                         <div class="reception-times__items">
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-2' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                         </div>
                       </div>
                     </li>
                   </ul>
+                  <div class="reception-action" hidden>
+                    <div class="reception-action__body">
+                      <div class="reception-action__main">
+                        <button
+                          class="reception-action__btn"
+                          type="button"
+                          data-reception-step-choise="start"
+                        >
+                          <span>Выбрать категорию</span>
+                          <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 6.5005L13.4986 13L12.0539 11.5557L16.0808 7.52989H0V5.48707H16.0968L12.0539 1.44433L13.4986 0L20 6.5005Z" fill="white"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="reception-form__step" data-reception-step="date" hidden>
@@ -273,35 +288,35 @@
                         </div>
                         <div class="reception-times__items">
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                         </div>
@@ -313,75 +328,75 @@
                         </div>
                         <div class="reception-times__items">
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                         </div>
@@ -393,15 +408,15 @@
                         </div>
                         <div class="reception-times__items">
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:15</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:30</span>
                           </label>
                           <label class="reception-times__item">
-                            <input class="reception-times__input" type="radio" name='reception-time-2'>
+                            <input class="reception-times__input" type="radio" name='reception-time-day' data-time='13:45'>
                             <span class="reception-times__btn">16:45</span>
                           </label>
                         </div>
@@ -424,9 +439,25 @@
                       </div>
                     </div>
                   </div>
+                  <div class="reception-action" hidden>
+                    <div class="reception-action__body">
+                      <div class="reception-action__main">
+                        <button
+                          class="reception-action__btn"
+                          type="button"
+                          data-reception-step-choise="start"
+                        >
+                          <span>Выбрать категорию</span>
+                          <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 6.5005L13.4986 13L12.0539 11.5557L16.0808 7.52989H0V5.48707H16.0968L12.0539 1.44433L13.4986 0L20 6.5005Z" fill="white"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="reception-form__step" data-reception-step="service" hidden>
+              <div class="reception-form__step" data-reception-step="service" data-reception-filtering hidden>
                 <div class="reception-form__head">
                   <div class="reception-form__heading">
                     <button class="reception-form__back" type="button" data-reception-step-choise="start">
@@ -437,83 +468,23 @@
                     </button>
                     <h3 class="reception-form__subtitle">Выбрать услугу</h3>
                   </div>
+                  <div class="reception-filter reception-filter_heading">
+                    <div class="reception-filter__body">
+                      <button class="reception-filter__btn" type="button" data-reception-filter="category-1">
+                        Косметология
+                      </button>
+                      <button class="reception-filter__btn" type="button" data-reception-filter="category-2">
+                        Дерматология
+                      </button>
+                      <button class="reception-filter__btn" type="button" data-reception-filter="category-3">
+                        Консультации (ОНЛАЙН)
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="reception-form__inner">
                   <div class="reception-services">
-                    <div class="reception-services__box">
-                      <div class="reception-services__head">
-                        <h4 class="reception-services__title">Дерматология</h4>
-                        <p class="reception-services__text">
-                          В этом разделе собраны <b>услуги по диагностике и лечению кожных заболеваний</b>, а
-                          также уходу за кожей лица и тела.
-                        </p>
-                      </div>
-                      <div class="reception-services__items">
-                        <div class="reception-services__item">
-                          <div class="reception-service-card">
-                            <label class="reception-service-card__body">
-                              <input class="reception-service-card__input" type="checkbox" name="service">
-                              <span
-                                class="reception-service-card__content reception-service-card__content_with-time"
-                              >
-                                <span class="reception-service-card__head">
-                                  <span class="reception-service-card__title">Консультация дерматолога</span>
-                                  <span class="reception-service-card__footnote">
-                                    * Не является самостоятельной услугой <br>
-                                    * Необходима консультация специалиста
-                                  </span>
-                                </span>
-                                <span class="reception-service-card__result">
-                                  <span class="reception-service-card__duration">1 ч 30 мин</span>
-                                  <span class="reception-service-card__cost">4 500 ₽</span>
-                                </span>
-                              </span>
-                              <span class="reception-service-card__icon">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.8535 4.85352L6.5 9.20703L3.64648 6.35352L4.35352 5.64648L6.5 7.79297L10.1465 4.14648L10.8535 4.85352Z" fill="white"/>
-                                </svg>
-                              </span>
-                            </label>
-                            <div class="reception-service-card__desc">
-                              <p>
-                                Микроигольчатый RF-лифтинг - кратковременный нагрев ткани с помощью
-                                высокочастотного тока и дальнейшего его проведения с помощью игл. Активизирует
-                                работу фибробластов - клеток соединительной ткани, обеспечивающих выработку
-                                коллагена и эластина, в следствие чего кожа приобретает упругость, плотность
-                                достаточный уровень увлажненности, сглаживание рубцов, растяжек и пор.
-                              </p>
-                              <a href="#">Подробнее</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="reception-services__item">
-                          <div class="reception-service-card">
-                            <label class="reception-service-card__body">
-                              <input class="reception-service-card__input" type="checkbox" name="service">
-                              <span
-                                class="reception-service-card__content reception-service-card__content_with-time"
-                              >
-                                <span class="reception-service-card__head">
-                                  <span class="reception-service-card__title">
-                                    Первичная консультация дерматолога-косметолога (онлайн)
-                                  </span>
-                                </span>
-                                <span class="reception-service-card__result">
-                                  <span class="reception-service-card__duration">1 ч</span>
-                                  <span class="reception-service-card__cost">900 ₽</span>
-                                </span>
-                              </span>
-                              <span class="reception-service-card__icon">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.8535 4.85352L6.5 9.20703L3.64648 6.35352L4.35352 5.64648L6.5 7.79297L10.1465 4.14648L10.8535 4.85352Z" fill="white"/>
-                                </svg>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="reception-services__box">
+                    <div class="reception-services__box" data-reception-filtered="category-1">
                       <div class="reception-services__head">
                         <h4 class="reception-services__title">Косметология</h4>
                       </div>
@@ -586,6 +557,174 @@
                             </label>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                    <div class="reception-services__box" data-reception-filtered="category-2">
+                      <div class="reception-services__head">
+                        <h4 class="reception-services__title">Дерматология</h4>
+                        <p class="reception-services__text">
+                          В этом разделе собраны <b>услуги по диагностике и лечению кожных заболеваний</b>, а
+                          также уходу за кожей лица и тела.
+                        </p>
+                      </div>
+                      <div class="reception-services__items">
+                        <div class="reception-services__item">
+                          <div class="reception-service-card">
+                            <label class="reception-service-card__body">
+                              <input class="reception-service-card__input" type="checkbox" name="service">
+                              <span
+                                class="reception-service-card__content reception-service-card__content_with-time"
+                              >
+                                <span class="reception-service-card__head">
+                                  <span class="reception-service-card__title">Консультация дерматолога</span>
+                                  <span class="reception-service-card__footnote">
+                                    * Не является самостоятельной услугой <br>
+                                    * Необходима консультация специалиста
+                                  </span>
+                                </span>
+                                <span class="reception-service-card__result">
+                                  <span class="reception-service-card__duration">1 ч 30 мин</span>
+                                  <span class="reception-service-card__cost">4 500 ₽</span>
+                                </span>
+                              </span>
+                              <span class="reception-service-card__icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.8535 4.85352L6.5 9.20703L3.64648 6.35352L4.35352 5.64648L6.5 7.79297L10.1465 4.14648L10.8535 4.85352Z" fill="white"/>
+                                </svg>
+                              </span>
+                            </label>
+                            <div class="reception-service-card__desc">
+                              <p>
+                                Микроигольчатый RF-лифтинг - кратковременный нагрев ткани с помощью
+                                высокочастотного тока и дальнейшего его проведения с помощью игл. Активизирует
+                                работу фибробластов - клеток соединительной ткани, обеспечивающих выработку
+                                коллагена и эластина, в следствие чего кожа приобретает упругость, плотность
+                                достаточный уровень увлажненности, сглаживание рубцов, растяжек и пор.
+                              </p>
+                              <a href="#">Подробнее</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="reception-services__item">
+                          <div class="reception-service-card">
+                            <label class="reception-service-card__body">
+                              <input class="reception-service-card__input" type="checkbox" name="service">
+                              <span
+                                class="reception-service-card__content reception-service-card__content_with-time"
+                              >
+                                <span class="reception-service-card__head">
+                                  <span class="reception-service-card__title">
+                                    Первичная консультация дерматолога-косметолога (онлайн)
+                                  </span>
+                                </span>
+                                <span class="reception-service-card__result">
+                                  <span class="reception-service-card__duration">1 ч</span>
+                                  <span class="reception-service-card__cost">900 ₽</span>
+                                </span>
+                              </span>
+                              <span class="reception-service-card__icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.8535 4.85352L6.5 9.20703L3.64648 6.35352L4.35352 5.64648L6.5 7.79297L10.1465 4.14648L10.8535 4.85352Z" fill="white"/>
+                                </svg>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="reception-services__box" data-reception-filtered="category-3">
+                      <div class="reception-services__head">
+                        <h4 class="reception-services__title">Консультации (ОНЛАЙН)</h4>
+                      </div>
+                      <div class="reception-services__items">
+                        <div class="reception-services__item">
+                          <div class="reception-service-card">
+                            <label class="reception-service-card__body">
+                              <input class="reception-service-card__input" type="checkbox" name="service">
+                              <span class="reception-service-card__content">
+                                <span class="reception-service-card__head">
+                                  <span class="reception-service-card__title">Cannaboost</span>
+                                </span>
+                                <span class="reception-service-card__result">
+                                  <span class="reception-service-card__cost">4 500 ₽</span>
+                                </span>
+                              </span>
+                              <span class="reception-service-card__icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.8535 4.85352L6.5 9.20703L3.64648 6.35352L4.35352 5.64648L6.5 7.79297L10.1465 4.14648L10.8535 4.85352Z" fill="white"/>
+                                </svg>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="reception-services__item">
+                          <div class="reception-service-card">
+                            <label class="reception-service-card__body">
+                              <input class="reception-service-card__input" type="checkbox" name="service">
+                              <span
+                                class="reception-service-card__content reception-service-card__content_with-time"
+                              >
+                                <span class="reception-service-card__head">
+                                  <span class="reception-service-card__title">Matcha Power</span>
+                                </span>
+                                <span class="reception-service-card__result">
+                                  <span class="reception-service-card__duration">2 ч 15 мин</span>
+                                  <span class="reception-service-card__cost">27 900 ₽</span>
+                                </span>
+                              </span>
+                              <span class="reception-service-card__icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.8535 4.85352L6.5 9.20703L3.64648 6.35352L4.35352 5.64648L6.5 7.79297L10.1465 4.14648L10.8535 4.85352Z" fill="white"/>
+                                </svg>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div class="reception-services__item">
+                          <div class="reception-service-card">
+                            <label class="reception-service-card__body">
+                              <input class="reception-service-card__input" type="checkbox" name="service">
+                              <span
+                                class="reception-service-card__content reception-service-card__content_with-time"
+                              >
+                                <span class="reception-service-card__head">
+                                  <span class="reception-service-card__title">
+                                    Индивидуальный подбор уходовой косметики
+                                  </span>
+                                </span>
+                                <span class="reception-service-card__result">
+                                  <span class="reception-service-card__duration">1 ч</span>
+                                  <span class="reception-service-card__cost">900 ₽</span>
+                                </span>
+                              </span>
+                              <span class="reception-service-card__icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.8535 4.85352L6.5 9.20703L3.64648 6.35352L4.35352 5.64648L6.5 7.79297L10.1465 4.14648L10.8535 4.85352Z" fill="white"/>
+                                </svg>
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reception-action" hidden>
+                    <div class="reception-action__body">
+                      <div class="reception-action__head">
+                        <div class="reception-action__text">2 услуги <span>30 мин</span></div>
+                        <div class="reception-action__info">12 500 ₽</div>
+                      </div>
+                      <div class="reception-action__main">
+                        <button
+                          class="reception-action__btn"
+                          type="button"
+                          data-reception-step-choise="start"
+                        >
+                          <span>Выбрать категорию</span>
+                          <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 6.5005L13.4986 13L12.0539 11.5557L16.0808 7.52989H0V5.48707H16.0968L12.0539 1.44433L13.4986 0L20 6.5005Z" fill="white"/>
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -667,47 +806,53 @@
                         </div>
                         <div class="reception-ordering__services">
                           <div class="reception-ordering__service">
-                            <div class="reception-service-card__body">
-                              <span
-                                class="reception-service-card__content reception-service-card__content_with-time"
-                              >
-                                <span class="reception-service-card__head">
-                                  <span class="reception-service-card__title">
-                                    Первичная консультация дерматолога-косметолога (онлайн)
+                            <div class="reception-service-card">
+                              <div class="reception-service-card__body">
+                                <span
+                                  class="reception-service-card__content reception-service-card__content_with-time"
+                                >
+                                  <span class="reception-service-card__head">
+                                    <span class="reception-service-card__title">
+                                      Первичная консультация дерматолога-косметолога (онлайн)
+                                    </span>
+                                  </span>
+                                  <span class="reception-service-card__result">
+                                    <span class="reception-service-card__duration">1 ч</span>
+                                    <span class="reception-service-card__cost">900 ₽</span>
                                   </span>
                                 </span>
-                                <span class="reception-service-card__result">
-                                  <span class="reception-service-card__duration">1 ч</span>
-                                  <span class="reception-service-card__cost">900 ₽</span>
-                                </span>
-                              </span>
+                              </div>
                             </div>
                           </div>
                           <div class="reception-ordering__service">
-                            <div class="reception-service-card__body">
-                              <span
-                                class="reception-service-card__content reception-service-card__content_with-time"
-                              >
-                                <span class="reception-service-card__head">
-                                  <span class="reception-service-card__title">Matcha Power</span>
+                            <div class="reception-service-card">
+                              <div class="reception-service-card__body">
+                                <span
+                                  class="reception-service-card__content reception-service-card__content_with-time"
+                                >
+                                  <span class="reception-service-card__head">
+                                    <span class="reception-service-card__title">Matcha Power</span>
+                                  </span>
+                                  <span class="reception-service-card__result">
+                                    <span class="reception-service-card__duration">2 ч 15 мин</span>
+                                    <span class="reception-service-card__cost">27 900 ₽</span>
+                                  </span>
                                 </span>
-                                <span class="reception-service-card__result">
-                                  <span class="reception-service-card__duration">2 ч 15 мин</span>
-                                  <span class="reception-service-card__cost">27 900 ₽</span>
-                                </span>
-                              </span>
+                              </div>
                             </div>
                           </div>
                           <div class="reception-ordering__service">
-                            <div class="reception-service-card__body">
-                              <span class="reception-service-card__content">
-                                <span class="reception-service-card__head">
-                                  <span class="reception-service-card__title">Cannaboost</span>
+                            <div class="reception-service-card">
+                              <div class="reception-service-card__body">
+                                <span class="reception-service-card__content">
+                                  <span class="reception-service-card__head">
+                                    <span class="reception-service-card__title">Cannaboost</span>
+                                  </span>
+                                  <span class="reception-service-card__result">
+                                    <span class="reception-service-card__cost">4 500 ₽</span>
+                                  </span>
                                 </span>
-                                <span class="reception-service-card__result">
-                                  <span class="reception-service-card__cost">4 500 ₽</span>
-                                </span>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -722,6 +867,14 @@
                         <h4 class="reception-ordering-data__title">Ваши данные</h4>
                       </div>
                       <div class="reception-ordering-data__form">
+                        <label class="reception-ordering-data__item">
+                          <span class="reception-ordering-data__label">Время приёма</span>
+                          <input class="reception-ordering-data__input" id='reception-date' type="text">
+                        </label>
+                        <label class="reception-ordering-data__item">
+                          <span class="reception-ordering-data__label">Специалист приёма</span>
+                          <input class="reception-ordering-data__input" id='reception-master' type="text">
+                        </label>
                         <label class="reception-ordering-data__item">
                           <span class="reception-ordering-data__label">ФИО*</span>
                           <input class="reception-ordering-data__input" type="text" required>
@@ -738,6 +891,19 @@
                           <span class="reception-ordering-data__label">Сообщение (необязательно)</span>
                           <textarea class="reception-ordering-data__input"></textarea>
                         </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reception-action">
+                    <div class="reception-action__body">
+                      <div class="reception-action__main reception-action__main_submit">
+                        <button class="reception-action__btn reception-action__btn_center" type="submit">
+                          Записаться
+                        </button>
+                        <p class="reception-action__desc">
+                          Отправляя данную форму, Вы соглашаетесь на
+                          <a href="#">обработку персональных данных</a>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -783,47 +949,53 @@
                         </div>
                         <div class="reception-ordering__services">
                           <div class="reception-ordering__service">
-                            <div class="reception-service-card__body">
-                              <span
-                                class="reception-service-card__content reception-service-card__content_with-time"
-                              >
-                                <span class="reception-service-card__head">
-                                  <span class="reception-service-card__title">
-                                    Первичная консультация дерматолога-косметолога (онлайн)
+                            <div class="reception-service-card">
+                              <div class="reception-service-card__body">
+                                <span
+                                  class="reception-service-card__content reception-service-card__content_with-time"
+                                >
+                                  <span class="reception-service-card__head">
+                                    <span class="reception-service-card__title">
+                                      Первичная консультация дерматолога-косметолога (онлайн)
+                                    </span>
+                                  </span>
+                                  <span class="reception-service-card__result">
+                                    <span class="reception-service-card__duration">1 ч</span>
+                                    <span class="reception-service-card__cost">900 ₽</span>
                                   </span>
                                 </span>
-                                <span class="reception-service-card__result">
-                                  <span class="reception-service-card__duration">1 ч</span>
-                                  <span class="reception-service-card__cost">900 ₽</span>
-                                </span>
-                              </span>
+                              </div>
                             </div>
                           </div>
                           <div class="reception-ordering__service">
-                            <div class="reception-service-card__body">
-                              <span
-                                class="reception-service-card__content reception-service-card__content_with-time"
-                              >
-                                <span class="reception-service-card__head">
-                                  <span class="reception-service-card__title">Matcha Power</span>
+                            <div class="reception-service-card">
+                              <div class="reception-service-card__body">
+                                <span
+                                  class="reception-service-card__content reception-service-card__content_with-time"
+                                >
+                                  <span class="reception-service-card__head">
+                                    <span class="reception-service-card__title">Matcha Power</span>
+                                  </span>
+                                  <span class="reception-service-card__result">
+                                    <span class="reception-service-card__duration">2 ч 15 мин</span>
+                                    <span class="reception-service-card__cost">27 900 ₽</span>
+                                  </span>
                                 </span>
-                                <span class="reception-service-card__result">
-                                  <span class="reception-service-card__duration">2 ч 15 мин</span>
-                                  <span class="reception-service-card__cost">27 900 ₽</span>
-                                </span>
-                              </span>
+                              </div>
                             </div>
                           </div>
                           <div class="reception-ordering__service">
-                            <div class="reception-service-card__body">
-                              <span class="reception-service-card__content">
-                                <span class="reception-service-card__head">
-                                  <span class="reception-service-card__title">Cannaboost</span>
+                            <div class="reception-service-card">
+                              <div class="reception-service-card__body">
+                                <span class="reception-service-card__content">
+                                  <span class="reception-service-card__head">
+                                    <span class="reception-service-card__title">Cannaboost</span>
+                                  </span>
+                                  <span class="reception-service-card__result">
+                                    <span class="reception-service-card__cost">4 500 ₽</span>
+                                  </span>
                                 </span>
-                                <span class="reception-service-card__result">
-                                  <span class="reception-service-card__cost">4 500 ₽</span>
-                                </span>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -868,7 +1040,6 @@
                               data-clipboard-text="Иваново, ул. Калинина 9/21"
                             >
                               <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="42" height="42" fill="#F1F1F1"/>
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M28.5 12C29.3284 12 30 12.6716 30 13.5V22.5C30 23.3284 29.3284 24 28.5 24H24V28.5C24 29.3284 23.3284 30 22.5 30H13.5C12.6716 30 12 29.3284 12 28.5V19.5C12 18.6716 12.6716 18 13.5 18H18V13.5C18 12.6716 18.6716 12 19.5 12H28.5ZM13.5 19C13.2239 19 13 19.2239 13 19.5V28.5C13 28.7761 13.2239 29 13.5 29H22.5C22.7761 29 23 28.7761 23 28.5V19.5C23 19.2239 22.7761 19 22.5 19H13.5ZM22.5 18C23.3284 18 24 18.6716 24 19.5V23H28.5C28.7761 23 29 22.7761 29 22.5V13.5C29 13.2239 28.7761 13 28.5 13H19.5C19.2239 13 19 13.2239 19 13.5V18H22.5Z" fill="#161616"/>
                               </svg>
                             </button>
@@ -880,6 +1051,22 @@
                             ></iframe>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reception-action">
+                    <div class="reception-action__body">
+                      <div class="reception-action__main">
+                        <button
+                          class="reception-action__btn"
+                          type="button"
+                          data-reception-step-choise="start"
+                        >
+                          <span>Сделать новую запись</span>
+                          <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 6.5005L13.4986 13L12.0539 11.5557L16.0808 7.52989H0V5.48707H16.0968L12.0539 1.44433L13.4986 0L20 6.5005Z" fill="white"/>
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
