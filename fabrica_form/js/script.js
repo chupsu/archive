@@ -2510,10 +2510,6 @@ window.ClipboardJS = clipboard__WEBPACK_IMPORTED_MODULE_3__;
 
 window.addEventListener('load', function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp)();
-  // phoneMask();
-  // if (document.querySelector("input[type='tel']")) {
-  //   phoneMask();
-  // }
 
   new clipboard__WEBPACK_IMPORTED_MODULE_3__('[data-clipboard-text]');
 
@@ -2535,6 +2531,19 @@ window.addEventListener('load', function () {
             view: 'months',
           });
         }
+      },
+
+      onSelect({ date, formattedDate }) {
+        setState({
+          date: formattedDate || '',
+        });
+
+        // При выборе даты сбрасываем выбор времени и вставляем разметку расписания или отсутствия
+        const timeBox = form.querySelector('.reception-schedule__box_times');
+
+        timeBox.innerHTML = '';
+
+        setState({ time: '' });
       },
     });
   }
@@ -2608,7 +2617,7 @@ window.addEventListener('load', function () {
   }
 
   function setNextStep(stepName) {
-    const stepEl = document.querySelector(`[data-reception-step="${stepName}"]`);
+    const stepEl = form.querySelector(`[data-reception-step="${stepName}"]`);
     if (!stepEl) return;
 
     const btn = stepEl.querySelector('.reception-action__btn');
@@ -2625,10 +2634,8 @@ window.addEventListener('load', function () {
 
     if (isReady) {
       btn.dataset.receptionStepChoise = next;
-      btn.disabled = false;
     } else {
       btn.dataset.receptionStepChoise = '';
-      btn.disabled = true;
     }
   }
 
@@ -2673,6 +2680,7 @@ window.addEventListener('load', function () {
     const stepNextBtn = actionEl.querySelector('.reception-action__btn');
     const hasValue = !!stepBody.querySelector('input:checked');
 
+    // Отображение кнопки следующего шага
     if (stepName !== 'details' && stepName !== 'success') {
       if (hasValue && actionEl.hidden) {
         slideToggle(actionEl);
@@ -2693,6 +2701,11 @@ window.addEventListener('load', function () {
     if (stepName === 'date') state.stepDate = hasValue;
     if (stepName === 'service') state.stepService = hasValue;
 
+    // Клик по времени календаря
+    if (changedInput.hasAttribute('data-time') && stepName === 'date') {
+      setState({ time: changedInput.dataset.time });
+    }
+
     // Клик по времени специалисла
     if (changedInput.hasAttribute('data-time') && changedInput.closest('.reception-masters__item')) {
       const masterCards = changedInput
@@ -2700,6 +2713,16 @@ window.addEventListener('load', function () {
         .querySelectorAll('.reception-masters__item');
       const masterCard = changedInput.closest('.reception-masters__item');
       const masterInput = masterCard.querySelector('.reception-master-card__input');
+      const otherTimes = stepBody.querySelectorAll('input[data-time]');
+      const dateCard = changedInput.closest('.reception-times__items').dataset.date;
+
+      if (changedInput.checked) {
+        otherTimes.forEach((el) => {
+          if (el !== changedInput) {
+            el.checked = false;
+          }
+        });
+      }
 
       masterCards.forEach((card) => {
         card.classList.remove('_is-active');
@@ -2708,7 +2731,9 @@ window.addEventListener('load', function () {
       masterCard.classList.add('_is-active');
       masterInput.checked = true;
 
-      setState({ master: masterInput.dataset.master });
+      schedulePicker?.selectDate(new Date(dateCard));
+
+      setState({ date: dateCard, time: changedInput.dataset.time, master: masterInput.dataset.master });
     }
 
     // Клик по выбору специалисла
@@ -2717,6 +2742,15 @@ window.addEventListener('load', function () {
         .closest('[data-reception-step="specialist"]')
         .querySelectorAll('.reception-masters__item');
       const masterCard = changedInput.closest('.reception-masters__item');
+      const otherTimes = stepBody.querySelectorAll('input[data-time]');
+      const timeCard = masterCard.querySelector('input[data-time]:checked');
+      const dateCard = timeCard?.closest('.reception-times__items').dataset.date;
+
+      if (changedInput.checked) {
+        otherTimes.forEach((el) => {
+          el.checked = false;
+        });
+      }
 
       masterCards.forEach((card) => {
         card.classList.remove('_is-active');
@@ -2724,78 +2758,18 @@ window.addEventListener('load', function () {
 
       masterCard.classList.add('_is-active');
 
-      setState({ master: changedInput.dataset.master });
+      dateCard ? schedulePicker?.selectDate(new Date(dateCard)) : schedulePicker?.clear();
 
-      if (masterCard.querySelector('input[data-time]:checked')) {
-        setState({ time: masterCard.querySelector('input[data-time]:checked').dataset.time });
-      } else {
-        setState({ time: '' });
-      }
+      setState({
+        date: dateCard ? dateCard : '',
+        time: timeCard ? timeCard.dataset.time : '',
+        master: changedInput.dataset.master,
+      });
     }
 
     // обновляем кнопку
     setNextStep(stepName);
   });
-
-  // if (document.querySelector('#schedule')) {
-  //   const scheduleInput = document.querySelector('#schedule');
-
-  //   const getWeekDayNameInGenitiveCase = (day) =>
-  //     ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'][day.getDay()];
-
-  //   const getMonthNameInGenitiveCase = (date) =>
-  //     [
-  //       'Января',
-  //       'Февраля',
-  //       'Марта',
-  //       'Апреля',
-  //       'Мая',
-  //       'Июня',
-  //       'Июля',
-  //       'Августа',
-  //       'Сентября',
-  //       'Октября',
-  //       'Ноября',
-  //       'Декабря',
-  //     ][date.getMonth()];
-
-  //   const getWeekDay = (day) => {
-  //     const choiceWeekDay = day.getDay();
-  //     const today = new Date();
-  //     let weekDay = `${getWeekDayNameInGenitiveCase(day)}`;
-
-  //     if (choiceWeekDay == today.getDay() && day.getDate() == today.getDate()) {
-  //       weekDay = 'Сегодня';
-  //     }
-
-  //     if (choiceWeekDay == today.getDay() + 1 && day.getDate() == today.getDate() + 1) {
-  //       weekDay = 'Завтра';
-  //     }
-
-  //     return weekDay;
-  //   };
-
-  //   let schedule = new AirDatepicker(scheduleInput, {
-  //     minDate: Date.now(),
-  //     maxDate: Date.now() + 30 * 24 * 60 * 60 * 1000,
-  //     dateFormat: 'd MMMM',
-  //     showOtherMonths: false,
-  //     toggleSelected: false,
-  //     autoClose: true,
-  //     navTitles: {
-  //       days: 'MMMM yyyy',
-  //       months: 'yyyy',
-  //       years: 'yyyy1 - yyyy2',
-  //     },
-  //     onSelect: ({ date, datepicker, formattedDate }) => {
-  //       datepicker.$el.value = `${getWeekDay(date)} ${date.getDate()} ${getMonthNameInGenitiveCase(
-  //         date,
-  //       )}`;
-  //     },
-  //   });
-
-  //   schedule.selectDate(Date.now());
-  // }
 
   const dataAction = (targetElement, attr) => {
     if (targetElement.closest(`[data-${attr}]`)) {
@@ -2879,10 +2853,6 @@ window.addEventListener('load', function () {
 
     if (targetElement.closest('[data-reception-filter]')) {
       filterAction(targetElement);
-    }
-
-    if (targetElement.hasAttribute('data-time')) {
-      setState({ time: targetElement.dataset.time });
     }
   });
 });

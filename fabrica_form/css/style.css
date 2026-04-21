@@ -50,37 +50,37 @@
 }
 @font-face {
   font-family: CloserText;
-  font-display: swap;
-  src: url(../fonts/CloserText-Medium.woff2) format("woff2"),url(../fonts/CloserText-Medium.woff) format("woff");
+  font-style: normal;
   font-weight: 500;
-  font-style: normal;
+  src: url(../fonts/CloserText-Medium.woff2) format("woff2"),url(../fonts/CloserText-Medium.woff) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: CloserText;
-  font-display: swap;
-  src: url(../fonts/CloserText-Light.woff2) format("woff2"),url(../fonts/CloserText-Light.woff) format("woff");
+  font-style: normal;
   font-weight: 300;
-  font-style: normal;
+  src: url(../fonts/CloserText-Light.woff2) format("woff2"),url(../fonts/CloserText-Light.woff) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: CloserText;
-  font-display: swap;
-  src: url(../fonts/CloserText-Regular.woff2) format("woff2"),url(../fonts/CloserText-Regular.woff) format("woff");
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/CloserText-Regular.woff2) format("woff2"),url(../fonts/CloserText-Regular.woff) format("woff");
+  font-display: swap;
 }
 .reception-form__body,
 body,
 html {
-  font-family: CloserText,sans-serif;
+  font-family: CloserText,system-ui,sans-serif;
   font-weight: 400;
 }
 @font-face {
   font-family: Vishenka;
-  font-display: swap;
-  src: url(../fonts/Vishenka.woff2) format("woff2"),url(../fonts/Vishenka.woff) format("woff");
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Vishenka.woff2) format("woff2"),url(../fonts/Vishenka.woff) format("woff");
+  font-display: swap;
 }
 .reception-form__title span {
   font-family: Vishenka,sans-serif;
@@ -1102,6 +1102,7 @@ body {
   flex-direction: column;
   width: 100%;
   overflow: hidden;
+  overflow: clip;
   background-color: var(--color-white);
 }
 .reception-popup__close {
@@ -1123,7 +1124,9 @@ body {
 }
 .reception-popup__inner {
   flex-grow: 1;
+  max-height: 100%;
   overflow: hidden;
+  overflow: clip;
 }
 .reception-form {
   height: 100%;
@@ -1149,6 +1152,7 @@ body {
   flex-direction: column;
   height: 100%;
   overflow: hidden;
+  overflow: clip;
 }
 .reception-form__step[hidden] {
   display: none;
@@ -1213,6 +1217,15 @@ body {
   width: 100%;
   max-width: 100%;
 }
+.reception-form__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.reception-form__content > *:nth-last-child(2) {
+  flex: 1 1 auto;
+}
 .reception-filter {
   margin-right: calc(-1 * var(--padding-offset));
   margin-left: calc(-1 * var(--padding-offset));
@@ -1262,9 +1275,6 @@ body {
   margin-top: -1px;
   overflow: hidden;
   background-color: var(--color-white);
-}
-[data-reception-step-choise]:not([data-reception-step-choise=details], ._is-step-active) .reception-action {
-  height: 0;
 }
 .reception-action__body {
   display: flex;
