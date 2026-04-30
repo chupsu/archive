@@ -71,7 +71,7 @@
                       </li>
                     </ul>
                     <ul class="menu__action">
-                      <a class="menu__link btn btn_cta" href="#">Где купить</a>
+                      <a class="menu__link btn btn_cta" href="./index.html#shops">Где купить</a>
                     </ul>
                   </div>
                 </div>
@@ -200,7 +200,7 @@
         <section class="about">
           <div class="container">
             <div class="about__body">
-              <div class="about__head _mb">
+              <div class="about__head _mb-m">
                 <h2 class="about__title _h1">
                   <span class="_fw">&laquo;</span>Умные<span class="_fw">&raquo;</span><sup><span class="_fs">*</span></sup>
                   капсулы Фамвиталь<sup><span class="_fs">&reg;</span></sup> Смарт
@@ -284,10 +284,23 @@
             </div>
           </div>
         </section>
-        <section class="shops _mb" id="shop">
+        <div class="demo">
+          <div class="container">
+            <div class="demo__body">
+              <video class="demo_player" id="demo-video" autoplay muted loop playsinline>
+                <source src="./files/video_1.mp4" media="(max-width: 575px)" type="video/mp4">
+                <source src="./files/video_1.mp4" type="video/mp4">
+              </video>
+              <button class="demo__btn btn btn_dark btn_large icon-play" id="demo-video-btn">
+                <span>Посмотреть видео</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <section class="shops _mb-l" id="shops">
           <div class="container">
             <div class="shops__body">
-              <div class="shops__head _mb">
+              <div class="shops__head _mb-m">
                 <h2 class="shops__title _h2">Где купить?</h2>
               </div>
               <div class="shops__main">
@@ -421,6 +434,198 @@
                       Найти в аптеке рядом с домом
                     </button>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="articles">
+          <div class="container">
+            <div class="articles__body">
+              <div class="articles__head">
+                <h2 class="articles__title _h2">Статьи</h2>
+              </div>
+              <div class="articles-slider">
+                <div class="articles-slider__items">
+                  <div class="articles-slider__item">
+                    <article class="article-card">
+                      <a class="article-card__link icon-arr-right-up" href="./article.html">
+                        <span class="_seo">Читать статью</span>
+                      </a>
+                      <figure class="article-card__media">
+                        <picture><source srcset="./img/content/photo/article_1.webp" type="image/webp"><img class="article-card__img" src="./img/content/photo/article_1.jpg" alt="Статья"></picture>
+                      </figure>
+                      <div class="article-card__body">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">кожа</li>
+                        </ul>
+                        <div class="article-card__content">
+                          <h3 class="article-card__title _h4">
+                            Витамины и БАДы для поддержания здоровья кожи
+                          </h3>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="articles-slider__item">
+                    <article class="article-card article-card_detail">
+                      <a class="article-card__link icon-arr-right-up" href="./article.html">
+                        <span class="_seo">Читать статью</span>
+                      </a>
+                      <figure class="article-card__media">
+                        <picture><source srcset="./img/content/photo/article_13.webp" type="image/webp"><img class="article-card__img" src="./img/content/photo/article_13.jpg" alt="Статья"></picture>
+                      </figure>
+                      <div class="article-card__body">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">Совет эксперта</li>
+                        </ul>
+                        <div class="article-card__content">
+                          <h3 class="article-card__title _h4">
+                            Терапия сопровождения или нутрицевтической поддержка в 40+
+                          </h3>
+                          <p class="article-card__text">
+                            <b>Ольга Алексеевна Громова.</b> д.м.н., профессор, заместитель директора
+                            института Фармакоинформатики РАН (Москва), научный консультант Института
+                            микроэлементов ЮНЕСКО
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="articles-slider__item">
+                    <article class="article-card">
+                      <a class="article-card__link icon-arr-right-up" href="./article.html">
+                        <span class="_seo">Читать статью</span>
+                      </a>
+                      <figure class="article-card__media">
+                        <picture><source srcset="./img/content/photo/article_2.webp" type="image/webp"><img class="article-card__img" src="./img/content/photo/article_2.jpg" alt="Статья"></picture>
+                      </figure>
+                      <div class="article-card__body">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">менопауза</li>
+                        </ul>
+                        <div class="article-card__content">
+                          <h3 class="article-card__title _h4">Климакс — симптомы, стадии и менопауза</h3>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="articles-slider__item">
+                    <article class="article-card">
+                      <a class="article-card__link icon-arr-right-up" href="./article.html">
+                        <span class="_seo">Читать статью</span>
+                      </a>
+                      <figure class="article-card__media">
+                        <picture><source srcset="./img/content/photo/article_3.webp" type="image/webp"><img class="article-card__img" src="./img/content/photo/article_3.jpg" alt="Статья"></picture>
+                      </figure>
+                      <div class="article-card__body">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">волосы</li>
+                        </ul>
+                        <div class="article-card__content">
+                          <h3 class="article-card__title _h4">
+                            Выпадение волос: основные причины и стратегии восстановления
+                          </h3>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="articles-slider__item">
+                    <article class="article-card">
+                      <a class="article-card__link icon-arr-right-up" href="./article.html">
+                        <span class="_seo">Читать статью</span>
+                      </a>
+                      <figure class="article-card__media">
+                        <picture><source srcset="./img/content/photo/article_4.webp" type="image/webp"><img class="article-card__img" src="./img/content/photo/article_4.jpg" alt="Статья"></picture>
+                      </figure>
+                      <div class="article-card__body">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">кожа</li>
+                        </ul>
+                        <div class="article-card__content">
+                          <h3 class="article-card__title _h4">10 мифов о климаксе</h3>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="articles-slider__item">
+                    <article class="article-card">
+                      <a class="article-card__link icon-arr-right-up" href="./article.html">
+                        <span class="_seo">Читать статью</span>
+                      </a>
+                      <figure class="article-card__media">
+                        <picture><source srcset="./img/content/photo/article_5.webp" type="image/webp"><img class="article-card__img" src="./img/content/photo/article_5.jpg" alt="Статья"></picture>
+                      </figure>
+                      <div class="article-card__body">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">кожа</li>
+                        </ul>
+                        <div class="article-card__content">
+                          <h3 class="article-card__title _h4">
+                            Признаки приближения менопаузы: основные симптомы
+                          </h3>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="articles-slider__item">
+                    <article class="article-card">
+                      <a class="article-card__link icon-arr-right-up" href="./article.html">
+                        <span class="_seo">Читать статью</span>
+                      </a>
+                      <figure class="article-card__media">
+                        <picture><source srcset="./img/content/photo/article_6.webp" type="image/webp"><img class="article-card__img" src="./img/content/photo/article_6.jpg" alt="Статья"></picture>
+                      </figure>
+                      <div class="article-card__body">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">кожа</li>
+                        </ul>
+                        <div class="article-card__content">
+                          <h3 class="article-card__title _h4">Климакс — симптомы, стадии и менопауза</h3>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="articles-slider__item">
+                    <article class="article-card">
+                      <a class="article-card__link icon-arr-right-up" href="./article.html">
+                        <span class="_seo">Читать статью</span>
+                      </a>
+                      <figure class="article-card__media">
+                        <picture><source srcset="./img/content/photo/article_7.webp" type="image/webp"><img class="article-card__img" src="./img/content/photo/article_7.jpg" alt="Статья"></picture>
+                      </figure>
+                      <div class="article-card__body">
+                        <ul class="article-tags">
+                          <li class="article-tags__item">кожа</li>
+                        </ul>
+                        <div class="article-card__content">
+                          <h3 class="article-card__title _h4">Менопауза и как пережить климакс период</h3>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="articles-slider__footer">
+                  <div class="articles-slider__actions">
+                    <div class="articles-slider__nav">
+                      <button
+                        class="articles-slider__btn articles-slider__btn_prev btn btn_dark btn_small icon-arr-left"
+                        type="button"
+                      >
+                        <span class="_seo">Предыдущая статья</span>
+                      </button>
+                      <button
+                        class="articles-slider__btn articles-slider__btn_next btn btn_dark btn_small icon-arr-right"
+                        type="button"
+                      >
+                        <span class="_seo">Следующая статья</span>
+                      </button>
+                    </div>
+                    <div class="articles-slider__pagination" data-slider-pagination></div>
+                  </div>
+                  <a class="articles-slider__link btn btn_dark btn_small icon-arr-right" href="#">
+                    Все статьи
+                  </a>
                 </div>
               </div>
             </div>

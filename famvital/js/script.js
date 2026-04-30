@@ -11721,6 +11721,7 @@ window.addEventListener('load', function () {
   // }
 
   const HEADER = document.querySelector('.header');
+  const demoVideoBtn = document.querySelector('#demo-video-btn');
   const shopsList = document.querySelector('.shops__list');
   let resizeRaf = null;
   let prevWidth = window.innerWidth;
@@ -11977,6 +11978,70 @@ window.addEventListener('load', function () {
     });
   };
 
+  function handleVideoControl(btn) {
+    const video = document.getElementById('demo-video');
+
+    if (!btn || !video) return false;
+    const text = btn.querySelector('span');
+
+    // --- обновление UI
+    function updateUI() {
+      btn.classList.remove('icon-play', 'icon-volume-on', 'icon-volume-off');
+
+      if (video.paused) {
+        btn.classList.add('icon-play');
+        text.textContent = 'Посмотреть видео';
+      } else if (video.muted) {
+        btn.classList.add('icon-volume-on');
+        text.textContent = 'Включить звук';
+      } else {
+        btn.classList.add('icon-volume-off');
+        text.textContent = 'Отключить звук';
+      }
+    }
+
+    // --- если видео на паузе → пробуем запустить
+    if (video.paused) {
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // autoplay или user gesture сработал
+            updateUI();
+          })
+          .catch(() => {
+            // ❗ autoplay заблокирован
+            // делаем fallback: включаем muted и пробуем снова
+            video.muted = true;
+
+            video
+              .play()
+              .then(updateUI)
+              .catch(() => {
+                // если даже так не пошло — просто оставляем кнопку "play"
+                updateUI();
+              });
+          });
+      }
+    } else {
+      // --- если уже играет → переключаем звук
+      video.muted = !video.muted;
+      updateUI();
+    }
+
+    // --- синхронизация через события (очень важно)
+    video.onplay = updateUI;
+    video.onpause = updateUI;
+    video.onvolumechange = updateUI;
+
+    return true;
+  }
+
+  if (demoVideoBtn) {
+    handleVideoControl(demoVideoBtn);
+  }
+
   // const inputsActions = () => {
   //   const inputs = document.querySelectorAll('.input');
 
@@ -12048,7 +12113,7 @@ window.addEventListener('load', function () {
         el: '.categories-slider__pagination',
         lockClass: '_is-lock',
         bulletClass: 'categories-slider__bullet',
-        bulletActiveClass: 'categories-slider__bullet_active',
+        bulletActiveClass: '_is-active',
       },
       on: {
         init: (swiper) => {
@@ -12060,6 +12125,49 @@ window.addEventListener('load', function () {
           swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
         },
       },
+    });
+  }
+
+  if (document.querySelector('.articles-slider')) {
+    const articleSliders = document.querySelectorAll('.articles-slider');
+
+    articleSliders.forEach((el, i) => {
+      el.classList.add('_is-slider-init');
+
+      let articleSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__["default"](el, {
+        slidesPerView: 'auto',
+        spaceBetween: 10 + 10 * ((document.documentElement.offsetWidth - 360) / (1920 - 360)),
+        resistanceRatio: 0,
+        wrapperClass: 'articles-slider__items',
+        slideClass: 'articles-slider__item',
+        slideActiveClass: 'articles-slider__item_active',
+        slidePrevClass: 'articles-slider__item_prev',
+        slideNextClass: 'articles-slider__item_next',
+        pagination: {
+          clickable: true,
+          bulletElement: 'button',
+          el: el.querySelector('.articles-slider__pagination'),
+          lockClass: '_is-lock',
+          bulletClass: 'articles-slider__bullet',
+          bulletActiveClass: '_is-active',
+        },
+        navigation: {
+          prevEl: el.querySelector('.articles-slider__btn_prev'),
+          nextEl: el.querySelector('.articles-slider__btn_next'),
+          disabledClass: 'articles-slider__btn_disabled',
+          lockClass: '_is-lock',
+        },
+        on: {
+          init: (swiper) => {
+            swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
+          },
+          resize: (swiper) => {
+            swiper.params.spaceBetween =
+              10 + 10 * ((document.documentElement.offsetWidth - 360) / (1920 - 360));
+            swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
+          },
+        },
+      });
     });
   }
 
@@ -12075,6 +12183,12 @@ window.addEventListener('load', function () {
     //   Menu
     if (!isTargetMenu && document.documentElement.classList.contains('_is-menu-open')) {
       (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+    }
+
+    //   Video
+    if (targetElement.closest('#demo-video-btn')) {
+      handleVideoControl(targetElement.closest('#demo-video-btn'));
+      return;
     }
 
     //   View Type
