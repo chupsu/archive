@@ -11721,6 +11721,7 @@ window.addEventListener('load', function () {
   // }
 
   const HEADER = document.querySelector('.header');
+  const ALERT = document.querySelector('.alert');
   const demoVideoBtn = document.querySelector('#demo-video-btn');
   const shopsList = document.querySelector('.shops__list');
   let resizeRaf = null;
@@ -11844,8 +11845,6 @@ window.addEventListener('load', function () {
 
     if (!navContainer) return;
 
-    let underline = null;
-
     const mouseOverHandler = (e) => {
       const item = e.target.closest(navItemsSelector);
       if (!item || !navContainer.contains(item)) return;
@@ -11853,46 +11852,42 @@ window.addEventListener('load', function () {
       const rect = item.getBoundingClientRect();
       const containerRect = navContainer.getBoundingClientRect();
 
-      underline.style.width = `${rect.width}px`;
-      underline.style.left = `${rect.left - containerRect.left}px`;
-      underline.style.opacity = '1';
+      navContainer.style.setProperty('--underline-width', `${rect.width}px`);
+      navContainer.style.setProperty('--underline-left', `${rect.left - containerRect.left}px`);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          navContainer.style.setProperty('--underline-transition', 'var(--transition-duration)');
+          navContainer.style.setProperty('--underline-opacity', '1');
+        });
+      });
     };
 
     const mouseLeaveHandler = () => {
-      underline.style.opacity = '0';
+      navContainer.style.setProperty('--underline-opacity', '0');
 
       const transitionEndHandler = () => {
-        underline.style.width = '';
-        underline.style.left = '';
-        underline.removeEventListener('transitionend', transitionEndHandler);
+        navContainer.style.removeProperty('--underline-width');
+        navContainer.style.removeProperty('--underline-left');
+        navContainer.style.removeProperty('--underline-transition');
+        navContainer.removeEventListener('transitionend', transitionEndHandler);
       };
 
-      underline.addEventListener('transitionend', transitionEndHandler);
+      navContainer.addEventListener('transitionend', transitionEndHandler);
     };
 
     const init = () => {
-      if (underline) return;
-
-      underline = document.createElement('div');
-      underline.classList.add('pulldown__underline');
-      underline.setAttribute('aria-hidden', 'true');
-      navContainer.appendChild(underline);
-
-      underline.style.opacity = '0';
-      underline.style.transition = 'all 0.3s ease';
-
       navContainer.addEventListener('mouseover', mouseOverHandler);
       navContainer.addEventListener('mouseleave', mouseLeaveHandler);
     };
 
     const destroy = () => {
-      if (!underline) return;
-
       navContainer.removeEventListener('mouseover', mouseOverHandler);
       navContainer.removeEventListener('mouseleave', mouseLeaveHandler);
 
-      underline.remove();
-      underline = null;
+      navContainer.style.removeProperty('--underline-width');
+      navContainer.style.removeProperty('--underline-left');
+      navContainer.style.removeProperty('--underline-opacity');
     };
 
     const toggle = () => {
@@ -11948,8 +11943,11 @@ window.addEventListener('load', function () {
 
     document.documentElement.style.setProperty('--width-page', `${currentWidth}px`);
     document.documentElement.style.setProperty('--height-page', `${currentHeight}px`);
-    document.documentElement.style.setProperty('--height-header', `${HEADER.offsetHeight}px`);
-    // document.documentElement.style.setProperty('--height-alert', `${ALERT ? ALERT.offsetHeight : 0}px`);
+    // prettier-ignore
+    document.documentElement.style.setProperty('--height-header', `${HEADER ? HEADER.offsetHeight : 0}px`);
+    // prettier-ignore
+    document.documentElement.style.setProperty('--height-alert', `${ALERT ? ALERT.offsetHeight : 0}px`);
+    // prettier-ignore
     document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 10);
 
     if (isHorizontalResize) {
@@ -11992,10 +11990,10 @@ window.addEventListener('load', function () {
         btn.classList.add('icon-play');
         text.textContent = 'Посмотреть видео';
       } else if (video.muted) {
-        btn.classList.add('icon-volume-on');
+        btn.classList.add('icon-volume-off');
         text.textContent = 'Включить звук';
       } else {
-        btn.classList.add('icon-volume-off');
+        btn.classList.add('icon-volume-on');
         text.textContent = 'Отключить звук';
       }
     }
@@ -12225,47 +12223,6 @@ window.addEventListener('load', function () {
   //   );
   // });
 });
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const navContainer = document.querySelector('.menu__list');
-//   const navItemsSelector = '.pulldown__title';
-
-//   const underline = document.createElement('div');
-//   underline.classList.add('menu-underline');
-//   navContainer.appendChild(underline);
-
-//   underline.style.opacity = '0';
-//   underline.style.transition = 'all 0.3s ease';
-
-//   // Используем делегирование событий
-//   navContainer.addEventListener('mouseover', (e) => {
-//     const item = e.target.closest(navItemsSelector);
-//     if (!item || !navContainer.contains(item)) return;
-
-//     const rect = item.getBoundingClientRect();
-//     const containerRect = navContainer.getBoundingClientRect();
-//     const left = rect.left - containerRect.left;
-//     const width = rect.width;
-
-//     // Двигаем фон к текущей кнопке
-//     underline.style.width = `${width}px`;
-//     underline.style.left = `${left}px`;
-//     underline.style.opacity = '1';
-//   });
-
-//   navContainer.addEventListener('mouseleave', () => {
-//     // Скрываем фон плавно
-//     underline.style.opacity = '0';
-
-//     // Сбрасываем размеры и позицию после окончания перехода
-//     const transitionEndHandler = () => {
-//       underline.style.width = '';
-//       underline.style.left = '';
-//       underline.removeEventListener('transitionend', transitionEndHandler);
-//     };
-//     underline.addEventListener('transitionend', transitionEndHandler);
-//   });
-// });
 
 })();
 
