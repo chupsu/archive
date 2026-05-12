@@ -26,9 +26,21 @@
   clip-path: inset(100%);
 }
 .btn,
+.checkbox__text a,
+.contact-chats__link,
+.contacts-link svg,
+.contacts__desc a,
+.cookies__text a,
+.footer-info__desc a,
+.footer-menu__link,
+.header-contacts__link,
 .menu__btn,
+.menu__link,
+.place-card,
 .places-slider__btn,
 .popup,
+.popup__close,
+.room-slider__btn,
 .select__option,
 .select__title,
 .skills-slider__btn,
@@ -348,7 +360,6 @@ html {
   --size-10: 10px;
   --size-8: 8px;
   --size-1: 1px;
-  --gap: 25px;
   --gap-largest: 32px;
   --gap-large: 32px;
   --gap-medium: 20px;
@@ -357,7 +368,9 @@ html {
   --padding-page: 12px;
   --padding-page-offset: calc(-1 * var(--padding-page));
   --color-dark: #232531;
+  --color-dark-hover: #0f111d;
   --color-accent: #967c63;
+  --color-accent-dark: #735f4b;
   --color-alert: #f27126;
   --color-border: #ddd;
   --color-shadow: #919298;
@@ -473,13 +486,23 @@ select:focus-visible {
   color: var(--color-neutral);
   background-color: var(--color-accent);
 }
+.btn_accent:focus-visible {
+  background-color: var(--color-dark);
+}
 .btn_dark {
   color: var(--color-neutral);
   background-color: var(--color-dark);
 }
+.btn_dark:focus-visible {
+  background-color: var(--color-dark-hover);
+}
 .btn_light {
   color: var(--color-dark);
   background-color: var(--color-light);
+}
+.btn_light:focus-visible {
+  color: var(--color-neutral);
+  background-color: var(--color-accent);
 }
 .btn_neutral,
 .select__option,
@@ -487,9 +510,19 @@ select:focus-visible {
   color: var(--color-dark);
   background-color: var(--color-neutral);
 }
+.btn_neutral:focus-visible,
+.select__option:focus-visible,
+.select__title:focus-visible {
+  color: var(--color-neutral);
+  background-color: var(--color-accent);
+}
 .btn_contour {
   color: var(--color-accent);
   border-color: var(--color-accent);
+}
+.btn_contour:focus-visible {
+  color: var(--color-neutral);
+  background-color: var(--color-accent);
 }
 .header {
   position: fixed;
@@ -603,6 +636,10 @@ select:focus-visible {
   display: block;
   color: var(--color-dark);
 }
+.menu__link:focus-visible {
+  color: var(--color-accent);
+  outline: 0;
+}
 .menu__link::after {
   position: absolute;
   inset: calc(-1 * var(--size-8));
@@ -622,7 +659,11 @@ select:focus-visible {
   background-color: var(--color-light);
 }
 .header-contacts__link {
-  color: inherit;
+  color: var(--color-dark);
+}
+.header-contacts__link:focus-visible {
+  color: var(--color-accent);
+  outline: 0;
 }
 .header-contacts__link_accent {
   font-size: var(--size-16);
@@ -642,12 +683,22 @@ select:focus-visible {
   width: 32px;
   height: 32px;
   overflow: hidden;
+  color: var(--color-accent);
   border: var(--size-1) solid var(--color-accent);
   border-radius: 50%;
+}
+.contact-chats__link:focus-visible {
+  color: var(--color-neutral);
+  outline: 0;
+  background-color: var(--color-accent);
+  border-color: transparent;
 }
 .contact-chats__link svg {
   width: 100%;
   height: 100%;
+}
+.contact-chats__link svg path {
+  fill: currentcolor;
 }
 .header-actions {
   display: flex;
@@ -722,6 +773,10 @@ select:focus-visible {
 .footer-info__desc a {
   color: inherit;
 }
+.footer-info__desc a:focus-visible {
+  color: var(--color-accent);
+  outline: 0;
+}
 .footer-menu {
   display: flex;
   flex-wrap: wrap;
@@ -730,6 +785,10 @@ select:focus-visible {
 }
 .footer-menu__link {
   color: inherit;
+}
+.footer-menu__link:focus-visible {
+  color: var(--color-accent);
+  outline: 0;
 }
 .breadcrumbs {
   display: flex;
@@ -779,6 +838,9 @@ select:focus-visible {
   gap: var(--size-18);
   width: 100%;
 }
+.select__title:focus-visible::after {
+  filter: brightness(0) invert(1);
+}
 .select__title::after {
   flex-shrink: 0;
   width: 1em;
@@ -786,6 +848,8 @@ select:focus-visible {
   aspect-ratio: 12/8;
   content: "";
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.75 0.750031L6.63384 6.26183C6.14773 6.91276 5.35228 6.91276 4.86617 6.26183L0.75 0.750031' stroke='%23919298' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  transition-duration: var(--transition-duration);
+  transition-property: filter;
 }
 .select__value[data-pseudo-label]::after {
   color: var(--color-shadow);
@@ -886,6 +950,11 @@ select:focus-visible {
   border: none;
   border-radius: 50%;
 }
+.popup__close:focus-visible {
+  color: var(--color-neutral);
+  outline: 0;
+  background-color: var(--color-accent);
+}
 .popup__close::after,
 .popup__close::before {
   position: absolute;
@@ -931,6 +1000,10 @@ select:focus-visible {
 }
 .cookies__text a {
   color: var(--color-accent);
+}
+.cookies__text a:focus-visible {
+  color: var(--color-accent-dark);
+  outline: 0;
 }
 .room {
   display: grid;
@@ -1027,11 +1100,17 @@ select:focus-visible {
   border-radius: 50%;
 }
 .room-slider__btn:focus-visible {
+  color: var(--color-neutral);
   outline: 0;
+  background-color: var(--color-accent);
+  border-color: transparent;
 }
 .room-slider__btn svg {
   width: 100%;
   height: 100%;
+}
+.room-slider__btn svg path {
+  fill: currentcolor;
 }
 .room-slider__img {
   height: 100%;
@@ -1181,6 +1260,10 @@ textarea.input__body {
 .checkbox__text a {
   color: var(--color-accent);
   text-decoration: underline;
+}
+.checkbox__text a:focus-visible {
+  color: var(--color-accent-dark);
+  outline: 0;
 }
 .welcome {
   position: relative;
@@ -1376,12 +1459,18 @@ textarea.input__body {
   border-radius: 50%;
 }
 .places-slider__btn:focus-visible {
+  color: var(--color-neutral);
   outline: 0;
+  background-color: var(--color-accent);
+  border-color: transparent;
 }
 .places-slider__btn svg {
   flex-shrink: 0;
   width: 100%;
   height: 100%;
+}
+.places-slider__btn svg path {
+  fill: currentcolor;
 }
 .places-slider__btn_disabled {
   pointer-events: none;
@@ -1400,6 +1489,18 @@ textarea.input__body {
   min-height: 100%;
   padding: var(--size-16);
   background-color: var(--color-card-bg);
+}
+.place-card:focus-visible .place-card__content > *:not(.place-card__actions) {
+  display: none;
+}
+.place-card:focus-visible .place-card__actions {
+  display: flex;
+}
+.place-card:active .place-card__content > *:not(.place-card__actions) {
+  display: none;
+}
+.place-card:active .place-card__actions {
+  display: flex;
 }
 .places-slider .place-card {
   --color-card-bg: var(--color-light);
@@ -1447,7 +1548,7 @@ textarea.input__body {
   color: var(--color-shadow);
 }
 .place-card__actions {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: var(--gap-small);
   width: 100%;
@@ -1502,12 +1603,18 @@ textarea.input__body {
   border-radius: 50%;
 }
 .skills-slider__btn:focus-visible {
+  color: var(--color-neutral);
   outline: 0;
+  background-color: var(--color-accent);
+  border-color: transparent;
 }
 .skills-slider__btn svg {
   flex-shrink: 0;
   width: 100%;
   height: 100%;
+}
+.skills-slider__btn svg path {
+  fill: currentcolor;
 }
 .skills-slider__btn_disabled {
   pointer-events: none;
@@ -1650,6 +1757,10 @@ textarea.input__body {
 .contacts__desc a {
   color: var(--color-dark);
 }
+.contacts__desc a:focus-visible {
+  color: var(--color-accent);
+  outline: 0;
+}
 .contacts__actions {
   display: flex;
   flex-wrap: wrap;
@@ -1668,13 +1779,25 @@ textarea.input__body {
   line-height: 1;
   color: var(--color-dark);
 }
+.contacts-link:focus-visible {
+  outline: 0;
+}
+.contacts-link:focus-visible svg {
+  color: var(--color-neutral);
+  background-color: var(--color-accent);
+  border-color: transparent;
+}
 .contacts-link svg {
   flex-shrink: 0;
   width: 42px;
   height: 42px;
   overflow: hidden;
+  color: var(--color-accent);
   border: var(--size-1) solid var(--color-accent);
   border-radius: 50%;
+}
+.contacts-link svg path {
+  fill: currentcolor;
 }
 .contacts-link__content {
   display: flex;
@@ -1831,6 +1954,9 @@ textarea.input__body {
   display: flex;
   flex-direction: column;
   margin-bottom: var(--size-32);
+}
+.schema-tabs__label {
+  pointer-events: none;
 }
 .schema-tabs__action {
   position: relative;
@@ -3346,5 +3472,144 @@ textarea.input__body {
   .menu__dropdown::-webkit-scrollbar-thumb,
   .popup__inner::-webkit-scrollbar-thumb {
     background-color: var(--color-dark);
+  }
+  .btn_accent:not(:active):hover {
+    background-color: var(--color-dark);
+  }
+  .btn_accent:active,
+  .btn_dark:not(:active):hover {
+    background-color: var(--color-dark-hover);
+  }
+  .btn_light:not(:active):hover {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+  }
+  .btn_light:active {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+  }
+  .btn_neutral:not(:active):hover,
+  .select__option:not(:active):hover,
+  .select__title:not(:active):hover {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+  }
+  .btn_neutral:active,
+  .select__option:active,
+  .select__title:active {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+  }
+  .btn_contour:not(:active):hover {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+  }
+  .btn_contour:active {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+  }
+  .menu__link:not(:active):hover {
+    color: var(--color-accent);
+  }
+  .menu__link:active {
+    color: var(--color-accent-dark);
+  }
+  .header-contacts__link:not(:active):hover {
+    color: var(--color-accent);
+  }
+  .header-contacts__link:active {
+    color: var(--color-accent-dark);
+  }
+  .contact-chats__link:not(:active):hover {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+    border-color: transparent;
+  }
+  .contact-chats__link:active {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+    border-color: transparent;
+  }
+  .footer-info__desc a:not(:active):hover {
+    color: var(--color-accent);
+  }
+  .footer-info__desc a:active {
+    color: var(--color-accent-dark);
+  }
+  .footer-menu__link:not(:active):hover {
+    color: var(--color-accent);
+  }
+  .footer-menu__link:active {
+    color: var(--color-accent-dark);
+  }
+  .select__title:active::after,
+  .select__title:not(:active):hover::after {
+    filter: brightness(0) invert(1);
+  }
+  .popup__close:not(:active):hover {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+  }
+  .popup__close:active {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+  }
+  .cookies__text a:not(:active):hover {
+    color: var(--color-accent-dark);
+  }
+  .room-slider__btn:not(:active):hover {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+    border-color: transparent;
+  }
+  .room-slider__btn:active {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+    border-color: transparent;
+  }
+  .checkbox__text a:not(:active):hover {
+    color: var(--color-accent-dark);
+  }
+  .places-slider__btn:not(:active):hover {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+    border-color: transparent;
+  }
+  .places-slider__btn:active {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+    border-color: transparent;
+  }
+  .place-card:not(:active):hover .place-card__content > *:not(.place-card__actions) {
+    display: none;
+  }
+  .place-card:not(:active):hover .place-card__actions {
+    display: flex;
+  }
+  .skills-slider__btn:not(:active):hover {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+    border-color: transparent;
+  }
+  .skills-slider__btn:active {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+    border-color: transparent;
+  }
+  .contacts__desc a:not(:active):hover {
+    color: var(--color-accent);
+  }
+  .contacts__desc a:active {
+    color: var(--color-accent-dark);
+  }
+  .contacts-link:not(:active):hover svg {
+    color: var(--color-neutral);
+    background-color: var(--color-accent);
+    border-color: transparent;
+  }
+  .contacts-link:active svg {
+    color: var(--color-neutral);
+    background-color: var(--color-accent-dark);
+    border-color: transparent;
   }
 }
