@@ -121,6 +121,48 @@
               <div class="users__head">
                 <h1 class="users__title _h2">Список арендаторов</h1>
               </div>
+              <div class="users__filter">
+                <div class="filter-users" data-one-select>
+                  <div class="filter-users__box filter-users__box_search">
+                    <form class="filter-search" action="#">
+                      <input class='filter-search__input' type="search" placeholder="Поиск по арендаторам">
+                      <button class="filter-search__btn btn" type="submit">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.66732 14C11.1651 14 14.0007 11.1645 14.0007 7.66668C14.0007 4.16887 11.1651 1.33334 7.66732 1.33334C4.16951 1.33334 1.33398 4.16887 1.33398 7.66668C1.33398 11.1645 4.16951 14 7.66732 14Z" stroke="#919298" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M14.6673 14.6667L13.334 13.3333" stroke="#919298" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span class="_seo">Искать</span>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="filter-users__box">
+                    <ul class="filter-users__list">
+                      <li class="filter-users__item">
+                        <select data-class-modifier="normal" data-show-selected>
+                          <option value="" data-show selected>Все категории</option>
+                          <option value="Медицина">Медицина</option>
+                          <option value="Дошкольное развитие">Дошкольное развитие</option>
+                          <option value="Пункт сортировки в несколько строк">
+                            Пункт сортировки в несколько строк
+                          </option>
+                        </select>
+                      </li>
+                      <li class="filter-users__item">
+                        <select
+                          data-class-modifier="responsive"
+                          data-pseudo-label="Этажи"
+                          data-show-selected
+                        >
+                          <option value="Все" selected>Все</option>
+                          <option value="1 этаж">1 этаж</option>
+                          <option value="2 этаж">2 этаж</option>
+                          <option value="3 этаж">3 этаж</option>
+                        </select>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               <div class="users-table">
                 <div class="users-table__row">
                   <div class="users-table__heading">
