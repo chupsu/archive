@@ -112,64 +112,104 @@
             <a class="breadcrumbs__link" href="./index.html">Главная</a>
           </li>
           <li class="breadcrumbs__item">
-            <span class="breadcrumbs__link">Услуги</span>
+            <span class="breadcrumbs__link">Схема центра</span>
           </li>
         </ul>
-
-        <section class="services _mb">
+        <section class="schema _mb">
           <div class="container">
-            <div class="services__body">
-              <div class="services__head">
-                <h1 class="services__title _h2">Услуги</h1>
+            <div class="schema__body">
+              <div class="schema__head">
+                <h1 class="schema__title _h2">Схема центра</h1>
               </div>
-              <div class="services__main">
-                <ul class="services-list">
-                  <li class="services-list__item">
-                    <figure class="services-list__media">
-                      <picture><source srcset="./img/content/photo/service_1.webp" type="image/webp"><img class="services-list__img" src="./img/content/photo/service_1.jpg" alt="Изображение"></picture>
-                    </figure>
-                    <div class="services-list__content">
-                      <h3 class="services-list__title">Уборка помещений и общего пространства</h3>
-                      <p class="services-list__desc">
-                        Чистота и порядок в офисах и зонах общего пользования каждый день.
-                      </p>
+              <div class="schema-tabs" data-tabs>
+                <div class="schema-tabs__head">
+                  <div class="schema-tabs__label btn btn_accent">Общая схема</div>
+                  <div class="schema-tabs__action">
+                    <button class="schema-tabs__select btn btn_neutral" type="button" data-schema-tabs>
+                      Этаж
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.75 0.750031L6.63384 6.26183C6.14773 6.91276 5.35228 6.91276 4.86617 6.26183L0.75 0.750031" stroke="#919298" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                    <nav class="schema-tabs__navigation" data-tabs-titles>
+                      <button class="schema-tabs__title btn btn_neutral _tab-active" type="button">
+                        <span class="_seo">Этаж</span> 1
+                      </button>
+                      <button class="schema-tabs__title btn btn_neutral" type="button">
+                        <span class="_seo">Этаж</span> 2
+                      </button>
+                      <button class="schema-tabs__title btn btn_neutral" type="button">
+                        <span class="_seo">Этаж</span> 3
+                      </button>
+                    </nav>
+                  </div>
+                </div>
+                <div class="schema-tabs__content" data-tabs-body>
+                  <!-- Схемы выводим через img.src -->
+                  <div class="schema-tabs__body">
+                    <div class="schema-tabs__panzoom">
+                      <picture><source srcset="./img/content/photo/schema_1.webp" type="image/webp"><img class="schema-tabs__img" src="./img/content/photo/schema_1.png" alt="Изображение"></picture>
                     </div>
-                  </li>
-                  <li class="services-list__item">
-                    <figure class="services-list__media">
-                      <picture><source srcset="./img/content/photo/service_2.webp" type="image/webp"><img class="services-list__img" src="./img/content/photo/service_2.jpg" alt="Изображение"></picture>
-                    </figure>
-                    <div class="services-list__content">
-                      <h3 class="services-list__title">Управление арендными отношениями</h3>
-                      <p class="services-list__desc">
-                        Полное сопровождение аренды &mdash; от договоров до поддержки
-                        арендаторов.
-                      </p>
+                    <div class="schema-tabs__controls">
+                      <button
+                        class="schema-tabs__zoom schema-tabs__zoom_out btn btn_medium btn_light"
+                        type="button"
+                      >
+                        -
+                        <span class="_seo">Уменьшить</span>
+                      </button>
+                      <button
+                        class="schema-tabs__zoom schema-tabs__zoom_in btn btn_medium btn_light"
+                        type="button"
+                      >
+                        +
+                        <span class="_seo">Увеличить</span>
+                      </button>
                     </div>
-                  </li>
-                  <li class="services-list__item">
-                    <figure class="services-list__media">
-                      <picture><source srcset="./img/content/photo/service_3.webp" type="image/webp"><img class="services-list__img" src="./img/content/photo/service_3.jpg" alt="Изображение"></picture>
-                    </figure>
-                    <div class="services-list__content">
-                      <h3 class="services-list__title">Парковка для сотрудников</h3>
-                      <p class="services-list__desc">
-                        Удобная и безопасная парковка прямо у бизнес-центра.
-                      </p>
+                  </div>
+                  <div class="schema-tabs__body" hidden>
+                    <div class="schema-tabs__panzoom">
+                      <picture><source srcset="./img/content/photo/schema_3.webp" type="image/webp"><img class="schema-tabs__img" src="./img/content/photo/schema_3.png" alt="Изображение"></picture>
                     </div>
-                  </li>
-                  <li class="services-list__item">
-                    <figure class="services-list__media">
-                      <picture><source srcset="./img/content/photo/service_4.webp" type="image/webp"><img class="services-list__img" src="./img/content/photo/service_4.jpg" alt="Изображение"></picture>
-                    </figure>
-                    <div class="services-list__content">
-                      <h3 class="services-list__title">Техническое обслуживание</h3>
-                      <p class="services-list__desc">
-                        Бесперебойная работа всех инженерных систем здания.
-                      </p>
+                    <div class="schema-tabs__controls">
+                      <button
+                        class="schema-tabs__zoom schema-tabs__zoom_out btn btn_medium btn_light"
+                        type="button"
+                      >
+                        -
+                        <span class="_seo">Уменьшить</span>
+                      </button>
+                      <button
+                        class="schema-tabs__zoom schema-tabs__zoom_in btn btn_medium btn_light"
+                        type="button"
+                      >
+                        +
+                        <span class="_seo">Увеличить</span>
+                      </button>
                     </div>
-                  </li>
-                </ul>
+                  </div>
+                  <div class="schema-tabs__body" hidden>
+                    <div class="schema-tabs__panzoom">
+                      <picture><source srcset="./img/content/photo/schema_1.webp" type="image/webp"><img class="schema-tabs__img" src="./img/content/photo/schema_1.png" alt="Изображение"></picture>
+                    </div>
+                    <div class="schema-tabs__controls">
+                      <button
+                        class="schema-tabs__zoom schema-tabs__zoom_out btn btn_medium btn_light"
+                        type="button"
+                      >
+                        -
+                        <span class="_seo">Уменьшить</span>
+                      </button>
+                      <button
+                        class="schema-tabs__zoom schema-tabs__zoom_in btn btn_medium btn_light"
+                        type="button"
+                      >
+                        +
+                        <span class="_seo">Увеличить</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
