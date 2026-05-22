@@ -11621,7 +11621,6 @@ __webpack_require__.r(__webpack_exports__);
 // import './module/select.js';
 // import './libs/watcher.js';
 // import * as scroll from "./module/scroll.js";
-// import * as video from "./module/video.js";
 // import { phoneMask } from "./module/phone_mask.js";
 // import { setViewType } from "./module/viewType.js";
 // import { showAllInit } from './module/show_all.js';
@@ -11629,34 +11628,14 @@ __webpack_require__.r(__webpack_exports__);
 // import { rangeInit } from "./module/range.js";
 
 // import noUiSlider from 'nouislider';
-// import Lottie from "lottie-web";
 // import tippy from "tippy.js";
 // import ClipboardJS from 'clipboard';
 // import Masonry from "masonry-layout";
 // import AirDatepicker from "air-datepicker";
 
-// import Matter from "matter-js";
-// import "./module/pathseg.js";
-// import "./module/decomp.js";
-
-// import * as THREE from "three";
-// import "./../../node_modules/wowjs/dist/wow.js"; // }).call(window);
-
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-// import {
-//   gsap,
-//   ScrollTrigger,
-//   ScrollToPlugin,
-//   ScrollSmoother,
-// } from "./module/gsap/all.js";
-// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
-
 window.Swiper = swiper_bundle__WEBPACK_IMPORTED_MODULE_2__["default"];
 // window.noUiSlider = noUiSlider;
 // window.ClipboardJS = ClipboardJS;
-// window.Lottie = Lottie;
-// window.Matter = Matter;
 // window.Masonry = Masonry;
 // window.AirDatepicker = AirDatepicker;
 
@@ -11722,8 +11701,10 @@ window.addEventListener('load', function () {
 
   const HEADER = document.querySelector('.header');
   const ALERT = document.querySelector('.alert');
-  const demoVideoBtn = document.querySelector('#demo-video-btn');
   const shopsList = document.querySelector('.shops__list');
+  const demoVideo = document.getElementById('demo-video');
+  const demoVideoBtn = document.querySelector('#demo-video-btn');
+  let responsiveVideo = null;
   let resizeRaf = null;
   let prevWidth = window.innerWidth;
   let prevHeight = window.innerHeight;
@@ -11736,71 +11717,13 @@ window.addEventListener('load', function () {
   const matchMediaMi2 = window.matchMedia(`(min-width: ${$md2}px)`);
   const matchMediaMi11 = window.matchMedia(`(min-width: ${$md11}px)`);
 
-  matchMediaMi4.addEventListener('change', () => {});
-  matchMediaMi3.addEventListener('change', () => {});
-  matchMediaMi2.addEventListener('change', () => {
-    if (document.documentElement.classList.contains('_is-menu-open')) {
-      (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+  if (demoVideo) {
+    responsiveVideo = initResponsiveVideo(demoVideo);
+
+    if (demoVideoBtn) {
+      handleVideoControl(demoVideoBtn, demoVideo);
     }
-  });
-  matchMediaMi11.addEventListener('change', () => {});
-
-  // const animateMedia = gsap.matchMedia();
-
-  // animateMedia.add("(max-width: 992px)", () => {
-  //   gsap.to(HEADER, {
-  //     scrollTrigger: {
-  //       trigger: ".wrapper",
-  //       start: "1px top",
-  //       onEnter: () => {
-  //         HEADER.parentElement.style.paddingBottom = `${HEADER.offsetHeight}px`;
-  //         HEADER.classList.add("is-header-sticky");
-  //       },
-  //       onLeaveBack: () => {
-  //         HEADER.parentElement.style.paddingBottom = "";
-  //         HEADER.classList.remove("is-header-sticky");
-  //       },
-  //     },
-  //   });
-  // });
-  // animateMedia.add("(min-width: 992px)", () => {
-  //   gsap.utils.toArray("[data-animated]").forEach((cardBox) => {
-  //     gsap.utils.toArray(cardBox.children).forEach((card, i) => {
-  //       gsap.from(card, {
-  //         y: 60,
-  //         opacity: 0,
-  //         duration: 1,
-  //         delay: i * 0.15,
-  //         ease: "power2.out",
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           start: "top 95%",
-  //           once: true,
-  //         },
-  //       });
-  //     });
-  //   });
-
-  //   gsap.utils.toArray("[data-animate]").forEach((card) => {
-  //     gsap.from(card, {
-  //       y: 60,
-  //       opacity: 0,
-  //       duration: 1,
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: card,
-  //         start: "top 95%",
-  //         once: true,
-  //       },
-  //     });
-  //   });
-  // });
-
-  // let gapNormal;
-  // const cssValue = (prop) => {
-  //   return window.getComputedStyle(document.documentElement).getPropertyValue(prop);
-  // };
-  // gapNormal = parseInt(cssValue("--gap-normal"), 10);
+  }
 
   // const wrappedTextWidth = () => {
   //   const wrappedTextBodies = document.querySelectorAll('[data-adaptive-width]');
@@ -11906,6 +11829,14 @@ window.addEventListener('load', function () {
   }
   setupMenuUnderline(matchMediaMi2);
 
+  const getShopsCount = () => {
+    if (matchMediaMi11.matches) return 6;
+    if (matchMediaMi2.matches) return 5;
+    if (matchMediaMi3.matches) return 4;
+    if (matchMediaMi4.matches) return 3;
+    return 2;
+  };
+
   const shopsHide = (shopsCount) => {
     const shops = shopsList.querySelectorAll('.shops__item:not(.shops__item_more)');
     const shopsShowBtn = shopsList.querySelector('.shops__item_more .shops__more');
@@ -11924,14 +11855,66 @@ window.addEventListener('load', function () {
       shopsList.classList.add('_is-shops-lock');
     }
   };
+  if (shopsList) {
+    shopsHide(getShopsCount());
+  }
 
-  const getShopsCount = () => {
-    if (matchMediaMi11.matches) return 6;
-    if (matchMediaMi2.matches) return 5;
-    if (matchMediaMi3.matches) return 4;
-    if (matchMediaMi4.matches) return 3;
-    return 2;
-  };
+  function filtering(button) {
+    const filterContainer = button.closest('[data-filter-container]');
+
+    if (!filterContainer) return;
+
+    const mode = filterContainer.dataset.filterContainer; // 'multi' или 'once'
+    const buttons = filterContainer.querySelectorAll('[data-filter]');
+    const items = filterContainer.querySelectorAll('[data-filterable]');
+    const filterValue = button.dataset.filter;
+    const allButton = filterContainer.querySelector('[data-filter="all"]');
+
+    // Логика для режима одиночного выбора (once)
+    if (mode === 'once') {
+      buttons.forEach((btn) => {
+        btn.classList.remove('_is-active');
+      });
+      button.classList.add('_is-active');
+    }
+    // Логика для режима мультивыбора (multi)
+    else if (mode === 'multi') {
+      // Если нажата кнопка «Все», сбрасываем все фильтры и активируем только её
+      if (filterValue === 'all') {
+        buttons.forEach((btn) => {
+          btn.classList.remove('_is-active');
+        });
+        allButton.classList.add('_is-active');
+      } else {
+        // Если нажата любая другая кнопка:
+        // 1. Сбрасываем кнопку «Все»
+        allButton?.classList.remove('_is-active');
+        // 2. Переключаем активный класс для текущей кнопки
+        button.classList.toggle('_is-active');
+      }
+    }
+
+    // Получаем все активные фильтры (кроме «all»)
+    const activeFilters = Array.from(buttons)
+      .filter((btn) => btn.classList.contains('_is-active') && btn.dataset.filter !== 'all')
+      .map((btn) => btn.dataset.filter);
+
+    // Если нет активных фильтров или активна кнопка «Все», показываем всё
+    if (activeFilters.length === 0 || (allButton && allButton.classList.contains('_is-active'))) {
+      items.forEach((item) => {
+        item.hidden = false;
+      });
+      return;
+    }
+
+    // Фильтруем элементы — показываем, если элемент соответствует хотя бы одному активному фильтру
+    items.forEach((item) => {
+      const categories = item.dataset.filterable.split(' ').map((category) => category.trim());
+      const isShow = activeFilters.some((filter) => categories.includes(filter));
+
+      item.hidden = !isShow;
+    });
+  }
 
   const adaptiveFix = () => {
     const currentWidth = window.innerWidth;
@@ -11951,13 +11934,14 @@ window.addEventListener('load', function () {
     document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 10);
 
     if (isHorizontalResize) {
+      responsiveVideo?.updateSource();
+
+      if (shopsList) {
+        shopsHide(getShopsCount());
+      }
     }
 
     if (isVerticalResize) {
-    }
-
-    if (shopsList) {
-      shopsHide(getShopsCount());
     }
 
     // showAllInit();
@@ -11976,13 +11960,11 @@ window.addEventListener('load', function () {
     });
   };
 
-  function handleVideoControl(btn) {
-    const video = document.getElementById('demo-video');
-
+  function handleVideoControl(btn, video) {
     if (!btn || !video) return false;
+
     const text = btn.querySelector('span');
 
-    // --- обновление UI
     function updateUI() {
       btn.classList.remove('icon-play', 'icon-volume-on', 'icon-volume-off');
 
@@ -11998,46 +11980,86 @@ window.addEventListener('load', function () {
       }
     }
 
-    // --- если видео на паузе → пробуем запустить
     if (video.paused) {
-      const playPromise = video.play();
-
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            // autoplay или user gesture сработал
-            updateUI();
-          })
-          .catch(() => {
-            // ❗ autoplay заблокирован
-            // делаем fallback: включаем muted и пробуем снова
-            video.muted = true;
-
-            video
-              .play()
-              .then(updateUI)
-              .catch(() => {
-                // если даже так не пошло — просто оставляем кнопку "play"
-                updateUI();
-              });
-          });
-      }
+      video.play().catch(() => {});
     } else {
-      // --- если уже играет → переключаем звук
       video.muted = !video.muted;
-      updateUI();
     }
 
-    // --- синхронизация через события (очень важно)
-    video.onplay = updateUI;
-    video.onpause = updateUI;
-    video.onvolumechange = updateUI;
+    video.addEventListener('play', updateUI);
+    video.addEventListener('pause', updateUI);
+    video.addEventListener('volumechange', updateUI);
+
+    updateUI();
 
     return true;
   }
 
-  if (demoVideoBtn) {
-    handleVideoControl(demoVideoBtn);
+  function initResponsiveVideo(video) {
+    const mobileSrc = video.dataset.srcMobile;
+    const desktopSrc = video.dataset.srcDesktop;
+
+    let currentSrc = null;
+    let isVisible = false;
+
+    const getNeededSrc = () => {
+      return matchMediaMi4.matches ? desktopSrc : mobileSrc;
+    };
+
+    const updateVideoSource = () => {
+      const newSrc = getNeededSrc();
+
+      if (newSrc === currentSrc) return;
+
+      const wasPlaying = !video.paused;
+      const currentTime = video.currentTime || 0;
+      const isMuted = video.muted;
+
+      currentSrc = newSrc;
+
+      video.src = newSrc;
+      video.load();
+
+      video.muted = isMuted;
+
+      video.addEventListener(
+        'loadedmetadata',
+        () => {
+          if (currentTime < video.duration) {
+            video.currentTime = currentTime;
+          }
+
+          if (wasPlaying && isVisible) {
+            video.play().catch(() => {});
+          }
+        },
+        { once: true },
+      );
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isVisible = entry.isIntersecting;
+
+          if (isVisible) {
+            updateVideoSource();
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+      },
+    );
+
+    observer.observe(video);
+
+    return {
+      updateSource: updateVideoSource,
+    };
   }
 
   // const inputsActions = () => {
@@ -12184,8 +12206,13 @@ window.addEventListener('load', function () {
     }
 
     //   Video
-    if (targetElement.closest('#demo-video-btn')) {
-      handleVideoControl(targetElement.closest('#demo-video-btn'));
+    if (targetElement === demoVideoBtn) {
+      handleVideoControl(demoVideoBtn, demoVideo);
+      return;
+    }
+
+    if (targetElement.closest('[data-filter]')) {
+      filtering(targetElement.closest('[data-filter]'));
       return;
     }
 
@@ -12203,11 +12230,20 @@ window.addEventListener('load', function () {
   });
 
   window.addEventListener('scroll', () => {
-    document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 56);
+    document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 10);
   });
 
   window.addEventListener('resize', handleResize);
   window.visualViewport?.addEventListener('resize', handleResize);
+
+  matchMediaMi4.addEventListener('change', () => {});
+  matchMediaMi3.addEventListener('change', () => {});
+  matchMediaMi2.addEventListener('change', () => {
+    if (document.documentElement.classList.contains('_is-menu-open')) {
+      (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+    }
+  });
+  matchMediaMi11.addEventListener('change', () => {});
 
   //    Scroll Watcher
   // document.documentElement.classList.toggle(
