@@ -101,7 +101,7 @@ const disableIOSTextFieldZoom = () => {
 function isIOS() {
   return (
     ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(
-      navigator.platform
+      navigator.platform,
     ) ||
     // iPad on iOS 13 detection
     (navigator.userAgent.includes('Mac') && 'ontouchend' in document)
@@ -174,7 +174,7 @@ let _slideUp = (target, duration = 500, showmore = 0) => {
           detail: {
             target: target,
           },
-        })
+        }),
       );
     }, duration);
   }
@@ -211,7 +211,7 @@ let _slideDown = (target, duration = 500, showmore = 0) => {
           detail: {
             target: target,
           },
-        })
+        }),
       );
     }, duration);
   }
@@ -352,11 +352,27 @@ function spollers() {
               hideSpollersBody(spollersBlock);
             }
 
-            !spollerBlock.open
-              ? (spollerBlock.open = true)
-              : setTimeout(() => {
-                  spollerBlock.open = false;
-                }, spollerSpeed);
+            // !spollerBlock.open
+            //   ? (spollerBlock.open = true)
+            //   : setTimeout(() => {
+            //       spollerBlock.open = false;
+            //     }, spollerSpeed);
+
+            const isOpen = !spollerBlock.open;
+
+            if (isOpen) {
+              spollerBlock.open = true;
+              spollersBlock.classList.add('_spollers-active');
+            } else {
+              setTimeout(() => {
+                spollerBlock.open = false;
+
+                // если нет открытых спойлеров — удаляем класс
+                if (!spollersBlock.querySelector('details[open]')) {
+                  spollersBlock.classList.remove('_spollers-active');
+                }
+              }, spollerSpeed);
+            }
 
             spollerTitle.classList.toggle('_spoller-active');
             _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
@@ -393,6 +409,11 @@ function spollers() {
               _slideUp(spollerClose.nextElementSibling, spollerSpeed);
               setTimeout(() => {
                 spollerCloseBlock.open = false;
+
+                // если открытых спойлеров больше нет
+                if (!spollersBlock.querySelector('details[open]')) {
+                  spollersBlock.classList.remove('_spollers-active');
+                }
               }, spollerSpeed);
             }
           });
@@ -457,10 +478,10 @@ function tabs() {
       let tabsContent = tabsMediaItem.querySelector('[data-tabs-body]');
       let tabsContentItems = tabsMediaItem.querySelectorAll('[data-tabs-item]');
       tabsTitleItems = Array.from(tabsTitleItems).filter(
-        (item) => item.closest('[data-tabs]') === tabsMediaItem
+        (item) => item.closest('[data-tabs]') === tabsMediaItem,
       );
       tabsContentItems = Array.from(tabsContentItems).filter(
-        (item) => item.closest('[data-tabs]') === tabsMediaItem
+        (item) => item.closest('[data-tabs]') === tabsMediaItem,
       );
       tabsContentItems.forEach((tabsContentItem, index) => {
         if (matchMedia.matches) {
@@ -542,7 +563,7 @@ function tabs() {
         let tabActiveTitle = tabsBlock.querySelectorAll('[data-tabs-title]._tab-active');
         tabActiveTitle.length
           ? (tabActiveTitle = Array.from(tabActiveTitle).filter(
-              (item) => item.closest('[data-tabs]') === tabsBlock
+              (item) => item.closest('[data-tabs]') === tabsBlock,
             ))
           : null;
         tabActiveTitle.length ? tabActiveTitle[0].classList.remove('_tab-active') : null;
@@ -625,10 +646,10 @@ function showMore() {
     let showMoreContent = showMoreBlock.querySelectorAll('[data-showmore-content]');
     let showMoreButton = showMoreBlock.querySelectorAll('[data-showmore-button]');
     showMoreContent = Array.from(showMoreContent).filter(
-      (item) => item.closest('[data-showmore]') === showMoreBlock
+      (item) => item.closest('[data-showmore]') === showMoreBlock,
     )[0];
     showMoreButton = Array.from(showMoreButton).filter(
-      (item) => item.closest('[data-showmore]') === showMoreBlock
+      (item) => item.closest('[data-showmore]') === showMoreBlock,
     )[0];
     const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
     if (matchMedia.matches || !matchMedia) {
@@ -800,21 +821,21 @@ class Popup {
     let config = {
       init: true,
       // Для кнопок
-      attributeOpenButton: "data-popup", // Атрибут для кнопки, которая вызывает попап
-      attributeCloseButton: "data-popup-close", // Атрибут для кнопки, которая закрывает попап
+      attributeOpenButton: 'data-popup', // Атрибут для кнопки, которая вызывает попап
+      attributeCloseButton: 'data-popup-close', // Атрибут для кнопки, которая закрывает попап
       // Для сторонних объектов
-      fixElementSelector: "[data-lp]", // Атрибут для элементов с левым паддингом (которые fixed)
+      fixElementSelector: '[data-lp]', // Атрибут для элементов с левым паддингом (которые fixed)
       // Для объекта попапа
-      youtubeAttribute: "data-popup-youtube", // Атрибут для кода youtube
-      youtubePlaceAttribute: "data-popup-youtube-place", // Атрибут для вставки ролика youtube
+      youtubeAttribute: 'data-popup-youtube', // Атрибут для кода youtube
+      youtubePlaceAttribute: 'data-popup-youtube-place', // Атрибут для вставки ролика youtube
       setAutoplayYoutube: true,
       // Изменение классов
       classes: {
-        popup: "popup",
-        popupWrapper: "popup",
-        popupContent: "popup__body",
-        popupActive: "_is-open", // Добавляется для попапа, когда он открывается
-        bodyActive: "_is-popup-open", // Добавляется для боди, когда попап открыт
+        popup: 'popup',
+        popupWrapper: 'popup',
+        popupContent: 'popup__body',
+        popupActive: '_is-open', // Добавляется для попапа, когда он открывается
+        bodyActive: '_is-popup-open', // Добавляется для боди, когда попап открыт
       },
       focusCatch: true, // Фокус внутри попапа зациклен
       closeEsc: true, // Закрытие по ESC
@@ -856,16 +877,16 @@ class Popup {
 
     this.lastFocusEl = false;
     this._focusEl = [
-      "a[href]",
+      'a[href]',
       'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
-      "button:not([disabled]):not([aria-hidden])",
-      "select:not([disabled]):not([aria-hidden])",
-      "textarea:not([disabled]):not([aria-hidden])",
-      "area[href]",
-      "iframe",
-      "object",
-      "embed",
-      "[contenteditable]",
+      'button:not([disabled]):not([aria-hidden])',
+      'select:not([disabled]):not([aria-hidden])',
+      'textarea:not([disabled]):not([aria-hidden])',
+      'area[href]',
+      'iframe',
+      'object',
+      'embed',
+      '[contenteditable]',
       '[tabindex]:not([tabindex^="-"])',
     ];
     this.options = {
@@ -893,7 +914,7 @@ class Popup {
   eventsPopup() {
     // Клик на всем документе
     document.addEventListener(
-      "click",
+      'click',
       function (e) {
         // Клик по кнопке "открыть"
         const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
@@ -901,11 +922,11 @@ class Popup {
           e.preventDefault();
           this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton)
             ? buttonOpen.getAttribute(this.options.attributeOpenButton)
-            : "error";
+            : 'error';
           this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute)
             ? buttonOpen.getAttribute(this.options.youtubeAttribute)
             : null;
-          if (this._dataValue !== "error") {
+          if (this._dataValue !== 'error') {
             if (!this.isOpen) this.lastFocusEl = buttonOpen;
             this.targetOpen.selector = `${this._dataValue}`;
             this._selectorOpen = true;
@@ -922,13 +943,13 @@ class Popup {
           this.close();
           return;
         }
-      }.bind(this)
+      }.bind(this),
     );
     // Закрытие по ESC
     document.addEventListener(
-      "keydown",
+      'keydown',
       function (e) {
-        if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
+        if (this.options.closeEsc && e.which == 27 && e.code === 'Escape' && this.isOpen) {
           e.preventDefault();
           this.close();
           return;
@@ -937,40 +958,40 @@ class Popup {
           this._focusCatch(e);
           return;
         }
-      }.bind(this)
+      }.bind(this),
     );
 
     // Открытие по хешу
     if (this.options.hashSettings.goHash) {
       // Проверка изменения адресной строки
       window.addEventListener(
-        "hashchange",
+        'hashchange',
         function () {
           if (window.location.hash) {
             this._openToHash();
           } else {
             this.close(this.targetOpen.selector);
           }
-        }.bind(this)
+        }.bind(this),
       );
 
       window.addEventListener(
-        "load",
+        'load',
         function () {
           if (window.location.hash) {
             this._openToHash();
           }
-        }.bind(this)
+        }.bind(this),
       );
     }
   }
   open(selectorValue) {
     if (_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLockStatus) {
       // Если перед открытием попапа был режим lock
-      this.bodyLock = document.documentElement.classList.contains("_is-lock") ? true : false;
+      this.bodyLock = document.documentElement.classList.contains('_is-lock') ? true : false;
 
       // Если ввести значение селектора (селектор настраивается в options)
-      if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") {
+      if (selectorValue && typeof selectorValue === 'string' && selectorValue.trim() !== '') {
         this.targetOpen.selector = selectorValue;
         this._selectorOpen = true;
       }
@@ -988,18 +1009,18 @@ class Popup {
         if (this.youTubeCode) {
           const codeVideo = this.youTubeCode;
           const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
-          const iframe = document.createElement("iframe");
-          iframe.setAttribute("allowfullscreen", "");
+          const iframe = document.createElement('iframe');
+          iframe.setAttribute('allowfullscreen', '');
 
-          const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
-          iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
+          const autoplay = this.options.setAutoplayYoutube ? 'autoplay;' : '';
+          iframe.setAttribute('allow', `${autoplay}; encrypted-media`);
 
-          iframe.setAttribute("src", urlVideo);
+          iframe.setAttribute('src', urlVideo);
 
           if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
             const youtubePlace = this.targetOpen.element
-              .querySelector(".popup__text")
-              .setAttribute(`${this.options.youtubePlaceAttribute}`, "");
+              .querySelector('.popup__text')
+              .setAttribute(`${this.options.youtubePlaceAttribute}`, '');
           }
           this.targetOpen.element
             .querySelector(`[${this.options.youtubePlaceAttribute}]`)
@@ -1015,11 +1036,11 @@ class Popup {
         this.options.on.beforeOpen(this);
         // Создаем свое событие перед открытием попапа
         document.dispatchEvent(
-          new CustomEvent("beforePopupOpen", {
+          new CustomEvent('beforePopupOpen', {
             detail: {
               popup: this,
             },
-          })
+          }),
         );
 
         this.targetOpen.element.classList.add(this.options.classes.popupActive);
@@ -1029,7 +1050,7 @@ class Popup {
           !this.bodyLock ? (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLock)() : null;
         } else this._reopen = false;
 
-        this.targetOpen.element.setAttribute("aria-hidden", "false");
+        this.targetOpen.element.setAttribute('aria-hidden', 'false');
 
         // Запоминаю это открытое окно. Оно будет последним открытым
         this.previousOpen.selector = this.targetOpen.selector;
@@ -1047,17 +1068,17 @@ class Popup {
         this.options.on.afterOpen(this);
         // Создаем свое событие после открытия попапа
         document.dispatchEvent(
-          new CustomEvent("afterPopupOpen", {
+          new CustomEvent('afterPopupOpen', {
             detail: {
               popup: this,
             },
-          })
+          }),
         );
       }
     }
   }
   close(selectorValue) {
-    if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") {
+    if (selectorValue && typeof selectorValue === 'string' && selectorValue.trim() !== '') {
       this.previousOpen.selector = selectorValue;
     }
     if (!this.isOpen || !_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyLockStatus) {
@@ -1067,21 +1088,21 @@ class Popup {
     this.options.on.beforeClose(this);
     // Создаем свое событие перед закрытием попапа
     document.dispatchEvent(
-      new CustomEvent("beforePopupClose", {
+      new CustomEvent('beforePopupClose', {
         detail: {
           popup: this,
         },
-      })
+      }),
     );
 
     // YouTube
     if (this.youTubeCode) {
       if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
-        this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = "";
+        this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
     }
     this.previousOpen.element.classList.remove(this.options.classes.popupActive);
     // aria-hidden
-    this.previousOpen.element.setAttribute("aria-hidden", "true");
+    this.previousOpen.element.setAttribute('aria-hidden', 'true');
     if (!this._reopen) {
       document.documentElement.classList.remove(this.options.classes.bodyActive);
       !this.bodyLock ? (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__.bodyUnlock)() : null;
@@ -1097,11 +1118,11 @@ class Popup {
     this.options.on.afterClose(this);
     // Создаем свое событие после закрытия попапа
     document.dispatchEvent(
-      new CustomEvent("afterPopupClose", {
+      new CustomEvent('afterPopupClose', {
         detail: {
           popup: this,
         },
-      })
+      }),
     );
 
     setTimeout(() => {
@@ -1111,31 +1132,30 @@ class Popup {
   // Получение хэша
   _getHash() {
     if (this.options.hashSettings.location) {
-      this.hash = this.targetOpen.selector.includes("#")
+      this.hash = this.targetOpen.selector.includes('#')
         ? this.targetOpen.selector
-        : this.targetOpen.selector.replace(".", "#");
+        : this.targetOpen.selector.replace('.', '#');
     }
   }
   _openToHash() {
-    let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`)
-      ? `.${window.location.hash.replace("#", "")}`
-      : document.querySelector(`${window.location.hash}`)
-      ? `${window.location.hash}`
-      : null;
+    const hash = window.location.hash;
 
-    const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`)
-      ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`)
-      : document.querySelector(
-          `[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`
-        );
-    if (buttons && classInHash) this.open(classInHash);
+    // Проверяем, существует ли popup с таким id
+    const popup = document.querySelector(hash);
+
+    // Если элемента нет или это не popup — выходим
+    if (!popup || !popup.classList.contains(this.options.classes.popup)) {
+      return;
+    }
+
+    this.open(hash);
   }
   // Утсановка хэша
   _setHash() {
-    history.pushState("", "", this.hash);
+    history.pushState('', '', this.hash);
   }
   _removeHash() {
-    history.pushState("", "", window.location.href.split("#")[0]);
+    history.pushState('', '', window.location.href.split('#')[0]);
   }
   _focusCatch(e) {
     const focusable = this.targetOpen.element.querySelectorAll(this._focusEl);
@@ -1169,34 +1189,216 @@ new Popup({});
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _module_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+
+// data-watch - можно писать значения для применения кастомного кода
+// data-watch-root-родительский элемент внутри которого наблюдать за объектом
+// data-watch-margin-отступ
+// data-watch-threshold-процент показа объекта для срабатывания
+// data-watch-once - смотреть только один раз
+// _is-watch - класс body который добавляется при появлении объекта
+// _watcher-view - класс который добавляется при появлении объекта
+
+class ScrollWatcher {
+  constructor(props) {
+    let defaultConfig = {};
+    this.config = Object.assign(defaultConfig, props);
+    this.observer;
+    !document.documentElement.classList.contains('watcher') ? this.scrollWatcherRun() : null;
+  }
+  // Обновляем конструктор
+  scrollWatcherUpdate() {
+    this.scrollWatcherRun();
+  }
+  // Запускаем конструктор
+  scrollWatcherRun() {
+    document.documentElement.classList.add('_is-watch');
+    this.scrollWatcherConstructor(document.querySelectorAll('[data-watch]'));
+  }
+  // Конструктор наблюдателей
+  scrollWatcherConstructor(items) {
+    if (items.length) {
+      // Уникализируем параметры
+      let uniqParams = (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.uniqArray)(
+        Array.from(items).map(function (item) {
+          // Вычисление автоматического Threshold
+          if (item.dataset.watch === 'navigator' && !item.dataset.watchThreshold) {
+            let valueOfThreshold;
+            if (item.clientHeight > 2) {
+              valueOfThreshold = window.innerHeight / 2 / (item.clientHeight - 1);
+              if (valueOfThreshold > 1) {
+                valueOfThreshold = 1;
+              }
+            } else {
+              valueOfThreshold = 1;
+            }
+            item.setAttribute('data-watch-threshold', valueOfThreshold.toFixed(2));
+          }
+          return `${
+            item.dataset.watchRoot ? item.dataset.watchRoot : null
+          }|${item.dataset.watchMargin ? item.dataset.watchMargin : '0px'}|${item.dataset.watchThreshold ? item.dataset.watchThreshold : 0}`;
+        }),
+      );
+      // Получаем группы объектов с одинаковыми параметрами,
+      // создаем настройки, инициализируем наблюдатель
+      uniqParams.forEach((uniqParam) => {
+        let uniqParamArray = uniqParam.split('|');
+        let paramsWatch = {
+          root: uniqParamArray[0],
+          margin: uniqParamArray[1],
+          threshold: uniqParamArray[2],
+        };
+        let groupItems = Array.from(items).filter(function (item) {
+          let watchRoot = item.dataset.watchRoot ? item.dataset.watchRoot : null;
+          let watchMargin = item.dataset.watchMargin ? item.dataset.watchMargin : '0px';
+          let watchThreshold = item.dataset.watchThreshold ? item.dataset.watchThreshold : 0;
+          if (
+            String(watchRoot) === paramsWatch.root &&
+            String(watchMargin) === paramsWatch.margin &&
+            String(watchThreshold) === paramsWatch.threshold
+          ) {
+            return item;
+          }
+        });
+
+        let configWatcher = this.getScrollWatcherConfig(paramsWatch);
+
+        // Инициализация наблюдателя со своими настройками
+        this.scrollWatcherInit(groupItems, configWatcher);
+      });
+    }
+  }
+  // Функция создания настроек
+  getScrollWatcherConfig(paramsWatch) {
+    //Создаем настройки
+    let configWatcher = {};
+    // Отец, в котором ведется наблюдение
+    if (document.querySelector(paramsWatch.root)) {
+      configWatcher.root = document.querySelector(paramsWatch.root);
+    }
+    // Отступ срабатывания
+    configWatcher.rootMargin = paramsWatch.margin;
+    if (paramsWatch.margin.indexOf('px') < 0 && paramsWatch.margin.indexOf('%') < 0) {
+      return;
+    }
+    // Точки срабатывания
+    if (paramsWatch.threshold === 'prx') {
+      // Режим паралакса
+      paramsWatch.threshold = [];
+      for (let i = 0; i <= 1.0; i += 0.005) {
+        paramsWatch.threshold.push(i);
+      }
+    } else {
+      paramsWatch.threshold = paramsWatch.threshold.split(',');
+    }
+    configWatcher.threshold = paramsWatch.threshold;
+
+    return configWatcher;
+  }
+  // Функция создания нового наблюдателя с вашими настройками
+  scrollWatcherCreate(configWatcher) {
+    this.observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        this.scrollWatcherCallback(entry, observer);
+      });
+    }, configWatcher);
+  }
+  // Функция инициализации наблюдателя с его настройками
+  scrollWatcherInit(items, configWatcher) {
+    // Создание нового наблюдателя с вашими настройками
+    this.scrollWatcherCreate(configWatcher);
+    // Передача элементов наблюдателю
+    items.forEach((item) => this.observer.observe(item));
+  }
+  // Функция обработки базовых действий точек срабатывания
+  scrollWatcherIntersecting(entry, targetElement) {
+    if (entry.isIntersecting) {
+      // Видим объект
+      // Добавляем класс
+      !targetElement.classList.contains('_watcher-view')
+        ? targetElement.classList.add('_watcher-view')
+        : null;
+    } else {
+      // Не видим объект
+      // Удаляем  класс
+      targetElement.classList.contains('_watcher-view')
+        ? targetElement.classList.remove('_watcher-view')
+        : null;
+    }
+  }
+  // Функция отключения слежения за объектом
+  scrollWatcherOff(targetElement, observer) {
+    observer.unobserve(targetElement);
+  }
+  // Функция обработки наблюдения
+  scrollWatcherCallback(entry, observer) {
+    const targetElement = entry.target;
+    // Обработка базовых действий точек срабатывания
+    this.scrollWatcherIntersecting(entry, targetElement);
+    // Если есть атрибут data-watch-once убираем слежение
+    targetElement.hasAttribute('data-watch-once') && entry.isIntersecting
+      ? this.scrollWatcherOff(targetElement, observer)
+      : null;
+    // Создаем свое событие обратной связи
+    document.dispatchEvent(
+      new CustomEvent('watcherCallback', {
+        detail: {
+          entry: entry,
+        },
+      }),
+    );
+
+    /*
+		// Выбираем нужные объекты
+		if (targetElement.dataset.watch === 'some value') {
+			// пишем уникальную спецификацию
+		}
+		if (entry.isIntersecting) {
+			//Видим обьект
+		} else {
+			//Не видим обьєкт
+		}
+		*/
+  }
+}
+// Запускаем и добавляем в объект модулей
+new ScrollWatcher({});
+
+
+/***/ }),
+/* 4 */
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Swiper: () => (/* reexport safe */ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S),
 /* harmony export */   "default": () => (/* reexport safe */ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S)
 /* harmony export */ });
-/* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _modules_virtual_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
-/* harmony import */ var _modules_keyboard_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
-/* harmony import */ var _modules_mousewheel_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
-/* harmony import */ var _modules_navigation_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
-/* harmony import */ var _modules_pagination_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12);
-/* harmony import */ var _modules_scrollbar_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(14);
-/* harmony import */ var _modules_parallax_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(15);
-/* harmony import */ var _modules_zoom_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(16);
-/* harmony import */ var _modules_controller_mjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(17);
-/* harmony import */ var _modules_a11y_mjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(18);
-/* harmony import */ var _modules_history_mjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(19);
-/* harmony import */ var _modules_hash_navigation_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(20);
-/* harmony import */ var _modules_autoplay_mjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(21);
-/* harmony import */ var _modules_thumbs_mjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(22);
-/* harmony import */ var _modules_free_mode_mjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(23);
-/* harmony import */ var _modules_grid_mjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(24);
-/* harmony import */ var _modules_manipulation_mjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(25);
-/* harmony import */ var _modules_effect_fade_mjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(26);
-/* harmony import */ var _modules_effect_cube_mjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(30);
-/* harmony import */ var _modules_effect_flip_mjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(31);
-/* harmony import */ var _modules_effect_coverflow_mjs__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(33);
-/* harmony import */ var _modules_effect_creative_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(34);
-/* harmony import */ var _modules_effect_cards_mjs__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(35);
+/* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _modules_virtual_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var _modules_keyboard_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _modules_mousewheel_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+/* harmony import */ var _modules_navigation_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
+/* harmony import */ var _modules_pagination_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(13);
+/* harmony import */ var _modules_scrollbar_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(15);
+/* harmony import */ var _modules_parallax_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(16);
+/* harmony import */ var _modules_zoom_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(17);
+/* harmony import */ var _modules_controller_mjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(18);
+/* harmony import */ var _modules_a11y_mjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(19);
+/* harmony import */ var _modules_history_mjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(20);
+/* harmony import */ var _modules_hash_navigation_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(21);
+/* harmony import */ var _modules_autoplay_mjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(22);
+/* harmony import */ var _modules_thumbs_mjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(23);
+/* harmony import */ var _modules_free_mode_mjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(24);
+/* harmony import */ var _modules_grid_mjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(25);
+/* harmony import */ var _modules_manipulation_mjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(26);
+/* harmony import */ var _modules_effect_fade_mjs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(27);
+/* harmony import */ var _modules_effect_cube_mjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(31);
+/* harmony import */ var _modules_effect_flip_mjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(32);
+/* harmony import */ var _modules_effect_coverflow_mjs__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(34);
+/* harmony import */ var _modules_effect_creative_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(35);
+/* harmony import */ var _modules_effect_cards_mjs__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(36);
 /**
  * Swiper 12.1.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -1242,7 +1444,7 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1250,8 +1452,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   S: () => (/* binding */ Swiper),
 /* harmony export */   d: () => (/* binding */ defaults)
 /* harmony export */ });
-/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -5178,7 +5380,7 @@ Swiper.use([Resize, Observer]);
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -5329,7 +5531,7 @@ function getWindow() {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -5360,7 +5562,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   x: () => (/* binding */ extend),
 /* harmony export */   y: () => (/* binding */ deleteProps)
 /* harmony export */ });
-/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 
 
 function classesToTokens(classes = '') {
@@ -5687,15 +5889,15 @@ function setInnerHTML(el, html = '') {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Virtual)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -6063,15 +6265,15 @@ function Virtual({
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Keyboard)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -6193,15 +6395,15 @@ function Keyboard({
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Mousewheel)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -6599,15 +6801,15 @@ function Mousewheel({
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Navigation)
 /* harmony export */ });
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -6819,14 +7021,14 @@ function Navigation({
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createElementIfNotDefined)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
@@ -6851,16 +7053,16 @@ function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Pagination)
 /* harmony export */ });
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 
 
 
@@ -7323,7 +7525,7 @@ function Pagination({
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -7340,17 +7542,17 @@ function classesToSelector(classes = '') {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Scrollbar)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
-/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var _shared_create_element_if_not_defined_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
 
 
 
@@ -7719,14 +7921,14 @@ function Scrollbar({
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Parallax)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 function Parallax({
@@ -7850,15 +8052,15 @@ function Parallax({
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Zoom)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -8564,14 +8766,14 @@ function Zoom({
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Controller)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 /* eslint no-bitwise: ["error", { "allow": [">>"] }] */
@@ -8765,16 +8967,16 @@ function Controller({
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ A11y)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_classes_to_selector_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 
 
 
@@ -9156,14 +9358,14 @@ function A11y({
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ History)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 
 
 function History({
@@ -9308,15 +9510,15 @@ function History({
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HashNavigation)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -9412,14 +9614,14 @@ function HashNavigation({
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Autoplay)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 
 
 /* eslint no-underscore-dangle: "off" */
@@ -9729,15 +9931,15 @@ function Autoplay({
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Thumb)
 /* harmony export */ });
-/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _shared_ssr_window_esm_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -9956,14 +10158,14 @@ function Thumb({
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ freeMode)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 function freeMode({
@@ -10202,7 +10404,7 @@ function freeMode({
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10366,14 +10568,14 @@ function Grid({
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Manipulation)
 /* harmony export */ });
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 function appendSlide(slides) {
@@ -10569,17 +10771,17 @@ function Manipulation({
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFade)
 /* harmony export */ });
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(29);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(30);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
 
 
 
@@ -10648,7 +10850,7 @@ function EffectFade({
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10716,14 +10918,14 @@ function effectInit(params) {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectTarget)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 function effectTarget(effectParams, slideEl) {
@@ -10739,14 +10941,14 @@ function effectTarget(effectParams, slideEl) {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectVirtualTransitionEnd)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 function effectVirtualTransitionEnd({
@@ -10797,15 +10999,15 @@ function effectVirtualTransitionEnd({
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCube)
 /* harmony export */ });
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
@@ -10982,18 +11184,18 @@ function EffectCube({
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFlip)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(30);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
 
 
 
@@ -11107,14 +11309,14 @@ function EffectFlip({
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createShadow)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 function createShadow(suffix, slideEl, side) {
@@ -11132,17 +11334,17 @@ function createShadow(suffix, slideEl, side) {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCoverflow)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
 
 
 
@@ -11249,18 +11451,18 @@ function EffectCoverflow({
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCreative)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(30);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
 
 
 
@@ -11409,18 +11611,18 @@ function EffectCreative({
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCards)
 /* harmony export */ });
-/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
-/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
-/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
-/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
-/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _shared_create_shadow_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33);
+/* harmony import */ var _shared_effect_init_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
+/* harmony import */ var _shared_effect_target_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
+/* harmony import */ var _shared_effect_virtual_transition_end_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(30);
+/* harmony import */ var _shared_utils_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
 
 
 
@@ -11613,13 +11815,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _module_functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _module_popup_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _libs_watcher_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 
 
 // import './module/dynamic_adapt.js';
 
 // import './module/select.js';
-// import './libs/watcher.js';
+
 // import * as scroll from "./module/scroll.js";
 // import { phoneMask } from "./module/phone_mask.js";
 // import { setViewType } from "./module/viewType.js";
@@ -11633,7 +11836,7 @@ __webpack_require__.r(__webpack_exports__);
 // import Masonry from "masonry-layout";
 // import AirDatepicker from "air-datepicker";
 
-window.Swiper = swiper_bundle__WEBPACK_IMPORTED_MODULE_2__["default"];
+window.Swiper = swiper_bundle__WEBPACK_IMPORTED_MODULE_3__["default"];
 // window.noUiSlider = noUiSlider;
 // window.ClipboardJS = ClipboardJS;
 // window.Masonry = Masonry;
@@ -11779,10 +11982,8 @@ window.addEventListener('load', function () {
       navContainer.style.setProperty('--underline-left', `${rect.left - containerRect.left}px`);
 
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          navContainer.style.setProperty('--underline-transition', 'var(--transition-duration)');
-          navContainer.style.setProperty('--underline-opacity', '1');
-        });
+        navContainer.style.setProperty('--underline-transition', 'var(--transition-duration)');
+        navContainer.style.setProperty('--underline-opacity', '1');
       });
     };
 
@@ -12118,7 +12319,7 @@ window.addEventListener('load', function () {
   if (document.querySelector('.categories-slider')) {
     document.querySelector('.categories-slider').classList.add('_is-slider-init');
 
-    new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__["default"]('.categories-slider', {
+    new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__["default"]('.categories-slider', {
       slidesPerView: 'auto',
       spaceBetween: 10 + 10 * ((document.documentElement.offsetWidth - 360) / (1920 - 360)),
       resistanceRatio: 0,
@@ -12154,7 +12355,7 @@ window.addEventListener('load', function () {
     articleSliders.forEach((el, i) => {
       el.classList.add('_is-slider-init');
 
-      let articleSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__["default"](el, {
+      let articleSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__["default"](el, {
         slidesPerView: 'auto',
         spaceBetween: 10 + 10 * ((document.documentElement.offsetWidth - 360) / (1920 - 360)),
         resistanceRatio: 0,
@@ -12216,6 +12417,11 @@ window.addEventListener('load', function () {
       return;
     }
 
+    if (targetElement.closest('.article-nav__link')) {
+      targetElement.closest('.article-nav').querySelector('.article-nav__title._spoller-active').click();
+      return;
+    }
+
     //   View Type
     // if (targetElement.closest("[data-view-type]")) {
     //   const viewTypes = targetElement.parentElement.closest("[data-view-types]").dataset.viewTypes;
@@ -12246,18 +12452,20 @@ window.addEventListener('load', function () {
   matchMediaMi11.addEventListener('change', () => {});
 
   //    Scroll Watcher
-  // document.documentElement.classList.toggle(
-  //   '_is-footer-scroll',
-  //   document.querySelector('.footer').closest('._watcher-view')
-  // );
-  // document.addEventListener('watcherCallback', (e) => {
-  //   const watcherElement = e.detail.entry.target;
+  const articleBody = document.querySelector('.article__main');
 
-  //   document.documentElement.classList.toggle(
-  //     '_is-footer-scroll',
-  //     watcherElement.closest('.footer._watcher-view')
-  //   );
-  // });
+  if (articleBody) {
+    document.documentElement.classList.toggle('_is-article-view', articleBody.closest('._watcher-view'));
+  }
+
+  document.addEventListener('watcherCallback', (e) => {
+    const watcherElement = e.detail.entry.target;
+
+    document.documentElement.classList.toggle(
+      '_is-article-view',
+      watcherElement.closest('.article__main._watcher-view'),
+    );
+  });
 });
 
 })();
