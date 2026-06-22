@@ -11796,28 +11796,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 
 
-// import './module/dynamic_adapt.js';
 
-// import './module/select.js';
 
-// import * as scroll from "./module/scroll.js";
-// import { phoneMask } from "./module/phone_mask.js";
-// import { setViewType } from "./module/viewType.js";
-// import { showAllInit } from './module/show_all.js';
-// import { quantityInit } from "./module/quantity.js";
-// import { rangeInit } from "./module/range.js";
 
-// import noUiSlider from 'nouislider';
-// import tippy from "tippy.js";
-// import ClipboardJS from 'clipboard';
-// import Masonry from "masonry-layout";
-// import AirDatepicker from "air-datepicker";
 
 window.Swiper = swiper_bundle__WEBPACK_IMPORTED_MODULE_3__["default"];
-// window.noUiSlider = noUiSlider;
-// window.ClipboardJS = ClipboardJS;
-// window.Masonry = Masonry;
-// window.AirDatepicker = AirDatepicker;
 
 window.addEventListener('load', function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.isWebp)();
@@ -11825,64 +11808,11 @@ window.addEventListener('load', function () {
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuInit)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
   (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.tabs)();
-  // phoneMask();
-  // quantityInit();
-  // rangeInit();
-  // setViewType();
-  // scroll.pageNavigation();
-
-  // tippy("[data-tippy-content]", {
-  //   allowHTML: true,
-  //   maxWidth: 260,
-  //   arrow: false,
-  //   placement: "top-start",
-  //   trigger: "mouseenter click",
-  //   onShow(instance) {
-  //     instance.setProps({ maxWidth: window.innerWidth > 2240 ? 336 : 260 });
-  //   },
-  // });
-  // new WOW({ offset: 200 }).init();
-
-  // new ClipboardJS('[data-clipboard-text]');
-
-  // let smoother = ScrollSmoother.create({
-  //   smooth: 2,
-  //   smoothTouch: 2,
-  //   normalizeScroll: true,
-  // });
-
-  // Lottie.loadAnimation({
-  //   container: document.querySelector(".__img-box"),
-  //   renderer: "svg",
-  //   loop: true,
-  //   autoplay: true,
-  //   path: "./file.json",
-  // });
-
-  // if (document.querySelector(".video")) {
-  //   video.findVideos();
-  // }
-
-  // if (document.querySelector("input[type='tel']")) {
-  //   phoneMask();
-  // }
-
-  // if (document.querySelector("[data-quantity]")) {
-  //   quantityInit();
-  // }
-
-  // if (document.querySelector("[data-range]")) {
-  //   rangeInit();
-  // }
-
-  // if (document.querySelector("[data-view-types]")) {
-  //   setViewType();
-  // }
 
   const HEADER = document.querySelector('.header');
   const ALERT = document.querySelector('.alert');
   const shopsList = document.querySelector('.shops__list');
-  const demoVideo = document.getElementById('demo-video');
+  const demoVideo = document.querySelector('#demo-video');
   const demoVideoBtn = document.querySelector('#demo-video-btn');
   let responsiveVideo = null;
   let resizeRaf = null;
@@ -11904,43 +11834,6 @@ window.addEventListener('load', function () {
       handleVideoControl(demoVideoBtn, demoVideo);
     }
   }
-
-  // const wrappedTextWidth = () => {
-  //   const wrappedTextBodies = document.querySelectorAll('[data-adaptive-width]');
-
-  //   // wrappedTextBodies.forEach((element) => {
-  //   //   element.style.width = "";
-  //   //   const { firstChild, lastChild } = element;
-  //   //   if (!element || !firstChild || !lastChild) return;
-  //   //   const range = document.createRange();
-  //   //   range.setStartBefore(firstChild);
-  //   //   range.setEndAfter(lastChild);
-  //   //   const { width } = range.getBoundingClientRect();
-  //   //   element.style.width = width == 0 ? "" : width + "px";
-  //   //   element.style.boxSizing = "content-box";
-  //   // });
-  //   for (const el of wrappedTextBodies) {
-  //     el.style.boxSizing = 'content-box';
-  //     el.style.width = '';
-  //     if (!el.isConnected || el.offsetParent === null) continue;
-  //     const range = document.createRange();
-  //     range.selectNodeContents(el);
-  //     let contentWidth = range.getBoundingClientRect().width;
-  //     if (contentWidth > 0) {
-  //       contentWidth = Math.ceil(contentWidth) + 1;
-  //     }
-  //     el.style.width = contentWidth ? `${contentWidth}px` : '';
-  //   }
-  // };
-
-  // const dataAction = (target, attr) => {
-  //   if (target.closest(`[data-${attr}]`)) {
-  //     document.documentElement.classList.toggle(`_is-${attr}-open`);
-  //   }
-  //   if (document.documentElement.closest(`._is-${attr}-open`) && !target.closest(`.${attr}`)) {
-  //     document.documentElement.classList.remove(`_is-${attr}-open`);
-  //   }
-  // };
 
   function setupMenuUnderline(matchMedia) {
     const navContainer = document.querySelector('.menu__list');
@@ -12121,9 +12014,6 @@ window.addEventListener('load', function () {
 
     if (isVerticalResize) {
     }
-
-    // showAllInit();
-    // wrappedTextWidth();
   };
   adaptiveFix();
 
@@ -12240,59 +12130,6 @@ window.addEventListener('load', function () {
     };
   }
 
-  // const inputsActions = () => {
-  //   const inputs = document.querySelectorAll('.input');
-
-  //   inputs.forEach((inputBody) => {
-  //     const inputBtn = inputBody.querySelector('.input__btn');
-
-  //     if (inputBtn) {
-  //       const input = inputBody.querySelector('.input__body');
-  //       const inputBtnType = inputBtn.dataset.input;
-
-  //       inputBody.classList.add('input_btn');
-
-  //       if (inputBtnType == 'reset') {
-  //         input.addEventListener('input', (e) => {
-  //           inputBody.classList.toggle('_is-fill', e.target.value.length);
-  //         });
-  //       }
-
-  //       inputBody.addEventListener('click', (e) => {
-  //         const targetElement = e.target;
-
-  //         if (targetElement === inputBtn) {
-  //           if (inputBtnType == 'reset') {
-  //             input.focus();
-  //             input.value = '';
-  //             inputBody.classList.remove('_is-fill');
-  //           }
-
-  //           if (inputBtnType == 'password') {
-  //             input.setAttribute('type', input.type == 'password' ? 'text' : 'password');
-  //             targetElement.classList.toggle('_is-active');
-  //           }
-  //         }
-  //       });
-  //     }
-  //   });
-  // };
-  // inputsActions();
-
-  // if (document.querySelector("textarea")) {
-  //   const textAreas = document.querySelectorAll("textarea");
-
-  //   textAreas.forEach((textArea) => {
-  //     textArea.style.overflow = "hidden";
-
-  //     textArea.addEventListener("input", (e) => {
-  //       e.target.value.length
-  //         ? (textArea.style.height = textArea.scrollHeight + "px")
-  //         : (textArea.style.height = "");
-  //     });
-  //   });
-  // }
-
   if (document.querySelector('.categories-slider')) {
     document.querySelector('.categories-slider').classList.add('_is-slider-init');
 
@@ -12377,8 +12214,6 @@ window.addEventListener('load', function () {
     const isTargetMenu = targetPath.some((el) => el.classList?.contains('menu'));
     const isOpenedMenu = document.querySelector('.menu ._spoller-active');
 
-    // dataAction(targetElement, "search");
-
     //   Menu
     if (!isTargetMenu) {
       if (document.documentElement.classList.contains('_is-menu-open')) {
@@ -12414,18 +12249,6 @@ window.addEventListener('load', function () {
       targetElement.closest('.article-nav').querySelector('.article-nav__title._spoller-active').click();
       return;
     }
-
-    //   View Type
-    // if (targetElement.closest("[data-view-type]")) {
-    //   const viewTypes = targetElement.parentElement.closest("[data-view-types]").dataset.viewTypes;
-    //   window.localStorage.setItem(`${viewTypes}-view-type`, targetElement.dataset.viewType);
-    //   setViewType();
-    // }
-
-    //   Tabs Anchor
-    // if (targetElement.closest('[data-tab-id]')) {
-    //   document.querySelector(targetElement.dataset.tabId).click();
-    // }
   });
 
   window.addEventListener('scroll', () => {
