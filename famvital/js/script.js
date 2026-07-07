@@ -1290,18 +1290,27 @@ class ScrollWatcher {
   }
   // Функция обработки базовых действий точек срабатывания
   scrollWatcherIntersecting(entry, targetElement) {
+    // if (entry.isIntersecting) {
+    //   // Видим объект
+    //   // Добавляем класс
+    //   !targetElement.classList.contains('_watcher-view')
+    //     ? targetElement.classList.add('_watcher-view')
+    //     : null;
+    // } else {
+    //   // Не видим объект
+    //   // Удаляем  класс
+    //   targetElement.classList.contains('_watcher-view')
+    //     ? targetElement.classList.remove('_watcher-view')
+    //     : null;
+    // }
     if (entry.isIntersecting) {
-      // Видим объект
-      // Добавляем класс
-      !targetElement.classList.contains('_watcher-view')
-        ? targetElement.classList.add('_watcher-view')
-        : null;
+      targetElement.classList.add('_watcher-view');
     } else {
-      // Не видим объект
-      // Удаляем  класс
-      targetElement.classList.contains('_watcher-view')
-        ? targetElement.classList.remove('_watcher-view')
-        : null;
+      if (targetElement.hasAttribute('data-watch-after') && entry.boundingClientRect.top < 0) {
+        return;
+      }
+
+      targetElement.classList.remove('_watcher-view');
     }
   }
   // Функция отключения слежения за объектом
@@ -11928,6 +11937,10 @@ window.addEventListener('load', function () {
   };
   if (shopsList) {
     shopsHide(getShopsCount());
+    document.documentElement.classList.toggle(
+      '_is-shops-view',
+      shopsList.parentElement.closest('._watcher-view'),
+    );
   }
 
   function filtering(button) {
@@ -12234,6 +12247,10 @@ window.addEventListener('load', function () {
       }
     }
 
+    if (targetElement.closest('.menu__link')) {
+      (0,_module_functions_js__WEBPACK_IMPORTED_MODULE_0__.menuClose)();
+    }
+
     //   Video
     if (targetElement === demoVideoBtn) {
       handleVideoControl(demoVideoBtn, demoVideo);
@@ -12280,6 +12297,11 @@ window.addEventListener('load', function () {
     document.documentElement.classList.toggle(
       '_is-article-view',
       watcherElement.closest('.article__main._watcher-view'),
+    );
+
+    document.documentElement.classList.toggle(
+      '_is-shops-view',
+      watcherElement.closest('.shops._watcher-view'),
     );
   });
 });
