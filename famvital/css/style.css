@@ -752,16 +752,21 @@ html._is-lock {
   outline: 0;
 }
 .menu__body {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-large) var(--size-12);
+  justify-content: space-between;
+  min-height: 100%;
+  padding: calc(2 * var(--padding-menu)) 0;
 }
 .menu__list {
   display: flex;
   flex-direction: column;
   gap: var(--padding-menu) 0;
-  padding: calc(2 * var(--padding-menu)) 0;
 }
 .menu__link {
   --height-btn: var(--height-btn-header);
+  width: 100%;
   min-width: 10em;
   font-size: var(--text-normal);
 }
@@ -3994,9 +3999,8 @@ html._is-lock {
   }
   .menu__body {
     position: relative;
-    display: flex;
-    gap: var(--size-12);
-    height: auto;
+    flex-direction: row;
+    min-height: auto;
     padding: var(--padding-menu);
     margin: calc(-1 * var(--padding-menu));
     transform: translate3d(0, 0, 0);
@@ -4892,9 +4896,6 @@ html._is-lock {
     pointer-events: auto;
     opacity: 1;
   }
-  .menu__action {
-    display: none;
-  }
   .pulldown__body {
     overflow: visible;
   }
@@ -4981,6 +4982,9 @@ html._is-lock {
 @media (max-width: 575.98px) {
   .menu__dropdown {
     border-radius: 0 0 var(--size-10) var(--size-10);
+  }
+  .menu__action {
+    padding: 0 var(--padding-page);
   }
   .pulldown__item {
     padding-right: var(--padding-page);
