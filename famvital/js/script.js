@@ -12300,6 +12300,11 @@ window.addEventListener('load', function () {
     );
 
     document.documentElement.classList.toggle(
+      '_is-footer-view',
+      watcherElement.closest('.footer._watcher-view'),
+    );
+
+    document.documentElement.classList.toggle(
       '_is-shops-view',
       watcherElement.closest('.shops._watcher-view'),
     );

@@ -1426,6 +1426,7 @@ html._is-lock {
   left: 0;
   z-index: calc(var(--z-header) - 2);
 }
+._is-footer-view .mobile-action,
 ._is-shops-view .mobile-action {
   display: none;
 }
