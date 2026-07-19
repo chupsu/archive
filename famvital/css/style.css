@@ -1846,9 +1846,11 @@ html._is-lock {
 .articles-slider__btn_next {
   order: 2;
 }
-.articles-slider__btn_disabled {
-  color: var(--color-shadow-800);
+.articles-slider__btn_disabled,
+.articles-slider__btn_disabled.btn {
+  color: var(--color-shadow-800)!important;
   pointer-events: none;
+  background-color: transparent!important;
 }
 .articles-slider__pagination {
   --color-bullet: var(--color-light-500);
