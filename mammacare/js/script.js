@@ -2173,9 +2173,30 @@ function sliders(
   }
 
   if (document.querySelector('.media-slider__main')) {
-    document.querySelector('.media-slider__main').classList.add('_is-slider-init');
+    const mediaSliderEl = document.querySelector('.media-slider__main');
+    mediaSliderEl.classList.add('_is-slider-init');
 
-    new Swiper('.media-slider__main', {
+    // Дополнительная подсветка видимых >90% слайдов после остановки свайпа
+    const syncMediaShown = (swiper) => {
+      const containerRect = mediaSliderEl.getBoundingClientRect();
+
+      swiper.slides.forEach((slide) => {
+        // Интересуют слайды, которые Swiper уже пометил как видимые
+        if (!slide.classList.contains('media-slider__item_visible')) return;
+
+        const rect = slide.getBoundingClientRect();
+        const visibleLeft = Math.max(rect.left, containerRect.left);
+        const visibleRight = Math.min(rect.right, containerRect.right);
+        const visibleWidth = Math.max(0, visibleRight - visibleLeft);
+        const ratio = rect.width ? visibleWidth / rect.width : 0;
+
+        if (ratio > 0.9) {
+          slide.classList.add('media-slider__item_shown');
+        }
+      });
+    };
+
+    new Swiper(mediaSliderEl, {
       slidesPerView: 1,
       spaceBetween: getAdaptiveValue('14-38, 360-1920', '38-76, 1920-3840'),
       resistanceRatio: 0,
@@ -2202,13 +2223,18 @@ function sliders(
       },
       breakpoints: {
         768: {
-          slidesPerView: 2.001,
+          slidesPerView: 2,
         },
       },
       on: {
         init: (swiper) => {
           swiper.loopFix();
+          syncMediaShown(swiper);
           swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
+        },
+        slideChangeTransitionEnd: (swiper) => {
+          // Доп. навешивание _shown для слайдов, видимых более чем на 90%
+          syncMediaShown(swiper);
         },
         resize: (swiper) => {
           swiper.params.spaceBetween = getAdaptiveValue('14-38, 360-1920', '38-76, 1920-3840');
