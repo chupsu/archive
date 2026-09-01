@@ -2237,6 +2237,7 @@ function sliders(
         },
         resize: (swiper) => {
           swiper.params.spaceBetween = getAdaptiveValue('14-38, 360-1920', '38-76, 1920-3840');
+          swiper.loopFix();
           syncMediaShown(swiper);
           swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
         },
