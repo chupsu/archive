@@ -2190,7 +2190,7 @@ function sliders(
         const visibleWidth = Math.max(0, visibleRight - visibleLeft);
         const ratio = rect.width ? visibleWidth / rect.width : 0;
 
-        if (ratio > 0.9) {
+        if (ratio > 0.8) {
           slide.classList.add('media-slider__item_shown');
         }
       });
@@ -2233,11 +2233,11 @@ function sliders(
           swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
         },
         slideChangeTransitionEnd: (swiper) => {
-          // Доп. навешивание _shown для слайдов, видимых более чем на 90%
           syncMediaShown(swiper);
         },
         resize: (swiper) => {
           swiper.params.spaceBetween = getAdaptiveValue('14-38, 360-1920', '38-76, 1920-3840');
+          syncMediaShown(swiper);
           swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
         },
       },
