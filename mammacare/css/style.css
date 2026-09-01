@@ -2015,6 +2015,7 @@ a:not([class]):focus-visible {
   margin-right: 0;
 }
 .media-slider__item:not(.media-slider__item_shown) .media-link {
+  pointer-events: none;
   transform: scale(0.666) translateY(12%);
 }
 .media-slider__item:not(.media-slider__item_shown) .media-link__icon {

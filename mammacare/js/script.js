@@ -2176,31 +2176,12 @@ function sliders(
     const mediaSliderEl = document.querySelector('.media-slider__main');
     mediaSliderEl.classList.add('_is-slider-init');
 
-    // Дополнительная подсветка видимых >90% слайдов после остановки свайпа
-    const syncMediaShown = (swiper) => {
-      const containerRect = mediaSliderEl.getBoundingClientRect();
-
-      swiper.slides.forEach((slide) => {
-        // Интересуют слайды, которые Swiper уже пометил как видимые
-        if (!slide.classList.contains('media-slider__item_visible')) return;
-
-        const rect = slide.getBoundingClientRect();
-        const visibleLeft = Math.max(rect.left, containerRect.left);
-        const visibleRight = Math.min(rect.right, containerRect.right);
-        const visibleWidth = Math.max(0, visibleRight - visibleLeft);
-        const ratio = rect.width ? visibleWidth / rect.width : 0;
-
-        if (ratio > 0.8) {
-          slide.classList.add('media-slider__item_shown');
-        }
-      });
-    };
-
     new Swiper(mediaSliderEl, {
       slidesPerView: 1,
       spaceBetween: getAdaptiveValue('14-38, 360-1920', '38-76, 1920-3840'),
       resistanceRatio: 0,
       loop: true,
+      roundLengths: true,
       loopAdditionalSlides: 2,
       watchSlidesProgress: true,
       slideVisibleClass: 'media-slider__item_visible',
@@ -2229,16 +2210,11 @@ function sliders(
       on: {
         init: (swiper) => {
           swiper.loopFix();
-          syncMediaShown(swiper);
           swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
-        },
-        slideChangeTransitionEnd: (swiper) => {
-          syncMediaShown(swiper);
         },
         resize: (swiper) => {
           swiper.params.spaceBetween = getAdaptiveValue('14-38, 360-1920', '38-76, 1920-3840');
           swiper.loopFix();
-          syncMediaShown(swiper);
           swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
         },
       },
