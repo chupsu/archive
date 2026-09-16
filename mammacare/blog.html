@@ -72,7 +72,7 @@
       <main class="page">
         <section class="blog _mb-larger">
           <div class="container">
-            <div class="blog__body">
+            <div class="blog__body" data-filter-container="once">
               <div class="blog__head">
                 <div class="blog__breadcrumbs">
                   <ul class="breadcrumbs ">
@@ -93,47 +93,80 @@
                       <button
                         class="filter-list__btn btn btn_smallest btn_light _is-active"
                         type="button"
+                        data-filter="all"
                       >
                         Все
                       </button>
                     </li>
                     <li class="filter-list__item">
-                      <button class="filter-list__btn btn btn_smallest btn_light" type="button">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_light"
+                        type="button"
+                        data-filter="category-1"
+                      >
                         Боль
                       </button>
                     </li>
                     <li class="filter-list__item">
-                      <button class="filter-list__btn btn btn_smallest btn_light" type="button">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_light"
+                        type="button"
+                        data-filter="category-2"
+                      >
                         Уплотнения
                       </button>
                     </li>
                     <li class="filter-list__item">
-                      <button class="filter-list__btn btn btn_smallest btn_light" type="button">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_light"
+                        type="button"
+                        data-filter="category-3"
+                      >
                         Узлы
                       </button>
                     </li>
                     <li class="filter-list__item">
-                      <button class="filter-list__btn btn btn_smallest btn_light" type="button">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_light"
+                        type="button"
+                        data-filter="category-4"
+                      >
                         Плотный фон
                       </button>
                     </li>
                     <li class="filter-list__item">
-                      <button class="filter-list__btn btn btn_smallest btn_light" type="button">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_light"
+                        type="button"
+                        data-filter="category-5"
+                      >
                         Чувствительность
                       </button>
                     </li>
                     <li class="filter-list__item">
-                      <button class="filter-list__btn btn btn_smallest btn_light" type="button">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_light"
+                        type="button"
+                        data-filter="category-6"
+                      >
                         Мастопатия
                       </button>
                     </li>
                     <li class="filter-list__item">
-                      <button class="filter-list__btn btn btn_smallest btn_light" type="button">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_light"
+                        type="button"
+                        data-filter="category-7"
+                      >
                         Диагностика
                       </button>
                     </li>
                     <li class="filter-list__item">
-                      <button class="filter-list__btn btn btn_smallest btn_light" type="button">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_light"
+                        type="button"
+                        data-filter="category-8"
+                      >
                         Лечение
                       </button>
                     </li>
@@ -142,7 +175,7 @@
               </div>
               <div class="blog__main">
                 <div class="blog__grid">
-                  <div class="blog__item">
+                  <div class="blog__item" data-filterable="category-6">
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>
@@ -169,7 +202,10 @@
                       </div>
                     </article>
                   </div>
-                  <div class="blog__item">
+                  <div
+                    class="blog__item"
+                    data-filterable="category-8 category-6 category-3 category-2 category-7 category-1 category-4"
+                  >
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>
@@ -203,7 +239,10 @@
                       </div>
                     </article>
                   </div>
-                  <div class="blog__item">
+                  <div
+                    class="blog__item"
+                    data-filterable="category-1 category-2 category-3 category-7 category-4 category-5"
+                  >
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>
@@ -236,7 +275,7 @@
                       </div>
                     </article>
                   </div>
-                  <div class="blog__item">
+                  <div class="blog__item" data-filterable="category-6 category-7 category-8">
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>
@@ -265,7 +304,10 @@
                       </div>
                     </article>
                   </div>
-                  <div class="blog__item">
+                  <div
+                    class="blog__item"
+                    data-filterable="category-8 category-6 category-3 category-2 category-7 category-1 category-5"
+                  >
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>
@@ -297,7 +339,7 @@
                       </div>
                     </article>
                   </div>
-                  <div class="blog__item">
+                  <div class="blog__item" data-filterable="category-1 category-3">
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>
@@ -327,7 +369,7 @@
                       </div>
                     </article>
                   </div>
-                  <div class="blog__item">
+                  <div class="blog__item" data-filterable="category-6 category-7 category-1">
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>
@@ -358,7 +400,7 @@
                       </div>
                     </article>
                   </div>
-                  <div class="blog__item">
+                  <div class="blog__item" data-filterable="category-6">
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>
@@ -385,7 +427,7 @@
                       </div>
                     </article>
                   </div>
-                  <div class="blog__item">
+                  <div class="blog__item" data-filterable="category-6 category-7 category-8">
                     <article class="article-card">
                       <a class="article-card__link" href="./article.html">
                         <span class="_seo">Читать статью</span>

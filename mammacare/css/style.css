@@ -2799,6 +2799,9 @@ a:not([class]):focus-visible {
     justify-content: space-between;
     margin-top: var(--gap-medium);
   }
+  .questions-slider__link {
+    margin-left: auto;
+  }
   .author__media {
     border-radius: var(--size-30);
   }
@@ -3046,8 +3049,8 @@ html {
   .blog__item {
     grid-column: span 3;
   }
-  .blog__item:nth-child(6n+1),
-.blog__item:nth-child(6n+6) {
+  .blog__item:nth-child(6n+1 of :not([hidden])),
+.blog__item:nth-child(6n+6 of :not([hidden])) {
     grid-column: span 4;
   }
 }

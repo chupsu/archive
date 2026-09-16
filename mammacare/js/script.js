@@ -2,7 +2,7 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 280
+/***/ 275
 (__unused_webpack___webpack_module__, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 
@@ -1993,6 +1993,75 @@ class SelectConstructor {
 
 new SelectConstructor({});
 
+;// ./src/js/module/filter.js
+const filtering = (button) => {
+  const filterContainer = button.closest('[data-filter-container]');
+
+  if (!filterContainer) return;
+
+  const mode = filterContainer.dataset.filterContainer; // 'multi' или 'once'
+  const buttons = filterContainer.querySelectorAll('[data-filter]');
+  const items = filterContainer.querySelectorAll('[data-filterable]');
+  const filterValue = button.dataset.filter;
+  const allButton = filterContainer.querySelector('[data-filter="all"]');
+
+  // Логика для режима одиночного выбора (once)
+  if (mode === 'once') {
+    buttons.forEach((btn) => {
+      btn.classList.remove('_is-active');
+    });
+    button.classList.add('_is-active');
+  }
+  // Логика для режима мультивыбора (multi)
+  else if (mode === 'multi') {
+    // Если нажата кнопка «Все», сбрасываем все фильтры и активируем только её
+    if (filterValue === 'all') {
+      buttons.forEach((btn) => {
+        btn.classList.remove('_is-active');
+      });
+      allButton.classList.add('_is-active');
+    } else {
+      // Если нажата любая другая кнопка:
+      // 1. Сбрасываем кнопку «Все»
+      allButton?.classList.remove('_is-active');
+      // 2. Переключаем активный класс для текущей кнопки
+      button.classList.toggle('_is-active');
+    }
+  }
+
+  // Получаем все активные фильтры (кроме «all»)
+  const activeFilters = Array.from(buttons)
+    .filter((btn) => btn.classList.contains('_is-active') && btn.dataset.filter !== 'all')
+    .map((btn) => btn.dataset.filter);
+
+  // Если нет активных фильтров или активна кнопка «Все», показываем всё
+  if (activeFilters.length === 0 || (allButton && allButton.classList.contains('_is-active'))) {
+    items.forEach((item) => {
+      item.hidden = false;
+    });
+  } else {
+    // Фильтруем элементы — показываем, если элемент соответствует хотя бы одному активному фильтру
+    items.forEach((item) => {
+      const rawCategories = item.dataset.filterable;
+
+      // Карточка без категорий («без категории»): скрываем при любом активном фильтре,
+      // показываем только в режиме «Все» (ветка выше уже показывает все при пустом activeFilters).
+      const categories = rawCategories
+        ? rawCategories.split(' ').map((category) => category.trim()).filter(Boolean)
+        : [];
+
+      const isShow = activeFilters.some((filter) => categories.includes(filter));
+
+      item.hidden = !isShow;
+    });
+  }
+
+  // Уведомляем подписчиков (например, Swiper) о завершении фильтрации,
+  // чтобы пересчитать раскладку/скроллбар при скрытии карточек.
+  // Безопасно для блога/мобильной ширины: там слушателей нет или слайдер уничтожен.
+  filterContainer.dispatchEvent(new CustomEvent('filter:change', { bubbles: true }));
+};
+
 ;// ./src/js/module/getAdaptiveValue.js
 // Адаптивное значение с жестким контролем привязки (s1 -> w1, s2 -> w2)
 //
@@ -2071,8 +2140,6 @@ function sliders(
           slidesPerView: 2,
           spaceBetween: getAdaptiveValue('10-20, 360-1920', '20-40, 1920-3840'),
           resistanceRatio: 0,
-          observer: true,
-          observeParents: true,
           wrapperClass: 'articles-slider__items',
           slideClass: 'articles-slider__item',
           slideActiveClass: 'articles-slider__item_active',
@@ -2090,6 +2157,9 @@ function sliders(
           },
           on: {
             init: (swiper) => {
+              swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
+            },
+            update: (swiper) => {
               swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
             },
             resize: (swiper) => {
@@ -2112,6 +2182,25 @@ function sliders(
     matchMediaMi3.addEventListener('change', () => {
       responsiveInit();
     });
+
+    // Пересчёт слайдера при фильтрации карточек внутри контейнера.
+    // Слушатель вешаем один раз вне responsiveInit, чтобы не дублировать его при ресайзах.
+    // requestAnimationFrame гарантирует, что браузер применил display:none/'' до пересчёта Swiper.
+    // slideTo(0, 0) сбрасывает позицию на первый видимый слайд (слайдеры без loop — безопасно),
+    // устраняя «зависание» на скрытом слайде при переключении/возврате «Все».
+    // На мобильной ширине слайдер уничтожен (Slider.destroyed === true) — update не вызываем.
+    const articlesFilterContainer = SliderBody.closest('[data-filter-container]');
+    articlesFilterContainer?.addEventListener('filter:change', () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (Slider && !Slider.destroyed) {
+            Slider.update();
+            Slider.scrollbar?.updateSize();
+            Slider.slideTo(0, 0);
+          }
+        });
+      });
+    });
   }
 
   if (document.querySelector('.questions-slider')) {
@@ -2126,8 +2215,6 @@ function sliders(
           slidesPerView: 2,
           spaceBetween: getAdaptiveValue('10-20, 360-1920', '20-40, 1920-3840'),
           resistanceRatio: 0,
-          observer: true,
-          observeParents: true,
           wrapperClass: 'questions-slider__items',
           slideClass: 'questions-slider__item',
           slideActiveClass: 'questions-slider__item_active',
@@ -2150,6 +2237,9 @@ function sliders(
             init: (swiper) => {
               swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
             },
+            update: (swiper) => {
+              swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
+            },
             resize: (swiper) => {
               swiper.params.spaceBetween = getAdaptiveValue('10-20, 360-1920', '20-40, 1920-3840');
               swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
@@ -2169,6 +2259,25 @@ function sliders(
     responsiveInit();
     matchMediaMi3.addEventListener('change', () => {
       responsiveInit();
+    });
+
+    // Пересчёт слайдера при фильтрации карточек внутри контейнера.
+    // Слушатель вешаем один раз вне responsiveInit, чтобы не дублировать его при ресайзах.
+    // requestAnimationFrame гарантирует, что браузер применил display:none/'' до пересчёта Swiper.
+    // slideTo(0, 0) сбрасывает позицию на первый видимый слайд (слайдеры без loop — безопасно),
+    // устраняя «зависание» на скрытом слайде при переключении/возврате «Все».
+    // На мобильной ширине слайдер уничтожен (Slider.destroyed === true) — update не вызываем.
+    const questionsFilterContainer = SliderBody.closest('[data-filter-container]');
+    questionsFilterContainer?.addEventListener('filter:change', () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (Slider && !Slider.destroyed) {
+            Slider.update();
+            Slider.scrollbar?.updateSize();
+            Slider.slideTo(0, 0);
+          }
+        });
+      });
     });
   }
 
@@ -2225,6 +2334,7 @@ function sliders(
 // EXTERNAL MODULE: ./node_modules/swiper/swiper-bundle.mjs + 31 modules
 var swiper_bundle = __webpack_require__(392);
 ;// ./src/js/script.js
+
 
 
 
@@ -2463,6 +2573,10 @@ window.addEventListener('load', function () {
       menuClose();
     }
 
+    if (targetElement.closest('[data-filter]')) {
+      filtering(targetElement.closest('[data-filter]'));
+      return;
+    }
     //   View Type
     // if (targetElement.closest("[data-view-type]")) {
     //   const viewTypes = targetElement.parentElement.closest("[data-view-types]").dataset.viewTypes;
@@ -2653,7 +2767,7 @@ window.addEventListener('load', function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, [979], () => (__webpack_require__(280)))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, [979], () => (__webpack_require__(275)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
