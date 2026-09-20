@@ -105,9 +105,14 @@
                       <p class="welcome-link__text _p4">
                         Простые вопросы для оценки своих рисков мастопатии
                       </p>
-                      <a class="welcome-link__btn btn btn_neutral-cta btn_medium" href="#">
+                      <button
+                        class="welcome-link__btn btn btn_neutral-cta btn_medium"
+                        type="button"
+                        data-popup="#popup-quiz-1"
+                        aria-haspopup="dialog"
+                      >
                         Оценить риск
-                      </a>
+                      </button>
                     </article>
                   </li>
                   <li class="welcome__item">
@@ -485,6 +490,7 @@
                   </li>
                 </ul>
               </div>
+              <!-- window.articlesSwiper -->
               <div class="articles-slider" data-slider="false">
                 <div class="articles-slider__items">
                   <div class="articles-slider__item" data-filterable="category-6">
@@ -833,11 +839,18 @@
                   </li>
                 </ul>
               </div>
+              <!-- window.questionsSwiper -->
               <div class="questions-slider" data-slider="false">
                 <div class="questions-slider__items">
                   <div class="questions-slider__item" data-filterable="category-6">
                     <article class="questions-card">
-                      <a class="questions-card__link" href="#" data-popup="quest-371">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="1"
+                        aria-haspopup="dialog"
+                      >
                         <span class="_seo">Читать ответ</span>
                       </a>
                       <div class="questions-card__body">
@@ -855,7 +868,13 @@
                   </div>
                   <div class="questions-slider__item" data-filterable="category-6 category-7 category-1">
                     <article class="questions-card">
-                      <a class="questions-card__link" href="#" data-popup="quest-371">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="2"
+                        aria-haspopup="dialog"
+                      >
                         <span class="_seo">Читать ответ</span>
                       </a>
                       <div class="questions-card__body">
@@ -877,7 +896,13 @@
                   </div>
                   <div class="questions-slider__item" data-filterable="category-6 category-7 category-8">
                     <article class="questions-card">
-                      <a class="questions-card__link" href="#" data-popup="quest-371">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="3"
+                        aria-haspopup="dialog"
+                      >
                         <span class="_seo">Читать ответ</span>
                       </a>
                       <div class="questions-card__body">
@@ -914,7 +939,13 @@
                     data-filterable="category-8 category-6 category-3 category-2 category-7 category-1 category-4"
                   >
                     <article class="questions-card">
-                      <a class="questions-card__link" href="#" data-popup="quest-371">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="4"
+                        aria-haspopup="dialog"
+                      >
                         <span class="_seo">Читать ответ</span>
                       </a>
                       <div class="questions-card__body">
@@ -942,7 +973,13 @@
                     data-filterable="category-8 category-6 category-3 category-2 category-7 category-1 category-5"
                   >
                     <article class="questions-card">
-                      <a class="questions-card__link" href="#" data-popup="quest-371">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="5"
+                        aria-haspopup="dialog"
+                      >
                         <span class="_seo">Читать ответ</span>
                       </a>
                       <div class="questions-card__body">
@@ -965,7 +1002,13 @@
                   </div>
                   <div class="questions-slider__item" data-filterable="category-1 category-3">
                     <article class="questions-card">
-                      <a class="questions-card__link" href="#" data-popup="quest-371">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="6"
+                        aria-haspopup="dialog"
+                      >
                         <span class="_seo">Читать ответ</span>
                       </a>
                       <div class="questions-card__body">
@@ -989,7 +1032,13 @@
                     data-filterable="category-1 category-2 category-3 category-7 category-4 category-5"
                   >
                     <article class="questions-card">
-                      <a class="questions-card__link" href="#" data-popup="quest-371">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="7"
+                        aria-haspopup="dialog"
+                      >
                         <span class="_seo">Читать ответ</span>
                       </a>
                       <div class="questions-card__body">
@@ -1043,6 +1092,7 @@
                 <div class="media-slider__suptitle">Полезное</div>
                 <h2 class="media-slider__title _h2">Медиатека</h2>
               </div>
+              <!-- window.mediaSwiper -->
               <div class="media-slider__main">
                 <!-- минимум 8 слайдов, иначе артефакты loop -->
                 <ul class="media-slider__items">
@@ -1374,22 +1424,524 @@
     </div>
 
     <div
-      class="popup"
-      id="contact-form"
+      class="popup popup_down popup_medium"
+      id="popup-quiz-1"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="id-title"
-      aria-describedby="id-desc"
+      aria-labelledby="popup-quiz-1-title"
     >
       <div class="popup__body">
-        <button class="popup__close" type="button" data-popup-close>
+        <button class="popup__close btn btn_small btn_light _icon-close" type="button" data-popup-close>
           <span class="_seo">Закрыть окно</span>
         </button>
         <div class="popup__inner">
           <div class="popup__scroll">
-            <!-- <div class="popup__video" data-popup-video-place></div> -->
-            <!-- <h2 id="id-title"></h2> -->
-            <!-- <p id="id-desc"></p> -->
+            <h2 class="_seo" id="popup-quiz-1-title">Тест оценки рисков мастопатии</h2>
+            <form action="#">
+              <div class="quiz">
+                <div class="quiz__main">
+                  <div class="quiz__body">
+                    <div class="quiz__pagination">
+                      <!-- кол-во span равно кол-ву quiz__step -->
+                      <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="quiz__steps">
+                      <div class="quiz__step">
+                        <div class="quiz__info">
+                          <h3 class="quiz__title _h6">Сколько вам лет?</h3>
+                          <div class="quiz__desc _wysiwyg _p5">
+                            <p>К какому врачу нужно идти, если болит грудь или есть другие симптомы?</p>
+                          </div>
+                        </div>
+                        <div class="quiz__inputs">
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-1">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">18–35</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-1">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">35–50</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-1">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">45–55</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="quiz__step">
+                        <div class="quiz__info">
+                          <h3 class="quiz__title _h6">Какой характер боли?</h3>
+                        </div>
+                        <div class="quiz__inputs">
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="checkbox">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Циклическая, перед месячными</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="checkbox">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Постоянная</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="checkbox">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">В одной точке</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="quiz__step">
+                        <div class="quiz__info">
+                          <h3 class="quiz__title _h6">Есть ли находки при осмотре?</h3>
+                        </div>
+                        <div class="quiz__inputs">
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-2">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Уплотнение / узел</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-2">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Выделения из соска</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-2">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Ничего не находила</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="quiz__step">
+                        <div class="quiz__info">
+                          <h3 class="quiz__title _h6">Заболевания груди у близких родственниц?</h3>
+                        </div>
+                        <div class="quiz__inputs">
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-3">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Нет</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-3">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Да</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-3">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Не знаю</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="quiz__step">
+                        <div class="quiz__info">
+                          <h3 class="quiz__title _h6">Принимаете гормональные препараты?</h3>
+                        </div>
+                        <div class="quiz__inputs">
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-4">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">КОК</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-4">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">МГТ</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-4">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Нет</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz__actions">
+                      <button class="quiz__btn quiz__btn_back btn btn_small btn_pink" type="button">
+                        Назад
+                      </button>
+                      <button
+                        class="quiz__btn quiz__btn_next btn btn_small btn_pink _icon-chevron-right"
+                        type="button"
+                      >
+                        Следующий вопрос
+                      </button>
+                      <button class="quiz__btn quiz__btn_submit btn btn_small btn_pink" type="submit">
+                        Узнать результат
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="quiz__result">
+                  <div class="quiz-result"></div>
+                  <div class="quiz__body">
+                    <div class="quiz__actions">
+                      <button class="quiz__btn quiz__btn_back btn btn_small btn_pink" type="button">
+                        Назад
+                      </button>
+                      <button class="quiz__btn quiz__btn_reset btn btn_small btn_pink" type="reset">
+                        Пройти заново
+                      </button>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+
+              <script src="./files/quiz.js"></script>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="popup popup_small"
+      id="popup-answers-1"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="popup-answers-title"
+    >
+      <div class="popup__body">
+        <button class="popup__close btn btn_small btn_light _icon-close" type="button" data-popup-close>
+          <span class="_seo">Закрыть окно</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__scroll">
+            <h2 class="_seo" id="popup-answers-title">Ответы на вопросы</h2>
+            <div class="answers-slider">
+              <!-- window.answersSwiper -->
+              <div class="answers-slider__body">
+                <div class="answers-slider__items">
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 01</div>
+                          <div class="answer__duration _icon-time">2 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">Что такое самодиагностика молочной железы?</h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <img src="./img/content/photo/answer-1.webp" alt="Изображение" loading="lazy">
+                        <p>
+                          Это простой и доступный метод проверки состояния молочных желёз. Если проводить
+                          самообследование регулярно, то будет легко заметить изменения: появление
+                          болезненности или узелков, изменение вида кожи, формы сосков и наличия
+                          выделений из них. В этом случае необходимо обратиться к врачу сразу после
+                          обнаружения изменений, чтобы своевременно получить помощь.
+                        </p>
+                        <p><strong>ВАЖНО:</strong> проводить самообследование молочных желёз каждый месяц</p>
+                        <ul>
+                          <li>
+                            Если есть менструальный цикл &mdash; на 5-6-й день от начала
+                            менструации
+                          </li>
+                          <li>
+                            При отсутствии менструального цикла (в постменопаузе, при хирургической
+                            менопаузе) &mdash; в один и тот же день каждого календарного
+                            месяца.
+                          </li>
+                        </ul>
+                      </div>
+                      <ul class="literature">
+                        <ol class="literature__item _p5">
+                          Андреева Е. Н., Григорян О. Р., Корженкова Г. П. Наружное
+                          применение гестагенов для лечения масталгии, возникшей на фоне приема
+                          комбинированных оральных контрацептивов у женщин с фиброзно-кистозной
+                          мастопатией. Проблемы репродукции. &mdash; 2016.- 4. &mdash;С. 86-94
+                        </ol>
+                      </ul>
+                      <div class="answer-author">
+                        <figure class="answer-author__media">
+                          <img
+                            src="./img/content/photo/author-1.webp"
+                            alt="Ольга Алексеевна Громова"
+                            loading="lazy">
+                        </figure>
+                        <div class="answer-author__content">
+                          <div class="answer-author__label _p6">Отвечает</div>
+                          <div class="answer-author__info _p5">
+                            Ольга Алексеевна Громова. д.м.н., профессор, заместитель директора института
+                            Фармакоинформатики РАН (Москва), научный консультант Института микроэлементов
+                            ЮНЕСКО
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 02</div>
+                          <div class="answer__duration _icon-time">3 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          В каком возрасте и как часто необходимо обследовать молочные железы?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>Если нет жалоб на состояние молочных желёз, то:</p>
+                        <p>
+                          Женщинам до 40 лет рекомендуется проходить УЗИ молочных желёз один раз
+                          в два года;
+                        </p>
+                        <p>
+                          Женщинам от 40 до 75 лет включительно нужно делать маммографию
+                          (скрининг молочных желёз) один раз в два года;
+                        </p>
+                        <p>
+                          Женщинам, получающим менопаузальную гормональную терапию, а также имеющим
+                          заболевания или факторы риска рака молочной железы, необходимо делать маммографию
+                          один раз в год.
+                        </p>
+                        <p>
+                          Если при самообследовании груди или на приёме у врача возникли подозрения
+                          на заболевание молочных желёз, то маммографию и УЗИ проводят независимо
+                          от возраста и даты последнего обследования.
+                        </p>
+                      </div>
+                      <ul class="literature">
+                        <ol class="literature__item _p5">
+                          Андреева Е. Н., Григорян О. Р., Корженкова Г. П. Наружное
+                          применение гестагенов для лечения масталгии, возникшей на фоне приема
+                          комбинированных оральных контрацептивов у женщин с фиброзно-кистозной
+                          мастопатией. Проблемы репродукции. &mdash; 2016.- 4. &mdash;С. 86-94
+                        </ol>
+                      </ul>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 03</div>
+                          <div class="answer__duration _icon-time">1 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          Почему часто болит грудь в подростковом возрасте?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          <li class="tag-list__item tag-list_type-a">Лечение</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          Это происходит из-за нарушения гормонального баланса, в первую очередь из-за
+                          резкого повышения синтеза эстрогенов, которое может происходить у подростков.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 04</div>
+                          <div class="answer__duration _icon-time">4 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          К какому врачу нужно идти, если болит грудь или есть другие симптомы?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-a">Лечение</li>
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          <li class="tag-list__item tag-list_type-b">Узлы</li>
+                          <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          При боли и дискомфорте в груди в первую очередь надо обратиться
+                          за консультацией к гинекологу. На приеме гинеколог проведет диагностику:
+                          осмотр и пальпацию молочных желез, направит на УЗИ или маммографию. Если
+                          в ходе обследования будут выявлены доброкачественные изменения, гинеколог
+                          назначит лечение и в дальнейшем будет наблюдать пациентку. Если изменения
+                          в молочной железе будут вызывать подозрения на злокачественный процесс,
+                          гинеколог направит к нужному специалисту.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 05</div>
+                          <div class="answer__duration _icon-time">2 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          При каких симптомах надо обязательно идти к врачу?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-a">Лечение</li>
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          <li class="tag-list__item tag-list_type-b">Узлы</li>
+                          <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          Если при самообследовании вы заметили изменения формы, размера, внешнего вида
+                          груди и/или сосков, появились уплотнения, узелки, участки болезненности, выделения
+                          из сосков &mdash; вам надо обязательно обратиться к врачу.
+                        </p>
+                        <img src="./img/content/photo/answer-1.webp" alt="Изображение" loading="lazy">
+                        <p>
+                          Если боль ранее была циклической, а теперь сохраняется после начала
+                          менструации, если боль усилилась или изменился её характер (она стала жгучей,
+                          ноющей и т. п.) &mdash; вам надо обязательно обратиться к врачу.
+                        </p>
+                      </div>
+                      <div class="answer-author">
+                        <figure class="answer-author__media">
+                          <img
+                            src="./img/content/photo/author-1.webp"
+                            alt="Ольга Алексеевна Громова"
+                            loading="lazy">
+                        </figure>
+                        <div class="answer-author__content">
+                          <div class="answer-author__label _p6">Отвечает</div>
+                          <div class="answer-author__info _p5">Ольга Алексеевна Громова.</div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 06</div>
+                          <div class="answer__duration _icon-time">3 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          Почему возникают боли в груди у женщин после 40 лет?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                          <li class="tag-list__item tag-list_type-b">Узлы</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          Возрастное снижение уровня половых гормонов начинается с прогестерона. При этом
+                          синтез эстрогенов еще может быть в норме. Нарушение соотношения прогестерона и
+                          эстрогенов и является основной причиной возникновения боли в молочной
+                          железе у женщин после 40 лет.
+                        </p>
+                      </div>
+                      <ul class="literature">
+                        <ol class="literature__item _p5">
+                          Андреева Е. Н., Григорян О. Р., Корженкова Г. П. Наружное
+                          применение гестагенов для лечения масталгии, возникшей на фоне приема
+                          комбинированных оральных контрацептивов у женщин с фиброзно-кистозной
+                          мастопатией. Проблемы репродукции. &mdash; 2016.- 4. &mdash;С. 86-94
+                        </ol>
+                      </ul>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 07</div>
+                          <div class="answer__duration _icon-time">5 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          Может ли грудь болеть сильнее в случае нерегулярной половой жизни или
+                          длительного стресса?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                          <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                          <li class="tag-list__item tag-list_type-b">Узлы</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          Исследования говорят, что может. Отсутствие, отказ от половой жизни или
+                          дискомфорт при половом акте у женщин старше 30 лет, семейные
+                          и рабочие неурядицы, стрессы, нервозность &mdash; всё это риски
+                          возникновения доброкачественных заболеваний молочной железы, в том числе
+                          с болевым синдромом.
+                        </p>
+                      </div>
+                      <ul class="literature">
+                        <ol class="literature__item _p5">
+                          Андреева Е. Н., Григорян О. Р., Корженкова Г. П. Наружное
+                          применение гестагенов для лечения масталгии, возникшей на фоне приема
+                          комбинированных оральных контрацептивов у женщин с фиброзно-кистозной
+                          мастопатией. Проблемы репродукции. &mdash; 2016.- 4. &mdash;С. 86-94
+                        </ol>
+                      </ul>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <div class="answers-slider__nav">
+                <button
+                  class="answers-slider__btn answers-slider__btn_prev btn btn_small btn_light _icon-chevron-left"
+                  type="button"
+                >
+                  Предыдущий вопрос
+                </button>
+                <button
+                  class="answers-slider__btn answers-slider__btn_next btn btn_small btn_light _icon-chevron-right"
+                  type="button"
+                >
+                  Следующий вопрос
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1401,23 +1953,62 @@
       </div>
     </div>
 
-    <!-- <div class="cookies">
+    <div class="cookies" hidden>
       <p class="cookies__text">
-        Пользуясь нашим сайтом, вы соглашаетесь с тем,
-        что <a href="#" target="_blank">мы используем cookies</a> 🍪
+        Продолжая использовать сайт, Вы соглашаетесь на использование
+        <a href="./cookies.html">файлов cookie</a>
       </p>
-      <button class="cookies__btn btn" type="button">
-        Окей
-        <span class="_seo">, принять файлы cookies</span>
-      </button>
+      <button class="cookies__btn btn btn_medium btn_cta" type="button">Хорошо</button>
+
+      <!-- демо скрипт для закрытия, убрать при интеграции -->
       <script>
         (() => {
           'use strict';
-          document.querySelector('.cookies__btn').addEventListener('click', (e) => {
-            e.target.parentElement.remove();
+
+          const COOKIE_NAME = 'cookie-accepted';
+          const COOKIE_VALUE = 'true';
+          const COOKIE_MAX_AGE = 60 * 5; // 5 минут
+          const SCROLL_THRESHOLD = 20; // высота скролла для показа окна
+
+          const cookiesEl = document.querySelector('.cookies');
+          if (!cookiesEl) return;
+
+          // Безопасное чтение конкретной cookie по имени (без поиска подстроки по всем cookie)
+          const getCookie = (name) => {
+            const escapedName = name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1');
+            const matches = document.cookie.match(new RegExp('(?:^|; )' + escapedName + '=([^;]*)'));
+            return matches ? decodeURIComponent(matches[1]) : null;
+          };
+
+          const isAccepted = () => getCookie(COOKIE_NAME) === COOKIE_VALUE;
+
+          // Куки уже приняты при заходе на страницу — 0 действий и 0 слушателей
+          if (isAccepted()) return;
+
+          // Скролл: куки не приняты → показать окно; иначе ничего не делаем
+          const onScroll = () => {
+            if (window.scrollY > SCROLL_THRESHOLD) {
+              cookiesEl.hidden = false;
+              window.removeEventListener('scroll', onScroll);
+            }
+          };
+          window.addEventListener('scroll', onScroll, { passive: true });
+
+          // Принятие куки по кнопке «Хорошо»
+          const acceptCookies = () => {
+            document.cookie = `${COOKIE_NAME}=${COOKIE_VALUE}; max-age=${COOKIE_MAX_AGE}; path=/; samesite=lax`;
+            cookiesEl.hidden = true;
+            // Снимаем триггер показа, чтобы окно не всплыло повторно при дальнейшем скролле
+            window.removeEventListener('scroll', onScroll);
+          };
+
+          document.addEventListener('click', (e) => {
+            if (e.target.closest('.cookies__btn')) {
+              acceptCookies();
+            }
           });
         })();
       </script>
-    </div> -->
+    </div>
   </body>
 </html>

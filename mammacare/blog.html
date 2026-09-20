@@ -655,51 +655,68 @@
       </footer>
     </div>
 
-    <div
-      class="popup"
-      id="contact-form"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="id-title"
-      aria-describedby="id-desc"
-    >
-      <div class="popup__body">
-        <button class="popup__close" type="button" data-popup-close>
-          <span class="_seo">Закрыть окно</span>
-        </button>
-        <div class="popup__inner">
-          <div class="popup__scroll">
-            <!-- <div class="popup__video" data-popup-video-place></div> -->
-            <!-- <h2 id="id-title"></h2> -->
-            <!-- <p id="id-desc"></p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="alert">
       <div class="alert__text container">
         <p>Информация ознакомительная. Требуется консультация специалиста.</p>
       </div>
     </div>
 
-    <!-- <div class="cookies">
+    <div class="cookies" hidden>
       <p class="cookies__text">
-        Пользуясь нашим сайтом, вы соглашаетесь с тем,
-        что <a href="#" target="_blank">мы используем cookies</a> 🍪
+        Продолжая использовать сайт, Вы соглашаетесь на использование
+        <a href="./cookies.html">файлов cookie</a>
       </p>
-      <button class="cookies__btn btn" type="button">
-        Окей
-        <span class="_seo">, принять файлы cookies</span>
-      </button>
+      <button class="cookies__btn btn btn_medium btn_cta" type="button">Хорошо</button>
+
+      <!-- демо скрипт для закрытия, убрать при интеграции -->
       <script>
         (() => {
           'use strict';
-          document.querySelector('.cookies__btn').addEventListener('click', (e) => {
-            e.target.parentElement.remove();
+
+          const COOKIE_NAME = 'cookie-accepted';
+          const COOKIE_VALUE = 'true';
+          const COOKIE_MAX_AGE = 60 * 5; // 5 минут
+          const SCROLL_THRESHOLD = 20; // высота скролла для показа окна
+
+          const cookiesEl = document.querySelector('.cookies');
+          if (!cookiesEl) return;
+
+          // Безопасное чтение конкретной cookie по имени (без поиска подстроки по всем cookie)
+          const getCookie = (name) => {
+            const escapedName = name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1');
+            const matches = document.cookie.match(new RegExp('(?:^|; )' + escapedName + '=([^;]*)'));
+            return matches ? decodeURIComponent(matches[1]) : null;
+          };
+
+          const isAccepted = () => getCookie(COOKIE_NAME) === COOKIE_VALUE;
+
+          // Куки уже приняты при заходе на страницу — 0 действий и 0 слушателей
+          if (isAccepted()) return;
+
+          // Скролл: куки не приняты → показать окно; иначе ничего не делаем
+          const onScroll = () => {
+            if (window.scrollY > SCROLL_THRESHOLD) {
+              cookiesEl.hidden = false;
+              window.removeEventListener('scroll', onScroll);
+            }
+          };
+          window.addEventListener('scroll', onScroll, { passive: true });
+
+          // Принятие куки по кнопке «Хорошо»
+          const acceptCookies = () => {
+            document.cookie = `${COOKIE_NAME}=${COOKIE_VALUE}; max-age=${COOKIE_MAX_AGE}; path=/; samesite=lax`;
+            cookiesEl.hidden = true;
+            // Снимаем триггер показа, чтобы окно не всплыло повторно при дальнейшем скролле
+            window.removeEventListener('scroll', onScroll);
+          };
+
+          document.addEventListener('click', (e) => {
+            if (e.target.closest('.cookies__btn')) {
+              acceptCookies();
+            }
           });
         })();
       </script>
-    </div> -->
+    </div>
   </body>
 </html>

@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="./img/content/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="./img/content/favicon.svg" color="#ffffff">
+    <link rel="apple-touch-icon" href="./files/apple-touch-icon.png" sizes="180x180">
+    <title>Вопросы и ответы</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/swiper.min.js" defer></script>
+    <script src="./js/script.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="header @@mod" data-lp>
+        <div class="header__top">
+          <div class="container">
+            <ul class="sup-menu" data-da=".menu__body,1279,first">
+              <li class="sup-menu__item">
+                <a class="sup-menu__link" href="./blog.html">Статьи</a>
+              </li>
+              <li class="sup-menu__item">
+                <a class="sup-menu__link" href="./media.html">Медиатека</a>
+              </li>
+              <li class="sup-menu__item">
+                <a class="sup-menu__link" href="./faq.html">Вопрос-ответ</a>
+              </li>
+              <li class="sup-menu__item">
+                <a class="sup-menu__link" href="./useful.html">Полезное</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+          <div class="header__body">
+            <a class="logo logo_header" href="./index.html#wrapper">
+              <img
+                src="./img/content/logo-1.svg"
+                alt="Про женское: здоровье молочных желез"
+                fetchpriority="high">
+            </a>
+            <nav class="menu">
+              <button class="menu__btn _icon-menu" type="button" data-menu>
+                <span class="_seo">Меню сайта</span>
+              </button>
+              <div class="menu__dropdown">
+                <div class="menu__body">
+                  <ul class="menu__list _p4">
+                    <li class="menu__item">
+                      <a class="menu__link _icon-pain" href="#"><span>Боль и чувствительность</span></a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link _icon-drop" href="#"><span>Выделения из груди</span></a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link _icon-node" href="#"><span>Уплотнения и узлы</span></a>
+                    </li>
+                  </ul>
+                  <div class="menu__actions">
+                    <a class="menu__action btn btn btn_cta" href="#">Раздел для специалистов</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="faq _mb-larger">
+          <div class="container">
+            <div class="faq__body" data-filter-container="once">
+              <div class="faq__head">
+                <div class="faq__breadcrumbs">
+                  <ul class="breadcrumbs ">
+                    <li class="breadcrumbs__item">
+                      <a class="breadcrumbs__link" href="./index.html">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                      <span class="breadcrumbs__link">Вопросы и ответы</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="faq__heading">
+                  <h2 class="faq__title _h2">Вопросы и ответы</h2>
+                </div>
+                <div class="faq__filters">
+                  <ul class="filter-list">
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral _is-active"
+                        type="button"
+                        data-filter="all"
+                      >
+                        Все
+                      </button>
+                    </li>
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral"
+                        type="button"
+                        data-filter="category-1"
+                      >
+                        Боль
+                      </button>
+                    </li>
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral"
+                        type="button"
+                        data-filter="category-2"
+                      >
+                        Уплотнения
+                      </button>
+                    </li>
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral"
+                        type="button"
+                        data-filter="category-3"
+                      >
+                        Узлы
+                      </button>
+                    </li>
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral"
+                        type="button"
+                        data-filter="category-4"
+                      >
+                        Плотный фон
+                      </button>
+                    </li>
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral"
+                        type="button"
+                        data-filter="category-5"
+                      >
+                        Чувствительность
+                      </button>
+                    </li>
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral"
+                        type="button"
+                        data-filter="category-6"
+                      >
+                        Мастопатия
+                      </button>
+                    </li>
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral"
+                        type="button"
+                        data-filter="category-7"
+                      >
+                        Диагностика
+                      </button>
+                    </li>
+                    <li class="filter-list__item">
+                      <button
+                        class="filter-list__btn btn btn_smallest btn_neutral"
+                        type="button"
+                        data-filter="category-8"
+                      >
+                        Лечение
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="faq__main">
+                <div class="faq__grid">
+                  <div class="faq__item" data-filterable="category-6">
+                    <article class="questions-card">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="1"
+                        aria-haspopup="dialog"
+                      >
+                        <span class="_seo">Читать ответ</span>
+                      </a>
+                      <div class="questions-card__body">
+                        <div class="questions-card__main">
+                          <div class="questions-card__label _p3">Вопрос 01</div>
+                          <h3 class="questions-card__title _p1">Что такое самодиагностика молочной железы?</h3>
+                        </div>
+                        <div class="questions-card__extra">
+                          <ul class="tag-list _p6">
+                            <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="faq__item" data-filterable="category-6 category-7 category-1">
+                    <article class="questions-card">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="2"
+                        aria-haspopup="dialog"
+                      >
+                        <span class="_seo">Читать ответ</span>
+                      </a>
+                      <div class="questions-card__body">
+                        <div class="questions-card__main">
+                          <div class="questions-card__label _p3">Вопрос 02</div>
+                          <h3 class="questions-card__title _p1">
+                            В каком возрасте и как часто необходимо обследовать молочные железы?
+                          </h3>
+                        </div>
+                        <div class="questions-card__extra">
+                          <ul class="tag-list _p6">
+                            <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                            <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                            <li class="tag-list__item tag-list_type-c">Боль</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="faq__item" data-filterable="category-6 category-7 category-8">
+                    <article class="questions-card">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="3"
+                        aria-haspopup="dialog"
+                      >
+                        <span class="_seo">Читать ответ</span>
+                      </a>
+                      <div class="questions-card__body">
+                        <div class="questions-card__main">
+                          <div class="questions-card__label _p3">Вопрос 03</div>
+                          <h3 class="questions-card__title _p1">Почему часто болит грудь в подростковом возрасте?</h3>
+                        </div>
+                        <div class="questions-card__extra">
+                          <ul class="tag-list _p6">
+                            <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                            <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                            <li class="tag-list__item tag-list_type-a">Лечение</li>
+                          </ul>
+                        </div>
+                        <div class="questions-card__footer">
+                          <div class="author">
+                            <figure class="author__media">
+                              <img src="./img/content/photo/author-1.webp" alt="Ольга Алексеевна Громова" loading="lazy">
+                            </figure>
+                            <div class="author__main">
+                              <div class="author__label">Отвечает</div>
+                              <div class="author__info _p4">
+                                Ольга Алексеевна Громова. д.м.н., профессор, заместитель директора института
+                                Фармакоинформатики РАН (Москва), научный консультант Института микроэлементов ЮНЕСКО
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div
+                    class="faq__item"
+                    data-filterable="category-8 category-6 category-3 category-2 category-7 category-1 category-4"
+                  >
+                    <article class="questions-card">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="4"
+                        aria-haspopup="dialog"
+                      >
+                        <span class="_seo">Читать ответ</span>
+                      </a>
+                      <div class="questions-card__body">
+                        <div class="questions-card__main">
+                          <div class="questions-card__label _p3">Вопрос 04</div>
+                          <h3 class="questions-card__title _p1">
+                            К какому врачу нужно идти, если болит грудь или есть другие симптомы?
+                          </h3>
+                        </div>
+                        <div class="questions-card__extra">
+                          <ul class="tag-list _p6">
+                            <li class="tag-list__item tag-list_type-a">Лечение</li>
+                            <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                            <li class="tag-list__item tag-list_type-b">Узлы</li>
+                            <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                            <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                            <li class="tag-list__item tag-list_type-c">Боль</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div
+                    class="faq__item"
+                    data-filterable="category-8 category-6 category-3 category-2 category-7 category-1 category-5"
+                  >
+                    <article class="questions-card">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="5"
+                        aria-haspopup="dialog"
+                      >
+                        <span class="_seo">Читать ответ</span>
+                      </a>
+                      <div class="questions-card__body">
+                        <div class="questions-card__main">
+                          <div class="questions-card__label _p3">Вопрос 05</div>
+                          <h3 class="questions-card__title _p1">При каких симптомах надо обязательно идти к врачу?</h3>
+                        </div>
+                        <div class="questions-card__extra">
+                          <ul class="tag-list _p6">
+                            <li class="tag-list__item tag-list_type-a">Лечение</li>
+                            <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                            <li class="tag-list__item tag-list_type-b">Узлы</li>
+                            <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                            <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                            <li class="tag-list__item tag-list_type-c">Боль</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="faq__item" data-filterable="category-1 category-3">
+                    <article class="questions-card">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="6"
+                        aria-haspopup="dialog"
+                      >
+                        <span class="_seo">Читать ответ</span>
+                      </a>
+                      <div class="questions-card__body">
+                        <div class="questions-card__main">
+                          <div class="questions-card__label _p3">Вопрос 06</div>
+                          <h3 class="questions-card__title _p1">
+                            Почему возникают боли в груди у женщин после 40 лет?
+                          </h3>
+                        </div>
+                        <div class="questions-card__extra">
+                          <ul class="tag-list _p6">
+                            <li class="tag-list__item tag-list_type-c">Боль</li>
+                            <li class="tag-list__item tag-list_type-b">Узлы</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div
+                    class="faq__item"
+                    data-filterable="category-1 category-2 category-3 category-7 category-4 category-5"
+                  >
+                    <article class="questions-card">
+                      <a
+                        class="questions-card__link"
+                        href="#"
+                        data-popup="#popup-answers-1"
+                        data-answer-index="7"
+                        aria-haspopup="dialog"
+                      >
+                        <span class="_seo">Читать ответ</span>
+                      </a>
+                      <div class="questions-card__body">
+                        <div class="questions-card__main">
+                          <div class="questions-card__label _p3">Вопрос 07</div>
+                          <h3 class="questions-card__title _p1">
+                            Может ли грудь болеть сильнее в случае нерегулярной половой жизни или длительного
+                            стресса?
+                          </h3>
+                        </div>
+                        <div class="questions-card__extra">
+                          <ul class="tag-list _p6">
+                            <li class="tag-list__item tag-list_type-c">Боль</li>
+                            <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                            <li class="tag-list__item tag-list_type-b">Узлы</li>
+                            <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          </ul>
+                        </div>
+                        <div class="questions-card__footer">
+                          <div class="author">
+                            <figure class="author__media">
+                              <img src="./img/content/photo/author-1.webp" alt="Ольга Алексеевна Громова" loading="lazy">
+                            </figure>
+                            <div class="author__main">
+                              <div class="author__label">Отвечает</div>
+                              <div class="author__info _p4">
+                                Ольга Алексеевна Громова. д.м.н., профессор, заместитель директора института
+                                Фармакоинформатики РАН (Москва), научный консультант Института микроэлементов ЮНЕСКО
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+           <div class="footer__literature">
+             <div class="spollers spollers_neutral spollers_wide" data-spollers>
+               <details class="spollers__item">
+                 <summary class="spollers__title _p1 _icon-chevron-down" data-spoller-close>
+                   Список используемой литературы
+                 </summary>
+                 <div class="spollers__body">
+                   <div class="spollers__content _wysiwyg _p5">
+                     1. Протасова А. Д. Молочная железа как лакмусовая бумажка гинекологической патологии. XXV
+                     Юбилейный Всероссийский научно-образовательный форум «Мать и дитя». Эффективная фармакотерапия.
+                     2025. Том 21. № 4. Акушерство и гинекология. <br>
+                     2. Высоцкая И. В., Летягин В. П., Лактионов К. П. Диагностика и лечение доброкачественных
+                     заболеваний молочных желез (клинические рекомендации Российского общества онкомаммологов) //
+                     Опухоли жен. репродук. системы. 2014. С. 19–32. <br>
+                     3. Рожкова Н. И., Меских Е. В., Бурдина Л. М. Лекарственная патогенетическая коррекция
+                     доброкачественных заболеваний молочной железы // Опухоли жен. репродук. системы. 2008. № 2. С.
+                     48–54. <br>
+                     4. Родионов В. В., Сметник А. А. Доброкачественные заболевания молочных желез. Акушерство и
+                     гинекология: новости, мнения, обучение. 2018. № 1. С. 90–100.
+                   </div>
+                 </div>
+               </details>
+             </div>
+           </div>
+          <div class="footer__main">
+            <div class="footer__head">
+              <a class="logo logo_footer" href="./index.html#wrapper">
+                <img src="./img/content/logo-1.svg" alt="Про женское: здоровье молочных желез" loading="lazy">
+              </a>
+              <div class="footer__info _p6">
+                <p>
+                  Вся информация, представленная на этом сайте/странице, носит исключительно информационный
+                  характер и не является публичной офертой. Материалы не заменяют
+                  профессиональную медицинскую диагностику или лечение. При любых проблемах со здоровьем
+                  необходимо обязательно обратиться к врачу
+                </p>
+              </div>
+            </div>
+            <div class="footer__menu">
+              <nav class="footer-menu">
+                <div class="footer-menu__box">
+                  <ul class="footer-menu__list footer-menu__list_responsive">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./blog.html">Статьи</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./media.html">Медиатека</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./faq.html">Вопрос-ответ</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="./useful.html">Полезное</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link" href="#">Словарь</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="footer-menu__box">
+                  <ul class="footer-menu__list footer-menu__list_column">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link _icon-pain" href="./pain.html">
+                        Боль и чувствительность
+                      </a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link _icon-drop" href="./drop.html">Выделения из груди</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link _icon-node" href="./node.html">Уплотнения и узлы</a>
+                    </li>
+                  </ul>
+                  <ul class="footer-menu__list footer-menu__list_row">
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link _icon-18" href="./age-18.html">18+</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link _icon-30" href="./age-30.html">30+</a>
+                    </li>
+                    <li class="footer-menu__item">
+                      <a class="footer-menu__link _icon-50" href="./age-50.html">50+</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div class="footer__extra">
+              <article class="footer-extra">
+                <a class="footer-extra__link" href="#"></a>
+                <div class="footer-extra__body">
+                  <div class="footer-extra__head _icon-support">
+                    <h3 class="footer-extra__title _p1">Актуальная информация о женском здоровье</h3>
+                  </div>
+                  <div class="footer-extra__main">
+                    <div class="footer-extra__content">
+                      <p>
+                        Настоящая информация предназначена только для медицинских и фармацевтических
+                        работников
+                      </p>
+                    </div>
+                    <div class="footer-extra__icon _icon-arr-down-right" aria-hidden="true">
+                      <span class="_glass"></span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="company">
+            <div class="company__head">
+              <a class="company__logo" href="#" target="_blank">
+                <img src="./img/content/logo-2.svg" alt="&laquo;Безен Хелскеа&raquo;">
+              </a>
+              <div class="company__info _p3">
+                <p>
+                  &laquo;Безен Хелскеа&raquo; &mdash; производитель инновационных препаратов для мужского
+                  и женского здоровья
+                </p>
+              </div>
+              <div class="company__notify _p3">
+                <p>
+                  В случае возникновения нежелательной реакции на лекарственный препарат компании
+                  Безен Хелскеа, пожалуйста, <a href="#">заполните форму на сайте</a>
+                </p>
+              </div>
+            </div>
+            <div class="company__data">
+              <div class="company__box">
+                <dl class="company-data">
+                  <div class="company-data__item company-data__item_tall">
+                    <dt class="company-data__name">Адрес</dt>
+                    <dd class="company-data__desc">
+                      Россия, 123100, город Москва, вн.тер.г. муниципальный округ Пресненский, ул 2-я
+                      Звенигородская, д. 12, стр. 1, помещ. 13Н
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="company__box company__box_contacts">
+                <div class="company-data">
+                  <dl class="company-data">
+                    <div class="company-data__item">
+                      <dt class="company-data__name">Горячая линия</dt>
+                      <dd class="company-data__desc">
+                        <a class="company-data__link" href="tel:+74959801067">+7(495) 980 1067</a>
+                      </dd>
+                    </div>
+                    <div class="company-data__item">
+                      <dt class="company-data__name">Факс</dt>
+                      <dd class="company-data__desc">
+                        <a class="company-data__link" href="tel:+74959801068">+7(495) 980 1068</a>
+                      </dd>
+                    </div>
+                  </dl>
+                  <dl class="company-data">
+                    <div class="company-data__item">
+                      <dt class="company-data__name">Электронная почта</dt>
+                      <dd class="company-data__desc">
+                        <a class="company-data__link" href="mailto:info@besins-healthcare.com">
+                          info@besins-healthcare.com
+                        </a>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+              <div class="company__box company__box_docs">
+                <ul class="company-docs _p5">
+                  <li class="company-docs__item">
+                    <a class="company-docs__link" href="./company.html">О компании производителе</a>
+                  </li>
+                  <li class="company-docs__item">
+                    <a class="company-docs__link" href="./policy.html">
+                      Политика обработки и защиты персональных данных
+                    </a>
+                  </li>
+                  <li class="company-docs__item">
+                    <a class="company-docs__link" href="./cookies.html">
+                      Политика использования файлов для сохранения настроек и условий обработки
+                      пользовательских данных
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div
+      class="popup popup_small"
+      id="popup-answers-1"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="popup-answers-title"
+    >
+      <div class="popup__body">
+        <button class="popup__close btn btn_small btn_light _icon-close" type="button" data-popup-close>
+          <span class="_seo">Закрыть окно</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__scroll">
+            <h2 class="_seo" id="popup-answers-title">Ответы на вопросы</h2>
+            <div class="answers-slider">
+              <!-- window.answersSwiper -->
+              <div class="answers-slider__body">
+                <div class="answers-slider__items">
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 01</div>
+                          <div class="answer__duration _icon-time">2 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">Что такое самодиагностика молочной железы?</h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <img src="./img/content/photo/answer-1.webp" alt="Изображение" loading="lazy">
+                        <p>
+                          Это простой и доступный метод проверки состояния молочных желёз. Если проводить
+                          самообследование регулярно, то будет легко заметить изменения: появление
+                          болезненности или узелков, изменение вида кожи, формы сосков и наличия
+                          выделений из них. В этом случае необходимо обратиться к врачу сразу после
+                          обнаружения изменений, чтобы своевременно получить помощь.
+                        </p>
+                        <p><strong>ВАЖНО:</strong> проводить самообследование молочных желёз каждый месяц</p>
+                        <ul>
+                          <li>
+                            Если есть менструальный цикл &mdash; на 5-6-й день от начала
+                            менструации
+                          </li>
+                          <li>
+                            При отсутствии менструального цикла (в постменопаузе, при хирургической
+                            менопаузе) &mdash; в один и тот же день каждого календарного
+                            месяца.
+                          </li>
+                        </ul>
+                      </div>
+                      <ul class="literature">
+                        <ol class="literature__item _p5">
+                          Андреева Е. Н., Григорян О. Р., Корженкова Г. П. Наружное
+                          применение гестагенов для лечения масталгии, возникшей на фоне приема
+                          комбинированных оральных контрацептивов у женщин с фиброзно-кистозной
+                          мастопатией. Проблемы репродукции. &mdash; 2016.- 4. &mdash;С. 86-94
+                        </ol>
+                      </ul>
+                      <div class="answer-author">
+                        <figure class="answer-author__media">
+                          <img
+                            src="./img/content/photo/author-1.webp"
+                            alt="Ольга Алексеевна Громова"
+                            loading="lazy">
+                        </figure>
+                        <div class="answer-author__content">
+                          <div class="answer-author__label _p6">Отвечает</div>
+                          <div class="answer-author__info _p5">
+                            Ольга Алексеевна Громова. д.м.н., профессор, заместитель директора института
+                            Фармакоинформатики РАН (Москва), научный консультант Института микроэлементов
+                            ЮНЕСКО
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 02</div>
+                          <div class="answer__duration _icon-time">3 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          В каком возрасте и как часто необходимо обследовать молочные железы?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>Если нет жалоб на состояние молочных желёз, то:</p>
+                        <p>
+                          Женщинам до 40 лет рекомендуется проходить УЗИ молочных желёз один раз
+                          в два года;
+                        </p>
+                        <p>
+                          Женщинам от 40 до 75 лет включительно нужно делать маммографию
+                          (скрининг молочных желёз) один раз в два года;
+                        </p>
+                        <p>
+                          Женщинам, получающим менопаузальную гормональную терапию, а также имеющим
+                          заболевания или факторы риска рака молочной железы, необходимо делать маммографию
+                          один раз в год.
+                        </p>
+                        <p>
+                          Если при самообследовании груди или на приёме у врача возникли подозрения
+                          на заболевание молочных желёз, то маммографию и УЗИ проводят независимо
+                          от возраста и даты последнего обследования.
+                        </p>
+                      </div>
+                      <ul class="literature">
+                        <ol class="literature__item _p5">
+                          Андреева Е. Н., Григорян О. Р., Корженкова Г. П. Наружное
+                          применение гестагенов для лечения масталгии, возникшей на фоне приема
+                          комбинированных оральных контрацептивов у женщин с фиброзно-кистозной
+                          мастопатией. Проблемы репродукции. &mdash; 2016.- 4. &mdash;С. 86-94
+                        </ol>
+                      </ul>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 03</div>
+                          <div class="answer__duration _icon-time">1 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          Почему часто болит грудь в подростковом возрасте?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          <li class="tag-list__item tag-list_type-a">Лечение</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          Это происходит из-за нарушения гормонального баланса, в первую очередь из-за
+                          резкого повышения синтеза эстрогенов, которое может происходить у подростков.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 04</div>
+                          <div class="answer__duration _icon-time">4 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          К какому врачу нужно идти, если болит грудь или есть другие симптомы?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-a">Лечение</li>
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          <li class="tag-list__item tag-list_type-b">Узлы</li>
+                          <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          При боли и дискомфорте в груди в первую очередь надо обратиться
+                          за консультацией к гинекологу. На приеме гинеколог проведет диагностику:
+                          осмотр и пальпацию молочных желез, направит на УЗИ или маммографию. Если
+                          в ходе обследования будут выявлены доброкачественные изменения, гинеколог
+                          назначит лечение и в дальнейшем будет наблюдать пациентку. Если изменения
+                          в молочной железе будут вызывать подозрения на злокачественный процесс,
+                          гинеколог направит к нужному специалисту.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 05</div>
+                          <div class="answer__duration _icon-time">2 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          При каких симптомах надо обязательно идти к врачу?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-a">Лечение</li>
+                          <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                          <li class="tag-list__item tag-list_type-b">Узлы</li>
+                          <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          Если при самообследовании вы заметили изменения формы, размера, внешнего вида
+                          груди и/или сосков, появились уплотнения, узелки, участки болезненности, выделения
+                          из сосков &mdash; вам надо обязательно обратиться к врачу.
+                        </p>
+                        <img src="./img/content/photo/answer-1.webp" alt="Изображение" loading="lazy">
+                        <p>
+                          Если боль ранее была циклической, а теперь сохраняется после начала
+                          менструации, если боль усилилась или изменился её характер (она стала жгучей,
+                          ноющей и т. п.) &mdash; вам надо обязательно обратиться к врачу.
+                        </p>
+                      </div>
+                      <div class="answer-author">
+                        <figure class="answer-author__media">
+                          <img
+                            src="./img/content/photo/author-1.webp"
+                            alt="Ольга Алексеевна Громова"
+                            loading="lazy">
+                        </figure>
+                        <div class="answer-author__content">
+                          <div class="answer-author__label _p6">Отвечает</div>
+                          <div class="answer-author__info _p5">Ольга Алексеевна Громова.</div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 06</div>
+                          <div class="answer__duration _icon-time">3 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          Почему возникают боли в груди у женщин после 40 лет?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                          <li class="tag-list__item tag-list_type-b">Узлы</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          Возрастное снижение уровня половых гормонов начинается с прогестерона. При этом
+                          синтез эстрогенов еще может быть в норме. Нарушение соотношения прогестерона и
+                          эстрогенов и является основной причиной возникновения боли в молочной
+                          железе у женщин после 40 лет.
+                        </p>
+                      </div>
+                      <ul class="literature">
+                        <ol class="literature__item _p5">
+                          Андреева Е. Н., Григорян О. Р., Корженкова Г. П. Наружное
+                          применение гестагенов для лечения масталгии, возникшей на фоне приема
+                          комбинированных оральных контрацептивов у женщин с фиброзно-кистозной
+                          мастопатией. Проблемы репродукции. &mdash; 2016.- 4. &mdash;С. 86-94
+                        </ol>
+                      </ul>
+                    </article>
+                  </div>
+                  <div class="answers-slider__item">
+                    <article class="answer">
+                      <div class="answer__header">
+                        <div class="answer__info _p3">
+                          <div class="answer__label">Вопрос 07</div>
+                          <div class="answer__duration _icon-time">5 мин.</div>
+                        </div>
+                        <h3 class="answer__title _h6">
+                          Может ли грудь болеть сильнее в случае нерегулярной половой жизни или
+                          длительного стресса?
+                        </h3>
+                        <ul class="tag-list _p6">
+                          <li class="tag-list__item tag-list_type-c">Боль</li>
+                          <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                          <li class="tag-list__item tag-list_type-b">Узлы</li>
+                          <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                        </ul>
+                      </div>
+                      <div class="answer__content _wysiwyg _p5">
+                        <p>
+                          Исследования говорят, что может. Отсутствие, отказ от половой жизни или
+                          дискомфорт при половом акте у женщин старше 30 лет, семейные
+                          и рабочие неурядицы, стрессы, нервозность &mdash; всё это риски
+                          возникновения доброкачественных заболеваний молочной железы, в том числе
+                          с болевым синдромом.
+                        </p>
+                      </div>
+                      <ul class="literature">
+                        <ol class="literature__item _p5">
+                          Андреева Е. Н., Григорян О. Р., Корженкова Г. П. Наружное
+                          применение гестагенов для лечения масталгии, возникшей на фоне приема
+                          комбинированных оральных контрацептивов у женщин с фиброзно-кистозной
+                          мастопатией. Проблемы репродукции. &mdash; 2016.- 4. &mdash;С. 86-94
+                        </ol>
+                      </ul>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <div class="answers-slider__nav">
+                <button
+                  class="answers-slider__btn answers-slider__btn_prev btn btn_small btn_light _icon-chevron-left"
+                  type="button"
+                >
+                  Предыдущий вопрос
+                </button>
+                <button
+                  class="answers-slider__btn answers-slider__btn_next btn btn_small btn_light _icon-chevron-right"
+                  type="button"
+                >
+                  Следующий вопрос
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert">
+      <div class="alert__text container">
+        <p>Информация ознакомительная. Требуется консультация специалиста.</p>
+      </div>
+    </div>
+
+    <div class="cookies" hidden>
+      <p class="cookies__text">
+        Продолжая использовать сайт, Вы соглашаетесь на использование
+        <a href="./cookies.html">файлов cookie</a>
+      </p>
+      <button class="cookies__btn btn btn_medium btn_cta" type="button">Хорошо</button>
+
+      <!-- демо скрипт для закрытия, убрать при интеграции -->
+      <script>
+        (() => {
+          'use strict';
+
+          const COOKIE_NAME = 'cookie-accepted';
+          const COOKIE_VALUE = 'true';
+          const COOKIE_MAX_AGE = 60 * 5; // 5 минут
+          const SCROLL_THRESHOLD = 20; // высота скролла для показа окна
+
+          const cookiesEl = document.querySelector('.cookies');
+          if (!cookiesEl) return;
+
+          // Безопасное чтение конкретной cookie по имени (без поиска подстроки по всем cookie)
+          const getCookie = (name) => {
+            const escapedName = name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1');
+            const matches = document.cookie.match(new RegExp('(?:^|; )' + escapedName + '=([^;]*)'));
+            return matches ? decodeURIComponent(matches[1]) : null;
+          };
+
+          const isAccepted = () => getCookie(COOKIE_NAME) === COOKIE_VALUE;
+
+          // Куки уже приняты при заходе на страницу — 0 действий и 0 слушателей
+          if (isAccepted()) return;
+
+          // Скролл: куки не приняты → показать окно; иначе ничего не делаем
+          const onScroll = () => {
+            if (window.scrollY > SCROLL_THRESHOLD) {
+              cookiesEl.hidden = false;
+              window.removeEventListener('scroll', onScroll);
+            }
+          };
+          window.addEventListener('scroll', onScroll, { passive: true });
+
+          // Принятие куки по кнопке «Хорошо»
+          const acceptCookies = () => {
+            document.cookie = `${COOKIE_NAME}=${COOKIE_VALUE}; max-age=${COOKIE_MAX_AGE}; path=/; samesite=lax`;
+            cookiesEl.hidden = true;
+            // Снимаем триггер показа, чтобы окно не всплыло повторно при дальнейшем скролле
+            window.removeEventListener('scroll', onScroll);
+          };
+
+          document.addEventListener('click', (e) => {
+            if (e.target.closest('.cookies__btn')) {
+              acceptCookies();
+            }
+          });
+        })();
+      </script>
+    </div>
+  </body>
+</html>

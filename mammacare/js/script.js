@@ -2130,15 +2130,15 @@ function sliders(
 ) {
   if (document.querySelector('.articles-slider')) {
     const SliderBody = document.querySelector('.articles-slider');
-    let Slider;
 
     function responsiveInit() {
       if (window.innerWidth > $md3 && SliderBody.dataset.slider == 'false') {
         SliderBody.classList.add('_is-slider-init');
 
-        Slider = new Swiper(SliderBody, {
+        window.articlesSwiper = new Swiper(SliderBody, {
           slidesPerView: 2,
           spaceBetween: getAdaptiveValue('10-20, 360-1920', '20-40, 1920-3840'),
+          roundLengths: true,
           resistanceRatio: 0,
           wrapperClass: 'articles-slider__items',
           slideClass: 'articles-slider__item',
@@ -2172,9 +2172,9 @@ function sliders(
       }
       if (window.innerWidth <= $md3) {
         SliderBody.dataset.slider = 'false';
-        if (Slider) {
+        if (window.articlesSwiper) {
           SliderBody.classList.remove('_is-slider-init');
-          Slider.destroy(true, true);
+          window.articlesSwiper.destroy(true, true);
         }
       }
     }
@@ -2193,10 +2193,10 @@ function sliders(
     articlesFilterContainer?.addEventListener('filter:change', () => {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          if (Slider && !Slider.destroyed) {
-            Slider.update();
-            Slider.scrollbar?.updateSize();
-            Slider.slideTo(0, 0);
+          if (window.articlesSwiper && !window.articlesSwiper.destroyed) {
+            window.articlesSwiper.update();
+            window.articlesSwiper.scrollbar?.updateSize();
+            window.articlesSwiper.slideTo(0, 0);
           }
         });
       });
@@ -2205,16 +2205,19 @@ function sliders(
 
   if (document.querySelector('.questions-slider')) {
     const SliderBody = document.querySelector('.questions-slider');
-    let Slider;
 
     function responsiveInit() {
       if (window.innerWidth > $md3 && SliderBody.dataset.slider == 'false') {
         SliderBody.classList.add('_is-slider-init');
 
-        Slider = new Swiper(SliderBody, {
+        window.questionsSwiper = new Swiper(SliderBody, {
           slidesPerView: 2,
           spaceBetween: getAdaptiveValue('10-20, 360-1920', '20-40, 1920-3840'),
+          roundLengths: true,
           resistanceRatio: 0,
+          watchSlidesProgress: true,
+          slideVisibleClass: 'questions-slider__item_visible',
+          slideFullyVisibleClass: 'questions-slider__item_shown',
           wrapperClass: 'questions-slider__items',
           slideClass: 'questions-slider__item',
           slideActiveClass: 'questions-slider__item_active',
@@ -2250,9 +2253,9 @@ function sliders(
       }
       if (window.innerWidth <= $md3) {
         SliderBody.dataset.slider = 'false';
-        if (Slider) {
+        if (window.questionsSwiper) {
           SliderBody.classList.remove('_is-slider-init');
-          Slider.destroy(true, true);
+          window.questionsSwiper.destroy(true, true);
         }
       }
     }
@@ -2271,10 +2274,10 @@ function sliders(
     questionsFilterContainer?.addEventListener('filter:change', () => {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          if (Slider && !Slider.destroyed) {
-            Slider.update();
-            Slider.scrollbar?.updateSize();
-            Slider.slideTo(0, 0);
+          if (window.questionsSwiper && !window.questionsSwiper.destroyed) {
+            window.questionsSwiper.update();
+            window.questionsSwiper.scrollbar?.updateSize();
+            window.questionsSwiper.slideTo(0, 0);
           }
         });
       });
@@ -2285,7 +2288,7 @@ function sliders(
     const mediaSliderEl = document.querySelector('.media-slider__main');
     mediaSliderEl.classList.add('_is-slider-init');
 
-    new Swiper(mediaSliderEl, {
+    window.mediaSwiper = new Swiper(mediaSliderEl, {
       slidesPerView: 1,
       spaceBetween: getAdaptiveValue('14-38, 360-1920', '38-76, 1920-3840'),
       resistanceRatio: 0,
@@ -2324,6 +2327,40 @@ function sliders(
         resize: (swiper) => {
           swiper.params.spaceBetween = getAdaptiveValue('14-38, 360-1920', '38-76, 1920-3840');
           swiper.loopFix();
+          swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
+        },
+      },
+    });
+  }
+
+  if (document.querySelector('.answers-slider')) {
+    document.querySelector('.answers-slider__body').classList.add('_is-slider-init');
+
+    window.answersSwiper = new Swiper('.answers-slider__body', {
+      slidesPerView: 1,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      autoHeight: true,
+      observerParent: true,
+      allowTouchMove: false,
+      wrapperClass: 'answers-slider__items',
+      slideClass: 'answers-slider__item',
+      slideActiveClass: 'answers-slider__item_active',
+      slidePrevClass: 'answers-slider__item_prev',
+      slideNextClass: 'answers-slider__item_next',
+      navigation: {
+        prevEl: '.answers-slider__btn_prev',
+        nextEl: '.answers-slider__btn_next',
+        disabledClass: 'answers-slider__btn_disabled',
+        lockClass: '_is-lock',
+      },
+      on: {
+        init: (swiper) => {
+          swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
+        },
+        resize: (swiper) => {
           swiper.el.classList.toggle('_is-slider-lock', swiper.isLocked);
         },
       },
@@ -2557,6 +2594,21 @@ window.addEventListener('load', function () {
 
   sliders($md11, $md2, $md3, $md4, matchMediaMi11, matchMediaMi2, matchMediaMi3, matchMediaMi4);
 
+  document.addEventListener('beforePopupOpen', (e) => {
+    const popup = e.detail.popup;
+    const triggerEl = popup.lastFocusEl;
+
+    if (triggerEl) {
+      const answerIndexAttr = triggerEl.getAttribute('data-answer-index');
+
+      // Переключение слайда ответов при открытии попапа из карточки вопроса
+      if (answerIndexAttr !== null && window.answersSwiper && !window.answersSwiper.destroyed) {
+        const slideIndex = parseInt(answerIndexAttr, 10) - 1;
+        window.answersSwiper.slideTo(slideIndex, 0);
+      }
+    }
+  });
+
   //---------- При клике
   document.addEventListener('click', (e) => {
     const targetElement = e.target;
@@ -2590,9 +2642,13 @@ window.addEventListener('load', function () {
     // }
   });
 
-  window.addEventListener('scroll', () => {
-    document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 56);
-  });
+  window.addEventListener(
+    'scroll',
+    () => {
+      document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 50);
+    },
+    { passive: true },
+  );
 
   window.addEventListener('resize', handleResize);
   window.visualViewport?.addEventListener('resize', handleResize);
