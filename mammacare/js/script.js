@@ -2520,25 +2520,18 @@ window.addEventListener('load', function () {
     document.documentElement.style.setProperty('--height-alert', `${ALERT ? ALERT.offsetHeight : 0}px`);
     document.documentElement.classList.toggle('_is-scroll', document.documentElement.scrollTop > 20);
 
-    if (window.innerWidth < $md11) {
-      document.documentElement.style.removeProperty('--menu-dropdown-right');
-    }
-
     if (isHorizontalResize) {
       // console.log('horizontal resize');
+      // showAllInit(wrappedTextWidth);
+      // wrappedTextWidth();
 
-      if (window.innerWidth > $md11) {
-        document.documentElement.style.setProperty(
-          '--position-left',
-          `${document.querySelector('.menu__action')?.offsetHeight}px`,
-        );
+      if (window.innerWidth < $md11) {
+        document.documentElement.style.removeProperty('--menu-dropdown-right');
       }
     }
 
     if (isVerticalResize) {
       // console.log('vertical resize');
-      // showAllInit(wrappedTextWidth);
-      // wrappedTextWidth();
     }
 
     //   if (window.innerWidth < 576) {
