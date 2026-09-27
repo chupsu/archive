@@ -110,7 +110,9 @@
                       <p>Не терпите дискомфорт, обратитесь к гинекологу для обследования!</p>
                     </div>
                     <div class="welcome__actions">
-                      <a class="welcome__btn btn btn_cta" href="#">Найди ответ на свой вопрос</a>
+                      <button class="welcome__btn btn btn_cta" type="button" data-popup="#popup-quiz-2">
+                        Найди ответ на свой вопрос
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -1640,22 +1642,312 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="quiz__result">
-                  <div class="quiz-result"></div>
+                <div class="quiz__result" hidden>
                   <div class="quiz__body">
+                    <div class="quiz__pagination">
+                      <!-- кол-во span равно кол-ву quiz__step -->
+                      <span class="_is-active"></span>
+                      <span class="_is-active"></span>
+                      <span class="_is-active"></span>
+                      <span class="_is-active"></span>
+                      <span class="_is-active"></span>
+                    </div>
+                    <div class="quiz-result">
+                      <figure class="quiz-result__media">
+                        <img src="./img/content/photo/quize-result.webp" alt="Изображение" loading="lazy">
+                      </figure>
+                      <div class="quiz-result__body">
+                        <div class="quiz-result__head">
+                          <h2 class="quiz-result__title _h5">
+                            Результат подборки статей по вашему запросу
+                          </h2>
+                        </div>
+                        <div class="quiz-result__content _wysiwyg _p5">
+                          <p>
+                            К какому врачу нужно идти, если болит грудь или есть другие симптомы?
+                            К какому врачу нужно идти, если болит грудь или есть другие симптомы?К какому
+                            врачу нужно идти, если болит грудь или есть другие симптомы?К какому врачу нужно
+                            идти, если болит грудь или есть другие симптомы?К какому врачу нужно идти, если
+                            болит грудь или есть другие симптомы?К какому врачу нужно идти, если болит грудь
+                            или есть другие симптомы?
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                     <div class="quiz__actions">
                       <button class="quiz__btn quiz__btn_back btn btn_small btn_pink" type="button">
                         Назад
                       </button>
                       <button class="quiz__btn quiz__btn_reset btn btn_small btn_pink" type="reset">
-                        Пройти заново
+                        Пройти еще раз
                       </button>
                     </div>
                   </div>
-                </div> -->
+                </div>
               </div>
 
               <script src="./files/quiz.js"></script>
+
+              <!-- имитация формы для демо -->
+              <script>
+                const quizForm1 = document.querySelector('#popup-quiz-1 form');
+                const quizMain1 = quizForm1.querySelector('.quiz__main');
+                const quizResult1 = quizForm1.querySelector('.quiz__result');
+                const quizSubmit1 = quizForm1.querySelector('.quiz__btn_submit');
+                const quizResultBack1 = quizResult1.querySelector('.quiz__btn_back');
+
+                quizSubmit1.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  quizMain1.hidden = true;
+                  quizResult1.hidden = false;
+                });
+
+                quizResultBack1.addEventListener('click', (e) => {
+                  quizMain1.hidden = false;
+                  quizResult1.hidden = true;
+                });
+              </script>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="popup popup_down popup_medium"
+      id="popup-quiz-2"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="popup-quiz-2-title"
+    >
+      <div class="popup__body">
+        <button class="popup__close btn btn_small btn_light _icon-close" type="button" data-popup-close>
+          <span class="_seo">Закрыть окно</span>
+        </button>
+        <div class="popup__inner">
+          <div class="popup__scroll">
+            <h2 class="_seo" id="popup-quiz-2-title">Тест оценки рисков мастопатии</h2>
+            <form action="#">
+              <div class="quiz">
+                <div class="quiz__main">
+                  <div class="quiz__body">
+                    <div class="quiz__pagination">
+                      <!-- кол-во span равно кол-ву quiz__step -->
+                      <span></span><span></span>
+                    </div>
+                    <div class="quiz__steps">
+                      <div class="quiz__step">
+                        <div class="quiz__info">
+                          <h3 class="quiz__title _h6">Сколько вам лет?</h3>
+                          <div class="quiz__desc _wysiwyg _p5">
+                            <p>К какому врачу нужно идти, если болит грудь или есть другие симптомы?</p>
+                          </div>
+                        </div>
+                        <div class="quiz__inputs">
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-1">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">18–35</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-1">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">35–50</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="radio" name="radio-1">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">45–55</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="quiz__step">
+                        <div class="quiz__info">
+                          <h3 class="quiz__title _h6">Какой характер боли?</h3>
+                        </div>
+                        <div class="quiz__inputs">
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="checkbox">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Циклическая, перед месячными</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="checkbox">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">Постоянная</span>
+                            </span>
+                          </label>
+                          <label class="quiz-variable">
+                            <input class="quiz-variable__input" type="checkbox">
+                            <span class="quiz-variable__card">
+                              <span class="quiz-variable__icon"></span>
+                              <span class="quiz-variable__text _p4">В одной точке</span>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz__actions">
+                      <button class="quiz__btn quiz__btn_back btn btn_small btn_pink" type="button">
+                        Назад
+                      </button>
+                      <button
+                        class="quiz__btn quiz__btn_next btn btn_small btn_pink _icon-chevron-right"
+                        type="button"
+                      >
+                        Следующий вопрос
+                      </button>
+                      <button class="quiz__btn quiz__btn_submit btn btn_small btn_pink" type="submit">
+                        Подобрать статьи
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="quiz__result" hidden>
+                  <div class="quiz__body">
+                    <div class="quiz-articles">
+                      <div class="quiz-articles__head">
+                        <h2 class="quiz-articles__title _h5">Результат подборки статей по вашему запросу</h2>
+                      </div>
+                      <div class="quiz-articles__items">
+                        <div class="quiz-articles__item">
+                          <article class="article-card">
+                            <a class="article-card__link" href="./article.html">
+                              <span class="_seo">Читать статью</span>
+                            </a>
+                            <div class="article-card__body">
+                              <div class="article-card__head">
+                                <figure class="article-card__media">
+                                  <img src="./img/content/photo/article-card-1.webp" alt="Название статьи" loading="lazy">
+                                </figure>
+                                <span class="article-card__icon _glass" aria-hidden="true">
+                                  <span class="_icon-arr-down-right"></span>
+                                </span>
+                              </div>
+                              <div class="article-card__main">
+                                <div class="article-card__content">
+                                  <h3 class="article-card__title _h6">Что такое самодиагностика молочной железы?</h3>
+                                </div>
+                                <div class="article-card__extra">
+                                  <ul class="tag-list _p6">
+                                    <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="quiz-articles__item">
+                          <article class="article-card">
+                            <a class="article-card__link" href="./article.html">
+                              <span class="_seo">Читать статью</span>
+                            </a>
+                            <div class="article-card__body">
+                              <div class="article-card__head">
+                                <figure class="article-card__media">
+                                  <img src="./img/content/photo/article-card-4.webp" alt="Название статьи" loading="lazy">
+                                </figure>
+                                <span class="article-card__icon _glass" aria-hidden="true">
+                                  <span class="_icon-arr-down-right"></span>
+                                </span>
+                              </div>
+                              <div class="article-card__main">
+                                <div class="article-card__content">
+                                  <h3 class="article-card__title _h6">
+                                    К какому врачу нужно идти, если болит грудь или есть другие симптомы?
+                                  </h3>
+                                </div>
+                                <div class="article-card__extra">
+                                  <ul class="tag-list _p6">
+                                    <li class="tag-list__item tag-list_type-a">Лечение</li>
+                                    <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                                    <li class="tag-list__item tag-list_type-b">Узлы</li>
+                                    <li class="tag-list__item tag-list_type-b">Уплотнения</li>
+                                    <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                                    <li class="tag-list__item tag-list_type-c">Боль</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="quiz-articles__item">
+                          <article class="article-card">
+                            <a class="article-card__link" href="./article.html">
+                              <span class="_seo">Читать статью</span>
+                            </a>
+                            <div class="article-card__body">
+                              <div class="article-card__head">
+                                <figure class="article-card__media">
+                                  <img src="./img/content/photo/article-card-3.webp" alt="Название статьи" loading="lazy">
+                                </figure>
+                                <span class="article-card__icon _glass" aria-hidden="true">
+                                  <span class="_icon-arr-down-right"></span>
+                                </span>
+                              </div>
+                              <div class="article-card__main">
+                                <div class="article-card__content">
+                                  <h3 class="article-card__title _h6">Почему часто болит грудь в подростковом возрасте?</h3>
+                                </div>
+                                <div class="article-card__extra">
+                                  <ul class="tag-list _p6">
+                                    <li class="tag-list__item tag-list_type-c">Мастопатия</li>
+                                    <li class="tag-list__item tag-list_type-a">Диагностика</li>
+                                    <li class="tag-list__item tag-list_type-a">Лечение</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz__actions">
+                      <button class="quiz__btn quiz__btn_back btn btn_small btn_pink" type="button">
+                        Назад
+                      </button>
+                      <a class="quiz__btn quiz__btn_reset btn btn_small btn_pink" href="./blog.html">
+                        Все статьи
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <script src="./files/quiz.js"></script>
+
+              <!-- имитация формы для демо -->
+              <script>
+                const quizPopup2 = document.querySelector('#popup-quiz-2');
+                const quizMain2 = quizPopup2.querySelector('.quiz__main');
+                const quizResult2 = quizPopup2.querySelector('.quiz__result');
+                const quizSubmit2 = quizPopup2.querySelector('.quiz__btn_submit');
+                const quizResultBack2 = quizResult2.querySelector('.quiz__btn_back');
+
+                quizSubmit2.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  quizMain2.hidden = true;
+                  quizResult2.hidden = false;
+                  quizPopup2.classList.remove('popup_medium');
+                  quizPopup2.classList.add('popup_large');
+                });
+
+                quizResultBack2.addEventListener('click', (e) => {
+                  quizMain2.hidden = false;
+                  quizResult2.hidden = true;
+                  quizPopup2.classList.remove('popup_large');
+                  quizPopup2.classList.add('popup_medium');
+                });
+              </script>
             </form>
           </div>
         </div>
