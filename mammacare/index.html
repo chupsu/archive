@@ -2273,13 +2273,38 @@
       </div>
     </div>
 
+    <!--
+      Авто-открытие попапа (модуль src/js/module/popup.js).
+
+      Атрибуты вешаются ТОЛЬКО на корневой элемент .popup. У элемента обязателен id.
+
+      data-popup-scroll="400"
+        Открыть, когда страница прокручена на 400 px (window.scrollY >= 400).
+
+      data-popup-delay="15"
+        Открыть через 15 секунд после инициализации страницы.
+
+      data-popup-scroll-remember
+        Опционально: показать один раз на сессию (sessionStorage).
+        Без атрибута — один раз на загрузку страницы.
+
+      Правила:
+      - Если заданы scroll и delay одновременно — срабатывает тот, что наступил раньше.
+      - Авто-открытие не пишет хэш в URL и не перехватывает фокус пользователя.
+      - Если нужно ручное открытие кнопкой data-popup — используйте селектор точно
+        как id попапа с решёткой: data-popup="#page-offer".
+      - Не дублируйте data-popup-scroll / data-popup-delay на кнопках — только на попапе.
+    -->
     <div
       class="popup popup_smallest"
       id="page-offer"
       role="dialog"
       aria-modal="true"
+      aria-hidden="true"
       aria-labelledby="page-offer-title"
       aria-describedby="page-offer-desc"
+      data-popup-scroll="400"
+      data-popup-delay="15"
     >
       <div class="popup__body">
         <button class="popup__close btn btn_small btn_light _icon-close" type="button" data-popup-close>

@@ -908,6 +908,28 @@ da.init();
 
 
 
+// Чистые функции авто-триггеров (без DOM) — покрыты юнит-тестами
+function parseTriggerValue(raw) {
+  if (typeof raw !== 'string') return null;
+  const trimmed = raw.trim();
+  if (!/^\d+(\.\d+)?$/.test(trimmed)) return null;
+  const value = Number(trimmed);
+  return Number.isFinite(value) ? value : null;
+}
+
+function shouldOpenOnScroll(scrollY, thresholdPx) {
+  if (!Number.isFinite(thresholdPx)) return false;
+  return scrollY >= thresholdPx;
+}
+
+function parseTriggers({ scrollRaw, delayRaw, rememberPresent }) {
+  return {
+    scrollPx: parseTriggerValue(scrollRaw),
+    delaySec: parseTriggerValue(delayRaw),
+    remember: Boolean(rememberPresent),
+  };
+}
+
 // Класс Popup
 class Popup {
   constructor(options) {
@@ -916,6 +938,10 @@ class Popup {
       // Для кнопок
       attributeOpenButton: 'data-popup', // Атрибут для кнопки, которая вызывает попап
       attributeCloseButton: 'data-popup-close', // Атрибут для кнопки, которая закрывает попап
+      // Для авто-триггеров открытия (значения задаются в HTML на элементе попапа)
+      attributeScrollTrigger: 'data-popup-scroll', // Порог прокрутки в px
+      attributeDelayTrigger: 'data-popup-delay', // Задержка в секундах
+      attributeRemember: 'data-popup-scroll-remember', // Показ один раз на сессию
       // Для сторонних объектов
       fixElementSelector: '[data-lp]', // Атрибут для элементов с левым паддингом (которые fixed)
       // Для объекта попапа
@@ -999,10 +1025,21 @@ class Popup {
       },
     };
     this.bodyLock = false;
+    // Состояние авто-триггеров открытия
+    this._autoTriggers = [];
+    this._autoTimers = new Map();
+    this._autoShown = new Set();
+    this._autoTrigger = false;
+    this._scrollListening = false;
+    this._scrollRaf = null;
+    this._onScrollBound = this._onScroll.bind(this);
+    this._openedAuto = false;
+    this._hashWritten = false;
     this.options.init ? this.initPopups() : null;
   }
   initPopups() {
     this.eventsPopup();
+    this._initAutoTriggers();
   }
   eventsPopup() {
     // Клик на всем документе
@@ -1119,10 +1156,11 @@ class Popup {
             .querySelector(`[${this.options.videoPlaceAttribute}]`)
             .appendChild(iframe);
         }
-        if (this.options.hashSettings.location) {
+        if (this.options.hashSettings.location && !this._autoTrigger) {
           // Получение хэша и его выставление
           this._getHash();
           this._setHash();
+          this._hashWritten = true;
         }
 
         // До открытия
@@ -1153,9 +1191,19 @@ class Popup {
 
         this.isOpen = true;
 
-        setTimeout(() => {
-          this._focusTrap();
-        }, 50);
+        // Ключ авто-триггеров — id элемента, а не формат селектора кнопки
+        this._openedAuto = !!this._autoTrigger;
+        const triggerKey = this.targetOpen.element.id || null;
+        if (triggerKey) {
+          this._cancelTriggersFor(triggerKey);
+        }
+
+        // Авто-открытие не перехватывает фокус пользователя
+        if (!this._autoTrigger) {
+          setTimeout(() => {
+            this._focusTrap();
+          }, 50);
+        }
 
         // После открытия
         this.options.on.afterOpen(this);
@@ -1203,8 +1251,11 @@ class Popup {
       !this.bodyLock ? bodyUnlock() : null;
       this.isOpen = false;
     }
-    // Очищение адресной строки
-    this._removeHash();
+    // Очищение адресной строки — только если хэш реально записывался
+    if (this._hashWritten) {
+      this._removeHash();
+      this._hashWritten = false;
+    }
     if (this._selectorOpen) {
       this.lastClosed.selector = this.previousOpen.selector;
       this.lastClosed.element = this.previousOpen.element;
@@ -1220,9 +1271,124 @@ class Popup {
       }),
     );
 
-    setTimeout(() => {
-      this._focusTrap();
-    }, 50);
+    // Для авто-открытого попапа не возвращаем фокус в закрытое окно
+    if (!this._openedAuto) {
+      setTimeout(() => {
+        this._focusTrap();
+      }, 50);
+    }
+  }
+  // Авто-триггеры открытия: ключ — id попапа (без решётки)
+  _rememberKey(key) {
+    return `popup-auto-shown:${key}`;
+  }
+  _storageGet(key) {
+    try {
+      return sessionStorage.getItem(key);
+    } catch (e) {
+      return null;
+    }
+  }
+  _storageSet(key, value) {
+    try {
+      sessionStorage.setItem(key, value);
+    } catch (e) {
+      /* private mode / sandbox: деградируем до памяти экземпляра */
+    }
+  }
+  // Сбор триггеров с элементов попапов и подписка на scroll/timer
+  _initAutoTriggers() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => this._initAutoTriggers());
+      return;
+    }
+    const { attributeScrollTrigger, attributeDelayTrigger, attributeRemember, classes } = this.options;
+    const triggerSelector = `.${classes.popup}[${attributeScrollTrigger}], .${classes.popup}[${attributeDelayTrigger}]`;
+    document.querySelectorAll(triggerSelector).forEach((el) => {
+      if (!el.id) {
+        console.warn('Popup auto-trigger: у элемента попапа нет id, триггер пропущен', el);
+        return;
+      }
+      const key = el.id;
+      const selector = `#${el.id}`;
+      const triggers = parseTriggers({
+        scrollRaw: el.getAttribute(attributeScrollTrigger),
+        delayRaw: el.getAttribute(attributeDelayTrigger),
+        rememberPresent: el.hasAttribute(attributeRemember),
+      });
+      if (triggers.scrollPx === null && triggers.delaySec === null) return;
+      if (triggers.remember && this._storageGet(this._rememberKey(key))) return;
+      this._autoTriggers.push({ key, selector, ...triggers });
+      if (triggers.delaySec !== null) {
+        this._autoTimers.set(
+          key,
+          setTimeout(() => this._fireAutoTrigger(key), triggers.delaySec * 1000),
+        );
+      }
+    });
+    if (this._autoTriggers.some((t) => t.scrollPx !== null)) {
+      this._startScrollListening();
+    }
+  }
+  _startScrollListening() {
+    if (this._scrollListening) return;
+    this._scrollListening = true;
+    window.addEventListener('scroll', this._onScrollBound, { passive: true });
+  }
+  _stopScrollListening() {
+    if (!this._scrollListening) return;
+    this._scrollListening = false;
+    window.removeEventListener('scroll', this._onScrollBound);
+  }
+  _onScroll() {
+    if (this._scrollRaf) return;
+    this._scrollRaf = requestAnimationFrame(() => {
+      this._scrollRaf = null;
+      const scrollY = window.scrollY ?? document.documentElement.scrollTop;
+      this._autoTriggers.slice().forEach((t) => {
+        if (t.scrollPx !== null && shouldOpenOnScroll(scrollY, t.scrollPx)) {
+          this._fireAutoTrigger(t.key);
+        }
+      });
+    });
+  }
+  _fireAutoTrigger(key) {
+    if (this._autoShown.has(key)) return;
+    const trigger = this._autoTriggers.find((t) => t.key === key);
+    if (!trigger) return;
+    if (trigger.remember && this._storageGet(this._rememberKey(key))) {
+      this._cancelTriggersFor(key);
+      return;
+    }
+    if (!document.querySelector(trigger.selector)) {
+      this._cancelTriggersFor(key);
+      return;
+    }
+    this._autoTrigger = true;
+    this.lastFocusEl = document.activeElement || false;
+    try {
+      this.open(trigger.selector);
+    } finally {
+      this._autoTrigger = false;
+      this._cancelTriggersFor(key);
+    }
+    if (this.isOpen) {
+      this._autoShown.add(key);
+      if (trigger.remember) {
+        this._storageSet(this._rememberKey(key), '1');
+      }
+    }
+  }
+  _cancelTriggersFor(key) {
+    const timer = this._autoTimers.get(key);
+    if (timer) {
+      clearTimeout(timer);
+      this._autoTimers.delete(key);
+    }
+    this._autoTriggers = this._autoTriggers.filter((t) => t.key !== key);
+    if (!this._autoTriggers.some((t) => t.scrollPx !== null)) {
+      this._stopScrollListening();
+    }
   }
   // Получение хэша
   _getHash() {
