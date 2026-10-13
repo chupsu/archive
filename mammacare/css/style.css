@@ -1375,6 +1375,18 @@ a:not([class]):focus-visible {
   container-name: current-info;
   container-type: inline-size;
 }
+.current-info_ice {
+  --color-text: var(--color-pink-dark);
+  --color-bg: var(--color-ice-light);
+  --img-decor-pc: url('../img/content/decor/decor-4-2.svg');
+  --img-decor-mob: url('../img/content/decor/decor-3-2.svg');
+}
+.current-info_beige {
+  --color-text: var(--color-beige-dark);
+  --color-bg: var(--color-beige-light);
+  --img-decor-pc: url('../img/content/decor/decor-4-3.svg');
+  --img-decor-mob: url('../img/content/decor/decor-3-3.svg');
+}
 .current-info__body {
   --padding-top: 40px;
   --padding-inline: 22px;
@@ -1386,7 +1398,7 @@ a:not([class]):focus-visible {
   gap: var(--gap-image);
   padding: var(--padding-top) var(--padding-inline) var(--padding-bottom);
   overflow: hidden;
-  background-color: var(--color-accent);
+  background-color: var(--color-bg, var(--color-accent));
   border-radius: var(--radius-large);
 }
 @container current-info (min-width: 38.15rem) {
@@ -1403,7 +1415,7 @@ a:not([class]):focus-visible {
   inset: 0 0 70%;
   z-index: 1;
   content: "";
-  background-color: var(--color-accent);
+  background-color: var(--color-bg, var(--color-accent));
 }
 @container current-info (min-width: 38.15rem) {
   .current-info__body::before {
@@ -1418,7 +1430,7 @@ a:not([class]):focus-visible {
   width: var(--width-art-v);
   aspect-ratio: 600/364;
   content: "";
-  background-image: url("../img/content/decor/decor-3.svg");
+  background-image: var(--img-decor-mob, url("../img/content/decor/decor-3.svg"));
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1430,7 +1442,7 @@ a:not([class]):focus-visible {
     left: var(--left-h);
     width: var(--width-art-h);
     aspect-ratio: 1132/825;
-    background-image: url("../img/content/decor/decor-4.svg");
+    background-image: var(--img-decor-pc, url("../img/content/decor/decor-4.svg"));
     transform: translate(-20%, -58%);
   }
 }
@@ -1440,7 +1452,7 @@ a:not([class]):focus-visible {
   display: flex;
   flex-direction: column;
   gap: var(--padding-top);
-  color: var(--color-neutral);
+  color: var(--color-text, var(--color-neutral));
 }
 @container current-info (min-width: 38.15rem) {
   .current-info__main {
