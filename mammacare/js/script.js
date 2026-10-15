@@ -2,7 +2,7 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 534
+/***/ 652
 (__unused_webpack___webpack_module__, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 
@@ -1629,6 +1629,67 @@ class ScrollWatcher {
 // Запускаем и добавляем в объект модулей
 new ScrollWatcher({});
 
+;// ./src/js/module/steps-lot.js
+// Навигационный слой шагов (десктоп >= $md2): под шапкой показываем последние
+// N (--step-lot-max) полностью пройденных карточек. Оригинальный список статичен.
+function stepsLotInit() {
+  const nav = document.querySelector('.d-steps-nav');
+  const list = document.querySelector('.d-steps__list');
+  if (!nav || !list) return;
+
+  const items = Array.from(list.querySelectorAll('.d-steps__item'));
+  const navItems = Array.from(nav.querySelectorAll('.d-steps-nav__item'));
+  if (!items.length || !navItems.length) return;
+
+  // Порог десктоп-режима = $md2 (1023.98). Ниже — слой скрыт.
+  const mqDesktop = window.matchMedia('(min-width: 1023.98px)');
+
+  // Низ фиксированной шапки берём из фактического rect, а не из calc()-переменной.
+  const headerEl = document.querySelector('.header');
+  const readHeaderHeight = () => (headerEl ? headerEl.getBoundingClientRect().bottom : 0);
+  const lotMax = parseInt(getComputedStyle(list).getPropertyValue('--step-lot-max'), 10) || 2;
+
+  let rafId = null;
+
+  const apply = () => {
+    if (!mqDesktop.matches) {
+      navItems.forEach((navItem) => {
+        navItem.hidden = true;
+      });
+      return;
+    }
+
+    const headerBottom = readHeaderHeight();
+    const listTop = list.getBoundingClientRect().top;
+    const listOffsetTop = list.offsetTop;
+
+    // Пройден = карточка полностью ушла под шапку (её layout-низ <= низ шапки).
+    const passed = [];
+    items.forEach((item, i) => {
+      const layoutBottom = listTop + (item.offsetTop - listOffsetTop) + item.offsetHeight;
+      if (layoutBottom <= headerBottom) passed.push(i);
+    });
+
+    const inLot = new Set(passed.slice(-lotMax));
+    navItems.forEach((navItem, i) => {
+      navItem.hidden = !inLot.has(i);
+    });
+  };
+
+  const onScroll = () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      apply();
+      rafId = null;
+    });
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  mqDesktop.addEventListener('change', apply);
+
+  apply();
+}
+
 ;// ./src/js/module/filter.js
 const filtering = (button) => {
   const filterContainer = button.closest('[data-filter-container]');
@@ -2014,6 +2075,7 @@ var swiper_bundle = __webpack_require__(392);
 
 
 
+
 // import './module/select.js';
 // import * as video from "./module/video.js";
 // import { phoneMask } from "./module/phone_mask.js";
@@ -2054,6 +2116,7 @@ window.addEventListener('load', function () {
   menuInit();
   spollers();
   tabs();
+  stepsLotInit();
   // phoneMask();
   // quantityInit();
   // rangeInit();
@@ -2471,7 +2534,7 @@ window.addEventListener('load', function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, [979], () => (__webpack_require__(534)))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, [979], () => (__webpack_require__(652)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
