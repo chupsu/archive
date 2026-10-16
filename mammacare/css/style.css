@@ -420,6 +420,7 @@ html {
 .spollers__title::after,
 .spollers__title::before,
 .sup-menu__link,
+.theme-nav__link,
 a:not([class]) {
   transition-duration: var(--transition-duration);
   transition-property: color, background-color, border-color, opacity, transform;
@@ -2935,6 +2936,9 @@ a:not([class]):focus-visible {
   gap: var(--gap-normal);
   align-items: center;
 }
+.theme__nav {
+  margin-top: auto;
+}
 .theme__media {
   position: absolute;
   inset: 0;
@@ -2942,6 +2946,30 @@ a:not([class]):focus-visible {
 .theme__media img {
   height: 100%;
   object-fit: cover;
+}
+
+.theme-nav {
+  --color-text: var(--color-main);
+  --color-item: var(--color-neutral);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-small);
+}
+.theme-nav_beige {
+  --color-text: var(--color-beige-dark);
+  --color-item: var(--color-beige-light);
+}
+.theme-nav__link {
+  display: block;
+  padding: 0.84em 1.1em;
+  color: var(--color-text);
+  text-transform: uppercase;
+  background-color: var(--color-item);
+  border-radius: var(--radius-round);
+}
+.theme-nav__link:focus-visible {
+  outline: none;
+  background-color: var(--color-beige);
 }
 
 .reasons__body {
@@ -3557,6 +3585,9 @@ a:not([class]):focus-visible {
   .theme__body {
     min-height: clamp( 382px , 295.697px + 23.974vw , 756px );
   }
+  .theme__body_medium {
+    min-height: clamp( 382px , 313.235px + 19.103vw , 680px );
+  }
   .reasons-list__item svg {
     width: clamp( 48px , 45.692px + 0.641vw , 58px );
   }
@@ -3663,6 +3694,9 @@ a:not([class]):focus-visible {
   .theme__title {
     max-width: 7.4em;
   }
+  .theme__title_wide {
+    max-width: 13em;
+  }
   .theme__divider {
     display: none;
   }
@@ -3729,6 +3763,9 @@ a:not([class]):focus-visible {
   }
   .questions__body {
     --padding-side: clamp( 20px , 2.858px + 2.976vw , 60px );
+  }
+  .theme__nav {
+    max-width: clamp( 450px , 385.717px + 11.161vw , 600px );
   }
   .algorithm-card {
     --width-media: clamp( 210px , 167.144px + 7.44vw , 310px );
@@ -3938,6 +3975,9 @@ a:not([class]):focus-visible {
     page-break-inside: avoid;
     -moz-column-break-inside: avoid;
          break-inside: avoid;
+  }
+  .theme__title_wide {
+    max-width: 9.2em;
   }
   .reasons__body {
     gap: var(--gap-medium);
@@ -4812,6 +4852,12 @@ html {
   .theme__body {
     min-height: clamp( 756px , 0.008px + 39.375vw , 1512px );
   }
+  .theme__body_medium {
+    min-height: clamp( 680px , 0.007px + 35.417vw , 1360px );
+  }
+  .theme__nav {
+    max-width: clamp( 600px , 0.006px + 31.25vw , 1200px );
+  }
   .reasons__body {
     min-height: clamp( 620px , 0.006px + 32.292vw , 1240px );
   }
@@ -5164,6 +5210,12 @@ html {
   .theme__body {
     min-height: 1512px;
   }
+  .theme__body_medium {
+    min-height: 1360px;
+  }
+  .theme__nav {
+    max-width: 1200px;
+  }
   .reasons__body {
     min-height: 1240px;
   }
@@ -5375,6 +5427,9 @@ html {
   .theme__btn {
     flex-grow: 1;
   }
+  .theme-nav {
+    justify-content: center;
+  }
   .d-types {
     background-color: var(--color-ice-light);
   }
@@ -5537,6 +5592,9 @@ html {
   .theme__body {
     min-height: 382px;
   }
+  .theme__body_medium {
+    min-height: 382px;
+  }
   .reasons__head {
     min-height: 324px;
   }
@@ -5691,5 +5749,8 @@ html {
   }
   .article-nav__link:active {
     color: var(--color-accent-active);
+  }
+  .theme-nav__link:not(:active):hover {
+    background-color: var(--color-beige);
   }
 }
