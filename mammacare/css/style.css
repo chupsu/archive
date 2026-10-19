@@ -3824,6 +3824,9 @@ a:not([class]):focus-visible {
   :root {
     --height-header: clamp( 75px , 73.826px + 0.326vw , 78px );
   }
+  .alert__text._medium {
+    --font-size: clamp( 13px , 7.131px + 1.63vw , 28px );
+  }
 }
 @media (min-width: 359.98px) and (max-width: 1535.98px){
   .algorithm-card {
@@ -5162,6 +5165,9 @@ html {
     --height-header: clamp( 122px , 114px + 0.625vw , 126px );
     --title-6: clamp( 22px , 6px + 1.25vw , 30px );
   }
+  .alert__text._medium {
+    --font-size: clamp( 23px , -5px + 2.188vw , 37px );
+  }
   .blog__grid .article-card__media img {
     height: clamp( 320px , 60.004px + 20.313vw , 450px );
   }
@@ -5417,6 +5423,9 @@ html {
   }
   .alert__text {
     --font-size: clamp( 54px , -13.999px + 3.542vw , 122px );
+  }
+  .alert__text._medium {
+    --font-size: clamp( 37px , -11.999px + 2.552vw , 86px );
   }
   .page-offer__head::before {
     width: clamp( 80px , 0.001px + 4.167vw , 160px );
@@ -5838,6 +5847,9 @@ html {
   }
   .alert__text {
     --font-size: 122px;
+  }
+  .alert__text._medium {
+    --font-size: 86px;
   }
   .page-offer__head::before {
     width: 160px;
