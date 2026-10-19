@@ -2015,7 +2015,7 @@ var swiper_bundle = __webpack_require__(392);
 
 
 // import './module/select.js';
-// import * as video from "./module/video.js";
+// import * as video from './module/video.js';
 // import { phoneMask } from "./module/phone_mask.js";
 // import { setViewType } from "./module/viewType.js";
 // import { wrappedTextWidth } from './module/wrapped_text_width.js';
