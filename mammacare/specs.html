@@ -10,6 +10,7 @@
     <title>Раздел для специалистов</title>
     <link rel="stylesheet" href="./css/style.min.css">
     <script src="./js/swiper.min.js" defer></script>
+    <script src="./js/gsap.min.js" defer></script>
     <script src="./js/script.min.js" defer></script>
   </head>
 
@@ -174,7 +175,7 @@
             </div>
           </div>
         </section>
-        <section class="specs-types _mb-larger">
+        <section class="specs-types">
           <div class="container">
             <div class="specs-types__body">
               <figure class="specs-types__media">
@@ -244,20 +245,122 @@
             </div>
           </div>
         </section>
-        <!-- scroll slider -->
-        <section class="specs-hormones _mb-larger" id="specs-2">
+        <section class="specs-hormones" id="specs-2" data-hormones-section>
           <div class="container">
-            <div class="specs-hormones__body">
-              <figure
-                class="specs-hormones__media"
-                style="width: calc(0.5 * var(--width-container)); max-width: 100%"
-              >
-                <img src="./img/content/photo/specs-hormones-1.webp" alt="Изображение" loading="lazy">
-              </figure>
+            <div class="specs-hormones__body" data-hormones-body>
+              <div class="specs-hormones__head">
+                <h2 class="specs-hormones__title _h3">
+                  Как дисбаланс половых гормонов влияет на болезненность молочных желез (МЖ)?
+                </h2>
+                <div class="specs-hormones__text _p4">
+                  <p>
+                    Функция молочных желез регулируется комплексом гормонов, среди которых первостепенное
+                    значение имеют эстрогены и прогестерон.
+                  </p>
+                </div>
+              </div>
+              <div class="specs-hormones__visual">
+                <figure class="specs-hormones__media _is-active" data-hormones-img="0">
+                  <img
+                    src="./img/content/photo/specs-hormones-1.webp"
+                    alt="Концентрация гормона в тканях"
+                    loading="lazy">
+                </figure>
+                <figure class="specs-hormones__media" data-hormones-img="1">
+                  <img
+                    src="./img/content/photo/specs-hormones-2.webp"
+                    alt="Пролиферация эпителия протоков"
+                    loading="lazy">
+                </figure>
+                <figure class="specs-hormones__media" data-hormones-img="2">
+                  <img
+                    src="./img/content/photo/specs-hormones-3.webp"
+                    alt="Васкуляризация и гидратация тканей"
+                    loading="lazy">
+                </figure>
+                <figure class="specs-hormones__media" data-hormones-img="3">
+                  <img
+                    src="./img/content/photo/specs-hormones-2.webp"
+                    alt="Дифференцировка эпителия"
+                    loading="lazy">
+                </figure>
+                <figure class="specs-hormones__media" data-hormones-img="4">
+                  <img
+                    src="./img/content/photo/specs-hormones-4.webp"
+                    alt="Конверсия эстрадиола"
+                    loading="lazy">
+                </figure>
+              </div>
+              <div class="specs-hormones__content" data-hormones-content>
+                <div class="specs-hormones__track" data-hormones-track>
+                  <div class="specs-hormones__group" data-hormones-group="estrogen">
+                    <h3 class="specs-hormones__group-title _h5">Эстроген</h3>
+                    <ol class="specs-hormones-list">
+                      <li
+                        class="specs-hormones-list__item _list-counter _is-active"
+                        data-hormones-item="0"
+                      >
+                        <div class="specs-hormones-list__text _p5">
+                          <p>
+                            Концентрация гормона в тканях молочной железы в 2&ndash;20 раз выше,
+                            чем в крови<sup>4</sup>
+                          </p>
+                        </div>
+                      </li>
+                      <li class="specs-hormones-list__item _list-counter" data-hormones-item="1">
+                        <div class="specs-hormones-list__text _p5">
+                          <p>Эстроген стимулирует пролиферацию эпителия протоков и стромы</p>
+                        </div>
+                      </li>
+                      <li class="specs-hormones-list__item _list-counter" data-hormones-item="2">
+                        <div class="specs-hormones-list__text _p5">
+                          <p>Способствует васкуляризации и гидратации тканей молочной железы</p>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                  <div class="specs-hormones__group" data-hormones-group="progesterone">
+                    <h3 class="specs-hormones__group-title _h5">Прогестерон</h3>
+                    <ol class="specs-hormones-list">
+                      <li class="specs-hormones-list__item _list-counter" data-hormones-item="3">
+                        <div class="specs-hormones-list__text _p5">
+                          <p>
+                            Противодействует процессам пролиферации, обеспечивая дифференцировку эпителия,
+                            снижение митотической активности и проницаемости сосудов
+                          </p>
+                        </div>
+                      </li>
+                      <li class="specs-hormones-list__item _list-counter" data-hormones-item="4">
+                        <div class="specs-hormones-list__text _p5">
+                          <p>
+                            Стимулирует ферменты, способствующие постоянной конверсии эстрадиола
+                            в менее активный эстрон, с превращением эстрона в неактивный
+                            эстрон-сульфат
+                          </p>
+                        </div>
+                      </li>
+                      <li
+                        class="specs-hormones-list__item specs-hormones-list__item_alert"
+                        data-hormones-item="5"
+                      >
+                        <div class="specs-hormones-list__text _p5">
+                          <p>
+                            Прогестерон не только напрямую ослабляет эффекты эстрадиола,
+                            но и снижает его локальную концентрацию в тканях молочной
+                            железы<sup>5</sup>
+                          </p>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="specs-hormones__scrollbar" data-hormones-progress>
+                  <div class="specs-hormones__scrollbar-drag" data-hormones-progress-bar></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        <!-- scroll slider -->
         <section class="specs-changes _mb-larger">
           <div class="container">
             <div class="specs-changes__body">

@@ -2,7 +2,7 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 534
+/***/ 451
 (__unused_webpack___webpack_module__, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 
@@ -2004,9 +2004,142 @@ function sliders(
   }
 }
 
+;// ./src/js/module/specs-hormones.js
+
+
+// Анимированный блок «specs-hormones» (страница specs).
+// Десктоп (>= 1023.98px): pin секции + вертикальный «барабан» списка
+// (двигаем контейнер __track через transform; сами пункты не сдвигаем),
+// активация пункта/картинки по индексу от прогресса.
+// Мобилка (< 1023.98px): pin секции + горизонтальный сдвиг ленты карточек,
+// активация по индексу от прогресса.
+//
+// Маппинг пунктов → картинкам строго 1:1 по индексу (data-hormones-item
+// ↔ data-hormones-img). «Виртуальные паддинги» 0.1/0.9 прогресса держат
+// первый и последний пункты активными в начале и конце хода.
+function specsHormones(gsap, ScrollTrigger) {
+  const section = document.querySelector('[data-hormones-section]');
+
+  if (!section) return;
+
+  const track = section.querySelector('[data-hormones-track]');
+  const content = section.querySelector('[data-hormones-content]');
+  const body = section.querySelector('[data-hormones-body]');
+  const progressBar = section.querySelector('[data-hormones-progress-bar]');
+  const items = gsap.utils.toArray('[data-hormones-item]:not(.specs-hormones-list__item_alert)', section);
+  const images = gsap.utils.toArray('[data-hormones-img]', section);
+
+  if (!track || !content || !items.length) return;
+
+  const last = items.length - 1;
+
+  // Сжимаем прогресс [0,1] в диапазон [padStart, padEnd] и клампим.
+  // Первый пункт активен на [0, padStart], последний — на [padEnd, 1].
+  const padProgress = (progress, padStart = 0.1, padEnd = 0.9) => {
+    const p = (progress - padStart) / (padEnd - padStart);
+    return Math.min(1, Math.max(0, p));
+  };
+
+  const setActiveIndex = (index) => {
+    const clamped = Math.max(0, Math.min(last, index));
+
+    items.forEach((item, i) => item.classList.toggle('_is-active', i === clamped));
+    images.forEach((img, i) => img.classList.toggle('_is-active', i === clamped));
+  };
+
+  const mm = gsap.matchMedia();
+
+  // ---------- Десктоп: вертикальный «барабан» списка ----------
+  mm.add('(min-width: 1023.98px)', () => {
+    let travel = 0;
+
+    const measure = () => {
+      // трек вырван из потока (position: absolute), высоту задаёт __body.
+      // едем вверх на величину переполнения — низ трека коснётся низа __body
+      const bodyH = body ? body.clientHeight : content.clientHeight;
+      travel = Math.max(0, track.scrollHeight - bodyH);
+    };
+
+    measure();
+
+    const st = ScrollTrigger.create({
+      trigger: section,
+      start: 'top top',
+      end: () => `+=${items.length * window.innerHeight * 0.2}`,
+      pin: true,
+      scrub: true,
+      invalidateOnRefresh: true,
+      onRefresh: measure,
+      onUpdate: (self) => {
+        const p = padProgress(self.progress);
+
+        // трек стоит в исходном положении при p=0 и едет ровно на travel
+        gsap.set(track, { y: -self.progress * travel });
+
+        setActiveIndex(Math.round(p * last));
+      },
+    });
+
+    return () => {
+      st.kill();
+      gsap.set(track, { clearProps: 'transform' });
+    };
+  });
+
+  // ---------- Мобилка: горизонтальный сдвиг ленты ----------
+  mm.add('(max-width: 1023.98px)', () => {
+    let maxX = 0;
+
+    const measure = () => {
+      maxX = Math.max(0, track.scrollWidth - content.clientWidth);
+    };
+
+    measure();
+
+    const st = ScrollTrigger.create({
+      trigger: section,
+      start: 'bottom bottom',
+      end: () => `+=${maxX + window.innerHeight * 0.5}`,
+      pin: true,
+      scrub: true,
+      invalidateOnRefresh: true,
+      onRefresh: measure,
+      onUpdate: (self) => {
+        const p = padProgress(self.progress);
+
+        // лента едет честно без визуального смещения дизайна (от 0 до -maxX)
+        gsap.set(track, { x: -self.progress * maxX });
+
+        if (progressBar) {
+          // ползунок едет внутри трека, а не заполняет его
+          const barW = progressBar.parentElement.clientWidth;
+          const knobW = progressBar.clientWidth;
+          gsap.set(progressBar, { x: self.progress * (barW - knobW) });
+        }
+
+        setActiveIndex(Math.round(p * last));
+      },
+    });
+
+    return () => {
+      st.kill();
+      gsap.set(track, { clearProps: 'transform' });
+
+      if (progressBar) {
+        gsap.set(progressBar, { clearProps: 'transform' });
+      }
+    };
+  });
+}
+
 // EXTERNAL MODULE: ./node_modules/swiper/swiper-bundle.mjs + 31 modules
 var swiper_bundle = __webpack_require__(392);
+// EXTERNAL MODULE: ./node_modules/gsap/index.js + 2 modules
+var gsap = __webpack_require__(880);
+// EXTERNAL MODULE: ./node_modules/gsap/ScrollTrigger.js + 1 modules
+var ScrollTrigger = __webpack_require__(575);
 ;// ./src/js/script.js
+
 
 
 
@@ -2025,14 +2158,13 @@ var swiper_bundle = __webpack_require__(392);
 // import { registerTensionMask } from './module/tension-mask.js';
 
 
+
+
 // import noUiSlider from 'nouislider';
 // import tippy from "tippy.js";
 // import ClipboardJS from 'clipboard';
 // import Masonry from "masonry-layout";
 // import AirDatepicker from "air-datepicker";
-
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 // import {
 //   gsap,
 //   ScrollTrigger,
@@ -2042,6 +2174,8 @@ var swiper_bundle = __webpack_require__(392);
 // gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
 window.Swiper = swiper_bundle/* default */.A;
+window.gsap = gsap/* gsap */.os;
+window.ScrollTrigger = ScrollTrigger/* ScrollTrigger */.u;
 // window.noUiSlider = noUiSlider;
 // window.ClipboardJS = ClipboardJS;
 // window.Lottie = Lottie;
@@ -2062,6 +2196,9 @@ window.addEventListener('load', function () {
   // wrappedTextWidth();
   // registerTensionMask();
 
+  if (gsap/* gsap */.os && ScrollTrigger/* ScrollTrigger */.u) {
+    gsap/* gsap */.os.registerPlugin(ScrollTrigger/* ScrollTrigger */.u);
+  }
   // tippy("[data-tippy-content]", {
   //   allowHTML: true,
   //   maxWidth: 260,
@@ -2237,6 +2374,7 @@ window.addEventListener('load', function () {
   // }
 
   sliders($md11, $md2, $md3, $md4, matchMediaMi11, matchMediaMi2, matchMediaMi3, matchMediaMi4);
+  specsHormones(gsap/* gsap */.os, ScrollTrigger/* ScrollTrigger */.u);
 
   document.addEventListener('beforePopupOpen', (e) => {
     const popup = e.detail.popup;
@@ -2471,7 +2609,7 @@ window.addEventListener('load', function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, [979], () => (__webpack_require__(534)))
+/******/ 	let __webpack_exports__ = __webpack_require__.O(undefined, [979,634], () => (__webpack_require__(451)))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
