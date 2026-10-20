@@ -164,6 +164,7 @@
 .d-step-card__heading::before,
 .d-type-card__head::before,
 .media-slider__suptitle,
+.specs-benefits__item._list-counter::before,
 .welcome__title-sup {
   font-family: NotoSerifDisplay, system-ui, serif;
   font-weight: 300;
@@ -453,14 +454,20 @@ a:not([class]) {
 .footer-menu > *,
 .important__body > *,
 .important__list > *,
+.product-benefit > *,
+.product-benefit__head > *,
+.product-benefit-list > *,
 .quiz__inputs > *,
 .quiz-articles__items > *,
 .quiz-result > *,
 .reasons-list > *,
+.specs-benefits__body > *,
+.specs-benefits__list > *,
 .specs-changes__main > *,
 .specs-effect__main > *,
 .specs-exploration__body > *,
 .specs-prevention__main > *,
+.specs-product__body > *,
 .specs-safety__body > *,
 .specs-safety__main > *,
 .specs-therapy__body > * {
@@ -477,7 +484,7 @@ a:not([class]) {
   --height-header: 75px;
   --height-header-top: 0px;
   --height-header-position: var(--height-header);
-  --height-sticky: calc(var(--height-header-position) + 2 * var(--gap-normal));
+  --height-sticky: calc(var(--height-header-position) + var(--size-flex-30));
   --height-alert: 80px;
   --height-btn-medium: 50px;
   --height-btn-normal: 50px;
@@ -2849,6 +2856,7 @@ a:not([class]):focus-visible {
 .article-nav__title {
   position: relative;
   font-size: var(--text-2);
+  font-variation-settings: "wdth" 70;
   line-height: 1;
   color: var(--color-blue);
 }
@@ -3185,6 +3193,7 @@ a:not([class]):focus-visible {
   align-items: flex-start;
 }
 .d-type-card__head::before {
+  font-variation-settings: "wdth" 70;
   line-height: 1;
   color: var(--color-beige-dark);
   text-transform: uppercase;
@@ -3265,6 +3274,7 @@ a:not([class]):focus-visible {
 }
 .d-step-card__heading::before {
   font-size: var(--size-26);
+  font-variation-settings: "wdth" 70;
   line-height: 1;
   color: var(--color-beige-dark);
 }
@@ -3567,6 +3577,156 @@ a:not([class]):focus-visible {
 }
 .specs-therapy-list__text {
   max-width: 24em;
+}
+
+.specs-product {
+  position: relative;
+  padding: var(--gap-normal) 0;
+}
+.specs-product__media {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+}
+.specs-product__media img {
+  height: 100%;
+  object-fit: cover;
+}
+.specs-product__body {
+  --gap-section: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-section);
+  padding: var(--gap-larger) 0;
+}
+.specs-product__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-section);
+  margin-bottom: calc(7.5 * var(--gap-section));
+  color: var(--color-neutral);
+}
+.specs-product__title {
+  max-width: 12.23em;
+}
+.specs-product__text {
+  max-width: 30.05em;
+  color: var(--color-neutral);
+}
+.specs-product__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-small);
+}
+.specs-product__item {
+  display: flex;
+  flex-grow: 1;
+  gap: var(--gap-medium);
+  align-items: center;
+  width: 100%;
+  padding: var(--gap-medium);
+  background-color: var(--color-neutral);
+  border-radius: var(--radius-medium);
+}
+.specs-product__item svg {
+  flex-shrink: 0;
+  height: auto;
+  overflow: hidden;
+}
+.specs-product__desc {
+  max-width: 42.93em;
+  color: var(--color-neutral);
+}
+
+.specs-benefits__body {
+  position: relative;
+  display: grid;
+  gap: var(--size-flex-60);
+  padding-top: var(--size-40);
+}
+.specs-benefits__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-normal);
+  justify-content: center;
+  order: 2;
+  margin: 0 auto;
+}
+.specs-benefits__list {
+  display: grid;
+  gap: var(--gap-medium);
+  list-style: none;
+  counter-reset: num;
+}
+.specs-benefits__item._list-counter {
+  position: relative;
+}
+.specs-benefits__item._list-counter::before {
+  position: absolute;
+  top: var(--size-flex-30);
+  left: var(--size-flex-30);
+  z-index: 2;
+  font-variation-settings: "wdth" 70;
+  line-height: 1;
+  color: var(--color-beige-dark);
+}
+.specs-benefits__item._list-counter:nth-child(-n+9)::before {
+  content: "(0" counter(num) ").";
+  counter-increment: num;
+}
+.specs-benefits__item._list-counter:nth-child(n+10)::before {
+  content: "(" counter(num) ").";
+  counter-increment: num;
+}
+
+.product-benefit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-medium);
+}
+.product-benefit__media {
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+}
+.product-benefit__media img {
+  aspect-ratio: 340/182;
+  object-fit: cover;
+}
+.product-benefit__head {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: var(--gap-medium);
+}
+.product-benefit__title {
+  max-width: 28em;
+}
+.product-benefit__desc {
+  color: var(--color-beige-dark);
+}
+
+.product-benefit-list {
+  display: grid;
+  gap: var(--size-30);
+}
+.product-benefit-list__item {
+  display: flex;
+  gap: var(--size-flex-30);
+  align-items: center;
+}
+.product-benefit-list__item svg {
+  flex-shrink: 0;
+  align-self: flex-start;
+  height: auto;
+  overflow: hidden;
+  background-color: var(--color-ice);
+}
+.product-benefit-list__text {
+  max-width: 30em;
 }
 .specs-prevention__body {
   padding: var(--gap-normal) 0;
@@ -4057,6 +4217,21 @@ a:not([class]):focus-visible {
   .specs-therapy__head::before {
     width: clamp( 49px , 41.847px + 1.987vw , 80px );
   }
+  .specs-product__body {
+    --gap-section: clamp( 40px , 35.616px + 1.218vw , 59px );
+    min-height: clamp( 740px , 703.079px + 10.256vw , 900px );
+  }
+  .specs-product__item svg {
+    width: clamp( 40px , 35.846px + 1.154vw , 58px );
+    border-radius: clamp( 10px , 9.077px + 0.256vw , 14px );
+  }
+  .specs-benefits__item._list-counter::before {
+    font-size: clamp( 18px , 16.154px + 0.513vw , 26px );
+  }
+  .product-benefit-list__item svg {
+    width: clamp( 40px , 35.846px + 1.154vw , 58px );
+    border-radius: clamp( 10px , 9.077px + 0.256vw , 14px );
+  }
   .prevention-list__item {
     width: clamp( 324px , 301.847px + 6.154vw , 420px );
   }
@@ -4227,6 +4402,26 @@ a:not([class]):focus-visible {
     font-size: var(--size-flex-40);
     font-variation-settings: "GRAD" -200, "opsz" calc(var(--size-flex-40) / 1px);
   }
+  .specs-product {
+    padding: 0;
+  }
+  .specs-product__body {
+    padding: var(--gap-larger) var(--gap-medium);
+  }
+  .specs-product__item {
+    flex-grow: 0;
+    flex-direction: column;
+    gap: var(--gap-normal);
+    align-items: flex-start;
+    justify-content: space-between;
+    width: var(--width-card);
+  }
+  .specs-benefits__item {
+    padding: 0 var(--gap-medium);
+  }
+  .specs-benefits__item._list-counter::before {
+    left: calc(var(--gap-medium) + var(--size-flex-30));
+  }
   .specs-prevention__body {
     position: relative;
     padding: 0 var(--gap-medium);
@@ -4285,6 +4480,9 @@ a:not([class]):focus-visible {
     width: var(--width-media);
     height: auto;
   }
+  .specs-benefits__actions {
+    max-width: clamp( 540px , 437.146px + 17.857vw , 620px );
+  }
 }
 @media (min-width: 575.98px) and (max-width: 1279.98px){
   .age-hints-list__item {
@@ -4341,6 +4539,9 @@ a:not([class]):focus-visible {
   }
   .specs-therapy-list__item {
     width: clamp( 400px , 280.004px + 20.833vw , 440px );
+  }
+  .specs-product__list {
+    --width-card: clamp( 200px , 20.006px + 31.25vw , 260px );
   }
 }
 @media (min-width: 767.98px){
@@ -4642,6 +4843,48 @@ a:not([class]):focus-visible {
     font-size: var(--title-1);
     font-variation-settings: "wdth" 74, "GRAD" -128, "XOPQ" 140, "opsz" calc(var(--title-1) / 1px);
   }
+  .specs-product__head {
+    margin-bottom: auto;
+  }
+  .specs-product__list {
+    gap: var(--gap-normal);
+    max-width: calc(3 * var(--width-card) + 3 * var(--gap-normal));
+  }
+  .specs-product__item {
+    gap: var(--gap-medium);
+  }
+  .specs-product__extra {
+    margin-bottom: calc(-0.5 * var(--gap-larger));
+  }
+  .specs-benefits__body {
+    padding-bottom: var(--size-flex-10);
+  }
+  .specs-benefits__list {
+    gap: var(--size-flex-40);
+  }
+  .specs-benefits__item:not(:last-child) {
+    padding-bottom: var(--size-flex-80);
+    border-bottom: var(--size-1) solid var(--color-ice-dark);
+  }
+  .specs-benefits__item._list-counter::before {
+    top: 0;
+    left: -2px;
+    line-height: calc(1.1 * var(--title-6));
+  }
+  .product-benefit__media {
+    flex-shrink: 0;
+    align-self: center;
+  }
+  .product-benefit__media img {
+    aspect-ratio: 598/462;
+  }
+  .product-benefit__head {
+    width: 430px;
+  }
+  .product-benefit__info {
+    align-self: flex-end;
+    width: 520px;
+  }
   .specs-prevention__main {
     gap: var(--size-flex-30);
   }
@@ -4688,6 +4931,10 @@ a:not([class]):focus-visible {
   .company__box_contacts {
     grid-column: -1/1;
   }
+  .product-benefit__media {
+    width: clamp( 380px , 328.63px + 6.689vw , 420px );
+    margin: var(--size-flex-10) 0;
+  }
 }
 @media (min-width: 767.98px) and (max-width: 1919.98px){
   .current-info__body::after {
@@ -4723,6 +4970,9 @@ a:not([class]):focus-visible {
   }
   .specs-therapy-list__item {
     width: clamp( 230px , 107.337px + 15.972vw , 414px );
+  }
+  .specs-product__list {
+    --width-card: clamp( 230px , 196.668px + 4.34vw , 280px );
   }
 }
 @media (min-width: 767.98px) and (min-width: 1535.98px){
@@ -4920,6 +5170,15 @@ a:not([class]):focus-visible {
   }
   .specs-changes__title {
     max-width: 9.2em;
+  }
+  .specs-benefits__actions {
+    position: absolute;
+    bottom: 0;
+    left: var(--gap-larger);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 30%;
   }
   .exploration-cards {
     gap: var(--size-flex-40);
@@ -5144,6 +5403,15 @@ html {
   .specs-therapy-list {
     gap: var(--size-flex-40);
   }
+  .specs-product__body {
+    padding: var(--gap-larger);
+  }
+  .specs-benefits__item._list-counter {
+    padding-left: var(--gap-larger);
+  }
+  .specs-benefits__item._list-counter::before {
+    left: var(--size-flex-40);
+  }
   .specs-prevention__body {
     padding: 0 var(--gap-larger);
   }
@@ -5219,6 +5487,27 @@ html {
   }
   .d-type-card__media::before {
     left: -53%;
+  }
+  .specs-benefits__actions ~ * .specs-benefits__item:last-child .product-benefit__head {
+    padding-bottom: calc(3 * var(--height-btn-small));
+  }
+  .product-benefit {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .product-benefit__head {
+    gap: var(--gap-larger);
+  }
+}
+@media (min-width: 1365.98px) and (max-width: 1919.98px){
+  .product-benefit__media {
+    width: clamp( 380px , -157.516px + 39.35vw , 598px );
+  }
+  .product-benefit__head {
+    width: clamp( 360px , 187.403px + 12.635vw , 430px );
+  }
+  .product-benefit__info {
+    width: clamp( 380px , 34.806px + 25.271vw , 520px );
   }
 }
 @media (min-width: 1535.98px){
@@ -5667,6 +5956,33 @@ html {
   .specs-therapy-list__item {
     width: clamp( 414px , 18.004px + 20.625vw , 810px );
   }
+  .specs-product__body {
+    --gap-section: clamp( 59px , 0.001px + 3.073vw , 118px );
+    min-height: clamp( 900px , 0.009px + 46.875vw , 1800px );
+  }
+  .specs-product__list {
+    --width-card: clamp( 280px , 0.003px + 14.583vw , 560px );
+  }
+  .specs-product__item svg {
+    width: clamp( 58px , 0.001px + 3.021vw , 116px );
+    border-radius: clamp( 14px , 0px + 0.729vw , 28px );
+  }
+  .specs-benefits__item._list-counter::before {
+    font-size: clamp( 26px , 0px + 1.354vw , 52px );
+  }
+  .product-benefit__media {
+    width: clamp( 598px , 0.006px + 31.146vw , 1196px );
+  }
+  .product-benefit__head {
+    width: clamp( 430px , 0.004px + 22.396vw , 860px );
+  }
+  .product-benefit__info {
+    width: clamp( 520px , 0.005px + 27.083vw , 1040px );
+  }
+  .product-benefit-list__item svg {
+    width: clamp( 58px , 0.001px + 3.021vw , 116px );
+    border-radius: clamp( 14px , 0px + 0.729vw , 28px );
+  }
   .specs-prevention__head {
     max-width: clamp( 552px , 0.006px + 28.75vw , 1104px );
   }
@@ -6091,6 +6407,36 @@ html {
   .specs-therapy-list__item {
     width: 810px;
   }
+  .specs-product__media {
+    width: 3840px;
+  }
+  .specs-product__body {
+    --gap-section: 118px;
+    min-height: 1800px;
+  }
+  .specs-product__list {
+    --width-card: 560px;
+  }
+  .specs-product__item svg {
+    width: 116px;
+    border-radius: 28px;
+  }
+  .specs-benefits__item._list-counter::before {
+    font-size: 52px;
+  }
+  .product-benefit__media {
+    width: 1196px;
+  }
+  .product-benefit__head {
+    width: 860px;
+  }
+  .product-benefit__info {
+    width: 1040px;
+  }
+  .product-benefit-list__item svg {
+    width: 116px;
+    border-radius: 28px;
+  }
   .specs-prevention__head {
     max-width: 1104px;
   }
@@ -6235,6 +6581,9 @@ html {
   .d-type-card__media::before {
     transform: rotate(90deg);
   }
+  .product-benefit__media {
+    order: -1;
+  }
 }
 @media (max-width: 575.98px){
   .popup_down {
@@ -6299,6 +6648,13 @@ html {
   }
   .specs-therapy__title {
     max-width: 284px;
+  }
+  .specs-product__title {
+    font-size: var(--title-5);
+    font-variation-settings: "GRAD" -200, "opsz" calc(var(--title-5) / 1px);
+  }
+  .specs-benefits__actions {
+    max-width: 540px;
   }
   .specs-prevention {
     position: relative;
@@ -6497,6 +6853,17 @@ html {
   }
   .specs-therapy__head::before {
     width: 49px;
+  }
+  .specs-product__item svg {
+    width: 40px;
+    border-radius: 10px;
+  }
+  .specs-benefits__item._list-counter::before {
+    font-size: 18px;
+  }
+  .product-benefit-list__item svg {
+    width: 40px;
+    border-radius: 10px;
   }
   .prevention-list__item {
     width: 324px;
