@@ -3460,16 +3460,15 @@ a:not([class]):focus-visible {
 }
 
 .specs-hormones {
-  padding: calc(var(--height-header) - var(--height-header-top)) 0 var(--height-alert);
+  padding: calc(var(--height-header) - var(--height-header-top) + var(--size-flex-30)) 0 calc(var(--height-alert) + var(--size-flex-30));
 }
 .specs-hormones__body {
   --width-media: 260px;
   --height-viewport: calc(
-    var(--height-page) - var(--height-header-position) - var(--height-alert) - 1.35 * var(--gap-medium)
+    var(--height-page) - var(--height-header-position) - var(--height-alert) - 2 * var(--size-flex-30)
   );
   display: grid;
   gap: var(--gap-large) var(--size-flex-10);
-  padding: var(--size-flex-30) 0;
 }
 .specs-hormones__head {
   position: relative;
@@ -5341,6 +5340,7 @@ a:not([class]):focus-visible {
     inset: 0 0 auto;
     flex-direction: column;
     gap: calc(1.1 * var(--size-flex-30));
+    padding-top: calc(1.5 * var(--gap-larger));
     will-change: transform;
   }
   .specs-hormones__group {
