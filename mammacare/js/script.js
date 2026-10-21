@@ -2174,8 +2174,6 @@ var ScrollTrigger = __webpack_require__(575);
 // gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
 window.Swiper = swiper_bundle/* default */.A;
-window.gsap = gsap/* gsap */.os;
-window.ScrollTrigger = ScrollTrigger/* ScrollTrigger */.u;
 // window.noUiSlider = noUiSlider;
 // window.ClipboardJS = ClipboardJS;
 // window.Lottie = Lottie;
@@ -2198,6 +2196,7 @@ window.addEventListener('load', function () {
 
   if (gsap/* gsap */.os && ScrollTrigger/* ScrollTrigger */.u) {
     gsap/* gsap */.os.registerPlugin(ScrollTrigger/* ScrollTrigger */.u);
+    specsHormones(gsap/* gsap */.os, ScrollTrigger/* ScrollTrigger */.u);
   }
   // tippy("[data-tippy-content]", {
   //   allowHTML: true,
@@ -2374,7 +2373,6 @@ window.addEventListener('load', function () {
   // }
 
   sliders($md11, $md2, $md3, $md4, matchMediaMi11, matchMediaMi2, matchMediaMi3, matchMediaMi4);
-  specsHormones(gsap/* gsap */.os, ScrollTrigger/* ScrollTrigger */.u);
 
   document.addEventListener('beforePopupOpen', (e) => {
     const popup = e.detail.popup;

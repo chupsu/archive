@@ -809,6 +809,8 @@ a:not([class]):focus-visible {
   --height-btn: var(--height-btn-smaller);
   font-size: var(--size-14);
   font-variation-settings: "wght" 600, "GRAD" -200, "opsz" calc(var(--size-14) / 1px);
+  color: var(--color-blue-dark);
+  text-transform: initial;
 }
 .btn_smallest {
   --height-btn: var(--height-btn-smallest);
@@ -2081,9 +2083,6 @@ a:not([class]):focus-visible {
 }
 .welcome__text {
   max-width: 33em;
-}
-.welcome__text p + p {
-  margin-top: var(--size-20);
 }
 .welcome__list {
   position: relative;
@@ -3371,7 +3370,7 @@ a:not([class]):focus-visible {
   text-align: center;
 }
 .specs-stats__title {
-  max-width: 8.14em;
+  max-width: 8.75em;
 }
 .specs-stats__desc {
   max-width: 29.82em;
@@ -3828,6 +3827,14 @@ a:not([class]):focus-visible {
   flex-direction: column;
   gap: var(--gap-medium);
 }
+.product-benefit::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5em 1em;
+  font-size: var(--size-flex-40);
+  color: var(--color-ice-dark);
+}
 .product-benefit__media {
   overflow: hidden;
   border-radius: var(--radius-medium);
@@ -3863,7 +3870,7 @@ a:not([class]):focus-visible {
   align-self: flex-start;
   height: auto;
   overflow: hidden;
-  background-color: var(--color-ice);
+  background-color: var(--color-ice-lightest);
 }
 .product-benefit-list__text {
   max-width: 30em;
@@ -4943,6 +4950,7 @@ a:not([class]):focus-visible {
     gap: var(--gap-medium);
   }
   .specs-stats__title {
+    max-width: 8.14em;
     font-size: var(--title-2);
     font-variation-settings: "wdth" 74, "GRAD" -128, "XOPQ" 140, "opsz" calc(var(--title-2) / 1px);
   }
@@ -5381,6 +5389,7 @@ a:not([class]):focus-visible {
     position: absolute;
     bottom: 0;
     left: var(--gap-larger);
+    z-index: 1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -5709,6 +5718,9 @@ html {
   }
   .product-benefit__head {
     gap: var(--gap-larger);
+  }
+  .product-benefit__info {
+    padding-top: var(--size-flex-60);
   }
 }
 @media (min-width: 1365.98px) and (max-width: 1919.98px){
@@ -6804,6 +6816,9 @@ html {
   }
   .d-type-card__media::before {
     transform: rotate(90deg);
+  }
+  .product-benefit::after {
+    display: none;
   }
   .product-benefit__media {
     order: -1;
