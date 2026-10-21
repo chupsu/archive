@@ -2090,8 +2090,27 @@ function specsHormones(gsap, ScrollTrigger) {
   mm.add('(max-width: 1023.98px)', () => {
     let maxX = 0;
 
+    // Заголовки групп: компенсируем сдвиг ленты, чтобы заголовок «прилипал»
+    // к левому краю зоны просмотра, пока его группа в зоне, и уступал
+    // следующему, уперевшись в правый край самой группы (gw - tw).
+    const groups = gsap.utils.toArray('[data-hormones-group]', section);
+    const groupMetrics = [];
+
     const measure = () => {
       maxX = Math.max(0, track.scrollWidth - content.clientWidth);
+
+      // offsetLeft игнорирует transform трека, поэтому замер корректен
+      // в любой момент при общем offsetParent у трека и группы
+      groupMetrics.length = 0;
+      groups.forEach((group) => {
+        const title = group.querySelector('.specs-hormones__group-title');
+        groupMetrics.push({
+          gx: group.offsetLeft - track.offsetLeft,
+          gw: group.offsetWidth,
+          tw: title ? title.offsetWidth : 0,
+          title,
+        });
+      });
     };
 
     measure();
@@ -2106,9 +2125,19 @@ function specsHormones(gsap, ScrollTrigger) {
       onRefresh: measure,
       onUpdate: (self) => {
         const p = padProgress(self.progress);
+        const scrollX = self.progress * maxX;
 
         // лента едет честно без визуального смещения дизайна (от 0 до -maxX)
-        gsap.set(track, { x: -self.progress * maxX });
+        gsap.set(track, { x: -scrollX });
+
+        // сдвиг заголовка внутри его группы, пока не упрётся в правый край
+        // группы (gw - tw); нижняя граница 0 — до входа группы в зону
+        // заголовок остаётся на своём месте в потоке и едет вместе с лентой
+        const clamp = (v, min, max) => Math.min(Math.max(v, min), Math.max(0, max));
+        groupMetrics.forEach(({ gx, gw, tw, title }) => {
+          if (!title) return;
+          gsap.set(title, { x: clamp(scrollX - gx, 0, gw - tw) });
+        });
 
         if (progressBar) {
           // ползунок едет внутри трека, а не заполняет его
@@ -2124,6 +2153,11 @@ function specsHormones(gsap, ScrollTrigger) {
     return () => {
       st.kill();
       gsap.set(track, { clearProps: 'transform' });
+
+      // сбрасываем компенсацию заголовков при выходе из мобильного режима
+      groupMetrics.forEach(({ title }) => {
+        if (title) gsap.set(title, { clearProps: 'transform' });
+      });
 
       if (progressBar) {
         gsap.set(progressBar, { clearProps: 'transform' });
